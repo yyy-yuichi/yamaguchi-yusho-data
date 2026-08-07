@@ -1,5 +1,32 @@
 {
   "permissions": {
-    "deny": ["Task"]
+    "deny": [
+      "Edit(CLAUDE.md)",
+      "Write(CLAUDE.md)",
+      "Edit(SPEC.md)",
+      "Write(SPEC.md)",
+      "Edit(spec_coverage.py)",
+      "Write(spec_coverage.py)",
+      "Edit(settings.json)",
+      "Write(settings.json)",
+      "Edit(guard_protected_files.py)",
+      "Write(guard_protected_files.py)",
+      "Read(run_record.md)",
+      "Edit(run_record.md)",
+      "Write(run_record.md)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit|NotebookEdit|Read|NotebookRead",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "C:\\Users\\user\\dev\\udc2026\\.venv\\Scripts\\python.exe C:\\Users\\user\\dev\\udc2026\\yamaguchi-yusho-data\\.claude\\hooks\\guard_protected_files.py"
+          }
+        ]
+      }
+    ]
   }
 }
