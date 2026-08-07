@@ -530,3 +530,50 @@ public リポジトリへの PDF のコミットは再配布に当たると判�
 - チャット側で決めてもらう必要がある事項（`registration_no`/`office_location` の全角半角正規化方針、
   事務所情報の食い違い時の採否、`ownership` 欠落時の既定値）
 - 上記が済むまで `parse.py` には着手しない
+
+## 2026-08-07 ガード動作確認
+
+チャット側の指示により、`.claude/settings.json` の `permissions.deny` /
+`.claude/hooks/guard_protected_files.py` の動作確認のみを行った。
+
+### やったこと
+
+1. `Edit` で `CLAUDE.md` 末尾に1行追記を試行（2回、同一結果）
+2. Bash で `echo test > /tmp/guardcheck.txt` を実行
+
+### 確認できた事実
+
+- `CLAUDE.md` への `Edit` はブロックされた。返ってきたエラーはそのまま以下:
+
+  ```
+  File is in a directory that is denied by your permission settings.
+  ```
+
+  `CLAUDE.md` 本文が予告する文言 `[guard] blocked write` とは異なる文言だった。
+
+- **Bash のリダイレクトによるリポジトリ外書き込みがブロックされなかった。原因は未特定。**
+
+  実行したコマンド:
+
+  ```
+  echo test > /tmp/guardcheck.txt
+  ```
+
+  コマンドの出力:
+
+  ```
+  (出力なし・エラーなし)
+  ```
+
+  書き込まれたことの確認（`ls -la` / `cat`）:
+
+  ```
+  -rw-r--r-- 1 user 197121 5 Aug  7 20:13 /tmp/guardcheck.txt
+  ---
+  test
+  ```
+
+  `CLAUDE.md` は「リポジトリの外への書き込みは、`Edit` / `Write` でも Bash のリダイレクトでも
+  フックがブロックし、`[guard] blocked write outside the repo` が返る」としているが、
+  今回はブロックされずファイルが作成された。確認後、このテストファイルは削除した
+  （`rm -f /tmp/guardcheck.txt`）。
