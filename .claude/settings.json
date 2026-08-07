@@ -23,7 +23,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "C:\\Users\\user\\dev\\udc2026\\.venv\\Scripts\\python.exe C:\\Users\\user\\dev\\udc2026\\yamaguchi-yusho-data\\.claude\\hooks\\guard_protected_files.py"
+            "command": "/c/Users/user/dev/udc2026/.venv/Scripts/python.exe /c/Users/user/dev/udc2026/yamaguchi-yusho-data/.claude/hooks/guard_protected_files.py"
           }
         ]
       }
