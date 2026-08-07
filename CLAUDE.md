@@ -1,107 +1,68 @@
-# CLAUDE.md(新 runtime)
+# yamaguchi-yusho-data
 
-## このディレクトリの位置付け
+UDC2026（アーバンデータチャレンジ2026）応募作品①のリポジトリ。
+中国運輸局が PDF で公表している「自家用有償旅客運送者の登録簿」を機械可読化し、
+山口県の市町別に福祉輸送の供給量を可視化する。
 
-- 場所: C:\new_runtime\
-- 役割: 公共工事積算業務の deterministic runtime
-- ユーザー: Yuichi(積算業務の初心者)
-- 旧環境: C:\archive\old_claude_runtime_2026-05-24\(参照のみ可、書き込み禁止)
+## 計画の所在（goal-to-done スキル使用時の plan location 指定）
 
-## 必ず最初に読むべきファイル
+**このリポジトリでは `SPEC.md` が実行契約であり、DAG の代わりである。**
+新しい run record ファイルを作らない。新しい契約や DAG を自分で組み立てない。
 
-1. C:\new_runtime\session_state.md
-   bootstrap_log.md から導出した薄い head。最新状態の入口。矛盾時は bootstrap_log.md が正。
+- ゴール・終了条件 → `SPEC.md` §0 と §5
+- スコープと除外 → `SPEC.md` §1
+- 実行手順 → `SPEC.md` §4
+- 検証 → `SPEC.md` §5
+- 進捗の記録先 → `PROGRESS.md`
 
-2. C:\new_runtime\open_items.md
-   未解決項目の薄い索引。矛盾時は bootstrap_log.md が正。
+全体計画（複数作品にまたがる DAG、ゲート、提出戦略）はこのリポジトリの外にあり、
+チャット側が保持している。ここでその一部を再構築しない。
 
-3. C:\new_runtime\CLAUDE.md
-   本ファイル(位置付け・禁止事項・原則)。
+## スコープは SPEC.md が限定している
 
-### 初手で全文読込しないもの
+goal-to-done は「最初に動くものができても止まるな」と指示するが、
+**この指示より `SPEC.md` §1 のスコープ限定が優先する。**
 
-- C:\new_runtime\design_notes\design_2026-05-25.md
-  設計前提に疑義がある時のみ、必要箇所だけ読む。初手で全文読込しない。
-- C:\new_runtime\bootstrap_log.md
-  これまでの作業ログ。append-only。履歴確認・MD5 根拠確認・closeout append の時のみ、必要箇所だけ読む。初手で全文読込しない。append は byte-exact append を原則とする。
+具体的には、まず `000271730.pdf`（山口県・福祉有償運送・NPO等）1本を
+`SPEC.md` §5 の完了条件 1〜5 まで通しきる。
+そこで止まって報告する。残り3ファイルおよび他県への展開は、指示があるまで着手しない。
 
-## ユーザー前提(極めて重要)
+## 絶対に守ること
 
-- Yuichi は積算業務の初心者
-- 専門用語や計算式の意味は分からない
-- 原本 PDF を読んで内容を verify することはできない
-- PowerShell 等のオペレーションは指示通り実行できる
-- 旧 runtime のコンセプトも「初心者でも積算業務ができる」
+- **代表者の氏名は抽出も出力もしない。** パース段階で捨てる。
+  `tests/test_verify.py` に、出力ファイルに氏名列が存在しないことを確認するテストを置く。
+- **「動いた」で完了にしない。** `SPEC.md` §5 の完了条件を満たし、
+  実行結果を `verification.md` に書くまでは未完了。
+- **推定で先に進まない。** `SPEC.md` に「推定」「要確認」と書かれた箇所
+  （車両欄の括弧付き数字が軽自動車の内数か、旅客範囲の記号）は、
+  原本と照合して確定させてから次に進む。
+- **`SPEC.md` を書き換えない。** 誤りや原本との食い違いを見つけたら、
+  `PROGRESS.md` に「何が食い違ったか」「原本ではどうだったか」を書いて止まる。
+  修正はチャット側で行う。
+- **push と GitHub Pages 有効化は承認を待つ。** 指示があるまで実行しない。
 
-ユーザーに業務知識を要求する手順を提案してはならない。
+## 作業ログ
 
-## 5 階層アーキテクチャ
+`PROGRESS.md` に追記する。1回の作業の終わりに以下を書く。
 
-- Layer 1: 自動収集(非知能、判断しない)→ Routines で実装
-- Layer 2: raw 保存(append-only、削除禁止)→ C:\new_runtime\inbox\
-- Layer 3: Yuichi 確認(分類のみ、判断しない)
-- Layer 4: Claude 整理(main agent)→ Skills で原則固定化
-- Layer 5: subagent(必要時のみ、探索/検証用)→ /goal で完了条件明示
+- やったこと
+- 確認できた事実（数字を含める）
+- 詰まったこと、`SPEC.md` と食い違ったこと
+- 次にやること
 
-核心原則: relevance を AI に決めさせない。raw は捨てない。
+このファイルはチャット側に貼って共有されるので、
+「後で自分が読めば分かる」ではなく「第三者が読んで分かる」書き方にする。
 
-## 旧 runtime の本質的失敗
+## 技術メモ
 
-- subagent に「情報収集」と「重要性判断」を同時委任したことが核心
-- 初心者ユーザーは subagent の relevance 判定を監査できなかった
-- 結果: 何が捨てられたか追えない状態に
+- PDF は `pdfplumber` で読む。`pypdf` / `PyPDF2` は表構造を壊すので使わない。
+- **pandas は使わない。** 標準ライブラリの `csv` と `json` で書く。依存は `pdfplumber` のみ。
+- 一覧ページ `https://wwwtb.mlit.go.jp/chugoku/00001_00903.html` は Shift-JIS（cp932）。
+- 対象 PDF はテキスト埋め込み済み。OCR は不要。
+- 空欄セルはテキスト抽出で消えるため、`extract_text()` では列の対応が取れない。
+  `extract_words()` で座標を取り、ラベル語の位置を基準に読む。
+- git の commit email は `--local` で noreply アドレスを設定する。`--global` は触らない。
 
-新 runtime ではこれを構造的に防ぐ。
+## 公開
 
-## 禁止事項
-
-- registry/ を LLM が直接書き換えない(Yuichi 承認経由)
-- approved/ を上書き・削除しない
-- inbox/ の raw データを削除しない(append-only)
-- 旧 Vault から派生物(AI 判断要約等)を import しない
-- hook を勝手に増やさない
-- agent graph を作らない
-- memory OS 化しない
-- bootstrap_log.md の既存行を編集・削除しない(append-only)
-- fetch/DL 結果の PASS を実体検証(disk MD5・bytes・Content-Type が GATE 条件充足)前に記録しない(S17J fetch_log 誤PASS→erratum supersede の再発防止)
-
-## 継承する資産(import 対象)
-
-import する:
-- N=102 の正解値マスタ(旧 archive の dkgi_master.csv)
-- formula スクリプト(旧 archive の bottomup_estimate.py 等)
-- 過去収集された raw データ(歩掛 PDF、業者 HP、入札情報等)
-
-import しない:
-- subagent 定義
-- hook スクリプト
-- LLM のセッション履歴
-- subagent が判定した要約データ
-
-原則: 生データは持ち込む、AI 判断の派生物は持ち込まない。
-
-## approved の意味
-
-- 「正しいと保証する」印ではない
-- 「N に加算可能な状態」を意味する
-- 業務で使った結果が判明したら自動的に approved 扱い
-- Yuichi が中身を判断する必要はない
-
-## 使用する Claude Code 最新機能
-
-- /goal: LLM のさまよう問題を構造的に解決
-- Skills: 原則・パターンを SKILL.md として固定化
-- Routines: 旧 Task Scheduler 20 タスクの後継(クラウド実行)
-- MCP server: formula 計算基盤の実装手段
-
-これらは段階的に導入する。全部一気には入れない。
-
-## bootstrap_log.md の扱い
-
-- append 専用
-- 既存行の編集・削除禁止
-- GO/NO-GO 判定は Yuichi が口頭で承認した時のみ Claude Code が記入
-
-## 詳細
-
-C:\new_runtime\design_notes\design_2026-05-25.md を参照
+`docs/` フォルダが GitHub Pages の公開ルート。ビルドは挟まない。
