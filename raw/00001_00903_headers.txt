@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 7716
+Connection: keep-alive
+Date: Fri, 07 Aug 2026 10:50:42 GMT
+x-amz-replication-status: COMPLETED
+Last-Modified: Fri, 07 Aug 2026 04:43:13 GMT
+ETag: "2c7cc0bd2b31b7174082b7f3a41545e6"
+x-amz-server-side-encryption: AES256
+x-amz-version-id: RVo3wxDXjcGmBKO9fgatrWa.PvDefK.f
+Accept-Ranges: bytes
+Server: AmazonS3
+X-Cache: Miss from cloudfront
+Via: 1.1 48eb5fadb1548fbf653fd590d161a8d2.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: KIX82-P4
+X-Amz-Cf-Id: bJ9qJQtxhYBS9JgNRyz669gHb7T_eRzJZZ6M2T6Ja-hJkyTUTR8h6w==
+
