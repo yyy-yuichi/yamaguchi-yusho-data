@@ -52,7 +52,7 @@ goal-to-done は「最初に動くものができても止まるな」と指示�
 |---|---|
 | `CLAUDE.md` `SPEC.md` `.claude/settings.json` `.claude/hooks/*` `tools/spec_coverage.py` | チャット側のみ |
 | `PROGRESS.md` `verification.md` `src/` `data/` `raw/` `tests/` `evidence/` | Claude Code |
-| `run_record.md`（リポジトリ外） | チャット側のみ。**読まない** |
+| `run_record.md` | チャット側のみ。Claude Code は**読み書きしない** |
 
 **これは実行時に強制されている。**`.claude/settings.json` の `permissions.deny` と
 `.claude/hooks/guard_protected_files.py`（PreToolUse フック）が、
