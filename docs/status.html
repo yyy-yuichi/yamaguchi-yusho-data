@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>山口県 自家用有償旅客運送データ — プロジェクト現況</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #202124;
+      --muted: #5f6368;
+      --border: #c7c9cc;
+      --surface: #f7f8f9;
+      --green: #176b38;
+      --green-bg: #e8f4ec;
+      --gray: #555b61;
+      --gray-bg: #eceff1;
+      --link: #174ea6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", "Yu Gothic UI", Meiryo, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    a {
+      color: var(--link);
+      text-underline-offset: 0.18em;
+    }
+
+    code {
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: 0.92em;
+      overflow-wrap: anywhere;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 48px 0 28px;
+      border-bottom: 2px solid var(--text);
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.35;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0 0 16px;
+      font-size: clamp(1.8rem, 4vw, 2.75rem);
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 1.55rem;
+    }
+
+    h3 {
+      margin: 28px 0 10px;
+      font-size: 1.12rem;
+    }
+
+    p,
+    ul,
+    ol,
+    dl {
+      margin-top: 0;
+    }
+
+    .lede {
+      max-width: 880px;
+      margin-bottom: 22px;
+      font-size: 1.08rem;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, max-content));
+      gap: 8px 32px;
+      margin: 0;
+    }
+
+    .meta div {
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 10px;
+    }
+
+    .meta dt {
+      color: var(--muted);
+    }
+
+    .meta dd {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    nav {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    main section {
+      padding: 38px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .source {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 28px;
+    }
+
+    .metric {
+      padding: 16px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.7rem;
+      line-height: 1.25;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .table-wrap {
+      width: 100%;
+      margin: 14px 0 24px;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    caption {
+      padding: 0 0 8px;
+      text-align: left;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    th,
+    td {
+      padding: 9px 10px;
+      border: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--surface);
+      white-space: nowrap;
+    }
+
+    .data-table {
+      min-width: 980px;
+    }
+
+    .vehicle-table {
+      min-width: 1260px;
+    }
+
+    .num,
+    .date {
+      white-space: nowrap;
+    }
+
+    .result {
+      display: inline-block;
+      min-width: 5.8em;
+      padding: 2px 8px;
+      border-radius: 3px;
+      text-align: center;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .result--done {
+      color: var(--green);
+      background: var(--green-bg);
+    }
+
+    .result--unknown {
+      color: var(--gray);
+      background: var(--gray-bg);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .fact {
+      padding: 18px;
+      border: 1px solid var(--border);
+    }
+
+    .fact h3 {
+      margin-top: 0;
+    }
+
+    .next-actions > li {
+      margin-bottom: 14px;
+      padding-left: 4px;
+    }
+
+    .next-actions ul {
+      margin-top: 6px;
+    }
+
+    .guard-tests {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .guard-tests li {
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    footer {
+      padding: 28px 0 48px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 760px) {
+      .meta,
+      .metrics,
+      .facts,
+      .guard-tests {
+        grid-template-columns: 1fr;
+      }
+
+      .meta div {
+        grid-template-columns: 8em 1fr;
+      }
+
+      header {
+        padding-top: 30px;
+      }
+
+      main section {
+        padding: 30px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="page">
+      <h1>山口県 自家用有償旅客運送データ<br>プロジェクト現況</h1>
+      <p class="lede">
+        中国運輸局がPDFで公表している「自家用有償旅客運送者の登録簿」の山口県分4ファイルを対象に、
+        登録団体と車両明細を機械可読化し、市町別の供給量を可視化するUDC2026応募作品①のリポジトリ。
+        プロジェクトの方針・証拠・次の作業は <code>run_record.md</code> に記録している。
+      </p>
+      <dl class="meta">
+        <div>
+          <dt>最終更新日</dt>
+          <dd><time datetime="2026-08-08">2026-08-08</time></dd>
+        </div>
+        <div>
+          <dt>現在のコミット</dt>
+          <dd><code>e9272f4</code></dd>
+        </div>
+      </dl>
+      <p class="source">出典: <code>README.md</code>、<code>run_record.md</code> §0、<code>git log -1</code></p>
+    </div>
+  </header>
+
+  <nav aria-label="ページ内ナビゲーション">
+    <div class="page">
+      <ul>
+        <li><a href="#progress">進捗</a></li>
+        <li><a href="#data">現在のデータ</a></li>
+        <li><a href="#rules">制度上の事実</a></li>
+        <li><a href="#unknowns">未確認事項</a></li>
+        <li><a href="#next">次にやること</a></li>
+        <li><a href="#mechanisms">使っている仕組み</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section id="progress">
+      <h2>1. 進捗サマリー</h2>
+      <div class="metrics" aria-label="処理進捗">
+        <div class="metric"><strong>4本</strong><span>対象PDF</span></div>
+        <div class="metric"><strong>1本</strong><span>処理・検証済み</span></div>
+        <div class="metric"><strong>3本</strong><span>未着手</span></div>
+      </div>
+      <p>
+        処理・検証済みは <code>000271730.pdf</code>。残る
+        <code>000230003.pdf</code>、<code>000359215.pdf</code>、<code>000268896.pdf</code> は未着手と記録されている。
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>SPEC.md §5 完了条件1〜8の達成状況</caption>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">完了条件</th>
+              <th scope="col">状態</th>
+              <th scope="col">verification.md の記録</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="num">1</td>
+              <td>団体数の一致</td>
+              <td><span class="result result--done">○ 達成</span></td>
+              <td>目視の4団体と <code>operators.csv</code> の4行が一致。</td>
+            </tr>
+            <tr>
+              <td class="num">2</td>
+              <td>車両合計の照合</td>
+              <td><span class="result result--done">○ 達成</span></td>
+              <td>4団体すべて一致し、不一致は0件。</td>
+            </tr>
+            <tr>
+              <td class="num">3</td>
+              <td><code>count_kei &lt;= count</code></td>
+              <td><span class="result result--done">○ 達成</span></td>
+              <td>自動テストで全行成立。</td>
+            </tr>
+            <tr>
+              <td class="num">4</td>
+              <td>登録番号の整合</td>
+              <td><span class="result result--done">○ 達成</span></td>
+              <td><code>service_type_code</code> は全件「福」、<code>authority_code</code> は全件「中山」。</td>
+            </tr>
+            <tr>
+              <td class="num">5</td>
+              <td>全件突合</td>
+              <td><span class="result result--done">○ 達成</span></td>
+              <td>4団体の全項目が一致し、第2号・第5号の欠番を確認。</td>
+            </tr>
+            <tr>
+              <td class="num">6</td>
+              <td>日付の健全性</td>
+              <td><span class="result result--done">○ 達成</span></td>
+              <td>全件で条件が成立し、警告なし。</td>
+            </tr>
+            <tr>
+              <td class="num">7</td>
+              <td>事務所情報の不一致の列挙</td>
+              <td><span class="result result--done">○ 達成</span></td>
+              <td>第4号は <code>office_notation_diff</code>、第6号は <code>office_mismatch</code>、他2件はフラグなし。</td>
+            </tr>
+            <tr>
+              <td class="num">8</td>
+              <td>代表者氏名の不出力</td>
+              <td><span class="result result--done">○ 達成</span></td>
+              <td>出力に含まれないことを自動テストで確認。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source">出典: <code>SPEC.md</code> §5、<code>PROGRESS.md</code>、<code>verification.md</code>「まとめ」</p>
+    </section>
+
+    <section id="data">
+      <h2>2. 現在のデータ</h2>
+      <div class="metrics" aria-label="CSVデータ行数">
+        <div class="metric"><strong>4行</strong><span><code>data/operators.csv</code>（ヘッダ除く）</span></div>
+        <div class="metric"><strong>11行</strong><span><code>data/vehicles.csv</code>（ヘッダ除く）</span></div>
+        <div class="metric"><strong>1本</strong><span>両CSVの出典PDF</span></div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <caption>data/operators.csv 全4行（指定8列）</caption>
+          <thead>
+            <tr>
+              <th scope="col">registration_no</th>
+              <th scope="col">org_name</th>
+              <th scope="col">service_area</th>
+              <th scope="col">valid_from</th>
+              <th scope="col">valid_to</th>
+              <th scope="col">vehicles_total</th>
+              <th scope="col">vehicles_total_kei</th>
+              <th scope="col">flags</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>中山福第1号</td>
+              <td>特定非営利活動法人 豆たん</td>
+              <td>下関市全域(離島を除く)</td>
+              <td class="date">2024-04-24</td>
+              <td class="date">2027-04-23</td>
+              <td class="num">3</td>
+              <td class="num">2</td>
+              <td><span class="muted">空欄</span></td>
+            </tr>
+            <tr>
+              <td>中山福第3号</td>
+              <td>特定非営利活動法人 らいと</td>
+              <td>下関市</td>
+              <td class="date">2024-10-11</td>
+              <td class="date">2027-10-10</td>
+              <td class="num">10</td>
+              <td class="num">7</td>
+              <td><span class="muted">空欄</span></td>
+            </tr>
+            <tr>
+              <td>中山福第4号</td>
+              <td>社会福祉法人 菊水会</td>
+              <td>下関市</td>
+              <td class="date">2025-06-23</td>
+              <td class="date">2028-06-22</td>
+              <td class="num">3</td>
+              <td class="num">2</td>
+              <td><code>office_notation_diff</code></td>
+            </tr>
+            <tr>
+              <td>中山福第6号</td>
+              <td>社会福祉法人 大島白壽會</td>
+              <td>周防大島町(平成16年10月1日付けで合併された旧東和町に限る)</td>
+              <td class="date">2023-09-01</td>
+              <td class="date">2026-08-31</td>
+              <td class="num">1</td>
+              <td class="num">1</td>
+              <td><code>office_mismatch</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table class="vehicle-table">
+          <caption>data/vehicles.csv 全11行</caption>
+          <thead>
+            <tr>
+              <th scope="col">registration_no</th>
+              <th scope="col">office_seq</th>
+              <th scope="col">office_name</th>
+              <th scope="col">office_location</th>
+              <th scope="col">ownership</th>
+              <th scope="col">vehicle_type</th>
+              <th scope="col">vehicle_type_label</th>
+              <th scope="col">count</th>
+              <th scope="col">count_kei</th>
+              <th scope="col">source_pdf</th>
+              <th scope="col">source_page</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>中山福第1号</td><td class="num">1</td><td>豆たん介護センター</td><td>下関市内日下1027-3</td><td>所有</td><td>車いす車</td><td>車いす車(軽)</td><td class="num">2</td><td class="num">1</td><td><code>000271730.pdf</code></td><td class="num">1</td></tr>
+            <tr><td>中山福第1号</td><td class="num">1</td><td>豆たん介護センター</td><td>下関市内日下1027-3</td><td>所有</td><td>セダン等</td><td>セダン等(軽)</td><td class="num">1</td><td class="num">1</td><td><code>000271730.pdf</code></td><td class="num">1</td></tr>
+            <tr><td>中山福第1号</td><td class="num">1</td><td>豆たん介護センター</td><td>下関市内日下1027-3</td><td>所有</td><td>合計</td><td>合計(軽)</td><td class="num">3</td><td class="num">2</td><td><code>000271730.pdf</code></td><td class="num">1</td></tr>
+            <tr><td>中山福第3号</td><td class="num">1</td><td>特定非営利活動法人らいと</td><td>下関市秋根南町１丁目１－５</td><td>所有</td><td>車いす車</td><td>車いす車(軽)</td><td class="num">9</td><td class="num">6</td><td><code>000271730.pdf</code></td><td class="num">2</td></tr>
+            <tr><td>中山福第3号</td><td class="num">1</td><td>特定非営利活動法人らいと</td><td>下関市秋根南町１丁目１－５</td><td>所有</td><td>セダン等</td><td>セダン等(軽)</td><td class="num">1</td><td class="num">1</td><td><code>000271730.pdf</code></td><td class="num">2</td></tr>
+            <tr><td>中山福第3号</td><td class="num">1</td><td>特定非営利活動法人らいと</td><td>下関市秋根南町１丁目１－５</td><td>所有</td><td>合計</td><td>合計(軽)</td><td class="num">10</td><td class="num">7</td><td><code>000271730.pdf</code></td><td class="num">2</td></tr>
+            <tr><td>中山福第4号</td><td class="num">1</td><td>まんてんの星</td><td>下関市菊川町大字田部５３６－１</td><td>所有</td><td>車いす車</td><td>車いす車(軽)</td><td class="num">1</td><td class="num">0</td><td><code>000271730.pdf</code></td><td class="num">3</td></tr>
+            <tr><td>中山福第4号</td><td class="num">1</td><td>まんてんの星</td><td>下関市菊川町大字田部５３６－１</td><td>所有</td><td>セダン等</td><td>セダン等(軽)</td><td class="num">2</td><td class="num">2</td><td><code>000271730.pdf</code></td><td class="num">3</td></tr>
+            <tr><td>中山福第4号</td><td class="num">1</td><td>まんてんの星</td><td>下関市菊川町大字田部５３６－１</td><td>所有</td><td>合計</td><td>合計(軽)</td><td class="num">3</td><td class="num">2</td><td><code>000271730.pdf</code></td><td class="num">3</td></tr>
+            <tr><td>中山福第6号</td><td class="num">1</td><td>桑陽病院腎友会</td><td>防府市車塚町3番２０号</td><td>所有</td><td>車いす車</td><td>車いす車(軽)</td><td class="num">1</td><td class="num">1</td><td><code>000271730.pdf</code></td><td class="num">4</td></tr>
+            <tr><td>中山福第6号</td><td class="num">1</td><td>桑陽病院腎友会</td><td>防府市車塚町3番２０号</td><td>所有</td><td>合計</td><td>合計(軽)</td><td class="num">1</td><td class="num">1</td><td><code>000271730.pdf</code></td><td class="num">4</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source">出典: <code>data/operators.csv</code>、<code>data/vehicles.csv</code></p>
+    </section>
+
+    <section id="rules">
+      <h2>3. 確定している制度上の事実</h2>
+      <div class="facts">
+        <article class="fact">
+          <h3>括弧付きの数字は内数</h3>
+          <p>
+            軽自動車がある場合、その数は内数として括弧書きされる。自動運行旅客運送または
+            特定自動運行旅客運送に使う自動車がある場合も、その数は内数として該当欄に記載される。
+            このため <code>count_kei &lt;= count</code> は様式上の不変条件となる。
+          </p>
+        </article>
+        <article class="fact">
+          <h3>登録番号の構造</h3>
+          <p>
+            事務・権限が国にある場合は、〔運輸局の頭1文字〕〔運輸支局の頭1文字〕
+            〔種別1文字〕第〔一連番号〕号で構成される。種別は「福」が福祉有償運送、
+            「交」が交通空白地有償運送。
+          </p>
+        </article>
+        <article class="fact">
+          <h3>運送種別ごとの車種区分</h3>
+          <p>
+            福祉有償運送は寝台車、車いす車、兼用車、回転シート車、セダン等の5区分。
+            交通空白地有償運送はバス（定員11人以上）と普通自動車（定員11人未満）の2区分。
+          </p>
+        </article>
+      </div>
+      <ul class="source">
+        <li>
+          福祉有償運送の登録に関する処理方針について（国自旅第317号、最終改正 国自旅第197号）
+          <a href="https://www.mlit.go.jp/jidosha/content/001766049.pdf">001766049.pdf</a>
+        </li>
+        <li>
+          交通空白地有償運送の登録に関する処理方針について（国自旅第316号、最終改正 国自旅第199号）
+          <a href="https://www.mlit.go.jp/jidosha/content/001766048.pdf">001766048.pdf</a>
+        </li>
+        <li>記録箇所: <code>run_record.md</code> §3.1</li>
+      </ul>
+    </section>
+
+    <section id="unknowns">
+      <h2>4. 未確認事項</h2>
+      <div class="table-wrap">
+        <table>
+          <caption>SPEC.md §9 の U1〜U6</caption>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">状態</th>
+              <th scope="col">内容</th>
+              <th scope="col">影響</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>U1</td><td><span class="result result--unknown">未確認</span></td><td><code>000359215</code> / <code>000268896</code> / <code>000230003</code> のページ数・MD5・列構成</td><td>§3.4(c), §7</td></tr>
+            <tr><td>U2</td><td><span class="result result--unknown">未確認</span></td><td>複数事務所を持つ団体が改ページするか</td><td>団体の区切り方。§4</td></tr>
+            <tr><td>U3</td><td><span class="result result--unknown">未確認</span></td><td>新規登録時の有効期間</td><td>§5-6 を警告に留めている理由</td></tr>
+            <tr><td>U4</td><td><span class="result result--unknown">未確認</span></td><td>自動運行・特定自動運行の内数が山口県4ファイルに出現するか</td><td>括弧の意味。§3.4(a)</td></tr>
+            <tr><td>U5</td><td><span class="result result--unknown">未確認</span></td><td>交通空白地の「普通自動車」が登録簿のどの列に入るか</td><td>§3.4(c)</td></tr>
+            <tr><td>U6</td><td><span class="result result--unknown">未確認</span></td><td><code>wwwtb.mlit.go.jp/chugoku</code> に <code>www.mlit.go.jp</code> と同じ利用規約が適用されるか</td><td>§2, §8</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source">出典: <code>SPEC.md</code> §9</p>
+    </section>
+
+    <section id="next">
+      <h2>5. 次にやること</h2>
+      <ol class="next-actions">
+        <li><strong>run_record.md を初回コミットする。</strong>この節を書き終えた時点で実施</li>
+        <li>
+          <strong>README.md を直す。</strong>現状2点の誤りがある
+          <ul>
+            <li>
+              ライセンスが「準備中（データソースの二次利用条件を確認のうえ明記する）」のまま。
+              確認済みで、PDL1.0 準拠。<strong>出典表記と加工した旨の記載がないのは利用規約の条件を満たしていない</strong>
+            </li>
+            <li>「対象は山口県分 4 ファイル」と書いているが、<strong>処理できているのは 1 ファイル</strong></li>
+          </ul>
+        </li>
+        <li>
+          <strong>残り3ファイルへの展開。</strong>SPEC.md §7 の差分表と §3.7 の知見を渡すこと。
+          座標解析をゼロから繰り返させない
+          <ul>
+            <li><code>000230003.pdf</code>（福祉・市町村営）: 所有区分の列が無い</li>
+            <li><code>000359215.pdf</code> / <code>000268896.pdf</code>（交通空白地）: <strong>車種区分が違う可能性</strong>（SPEC.md §9 の U1・U5）</li>
+          </ul>
+        </li>
+        <li>
+          <strong>市町別の集計と可視化。</strong><code>service_area_municipalities</code> で寄せて、団体数と
+          車いす車・寝台車の台数を市町別に出す。<strong>軽は内数なので二重計上しない</strong>（count だけを足す）
+        </li>
+        <li><strong>有効期間切れが近い団体の一覧。</strong><code>valid_to</code> が6か月以内。供給が消えるリスクの可視化</li>
+        <li>作品②（山口県立高校再編の意思決定過程データベース）の着手判断</li>
+      </ol>
+      <p class="source">出典: <code>run_record.md</code> §4「直近（この順で）」</p>
+    </section>
+
+    <section id="mechanisms">
+      <h2>6. 使っている仕組み</h2>
+
+      <h3>ファイルの書き手を分離</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th scope="col">書き手</th><th scope="col">対象</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>チャット側のみ</td>
+              <td><code>CLAUDE.md</code>、<code>SPEC.md</code>、<code>run_record.md</code>、<code>tools/spec_coverage.py</code>、<code>.claude/</code> 配下</td>
+            </tr>
+            <tr>
+              <td>Claude Code</td>
+              <td><code>PROGRESS.md</code>、<code>verification.md</code>、<code>src/</code>、<code>data/</code>、<code>raw/</code>、<code>tests/</code>、<code>evidence/</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>実行時ガード</h3>
+      <p>
+        <code>.claude/settings.json</code> の <code>permissions.deny</code> と
+        <code>.claude/hooks/guard_protected_files.py</code> のPreToolUseフックを併用する。
+        保護ファイルへの書き込み、<code>run_record.md</code> の読み取り、Bashのリダイレクトを含む
+        リポジトリ外への書き込みをブロックする。
+      </p>
+      <ul class="guard-tests" aria-label="ガードの最終テスト結果">
+        <li><code>/tmp</code> へのリダイレクト: ブロック</li>
+        <li><code>raw/</code> へのリダイレクト: 通過</li>
+        <li><code>CLAUDE.md</code> のEdit: ブロック</li>
+        <li><code>PROGRESS.md</code> のEdit: 通過</li>
+      </ul>
+      <p>最終テストでは誤爆なし。Bash判定は文字列マッチであり、網羅ではない。</p>
+
+      <h3><code>tools/spec_coverage.py</code></h3>
+      <p>
+        SPEC.md改訂時の網羅チェック用スクリプト。旧版から見出し、バッククォート内の識別子、
+        表の第1列、コードブロック内の行を抽出し、NFKC正規化と空白除去をしたうえで新版に残っているかを確認する。
+        新版にない項目は改訂点セクションで説明されているかを確認し、説明のない欠落が1件でもあれば終了コード1を返す。
+      </p>
+      <p class="source">出典: <code>run_record.md</code> 決定15・24、§3.5、<code>tools/spec_coverage.py</code></p>
+    </section>
+  </main>
+
+  <footer class="page">
+    <p>このページの数値と状態は、コミット <code>e9272f4</code> 時点のリポジトリ内記録・CSV・Git履歴に基づく。</p>
+  </footer>
+</body>
+</html>
