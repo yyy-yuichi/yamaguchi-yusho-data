@@ -104,6 +104,40 @@ class RegistrationConsistencyTest(unittest.TestCase):
         self.assertEqual(len(codes), 1, f"authority_codeが全件同一でない: {codes}")
 
 
+class OfficeFlagsTest(unittest.TestCase):
+    """SPEC.md §5-7, §3.6(rev.3): 事務所情報の不一致フラグ。
+
+    比較の前処理(全角→半角、空白除去)で解消する表記差(中山福第1号の位置、
+    中山福第3号の名称)はフラグを立てない。前処理をしても一致しない場合、
+    office_name が不一致なら office_mismatch、office_name は一致し
+    office_location のみ不一致なら office_notation_diff とする。
+    000271730.pdf での期待値は SPEC.md §3.6 に実例として明記されている。
+    """
+
+    EXPECTED_FLAGS = {
+        "中山福第1号": "",
+        "中山福第3号": "",
+        "中山福第4号": "office_notation_diff",
+        "中山福第6号": "office_mismatch",
+    }
+
+    @classmethod
+    def setUpClass(cls):
+        cls.operators = read_csv(DATA_DIR / "operators.csv")
+
+    def test_office_flags_match_spec_expected_values(self):
+        by_reg = {op["registration_no"]: op["flags"] for op in self.operators}
+        self.assertEqual(
+            set(by_reg), set(self.EXPECTED_FLAGS),
+            "operators.csv の registration_no が期待値の団体と一致しない",
+        )
+        for reg, expected in self.EXPECTED_FLAGS.items():
+            self.assertEqual(
+                by_reg[reg], expected,
+                f"{reg}: flags({by_reg[reg]!r}) != 期待値({expected!r})",
+            )
+
+
 class RepresentativeNameNotOutputTest(unittest.TestCase):
     """SPEC.md §5-8, CLAUDE.md「代表者の氏名は抽出も出力もしない」。
 

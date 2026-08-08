@@ -700,8 +700,47 @@ PAGE 1 で確認）、§4.3どおり原文保持で実装すると§3.5の例と
 - SPEC.md §5 の完了条件1〜8を満たしたため、CLAUDE.mdの指示どおりここで止めて報告する
 - 残り3ファイル（`000230003.pdf` `000359215.pdf` `000268896.pdf`）・他県展開は指示があるまで着手しない
 - チャット側での判断待ち事項:
-  1. 中山福第4号の事務所位置表記差（上記）を `office_mismatch` の対象とすべきか
-  2. `SPEC.md` §3.5 と §4.3 の `office_location` 正規化方針の矛盾（上記）
+  1. ~~中山福第4号の事務所位置表記差（上記）を `office_mismatch` の対象とすべきか~~
+     → `SPEC.md` rev.3 で解決済み（次節参照）
+  2. `SPEC.md` §3.5 と §4.3 の `office_location` 正規化方針の矛盾（上記、未解決のまま）
   3. `raw/000271730.pdf` のコミット可否（`SPEC.md` §2 で利用規約はPDL1.0準拠と確認済みだが、
      `wwwtb.mlit.go.jp/chugoku` への適用はU6として未確認のまま。今回のセッションでは
      この点の追加調査は行っていない）
+
+## 2026-08-08 SPEC.md rev.3 反映（事務所情報フラグを2種類に分割）
+
+### やったこと
+
+1. `git pull` して `SPEC.md` が rev.3 になっていることを確認した
+2. rev.3 §3.6（および §5-7, §10.2）を読み、上記の要確認事項1が
+   `office_mismatch` / `office_notation_diff` の2種類のフラグとして規定されたことを確認した
+3. `src/parse.py` の事務所情報比較ロジックを rev.3 の規定どおりに修正した:
+   - 比較の前処理は「全角→半角」「空白（全角・半角）を全て除去」の2段のみ
+     （既存の `normalize_for_compare` は元々この2段のみだったため、前処理自体は変更不要だった）
+   - `office_name` が不一致 → `office_mismatch`
+   - `office_name` は一致し `office_location` のみ不一致 → `office_notation_diff`
+   - 両方一致 → フラグなし
+4. `src/parse.py` を再実行し、`data/operators.csv` の `flags` 列が
+   `SPEC.md` §3.6 の実例（§5-7の期待値）と一致することを確認した
+5. `tests/test_verify.py` に `OfficeFlagsTest`（4団体の `flags` が期待値と一致することを
+   確認する自動テスト）を追加した
+6. `verification.md` §5-7 を rev.3 の規定に合わせて書き直した
+
+### 確認できた事実（数字を含める）
+
+- `data/operators.csv` の `flags` 列: 中山福第1号=空、中山福第3号=空、
+  中山福第4号=`office_notation_diff`、中山福第6号=`office_mismatch`。
+  `SPEC.md` §3.6 の実例表と完全一致
+- `tests/test_verify.py`: `unittest` で7件全て成功（既存6件 + 今回追加の
+  `OfficeFlagsTest` 1件）
+
+### 詰まったこと、`SPEC.md` と食い違ったこと
+
+食い違いなし。前回セッションで保留していた要確認事項がそのまま rev.3 で規定された。
+
+### 次にやること
+
+- SPEC.md §5 の完了条件1〜8を引き続き満たしている（flags列の変更のみで他項目に影響なし）
+- 残り3ファイル・他県展開は指示があるまで着手しない
+- 未解決のまま残っている事項: `SPEC.md` §3.5 と §4.3 の `office_location` 正規化方針の
+  矛盾（rev.3でも未言及。今回は§4.3を優先する実装を継続）

@@ -536,13 +536,17 @@ def parse_page(page, page_no):
                 vehicles_total += cell["count"]
                 vehicles_total_kei += cell["count_kei"] if cell["count_kei"] != "" else 0
 
-    # 事務所名不一致フラグ(SPEC.md §3.6)。比較の直前だけ、全角/半角と語間スペースの
-    # 有無を正規化する(保存する値自体は正規化しない。SPEC.md §4.3の「原文保持」を尊重する)。
-    # 正規化しないと、以下のような表記差だけの箇所に誤ってフラグが立つ:
-    # - 中山福第1号: 上部"下関市内日下１０２７－３"(全角) / 車両欄"1027-3"(半角)
-    # - 中山福第3号: 上部"特定非営利活動法人 らいと"(語間9.84ptでjoin_wordsが空白を挿入) /
-    #   車両欄"特定非営利活動法人らいと"(語間4.8ptで空白なし)。同一文字列の再現差であり、
-    #   実際に印字された内容は同じ
+    # 事務所情報の不一致フラグ(SPEC.md §3.6, rev.3)。比較の前処理は次の2段のみ
+    # (出力する値自体は正規化しない。SPEC.md §4.3の「原文保持」を尊重する):
+    #   1. 全角→半角
+    #   2. 空白(全角・半角)をすべて除去
+    # これで解消する差(中山福第1号の位置の全角/半角、中山福第3号の名称の語間スペース)は
+    # フラグを立てない。前処理をしても一致しない場合、どちらの欄が食い違うかで
+    # フラグを分ける:
+    #   office_name が不一致                       → office_mismatch (別組織の疑い)
+    #   office_name は一致し office_location のみ不一致 → office_notation_diff (住所表記の差とみられる)
+    # office_notation_diff は「同じ場所」と主張するものではない。番地表記等を吸収する
+    # 住所正規化はしない(本当に別の場所である可能性を正規化で消さないため。§3.6の注記)。
     def normalize_for_compare(s):
         return to_halfwidth(s).replace(" ", "")
 
@@ -552,8 +556,10 @@ def parse_page(page, page_no):
     veh_loc = vehicle_office_names.get("持込", "")
     name_mismatch = bool(veh_name) and normalize_for_compare(veh_name) != normalize_for_compare(office_name_top)
     loc_mismatch = bool(veh_loc) and normalize_for_compare(veh_loc) != normalize_for_compare(office_location_top)
-    if name_mismatch or loc_mismatch:
+    if name_mismatch:
         flags.append("office_mismatch")
+    elif loc_mismatch:
+        flags.append("office_notation_diff")
 
     operator = {
         "registration_no": reg["registration_no"],
