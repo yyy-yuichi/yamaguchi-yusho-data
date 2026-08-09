@@ -1,8 +1,8 @@
 """自家用有償旅客運送者登録簿（道路運送法施行規則 第2号様式）のパーサ。
 
 対象は raw/000271730.pdf（福祉有償運送・NPO等）、raw/000230003.pdf（福祉有償運送・
-市町村営）、raw/000359215.pdf（交通空白地有償運送・市町村営）の3本
-（SPEC.md §1、山口県4ファイルのうち取得済みの3ファイル）。
+市町村営）、raw/000359215.pdf（交通空白地有償運送・市町村営）、
+raw/000268896.pdf（交通空白地有償運送・NPO等）の4本（SPEC.md §1）。
 実装方針は SPEC.md §4 に従う:
 
 - pdfplumber の extract_words() で座標付きの語を取り、ラベル語の位置を基準に
@@ -34,7 +34,7 @@ PREF = "山口県"
 
 # 処理対象ファイルとファイル固有の設定（SPEC.md §2 の対応表・一覧ページ照合済み）。
 # ファイルごとに異なる値（実施主体の別）を1か所にまとめ、グローバル定数として
-# 1組に固定しない。処理順はこのリストの順とし、3PDFの統合出力を決定的にする。
+# 1組に固定しない。処理順はこのリストの順とし、4PDFの統合出力を決定的にする。
 FILE_CONFIGS = [
     {"filename": "000271730.pdf", "operator_type": "NPO等", "parser": "coordinate_page"},
     {"filename": "000230003.pdf", "operator_type": "市町村営", "parser": "coordinate_page"},
@@ -44,6 +44,7 @@ FILE_CONFIGS = [
         "parser": "table_block",
         "appendix_marker": "輸送人員実績報告提出状況",
     },
+    {"filename": "000268896.pdf", "operator_type": "NPO等", "parser": "table_block"},
 ]
 
 YAMAGUCHI_MUNICIPALITIES = (
@@ -223,7 +224,7 @@ def cluster_x(values, tol=2.0):
 # 除去する。マップに無い「〇〇市」接頭辞は、旧体系と決め打たず地方公共団体名の
 # 一部として authority_code にそのまま残す（現行の地方公共団体権限として扱う）。
 # `registration_no`（正規化値）自体からは「市」を一切削除しない。
-STANDARD_REGISTRATION_RE = re.compile(r"^(.+?)([福交])第(\d+)号$")
+STANDARD_REGISTRATION_RE = re.compile(r"^(.+?)([福交過])第(\d+)号$")
 
 # 旧体系登録番号の接頭辞マップ: {「市」を除いた接頭辞: authority_code}。
 # 山口県スコープで原本と照合済みのものだけをここに列挙する。
@@ -880,6 +881,11 @@ def extract_service_area_municipalities(service_area, org_name):
         position = service_area.find(municipality)
         if position >= 0:
             hits.append((position, municipality))
+    # 000268896.pdf p2 は区域名が旧油谷町域の「向津具地区」だけで、
+    # 現在の市名を本文に含まない。国土地理院の住所検索で確認した固定対応だけを補う。
+    # 住所からの一般推測には広げない。
+    if "向津具地区" in service_area and not any(name == "長門市" for _, name in hits):
+        hits.append((service_area.find("向津具地区"), "長門市"))
     if re.search(r"[市町村]$", org_name) and not any(name == org_name for _, name in hits):
         hits.append((-1, org_name))
     return ";".join(name for _, name in sorted(hits) if name)
@@ -935,7 +941,8 @@ def map_table_vehicle_type(label, transport_type):
     compact = compact_table_text(label)
     mapping = (
         ("寝台車", "寝台車"), ("車いす", "車いす車"), ("兼用車", "兼用車"),
-        ("回転", "回転シート車"), ("セダン", "セダン等"), ("バス", "バス"),
+        ("回転", "回転シート車"), ("普通自動車", "普通自動車"),
+        ("セダン", "セダン等"), ("バス", "バス"),
         ("合計", "合計"),
     )
     for marker, vehicle_type in mapping:
@@ -946,7 +953,46 @@ def map_table_vehicle_type(label, transport_type):
     raise ValueError(f"車種列のラベルを解釈できない: {label!r}")
 
 
-def extract_table_vehicle_entries(block, office_count, transport_type):
+def split_table_office_cell(office_cell, top_office):
+    """車両表の複数行セルを、上部の事務所名・位置を手掛かりに境界決定する。"""
+    lines = [flatten_table_value(line) for line in office_cell.splitlines() if line.strip()]
+    if not lines:
+        return "", ""
+    top_name, top_location = top_office
+    for boundary in range(1, len(lines)):
+        name = "".join(lines[:boundary])
+        location = "".join(lines[boundary:])
+        if (
+            normalize_office_for_compare(name) == normalize_office_for_compare(top_name)
+            and normalize_office_for_compare(location) == normalize_office_for_compare(top_location)
+        ):
+            return name, location
+    return lines[0], "".join(lines[1:])
+
+
+def recover_missing_table_cell(page, table, header_row_index, data_row_index, column_index):
+    """pdfplumber が欠落させたセルを、同じ列・行矩形内の単語から復元する。"""
+    header_cell = table.rows[header_row_index].cells[column_index]
+    data_cells = table.rows[data_row_index].cells
+    if header_cell is None:
+        return ""
+    row_boxes = [cell for cell in data_cells if cell is not None]
+    if not row_boxes:
+        return ""
+    x0, _, x1, _ = header_cell
+    top = min(cell[1] for cell in row_boxes)
+    bottom = max(cell[3] for cell in row_boxes)
+    words = [
+        word for word in page.extract_words()
+        if x0 <= (word["x0"] + word["x1"]) / 2 <= x1
+        and top <= (word["top"] + word["bottom"]) / 2 <= bottom
+    ]
+    return "\n".join(
+        word["text"] for word in sorted(words, key=lambda word: (word["top"], word["x0"]))
+    )
+
+
+def extract_table_vehicle_entries(block, office_rows, transport_type):
     matches = []
     for page_no, page in block:
         for table in page.find_tables():
@@ -962,12 +1008,15 @@ def extract_table_vehicle_entries(block, office_count, transport_type):
     )
     type_header = rows[header_index + 1]
     col_headers = [flatten_table_value(cell) for cell in type_header[2:9]]
-    vehicle_types = [map_table_vehicle_type(label, transport_type) for label in col_headers]
+    vehicle_types = [
+        map_table_vehicle_type(label, transport_type) if compact_table_text(label) else None
+        for label in col_headers
+    ]
     has_kei = ["軽" in compact_table_text(label) for label in col_headers]
 
     entries = []
     printed_aggregate = None
-    for row in rows[header_index + 2:]:
+    for row_index, row in enumerate(rows[header_index + 2:], start=header_index + 2):
         office_cell = row[1] or ""
         office_lines = [flatten_table_value(line) for line in office_cell.splitlines() if line.strip()]
         if not office_lines:
@@ -976,7 +1025,18 @@ def extract_table_vehicle_entries(block, office_count, transport_type):
         for index, (vehicle_type, label, kei_flag) in enumerate(
             zip(vehicle_types, col_headers, has_kei), start=2
         ):
-            total, kei = read_table_cell_value(row[index] if index < len(row) else "", kei_flag)
+            raw_value = row[index] if index < len(row) else ""
+            if not compact_table_text(raw_value) and vehicle_type is not None:
+                row_cell = table.rows[row_index].cells[index]
+                if row_cell is None:
+                    raw_value = recover_missing_table_cell(
+                        page, table, header_index + 1, row_index, index
+                    )
+            total, kei = read_table_cell_value(raw_value, kei_flag)
+            if vehicle_type is None:
+                if total != 0 or kei not in ("", 0):
+                    raise ValueError(f"見出しが空の車種列に値がある: p{page_no} col={index}")
+                continue
             cells.append({
                 "vehicle_type": vehicle_type,
                 "vehicle_type_label": label,
@@ -986,10 +1046,26 @@ def extract_table_vehicle_entries(block, office_count, transport_type):
         if compact_table_text(office_lines[0]) == "合計":
             printed_aggregate = cells
             continue
-        name = office_lines[0]
-        location = "".join(office_lines[1:])
+        if len(entries) >= len(office_rows):
+            raise ValueError(f"車両欄の事務所数が上部({len(office_rows)})を超えた")
+        name, location = split_table_office_cell(office_cell, office_rows[len(entries)])
         if not location:
             raise ValueError(f"車両欄の事務所位置が空: {name!r}")
+        total_cells = [cell for cell in cells if cell["vehicle_type"] == "合計"]
+        if len(total_cells) != 1:
+            raise ValueError(f"事務所車両欄の合計列が1件でない: {len(total_cells)}")
+        detail_cells = [cell for cell in cells if cell["vehicle_type"] != "合計"]
+        detail_total = sum(cell["count"] for cell in detail_cells)
+        detail_kei = sum(
+            cell["count_kei"] for cell in detail_cells if cell["count_kei"] != ""
+        )
+        total_cell = total_cells[0]
+        if (detail_total, detail_kei) != (total_cell["count"], total_cell["count_kei"]):
+            raise ValueError(
+                f"事務所内訳と合計が不一致: p{page_no} office={len(entries) + 1} "
+                f"detail={(detail_total, detail_kei)} "
+                f"total={(total_cell['count'], total_cell['count_kei'])}"
+            )
         entries.append({
             "office_seq": len(entries) + 1,
             "ownership": "",
@@ -999,8 +1075,10 @@ def extract_table_vehicle_entries(block, office_count, transport_type):
             "source_page": page_no,
         })
 
-    if len(entries) != office_count:
-        raise ValueError(f"車両欄の事務所数({len(entries)})と上部({office_count})が一致しない")
+    if len(entries) != len(office_rows):
+        raise ValueError(
+            f"車両欄の事務所数({len(entries)})と上部({len(office_rows)})が一致しない"
+        )
 
     derived_total = sum(
         cell["count"] for entry in entries for cell in entry["cells"]
@@ -1052,7 +1130,7 @@ def parse_table_block(block, source_pdf_name, operator_type):
     service_area_municipalities = extract_service_area_municipalities(service_area, org_name)
     validate_empty_partner_block(block)
     entries, vehicles_total, vehicles_total_kei = extract_table_vehicle_entries(
-        block, len(office_rows), transport_type
+        block, office_rows, transport_type
     )
 
     flags = []
