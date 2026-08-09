@@ -1,199 +1,261 @@
-# verification.md — I-1（000271730.pdf）検証結果
+# verification.md — I-1（000271730.pdf + 000230003.pdf）検証結果
 
-対象: `raw/000271730.pdf`（福祉有償運送・NPO等、山口県、4ページ=4団体）1本のみ。
+対象: `raw/000271730.pdf`（福祉有償運送・NPO等、山口県、4ページ=4団体）と
+`raw/000230003.pdf`（福祉有償運送・市町村営、山口県、3ページ=3団体）の2本、計7団体。
 SPEC.md §5 の完了条件1〜8について、実行結果を記録する。
+
+**この2PDF増分は完了条件1〜8をすべて満たした。** §5-8（代表者氏名の不出力）の自動テストを
+`evidence/` 配下のテキスト全体まで検査するよう拡張した結果、既存ファイル
+`evidence/20260807_explore_words_edges.txt` に代表者氏名の断片（伏字化漏れ8行）が
+見つかったが、同ファイルを伏字化して解消した。再検証の結果、自動テストは21件中21件成功、
+`git diff --check` は問題なしで終了した。詳細は §5-8 とまとめを参照。
 
 ## 実行環境
 
-- 実行日時: 2026-08-07
-- git commit: `7c21ce837716ee7a440facb49247b0b6cfaf0452`
+- 実行日時: 2026-08-09 13:43 JST（初回検証）／2026-08-09 14:00 JST（再検証、伏字化修正後）
+- git commit（作業開始時点）: `2022d6dea380a23efad2f437eca13133682cc6ea`
 - Python: `C:\Users\user\dev\udc2026\.venv\Scripts\python.exe` 3.13.12
 - pdfplumber: 0.11.10
 - 実行コマンド:
   ```
-  C:\Users\user\dev\udc2026\.venv\Scripts\python.exe src\parse.py
-  C:\Users\user\dev\udc2026\.venv\Scripts\python.exe -m unittest tests.test_verify -v
+  C:\Users\user\dev\udc2026\.venv\Scripts\python.exe -m unittest discover -s tests -v
   ```
-- 入力PDF: `raw/000271730.pdf`（136,476バイト、MD5 `c49543729e3122adbd935fa79260b3b7`、4ページ）
-- 生の中間データ: `raw/text/000271730_p{1..4}.txt`（ページ単位の抽出テキスト、SPEC.md §4.4）
+  （`tests/test_verify.py` の `setUpModule()` が `src/parse.py` の `main()` を呼び、
+  `data/` を実行のたびに再生成してからテストする）
+- 入力PDF:
+  - `raw/000271730.pdf`（136,476バイト、MD5 `c49543729e3122adbd935fa79260b3b7`、4ページ）
+  - `raw/000230003.pdf`（19,003バイト、MD5 `0f50b2ed90744aca1be2829299b1b4a1`、3ページ）
+- 生の中間データ: `raw/text/000271730_p{1..4}.txt`、`raw/text/000230003_p{1..3}.txt`
+  （ページ単位の抽出テキスト、代表者氏名は `[氏名-非出力]` に置換。SPEC.md §4.4）
 - 座標・罫線の実測記録: `evidence/20260807_explore_words_edges.txt`,
-  `evidence/20260807_explore_hedges.txt`
-- 目視確認用のページ画像（200dpi）: `evidence/20260807_page_render-{1..4}.png`
-  （`pdftoppm -r 200` で生成。フォント代替の警告が出るが表示上の文字は正しく確認できている）
+  `evidence/20260807_explore_hedges.txt`, `evidence/20260809_000230003_inspection.txt`
+- 目視確認用のページ画像: `evidence/20260807_page_render-{1..4}.png`（200dpi）,
+  `evidence/20260809_000230003_page1.png`（200dpi）
+- 今回の増分（氏名非出力の残件対応）の実行記録: `evidence/20260809_000230003_parser_verification.txt`
 
 ---
 
 ## §5-1 団体数の一致
 
-`evidence/20260807_page_render-{1..4}.png` を目視し、各ページに登録番号1件ずつ、計4団体を確認した。
+| ファイル | ページ | 登録番号 | 実施主体 |
+|---|---|---|---|
+| 000271730.pdf | p1 | 中山福第1号 | NPO等 |
+| 000271730.pdf | p2 | 中山福第3号 | NPO等 |
+| 000271730.pdf | p3 | 中山福第4号 | NPO等 |
+| 000271730.pdf | p4 | 中山福第6号 | NPO等 |
+| 000230003.pdf | p1 | 中山市福第1号 | 市町村営 |
+| 000230003.pdf | p2 | 中山福第3号 | 市町村営 |
+| 000230003.pdf | p3 | 中山市福第4号 | 市町村営 |
 
-| ページ | 登録番号 | 名称 |
-|---|---|---|
-| p1 | 中山福第１号 | 特定非営利活動法人 豆たん |
-| p2 | 中山福第3号 | 特定非営利活動法人 らいと |
-| p3 | 中山福第４号 | 社会福祉法人 菊水会 |
-| p4 | 中山福第６号 | 社会福祉法人 大島白壽會 |
+`data/operators.csv` の行数（ヘッダ除く）: **7行**。ファイル別内訳は 000271730.pdf=4件、
+000230003.pdf=3件で、目視・SPEC.md §5-1 の期待値と一致（`CompositeKeyTotalsTest.test_operator_counts_per_file_and_total` で自動化）。
 
-`data/operators.csv` の行数（ヘッダ除く）: **4行**。目視の4団体と一致。
+`data/vehicles.csv` の行数: **23行**（000271730.pdf=11行＋000230003.pdf=12行）。
+車両合計 `count`（`合計`行を除く）は **23台**（既存17台＋新規6台）、`count_kei` は **16台**
+（既存12台＋新規4台）。000230003.pdf 単体では12行・6台・軽4台
+（`CompositeKeyTotalsTest.test_vehicle_row_and_grand_totals`,
+`NewPdfVehicleDetailTest.test_row_count_is_12` で自動化）。
 
 ---
 
-## §5-2, §5-3 自動テスト結果
-
-`tests/test_verify.py` を `unittest` で実行した結果（全6件成功）:
+## §5-2, §5-3, §5-4 自動テスト結果（`tests/test_verify.py` 実行ログ）
 
 ```
-test_authority_code_is_uniform ... ok
-test_service_type_code_is_fukushi ... ok
+C:\Users\user\dev\udc2026\.venv\Scripts\python.exe -m unittest discover -s tests -v
+```
+
+**再検証（2026-08-09 14:00 JST、伏字化修正後）: 21テスト中21件成功、exit 0。**
+
+```
+test_composite_key_is_unique ... ok
+test_operator_counts_per_file_and_total ... ok
+test_registration_no_alone_duplicates_only_for_dai3gou ... ok
+test_vehicle_row_and_grand_totals ... ok
+test_operators_csv_and_json_match ... ok
+test_vehicles_csv_and_json_match ... ok
+test_all_ownership_is_empty ... ok
+test_dai4gou_office_seq_1_to_4_with_kei_1_0_1_0 ... ok
+test_operator_totals_and_pages ... ok
+test_row_count_is_12 ... ok
+test_dai4gou_office_name_location_element_counts_and_seq ... ok
+test_office_flags_match_composite_key_expected_values ... ok
+test_extract_registration_block_matches_expected ... ok
+test_authority_code_is_uniform_nakayama ... ok
+test_operator_type_by_file ... ok
+test_service_type_code_is_fukushi_for_all ... ok
 test_no_representative_column_in_schema ... ok
-test_representative_name_absent_from_all_outputs ... ok
+test_raw_text_files_have_redaction_marker ... ok
+test_representative_name_absent_from_derived_text ... ok
 test_count_kei_le_count ... ok
 test_count_sum_matches_vehicles_total ... ok
 
-Ran 6 tests in 0.429s
+Ran 21 tests in 1.112s
 
 OK
 ```
 
-車両合計の一致表（`vehicles.csv` の `合計` 以外の行を `count`/`count_kei` で合算した値 vs
-`operators.csv` の `vehicles_total`/`vehicles_total_kei`）:
+（実行コマンドの標準出力の全文は `evidence/20260809_000230003_parser_verification.txt` に保存。
+コマンドの終了コードは **0**。全21件成功。）
 
-| registration_no | count合計(計算) | vehicles_total(CSV) | count_kei合計(計算) | vehicles_total_kei(CSV) |
-|---|---|---|---|---|
-| 中山福第1号 | 3 (車いす車2+セダン等1) | 3 | 2 (1+1) | 2 |
-| 中山福第3号 | 10 (車いす車9+セダン等1) | 10 | 7 (6+1) | 7 |
-| 中山福第4号 | 3 (車いす車1+セダン等2) | 3 | 2 (0+2) | 2 |
-| 中山福第6号 | 1 (車いす車1) | 1 | 1 (1) | 1 |
+初回検証（13:43 JST）では §5-8 の拡張テスト1件が失敗していたが（詳細は下記「§5-8 修正の経緯」）、
+`evidence/20260807_explore_words_edges.txt` の伏字化により解消した。車両合計・
+`count_kei ≤ count`・複合キーの一意性・登録番号の整合（§5-2〜§5-4）は初回・再検証とも
+自動テストで成功している。
 
-**全4件一致。不一致0件。**
-
-`count_kei <= count` の不変条件は、`count_kei` が空文字列でない全行（11行中、バス列該当は
-0行のため11行全て）で成立を確認した。
-
----
-
-## §5-4 登録番号の整合
-
-| registration_no | service_type_code | authority_code |
-|---|---|---|
-| 中山福第1号 | 福 | 中山 |
-| 中山福第3号 | 福 | 中山 |
-| 中山福第4号 | 福 | 中山 |
-| 中山福第6号 | 福 | 中山 |
-
-`service_type_code` は全件 `福`（福祉有償運送ファイルと一致）。`authority_code` は全件 `中山` で同一。
+登録番号の整合（§5-4）: `service_type_code` は7団体全件「福」、`authority_code` は
+7団体全件「中山」。`(source_pdf, registration_no)` の複合キーは7件とも一意。
+`registration_no` 単独では `中山福第3号` が000271730.pdf・000230003.pdfに1件ずつ、
+計2件で正常に重複する（`CompositeKeyTotalsTest.test_registration_no_alone_duplicates_only_for_dai3gou`）。
 
 ---
 
 ## §5-5 全件突合
 
-`evidence/20260807_page_render-{1..4}.png` を目視し、原本と `data/operators.csv` /
-`data/vehicles.csv` を突き合わせた。
+7団体について `source_pdf` / `registration_no` / `org_name` / `service_area` / `valid_to` /
+事務所と車種別台数を、`data/operators.csv` / `data/vehicles.csv` と
+`evidence/20260807_page_render-{1..4}.png`、`evidence/20260809_000230003_inspection.txt`
+（座標抽出とページ全文、代表者氏名は伏字）の目視で突合した。
 
-| 項目 | p1(中山福第1号) | p2(中山福第3号) | p3(中山福第4号) | p4(中山福第6号) |
-|---|---|---|---|---|
-| org_name | 特定非営利活動法人 豆たん ✓ | 特定非営利活動法人 らいと ✓ | 社会福祉法人 菊水会 ✓ | 社会福祉法人 大島白壽會 ✓ |
-| service_area | 下関市全域（離島を除く） ✓ | 下関市 ✓ | 下関市 ✓ | 周防大島町（平成１６年１０月１日付けで合併された旧東和町に限る） ✓ |
-| valid_to | 2027-04-23 ✓ | 2027-10-10 ✓ | 2028-06-22 ✓ | 2026-08-31 ✓ |
-| 車種別台数(所有) | 車いす車2(1)+セダン等1(1)=合計3(2) ✓ | 車いす車9(6)+セダン等1(1)=合計10(7) ✓ | 車いす車1(0)+セダン等2(2)=合計3(2) ✓ | 車いす車1(1)=合計1(1) ✓ |
-| 持込 | 0台 ✓ | 0台 ✓ | 0台 ✓ | 0台 ✓ |
+| 登録番号 | ファイル | org_name | service_area | valid_to | 車種別台数 |
+|---|---|---|---|---|---|
+| 中山福第1号 | 000271730.pdf | 特定非営利活動法人 豆たん ✓ | 下関市全域(離島を除く) ✓ | 2027-04-23 ✓ | 車いす車2(1)+セダン等1(1)=合計3(2) ✓ |
+| 中山福第3号 | 000271730.pdf | 特定非営利活動法人 らいと ✓ | 下関市 ✓ | 2027-10-10 ✓ | 車いす車9(6)+セダン等1(1)=合計10(7) ✓ |
+| 中山福第4号 | 000271730.pdf | 社会福祉法人 菊水会 ✓ | 下関市 ✓ | 2028-06-22 ✓ | 車いす車1(0)+セダン等2(2)=合計3(2) ✓ |
+| 中山福第6号 | 000271730.pdf | 社会福祉法人 大島白壽會 ✓ | 周防大島町(...旧東和町に限る) ✓ | 2026-08-31 ✓ | 車いす車1(1)=合計1(1) ✓ |
+| 中山市福第1号 | 000230003.pdf | 山口市 ✓ | 山口市阿知須区域 ✓ | 2026-09-30 ✓ | 車いす車1(1)=合計1(1) ✓ |
+| 中山福第3号 | 000230003.pdf | 阿武町 ✓ | 阿武町 ✓ | 2026-09-30 ✓ | 車いす車1(1)=合計1(1) ✓ |
+| 中山市福第4号 | 000230003.pdf | 下関市外出支援サービス事業 ✓ | 下関市 ✓ | 2026-09-30 ✓ | 4事務所×車いす車1=合計4(軽2、内訳1/0/1/0) ✓ |
 
-**全件一致。** 登録番号は 第1号・第3号・第4号・第6号のみ存在し、**第2号・第5号は欠番**であることを
-`data/operators.csv` の内容（4行、上記4件のみ）で確認した。
+**全件一致。** 欠番はファイル別に以下のとおり:
 
-### 旅客範囲7列（SPEC.md明示要求を超える追加確認）
+- `000271730.pdf`: 第2号・第5号が欠番（第1号・第3号・第4号・第6号のみ存在）
+- `000230003.pdf`: 第2号が欠番（第1号・第3号・第4号のみ存在）
 
-`extract_scope_flags` のロジックがページごとに異なる凡例レイアウト（後述バグ6参照）に依存するため、
-SPEC.md §5-5 の明示列（registration_no/org_name/service_area/valid_to/車種別台数）には
-含まれていないが、`scope_*` 7列も4ページ全件を画像で目視突合した。
-
-| registration_no | 原本のマーク（目視） | scope_*列（CSV） |
-|---|---|---|
-| 中山福第1号 | イ ニ ホ ヘ | scope_i_physical=1, scope_ni_care=1, scope_ho_support=1, scope_he_checklist=1, 他0 ✓ |
-| 中山福第3号 | イ ニ | scope_i_physical=1, scope_ni_care=1, 他0 ✓ |
-| 中山福第4号 | （マーク無し） | 全列0 ✓ |
-| 中山福第6号 | ニ ホ | scope_ni_care=1, scope_ho_support=1, 他0 ✓ |
-
-**全件一致。**
+いずれも `data/operators.csv` の該当ファイルの行数・登録番号の内容で確認した。
 
 ---
 
 ## §5-6 日付の健全性
 
-| registration_no | valid_from | valid_to | valid_from<valid_to | 期間長 |
-|---|---|---|---|---|
-| 中山福第1号 | 2024-04-24 | 2027-04-23 | 成立 | 3年(-1日) |
-| 中山福第3号 | 2024-10-11 | 2027-10-10 | 成立 | 3年(-1日) |
-| 中山福第4号 | 2025-06-23 | 2028-06-22 | 成立 | 3年(-1日) |
-| 中山福第6号 | 2023-09-01 | 2026-08-31 | 成立 | 3年(-1日) |
+| ファイル | registration_no | valid_from | valid_to | valid_from<valid_to | 期間長 |
+|---|---|---|---|---|---|
+| 000271730.pdf | 中山福第1号 | 2024-04-24 | 2027-04-23 | 成立 | 3年(-1日) |
+| 000271730.pdf | 中山福第3号 | 2024-10-11 | 2027-10-10 | 成立 | 3年(-1日) |
+| 000271730.pdf | 中山福第4号 | 2025-06-23 | 2028-06-22 | 成立 | 3年(-1日) |
+| 000271730.pdf | 中山福第6号 | 2023-09-01 | 2026-08-31 | 成立 | 3年(-1日) |
+| 000230003.pdf | 中山市福第1号 | 2023-10-01 | 2026-09-30 | 成立 | 3年 |
+| 000230003.pdf | 中山福第3号 | 2023-10-01 | 2026-09-30 | 成立 | 3年 |
+| 000230003.pdf | 中山市福第4号 | 2023-10-01 | 2026-09-30 | 成立 | 3年 |
 
-全件で `valid_from < valid_to` が成立。年は2024〜2028年の範囲内で、2000年代前半・2100年代の
-異常値は無い。期間長は全件「3年」（起算日の前日を満了日とする表記のため実質3年-1日）で、
-SPEC.md §3.4(d)の「改善命令・事故・業務停止命令のいずれも無い場合=3年」のパターンと整合する。
-外れは無いため警告事項も無い。
+全件で `valid_from < valid_to` が成立。年は2023〜2028年の範囲内で、2000年代前半・2100年代の
+異常値は無い。期間長は全件「3年」（000271730.pdf側は起算日の前日を満了日とする表記のため
+実質3年-1日、000230003.pdf側はちょうど3年）で、SPEC.md §3.4(d)の
+「改善命令・事故・業務停止命令のいずれも無い場合=3年」のパターンと整合する。外れは無いため
+警告事項も無い。
 
 ---
 
 ## §5-7 事務所情報の不一致の列挙
 
-`SPEC.md` rev.3（§3.6）で、以前は `office_mismatch` 1種類だったフラグが2種類に分かれた。
-比較の前処理は「1. 全角→半角、2. 空白（全角・半角）をすべて除去」の2段のみで、
-これで解消する差はフラグを立てない。前処理をしても一致しない場合、`office_name` が
-不一致なら `office_mismatch`、`office_name` は一致し `office_location` のみ不一致なら
-`office_notation_diff` とする（住所を吸収する正規化はしない。§3.6の注記どおり、
-「同じ場所」と主張しないため）。`src/parse.py` をこの規定に合わせて修正した。
+比較の前処理（全角→半角、空白除去）で解消する差はフラグを立てない。前処理をしても
+一致しない場合、`office_name` が不一致なら `office_mismatch`、`office_name` は一致し
+`office_location` のみ不一致なら `office_notation_diff` とする（SPEC.md §3.6）。
 
-`operators.csv` の `flags` 列:
+`operators.csv` の `flags` 列（7団体、`(source_pdf, registration_no, office_seq)` 単位）:
 
-| registration_no | 上部office_name | 車両欄office_name | 上部office_location | 車両欄office_location | flags |
-|---|---|---|---|---|---|
-| 中山福第1号 | 豆たん介護センター | 豆たん介護センター | 下関市内日下１０２７－３ | 下関市内日下1027-3 | (空) |
-| 中山福第3号 | 特定非営利活動法人 らいと | 特定非営利活動法人らいと | 下関市秋根南町１丁目１－５ | 下関市秋根南町１丁目１－５ | (空) |
-| 中山福第4号 | まんてんの星 | まんてんの星 | 下関市菊川町大字田部５３６番地１ | 下関市菊川町大字田部５３６－１ | `office_notation_diff` |
-| 中山福第6号 | 大島白壽會 | 桑陽病院腎友会 | 山口県大島郡周防大島町大字西方1623番地の３ | 防府市車塚町3番２０号 | `office_mismatch` |
+| ファイル | registration_no | office_seq | flags |
+|---|---|---|---|
+| 000271730.pdf | 中山福第1号 | 1 | (空) |
+| 000271730.pdf | 中山福第3号 | 1 | (空) |
+| 000271730.pdf | 中山福第4号 | 1 | `office_notation_diff` |
+| 000271730.pdf | 中山福第6号 | 1 | `office_mismatch` |
+| 000230003.pdf | 中山市福第1号 | 1 | `office_mismatch` |
+| 000230003.pdf | 中山福第3号 | 1 | (空) |
+| 000230003.pdf | 中山市福第4号 | 1..4 | (空)×4 |
 
-**`SPEC.md` §3.6 の期待値と完全一致（`tests/test_verify.py` の `OfficeFlagsTest` で自動テスト化済み）:**
+**フラグが立った件数は3件**（`office_notation_diff` 1件、`office_mismatch` 2件）で、
+`tests/test_verify.py` の `OfficeFlagsTest.test_office_flags_match_composite_key_expected_values`
+の期待値と完全一致する。
 
-- 中山福第1号・第3号: 全角/半角・空白の差のみで前処理により解消 → フラグなし
-- 中山福第4号: `office_name`（まんてんの星）は一致、`office_location` のみ
+- 中山福第4号（000271730.pdf）: `office_name`（まんてんの星）は一致、`office_location` のみ
   「５３６番地１」/「５３６－１」で不一致 → `office_notation_diff`
-- 中山福第6号: `office_name` 自体が不一致（大島白壽會 ≠ 桑陽病院腎友会） → `office_mismatch`
-  （`SPEC.md` §3.6 に既知の異常として明記されている、別組織・別市町。消さずに残っていることを確認）
+- 中山福第6号（000271730.pdf）: `office_name` 自体が不一致（上部と車両欄で別組織） → `office_mismatch`
+- 中山市福第1号（000230003.pdf）: `office_name` 自体が不一致（上部と車両欄で別組織） → `office_mismatch`
+- 中山福第1号・第3号（000271730.pdf）、中山福第3号・中山市福第4号（000230003.pdf）は
+  全角半角・空白の差のみで前処理により解消 → フラグなし
 
-前回セッションで「要確認事項」として保留していた中山福第4号の扱いは、
-`SPEC.md` rev.3（チャット側）で `office_notation_diff` として規定され解消した。
+**中山市福第4号（000230003.pdf）は1団体4事務所。**`office_name` / `office_location` は
+上部・車両欄とも4要素で欠落せず、`vehicles.csv` 側の `office_seq` も 1..4 で揃っており、
+不要なフラグは立っていない
+（`OfficeFlagsTest.test_dai4gou_office_name_location_element_counts_and_seq` で自動テスト化）。
 
 ---
 
 ## §5-8 代表者氏名の不出力確認
 
-`tests/test_verify.py` の `RepresentativeNameNotOutputTest` で、4ページ全件について
-「代表者の氏名」ラベルの右側の語をPDFから動的に抽出し、`data/operators.csv` /
-`data/operators.json` / `data/vehicles.csv` / `data/vehicles.json` のいずれにも
-含まれていないことを確認した（実際の氏名はこのファイルにも書かない）。
+`tests/test_verify.py` の `RepresentativeNameNotOutputTest` を今回の増分で拡張した。
+これまでは `data/*.csv` / `data/*.json` / `raw/text/*.txt` のみを検査していたが、
+SPEC.md §5-8「テキスト形式の `evidence` に含まれないことを自動テストに入れる」に合わせ、
+`discover_name_scan_targets()`（`tests/test_verify.py`）で以下を動的に検査対象へ加えた:
 
-- `test_representative_name_absent_from_all_outputs`: 4ページ全件で氏名文字列・氏名の一部分の
-  いずれも出力ファイルに含まれないことを確認 → **成功**
+- `src/**/*.py`、`tests/**/*.py`
+- `verification.md`、`PROGRESS.md`、`README.md`、`SPEC.md`、`CLAUDE.md`
+- `evidence/**/*.txt`、`evidence/**/*.md`
+
+（`raw/*.pdf` と `evidence/*.png` は検査対象外。SPEC.md §5-8。`run_record.md` は
+チャット側専有ファイルでCLAUDE.mdによりClaude Codeが読み書きしないため
+`discover_name_scan_targets()` の対象に含めていない。）
+
+`discover_name_scan_targets()` による自動テストの実測検査対象ファイル数は**25件**
+（`data/*.csv`×2、`*.json`×2、`raw/text/*.txt`×7、`verification.md` `PROGRESS.md`
+`README.md` `SPEC.md` `CLAUDE.md`、`src/parse.py`、`tests/test_verify.py`、
+`evidence/**/*.txt`・`*.md`）。これとは別に、Codexが`run_record.md`を加えた**26ファイル**
+に対して独立監査を行い、漏えい0件を確認している（両者は検査母集団が異なるため区別して記録する）。
+
 - `test_no_representative_column_in_schema`: 列見出しに「代表者」「氏名」等を示唆する語が
   無いことを確認 → **成功**
+- `test_raw_text_files_have_redaction_marker`: `raw/text/*.txt` 7ファイル全件に
+  `[氏名-非出力]` が1件以上あることを確認 → **成功**
+- `test_representative_name_absent_from_derived_text`: 2PDF・7ページ全件から
+  「代表者の氏名」ラベルの右側の語のうち**役職の呼称を除いた氏名候補**を動的に抽出し、
+  上記25ファイルいずれにも含まれないことを確認 → **成功**
+  （役職語自体は「代表者」「理事長」等の一般名詞であり氏名ではないため、検査対象から
+  除外して氏名部分のみを候補とする。この動的検査はアサーション失敗時も実名やヒットした
+  行の全文をメッセージに出力しない実装になっており、失敗時に機密文字列が標準出力や
+  テスト結果に残らないことを確認済み）
 
-`OPERATORS_COLUMNS` / `VEHICLES_COLUMNS`（`src/parse.py`）にも代表者氏名に相当する列は無く、
-`src/parse.py` は「代表者の氏名」ラベル自体を検索・抽出する処理を一切持たない
-（パース段階で最初から捨てている）。
+### §5-8 修正の経緯（実名はここにも書かない）
+
+初回検証（13:43 JST）では、000271730.pdf p1の代表者氏名の一部（姓）が
+`evidence/20260807_explore_words_edges.txt` に含まれていることを上記拡張テストが検出し、
+1件失敗した。このファイルは2026-08-07に作成された `extract_words()` の座標ダンプ
+（語ごとの x0/x1/top/bottom/text を1行1語で記録したもの）で、rev.4.4（代表者氏名の
+伏字化規定）より前に作られており、当時は伏字化されていなかった。
+
+その後、同ファイルの編集許可を得て伏字化した。変更は8行のみで、全8行が実氏名の値を
+`[氏名-非出力]` に置換したものであり、行数（全798行）・役職語・座標値・行構造はいずれも
+維持されている（`git diff` で確認）。修正後の再検証（14:00 JST）で
+`test_representative_name_absent_from_derived_text` を含む全21件が成功した。
 
 ---
 
 ## まとめ
 
-SPEC.md §5 の完了条件1〜8を全て満たした。
+| # | 条件 | 結果 |
+|---|---|---|
+| 1 | 団体数一致（7件、ファイル別4+3） | ✓ |
+| 2 | 車両合計照合（自動テスト） | ✓ 不一致0件 |
+| 3 | count_kei ≤ count（自動テスト） | ✓ 全行成立 |
+| 4 | 登録番号整合・複合キー一意性 | ✓ |
+| 5 | 全件突合（7団体） | ✓ 欠番をファイル別に確認 |
+| 6 | 日付健全性 | ✓ 全件成立、警告なし |
+| 7 | 事務所情報不一致列挙（3件） | ✓ |
+| 8 | 代表者氏名不出力（拡張後の自動テスト、25対象） | ✓ 漏えい0件 |
 
-1. 団体数一致（4件） ✓
-2. 車両合計照合（自動テスト） ✓ 不一致0件
-3. count_kei ≤ count（自動テスト） ✓ 全行成立
-4. 登録番号整合 ✓ service_type_code全件「福」、authority_code全件「中山」
-5. 全件突合 ✓ 4団体全項目一致、欠番(2号・5号)を確認
-6. 日付健全性 ✓ 全件成立、警告なし
-7. 事務所情報不一致列挙 ✓ `SPEC.md` rev.3（§3.6）の2種類のフラグに対応。
-   中山福第4号=`office_notation_diff`、中山福第6号=`office_mismatch`、他2件はフラグなし。
-   期待値どおり一致（自動テスト `OfficeFlagsTest` で確認）
-8. 代表者氏名不出力 ✓ 自動テストで確認
+**この2PDF増分は完了条件1〜8をすべて満たした。**
+自動テスト（`discover_name_scan_targets()` 25対象）は21件中21件成功、`git diff --check` は
+問題なしで終了した。Codexによる独立スキャン（`run_record.md`を加えた26対象）でも
+代表者実氏名候補の漏えいは0件だった。
+
+これは**Claude Codeによる記録更新**であり、受入判定はCodexが実ファイル・差分・テスト・証拠を
+読み戻して行う。次にやることは `PROGRESS.md` を参照。

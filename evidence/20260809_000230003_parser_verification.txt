@@ -1,0 +1,273 @@
+取得日時: 2026-08-09 13:43 JST（初回検証）／2026-08-09 14:00 JST（再検証、伏字化修正後・追記）
+取得元  : raw/000271730.pdf + raw/000230003.pdf
+取得方法: pdfplumber / unittest / CSV-JSON集計 / git diff --check
+
+============================================================
+0. この記録の位置づけ
+============================================================
+
+今回の作業は「代表者氏名非出力の残件」対応（SPEC.md rev.4.4 §4.4, §5-8）。
+`tests/test_verify.py` の代表者氏名の動的検査を、data/・raw/text/ に加え
+src/**/*.py、tests/**/*.py、verification.md、PROGRESS.md、README.md、SPEC.md、
+CLAUDE.md、evidence/**/*.txt・*.md まで拡張した。初回実行（13:43 JST）の結果、
+拡張前は検査対象でなかった既存ファイル `evidence/20260807_explore_words_edges.txt`
+（2026-08-07作成、`extract_words()` の座標ダンプ、rev.4.4より前に作成され伏字化
+されていない）に代表者氏名の断片が残っていることが判明した。
+
+その後、同ファイルの編集許可を得て伏字化した（8行のみ変更、全8行が実氏名の値から
+`[氏名-非出力]` への置換。全798行の行数・役職語・座標値・行構造は維持）。
+再検証（14:00 JST）で全21件成功・漏えい0件・完了条件1〜8達成を確認した。
+実名はこのファイルにも一切書かない。
+
+============================================================
+0.1 再検証（2026-08-09 14:00 JST）の結果概要
+============================================================
+
+- unittest: 21件中21件成功、exit 0
+- git diff --check: exit 0
+- discover_name_scan_targets()（自動テスト対象、25ファイル）: 代表者実氏名候補の漏えい0件
+- Codex独立スキャン（run_record.mdを加えた26ファイル）: 漏えい0件
+- raw/text/*.txt 7ファイル: 各ファイルに `[氏名-非出力]` がちょうど1件
+- evidence/20260807_explore_words_edges.txt: 変更8行、全8行が実氏名値→`[氏名-非出力]`の
+  置換。行数798行・役職語・座標・構造は維持（git diffで確認）
+- operators.csv: 7行（000271730.pdf=4行、000230003.pdf=3行）
+- vehicles.csv: 23行（000271730.pdf=11行、000230003.pdf=12行）
+- 車両実数合計: 23台、うち軽16台。000230003.pdf単体: 6台、うち軽4台
+- (source_pdf, registration_no) は7件とも一意
+- registration_no単独の重複群は1つ（「中山福第3号」が000271730.pdf・000230003.pdfに
+  1件ずつ、正常な重複）
+- 既存000271730.pdf由来のoperators/vehicles行はHEAD版から不変
+- CSV/JSONは文字列表現を正規化すると完全一致
+- 000230003.pdfのownershipは全行空、中山市福第4号（4事務所）のoffice_seqは1,2,3,4
+- flags: 空4件、office_mismatch 2件、office_notation_diff 1件
+- 完了条件1〜8はすべて達成
+
+このセクションはCodexが独立確認した事実の記録であり、Claude Codeの実行結果と一致する。
+受入判定はCodexが実ファイル・差分・テスト・証拠を読み戻して行う。
+
+============================================================
+1. 再現手順（実行コマンド全文）
+============================================================
+
+$ C:\Users\user\dev\udc2026\.venv\Scripts\python.exe -m unittest discover -s tests -v
+
+（`tests/test_verify.py` の `setUpModule()` が `src/parse.py` の `main()` を呼び、
+`data/*.csv` `data/*.json` `raw/text/*.txt` を実行のたびに再生成してからテストする。
+リポジトリ直下から実行。素の `python` は使わない。）
+
+============================================================
+2. テスト実行結果（初回・13:43 JST・21件中20件成功・1件失敗）
+============================================================
+
+test_composite_key_is_unique ... ok
+test_operator_counts_per_file_and_total ... ok
+test_registration_no_alone_duplicates_only_for_dai3gou ... ok
+test_vehicle_row_and_grand_totals ... ok
+test_operators_csv_and_json_match ... ok
+test_vehicles_csv_and_json_match ... ok
+test_all_ownership_is_empty ... ok
+test_dai4gou_office_seq_1_to_4_with_kei_1_0_1_0 ... ok
+test_operator_totals_and_pages ... ok
+test_row_count_is_12 ... ok
+test_dai4gou_office_name_location_element_counts_and_seq ... ok
+test_office_flags_match_composite_key_expected_values ... ok
+test_extract_registration_block_matches_expected ... ok
+test_authority_code_is_uniform_nakayama ... ok
+test_operator_type_by_file ... ok
+test_service_type_code_is_fukushi_for_all ... ok
+test_no_representative_column_in_schema ... ok
+test_raw_text_files_have_redaction_marker ... ok
+test_representative_name_absent_from_derived_text ... FAIL
+test_count_kei_le_count ... ok
+test_count_sum_matches_vehicles_total ... ok
+
+Ran 21 tests in 0.813s
+
+FAILED (failures=1)
+operators: 7 件
+vehicles: 23 行
+終了コード: 1
+
+--- 失敗内容の要約（実名は書かない） ---
+
+test_representative_name_absent_from_derived_text
+  AssertionError: 000271730.pdf p1の代表者氏名の一部（役職の呼称を含む語）が
+  evidence/20260807_explore_words_edges.txt に含まれている。
+
+  該当ファイルは `extract_words()` の座標ダンプ（1行1語、x0/x1/top/bottom/text の
+  タブ区切り）で、p1〜p4の「代表者の氏名」ラベル行の右側にある語（役職の呼称＋姓＋名の
+  3語）がそれぞれ独立した行として記録されている。伏字化されておらず、
+  今回拡張した動的検査（`discover_name_scan_targets()` が集める17ファイルの1つ）で
+  検出された。テスト実行時の標準出力にはこの3語が実名のまま出力されるため、
+  その生ログはこのリポジトリのどこにも保存していない（このファイルにも書かない）。
+
+  他の6ページ（000271730.pdf p2〜p4、000230003.pdf p1〜p3）についても同じファイル内に
+  同様の未伏字の氏名断片がある（`grep` で個別に確認済み。詳細は§4）。
+  テストは最初に一致した1件でAssertionErrorを送出し停止するため、ログ上は1件のみが
+  記録されるが、実際の該当箇所は7ページ分すべてにある。
+
+============================================================
+2.1 再検証（14:00 JST・伏字化修正後・21件中21件成功）
+============================================================
+
+`evidence/20260807_explore_words_edges.txt` の伏字化後、同じコマンドで再実行した。
+
+test_composite_key_is_unique ... ok
+test_operator_counts_per_file_and_total ... ok
+test_registration_no_alone_duplicates_only_for_dai3gou ... ok
+test_vehicle_row_and_grand_totals ... ok
+test_operators_csv_and_json_match ... ok
+test_vehicles_csv_and_json_match ... ok
+test_all_ownership_is_empty ... ok
+test_dai4gou_office_seq_1_to_4_with_kei_1_0_1_0 ... ok
+test_operator_totals_and_pages ... ok
+test_row_count_is_12 ... ok
+test_dai4gou_office_name_location_element_counts_and_seq ... ok
+test_office_flags_match_composite_key_expected_values ... ok
+test_extract_registration_block_matches_expected ... ok
+test_authority_code_is_uniform_nakayama ... ok
+test_operator_type_by_file ... ok
+test_service_type_code_is_fukushi_for_all ... ok
+test_no_representative_column_in_schema ... ok
+test_raw_text_files_have_redaction_marker ... ok
+test_representative_name_absent_from_derived_text ... ok
+test_count_kei_le_count ... ok
+test_count_sum_matches_vehicles_total ... ok
+
+Ran 21 tests in 1.112s
+
+OK
+operators: 7 件
+vehicles: 23 行
+終了コード: 0
+
+`test_representative_name_absent_from_derived_text` を含む全21件が成功した。
+このテストの実装は、アサーション失敗時にも実名やヒットした行の全文をメッセージに
+含めない（役職語を除いた氏名候補の有無のみを判定する）ため、失敗時に機密文字列や
+全文が標準出力・テスト結果に残ることはない。
+
+============================================================
+3. 検査対象ファイル（discover_name_scan_targets()、実測25件）
+============================================================
+
+- data/operators.csv, data/operators.json, data/vehicles.csv, data/vehicles.json （4件）
+- raw/text/000271730_p1.txt 〜 p4.txt, raw/text/000230003_p1.txt 〜 p3.txt （7件）
+- verification.md, PROGRESS.md, README.md, SPEC.md, CLAUDE.md （5件）
+- src/parse.py （1件）
+- tests/test_verify.py （1件）
+- evidence/**/*.txt・*.md（7件、`evidence/20260809_000230003_parser_verification.txt`
+  自身を含む）
+
+  → 初回検証時点ではこのうち evidence/20260807_explore_words_edges.txt の1件で
+    不一致を検出（§2）。伏字化後の再検証（§2.1）では25件すべてで不一致なし。
+
+raw/*.pdf・evidence/*.png は検査対象外（SPEC.md §5-8、テキストではないため）。
+run_record.md はチャット側専有ファイルでCLAUDE.mdによりClaude Codeが読み書きしないため、
+`discover_name_scan_targets()`（自動テスト）の対象には含めていない。
+
+**Codexは自動テスト対象25件に `run_record.md` を加えた26ファイルに対して独立スキャンを
+実施し、漏えい0件を確認している（§0.1）。**この独立スキャンはClaude Codeの
+`discover_name_scan_targets()` とは別の検査であり、対象ファイル数が異なる点に注意。
+
+============================================================
+4. 個別ファイルの伏字化状況（grepによる事前確認、実名は書かない）
+============================================================
+
+手順（実名はコマンド引数として本ファイルに書かないため、実行例は割愛。方法のみ記録する）:
+`grep -rn` で7ページ分の代表者氏名の姓・役職呼称をリポジトリ全体（`run_record.md`除く）に
+対して個別に検索し、ヒットしたファイルを確認した。
+
+  → 初回検証時点で検出されたのは evidence/20260807_explore_page1_text.txt
+    （今回の作業で伏字化済み）と evidence/20260807_explore_words_edges.txt（§2の当時の
+    未解消分。§2.1で伏字化して解消）、src/parse.py（今回の作業でコメント中の実名例を
+    一般化して解消済み）の3ファイルのみ。
+  → 再検証後は上記3ファイルすべて伏字化・一般化済みで、リポジトリ全体（`run_record.md`
+    除く）での氏名の姓・役職呼称の検索ヒットは0件。
+  → evidence/20260809_000230003_inspection.txt は元々 [氏名-非出力] で伏字化済み
+    （2026-08-09作成、rev.4.4後）。docs/*.html、tools/*.py、raw/*.html、raw/*.txt、
+    README.md には該当なし（個別に grep 確認済み）。
+  → 役職語（「代表者」「理事長」等）自体は氏名ではなく一般名詞のため、氏名検索の対象
+    から除外している。役職語の出現自体は漏えいとして扱わない。
+
+============================================================
+5. 集計値（data/operators.csv, data/vehicles.csv より）
+============================================================
+
+- operators.csv: 7行（000271730.pdf=4行、000230003.pdf=3行）
+- vehicles.csv: 23行（000271730.pdf=11行、000230003.pdf=12行）
+- count合計（`合計`行を除く）: 23台（000271730.pdf=17台、000230003.pdf=6台）
+- count_kei合計（同）: 16台（000271730.pdf=12台、000230003.pdf=4台）
+- 新規PDF（000230003.pdf）単体: 12行 / 6台 / 軽4台
+  （車いす車1台×6事務所分、うち軽1台は office_seq=1,3 の2件、軽0台は office_seq=2,4 の2件、
+  中山市福第1号・中山福第3号がそれぞれ1台・軽1台）
+- 複合キー (source_pdf, registration_no) は7件とも一意
+  （registration_no単独は「中山福第3号」が000271730.pdf・000230003.pdfに1件ずつ、正常な重複）
+- flags列: 3件（000271730.pdf 中山福第4号=office_notation_diff、中山福第6号=office_mismatch、
+  000230003.pdf 中山市福第1号=office_mismatch）。他4件は空
+- 中山市福第4号（000230003.pdf）: office_seq 1..4 の4事務所、欠落なし、flagsは空
+
+============================================================
+6. 伏字検査（raw/text/*.txt の [氏名-非出力] マーカー）
+============================================================
+
+$ grep -c "\[氏名-非出力\]" raw/text/000271730_p{1,2,3,4}.txt raw/text/000230003_p{1,2,3}.txt
+
+raw/text/000271730_p1.txt:1
+raw/text/000271730_p2.txt:1
+raw/text/000271730_p3.txt:1
+raw/text/000271730_p4.txt:1
+raw/text/000230003_p1.txt:1
+raw/text/000230003_p2.txt:1
+raw/text/000230003_p3.txt:1
+
+→ 7ファイル全件に1件ずつ伏字マーカーがあることを確認
+  （`RepresentativeNameNotOutputTest.test_raw_text_files_have_redaction_marker` でも自動化済み）。
+
+============================================================
+7. git diff --check
+============================================================
+
+$ git diff --check
+初回・再検証とも（出力なし。終了コード0。空白関連の問題なし）
+
+============================================================
+8. git status --short（伏字化修正後の変更ファイル）
+============================================================
+
+ M data/operators.csv
+ M data/operators.json
+ M data/vehicles.csv
+ M data/vehicles.json
+ M evidence/20260807_explore_page1_text.txt
+ M evidence/20260807_explore_words_edges.txt
+ M raw/text/000271730_p1.txt
+ M raw/text/000271730_p2.txt
+ M raw/text/000271730_p3.txt
+ M raw/text/000271730_p4.txt
+ M src/parse.py
+ M tests/test_verify.py
+ M verification.md
+?? evidence/20260809_000230003_parser_verification.txt
+?? raw/text/000230003_p1.txt
+?? raw/text/000230003_p2.txt
+?? raw/text/000230003_p3.txt
+
+→ 編集許可（src/parse.py、tests/test_verify.py、evidence/20260807_explore_page1_text.txt、
+  evidence/20260807_explore_words_edges.txt（伏字化修正の追加許可分）、verification.md、
+  PROGRESS.md、新規evidence/20260809_000230003_parser_verification.txt。ほかdata 4ファイル・
+  raw/text 7ファイルは再生成による差分）の範囲内。許可外のファイルへの変更なし。
+
+============================================================
+9. 結論
+============================================================
+
+- SPEC.md §5 条件1〜7は自動テスト・目視突合とも成功（詳細はverification.md）。
+- 条件8（代表者氏名不出力）は、初回検証で今回拡張した動的検査が
+  evidence/20260807_explore_words_edges.txt の未伏字化（8行）を検出したが、
+  同ファイルの伏字化許可を得て修正し、解消した。
+- 再検証（14:00 JST）でunittest 21件中21件成功・exit 0、git diff --check exit 0、
+  discover_name_scan_targets()（25対象）で漏えい0件、Codex独立スキャン
+  （run_record.mdを加えた26対象）で漏えい0件を確認した。
+- したがって、この2PDF増分はSPEC.md §5 の完了条件1〜8をすべて満たした。
+- これはClaude Codeによる記録更新であり、受入判定はCodexが実ファイル・差分・テスト・
+  証拠を読み戻して行う（PROGRESS.md参照）。
