@@ -1,7 +1,8 @@
 """SPEC.md §5 の完了条件のうち、自動テストで担保すべき項目（§5-1〜§5-4, §5-7, §5-8）を検証する。
 
-現在の増分は 000271730.pdf（福祉・NPO等、4団体）と 000230003.pdf（福祉・市町村営、3団体）の
-2PDF・7団体（SPEC.md §5）。団体の主キー、および operators/vehicles 間の結合キーは
+現在の増分は福祉有償運送2PDF・7団体と、交通空白地有償運送
+000359215.pdf（市町村営、12団体）の3PDF・19団体（SPEC.md §5）。
+団体の主キー、および operators/vehicles 間の結合キーは
 `(source_pdf, registration_no)` の複合キーである（SPEC.md §3、rev.4.3）。
 `registration_no` 単独は主キーではなく、`中山福第3号` が2ファイルに1件ずつ正常に重複する。
 
@@ -32,9 +33,12 @@ TEXT_DIR = REPO_ROOT / "raw" / "text"
 
 PDF1 = RAW_DIR / "000271730.pdf"  # 福祉有償運送・NPO等、4団体
 PDF2 = RAW_DIR / "000230003.pdf"  # 福祉有償運送・市町村営、3団体
-PDF_PATHS = [PDF1, PDF2]
+PDF3 = RAW_DIR / "000359215.pdf"  # 交通空白地有償運送・市町村営、12団体
+PDF_PATHS = [PDF1, PDF2, PDF3]
+PDF3_REGISTRATION_PAGES = (1, 2, 3, 8, 9, 11, 12, 13, 14, 17, 18, 19)
+PDF3_CONTINUATION_OR_APPENDIX_PAGES = (4, 5, 6, 7, 10, 15, 16, 20)
 
-RAW_TEXT_FILES = [
+REGISTRATION_RAW_TEXT_FILES = [
     TEXT_DIR / "000271730_p1.txt",
     TEXT_DIR / "000271730_p2.txt",
     TEXT_DIR / "000271730_p3.txt",
@@ -42,6 +46,9 @@ RAW_TEXT_FILES = [
     TEXT_DIR / "000230003_p1.txt",
     TEXT_DIR / "000230003_p2.txt",
     TEXT_DIR / "000230003_p3.txt",
+] + [TEXT_DIR / f"000359215_p{page}.txt" for page in PDF3_REGISTRATION_PAGES]
+RAW_TEXT_FILES = REGISTRATION_RAW_TEXT_FILES + [
+    TEXT_DIR / f"000359215_p{page}.txt" for page in PDF3_CONTINUATION_OR_APPENDIX_PAGES
 ]
 
 EVIDENCE_DIR = REPO_ROOT / "evidence"
@@ -108,7 +115,7 @@ def read_csv(path):
 
 
 class RegistrationBlockRealPdfTest(unittest.TestCase):
-    """extract_registration_block() の実測テスト（今回の増分の必須実装1・2）。
+    """登録番号分解の実測テスト。
 
     SPEC.md §3.4(b) の旧市町村運営番号「中山市」接頭辞を、明示マップだけで
     安全に分解できること、既存の000271730.pdfも退行がないことを両方確認する。
@@ -124,13 +131,25 @@ class RegistrationBlockRealPdfTest(unittest.TestCase):
         (PDF2.name, 1): ("中山", "福", "1"),  # 中山市福第1号
         (PDF2.name, 2): ("中山", "福", "3"),  # 中山福第3号（市なし）
         (PDF2.name, 3): ("中山", "福", "4"),  # 中山市福第4号
+        (PDF3.name, 1): ("中山", "交", "1"),
+        (PDF3.name, 2): ("中山", "交", "3"),
+        (PDF3.name, 3): ("中山", "交", "5"),
+        (PDF3.name, 8): ("中山", "交", "6"),
+        (PDF3.name, 9): ("中山", "交", "7"),
+        (PDF3.name, 11): ("中山", "交", "8"),
+        (PDF3.name, 12): ("中山", "交", "10"),
+        (PDF3.name, 13): ("中山", "交", "11"),
+        (PDF3.name, 14): ("中山", "交", "12"),
+        (PDF3.name, 17): ("中山", "交", "13"),
+        (PDF3.name, 18): ("中山", "交", "1"),
+        (PDF3.name, 19): ("中山", "交", "3"),
     }
 
     def test_extract_registration_block_matches_expected(self):
         import pdfplumber
 
         checked = 0
-        for pdf_path in PDF_PATHS:
+        for pdf_path in (PDF1, PDF2):
             with pdfplumber.open(pdf_path) as pdf:
                 for page_no, page in enumerate(pdf.pages, start=1):
                     words = page.extract_words()
@@ -144,11 +163,23 @@ class RegistrationBlockRealPdfTest(unittest.TestCase):
                         f"{reg['service_type_code']}, {reg['serial_no']}) != {expected}",
                     )
                     checked += 1
-        self.assertEqual(checked, 7, "7ページ全件を確認できていない")
+        with pdfplumber.open(PDF3) as pdf:
+            for page_no in PDF3_REGISTRATION_PAGES:
+                metadata = parse_module.extract_metadata_table(pdf.pages[page_no - 1])
+                raw = parse_module.extract_table_field(metadata, "登録番号")
+                reg = parse_module.parse_registration_text(raw)
+                expected = self.EXPECTED[(PDF3.name, page_no)]
+                self.assertEqual(
+                    (reg["authority_code"], reg["service_type_code"], reg["serial_no"]),
+                    expected,
+                    f"{PDF3.name} p{page_no}: 登録番号の分解が期待値と違う",
+                )
+                checked += 1
+        self.assertEqual(checked, 19, "3PDF・19団体の登録番号を確認できていない")
 
 
 class CompositeKeyTotalsTest(unittest.TestCase):
-    """SPEC.md §5-1, §5-4: 2PDF・7団体の件数と複合キーの一意性。"""
+    """SPEC.md §5-1, §5-4: 3PDF・19団体の件数と複合キーの一意性。"""
 
     @classmethod
     def setUpClass(cls):
@@ -156,12 +187,13 @@ class CompositeKeyTotalsTest(unittest.TestCase):
         cls.vehicles = read_csv(DATA_DIR / "vehicles.csv")
 
     def test_operator_counts_per_file_and_total(self):
-        self.assertEqual(len(self.operators), 7, "団体数の合計が7件でない")
+        self.assertEqual(len(self.operators), 19, "団体数の合計が19件でない")
         by_file = {}
         for op in self.operators:
             by_file[op["source_pdf"]] = by_file.get(op["source_pdf"], 0) + 1
         self.assertEqual(by_file.get(PDF1.name), 4, f"{PDF1.name}の団体数が4件でない")
         self.assertEqual(by_file.get(PDF2.name), 3, f"{PDF2.name}の団体数が3件でない")
+        self.assertEqual(by_file.get(PDF3.name), 12, f"{PDF3.name}の団体数が12件でない")
 
     def test_composite_key_is_unique(self):
         keys = [(op["source_pdf"], op["registration_no"]) for op in self.operators]
@@ -181,20 +213,21 @@ class CompositeKeyTotalsTest(unittest.TestCase):
         self.assertEqual(files_for_dup, sorted([PDF1.name, PDF2.name]))
 
     def test_vehicle_row_and_grand_totals(self):
-        self.assertEqual(len(self.vehicles), 23, "vehicles.csvの行数が23行でない")
+        self.assertEqual(len(self.vehicles), 82, "vehicles.csvの行数が82行でない")
         by_file = {}
         for v in self.vehicles:
             by_file[v["source_pdf"]] = by_file.get(v["source_pdf"], 0) + 1
         self.assertEqual(by_file.get(PDF1.name), 11, f"{PDF1.name}のvehicles行数が11行でない")
         self.assertEqual(by_file.get(PDF2.name), 12, f"{PDF2.name}のvehicles行数が12行でない")
+        self.assertEqual(by_file.get(PDF3.name), 59, f"{PDF3.name}のvehicles行数が59行でない")
 
         total = sum(int(v["count"]) for v in self.vehicles if v["vehicle_type"] != "合計")
         total_kei = sum(
             int(v["count_kei"]) for v in self.vehicles
             if v["vehicle_type"] != "合計" and v["count_kei"] != ""
         )
-        self.assertEqual(total, 23, "全団体の車両合計(count)が23台でない")
-        self.assertEqual(total_kei, 16, "全団体の車両合計(count_kei)が16台でない")
+        self.assertEqual(total, 129, "全団体の車両合計(count)が129台でない")
+        self.assertEqual(total_kei, 18, "全団体の車両合計(count_kei)が18台でない")
 
 
 class VehicleTotalsTest(unittest.TestCase):
@@ -220,7 +253,7 @@ class VehicleTotalsTest(unittest.TestCase):
             kei = v["count_kei"]
             by_key[key]["count_kei"] += int(kei) if kei != "" else 0
 
-        self.assertEqual(len(self.operators), 7, "団体数が7件でない")
+        self.assertEqual(len(self.operators), 19, "団体数が19件でない")
         for op in self.operators:
             key = (op["source_pdf"], op["registration_no"])
             totals = by_key.get(key, {"count": 0, "count_kei": 0})
@@ -300,20 +333,97 @@ class NewPdfVehicleDetailTest(unittest.TestCase):
         self.assertEqual(op4["vehicles_total_kei"], "2")
 
 
+class MunicipalTransportGapDetailTest(unittest.TestCase):
+    """SPEC.md §4, §5, §7: 000359215.pdf の12団体・複数ページ・車両59行。"""
+
+    EXPECTED = {
+        "中山市交第1号": (1, 1, 1, 3, 2, 0),
+        "中山市交第3号": (2, 2, 1, 2, 3, 0),
+        "中山市交第5号": (3, 7, 6, 15, 33, 0),
+        "中山市交第6号": (8, 8, 1, 2, 3, 0),
+        "中山市交第7号": (9, 10, 4, 10, 29, 0),
+        "中山市交第8号": (11, 11, 1, 2, 2, 0),
+        "中山市交第10号": (12, 12, 1, 3, 6, 1),
+        "中山市交第11号": (13, 13, 1, 2, 4, 0),
+        "中山市交第12号": (14, 16, 6, 12, 8, 1),
+        "中山市交第13号": (17, 17, 1, 2, 2, 0),
+        "中山交第1号": (18, 18, 2, 4, 11, 0),
+        "中山交第3号": (19, 19, 1, 2, 3, 0),
+    }
+
+    @classmethod
+    def setUpClass(cls):
+        cls.vehicles = [
+            row for row in read_csv(DATA_DIR / "vehicles.csv") if row["source_pdf"] == PDF3.name
+        ]
+        cls.operators = {
+            row["registration_no"]: row
+            for row in read_csv(DATA_DIR / "operators.csv")
+            if row["source_pdf"] == PDF3.name
+        }
+
+    def test_record_pages_offices_rows_and_totals(self):
+        self.assertEqual(set(self.operators), set(self.EXPECTED))
+        for registration_no, expected in self.EXPECTED.items():
+            start_page, vehicle_page, office_count, row_count, total, kei = expected
+            operator = self.operators[registration_no]
+            rows = [row for row in self.vehicles if row["registration_no"] == registration_no]
+            self.assertEqual(operator["source_page"], str(start_page), registration_no)
+            self.assertEqual({row["source_page"] for row in rows}, {str(vehicle_page)}, registration_no)
+            self.assertEqual(
+                sorted({int(row["office_seq"]) for row in rows}),
+                list(range(1, office_count + 1)),
+                registration_no,
+            )
+            self.assertEqual(len(rows), row_count, registration_no)
+            self.assertEqual(operator["vehicles_total"], str(total), registration_no)
+            self.assertEqual(operator["vehicles_total_kei"], str(kei), registration_no)
+            self.assertTrue(operator["service_area"], f"{registration_no}: service_areaが空")
+            self.assertTrue(
+                operator["service_area_municipalities"],
+                f"{registration_no}: service_area_municipalitiesが空",
+            )
+
+    def test_transport_gap_vehicle_mapping_and_totals(self):
+        detail = [row for row in self.vehicles if row["vehicle_type"] != "合計"]
+        self.assertEqual({row["vehicle_type"] for row in detail}, {"普通自動車", "バス"})
+        ordinary = [row for row in detail if row["vehicle_type"] == "普通自動車"]
+        buses = [row for row in detail if row["vehicle_type"] == "バス"]
+        self.assertEqual(sum(int(row["count"]) for row in ordinary), 59)
+        self.assertEqual(sum(int(row["count"]) for row in buses), 47)
+        self.assertEqual(
+            sum(int(row["count_kei"]) for row in ordinary if row["count_kei"]), 2
+        )
+        for row in ordinary:
+            self.assertIn("セダン等", row["vehicle_type_label"])
+        for row in self.vehicles:
+            self.assertEqual(row["ownership"], "")
+
+    def test_transport_scope_and_appendix_exclusion(self):
+        scope_columns = tuple(parse_module.SCOPE_COLUMNS.values())
+        for operator in self.operators.values():
+            self.assertEqual(operator["transport_type"], "交通空白地有償運送")
+            self.assertEqual(operator["service_type_code"], "交")
+            self.assertEqual(operator["operator_type"], "市町村営")
+            self.assertTrue(all(operator[column] == "0" for column in scope_columns))
+        self.assertNotIn("20", {operator["source_page"] for operator in self.operators.values()})
+        appendix_text = (TEXT_DIR / "000359215_p20.txt").read_text(encoding="utf-8")
+        self.assertIn("輸送人員実績報告提出状況", appendix_text)
+        self.assertNotIn("[氏名-非出力]", appendix_text)
+
+
 class RegistrationConsistencyTest(unittest.TestCase):
-    """SPEC.md §5-4: 登録番号の整合(7団体全件)。"""
+    """SPEC.md §5-4: 登録番号の整合(19団体全件)。"""
 
     @classmethod
     def setUpClass(cls):
         cls.operators = read_csv(DATA_DIR / "operators.csv")
 
-    def test_service_type_code_is_fukushi_for_all(self):
-        self.assertEqual(len(self.operators), 7)
+    def test_service_type_code_matches_file(self):
+        self.assertEqual(len(self.operators), 19)
         for op in self.operators:
-            self.assertEqual(
-                op["service_type_code"], "福",
-                f"{op['source_pdf']} {op['registration_no']}: service_type_codeが福でない",
-            )
+            expected = "交" if op["source_pdf"] == PDF3.name else "福"
+            self.assertEqual(op["service_type_code"], expected, op["registration_no"])
 
     def test_authority_code_is_uniform_nakayama(self):
         codes = {op["authority_code"] for op in self.operators}
@@ -325,12 +435,14 @@ class RegistrationConsistencyTest(unittest.TestCase):
                 self.assertEqual(op["operator_type"], "NPO等", f"{PDF1.name}のoperator_typeがNPO等でない")
             elif op["source_pdf"] == PDF2.name:
                 self.assertEqual(op["operator_type"], "市町村営", f"{PDF2.name}のoperator_typeが市町村営でない")
+            elif op["source_pdf"] == PDF3.name:
+                self.assertEqual(op["operator_type"], "市町村営", f"{PDF3.name}のoperator_typeが市町村営でない")
             else:
                 self.fail(f"想定外のsource_pdf: {op['source_pdf']}")
 
 
 class OfficeFlagsTest(unittest.TestCase):
-    """SPEC.md §5-7, §3.6: 事務所情報の不一致フラグ(複合キー版、2PDF・7団体)。
+    """SPEC.md §5-7, §3.6: 事務所情報の不一致フラグ(複合キー版、3PDF・19団体)。
 
     比較の前処理(全角→半角、空白除去)で解消する表記差(中山福第1号の位置、
     中山福第3号の名称)はフラグを立てない。前処理をしても一致しない場合、
@@ -346,6 +458,18 @@ class OfficeFlagsTest(unittest.TestCase):
         (PDF2.name, "中山市福第1号"): "office_mismatch",
         (PDF2.name, "中山福第3号"): "",
         (PDF2.name, "中山市福第4号"): "",
+        (PDF3.name, "中山市交第1号"): "office_mismatch",
+        (PDF3.name, "中山市交第3号"): "",
+        (PDF3.name, "中山市交第5号"): "office_notation_diff",
+        (PDF3.name, "中山市交第6号"): "",
+        (PDF3.name, "中山市交第7号"): "office_mismatch",
+        (PDF3.name, "中山市交第8号"): "",
+        (PDF3.name, "中山市交第10号"): "",
+        (PDF3.name, "中山市交第11号"): "office_mismatch",
+        (PDF3.name, "中山市交第12号"): "office_notation_diff",
+        (PDF3.name, "中山市交第13号"): "office_mismatch",
+        (PDF3.name, "中山交第1号"): "",
+        (PDF3.name, "中山交第3号"): "",
     }
 
     @classmethod
@@ -383,11 +507,53 @@ class OfficeFlagsTest(unittest.TestCase):
         })
         self.assertEqual(veh_seqs, [1, 2, 3, 4], "第4号の車両側office_seqが1..4でない")
 
+    def test_000359215_office_level_differences_are_exact(self):
+        expected = {
+            ("中山市交第1号", 1): "office_mismatch",
+            ("中山市交第5号", 2): "office_notation_diff",
+            ("中山市交第7号", 1): "office_mismatch",
+            ("中山市交第7号", 2): "office_mismatch",
+            ("中山市交第7号", 3): "office_mismatch",
+            ("中山市交第11号", 1): "office_mismatch",
+            ("中山市交第12号", 6): "office_notation_diff",
+            ("中山市交第13号", 1): "office_mismatch",
+        }
+        observed = {}
+        operators = {
+            op["registration_no"]: op for op in self.operators if op["source_pdf"] == PDF3.name
+        }
+        for registration_no, operator in operators.items():
+            top_names = operator["office_name"].split(";")
+            top_locations = operator["office_location"].split(";")
+            vehicle_offices = {}
+            for row in self.vehicles:
+                if row["source_pdf"] == PDF3.name and row["registration_no"] == registration_no:
+                    vehicle_offices[int(row["office_seq"])] = (
+                        row["office_name"], row["office_location"]
+                    )
+            self.assertEqual(len(top_names), len(top_locations), registration_no)
+            self.assertEqual(len(top_names), len(vehicle_offices), registration_no)
+            for seq, (top_name, top_location) in enumerate(zip(top_names, top_locations), start=1):
+                vehicle_name, vehicle_location = vehicle_offices[seq]
+                name_diff = (
+                    parse_module.normalize_office_for_compare(top_name) !=
+                    parse_module.normalize_office_for_compare(vehicle_name)
+                )
+                location_diff = (
+                    parse_module.normalize_office_for_compare(top_location) !=
+                    parse_module.normalize_office_for_compare(vehicle_location)
+                )
+                if name_diff:
+                    observed[(registration_no, seq)] = "office_mismatch"
+                elif location_diff:
+                    observed[(registration_no, seq)] = "office_notation_diff"
+        self.assertEqual(observed, expected)
+
 
 class RepresentativeNameNotOutputTest(unittest.TestCase):
     """SPEC.md §5-8, CLAUDE.md「代表者の氏名は抽出も出力もしない」。
 
-    実際の氏名をこのテストファイル自体に書き残さないため、2PDF・7ページ全件から
+    実際の氏名をこのテストファイル自体に書き残さないため、3PDF・19登録全件から
     「代表者の氏名」ラベルの右側の語を都度動的に抽出し、その値が
     `discover_name_scan_targets()` が返す全ファイル（data/配下、raw/text/配下、
     src/**/*.py、tests/**/*.py、verification.md・PROGRESS.md・README.md・SPEC.md・
@@ -400,9 +566,10 @@ class RepresentativeNameNotOutputTest(unittest.TestCase):
 
     def test_representative_name_absent_from_derived_text(self):
         """discover_name_scan_targets() の全対象に、代表者の実氏名(役職語を除く)が
-        1文字も残っていないことを検査する。
+        氏名値として残っていないことを検査する。
 
         役職語(理事長・市長など、ROLE_WORDS)は個人を特定しないため候補から除外し、
+        姓・名の各構成語は地名等との偶然一致が起こるため、空白を除いた氏名全体を照合する。
         役職語だけが一致しても失敗にしない(要件2)。assertion失敗時のメッセージには
         氏名候補やファイル全文を含めない(assertNotInではなくassertFalseで、operandに
         機密文字列を渡さない、要件4)。
@@ -417,7 +584,7 @@ class RepresentativeNameNotOutputTest(unittest.TestCase):
 
         checked_pages = 0
         checked_candidates = 0
-        for pdf_path in PDF_PATHS:
+        for pdf_path in (PDF1, PDF2):
             with pdfplumber.open(pdf_path) as pdf:
                 for page_no, page in enumerate(pdf.pages, start=1):
                     words = page.extract_words()
@@ -437,26 +604,40 @@ class RepresentativeNameNotOutputTest(unittest.TestCase):
                     )
                     checked_pages += 1
 
-                    # 空白等を正規化した実氏名全体、および役職を除いた氏名構成語(2文字以上)を候補にする。
-                    candidates = {_normalize_spaces("".join(name_words))}
-                    candidates.update(
-                        _normalize_spaces(part) for part in name_words if len(part) >= 2
-                    )
-                    candidates = {c for c in candidates if c}
+                    # 空白等を正規化した、役職語を除く実氏名全体を氏名値として照合する。
+                    candidate = _normalize_spaces("".join(name_words))
+                    self.assertTrue(candidate, f"{pdf_path.name} p{page_no}: 氏名値が空")
+                    checked_candidates += 1
+                    for path, ncontent in normalized_contents.items():
+                        found = candidate in ncontent
+                        # assertNotInは失敗時にoperand(氏名候補・ファイル全文)をそのまま
+                        # 差分表示に出すため使わない。assertFalseなら真偽値のみが表示される。
+                        self.assertFalse(
+                            found,
+                            f"{pdf_path.name} p{page_no}: 代表者氏名値が "
+                            f"{path.relative_to(REPO_ROOT)} に含まれている疑い"
+                            "(絶対厳守違反、詳細は氏名漏えい防止のため非表示)",
+                        )
 
-                    for candidate in candidates:
-                        checked_candidates += 1
-                        for path, ncontent in normalized_contents.items():
-                            found = candidate in ncontent
-                            # assertNotInは失敗時にoperand(氏名候補・ファイル全文)をそのまま
-                            # 差分表示に出すため使わない。assertFalseなら真偽値のみが表示される。
-                            self.assertFalse(
-                                found,
-                                f"{pdf_path.name} p{page_no}: 代表者氏名に由来する文字列が "
-                                f"{path.relative_to(REPO_ROOT)} に含まれている疑い"
-                                "(絶対厳守違反、詳細は氏名漏えい防止のため非表示)",
-                            )
-        self.assertEqual(checked_pages, 7, "2PDF・7ページ全件を確認できていない")
+        with pdfplumber.open(PDF3) as pdf:
+            for page_no in PDF3_REGISTRATION_PAGES:
+                metadata = parse_module.extract_metadata_table(pdf.pages[page_no - 1])
+                _, row = parse_module.find_table_row(metadata, "代表者の氏名")
+                raw_value = parse_module.first_nonempty(row[1:])
+                name_words = [word for word in re.split(r"\s+", raw_value) if word and not _is_role_word(word)]
+                self.assertTrue(name_words, f"{PDF3.name} p{page_no}: 氏名候補が空")
+                checked_pages += 1
+                candidate = _normalize_spaces("".join(name_words))
+                self.assertTrue(candidate, f"{PDF3.name} p{page_no}: 氏名値が空")
+                checked_candidates += 1
+                for path, ncontent in normalized_contents.items():
+                    self.assertFalse(
+                        candidate in ncontent,
+                        f"{PDF3.name} p{page_no}: 代表者氏名値が "
+                        f"{path.relative_to(REPO_ROOT)} に含まれている疑い"
+                        "(絶対厳守違反、詳細は氏名漏えい防止のため非表示)",
+                    )
+        self.assertEqual(checked_pages, 19, "3PDF・19登録全件を確認できていない")
         self.assertGreater(checked_candidates, 0, "氏名候補が1件も生成されていない")
         self.assertGreaterEqual(
             len(targets), 12,
@@ -465,12 +646,15 @@ class RepresentativeNameNotOutputTest(unittest.TestCase):
 
     def test_raw_text_files_have_redaction_marker(self):
         """各raw/textファイルに[氏名-非出力]が1件以上あること(SPEC.md §4.4)。"""
-        for path in RAW_TEXT_FILES:
+        for path in REGISTRATION_RAW_TEXT_FILES:
             content = path.read_text(encoding="utf-8")
-            self.assertGreaterEqual(
+            self.assertEqual(
                 content.count("[氏名-非出力]"), 1,
-                f"{path.name}: 伏字マーカー[氏名-非出力]が1件も無い",
+                f"{path.name}: 伏字マーカーが1件でない",
             )
+        for page in PDF3_CONTINUATION_OR_APPENDIX_PAGES:
+            content = (TEXT_DIR / f"000359215_p{page}.txt").read_text(encoding="utf-8")
+            self.assertNotIn("[氏名-非出力]", content, f"p{page}: 継続・付録ページに伏字あり")
 
     def test_no_representative_column_in_schema(self):
         suspicious = ("代表者", "氏名", "daihyo", "representative")

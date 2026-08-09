@@ -1,7 +1,8 @@
 """自家用有償旅客運送者登録簿（道路運送法施行規則 第2号様式）のパーサ。
 
-対象は raw/000271730.pdf（福祉有償運送・NPO等）と raw/000230003.pdf（福祉有償運送・
-市町村営）の2本（SPEC.md §1、山口県4ファイルのうち処理済みの2ファイル）。
+対象は raw/000271730.pdf（福祉有償運送・NPO等）、raw/000230003.pdf（福祉有償運送・
+市町村営）、raw/000359215.pdf（交通空白地有償運送・市町村営）の3本
+（SPEC.md §1、山口県4ファイルのうち取得済みの3ファイル）。
 実装方針は SPEC.md §4 に従う:
 
 - pdfplumber の extract_words() で座標付きの語を取り、ラベル語の位置を基準に
@@ -33,12 +34,23 @@ PREF = "山口県"
 
 # 処理対象ファイルとファイル固有の設定（SPEC.md §2 の対応表・一覧ページ照合済み）。
 # ファイルごとに異なる値（実施主体の別）を1か所にまとめ、グローバル定数として
-# 1組に固定しない（今回の増分の必須実装1）。処理順はこのリストの順とし、
-# 2PDFの統合出力を決定的にする。
+# 1組に固定しない。処理順はこのリストの順とし、3PDFの統合出力を決定的にする。
 FILE_CONFIGS = [
-    {"filename": "000271730.pdf", "operator_type": "NPO等"},
-    {"filename": "000230003.pdf", "operator_type": "市町村営"},
+    {"filename": "000271730.pdf", "operator_type": "NPO等", "parser": "coordinate_page"},
+    {"filename": "000230003.pdf", "operator_type": "市町村営", "parser": "coordinate_page"},
+    {
+        "filename": "000359215.pdf",
+        "operator_type": "市町村営",
+        "parser": "table_block",
+        "appendix_marker": "輸送人員実績報告提出状況",
+    },
 ]
+
+YAMAGUCHI_MUNICIPALITIES = (
+    "下関市", "宇部市", "山口市", "萩市", "防府市", "下松市", "岩国市", "光市",
+    "長門市", "柳井市", "美祢市", "周南市", "山陽小野田市", "周防大島町", "和木町",
+    "上関町", "田布施町", "平生町", "阿武町",
+)
 
 # 旅客範囲の記号対応（道路運送法施行規則第49条第2号）。SPEC.md §3.1。
 SCOPE_COLUMNS = {
@@ -229,7 +241,12 @@ def extract_registration_block(words):
         raise ValueError("「登録番号」ラベルが見つからない")
     row = words_in_box(words, x0=200, top=label["top"] - 3, bottom=label["bottom"] + 3)
     raw = join_words(row)
-    normalized = to_halfwidth(raw)
+    return parse_registration_text(raw)
+
+
+def parse_registration_text(raw):
+    """原文登録番号を保持したまま、全角英数字と空白だけを正規化して分解する。"""
+    normalized = re.sub(r"\s+", "", to_halfwidth(raw))
 
     m = STANDARD_REGISTRATION_RE.match(normalized)
     if not m:
@@ -261,6 +278,61 @@ WAREKI_ABBR_RANGE_RE = re.compile(
 )
 
 
+def _abbr_date_to_iso(groups):
+    return wareki_to_iso(ERA_ABBR[groups[0]], groups[1], groups[2], groups[3])
+
+
+def extract_dates_text(text):
+    """登録日・更新日・有効期間を、全表記形式に共通の文字列から抽出する。"""
+    text = to_halfwidth(text)
+    m_reg_full = re.search(
+        r"登録年月日[：:]\s*(令和|平成|昭和)(\d+)年(\d+)月(\d+)日", text
+    )
+    m_reg_abbr = re.search(r"登録年月日[：:]\s*([RHS])(\d+)\.(\d+)\.(\d+)", text)
+    m_upd_full = re.search(
+        r"更新登録年月日[：:]\s*(令和|平成|昭和)(\d+)年(\d+)月(\d+)日\s*~\s*"
+        r"(令和|平成|昭和)(\d+)年(\d+)月(\d+)日",
+        text,
+    )
+    m_upd_abbr = re.search(
+        r"更新登録年月日[：:]\s*([RHS])(\d+)\.(\d+)\.(\d+)\s*~\s*"
+        r"([RHS])(\d+)\.(\d+)\.(\d+)",
+        text,
+    )
+
+    if m_upd_full or m_upd_abbr:
+        if m_reg_full:
+            registered_date = wareki_to_iso(*m_reg_full.groups())
+        elif m_reg_abbr:
+            registered_date = _abbr_date_to_iso(m_reg_abbr.groups())
+        else:
+            registered_date = ""
+        if m_upd_full:
+            groups = m_upd_full.groups()
+            renewed_date = wareki_to_iso(*groups[:4])
+            valid_to = wareki_to_iso(*groups[4:])
+        else:
+            groups = m_upd_abbr.groups()
+            renewed_date = _abbr_date_to_iso(groups[:4])
+            valid_to = _abbr_date_to_iso(groups[4:])
+        return registered_date, renewed_date, renewed_date, valid_to
+
+    m_range = WAREKI_FULL_RANGE_RE.search(text)
+    if m_range:
+        valid_from = wareki_to_iso(*m_range.groups()[0:4])
+        valid_to = wareki_to_iso(*m_range.groups()[4:8])
+        return "", valid_from, valid_from, valid_to
+
+    m_abbr = WAREKI_ABBR_RANGE_RE.search(text)
+    if m_abbr:
+        groups = m_abbr.groups()
+        valid_from = _abbr_date_to_iso(groups[:4])
+        valid_to = _abbr_date_to_iso(groups[4:])
+        return "", valid_from, valid_from, valid_to
+
+    raise ValueError(f"登録年月日の形式が想定と違う: {text!r}")
+
+
 def extract_dates(words):
     """登録年月日及び更新登録年月日を抽出する。
 
@@ -283,32 +355,7 @@ def extract_dates(words):
     row = words_in_box(words, x0=150, top=label1["top"] - 2, bottom=label2["bottom"] + 2)
     text = to_halfwidth(join_words(row, gap_threshold=3.0))
 
-    m_reg = re.search(r"登録年月日[：:]\s*(令和|平成|昭和)(\d+)年(\d+)月(\d+)日(?!.*~)", text)
-    m_upd = re.search(r"更新登録年月日[：:]\s*(令和|平成|昭和)(\d+)年(\d+)月(\d+)日\s*~\s*(令和|平成|昭和)(\d+)年(\d+)月(\d+)日", text)
-
-    if m_upd:
-        registered_date = wareki_to_iso(*m_reg.groups()) if m_reg else ""
-        renewed_date = wareki_to_iso(*m_upd.groups()[0:4])
-        valid_from = renewed_date
-        valid_to = wareki_to_iso(*m_upd.groups()[4:8])
-        return registered_date, renewed_date, valid_from, valid_to
-
-    # 接頭辞なし: 「開始日~終了日」の1行のみ（和暦漢字表記）
-    m_range = WAREKI_FULL_RANGE_RE.search(text)
-    if m_range:
-        valid_from = wareki_to_iso(*m_range.groups()[0:4])
-        valid_to = wareki_to_iso(*m_range.groups()[4:8])
-        return "", valid_from, valid_from, valid_to
-
-    # 接頭辞なし: 「開始日~終了日」の1行のみ（和暦頭文字略記、000230003.pdfで確認）
-    m_abbr = WAREKI_ABBR_RANGE_RE.search(text)
-    if m_abbr:
-        g = m_abbr.groups()
-        valid_from = wareki_to_iso(ERA_ABBR[g[0]], g[1], g[2], g[3])
-        valid_to = wareki_to_iso(ERA_ABBR[g[4]], g[5], g[6], g[7])
-        return "", valid_from, valid_from, valid_to
-
-    raise ValueError(f"登録年月日の形式が想定と違う: {text!r}")
+    return extract_dates_text(text)
 
 
 def extract_org_name(words):
@@ -479,10 +526,11 @@ def extract_partner_operator(words):
 
     表側の見出し語「氏名又は名称」（左半分の列見出し）から、左マージンの
     折り返しラベル（「事業者協力型…名称及び住所」）の最終行までのデータ域を読む。
-    処理済み2PDF・7ページ（000271730.pdf 全4ページ、000230003.pdf 全3ページ）では
+    座標パーサを使う2PDF・7ページ（000271730.pdf 全4ページ、000230003.pdf 全3ページ）では
     全件空欄（実測、evidence/20260807_page_render-{1..4}.png、
-    evidence/20260809_000230003_page1.png で目視確認）。000359215.pdf と
-    000268896.pdf は未取得・未確認であり、この結果を一般化しない。見出しの縦位置は
+    evidence/20260809_000230003_page1.png で目視確認）。000359215.pdf は
+    表セル型パーサ側で全12団体の空欄を検証する。000268896.pdf は未確認。
+    この結果を一般化しない。見出しの縦位置は
     ファイルにより異なるため固定オフセットは使わず、ラベル自体の位置から都度算出する。
 
     下端は「備」（備考）ラベルではなく、左マージンラベルの最終行「名称及び住所」の
@@ -687,7 +735,393 @@ def extract_vehicle_table(page, words, office_count):
 
 
 # ---------------------------------------------------------------------------
-# 1ページ(1団体)の処理
+# 複数ページ・表セル型の交通空白地登録簿（000359215.pdf）
+# ---------------------------------------------------------------------------
+
+def compact_table_text(value):
+    """表ラベル比較用。改行・全角半角空白を除く。"""
+    return re.sub(r"\s+", "", value or "")
+
+
+def flatten_table_value(value):
+    """セル内の折返し改行だけを除き、原文の語間空白は保持する。"""
+    return re.sub(r"\s*\n\s*", "", value or "").strip()
+
+
+def table_has_marker(rows, marker):
+    return any(
+        marker in compact_table_text(cell)
+        for row in rows
+        for cell in row
+        if cell
+    )
+
+
+def find_table_row(rows, marker):
+    for index, row in enumerate(rows):
+        if row and marker in compact_table_text(row[0]):
+            return index, row
+    raise ValueError(f"表の行ラベルが見つからない: {marker}")
+
+
+def first_nonempty(cells):
+    for cell in cells:
+        value = flatten_table_value(cell)
+        if value:
+            return value
+    return ""
+
+
+def extract_metadata_table(page):
+    tables = page.extract_tables()
+    matches = [table for table in tables if table_has_marker(table, "登録番号")]
+    if len(matches) != 1:
+        raise ValueError(f"登録事項表が1件でない: {len(matches)}")
+    return matches[0]
+
+
+def extract_table_field(rows, marker):
+    _, row = find_table_row(rows, marker)
+    value = first_nonempty(row[1:])
+    if not value:
+        raise ValueError(f"表の値が空: {marker}")
+    return value
+
+
+def extract_table_offices(rows):
+    header_index, header = find_table_row(rows, "事務所の名称")
+    name_indexes = [i for i, cell in enumerate(header) if compact_table_text(cell) == "名称"]
+    if not name_indexes:
+        raise ValueError("事務所表の名称列が見つからない")
+    name_index = name_indexes[0]  # 光市の複数群は、○と値がある交通空白地側の先頭群
+    location_indexes = [
+        i for i, cell in enumerate(header)
+        if i > name_index and compact_table_text(cell) == "位置"
+    ]
+    if not location_indexes:
+        raise ValueError("事務所表の位置列が見つからない")
+    location_index = location_indexes[0]
+
+    offices = []
+    for row in rows[header_index + 1:]:
+        if compact_table_text(row[0]):
+            break
+        name = flatten_table_value(row[name_index]) if name_index < len(row) else ""
+        location = flatten_table_value(row[location_index]) if location_index < len(row) else ""
+        if not name and not location:
+            continue
+        if not name or not location:
+            raise ValueError(f"上部事務所の名称または位置が片方だけ空: {name!r} / {location!r}")
+        offices.append((name, location))
+    if not offices:
+        raise ValueError("上部事務所が1件も取得できない")
+    return offices
+
+
+def clean_service_area_fragment(text):
+    lines = []
+    for line in (text or "").splitlines():
+        line = line.strip()
+        if not line or line in ("路線又は", "運送の区域", "路線又は運送の区域"):
+            continue
+        line = line.replace("路線又は", "").replace("運送の区域", "").strip()
+        if line:
+            lines.append(line)
+    return "\n".join(lines)
+
+
+def extract_service_area_block(block):
+    """表セルと、表として認識されない改ページ継続領域の双方から区域を得る。"""
+    parts = []
+    for page_no, page in block:
+        table_objects = page.find_tables()
+        table_rows = [(table, table.extract()) for table in table_objects]
+        service_rows_found = False
+        for _, rows in table_rows:
+            for row in rows:
+                if row and ("路線又は" in compact_table_text(row[0]) or
+                            "運送の区域" in compact_table_text(row[0])):
+                    value = "\n".join(
+                        flatten_table_value(cell) for cell in row[1:] if flatten_table_value(cell)
+                    )
+                    if value:
+                        parts.append(value)
+                    service_rows_found = True
+
+        if len(block) == 1 or service_rows_found:
+            continue
+
+        registration_tables = [
+            table for table, rows in table_rows if table_has_marker(rows, "登録番号")
+        ]
+        passenger_tables = [
+            table for table, rows in table_rows
+            if table_has_marker(rows, "旅客の範囲") or table_has_marker(rows, "運送する旅客")
+        ]
+        top = max((table.bbox[3] for table in registration_tables), default=0)
+        bottom = min((table.bbox[1] for table in passenger_tables), default=page.height)
+        if bottom > top + 2:
+            fragment = page.crop((0, top, page.width, bottom)).extract_text() or ""
+            fragment = clean_service_area_fragment(fragment)
+            if fragment:
+                parts.append(fragment)
+
+    raw = "\n".join(part for part in parts if part).strip()
+    if not raw:
+        raise ValueError(
+            f"路線又は運送の区域が取得できない: pages={[page_no for page_no, _ in block]}"
+        )
+    return to_halfwidth(raw), raw
+
+
+def extract_service_area_municipalities(service_area, org_name):
+    hits = []
+    for municipality in YAMAGUCHI_MUNICIPALITIES:
+        position = service_area.find(municipality)
+        if position >= 0:
+            hits.append((position, municipality))
+    if re.search(r"[市町村]$", org_name) and not any(name == org_name for _, name in hits):
+        hits.append((-1, org_name))
+    return ";".join(name for _, name in sorted(hits) if name)
+
+
+def validate_empty_partner_block(block):
+    for page_no, page in block:
+        for rows in page.extract_tables():
+            active = False
+            for row in rows:
+                label = compact_table_text(row[0]) if row else ""
+                if "事業者協力型" in label:
+                    active = True
+                    continue
+                if active and "備考" in label:
+                    active = False
+                    continue
+                if not active:
+                    continue
+                values = [
+                    compact_table_text(cell) for cell in row[1:]
+                    if compact_table_text(cell) not in ("", "氏名又は名称", "住所")
+                ]
+                if values:
+                    raise ValueError(
+                        f"000359215.pdf p{page_no}: 事業者協力型欄に想定外の値: {values}"
+                    )
+
+
+def read_table_cell_value(text, has_kei_flag):
+    normalized = to_halfwidth(text or "")
+    lines = [line.strip() for line in normalized.splitlines() if line.strip()]
+    plain_numbers = [int(line) for line in lines if re.fullmatch(r"\d+", line)]
+    parenthesized = [
+        int(match.group(1)) if match.group(1) else 0
+        for line in lines
+        for match in [re.fullmatch(r"\(\s*(\d*)\s*\)", line)]
+        if match
+    ]
+    total = plain_numbers[0] if plain_numbers else 0
+    if not has_kei_flag:
+        return total, ""
+    if parenthesized:
+        kei = parenthesized[-1]
+    elif len(plain_numbers) > 1:
+        kei = plain_numbers[-1]
+    else:
+        kei = 0
+    return total, kei
+
+
+def map_table_vehicle_type(label, transport_type):
+    compact = compact_table_text(label)
+    mapping = (
+        ("寝台車", "寝台車"), ("車いす", "車いす車"), ("兼用車", "兼用車"),
+        ("回転", "回転シート車"), ("セダン", "セダン等"), ("バス", "バス"),
+        ("合計", "合計"),
+    )
+    for marker, vehicle_type in mapping:
+        if marker in compact:
+            if vehicle_type == "セダン等" and transport_type == "交通空白地有償運送":
+                return "普通自動車"
+            return vehicle_type
+    raise ValueError(f"車種列のラベルを解釈できない: {label!r}")
+
+
+def extract_table_vehicle_entries(block, office_count, transport_type):
+    matches = []
+    for page_no, page in block:
+        for table in page.find_tables():
+            rows = table.extract()
+            if table_has_marker(rows, "自家用有償旅客運送自動車の数"):
+                matches.append((page_no, page, table, rows))
+    if len(matches) != 1:
+        raise ValueError(f"車両表が1件でない: {len(matches)}")
+    page_no, page, table, rows = matches[0]
+    header_index = next(
+        index for index, row in enumerate(rows)
+        if table_has_marker([row], "自家用有償旅客運送自動車の数")
+    )
+    type_header = rows[header_index + 1]
+    col_headers = [flatten_table_value(cell) for cell in type_header[2:9]]
+    vehicle_types = [map_table_vehicle_type(label, transport_type) for label in col_headers]
+    has_kei = ["軽" in compact_table_text(label) for label in col_headers]
+
+    entries = []
+    printed_aggregate = None
+    for row in rows[header_index + 2:]:
+        office_cell = row[1] or ""
+        office_lines = [flatten_table_value(line) for line in office_cell.splitlines() if line.strip()]
+        if not office_lines:
+            continue
+        cells = []
+        for index, (vehicle_type, label, kei_flag) in enumerate(
+            zip(vehicle_types, col_headers, has_kei), start=2
+        ):
+            total, kei = read_table_cell_value(row[index] if index < len(row) else "", kei_flag)
+            cells.append({
+                "vehicle_type": vehicle_type,
+                "vehicle_type_label": label,
+                "count": total,
+                "count_kei": kei,
+            })
+        if compact_table_text(office_lines[0]) == "合計":
+            printed_aggregate = cells
+            continue
+        name = office_lines[0]
+        location = "".join(office_lines[1:])
+        if not location:
+            raise ValueError(f"車両欄の事務所位置が空: {name!r}")
+        entries.append({
+            "office_seq": len(entries) + 1,
+            "ownership": "",
+            "cells": cells,
+            "name_text": name,
+            "location_text": location,
+            "source_page": page_no,
+        })
+
+    if len(entries) != office_count:
+        raise ValueError(f"車両欄の事務所数({len(entries)})と上部({office_count})が一致しない")
+
+    derived_total = sum(
+        cell["count"] for entry in entries for cell in entry["cells"]
+        if cell["vehicle_type"] == "合計"
+    )
+    derived_kei = sum(
+        cell["count_kei"] for entry in entries for cell in entry["cells"]
+        if cell["vehicle_type"] == "合計" and cell["count_kei"] != ""
+    )
+    if printed_aggregate:
+        aggregate_total = next(cell["count"] for cell in printed_aggregate if cell["vehicle_type"] == "合計")
+        aggregate_kei = next(cell["count_kei"] for cell in printed_aggregate if cell["vehicle_type"] == "合計")
+        if (aggregate_total, aggregate_kei) != (derived_total, derived_kei):
+            raise ValueError(
+                f"団体集計と事務所合計が不一致: printed={(aggregate_total, aggregate_kei)} "
+                f"derived={(derived_total, derived_kei)}"
+            )
+
+    below_words = [
+        w for w in page.extract_words()
+        if w["top"] >= table.bbox[3] - 1 and re.fullmatch(r"\d+", to_halfwidth(w["text"]))
+    ]
+    outside_totals = [int(to_halfwidth(w["text"])) for w in sorted(below_words, key=lambda w: w["x0"])]
+    if outside_totals and outside_totals[-1] != derived_total:
+        raise ValueError(f"表外団体集計が不一致: {outside_totals} / derived={derived_total}")
+    return entries, derived_total, derived_kei
+
+
+def normalize_office_for_compare(value):
+    return re.sub(r"\s+", "", to_halfwidth(value))
+
+
+def parse_table_block(block, source_pdf_name, operator_type):
+    start_page_no, start_page = block[0]
+    metadata = extract_metadata_table(start_page)
+    reg = parse_registration_text(extract_table_field(metadata, "登録番号"))
+    registered_date, renewed_date, valid_from, valid_to = extract_dates_text(
+        extract_table_field(metadata, "登録年月日及び")
+    )
+    org_name = extract_table_field(metadata, "名称")
+    org_address_raw = extract_table_field(metadata, "住所")
+    org_address = to_halfwidth(org_address_raw)
+    transport_type = extract_table_field(metadata, "運送の種別")
+    if transport_type != "交通空白地有償運送":
+        raise ValueError(f"運送の種別が交通空白地でない: {transport_type!r}")
+    scope_flags = {column: 0 for column in SCOPE_COLUMNS.values()}
+    office_rows = extract_table_offices(metadata)
+    service_area, service_area_raw = extract_service_area_block(block)
+    service_area_municipalities = extract_service_area_municipalities(service_area, org_name)
+    validate_empty_partner_block(block)
+    entries, vehicles_total, vehicles_total_kei = extract_table_vehicle_entries(
+        block, len(office_rows), transport_type
+    )
+
+    flags = []
+    for sequence, (top_office, entry) in enumerate(zip(office_rows, entries), start=1):
+        top_name, top_location = top_office
+        name_mismatch = normalize_office_for_compare(top_name) != normalize_office_for_compare(entry["name_text"])
+        location_mismatch = (
+            normalize_office_for_compare(top_location) !=
+            normalize_office_for_compare(entry["location_text"])
+        )
+        if name_mismatch and "office_mismatch" not in flags:
+            flags.append("office_mismatch")
+        elif location_mismatch and "office_notation_diff" not in flags:
+            flags.append("office_notation_diff")
+
+    operator = {
+        "registration_no": reg["registration_no"],
+        "registration_no_raw": reg["registration_no_raw"],
+        "authority_code": reg["authority_code"],
+        "service_type_code": reg["service_type_code"],
+        "serial_no": reg["serial_no"],
+        "pref": PREF,
+        "transport_type": transport_type,
+        "operator_type": operator_type,
+        "org_name": org_name,
+        "org_address": org_address,
+        "org_address_raw": org_address_raw,
+        "service_area": service_area,
+        "service_area_raw": service_area_raw,
+        "service_area_municipalities": service_area_municipalities,
+        "registered_date": registered_date,
+        "renewed_date": renewed_date,
+        "valid_from": valid_from,
+        "valid_to": valid_to,
+        **scope_flags,
+        "office_name": ";".join(name for name, _ in office_rows),
+        "office_location": ";".join(location for _, location in office_rows),
+        "partner_operator_name": "",
+        "partner_operator_address": "",
+        "vehicles_total": vehicles_total,
+        "vehicles_total_kei": vehicles_total_kei,
+        "source_pdf": source_pdf_name,
+        "source_page": start_page_no,
+        "flags": ";".join(flags),
+    }
+
+    vehicles = []
+    for entry in entries:
+        for cell in entry["cells"]:
+            if cell["count"] == 0 and (cell["count_kei"] == "" or cell["count_kei"] == 0):
+                continue
+            vehicles.append({
+                "registration_no": reg["registration_no"],
+                "office_seq": entry["office_seq"],
+                "office_name": entry["name_text"],
+                "office_location": entry["location_text"],
+                "ownership": "",
+                "vehicle_type": cell["vehicle_type"],
+                "vehicle_type_label": cell["vehicle_type_label"],
+                "count": cell["count"],
+                "count_kei": cell["count_kei"],
+                "source_pdf": source_pdf_name,
+                "source_page": entry["source_page"],
+            })
+    return operator, vehicles
+
+
+# ---------------------------------------------------------------------------
+# 既存2PDFの1ページ1団体処理
 # ---------------------------------------------------------------------------
 
 def parse_page(page, page_no, source_pdf_name, operator_type):
@@ -821,39 +1255,31 @@ def parse_page(page, page_no, source_pdf_name, operator_type):
 # 代表者氏名の伏字化（SPEC.md §4.4, rev.4.4）
 # ---------------------------------------------------------------------------
 
-def redact_representative_name(words, raw_text, pdf_name, page_no):
+def redact_representative_name(words, raw_text, pdf_name, page_no, required=True):
     """ページの抽出テキストから代表者氏名の値だけを [氏名-非出力] に置換する。
 
-    氏名の値の「存在」は座標(「代表者の氏名」ラベルの右側)で確認する。ただし
-    実際の置換は extract_text() が出す行単位で行う。extract_text() 自身の語間隔
-    ヒューリスティックは join_words() の閾値と厳密には一致しない(実測: あるページの
-    「役職名 姓 名」というラベル値で、座標抽出だと役職名と姓の間の語間空白が1つ
-    落ちる語対がある)ため、座標抽出した文字列そのものでの置換は行わない。
+    実際の氏名値をコードや例外へ保持しないため、extract_text() が出す行単位で置換する。
     「代表者の氏名」ラベルは他の内容と同じ行に同居しない(全ページで確認済み)
-    ため、そのラベルで始まる行の残り全部を伏字にすれば十分かつ安全。
+    ため、そのラベルで始まる行の残り全部を伏字にすれば十分かつ安全。登録開始ページは
+    required=True で1件を必須にし、継続・付録ページは required=False で0件を必須にする。
     """
-    label = find_word(words, "代表者の氏名", x_max=150, top_max=220)
-    if label is None:
-        raise ValueError(f"{pdf_name} p{page_no}: 「代表者の氏名」ラベルが見つからない")
-    row = words_in_box(words, x0=150, top=label["top"] - 2, bottom=label["bottom"] + 2)
-    name_text = join_words(row)
-    if not name_text:
-        raise ValueError(f"{pdf_name} p{page_no}: 代表者の氏名が空で取得できていない")
-
     label_text = "代表者の氏名"
     lines = raw_text.split("\n")
     matched = 0
     out_lines = []
     for line in lines:
         if line.startswith(label_text):
+            if not line[len(label_text):].strip():
+                raise ValueError(f"{pdf_name} p{page_no}: 代表者の氏名の値が空")
             out_lines.append(f"{label_text} [氏名-非出力]")
             matched += 1
         else:
             out_lines.append(line)
-    if matched != 1:
+    expected = 1 if required else 0
+    if matched != expected:
         raise ValueError(
             f"{pdf_name} p{page_no}: extract_text()内で「代表者の氏名」から始まる行が"
-            f"ちょうど1つでない({matched}件)。置換不能。推定で先に進まず報告すること"
+            f"期待件数{expected}と一致しない({matched}件)。置換不能。推定で先に進まず報告すること"
         )
     return "\n".join(out_lines)
 
@@ -872,25 +1298,59 @@ def main():
     for cfg in FILE_CONFIGS:
         pdf_path = RAW_DIR / cfg["filename"]
         with pdfplumber.open(pdf_path) as pdf:
+            page_infos = []
             for page_no, page in enumerate(pdf.pages, start=1):
                 words = page.extract_words()
+                raw_text = page.extract_text() or ""
+                has_anchor = bool(re.search(r"登\s*録\s*番\s*号", raw_text))
+                is_appendix = bool(cfg.get("appendix_marker") and cfg["appendix_marker"] in raw_text)
 
                 # 生テキストの保存(SPEC.md §4.4)。代表者氏名の値だけを伏字化する。
-                raw_text = page.extract_text() or ""
-                redacted_text = redact_representative_name(words, raw_text, cfg["filename"], page_no)
+                redacted_text = redact_representative_name(
+                    words, raw_text, cfg["filename"], page_no, required=has_anchor
+                )
                 text_path = TEXT_DIR / f"{pdf_path.stem}_p{page_no}.txt"
                 text_path.write_text(redacted_text, encoding="utf-8")
+                page_infos.append((page_no, page, has_anchor, is_appendix))
 
-                # 団体の区切りは登録番号の出現で判定する(SPEC.md §4)。
-                # 両ファイルとも実測で1ページ1団体・登録番号ラベルはページ内に1回のみ。
-                anchors = [w for w in words if w["text"] == "登" and w["x0"] < 150 and w["top"] < 150]
-                if len(anchors) != 1:
+            blocks = []
+            current = []
+            for page_no, page, has_anchor, is_appendix in page_infos:
+                if is_appendix:
+                    if current:
+                        blocks.append(current)
+                        current = []
+                    continue
+                if has_anchor:
+                    if current:
+                        blocks.append(current)
+                    current = [(page_no, page)]
+                elif current:
+                    current.append((page_no, page))
+                else:
                     raise ValueError(
-                        f"{cfg['filename']} p{page_no}: 登録番号ラベルの出現回数が1でない({len(anchors)}件)。"
-                        "団体の区切り方の前提が崩れている可能性がある。止めて報告すること。"
+                        f"{cfg['filename']} p{page_no}: 登録番号なしで開始する継続ページ"
                     )
+            if current:
+                blocks.append(current)
 
-                operator, page_vehicles = parse_page(page, page_no, cfg["filename"], cfg["operator_type"])
+            for block in blocks:
+                if cfg["parser"] == "coordinate_page":
+                    if len(block) != 1:
+                        raise ValueError(
+                            f"{cfg['filename']}: 既存座標パーサに複数ページ団体が入った: "
+                            f"{[page_no for page_no, _ in block]}"
+                        )
+                    page_no, page = block[0]
+                    operator, page_vehicles = parse_page(
+                        page, page_no, cfg["filename"], cfg["operator_type"]
+                    )
+                elif cfg["parser"] == "table_block":
+                    operator, page_vehicles = parse_table_block(
+                        block, cfg["filename"], cfg["operator_type"]
+                    )
+                else:
+                    raise ValueError(f"未知のパーサ種別: {cfg['parser']}")
                 operators.append(operator)
                 vehicles.extend(page_vehicles)
 
