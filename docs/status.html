@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>山口県 自家用有償旅客運送 登録簿データ化｜プロジェクト現況</title>
+  <title>山口県 市町別の登録供給ビュー｜検証状況</title>
   <style>
     :root {
       --green: #236b4b;
@@ -718,6 +718,8 @@
       .progress-summary {
         display: block;
         margin-top: 12px;
+        white-space: normal;
+        overflow-wrap: anywhere;
       }
 
       .roadmap {
@@ -746,35 +748,51 @@
         grid-template-columns: repeat(10, minmax(12px, 1fr));
       }
     }
+
+    .app-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 48px;
+      margin-top: 18px;
+      padding: 0 22px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: white;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .app-link:hover { background: var(--green); }
   </style>
 </head>
 <body>
   <main class="page">
     <header>
-      <p class="eyebrow">UDC2026 応募作品① / 現況ダッシュボード</p>
-      <h1>山口県 自家用有償旅客運送<br>登録簿の機械可読化</h1>
-      <p class="lead">中国運輸局が公開する山口県分の登録簿4ファイルを、再利用・検証可能なCSVへ変換するプロジェクトです。現在は福祉有償運送（NPO等）の1ファイルを処理し、残り3ファイルへの展開前です。</p>
+      <p class="eyebrow">UDC2026 応募作品① / 検証状況</p>
+      <h1>山口県 市町別の<br>登録供給ビュー</h1>
+      <p class="lead">福祉有償運送と交通空白地有償運送の公表登録簿を、市町から確認できる静的アプリです。県・市町の交通担当者が、関係団体と登録車両を原本まで追跡できる最初の利用可能な縦切りを公開用HTMLとして受け入れました。</p>
+      <a class="app-link" href="index.html?v=20260809">市町別の登録供給ビューを開く</a>
 
       <div class="metrics" aria-label="主要な進捗数値">
         <div class="metric complete">
-          <span class="label">工程</span>
-          <strong class="metric-number">3 / 7</strong>
-          <span class="metric-caption">完了</span>
+          <span class="label">受入段階</span>
+          <strong class="metric-number">I-1 / I-2</strong>
+          <span class="metric-caption">データ基盤・市町別ビュー</span>
         </div>
         <div class="metric current">
           <span class="label">PDF</span>
-          <strong class="metric-number">1 / 4</strong>
+          <strong class="metric-number">4 / 4</strong>
           <span class="metric-caption">処理済み</span>
         </div>
         <div class="metric complete">
           <span class="label">Operators</span>
-          <strong class="metric-number">4</strong>
+          <strong class="metric-number">23</strong>
           <span class="metric-caption">団体を抽出</span>
         </div>
         <div class="metric complete">
           <span class="label">Vehicles</span>
-          <strong class="metric-number">17</strong>
-          <span class="metric-caption">台を抽出</span>
+          <strong class="metric-number">136</strong>
+          <span class="metric-caption">台（軽20台は内数）</span>
         </div>
       </div>
     </header>
@@ -782,53 +800,52 @@
     <section aria-labelledby="progress-title">
       <div class="section-head">
         <div>
-          <p class="eyebrow">全体の進捗</p>
-          <h2 id="progress-title">作品①の7工程</h2>
-          <p>環境と検証方法を固め、一覧ページと1本目のPDFまで完了。次は未処理3ファイルへの展開です。</p>
+          <p class="eyebrow">作品の現在地</p>
+          <h2 id="progress-title">受入済み成果と残る作業</h2>
+          <p>PDF処理は作品のためのデータ基盤です。現在はその基盤を使い、市町別の登録供給を確認する画面まで受け入れています。I-1・I-2の受入は、作品概要・本応募・第三者検証公開・受賞というT1〜T4の達成を意味しません。</p>
         </div>
-        <strong class="progress-summary">7工程中3工程完了</strong>
+        <strong class="progress-summary">公開アプリの第1縦切りを受入済み</strong>
       </div>
 
-      <div class="overall-bar" role="progressbar" aria-label="7工程中3工程完了、4番目が現在工程" aria-valuemin="0" aria-valuemax="7" aria-valuenow="3">
-        <span class="done" title="3工程完了"></span>
-        <span class="current" title="現在工程: 残り3本"></span>
+      <div class="overall-bar" role="progressbar" aria-label="7工程中4工程を受入済み、次の作品機能はI-3後に一つだけ再評価" aria-valuemin="0" aria-valuemax="7" aria-valuenow="4">
+        <span class="done" title="4工程を受入済み"></span>
       </div>
 
       <ol class="roadmap">
         <li class="done">
           <span class="step-no">01</span>
-          <span class="step-title">環境構築</span>
+          <span class="step-title">公式原本の取得・検証</span>
           <span class="step-state">完了</span>
         </li>
         <li class="done">
           <span class="step-no">02</span>
-          <span class="step-title">一覧ページ照合</span>
+          <span class="step-title">4PDFデータ基盤</span>
           <span class="step-state">完了</span>
         </li>
         <li class="done">
           <span class="step-no">03</span>
-          <span class="step-title">PDF 1本目のパース</span>
+          <span class="step-title">利用条件・出典</span>
           <span class="step-state">完了</span>
         </li>
-        <li class="current">
+        <li class="done">
           <span class="step-no">04</span>
-          <span class="step-title">残り3本</span>
-          <span class="step-state">現在工程・3本とも未着手</span>
+          <span class="step-title">市町別の登録供給ビュー</span>
+          <span class="step-state">受入済み</span>
         </li>
-        <li class="todo">
+        <li class="current">
           <span class="step-no">05</span>
-          <span class="step-title">市町別集計</span>
-          <span class="step-state">未着手</span>
+          <span class="step-title">次の作品機能</span>
+          <span class="step-state">I-3受入後に一つだけ再評価</span>
         </li>
         <li class="todo">
           <span class="step-no">06</span>
-          <span class="step-title">可視化</span>
+          <span class="step-title">応募用の公開物一式</span>
           <span class="step-state">未着手</span>
         </li>
         <li class="todo">
           <span class="step-no">07</span>
-          <span class="step-title">応募</span>
-          <span class="step-state">未着手</span>
+          <span class="step-title">外部提出</span>
+          <span class="step-state">G6の本人承認前は実施しない</span>
         </li>
       </ol>
 
@@ -837,7 +854,7 @@
         <span><i class="swatch blue"></i>現在工程</span>
         <span><i class="swatch gray"></i>未着手</span>
       </div>
-      <p class="source-note">根拠: run_record.md §3.4〜§4、SPEC.md §1・§2、verification.md</p>
+      <p class="source-note">根拠: run_record.md §0.5・§3.10・§4、SPEC.md、verification.md</p>
     </section>
 
     <section aria-labelledby="pdf-title">
@@ -845,37 +862,37 @@
         <div>
           <p class="eyebrow">対象PDF</p>
           <h2 id="pdf-title">4ファイルの処理状況</h2>
-          <p>処理済みは福祉有償運送（NPO等）の1本。残る3本は現在工程の対象ですが、各ファイルの処理自体は未着手です。</p>
+          <p>山口県分4区分・31ページを全て処理し、原本と機械可読データを照合済みです。</p>
         </div>
       </div>
 
       <div class="pdf-grid">
-        <article class="pdf-card">
-          <span class="status-tag">未着手</span>
+        <article class="pdf-card complete">
+          <span class="status-tag">処理・検証済み</span>
           <h3>交通空白地有償運送</h3>
           <p class="pdf-meta">実施主体: 市町村営</p>
           <p class="file-name">000359215.pdf</p>
-          <p class="small">ページ数・MD5・列構成は未確認（U1）。</p>
-        </article>
-
-        <article class="pdf-card">
-          <span class="status-tag">未着手</span>
-          <h3>交通空白地有償運送</h3>
-          <p class="pdf-meta">実施主体: NPO等</p>
-          <p class="file-name">000268896.pdf</p>
-          <p class="small">ページ数・MD5・列構成は未確認（U1）。</p>
-        </article>
-
-        <article class="pdf-card">
-          <span class="status-tag">未着手</span>
-          <h3>福祉有償運送</h3>
-          <p class="pdf-meta">実施主体: 市町村営</p>
-          <p class="file-name">000230003.pdf</p>
-          <p class="small">ページ数・MD5・列構成は未確認（U1）。</p>
+          <div class="pdf-result"><div><strong>12</strong><span>団体</span></div><div><strong>106</strong><span>車両</span></div></div>
         </article>
 
         <article class="pdf-card complete">
-          <span class="status-tag">処理済み</span>
+          <span class="status-tag">処理・検証済み</span>
+          <h3>交通空白地有償運送</h3>
+          <p class="pdf-meta">実施主体: NPO等</p>
+          <p class="file-name">000268896.pdf</p>
+          <div class="pdf-result"><div><strong>4</strong><span>団体</span></div><div><strong>7</strong><span>車両</span></div></div>
+        </article>
+
+        <article class="pdf-card complete">
+          <span class="status-tag">処理・検証済み</span>
+          <h3>福祉有償運送</h3>
+          <p class="pdf-meta">実施主体: 市町村営</p>
+          <p class="file-name">000230003.pdf</p>
+          <div class="pdf-result"><div><strong>3</strong><span>団体</span></div><div><strong>6</strong><span>車両</span></div></div>
+        </article>
+
+        <article class="pdf-card complete">
+          <span class="status-tag">処理・検証済み</span>
           <h3>福祉有償運送</h3>
           <p class="pdf-meta">実施主体: NPO等</p>
           <p class="file-name">000271730.pdf</p>
@@ -885,100 +902,42 @@
           </div>
         </article>
       </div>
-      <p class="source-note">根拠: SPEC.md §2、data/operators.csv、data/vehicles.csv</p>
+      <p class="source-note">根拠: SPEC.md §2・§5、data/operators.csv、data/vehicles.csv、verification.md</p>
     </section>
 
     <div class="dashboard-grid">
       <section aria-labelledby="vehicle-title">
-        <p class="eyebrow">抽出できたデータ</p>
-        <h2 id="vehicle-title">4団体の車両保有状況</h2>
-        <p class="lead">1団体につき1本の横棒。最大値は中山福第3号の10台です。</p>
-
-        <div class="chart-legend" aria-label="車種の凡例">
-          <span><i class="swatch green"></i>車いす車</span>
-          <span><i class="swatch blue"></i>セダン等</span>
-          <span><i class="swatch gray"></i>10台までの余白</span>
+        <p class="eyebrow">検証済みデータ基盤</p>
+        <h2 id="vehicle-title">23団体・90車種行</h2>
+        <p class="lead">4PDFの登録単位、事務所、車両欄を統合し、実車両136台を機械可読化しました。</p>
+        <div class="pdf-result" aria-label="検証済みデータの集計">
+          <div><strong>136</strong><span>実車両</span></div>
+          <div><strong>20</strong><span>軽自動車（内数）</span></div>
         </div>
-
-        <div class="vehicle-chart" role="img" aria-label="中山福第1号は車いす車2台、セダン等1台、合計3台。中山福第3号は車いす車9台、セダン等1台、合計10台。中山福第4号は車いす車1台、セダン等2台、合計3台。中山福第6号は車いす車1台、セダン等0台、合計1台。">
-          <div class="chart-row">
-            <div class="chart-name">中山福第1号<small>3台</small></div>
-            <div class="bar-scale">
-              <div class="bar-fill" style="width: 30%;">
-                <span class="bar-segment bar-wheelchair" style="width: 66.667%;">2</span>
-                <span class="bar-segment bar-sedan" style="width: 33.333%;">1</span>
-              </div>
-            </div>
-            <div class="chart-total">3<small>台</small></div>
-          </div>
-
-          <div class="chart-row">
-            <div class="chart-name">中山福第3号<small>10台</small></div>
-            <div class="bar-scale">
-              <div class="bar-fill" style="width: 100%;">
-                <span class="bar-segment bar-wheelchair" style="width: 90%;">9</span>
-                <span class="bar-segment bar-sedan" style="width: 10%;">1</span>
-              </div>
-            </div>
-            <div class="chart-total">10<small>台</small></div>
-          </div>
-
-          <div class="chart-row">
-            <div class="chart-name">中山福第4号<small>3台</small></div>
-            <div class="bar-scale">
-              <div class="bar-fill" style="width: 30%;">
-                <span class="bar-segment bar-wheelchair" style="width: 33.333%;">1</span>
-                <span class="bar-segment bar-sedan" style="width: 66.667%;">2</span>
-              </div>
-            </div>
-            <div class="chart-total">3<small>台</small></div>
-          </div>
-
-          <div class="chart-row">
-            <div class="chart-name">中山福第6号<small>1台</small></div>
-            <div class="bar-scale">
-              <div class="bar-fill" style="width: 10%;">
-                <span class="bar-segment bar-wheelchair" style="width: 100%;">1</span>
-              </div>
-            </div>
-            <div class="chart-total">1<small>台</small></div>
-          </div>
-        </div>
-
-        <p class="note">軽自動車の台数は各車種の内数です。このグラフは count のみを合計し、count_kei を重ねていません。</p>
-        <p class="source-note">根拠: data/operators.csv、data/vehicles.csv、run_record.md §3.1・§4</p>
+        <p class="note">軽自動車20台は136台の内数であり、総数へ二重加算していません。市町別の値も複数市町を運送区域に持つ団体が再掲されるため、県計として合算できません。</p>
+        <p class="source-note">根拠: data/operators.csv、data/vehicles.csv、SPEC.md §5、verification.md</p>
       </section>
 
       <section aria-labelledby="coverage-title">
-        <p class="eyebrow">市町別の状況</p>
-        <h2 id="coverage-title">現在データがあるのは2市町</h2>
-        <div class="coverage-number">2 <small>/ 19市町</small></div>
-        <p class="coverage-caption stat-note">19市町のうちデータがあるのは2市町のみ。残る17市町は、対象PDF 3本が未処理のため状況を把握できていない。</p>
-
-        <div class="municipality-grid" role="img" aria-label="山口県19市町のうち、現在のデータに登場するのは下関市と周防大島町の2市町">
-          <span class="active" title="下関市"></span>
-          <span class="active" title="周防大島町"></span>
-          <span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span>
-        </div>
-
+        <p class="eyebrow">市町別ビュー</p>
+        <h2 id="coverage-title">山口県19市町を選択可能</h2>
+        <div class="coverage-number">15 <small>/ 19市町に登録簿記録</small></div>
+        <p class="coverage-caption stat-note">宇部市、防府市、山陽小野田市、平生町は登録簿上の該当0件です。これは交通手段や移動支援が存在しないことを意味しません。</p>
         <ul class="municipality-list">
-          <li><span>下関市</span><strong>3団体</strong></li>
-          <li><span>周防大島町</span><strong>1団体</strong></li>
+          <li><span>登録簿記録あり</span><strong>15市町</strong></li>
+          <li><span>登録簿上0件</span><strong>4市町</strong></li>
         </ul>
-
-        <p class="source-note">団体数: data/operators.csv。出典: 山口県「市町｜関連リンク」 <a href="https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html">https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html</a></p>
+        <a class="app-link" href="index.html?v=20260809">19市町から選んで確認する</a>
+        <p class="source-note">市町一覧: 山口県「市町｜関連リンク」 <a href="https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html">公式ページ</a>。集計: docs/data/municipal_supply.json</p>
       </section>
     </div>
 
     <section aria-labelledby="check-title">
       <div class="section-head">
         <div>
-          <p class="eyebrow">1本目の品質確認</p>
+          <p class="eyebrow">4PDF統合の品質確認</p>
           <h2 id="check-title">SPEC.md §5 完了条件</h2>
-          <p>000271730.pdf に対する完了条件1〜8は、verification.md の記録上すべて達成しています。</p>
+          <p>4PDF・23団体・90車種行の統合に対する完了条件1〜8を、実ファイルと自動テストで全て達成しています。</p>
         </div>
         <strong class="check-summary">8 / 8 達成</strong>
       </div>
@@ -986,11 +945,11 @@
       <ol class="checklist">
         <li>
           <span class="check-mark" aria-hidden="true">✓</span>
-          <div><strong>1. 団体数</strong><p>期待4件に対して出力4件。</p></div>
+          <div><strong>1. 団体数</strong><p>ファイル別4+3+12+4、統合23団体で一致。</p></div>
         </li>
         <li>
           <span class="check-mark" aria-hidden="true">✓</span>
-          <div><strong>2. 車両合計</strong><p>車種別の和と団体合計の不一致0件。</p></div>
+          <div><strong>2. 車両合計</strong><p>23団体全件で車種別の和と団体合計が一致。</p></div>
         </li>
         <li>
           <span class="check-mark" aria-hidden="true">✓</span>
@@ -998,23 +957,23 @@
         </li>
         <li>
           <span class="check-mark" aria-hidden="true">✓</span>
-          <div><strong>4. 登録番号</strong><p>4件とも種別「福」、権限主体「中山」と整合。</p></div>
+          <div><strong>4. 登録番号</strong><p>(source_pdf, registration_no) は23/23件で一意。</p></div>
         </li>
         <li>
           <span class="check-mark" aria-hidden="true">✓</span>
-          <div><strong>5. 欠番照合</strong><p>第1・3・4・6号を照合し、第2・5号が無いことを確認。</p></div>
+          <div><strong>5. 全件突合</strong><p>4PDF・23団体・90車種行を原本と照合。</p></div>
         </li>
         <li>
           <span class="check-mark" aria-hidden="true">✓</span>
-          <div><strong>6. 日付整合</strong><p>4件とも有効期間の前後関係に警告なし。</p></div>
+          <div><strong>6. 日付整合</strong><p>23団体全件で valid_from &lt; valid_to。</p></div>
         </li>
         <li>
           <span class="check-mark" aria-hidden="true">✓</span>
-          <div><strong>7. フラグ</strong><p>第4号は office_notation_diff、第6号は office_mismatch、他2件は空。</p></div>
+          <div><strong>7. 事務所差分</strong><p>仕様で確定した既知差分だけを検出。</p></div>
         </li>
         <li>
           <span class="check-mark" aria-hidden="true">✓</span>
-          <div><strong>8. 個人名の不出力</strong><p>禁止対象が成果物に含まれないことを自動テストで確認。</p></div>
+          <div><strong>8. 代表者氏名の不出力</strong><p>公開HTML・JSONを含む派生成果物への一致0件。</p></div>
         </li>
       </ol>
       <p class="source-note">根拠: SPEC.md §5、verification.md</p>
@@ -1024,18 +983,15 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">未確認事項</p>
-          <h2 id="unknown-title">確認せずに埋めない6項目</h2>
-          <p>残り3ファイルの処理と公開条件に関わる事項です。</p>
+          <h2 id="unknown-title">確認せずに埋めない3項目</h2>
+          <p>現行SPECに残る未確認事項です。I-2の表示値へ推測で混ぜていません。</p>
         </div>
       </div>
 
       <ul class="unknown-list">
-        <li><span class="unknown-id">U1</span><strong>000359215 / 000268896 / 000230003 のページ数・MD5・列構成</strong><span class="unknown-impact">影響: SPEC.md §3.4(c)、§7</span></li>
-        <li><span class="unknown-id">U2</span><strong>複数事務所を持つ団体が改ページするか</strong><span class="unknown-impact">影響: 団体の区切り方、SPEC.md §4</span></li>
+        <li><span class="unknown-id">U2</span><strong>事務所一覧が改ページする例</strong><span class="unknown-impact">影響: 団体の区切り方。複数事務所の同一ページ例は確認済み</span></li>
         <li><span class="unknown-id">U3</span><strong>新規登録時の有効期間</strong><span class="unknown-impact">影響: SPEC.md §5-6 を警告に留めている理由</span></li>
-        <li><span class="unknown-id">U4</span><strong>自動運行・特定自動運行の内数が山口県4ファイルに出現するか</strong><span class="unknown-impact">影響: 括弧の意味、SPEC.md §3.4(a)</span></li>
-        <li><span class="unknown-id">U5</span><strong>交通空白地の「普通自動車」が登録簿のどの列に入るか</strong><span class="unknown-impact">影響: SPEC.md §3.4(c)</span></li>
-        <li><span class="unknown-id">U6</span><strong>wwwtb.mlit.go.jp/chugoku に www.mlit.go.jp と同じ利用規約が適用されるか</strong><span class="unknown-impact">影響: SPEC.md §2、§8</span></li>
+        <li><span class="unknown-id">U7</span><strong>美祢市の民間タクシー会社2社が制度上どの役割で事務所欄に記載されているか</strong><span class="unknown-impact">影響: 作品説明。原文保持済みで実装の停止条件ではない</span></li>
       </ul>
       <p class="source-note">根拠: SPEC.md §9</p>
     </section>
@@ -1043,39 +999,24 @@
     <section aria-labelledby="next-title">
       <div class="section-head">
         <div>
-          <p class="eyebrow">次にやること</p>
-          <h2 id="next-title">run_record.md §4 の直近項目</h2>
-          <p>記録されている順序を保って掲載しています。</p>
+          <p class="eyebrow">この作業の区切り</p>
+          <h2 id="next-title">I-3はここまでで止める</h2>
+          <p>状況ページの訂正だけを行い、新しい作品機能へ広げません。</p>
         </div>
       </div>
 
       <ol class="next-list">
         <li>
-          <strong>run_record.md を初回コミットする</strong>
-          <p>この節を書き終えた時点で実施。</p>
+          <strong>古い現況表示を現在値へ同期</strong>
+          <p>4/4PDF、23団体、90車種行、136台、軽20台、41テストを実ファイルと一致させる。</p>
         </li>
         <li>
-          <strong>README.md を直す</strong>
-          <p>PDL1.0準拠の出典表記・加工明示へ直し、「対象4ファイル」と「処理済み1ファイル」を区別する。</p>
+          <strong>デスクトップとモバイルで確認</strong>
+          <p>市町別ビューへのリンク、表示の読みやすさ、コンソールエラー0件を確認する。</p>
         </li>
         <li>
-          <strong>残り3ファイルへ展開する</strong>
-          <ul>
-            <li>000230003.pdf: 所有区分の列が無い。</li>
-            <li>000359215.pdf / 000268896.pdf: 車種区分が違う可能性（U1・U5）。</li>
-          </ul>
-        </li>
-        <li>
-          <strong>市町別の集計と可視化</strong>
-          <p>service_area_municipalities で寄せ、団体数と車いす車・寝台車の台数を出す。軽は内数なので count だけを足す。</p>
-        </li>
-        <li>
-          <strong>有効期間切れが近い団体の一覧</strong>
-          <p>valid_to が6か月以内の団体を一覧化する。</p>
-        </li>
-        <li>
-          <strong>作品②の着手判断</strong>
-          <p>山口県立高校再編の意思決定過程データベース。</p>
+          <strong>ローカルコミットで受け入れる</strong>
+          <p>push・外部提出はしない。次の作品機能はI-3受入後に一つだけ再評価する。</p>
         </li>
       </ol>
       <p class="source-note">根拠: run_record.md §4</p>
@@ -1084,10 +1025,13 @@
     <section class="sources" aria-labelledby="source-title">
       <h2 id="source-title">このページの根拠</h2>
       <ul>
-        <li>リポジトリ内: run_record.md、SPEC.md、verification.md、data/operators.csv、data/vehicles.csv</li>
+        <li>公開アプリ: <a href="index.html?v=20260809">市町別の登録供給ビュー</a>（<a href="index.html?v=20260809#limits-title">データの限界</a>、<a href="index.html?v=20260809#sources-title">出典と利用条件</a>）</li>
+        <li>リポジトリ内: run_record.md、SPEC.md、verification.md、data/operators.csv、data/vehicles.csv、docs/data/municipal_supply.json</li>
         <li>括弧付き台数の扱い: 国自旅第317号「<a href="https://www.mlit.go.jp/jidosha/content/001766049.pdf">福祉有償運送の登録に関する処理方針について</a>」2.(2)⑦</li>
         <li>交通空白地の車種区分: 国自旅第316号「<a href="https://www.mlit.go.jp/jidosha/content/001766048.pdf">交通空白地有償運送の登録に関する処理方針について</a>」2.(2)⑦</li>
         <li>山口県の市町数: 出典: 山口県「市町｜関連リンク」 <a href="https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html">https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html</a></li>
+        <li>国土交通省公開物の利用条件: <a href="https://www.mlit.go.jp/link.html">国土交通省ウェブサイト利用ルール</a>（PDL1.0準拠）。加工内容は公開アプリ内に明記</li>
+        <li>このリポジトリの派生データ: CC BY 4.0。国土交通省の原資料自体をこのライセンスへ変更するものではない</li>
       </ul>
     </section>
   </main>

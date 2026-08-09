@@ -166,5 +166,45 @@ class IndexHtmlContractTest(unittest.TestCase):
             self.assertIn(marker, self.html)
 
 
+class StatusHtmlContractTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.html = (DOCS_DIR / "status.html").read_text(encoding="utf-8")
+
+    def test_stale_progress_claims_are_absent(self):
+        stale = (
+            "1 / 4",
+            "3 / 7",
+            "7工程中3工程完了",
+            "残り3本",
+            "3本とも未着手",
+            "現在データがあるのは2市町",
+            "確認せずに埋めない6項目",
+            'class="unknown-id">U6',
+            "run_record.md を初回コミットする",
+            "README.md を直す",
+        )
+        for marker in stale:
+            self.assertNotIn(marker, self.html)
+
+    def test_current_status_scope_and_main_view_link_are_present(self):
+        required = (
+            "I-1 / I-2",
+            "4 / 4",
+            "23団体・90車種行",
+            "実車両136台",
+            "軽20台",
+            "41テスト",
+            "T1〜T4",
+            'href="index.html?v=20260809"',
+            "I-3はここまでで止める",
+            "PDL1.0",
+            "CC BY 4.0",
+        )
+        for marker in required:
+            self.assertIn(marker, self.html)
+        self.assertEqual(self.html.count("処理・検証済み"), 4)
+
+
 if __name__ == "__main__":
     unittest.main()
