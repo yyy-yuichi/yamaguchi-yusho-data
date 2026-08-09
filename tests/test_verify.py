@@ -93,7 +93,8 @@ def discover_name_scan_targets():
     """代表者氏名が含まれないことを検査する対象ファイルの一覧を動的に集める。
 
     data/*.csv・*.json、raw/text/*.txt、リポジトリ直下の記録・仕様ファイル、
-    src/**/*.py、tests/**/*.py、evidence/**/*.txt・*.md（いずれもUTF-8テキスト）を含む。
+    src/**/*.py、tests/**/*.py、docs/**/*.html・*.json・*.js・*.css、
+    evidence/**/*.txt・*.md（いずれもUTF-8テキスト）を含む。
     """
     targets = [
         DATA_DIR / "operators.csv",
@@ -105,6 +106,8 @@ def discover_name_scan_targets():
     targets += list(NAME_SCAN_ROOT_FILES)
     targets += sorted((REPO_ROOT / "src").rglob("*.py"))
     targets += sorted((REPO_ROOT / "tests").rglob("*.py"))
+    for pattern in ("*.html", "*.json", "*.js", "*.css"):
+        targets += sorted((REPO_ROOT / "docs").rglob(pattern))
     targets += sorted(EVIDENCE_DIR.rglob("*.txt"))
     targets += sorted(EVIDENCE_DIR.rglob("*.md"))
     return targets

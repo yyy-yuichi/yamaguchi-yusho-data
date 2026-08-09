@@ -1,0 +1,744 @@
+{
+  "meta": {
+    "title": "山口県 市町別の登録供給ビュー",
+    "data_as_of": "2026-08-09",
+    "source_index_url": "https://wwwtb.mlit.go.jp/chugoku/00001_00903.html",
+    "source_files": [
+      "000271730.pdf",
+      "000230003.pdf",
+      "000359215.pdf",
+      "000268896.pdf"
+    ],
+    "source_acquired_dates": {
+      "000271730.pdf": "2026-08-07",
+      "000230003.pdf": "2026-08-09",
+      "000359215.pdf": "2026-08-09",
+      "000268896.pdf": "2026-08-09"
+    },
+    "municipality_source_url": "https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html",
+    "municipality_source_sha256": "c947ebd3e02ae11772db8aa4d28828747037e6d6d47113c5ee233213c61860e1",
+    "municipality_count": 19,
+    "municipalities_with_records": 15,
+    "unique_prefecture_totals": {
+      "operator_count": 23,
+      "vehicles_total": 136,
+      "vehicles_total_kei": 20
+    }
+  },
+  "municipalities": [
+    {
+      "municipality": "下関市",
+      "operator_count": 5,
+      "vehicles_total": 49,
+      "vehicles_total_kei": 13,
+      "by_transport_type": [
+        {
+          "transport_type": "福祉有償運送",
+          "operator_count": 4,
+          "vehicles_total": 20,
+          "vehicles_total_kei": 13
+        },
+        {
+          "transport_type": "交通空白地有償運送",
+          "operator_count": 1,
+          "vehicles_total": 29,
+          "vehicles_total_kei": 0
+        }
+      ],
+      "operators": [
+        {
+          "registration_no": "中山福第1号",
+          "org_name": "特定非営利活動法人 豆たん",
+          "transport_type": "福祉有償運送",
+          "operator_type": "NPO等",
+          "valid_to": "2027-04-23",
+          "vehicles_total": 3,
+          "vehicles_total_kei": 2,
+          "source_pdf": "000271730.pdf",
+          "source_page": 1,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000271730.pdf"
+        },
+        {
+          "registration_no": "中山福第3号",
+          "org_name": "特定非営利活動法人 らいと",
+          "transport_type": "福祉有償運送",
+          "operator_type": "NPO等",
+          "valid_to": "2027-10-10",
+          "vehicles_total": 10,
+          "vehicles_total_kei": 7,
+          "source_pdf": "000271730.pdf",
+          "source_page": 2,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000271730.pdf"
+        },
+        {
+          "registration_no": "中山福第4号",
+          "org_name": "社会福祉法人 菊水会",
+          "transport_type": "福祉有償運送",
+          "operator_type": "NPO等",
+          "valid_to": "2028-06-22",
+          "vehicles_total": 3,
+          "vehicles_total_kei": 2,
+          "source_pdf": "000271730.pdf",
+          "source_page": 3,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000271730.pdf"
+        },
+        {
+          "registration_no": "中山市福第4号",
+          "org_name": "下関市外出支援サービス事業",
+          "transport_type": "福祉有償運送",
+          "operator_type": "市町村営",
+          "valid_to": "2026-09-30",
+          "vehicles_total": 4,
+          "vehicles_total_kei": 2,
+          "source_pdf": "000230003.pdf",
+          "source_page": 3,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000230003.pdf"
+        },
+        {
+          "registration_no": "中山市交第7号",
+          "org_name": "下関市",
+          "transport_type": "交通空白地有償運送",
+          "operator_type": "市町村営",
+          "valid_to": "2026-09-30",
+          "vehicles_total": 29,
+          "vehicles_total_kei": 0,
+          "source_pdf": "000359215.pdf",
+          "source_page": 9,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000359215.pdf"
+        }
+      ]
+    },
+    {
+      "municipality": "宇部市",
+      "operator_count": 0,
+      "vehicles_total": 0,
+      "vehicles_total_kei": 0,
+      "by_transport_type": [
+        {
+          "transport_type": "福祉有償運送",
+          "operator_count": 0,
+          "vehicles_total": 0,
+          "vehicles_total_kei": 0
+        },
+        {
+          "transport_type": "交通空白地有償運送",
+          "operator_count": 0,
+          "vehicles_total": 0,
+          "vehicles_total_kei": 0
+        }
+      ],
+      "operators": []
+    },
+    {
+      "municipality": "山口市",
+      "operator_count": 2,
+      "vehicles_total": 7,
+      "vehicles_total_kei": 2,
+      "by_transport_type": [
+        {
+          "transport_type": "福祉有償運送",
+          "operator_count": 1,
+          "vehicles_total": 1,
+          "vehicles_total_kei": 1
+        },
+        {
+          "transport_type": "交通空白地有償運送",
+          "operator_count": 1,
+          "vehicles_total": 6,
+          "vehicles_total_kei": 1
+        }
+      ],
+      "operators": [
+        {
+          "registration_no": "中山市福第1号",
+          "org_name": "山口市",
+          "transport_type": "福祉有償運送",
+          "operator_type": "市町村営",
+          "valid_to": "2026-09-30",
+          "vehicles_total": 1,
+          "vehicles_total_kei": 1,
+          "source_pdf": "000230003.pdf",
+          "source_page": 1,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000230003.pdf"
+        },
+        {
+          "registration_no": "中山市交第10号",
+          "org_name": "山口市",
+          "transport_type": "交通空白地有償運送",
+          "operator_type": "市町村営",
+          "valid_to": "2026-09-30",
+          "vehicles_total": 6,
+          "vehicles_total_kei": 1,
+          "source_pdf": "000359215.pdf",
+          "source_page": 12,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000359215.pdf"
+        }
+      ]
+    },
+    {
+      "municipality": "萩市",
+      "operator_count": 2,
+      "vehicles_total": 3,
+      "vehicles_total_kei": 1,
+      "by_transport_type": [
+        {
+          "transport_type": "福祉有償運送",
+          "operator_count": 0,
+          "vehicles_total": 0,
+          "vehicles_total_kei": 0
+        },
+        {
+          "transport_type": "交通空白地有償運送",
+          "operator_count": 2,
+          "vehicles_total": 3,
+          "vehicles_total_kei": 1
+        }
+      ],
+      "operators": [
+        {
+          "registration_no": "中山交第2号",
+          "org_name": "大井地区社会福祉協議会",
+          "transport_type": "交通空白地有償運送",
+          "operator_type": "NPO等",
+          "valid_to": "2026-10-31",
+          "vehicles_total": 1,
+          "vehicles_total_kei": 0,
+          "source_pdf": "000268896.pdf",
+          "source_page": 3,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000268896.pdf"
+        },
+        {
+          "registration_no": "中山交第4号",
+          "org_name": "特定非営利活動法人須佐元気なまちづくりネット",
+          "transport_type": "交通空白地有償運送",
+          "operator_type": "NPO等",
+          "valid_to": "2027-07-22",
+          "vehicles_total": 2,
+          "vehicles_total_kei": 1,
+          "source_pdf": "000268896.pdf",
+          "source_page": 4,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000268896.pdf"
+        }
+      ]
+    },
+    {
+      "municipality": "防府市",
+      "operator_count": 0,
+      "vehicles_total": 0,
+      "vehicles_total_kei": 0,
+      "by_transport_type": [
+        {
+          "transport_type": "福祉有償運送",
+          "operator_count": 0,
+          "vehicles_total": 0,
+          "vehicles_total_kei": 0
+        },
+        {
+          "transport_type": "交通空白地有償運送",
+          "operator_count": 0,
+          "vehicles_total": 0,
+          "vehicles_total_kei": 0
+        }
+      ],
+      "operators": []
+    },
+    {
+      "municipality": "下松市",
+      "operator_count": 1,
+      "vehicles_total": 2,
+      "vehicles_total_kei": 0,
+      "by_transport_type": [
+        {
+          "transport_type": "福祉有償運送",
+          "operator_count": 0,
+          "vehicles_total": 0,
+          "vehicles_total_kei": 0
+        },
+        {
+          "transport_type": "交通空白地有償運送",
+          "operator_count": 1,
+          "vehicles_total": 2,
+          "vehicles_total_kei": 0
+        }
+      ],
+      "operators": [
+        {
+          "registration_no": "中山市交第13号",
+          "org_name": "下松市",
+          "transport_type": "交通空白地有償運送",
+          "operator_type": "市町村営",
+          "valid_to": "2027-09-30",
+          "vehicles_total": 2,
+          "vehicles_total_kei": 0,
+          "source_pdf": "000359215.pdf",
+          "source_page": 17,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000359215.pdf"
+        }
+      ]
+    },
+    {
+      "municipality": "岩国市",
+      "operator_count": 1,
+      "vehicles_total": 33,
+      "vehicles_total_kei": 0,
+      "by_transport_type": [
+        {
+          "transport_type": "福祉有償運送",
+          "operator_count": 0,
+          "vehicles_total": 0,
+          "vehicles_total_kei": 0
+        },
+        {
+          "transport_type": "交通空白地有償運送",
+          "operator_count": 1,
+          "vehicles_total": 33,
+          "vehicles_total_kei": 0
+        }
+      ],
+      "operators": [
+        {
+          "registration_no": "中山市交第5号",
+          "org_name": "岩国市",
+          "transport_type": "交通空白地有償運送",
+          "operator_type": "市町村営",
+          "valid_to": "2026-09-30",
+          "vehicles_total": 33,
+          "vehicles_total_kei": 0,
+          "source_pdf": "000359215.pdf",
+          "source_page": 3,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000359215.pdf"
+        }
+      ]
+    },
+    {
+      "municipality": "光市",
+      "operator_count": 1,
+      "vehicles_total": 2,
+      "vehicles_total_kei": 0,
+      "by_transport_type": [
+        {
+          "transport_type": "福祉有償運送",
+          "operator_count": 0,
+          "vehicles_total": 0,
+          "vehicles_total_kei": 0
+        },
+        {
+          "transport_type": "交通空白地有償運送",
+          "operator_count": 1,
+          "vehicles_total": 2,
+          "vehicles_total_kei": 0
+        }
+      ],
+      "operators": [
+        {
+          "registration_no": "中山市交第8号",
+          "org_name": "光市",
+          "transport_type": "交通空白地有償運送",
+          "operator_type": "市町村営",
+          "valid_to": "2026-09-30",
+          "vehicles_total": 2,
+          "vehicles_total_kei": 0,
+          "source_pdf": "000359215.pdf",
+          "source_page": 11,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000359215.pdf"
+        }
+      ]
+    },
+    {
+      "municipality": "長門市",
+      "operator_count": 2,
+      "vehicles_total": 4,
+      "vehicles_total_kei": 1,
+      "by_transport_type": [
+        {
+          "transport_type": "福祉有償運送",
+          "operator_count": 0,
+          "vehicles_total": 0,
+          "vehicles_total_kei": 0
+        },
+        {
+          "transport_type": "交通空白地有償運送",
+          "operator_count": 2,
+          "vehicles_total": 4,
+          "vehicles_total_kei": 1
+        }
+      ],
+      "operators": [
+        {
+          "registration_no": "中山過第1号",
+          "org_name": "特定非営利活動法人 ゆうゆうグリーン俵山",
+          "transport_type": "交通空白地有償運送",
+          "operator_type": "NPO等",
+          "valid_to": "2027-11-28",
+          "vehicles_total": 2,
+          "vehicles_total_kei": 1,
+          "source_pdf": "000268896.pdf",
+          "source_page": 1,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000268896.pdf"
+        },
+        {
+          "registration_no": "中山過第2号",
+          "org_name": "特定非営利活動法人 むかつく",
+          "transport_type": "交通空白地有償運送",
+          "operator_type": "NPO等",
+          "valid_to": "2027-11-28",
+          "vehicles_total": 2,
+          "vehicles_total_kei": 0,
+          "source_pdf": "000268896.pdf",
+          "source_page": 2,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000268896.pdf"
+        }
+      ]
+    },
+    {
+      "municipality": "柳井市",
+      "operator_count": 1,
+      "vehicles_total": 2,
+      "vehicles_total_kei": 0,
+      "by_transport_type": [
+        {
+          "transport_type": "福祉有償運送",
+          "operator_count": 0,
+          "vehicles_total": 0,
+          "vehicles_total_kei": 0
+        },
+        {
+          "transport_type": "交通空白地有償運送",
+          "operator_count": 1,
+          "vehicles_total": 2,
+          "vehicles_total_kei": 0
+        }
+      ],
+      "operators": [
+        {
+          "registration_no": "中山市交第1号",
+          "org_name": "上関町",
+          "transport_type": "交通空白地有償運送",
+          "operator_type": "市町村営",
+          "valid_to": "2026-09-30",
+          "vehicles_total": 2,
+          "vehicles_total_kei": 0,
+          "source_pdf": "000359215.pdf",
+          "source_page": 1,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000359215.pdf"
+        }
+      ]
+    },
+    {
+      "municipality": "美祢市",
+      "operator_count": 1,
+      "vehicles_total": 11,
+      "vehicles_total_kei": 0,
+      "by_transport_type": [
+        {
+          "transport_type": "福祉有償運送",
+          "operator_count": 0,
+          "vehicles_total": 0,
+          "vehicles_total_kei": 0
+        },
+        {
+          "transport_type": "交通空白地有償運送",
+          "operator_count": 1,
+          "vehicles_total": 11,
+          "vehicles_total_kei": 0
+        }
+      ],
+      "operators": [
+        {
+          "registration_no": "中山交第1号",
+          "org_name": "美祢市",
+          "transport_type": "交通空白地有償運送",
+          "operator_type": "市町村営",
+          "valid_to": "2028-09-30",
+          "vehicles_total": 11,
+          "vehicles_total_kei": 0,
+          "source_pdf": "000359215.pdf",
+          "source_page": 18,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000359215.pdf"
+        }
+      ]
+    },
+    {
+      "municipality": "周南市",
+      "operator_count": 1,
+      "vehicles_total": 8,
+      "vehicles_total_kei": 1,
+      "by_transport_type": [
+        {
+          "transport_type": "福祉有償運送",
+          "operator_count": 0,
+          "vehicles_total": 0,
+          "vehicles_total_kei": 0
+        },
+        {
+          "transport_type": "交通空白地有償運送",
+          "operator_count": 1,
+          "vehicles_total": 8,
+          "vehicles_total_kei": 1
+        }
+      ],
+      "operators": [
+        {
+          "registration_no": "中山市交第12号",
+          "org_name": "周南市",
+          "transport_type": "交通空白地有償運送",
+          "operator_type": "市町村営",
+          "valid_to": "2026-09-30",
+          "vehicles_total": 8,
+          "vehicles_total_kei": 1,
+          "source_pdf": "000359215.pdf",
+          "source_page": 14,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000359215.pdf"
+        }
+      ]
+    },
+    {
+      "municipality": "山陽小野田市",
+      "operator_count": 0,
+      "vehicles_total": 0,
+      "vehicles_total_kei": 0,
+      "by_transport_type": [
+        {
+          "transport_type": "福祉有償運送",
+          "operator_count": 0,
+          "vehicles_total": 0,
+          "vehicles_total_kei": 0
+        },
+        {
+          "transport_type": "交通空白地有償運送",
+          "operator_count": 0,
+          "vehicles_total": 0,
+          "vehicles_total_kei": 0
+        }
+      ],
+      "operators": []
+    },
+    {
+      "municipality": "周防大島町",
+      "operator_count": 2,
+      "vehicles_total": 4,
+      "vehicles_total_kei": 1,
+      "by_transport_type": [
+        {
+          "transport_type": "福祉有償運送",
+          "operator_count": 1,
+          "vehicles_total": 1,
+          "vehicles_total_kei": 1
+        },
+        {
+          "transport_type": "交通空白地有償運送",
+          "operator_count": 1,
+          "vehicles_total": 3,
+          "vehicles_total_kei": 0
+        }
+      ],
+      "operators": [
+        {
+          "registration_no": "中山福第6号",
+          "org_name": "社会福祉法人 大島白壽會",
+          "transport_type": "福祉有償運送",
+          "operator_type": "NPO等",
+          "valid_to": "2026-08-31",
+          "vehicles_total": 1,
+          "vehicles_total_kei": 1,
+          "source_pdf": "000271730.pdf",
+          "source_page": 4,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000271730.pdf"
+        },
+        {
+          "registration_no": "中山市交第3号",
+          "org_name": "周防大島町",
+          "transport_type": "交通空白地有償運送",
+          "operator_type": "市町村営",
+          "valid_to": "2027-09-20",
+          "vehicles_total": 3,
+          "vehicles_total_kei": 0,
+          "source_pdf": "000359215.pdf",
+          "source_page": 2,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000359215.pdf"
+        }
+      ]
+    },
+    {
+      "municipality": "和木町",
+      "operator_count": 1,
+      "vehicles_total": 3,
+      "vehicles_total_kei": 0,
+      "by_transport_type": [
+        {
+          "transport_type": "福祉有償運送",
+          "operator_count": 0,
+          "vehicles_total": 0,
+          "vehicles_total_kei": 0
+        },
+        {
+          "transport_type": "交通空白地有償運送",
+          "operator_count": 1,
+          "vehicles_total": 3,
+          "vehicles_total_kei": 0
+        }
+      ],
+      "operators": [
+        {
+          "registration_no": "中山市交第6号",
+          "org_name": "和木町",
+          "transport_type": "交通空白地有償運送",
+          "operator_type": "市町村営",
+          "valid_to": "2028-02-28",
+          "vehicles_total": 3,
+          "vehicles_total_kei": 0,
+          "source_pdf": "000359215.pdf",
+          "source_page": 8,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000359215.pdf"
+        }
+      ]
+    },
+    {
+      "municipality": "上関町",
+      "operator_count": 1,
+      "vehicles_total": 2,
+      "vehicles_total_kei": 0,
+      "by_transport_type": [
+        {
+          "transport_type": "福祉有償運送",
+          "operator_count": 0,
+          "vehicles_total": 0,
+          "vehicles_total_kei": 0
+        },
+        {
+          "transport_type": "交通空白地有償運送",
+          "operator_count": 1,
+          "vehicles_total": 2,
+          "vehicles_total_kei": 0
+        }
+      ],
+      "operators": [
+        {
+          "registration_no": "中山市交第1号",
+          "org_name": "上関町",
+          "transport_type": "交通空白地有償運送",
+          "operator_type": "市町村営",
+          "valid_to": "2026-09-30",
+          "vehicles_total": 2,
+          "vehicles_total_kei": 0,
+          "source_pdf": "000359215.pdf",
+          "source_page": 1,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000359215.pdf"
+        }
+      ]
+    },
+    {
+      "municipality": "田布施町",
+      "operator_count": 2,
+      "vehicles_total": 5,
+      "vehicles_total_kei": 0,
+      "by_transport_type": [
+        {
+          "transport_type": "福祉有償運送",
+          "operator_count": 0,
+          "vehicles_total": 0,
+          "vehicles_total_kei": 0
+        },
+        {
+          "transport_type": "交通空白地有償運送",
+          "operator_count": 2,
+          "vehicles_total": 5,
+          "vehicles_total_kei": 0
+        }
+      ],
+      "operators": [
+        {
+          "registration_no": "中山市交第8号",
+          "org_name": "光市",
+          "transport_type": "交通空白地有償運送",
+          "operator_type": "市町村営",
+          "valid_to": "2026-09-30",
+          "vehicles_total": 2,
+          "vehicles_total_kei": 0,
+          "source_pdf": "000359215.pdf",
+          "source_page": 11,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000359215.pdf"
+        },
+        {
+          "registration_no": "中山交第3号",
+          "org_name": "田布施町",
+          "transport_type": "交通空白地有償運送",
+          "operator_type": "市町村営",
+          "valid_to": "2027-01-30",
+          "vehicles_total": 3,
+          "vehicles_total_kei": 0,
+          "source_pdf": "000359215.pdf",
+          "source_page": 19,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000359215.pdf"
+        }
+      ]
+    },
+    {
+      "municipality": "平生町",
+      "operator_count": 0,
+      "vehicles_total": 0,
+      "vehicles_total_kei": 0,
+      "by_transport_type": [
+        {
+          "transport_type": "福祉有償運送",
+          "operator_count": 0,
+          "vehicles_total": 0,
+          "vehicles_total_kei": 0
+        },
+        {
+          "transport_type": "交通空白地有償運送",
+          "operator_count": 0,
+          "vehicles_total": 0,
+          "vehicles_total_kei": 0
+        }
+      ],
+      "operators": []
+    },
+    {
+      "municipality": "阿武町",
+      "operator_count": 2,
+      "vehicles_total": 5,
+      "vehicles_total_kei": 1,
+      "by_transport_type": [
+        {
+          "transport_type": "福祉有償運送",
+          "operator_count": 1,
+          "vehicles_total": 1,
+          "vehicles_total_kei": 1
+        },
+        {
+          "transport_type": "交通空白地有償運送",
+          "operator_count": 1,
+          "vehicles_total": 4,
+          "vehicles_total_kei": 0
+        }
+      ],
+      "operators": [
+        {
+          "registration_no": "中山福第3号",
+          "org_name": "阿武町",
+          "transport_type": "福祉有償運送",
+          "operator_type": "市町村営",
+          "valid_to": "2026-09-30",
+          "vehicles_total": 1,
+          "vehicles_total_kei": 1,
+          "source_pdf": "000230003.pdf",
+          "source_page": 2,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000230003.pdf"
+        },
+        {
+          "registration_no": "中山市交第11号",
+          "org_name": "阿武町",
+          "transport_type": "交通空白地有償運送",
+          "operator_type": "市町村営",
+          "valid_to": "2029-04-30",
+          "vehicles_total": 4,
+          "vehicles_total_kei": 0,
+          "source_pdf": "000359215.pdf",
+          "source_page": 13,
+          "source_url": "https://wwwtb.mlit.go.jp/chugoku/content/000359215.pdf"
+        }
+      ]
+    }
+  ]
+}
