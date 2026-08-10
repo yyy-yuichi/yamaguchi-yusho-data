@@ -1,11 +1,11 @@
-# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測
+# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期
 
-**rev.5.2 / 2026-08-10**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16。消した記述はそこに全部書いてある）
+**rev.5.1 / 2026-08-10**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15。消した記述はそこに全部書いてある）
 
 UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下に `SPEC.md` として置き、Claude Code に読ませる。**
 
-§0〜§11は受け入れ済みI-1、§12は受け入れ済みI-4、§13は受け入れ済みI-5の仕様として保持し、
-§14は次の一作業GTFS-2の実行仕様である。
+§0〜§11は受け入れ済みI-1の実装仕様、§12は受け入れ済みI-4の実装仕様として保持し、
+§13は次の一作業I-5の実装仕様である。
 プロジェクトのゴール、終了条件、確定方針は`run_record.md` §0.5 を正とし、
 このファイルがそれを上書きしてはならない。
 
@@ -979,18 +979,6 @@ I-4の仕様と完了条件は変更せず、受け入れ後に古くなった�
 | 2 | `README.md`と`docs/status.html`のI-4後の現況は対象外 | I-4後も残る「30テスト」「41テスト」「I-1・I-2受入」「I-3後に再評価」を除き、I-1〜I-4受入済みへ同期 | ユーザーが目的・現在地・残作業を誤認しないようにするため |
 | 3 | 次の作品機能は未定 | I-5は説明同期だけとし、GTFS本体取得、地図、経路検索、作品②、公開を同時に行わない | 一度に一つの作業を維持するため |
 
-### 10.16 rev.5.1 → rev.5.2
-
-I-5の受入とチェックポイントコミット後、内部運行期間表示を直接仕様化せず、
-その入力となる公式GTFS ZIPの取得・実測をGTFS-2として分離した。
-
-| # | rev.5.1 | rev.5.2 | 根拠 |
-|---|---|---|---|
-| 1 | §13は次の一作業I-5の実装仕様 | §13を受け入れ済みとして保持し、§14にGTFS-2を追加 | I-5・I-5-CORR-1はCodex受入済みで、`74423df`にチェックポイント化したため |
-| 2 | GTFS本体の取得・解析はI-5対象外で、次の作品機能は未定 | 認証不要の岩国市・光市2 ZIPだけを取得・安全検査・実測し、内部運行期間表示の仕様入力を確定する | `data/gtfs_feeds.csv`と`evidence/20260809_gtfs_source_zip_head_check.txt`ではHEADだけが確認済みで、本体のファイル構成・件数・日付は未確認のため |
-| 3 | 公式ページ記載の基準日・有効期間だけを表示 | `feed_info.txt`、`calendar.txt`、`calendar_dates.txt`の候補値を別々に実測し、この段階では単一の内部運行期間へ統合しない | 実物未確認のまま算出規則と表示値を確定すると、推測を確認済みとして扱うため |
-| 4 | 船木鉄道は認証済み本体未取得 | GTFS-2でも対象外とし、アクセストークンの取得・使用・保存を行わない | `access_status=authentication_required_not_retrieved`であり、認証を行う権限を確認していないため |
-
 ---
 
 ## 11. この仕様書を改訂するときの手順
@@ -1266,153 +1254,3 @@ Claude Codeが変更してよい既存ファイルは次だけとする。
 
 I-5は現況説明の同期だけを完了条件まで実行して停止し、Codexが旧版現物、差分、テスト、
 リンク操作、PC・スマホ表示、`tools/spec_coverage.py`の出力を読み戻すまで受け入れ済みにしない。
-
----
-
-## 14. GTFS-2 実行仕様 — 岩国市・光市の公式GTFS ZIP取得・安全検査・実測
-
-### 14.1 目的と作品ゴールとの関係
-
-作品①で将来、県・市町の交通担当者が「公式ページ記載のデータ基準日」「GTFS内部の日付」
-「検証日」「収録内容」を混同せず確認できるようにするには、GTFS本体の実測値が必要である。
-現在はZIPへのHEADリクエストが成功したことしか確認しておらず、本体の構成・列・件数・日付は未確認である。
-
-GTFS-2の目的は、認証不要の公式2 ZIPを取得して原本を固定し、安全に中身を読み、
-次の画面機能を推測なしで仕様化するための候補値と異常を証拠化することである。
-GTFS-2自体は公開画面を変更せず、自治体やフィードの良否を判定しない。
-
-### 14.2 入力として確認済みの事実
-
-| feed_id | 対象 | 現在のaccess_status | GTFS-2での扱い |
-|---|---|---|---|
-| `iwakuni-gtfsjp` | 岩国市（生活交通バス・由宇地区バス） | `public_head_confirmed` | 公式URLからGETして実測する |
-| `hikari-gtfs` | 光市（広域生活交通、ひかりぐるりんバス、光市営バス） | `public_head_confirmed` | 公式URLからGETして実測する |
-| `sentetsu-odpt-gtfsjp` | 船木鉄道 | `authentication_required_not_retrieved` | 対象外。認証しない |
-
-- ダウンロードURLは`data/gtfs_feeds.csv`の`download_url_or_template`をfeed_idで引く
-- 岩国市・光市は`evidence/20260809_gtfs_source_zip_head_check.txt`でHEADだけを確認済み。
-  GET、本体保存、展開、パースは未実施
-- 公式ページ記載のデータ基準日は両方とも2026-04-01だが、GTFS内部の日付と同一とはみなさない
-- GTFSファイル要件の参照元はGTFS Schedule Reference
-  `https://gtfs.org/documentation/schedule/reference/`（2026-08-10確認、同ページは2026-04-27改訂と表示）
-
-### 14.3 変更できるファイル
-
-Claude Code側で変更・新規作成できるのは次だけとする。
-
-- `raw/gtfs/iwakuni_gtfsjp_20260401.zip`
-- `raw/gtfs/hikari_gtfs_20260401.zip`
-- `src/inspect_gtfs_archives.py`
-- `tests/test_gtfs_inspection.py`
-- `tests/test_site.py`（`TOTAL_TEST_COUNT`の67→68だけ）
-- `README.md`（自動テスト件数の67→68だけ）
-- `docs/status.html`（自動テスト件数の67→68だけ）
-- `PROGRESS.md`
-- `verification.md`
-- `evidence/20260810_gtfs2_*`
-
-`CLAUDE.md`、`SPEC.md`、`run_record.md`、`tools/spec_coverage.py`、`.claude/`、
-既存の`raw/`・`evidence/`、`data/`、`docs/index.html`、既存の`src/`、
-`tests/test_verify.py`は変更しない。
-`README.md`、`docs/status.html`、`tests/test_site.py`は上記のテスト件数同期以外を変更しない。
-
-### 14.4 取得規則
-
-1. リポジトリ直下に移動し、開始時の`pwd`、`git status --short --branch`、HEADを記録する
-2. `data/gtfs_feeds.csv`から対象2件のURLと`access_status=public_head_confirmed`を読み、
-   認証情報・Cookie・既存セッションを付けずにHTTPS GETする
-3. 各レスポンスについて取得日時、要求URL、最終URL、HTTP状態、バイト数、SHA256と、
-   `Content-Type`、`Content-Length`、`Last-Modified`、`ETag`、`Content-Disposition`、
-   `Date`、`Cache-Control`だけを`evidence/20260810_gtfs2_*`へ保存する。
-   `Set-Cookie`、Cookie、Authorizationヘッダー値、JWT形式値、APIキーは保存しない
-4. HTTP 200、ZIPマジックバイト、20 MiB以下を確認してから所定の`raw/gtfs/`へ保存する
-5. URLが無効、認証を要求、HTML等の非ZIPを返す、上限を超える場合は、そのフィードを推測や代替元で補わず停止して報告する
-6. 取得した生バイトを整形・再圧縮・ファイル名変更以外の加工で書き換えない
-
-### 14.5 ZIP安全検査
-
-`src/inspect_gtfs_archives.py`はファイルを作業ディレクトリへ展開せず、標準ライブラリ`zipfile`で読む。
-次のいずれかに該当するZIPは内容集計へ進まず失敗として記録する。
-
-- メンバー数が200件を超える
-- 1メンバーの非圧縮サイズが100 MiB、全メンバー合計が500 MiBを超える
-- 非空メンバーの非圧縮サイズ÷圧縮サイズが200を超える
-- 絶対パス、ドライブ名、`..`、バックスラッシュ、NUL、ディレクトリ階層を含むメンバー名
-- Unicode正規化・大文字小文字を無視したメンバー名の重複
-- 暗号化メンバー、シンボリックリンク、通常ファイル以外
-- CRC検査に失敗する
-
-CSVはファイル単位で`utf-8-sig`により厳格に復号し、UTF-8として読めない場合に
-Shift_JIS等へフォールバックしない。BOMの有無は証拠へ記録する。
-
-### 14.6 実測する内容
-
-各ZIPについて、次を決定論的に記録する。
-
-1. 全メンバーのファイル名、圧縮サイズ、非圧縮サイズ、CRC
-2. `agency.txt`、`stops.txt`、`routes.txt`、`trips.txt`、`stop_times.txt`の有無、
-   ヘッダー、データ行数、主IDの空欄数・一意数・重複数
-3. `stops.txt`は`location_type`の値別件数も記録し、単一の「停留所数」をまだ選ばない
-4. `calendar.txt`は`service_id`、曜日フラグ、`start_date`、`end_date`を検査し、
-   行数、service_id一意数、最小start_date、最大end_dateを候補値として記録する
-5. `calendar_dates.txt`は行数、service_id一意数、`exception_type`別件数、
-   追加日と削除日の最小・最大日を別々に記録する
-6. `feed_info.txt`があれば行数、`feed_start_date`、`feed_end_date`、`feed_version`を記録する。
-   無いこと自体は異常としない
-7. `trips.txt`が参照するservice_idと、calendar系に存在するservice_idの差集合を両方向で記録する
-8. GTFSの日付は8桁`YYYYMMDD`かつ実在日付として検証し、不正値を変換・補正しない
-
-GTFS-2では`feed_info`の期間、`calendar`の範囲、`calendar_dates`の追加・削除日を
-一つの「内部運行期間」へ統合しない。行数と一意ID数も一つの件数へ丸めない。
-この工程は構造と候補値の実測であり、GTFS仕様への完全適合を認証するものではない。
-
-### 14.7 自動テスト
-
-新規テストはネットワークへ接続せず、一時ディレクトリ内の合成ZIPと保存済み公式ZIPで行う。
-`tests/test_gtfs_inspection.py`には検出可能なテストメソッドを1件だけ追加し、
-各条件は名前付き`subTest`で分離する。最終unittest件数は68件とする。
-
-1. 正常な最小GTFS ZIPから、ヘッダー・行数・ID・日付候補を再現できる
-2. パストラバーサル、絶対パス、階層、重複名、暗号化、シンボリックリンクを拒否する
-3. メンバー数、個別・合計サイズ、圧縮比の境界値を検査する
-4. UTF-8、UTF-8 BOMを区別して読み、非UTF-8を拒否する
-5. 不正日付、必須列不足、空ID、重複IDを黙って補正・重複排除しない
-6. `calendar.txt`のみ、`calendar_dates.txt`のみ、両方あり、両方なしを区別する
-7. 岩国市・光市の保存済みZIPについてSHA256と実測結果を固定値で検査する
-8. 既存67テストを退行させず、新規1テストを含む68件が成功する
-
-### 14.8 完了条件
-
-1. 対象が岩国市・光市の公式2 ZIPだけで、船木鉄道の認証・取得を行っていない
-2. 2 ZIPの要求URL、最終URL、取得日時、HTTP状態、公開可能なヘッダー、サイズ、SHA256を保存した
-3. 生ZIPを指定した`raw/gtfs/`へ保存し、取得直後と最終ファイルのSHA256が一致する
-4. §14.5の安全検査を通過し、ファイルを作業ディレクトリへ展開していない
-5. §14.6の実測値を2フィード分提示し、未存在・空欄・不正値を推測で埋めていない
-6. 新規検査スクリプトとテストを実ファイルから読み戻せる
-7. `python -m unittest discover -s tests -v`が68件成功し、既存67件を退行させていない
-8. `README.md`、`docs/status.html`、`tests/test_site.py`のテスト件数が68で一致し、
-   それ以外の内容を変更していない
-9. `PROGRESS.md`、`verification.md`、`README.md`、`docs/status.html`、`tests/test_site.py`の
-   編集前現物を`evidence/20260810_gtfs2_*_before.*`へ保存し、最終版との
-   `tools/spec_coverage.py`合格出力5件を提示する
-10. 全変更内のJWT形式値、Authorizationヘッダー値、実APIキー、秘密鍵が0件である
-11. 変更・新規ファイルが§14.3だけで、既存ファイルの意図しない変更がない
-12. `git diff --check`を実行する。生の取得証拠だけに由来する警告がある場合は、
-    対象ファイルと件数を分離して報告し、コード・Markdown側が終了コード0であることを示す
-13. commit、push、GitHub Pages公開、外部提出を行っていない
-
-### 14.9 GTFS-2に含めないもの
-
-- `data/gtfs_feeds.*`、`data/municipality_gtfs.*`、公開JSON、`docs/index.html`の更新
-- 内部運行期間の最終算出規則、単一鮮度スコア、ランキング、合否、赤黄緑評価
-- GTFS未確認や期間外を、交通空白・公共交通不存在・自治体の不備とみなすこと
-- 地図、停留所位置表示、経路検索、GTFS-RT、利用者投稿
-- 船木鉄道のアクセストークン取得・認証済みダウンロード
-- 登録簿4PDFの再処理、作品②、他県展開、BODIK APPs登録、UDC応募、外部公開
-
-### 14.10 停止条件と次段階
-
-GTFS-2は2 ZIPの原本固定・安全検査・実測・証拠化だけを完了条件まで実行して停止する。
-取得失敗、安全検査失敗、仕様矛盾が1件でもあれば、代替データや推測で埋めずCodexへ報告する。
-Codexが実ZIP、ハッシュ、検査コード、テスト、実測証拠を読み戻して受け入れた後にだけ、
-内部日付と収録内容を利用者へどう表示するかを次の一作業として仕様化する。
