@@ -1,0 +1,173 @@
+[
+  {
+    "municipality_code": "352012",
+    "municipality": "下関市",
+    "availability_status": "not_confirmed_in_checked_sources",
+    "feed_ids": "",
+    "scope_note": "山口県オープンデータカタログサイトの下関市データセット47件（全3ページ）にバス・GTFS関連は無かった。市内主要バス事業者サンデン交通の公式バス情報ページにもGTFSの記載は無い。今回確認した公式資料の範囲での結果であり、GTFSが存在しないと断定するものではない。",
+    "checked_at": "2026-08-09",
+    "source_evidence": "evidence/20260809_gtfs_source_ydata_org_35201.txt;evidence/20260809_gtfs_source_ydata_org_35201_p2.txt;evidence/20260809_gtfs_source_ydata_org_35201_p3.txt;evidence/20260809_gtfs_source_official_sandenkotsu_bus.txt;evidence/20260809_i4_soumu_local_gov_code_list.pdf;evidence/20260809_i4_soumu_local_gov_code_list_inspection.txt"
+  },
+  {
+    "municipality_code": "352021",
+    "municipality": "宇部市",
+    "availability_status": "confirmed",
+    "feed_ids": "sentetsu-odpt-gtfsjp",
+    "scope_note": "宇部市自身の公式データセットにGTFSの記載は無く、市が自ら公開しているとは確認できない。市内で運行する船木鉄道の公式GTFSが対象地域に宇部市を明記している。市域全体・全路線を網羅するとは公式記載からは確認していない。",
+    "checked_at": "2026-08-09",
+    "source_evidence": "evidence/20260809_gtfs_source_ydata_res_352021_bus.txt;evidence/20260809_gtfs_source_official_ube.txt;evidence/20260809_gtfs_source_odpt_sentetsu.txt;evidence/20260809_i4_soumu_local_gov_code_list.pdf;evidence/20260809_i4_soumu_local_gov_code_list_inspection.txt"
+  },
+  {
+    "municipality_code": "352039",
+    "municipality": "山口市",
+    "availability_status": "not_confirmed_in_checked_sources",
+    "feed_ids": "",
+    "scope_note": "公式データセットページに「本市では該当するデータを保有しておりません。」と明記。",
+    "checked_at": "2026-08-09",
+    "source_evidence": "evidence/20260809_gtfs_source_ydata_ds_busdata.txt;evidence/20260809_i4_soumu_local_gov_code_list.pdf;evidence/20260809_i4_soumu_local_gov_code_list_inspection.txt"
+  },
+  {
+    "municipality_code": "352047",
+    "municipality": "萩市",
+    "availability_status": "not_confirmed_in_checked_sources",
+    "feed_ids": "",
+    "scope_note": "「萩循環まぁーるバス」関連の公式データセット2件のうち1件はリンク先ページが404、もう1件のリンク先ページにGTFSの記載は無かった。",
+    "checked_at": "2026-08-09",
+    "source_evidence": "evidence/20260809_gtfs_source_official_hagi1.txt;evidence/20260809_gtfs_source_official_hagi2.txt;evidence/20260809_i4_soumu_local_gov_code_list.pdf;evidence/20260809_i4_soumu_local_gov_code_list_inspection.txt"
+  },
+  {
+    "municipality_code": "352063",
+    "municipality": "防府市",
+    "availability_status": "not_confirmed_in_checked_sources",
+    "feed_ids": "",
+    "scope_note": "公式データセットページに「『標準的なバス情報フォーマット』につきましては、データを保有しておりません。」と明記。",
+    "checked_at": "2026-08-09",
+    "source_evidence": "evidence/20260809_gtfs_source_ydata_res_352063-bus_information.txt;evidence/20260809_i4_soumu_local_gov_code_list.pdf;evidence/20260809_i4_soumu_local_gov_code_list_inspection.txt"
+  },
+  {
+    "municipality_code": "352071",
+    "municipality": "下松市",
+    "availability_status": "not_confirmed_in_checked_sources",
+    "feed_ids": "",
+    "scope_note": "「バス情報」は下松市公式ページへのリンクのみでGTFSの記載は無い。「公共交通マップ」（下松市・周南市合同作成）はPDF/PNG/ZIP資源を持つが、内容は路線図・時刻表・乗換案内リンクでありGTFSの記載は無い。",
+    "checked_at": "2026-08-09",
+    "source_evidence": "evidence/20260809_gtfs_source_official_kudamatsu.txt;evidence/20260809_gtfs_source_ydata_ds_352071_public_transport.txt;evidence/20260809_i4_soumu_local_gov_code_list.pdf;evidence/20260809_i4_soumu_local_gov_code_list_inspection.txt"
+  },
+  {
+    "municipality_code": "352080",
+    "municipality": "岩国市",
+    "availability_status": "confirmed",
+    "feed_ids": "iwakuni-gtfsjp",
+    "scope_note": "公式データセット名称にある生活交通バス・由宇地区バスが対象。市域全体・全路線を網羅するとは公式記載からは確認していない。",
+    "checked_at": "2026-08-09",
+    "source_evidence": "evidence/20260809_gtfs_source_ydata_ds_352080-gtfsjp.txt;evidence/20260809_gtfs_source_ydata_res_iwakuni_gtfs.txt;evidence/20260809_i4_soumu_local_gov_code_list.pdf;evidence/20260809_i4_soumu_local_gov_code_list_inspection.txt"
+  },
+  {
+    "municipality_code": "352101",
+    "municipality": "光市",
+    "availability_status": "confirmed",
+    "feed_ids": "hikari-gtfs",
+    "scope_note": "公式データセット名称にある広域生活交通、ひかりぐるりんバス、光市営バスが対象。市域全体・全路線を網羅するとは公式記載からは確認していない。",
+    "checked_at": "2026-08-09",
+    "source_evidence": "evidence/20260809_gtfs_source_ydata_ds_352101_kotsu001.txt;evidence/20260809_gtfs_source_ydata_res_hikari_gtfs.txt;evidence/20260809_i4_soumu_local_gov_code_list.pdf;evidence/20260809_i4_soumu_local_gov_code_list_inspection.txt"
+  },
+  {
+    "municipality_code": "352110",
+    "municipality": "長門市",
+    "availability_status": "not_confirmed_in_checked_sources",
+    "feed_ids": "",
+    "scope_note": "公式データセット「R7.10バス・JR時刻表」はPDF時刻表で、GTFSの記載は無い。",
+    "checked_at": "2026-08-09",
+    "source_evidence": "evidence/20260809_gtfs_source_ydata_ds_r6-4-jr.txt;evidence/20260809_i4_soumu_local_gov_code_list.pdf;evidence/20260809_i4_soumu_local_gov_code_list_inspection.txt"
+  },
+  {
+    "municipality_code": "352128",
+    "municipality": "柳井市",
+    "availability_status": "not_confirmed_in_checked_sources",
+    "feed_ids": "",
+    "scope_note": "公式データセットページに「柳井市では標準的なバス情報フォーマットに該当するデータを保有しておりません。」と明記。",
+    "checked_at": "2026-08-09",
+    "source_evidence": "evidence/20260809_gtfs_source_ydata_res_352128_bus.txt;evidence/20260809_i4_soumu_local_gov_code_list.pdf;evidence/20260809_i4_soumu_local_gov_code_list_inspection.txt"
+  },
+  {
+    "municipality_code": "352136",
+    "municipality": "美祢市",
+    "availability_status": "confirmed",
+    "feed_ids": "sentetsu-odpt-gtfsjp",
+    "scope_note": "美祢市自身の公式データセットページには「標準的なバス情報フォーマット（GTFS-JP）について公開しておりません」と明記されているが、市内で運行する船木鉄道の公式GTFSが対象地域に美祢市を明記している。市域全体・全路線を網羅するとは公式記載からは確認していない。",
+    "checked_at": "2026-08-09",
+    "source_evidence": "evidence/20260809_gtfs_source_ydata_ds_352136_gtfs-jp.txt;evidence/20260809_gtfs_source_odpt_sentetsu.txt;evidence/20260809_i4_soumu_local_gov_code_list.pdf;evidence/20260809_i4_soumu_local_gov_code_list_inspection.txt"
+  },
+  {
+    "municipality_code": "352152",
+    "municipality": "周南市",
+    "availability_status": "not_confirmed_in_checked_sources",
+    "feed_ids": "",
+    "scope_note": "「標準的なバス情報フォーマット」は周南市公式ページへのリンクのみでGTFSの記載は無い。「公共交通マップ」（下松市との合同作成）にもGTFSの記載は無い。",
+    "checked_at": "2026-08-09",
+    "source_evidence": "evidence/20260809_gtfs_source_official_shunan.txt;evidence/20260809_gtfs_source_ydata_ds_352152_public_transport.txt;evidence/20260809_i4_soumu_local_gov_code_list.pdf;evidence/20260809_i4_soumu_local_gov_code_list_inspection.txt"
+  },
+  {
+    "municipality_code": "352161",
+    "municipality": "山陽小野田市",
+    "availability_status": "confirmed",
+    "feed_ids": "sentetsu-odpt-gtfsjp",
+    "scope_note": "山陽小野田市自身の公式データセットは市公式ページへのリンクのみでGTFSの記載は無いが、市内で運行する船木鉄道の公式GTFSが対象地域に山陽小野田市を明記している。市域全体・全路線を網羅するとは公式記載からは確認していない。",
+    "checked_at": "2026-08-09",
+    "source_evidence": "evidence/20260809_gtfs_source_ydata_ds_352161_bus.txt;evidence/20260809_gtfs_source_official_sanyoonoda.txt;evidence/20260809_gtfs_source_odpt_sentetsu.txt;evidence/20260809_i4_soumu_local_gov_code_list.pdf;evidence/20260809_i4_soumu_local_gov_code_list_inspection.txt"
+  },
+  {
+    "municipality_code": "353051",
+    "municipality": "周防大島町",
+    "availability_status": "not_confirmed_in_checked_sources",
+    "feed_ids": "",
+    "scope_note": "公式データセット「公共交通機関時刻表」のリンク先ページが404で到達できなかった。",
+    "checked_at": "2026-08-09",
+    "source_evidence": "evidence/20260809_gtfs_source_official_suooshima.txt;evidence/20260809_i4_soumu_local_gov_code_list.pdf;evidence/20260809_i4_soumu_local_gov_code_list_inspection.txt"
+  },
+  {
+    "municipality_code": "353213",
+    "municipality": "和木町",
+    "availability_status": "not_confirmed_in_checked_sources",
+    "feed_ids": "",
+    "scope_note": "山口県オープンデータカタログサイトの全文検索「和木町」25件（全2ページ）を確認したが、交通・バス関連データセット自体が無かった。",
+    "checked_at": "2026-08-09",
+    "source_evidence": "evidence/20260809_gtfs_source_ydata_q_wakicho.txt;evidence/20260809_gtfs_source_ydata_q_wakicho_p2.txt;evidence/20260809_i4_soumu_local_gov_code_list.pdf;evidence/20260809_i4_soumu_local_gov_code_list_inspection.txt"
+  },
+  {
+    "municipality_code": "353418",
+    "municipality": "上関町",
+    "availability_status": "not_confirmed_in_checked_sources",
+    "feed_ids": "",
+    "scope_note": "公式データセット「町営バス　時刻表」は令和元年10月1日時点のPDF時刻表で、GTFSの記載は無い。",
+    "checked_at": "2026-08-09",
+    "source_evidence": "evidence/20260809_gtfs_source_ydata_ds_353418-tyoueibas.txt;evidence/20260809_i4_soumu_local_gov_code_list.pdf;evidence/20260809_i4_soumu_local_gov_code_list_inspection.txt"
+  },
+  {
+    "municipality_code": "353434",
+    "municipality": "田布施町",
+    "availability_status": "not_confirmed_in_checked_sources",
+    "feed_ids": "",
+    "scope_note": "公式データセットページに「本町では町営バス事業を実施しておりません。」と明記。",
+    "checked_at": "2026-08-09",
+    "source_evidence": "evidence/20260809_gtfs_source_ydata_res_33.txt;evidence/20260809_i4_soumu_local_gov_code_list.pdf;evidence/20260809_i4_soumu_local_gov_code_list_inspection.txt"
+  },
+  {
+    "municipality_code": "353442",
+    "municipality": "平生町",
+    "availability_status": "not_confirmed_in_checked_sources",
+    "feed_ids": "",
+    "scope_note": "公式データセットページに「平生町では町営バス事業を実施していません。」と明記。",
+    "checked_at": "2026-08-09",
+    "source_evidence": "evidence/20260809_gtfs_source_ydata_res_353442_gtfs-jp.txt;evidence/20260809_i4_soumu_local_gov_code_list.pdf;evidence/20260809_i4_soumu_local_gov_code_list_inspection.txt"
+  },
+  {
+    "municipality_code": "355020",
+    "municipality": "阿武町",
+    "availability_status": "not_confirmed_in_checked_sources",
+    "feed_ids": "",
+    "scope_note": "公式データセット「町営バス時刻表」のリンク先ページにGTFSの記載は無い。",
+    "checked_at": "2026-08-09",
+    "source_evidence": "evidence/20260809_gtfs_source_official_abu.txt;evidence/20260809_i4_soumu_local_gov_code_list.pdf;evidence/20260809_i4_soumu_local_gov_code_list_inspection.txt"
+  }
+]

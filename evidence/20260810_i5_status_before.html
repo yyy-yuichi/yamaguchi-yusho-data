@@ -1,0 +1,1039 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>山口県 市町別の登録供給ビュー｜検証状況</title>
+  <style>
+    :root {
+      --green: #236b4b;
+      --green-soft: #e7f0eb;
+      --blue: #2f6697;
+      --blue-soft: #e8eff6;
+      --gray: #d9dfe2;
+      --gray-soft: #f3f5f6;
+      --gray-text: #5f696f;
+      --orange: #a65b00;
+      --orange-soft: #fff1dd;
+      --ink: #172126;
+      --line: #cbd3d7;
+      --paper: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--gray-soft);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Yu Gothic", "Meiryo", sans-serif;
+      line-height: 1.65;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    a {
+      color: var(--blue);
+      overflow-wrap: anywhere;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 40px 0 72px;
+    }
+
+    header,
+    section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    header {
+      padding: clamp(24px, 5vw, 52px);
+    }
+
+    section {
+      margin-top: 22px;
+      padding: clamp(22px, 4vw, 38px);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin-bottom: 14px;
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+    }
+
+    h2 {
+      margin-bottom: 8px;
+      font-size: clamp(1.45rem, 3vw, 2.15rem);
+      line-height: 1.3;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 1.08rem;
+      line-height: 1.45;
+    }
+
+    .eyebrow,
+    .label,
+    .source-note,
+    .small {
+      font-size: 0.82rem;
+    }
+
+    .eyebrow,
+    .label {
+      color: var(--gray-text);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .lead {
+      max-width: 850px;
+      margin-bottom: 0;
+      color: var(--gray-text);
+      font-size: 1rem;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .metric {
+      min-height: 126px;
+      padding: 18px;
+      background: var(--gray-soft);
+      border-left: 5px solid var(--gray);
+      border-radius: 8px;
+    }
+
+    .metric.complete {
+      background: var(--green-soft);
+      border-left-color: var(--green);
+    }
+
+    .metric.current {
+      background: var(--blue-soft);
+      border-left-color: var(--blue);
+    }
+
+    .metric-number {
+      display: block;
+      margin: 2px 0 3px;
+      font-size: clamp(2.25rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .metric-caption {
+      color: var(--gray-text);
+      font-size: 0.86rem;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .section-head p {
+      max-width: 620px;
+      margin-bottom: 0;
+      color: var(--gray-text);
+      font-size: 0.9rem;
+    }
+
+    .progress-summary {
+      flex: 0 0 auto;
+      color: var(--green);
+      font-size: clamp(1.45rem, 3vw, 2.2rem);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .overall-bar {
+      display: flex;
+      width: 100%;
+      height: 18px;
+      overflow: hidden;
+      background: var(--gray);
+      border-radius: 999px;
+    }
+
+    .overall-bar .done {
+      width: 42.857%;
+      background: var(--green);
+    }
+
+    .overall-bar .current {
+      width: 14.286%;
+      background: var(--blue);
+    }
+
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(108px, 1fr));
+      gap: 10px;
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .roadmap li {
+      min-height: 116px;
+      padding: 14px 12px;
+      background: var(--gray-soft);
+      border: 1px solid var(--gray);
+      border-top-width: 5px;
+      border-radius: 8px;
+    }
+
+    .roadmap li.done {
+      background: var(--green-soft);
+      border-color: var(--green);
+    }
+
+    .roadmap li.current {
+      background: var(--blue-soft);
+      border-color: var(--blue);
+    }
+
+    .step-no,
+    .step-state {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .step-no {
+      color: var(--gray-text);
+    }
+
+    .step-title {
+      display: block;
+      margin: 4px 0 12px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .done .step-state {
+      color: var(--green);
+    }
+
+    .current .step-state {
+      color: var(--blue);
+    }
+
+    .todo .step-state {
+      color: var(--gray-text);
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 18px;
+      color: var(--gray-text);
+      font-size: 0.8rem;
+    }
+
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .swatch {
+      width: 13px;
+      height: 13px;
+      border-radius: 3px;
+    }
+
+    .swatch.green {
+      background: var(--green);
+    }
+
+    .swatch.blue {
+      background: var(--blue);
+    }
+
+    .swatch.gray {
+      background: var(--gray);
+    }
+
+    .pdf-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .pdf-card {
+      display: flex;
+      min-height: 260px;
+      flex-direction: column;
+      padding: 20px;
+      background: var(--gray-soft);
+      border: 1px solid var(--gray);
+      border-top: 7px solid var(--gray);
+      border-radius: 10px;
+    }
+
+    .pdf-card.complete {
+      background: var(--green-soft);
+      border-color: var(--green);
+    }
+
+    .status-tag {
+      align-self: flex-start;
+      margin-bottom: 14px;
+      padding: 4px 9px;
+      color: var(--gray-text);
+      background: var(--paper);
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    .complete .status-tag {
+      color: var(--green);
+    }
+
+    .file-name {
+      margin-bottom: 12px;
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+
+    .pdf-meta {
+      margin: 0;
+      color: var(--gray-text);
+      font-size: 0.86rem;
+    }
+
+    .pdf-result {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    .pdf-result strong {
+      display: block;
+      color: var(--green);
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .pdf-result span {
+      color: var(--gray-text);
+      font-size: 0.76rem;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+      gap: 22px;
+      margin-top: 22px;
+    }
+
+    .dashboard-grid section {
+      margin-top: 0;
+    }
+
+    .chart-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 18px 0 24px;
+      color: var(--gray-text);
+      font-size: 0.8rem;
+    }
+
+    .chart-legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .vehicle-chart {
+      display: grid;
+      gap: 20px;
+    }
+
+    .chart-row {
+      display: grid;
+      grid-template-columns: minmax(120px, 170px) minmax(180px, 1fr) 54px;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .chart-name {
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .chart-name small {
+      display: block;
+      color: var(--gray-text);
+      font-weight: 400;
+    }
+
+    .bar-scale {
+      position: relative;
+      height: 34px;
+      overflow: hidden;
+      background: var(--gray-soft);
+      border: 1px solid var(--gray);
+      border-radius: 5px;
+    }
+
+    .bar-fill {
+      display: flex;
+      height: 100%;
+      min-width: 2px;
+    }
+
+    .bar-wheelchair {
+      background: var(--green);
+    }
+
+    .bar-sedan {
+      background: var(--blue);
+    }
+
+    .bar-segment {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+      color: var(--paper);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .chart-total {
+      font-size: 1.45rem;
+      font-weight: 800;
+      text-align: right;
+    }
+
+    .chart-total small {
+      display: block;
+      color: var(--gray-text);
+      font-size: 0.7rem;
+      font-weight: 400;
+    }
+
+    .note {
+      margin: 24px 0 0;
+      padding: 12px 14px;
+      color: var(--orange);
+      background: var(--orange-soft);
+      border-left: 4px solid var(--orange);
+      font-size: 0.82rem;
+    }
+
+    .coverage-number {
+      margin: 22px 0 2px;
+      color: var(--blue);
+      font-size: clamp(3.5rem, 9vw, 6rem);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+    }
+
+    .coverage-number small {
+      font-size: 0.34em;
+      letter-spacing: 0;
+    }
+
+    .coverage-caption {
+      color: var(--gray-text);
+      font-size: 0.86rem;
+    }
+
+    .municipality-grid {
+      display: grid;
+      grid-template-columns: repeat(19, minmax(6px, 1fr));
+      gap: 4px;
+      margin: 22px 0 26px;
+    }
+
+    .municipality-grid span {
+      aspect-ratio: 1;
+      background: var(--gray);
+      border-radius: 2px;
+    }
+
+    .municipality-grid span.active {
+      background: var(--blue);
+    }
+
+    .municipality-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .municipality-list li {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 11px 13px;
+      background: var(--blue-soft);
+      border-left: 4px solid var(--blue);
+      border-radius: 5px;
+    }
+
+    .municipality-list strong {
+      color: var(--blue);
+      font-size: 1.7rem;
+      line-height: 1;
+    }
+
+    .check-summary {
+      color: var(--green);
+      font-size: clamp(2.1rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 18px;
+      margin: 24px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 10px;
+      padding: 14px;
+      background: var(--green-soft);
+      border-left: 4px solid var(--green);
+      border-radius: 6px;
+    }
+
+    .check-mark {
+      display: inline-flex;
+      width: 26px;
+      height: 26px;
+      align-items: center;
+      justify-content: center;
+      color: var(--paper);
+      background: var(--green);
+      border-radius: 50%;
+      font-family: Arial, sans-serif;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .checklist strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .checklist p {
+      margin: 0;
+      color: var(--gray-text);
+      font-size: 0.82rem;
+    }
+
+    .unknown-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .unknown-list li {
+      padding: 16px;
+      background: var(--orange-soft);
+      border-left: 4px solid var(--orange);
+      border-radius: 6px;
+    }
+
+    .unknown-id {
+      display: block;
+      color: var(--orange);
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .unknown-impact {
+      display: block;
+      margin-top: 7px;
+      color: var(--gray-text);
+      font-size: 0.78rem;
+    }
+
+    .next-list {
+      display: grid;
+      gap: 0;
+      margin: 24px 0 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: next;
+    }
+
+    .next-list li {
+      position: relative;
+      min-height: 72px;
+      padding: 5px 0 22px 58px;
+      counter-increment: next;
+    }
+
+    .next-list li:not(:last-child)::after {
+      position: absolute;
+      top: 40px;
+      bottom: 0;
+      left: 19px;
+      width: 2px;
+      background: var(--gray);
+      content: "";
+    }
+
+    .next-list li::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      color: var(--paper);
+      background: var(--blue);
+      border-radius: 50%;
+      content: counter(next);
+      font-weight: 800;
+    }
+
+    .next-list strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .next-list p,
+    .next-list ul {
+      margin-top: 0;
+      color: var(--gray-text);
+      font-size: 0.86rem;
+    }
+
+    .next-list ul {
+      margin-bottom: 0;
+      padding-left: 1.3em;
+    }
+
+    .sources {
+      color: var(--gray-text);
+      font-size: 0.8rem;
+    }
+
+    .sources ul {
+      margin-bottom: 0;
+      padding-left: 1.4em;
+    }
+
+    .source-note {
+      margin: 16px 0 0;
+      color: var(--gray-text);
+    }
+
+    @media (max-width: 980px) {
+      .metrics,
+      .pdf-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .roadmap {
+        grid-template-columns: repeat(4, minmax(120px, 1fr));
+      }
+
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .page {
+        width: min(100% - 20px, 1180px);
+        padding: 12px 0 40px;
+      }
+
+      header,
+      section {
+        border-radius: 9px;
+      }
+
+      .metrics,
+      .pdf-grid,
+      .checklist,
+      .unknown-list {
+        grid-template-columns: 1fr;
+      }
+
+      .metric {
+        min-height: 0;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .progress-summary {
+        display: block;
+        margin-top: 12px;
+        white-space: normal;
+        overflow-wrap: anywhere;
+      }
+
+      .roadmap {
+        grid-template-columns: 1fr;
+      }
+
+      .roadmap li {
+        min-height: 0;
+      }
+
+      .chart-row {
+        grid-template-columns: 1fr auto;
+      }
+
+      .bar-scale {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+
+      .chart-total {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .municipality-grid {
+        grid-template-columns: repeat(10, minmax(12px, 1fr));
+      }
+    }
+
+    .app-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 48px;
+      margin-top: 18px;
+      padding: 0 22px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: white;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .app-link:hover { background: var(--green); }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <p class="eyebrow">UDC2026 応募作品① / 検証状況</p>
+      <h1>山口県 市町別の<br>登録供給ビュー</h1>
+      <p class="lead">福祉有償運送と交通空白地有償運送の公表登録簿を、市町から確認できる静的アプリです。県・市町の交通担当者が、関係団体と登録車両を原本まで追跡できる最初の利用可能な縦切りを公開用HTMLとして受け入れました。</p>
+      <a class="app-link" href="index.html?v=20260809">市町別の登録供給ビューを開く</a>
+
+      <div class="metrics" aria-label="主要な進捗数値">
+        <div class="metric complete">
+          <span class="label">受入段階</span>
+          <strong class="metric-number">I-1 / I-2</strong>
+          <span class="metric-caption">データ基盤・市町別ビュー</span>
+        </div>
+        <div class="metric current">
+          <span class="label">PDF</span>
+          <strong class="metric-number">4 / 4</strong>
+          <span class="metric-caption">処理済み</span>
+        </div>
+        <div class="metric complete">
+          <span class="label">Operators</span>
+          <strong class="metric-number">23</strong>
+          <span class="metric-caption">団体を抽出</span>
+        </div>
+        <div class="metric complete">
+          <span class="label">Vehicles</span>
+          <strong class="metric-number">136</strong>
+          <span class="metric-caption">台（軽20台は内数）</span>
+        </div>
+      </div>
+    </header>
+
+    <section aria-labelledby="progress-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">作品の現在地</p>
+          <h2 id="progress-title">受入済み成果と残る作業</h2>
+          <p>PDF処理は作品のためのデータ基盤です。現在はその基盤を使い、市町別の登録供給を確認する画面まで受け入れています。I-1・I-2の受入は、作品概要・本応募・第三者検証公開・受賞というT1〜T4の達成を意味しません。</p>
+        </div>
+        <strong class="progress-summary">公開アプリの第1縦切りを受入済み</strong>
+      </div>
+
+      <div class="overall-bar" role="progressbar" aria-label="7工程中4工程を受入済み、次の作品機能はI-3後に一つだけ再評価" aria-valuemin="0" aria-valuemax="7" aria-valuenow="4">
+        <span class="done" title="4工程を受入済み"></span>
+      </div>
+
+      <ol class="roadmap">
+        <li class="done">
+          <span class="step-no">01</span>
+          <span class="step-title">公式原本の取得・検証</span>
+          <span class="step-state">完了</span>
+        </li>
+        <li class="done">
+          <span class="step-no">02</span>
+          <span class="step-title">4PDFデータ基盤</span>
+          <span class="step-state">完了</span>
+        </li>
+        <li class="done">
+          <span class="step-no">03</span>
+          <span class="step-title">利用条件・出典</span>
+          <span class="step-state">完了</span>
+        </li>
+        <li class="done">
+          <span class="step-no">04</span>
+          <span class="step-title">市町別の登録供給ビュー</span>
+          <span class="step-state">受入済み</span>
+        </li>
+        <li class="current">
+          <span class="step-no">05</span>
+          <span class="step-title">次の作品機能</span>
+          <span class="step-state">I-3受入後に一つだけ再評価</span>
+        </li>
+        <li class="todo">
+          <span class="step-no">06</span>
+          <span class="step-title">応募用の公開物一式</span>
+          <span class="step-state">未着手</span>
+        </li>
+        <li class="todo">
+          <span class="step-no">07</span>
+          <span class="step-title">外部提出</span>
+          <span class="step-state">G6の本人承認前は実施しない</span>
+        </li>
+      </ol>
+
+      <div class="legend" aria-label="工程状態の凡例">
+        <span><i class="swatch green"></i>完了</span>
+        <span><i class="swatch blue"></i>現在工程</span>
+        <span><i class="swatch gray"></i>未着手</span>
+      </div>
+      <p class="source-note">根拠: run_record.md §0.5・§3.10・§4、SPEC.md、verification.md</p>
+    </section>
+
+    <section aria-labelledby="pdf-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">対象PDF</p>
+          <h2 id="pdf-title">4ファイルの処理状況</h2>
+          <p>山口県分4区分・31ページを全て処理し、原本と機械可読データを照合済みです。</p>
+        </div>
+      </div>
+
+      <div class="pdf-grid">
+        <article class="pdf-card complete">
+          <span class="status-tag">処理・検証済み</span>
+          <h3>交通空白地有償運送</h3>
+          <p class="pdf-meta">実施主体: 市町村営</p>
+          <p class="file-name">000359215.pdf</p>
+          <div class="pdf-result"><div><strong>12</strong><span>団体</span></div><div><strong>106</strong><span>車両</span></div></div>
+        </article>
+
+        <article class="pdf-card complete">
+          <span class="status-tag">処理・検証済み</span>
+          <h3>交通空白地有償運送</h3>
+          <p class="pdf-meta">実施主体: NPO等</p>
+          <p class="file-name">000268896.pdf</p>
+          <div class="pdf-result"><div><strong>4</strong><span>団体</span></div><div><strong>7</strong><span>車両</span></div></div>
+        </article>
+
+        <article class="pdf-card complete">
+          <span class="status-tag">処理・検証済み</span>
+          <h3>福祉有償運送</h3>
+          <p class="pdf-meta">実施主体: 市町村営</p>
+          <p class="file-name">000230003.pdf</p>
+          <div class="pdf-result"><div><strong>3</strong><span>団体</span></div><div><strong>6</strong><span>車両</span></div></div>
+        </article>
+
+        <article class="pdf-card complete">
+          <span class="status-tag">処理・検証済み</span>
+          <h3>福祉有償運送</h3>
+          <p class="pdf-meta">実施主体: NPO等</p>
+          <p class="file-name">000271730.pdf</p>
+          <div class="pdf-result">
+            <div><strong>4</strong><span>団体</span></div>
+            <div><strong>17</strong><span>車両</span></div>
+          </div>
+        </article>
+      </div>
+      <p class="source-note">根拠: SPEC.md §2・§5、data/operators.csv、data/vehicles.csv、verification.md</p>
+    </section>
+
+    <div class="dashboard-grid">
+      <section aria-labelledby="vehicle-title">
+        <p class="eyebrow">検証済みデータ基盤</p>
+        <h2 id="vehicle-title">23団体・90車種行</h2>
+        <p class="lead">4PDFの登録単位、事務所、車両欄を統合し、実車両136台を機械可読化しました。</p>
+        <div class="pdf-result" aria-label="検証済みデータの集計">
+          <div><strong>136</strong><span>実車両</span></div>
+          <div><strong>20</strong><span>軽自動車（内数）</span></div>
+        </div>
+        <p class="note">軽自動車20台は136台の内数であり、総数へ二重加算していません。市町別の値も複数市町を運送区域に持つ団体が再掲されるため、県計として合算できません。</p>
+        <p class="source-note">根拠: data/operators.csv、data/vehicles.csv、SPEC.md §5、verification.md</p>
+      </section>
+
+      <section aria-labelledby="coverage-title">
+        <p class="eyebrow">市町別ビュー</p>
+        <h2 id="coverage-title">山口県19市町を選択可能</h2>
+        <div class="coverage-number">15 <small>/ 19市町に登録簿記録</small></div>
+        <p class="coverage-caption stat-note">宇部市、防府市、山陽小野田市、平生町は登録簿上の該当0件です。これは交通手段や移動支援が存在しないことを意味しません。</p>
+        <ul class="municipality-list">
+          <li><span>登録簿記録あり</span><strong>15市町</strong></li>
+          <li><span>登録簿上0件</span><strong>4市町</strong></li>
+        </ul>
+        <a class="app-link" href="index.html?v=20260809">19市町から選んで確認する</a>
+        <p class="source-note">市町一覧: 山口県「市町｜関連リンク」 <a href="https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html">公式ページ</a>。集計: docs/data/municipal_supply.json</p>
+      </section>
+    </div>
+
+    <section aria-labelledby="check-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">4PDF統合の品質確認</p>
+          <h2 id="check-title">SPEC.md §5 完了条件</h2>
+          <p>4PDF・23団体・90車種行の統合に対する完了条件1〜8を、実ファイルと自動テストで全て達成しています。</p>
+        </div>
+        <strong class="check-summary">8 / 8 達成</strong>
+      </div>
+
+      <ol class="checklist">
+        <li>
+          <span class="check-mark" aria-hidden="true">✓</span>
+          <div><strong>1. 団体数</strong><p>ファイル別4+3+12+4、統合23団体で一致。</p></div>
+        </li>
+        <li>
+          <span class="check-mark" aria-hidden="true">✓</span>
+          <div><strong>2. 車両合計</strong><p>23団体全件で車種別の和と団体合計が一致。</p></div>
+        </li>
+        <li>
+          <span class="check-mark" aria-hidden="true">✓</span>
+          <div><strong>3. 軽の内数</strong><p>全行で count_kei ≤ count。</p></div>
+        </li>
+        <li>
+          <span class="check-mark" aria-hidden="true">✓</span>
+          <div><strong>4. 登録番号</strong><p>(source_pdf, registration_no) は23/23件で一意。</p></div>
+        </li>
+        <li>
+          <span class="check-mark" aria-hidden="true">✓</span>
+          <div><strong>5. 全件突合</strong><p>4PDF・23団体・90車種行を原本と照合。</p></div>
+        </li>
+        <li>
+          <span class="check-mark" aria-hidden="true">✓</span>
+          <div><strong>6. 日付整合</strong><p>23団体全件で valid_from &lt; valid_to。</p></div>
+        </li>
+        <li>
+          <span class="check-mark" aria-hidden="true">✓</span>
+          <div><strong>7. 事務所差分</strong><p>仕様で確定した既知差分だけを検出。</p></div>
+        </li>
+        <li>
+          <span class="check-mark" aria-hidden="true">✓</span>
+          <div><strong>8. 代表者氏名の不出力</strong><p>公開HTML・JSONを含む派生成果物への一致0件。</p></div>
+        </li>
+      </ol>
+      <p class="source-note">根拠: SPEC.md §5、verification.md</p>
+    </section>
+
+    <section aria-labelledby="unknown-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">未確認事項</p>
+          <h2 id="unknown-title">確認せずに埋めない3項目</h2>
+          <p>現行SPECに残る未確認事項です。I-2の表示値へ推測で混ぜていません。</p>
+        </div>
+      </div>
+
+      <ul class="unknown-list">
+        <li><span class="unknown-id">U2</span><strong>事務所一覧が改ページする例</strong><span class="unknown-impact">影響: 団体の区切り方。複数事務所の同一ページ例は確認済み</span></li>
+        <li><span class="unknown-id">U3</span><strong>新規登録時の有効期間</strong><span class="unknown-impact">影響: SPEC.md §5-6 を警告に留めている理由</span></li>
+        <li><span class="unknown-id">U7</span><strong>美祢市の民間タクシー会社2社が制度上どの役割で事務所欄に記載されているか</strong><span class="unknown-impact">影響: 作品説明。原文保持済みで実装の停止条件ではない</span></li>
+      </ul>
+      <p class="source-note">根拠: SPEC.md §9</p>
+    </section>
+
+    <section aria-labelledby="next-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">この作業の区切り</p>
+          <h2 id="next-title">I-3はここまでで止める</h2>
+          <p>状況ページの訂正だけを行い、新しい作品機能へ広げません。</p>
+        </div>
+      </div>
+
+      <ol class="next-list">
+        <li>
+          <strong>古い現況表示を現在値へ同期</strong>
+          <p>4/4PDF、23団体、90車種行、136台、軽20台、41テストを実ファイルと一致させる。</p>
+        </li>
+        <li>
+          <strong>デスクトップとモバイルで確認</strong>
+          <p>市町別ビューへのリンク、表示の読みやすさ、コンソールエラー0件を確認する。</p>
+        </li>
+        <li>
+          <strong>ローカルコミットで受け入れる</strong>
+          <p>push・外部提出はしない。次の作品機能はI-3受入後に一つだけ再評価する。</p>
+        </li>
+      </ol>
+      <p class="source-note">根拠: run_record.md §4</p>
+    </section>
+
+    <section class="sources" aria-labelledby="source-title">
+      <h2 id="source-title">このページの根拠</h2>
+      <ul>
+        <li>公開アプリ: <a href="index.html?v=20260809">市町別の登録供給ビュー</a>（<a href="index.html?v=20260809#limits-title">データの限界</a>、<a href="index.html?v=20260809#sources-title">出典と利用条件</a>）</li>
+        <li>リポジトリ内: run_record.md、SPEC.md、verification.md、data/operators.csv、data/vehicles.csv、docs/data/municipal_supply.json</li>
+        <li>括弧付き台数の扱い: 国自旅第317号「<a href="https://www.mlit.go.jp/jidosha/content/001766049.pdf">福祉有償運送の登録に関する処理方針について</a>」2.(2)⑦</li>
+        <li>交通空白地の車種区分: 国自旅第316号「<a href="https://www.mlit.go.jp/jidosha/content/001766048.pdf">交通空白地有償運送の登録に関する処理方針について</a>」2.(2)⑦</li>
+        <li>山口県の市町数: 出典: 山口県「市町｜関連リンク」 <a href="https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html">https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html</a></li>
+        <li>国土交通省公開物の利用条件: <a href="https://www.mlit.go.jp/link.html">国土交通省ウェブサイト利用ルール</a>（PDL1.0準拠）。加工内容は公開アプリ内に明記</li>
+        <li>このリポジトリの派生データ: CC BY 4.0。国土交通省の原資料自体をこのライセンスへ変更するものではない</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

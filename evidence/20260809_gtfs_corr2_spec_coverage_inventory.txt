@@ -1,0 +1,22 @@
+取得日時: 2026-08-10 JST
+取得元  : コマンド実行 PYTHONIOENCODING=utf-8 C:\Users\user\dev\udc2026\.venv\Scripts\python.exe tools/spec_coverage.py evidence/20260809_gtfs_corr2_inventory_before.txt evidence/20260809_gtfs_yamaguchi_inventory.txt
+取得方法: ローカル実行（GTFS-1-CORR-2完了条件9の合格出力の保存）
+---
+旧版: evidence/20260809_gtfs_corr2_inventory_before.txt
+新版: evidence/20260809_gtfs_yamaguchi_inventory.txt
+========================================================================
+
+[見出し] 9/9 が新版に存在
+
+[識別子] 8/8 が新版に存在
+
+[表の1列目] 19/19 が新版に存在
+
+[コードブロック行] 0/0 が新版に存在
+
+========================================================================
+検査トークン数        : 36
+欠落・改訂点に記載あり: 0
+欠落・説明なし        : 0
+
+判定: 合格。旧版のトークンはすべて新版に残っているか、改訂点に理由がある。

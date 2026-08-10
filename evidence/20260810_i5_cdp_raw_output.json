@@ -1,0 +1,122 @@
+{
+  "viewports": [
+    {
+      "label": "desktop",
+      "width": 1280,
+      "height": 900,
+      "data": {
+        "overflowX": 0,
+        "sections": 10,
+        "hasTerms": true,
+        "hasGtfsSection": true,
+        "roadmapItems": 8,
+        "title": "山口県 市町別の登録供給ビュー｜検証状況",
+        "scrollWidth": 1265,
+        "clientWidth": 1265
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "screenshot": "C:/Users/user/dev/udc2026/yamaguchi-yusho-data/evidence/20260810_i5_screenshot_desktop_status.png"
+    },
+    {
+      "label": "mobile",
+      "width": 390,
+      "height": 844,
+      "data": {
+        "overflowX": 0,
+        "sections": 10,
+        "hasTerms": true,
+        "hasGtfsSection": true,
+        "roadmapItems": 8,
+        "title": "山口県 市町別の登録供給ビュー｜検証状況",
+        "scrollWidth": 390,
+        "clientWidth": 390
+      },
+      "consoleMessages": [],
+      "pageErrors": [],
+      "screenshot": "C:/Users/user/dev/udc2026/yamaguchi-yusho-data/evidence/20260810_i5_screenshot_mobile_status.png"
+    }
+  ],
+  "linkChecks": [
+    {
+      "label": "index.html",
+      "clickInfo": {
+        "found": true,
+        "href": "index.html?v=20260810"
+      },
+      "afterNav": {
+        "url": "http://localhost:8793/index.html?v=20260810&municipality=%E5%B1%B1%E5%8F%A3%E5%B8%82",
+        "title": "山口市｜山口県 市町別の登録供給ビュー",
+        "bodyIsValidJson": false,
+        "jsonLength": null,
+        "bodySnippet": "市町選択へ移動\n\nUDC2026 作品① / 道路・交通\n\n山口県\n市町別の登録供給ビュー\n\n福祉有償運送と交通空白地有償運送の登録簿を、市町から確認できます。 県・市町の交通担当者が、公開情報として確認できる団体と登録車両を追跡するためのビューです。\n\nSOURCE COVERAGE\n4 / 4 PDF\n山口県分の登録簿4区分を処理・検証済み\nMUNICIPALITIES\n19市町\nWITH R"
+      },
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "label": "gtfs_feeds.json",
+      "clickInfo": {
+        "found": true,
+        "href": "data/gtfs_feeds.json"
+      },
+      "afterNav": {
+        "url": "http://localhost:8793/data/gtfs_feeds.json",
+        "title": "",
+        "bodyIsValidJson": true,
+        "jsonLength": 3,
+        "bodySnippet": "[\r\n  {\r\n    \"feed_id\": \"iwakuni-gtfsjp\",\r\n    \"publisher\": \"岩国市\",\r\n    \"dataset_name\": \"岩国市（生活交通バス・由宇地区バス）GTFS-JPデータ\",\r\n    \"official_page_url\": \"https://yamaguchi-opendata.jp/ckan/dataset/352080-gtfs"
+      },
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "label": "municipality_gtfs.json",
+      "clickInfo": {
+        "found": true,
+        "href": "data/municipality_gtfs.json"
+      },
+      "afterNav": {
+        "url": "http://localhost:8793/data/municipality_gtfs.json",
+        "title": "",
+        "bodyIsValidJson": true,
+        "jsonLength": 19,
+        "bodySnippet": "[\r\n  {\r\n    \"municipality_code\": \"352012\",\r\n    \"municipality\": \"下関市\",\r\n    \"availability_status\": \"not_confirmed_in_checked_sources\",\r\n    \"feed_ids\": \"\",\r\n    \"scope_note\": \"山口県オープンデータカタログサイトの下関市データ"
+      },
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "label": "operators.json",
+      "clickInfo": {
+        "found": true,
+        "href": "data/operators.json"
+      },
+      "afterNav": {
+        "url": "http://localhost:8793/data/operators.json",
+        "title": "",
+        "bodyIsValidJson": true,
+        "jsonLength": 23,
+        "bodySnippet": "[\r\n  {\r\n    \"registration_no\": \"中山福第1号\",\r\n    \"registration_no_raw\": \"中山福第１号\",\r\n    \"authority_code\": \"中山\",\r\n    \"service_type_code\": \"福\",\r\n    \"serial_no\": \"1\",\r\n    \"pref\": \"山口県\",\r\n    \"transport_ty"
+      },
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "label": "vehicles.json",
+      "clickInfo": {
+        "found": true,
+        "href": "data/vehicles.json"
+      },
+      "afterNav": {
+        "url": "http://localhost:8793/data/vehicles.json",
+        "title": "",
+        "bodyIsValidJson": true,
+        "jsonLength": 90,
+        "bodySnippet": "[\r\n  {\r\n    \"registration_no\": \"中山福第1号\",\r\n    \"office_seq\": 1,\r\n    \"office_name\": \"豆たん介護センター\",\r\n    \"office_location\": \"下関市内日下1027-3\",\r\n    \"ownership\": \"所有\",\r\n    \"vehicle_type\": \"車いす車\",\r\n    \"vehic"
+      },
+      "consoleMessages": [],
+      "pageErrors": []
+    }
+  ]
+}

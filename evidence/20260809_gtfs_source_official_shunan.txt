@@ -1,0 +1,405 @@
+取得日時: 2026-08-09 JST
+取得元  : https://www.city.shunan.lg.jp/soshiki/102/31664.html
+取得方法: curl -sL (生バイト取得、要約なし)
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JHD69S0DJY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JHD69S0DJY');
+  gtag('config', 'UA-68530772-1');
+</script>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+				<meta name="keywords" content="ちょいのり,ちょい乗り,周南市,市街地,循環,バス,100円,動物園,コミュニティバス,循環バス">
+	<meta name="description" content="ちょい乗り100円バスの路線図や時刻表を載せています">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>市街地循環線『ちょい乗り100円バス』 - 山口県周南市</title>
+	<script src="/ssi/js/color.js"></script>
+	<script src="/ssi/js/fontsize.js"></script>
+	<script src="/ssi/js/print.js"></script>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
+	<link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	<script src="/ssi/js/escapeurl.js"></script>
+	<script src="/ssi/js/jquery.js"></script>
+	<script src="/ssi/js/jquery-migrate.js"></script>
+	<script src="/ssi/js/checksp.js"></script>
+	<script src="/ssi/js/match-height.js"></script>
+	<script src="/ssi/js/common.js"></script>
+	<script src="/ssi/js/s-google.js"></script>
+	<script src="/ssi/js/footstep-kosodate.js"></script>
+	<link rel="stylesheet" href="/ssi/css/footstep-kosodate.css">
+	<!-- ReadSpeaker音声読み上げスクリプトここから -->
+	<script src="//cdn1.readspeaker.com/script/8035/webReader/webReader.js?pids=wr&amp;forceAdapter=ioshtml5&amp;disable=translation,lookup"></script>
+	<!-- ReadSpeaker音声読み上げスクリプトここまで -->
+
+	<script src="/ssi/js/common-kosodate.js"></script>
+	<style  media="all">
+		@import url("/ssi/css/site-kosodate.css");
+	</style>
+	
+</head>
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- レコメンドここから -->
+<script src="/ssi/js/recommend.js"></script>
+<iframe style="display:none;" id="oProxy" src="https://www.netcrew-analysis.jp/recommend/proxy.html" title="レコメンド情報" sandbox="allow-scripts"></iframe>
+<!-- レコメンドここまで -->
+<div class="site site_1300 site_detail side1 site_kosodate">
+	<!-- コンテナここから -->
+	<div id="container">
+		<span class="hide" id="pagetop">ページの先頭です。</span>
+		<span class="hide"><a href="#skip">メニューを飛ばして本文へ</a></span>
+
+		<!-- ヘッダここから -->
+		<div id="header">
+			
+			<div id="spm_wrap">
+				<button type="button" id="spm_menu"><span class="hide">メニュー</span></button>
+				<button type="button" id="spm_search"><span class="hide">情報をさがす</span></button>
+				<button type="button" id="spm_help"><span class="hide">ヘルプ</span></button>
+			</div>
+			<div id="xp1" class="rs_preserve rs_skip rs_splitbutton rs_addtools rs_exp"></div>
+			<!-- header2ここから -->
+			<div id="header2">
+				<div id="he_left">
+					<div id="logo">
+						<a href="/site/kodomosien/"><img src="/img/sites/kosodate/pc/header_logo.png" alt="こどもや子育てに優しいまち周南市こども・子育てサイト"></a>
+					</div>
+				</div>
+				<div id="he_right">
+					<noscript><p>JavaScriptが無効のため、文字の大きさ・背景色を変更する機能を使用できません。</p></noscript>
+					<!-- リンクここから -->
+					<div id="header_navi">
+						<ul>
+							<li class="h_main"><a href="#skip">本文へ</a></li>
+							<li class="h_lang"><a href="/site/userguide/12691.html" lang="en">Foreign language</a></li>
+							<li class="h_yomiage">
+								<!-- ReadSpeaker音声読み上げ(共通ヘッダ用)ここから -->
+								<span id="readspeaker_button1" class="rs_skip">
+								<a href="//app-as.readspeaker.com/cgi-bin/rsent?customerid=8035&amp;lang=ja_jp&amp;readid=main&amp;url=" onclick="readpage(this.href, 'xp1'); return false;" class="rs_href" rel="nofollow" accesskey="L">音声よみあげ</a>
+								</span>
+								<!-- ReadSpeaker音声読み上げ(共通ヘッダ用)ここまで -->
+							</li>
+							<li class="h_support">
+								<button type="button" id="support_menu_open">
+									<span class="func_open">ヘルプ</span><span class="func_close">とじる</span>
+								</button>
+								<div id="support_menu_box">
+									<!-- 文字の大きさ変更ここから -->
+									<span id="h_hajimete"><a href="/site/kodomosien/138076.html">はじめての方へ</a></span>
+									<dl id="moji_size">
+										<dt>文字サイズ</dt>
+										<dd><a id="moji_large" href="javascript:fsc('larger');" title="文字サイズを拡大する">拡大</a></dd>
+										<dd><a id="moji_default" href="javascript:fsc('default');" title="文字サイズを標準にする">標準</a></dd>
+									</dl>
+									<!-- 文字の大きさ変更ここまで -->
+									<!-- 背景の変更ここから -->
+									<dl id="haikei_color">
+										<dt>背景色の変更</dt>
+										<dd><a id="haikei_white" href="javascript:SetCss(1);" title="背景色を白色に変更する">白</a></dd>
+										<dd><a id="haikei_black" href="javascript:SetCss(2);" title="背景色を黒色に変更する">黒</a></dd>
+										<dd><a id="haikei_blue"  href="javascript:SetCss(3);" title="背景色を青色に変更する">青</a></dd>
+									</dl>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!-- リンクここまで -->
+					<!-- 検索ここから -->
+					<div id="top_search_keyword">
+						<label for="tmp_query" class="search_ttl">キーワード検索</label>
+						<!-- Googleカスタム検索ここから -->
+						<form action="/search.html" method="get" id="cse-search-box" name="cse-search-box">
+							<input type="hidden" name="cx" value="014765334508882669668:k0z6qiummom"><!--
+							--><input type="hidden" name="cof" value="FORID:11"><!--
+							--><input type="hidden" name="ie" value="UTF-8"><!--
+							--><label for="tmp_query"><span class="hide">キーワード検索</span></label><!--
+							--><input type="text" name="q" value="" id="tmp_query"><!--
+							--><input type="submit" value="検索" id="submit" name="sa">
+						</form>
+						<script src="https://www.google.com/coop/cse/brand?form=cse-search-box"></script>
+						<!-- Googleカスタム検索ここまで -->
+					</div>
+					<!-- 検索ここまで -->
+				</div>
+			</div>
+			<!-- header2ここまで -->
+			<!-- スマートフォンメニュー展開ここから -->
+			<div id="menu_dialog">
+				<div id="menu_list">
+					<ul>
+						<li><a href="/site/kodomosien/list601.html">妊娠・出産</a></li>
+						<li><a href="/site/kodomosien/list602.html">健康・医療</a></li>
+						<li><a href="/site/kodomosien/list603.html">お金・生活のサポート</a></li>
+						<li><a href="/site/kodomosien/list604.html">相談する</a></li>
+						<li><a href="/site/kodomosien/list605.html">預ける・通う</a></li>
+						<li><a href="/site/kodomosien/list606.html">学ぶ・体験する</a></li>
+						<li><a href="/site/kodomosien/list607.html">おでかけ</a></li>
+						<li><a href="/site/kodomosien/list608.html">応援する・つながる</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- スマートフォンメニュー展開ここまで -->
+		</div>
+		<!-- ヘッダここまで -->
+
+		<!-- サブサイト共通自由記入エリア ここから -->
+		<div class="free_box_wrap free_box_wrap1"><!-- [[item_free_area_3000_head]] --><!-- [[item_free_area_3000_tail]] --></div>
+		<!-- サブサイト共通自由記入エリア ここまで -->
+
+		<div id="mymainback">
+
+			<!-- メインここから -->
+			<div id="main">
+				<div id="main_a">
+					<hr class="hide">
+					<p class="hide" id="skip">本文</p>
+
+					<div id="main_header">
+						<h1>市街地循環線『ちょい乗り100円バス』</h1>
+					</div>
+
+					<div class="content_header_wrap">
+						<div id="content_header">
+							<span class="date">更新日：2026年7月27日更新</span>
+							<span class="link_print"><a id="print_mode_link" href="javascript:print_mode();">印刷ページ表示</a></span>
+						</div>
+					</div>
+
+					<!-- main_bodyここから -->
+					<div id="main_body">
+
+						
+						<div class="detail_free" id="detail_free_1">
+<p style="text-align: left;">周南市では、JR徳山駅と文化会館、動物園、美術博物館などを結ぶ市街地循環線「ちょい乗り100円バス」を土・日曜日、祝日に運行しています。<br>
+また運行日には、「ちょい乗り100円バス」利用者の方もご利用できる「パーク・アンド・ライド駐車場」を美術博物館前に用意していますので、遠方からマイカーでお越しになる皆さまも、ぜひ「ちょい乗り100円バス」に乗り換えて、ゆっくりと徳山駅周辺を散策してください。</p>
+
+<h2 style="text-align: left;">​動物園の夜間開園に合わせ運行時間を延長します</h2>
+
+<p><strong>令和8年8月8日（土曜日）、8月11日（祝日）、8月15日（土曜日）、8月22日（土曜日）、8月29日（土曜日）は、動物園の夜間開園に合わせ運行時間を延長します。</strong><br>
+&nbsp;&nbsp;&nbsp; ・9時00分～21時00分の間、毎時20分間隔で運行（最終便 20時40分「徳山駅前」発）</p>
+
+<p><a href="https://tokuyama-zoo.jp/as/cms/view.php?m=cel&k=A01uFiuS1L&id=446">徳山動物園　夏の夜間開園​（8月8日、10日、11日、13日、14日、15日、22日、29日</a><span class="external_link_text">＜外部リンク＞</span>）</p>
+
+<p>※ちょい乗り100円バスは土日祝のみ運行のため、8月10日（月曜日）、8月13日（木曜日）、8月14日（金曜日）の動物園の夜間開園日には運行しておりません。</p>
+
+<h2><span style="font-size:100%">路線図</span></h2>
+
+<p><span style="font-size:100%">市街地循環線「ちょい乗り100円バス」運行ルート<br>
+&nbsp;&nbsp;<img alt="「ちょい乗り100円バス」路線図" src="/uploaded/image/34408.png" style="height:572px; width:400px"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/uploaded/attachment/48442.png">＜路線図＞ [その他のファイル／478KB]</a></span></p>
+
+<h2><span style="font-size:100%">運賃（1乗車につき）</span></h2>
+
+<p style="text-align: left;"><span style="font-size:120%">大人 &nbsp; 100円</span></p>
+
+<p style="text-align: left;"><span style="font-size:120%">小人（小学生以下）&nbsp;&nbsp; 無料</span></p>
+
+<p style="text-align: left;">&nbsp;<span style="font-size:90%"> ・ 障がい者割引等はございません。&nbsp;&nbsp;<br>
+&nbsp; ・&nbsp;他の一般路線用乗車券はご利用いただけません。</span></p>
+
+<h2><span style="font-size:100%">運行日</span></h2>
+
+<p><span style="font-size:100%">土・日曜日、祝日</span></p>
+
+<h2><span style="font-size:100%">運行時刻表</span></h2>
+
+<p><strong>令和8年8月8日（土曜日）、8月11日（祝日）、8月15日（土曜日）、8月22日（土曜日）、8月29日（土曜日）は、動物園の夜間開園に合わせ運行時間を延長します。</strong><br>
+　・9時00分～21時00分の間毎時20分間隔で運行（最終便 20時40分「徳山駅前」発）<br>
+<img alt="時刻表" src="/uploaded/image/35642.png" style="height:281px; width:380px"></p>
+
+<h3><span style="font-size:100%">折り返し運行【重要】</span></h3>
+
+<p><strong>次の場合は、「動物園文化会館入口」バス停で折り返し運行を行います。</strong><br>
+&nbsp;&nbsp;&nbsp; ・動物園の休園日<br>
+&nbsp;&nbsp;&nbsp; ・3月1日から10月19日&nbsp; 「徳山駅前」バス停17時00分発以降の便<br>
+&nbsp;&nbsp;&nbsp; ・10月20日から2月末&nbsp;&nbsp;&nbsp; 「徳山駅前」バス停16時40分発以降の便<br>
+※ただし動物園の夜間開園に伴う延長運行時は「動物園北口前」まで運行</p>
+
+<h2>「徳山駅前」の乗り場案内</h2>
+
+<p><span style="font-size:100%">徳山駅前から「ちょい乗り100円バス」をご利用される場合は、駅西側のコンビニエンスストア前の「8番のりば」からご乗車ください。</span><br>
+<img alt="「ちょい乗り100円バス」徳山駅前拡大図" src="/uploaded/image/34411.png" style="height:385px; width:360px"></p>
+
+<p><span style="font-size:100%">&nbsp;<img alt="バス停" src="/uploaded/image/43713.jpg" style="height:322px; width:300px"></span></p>
+
+<h2>運行状況</h2>
+
+<p><span style="font-size:100%">運休・迂回運行等がある場合は、運行事業者のホームページでお知らせします。</span></p>
+
+<p><span style="font-size:100%"><a href="http://www.bochobus.co.jp/">防長交通株式会社（外部サイト）</a><span class="external_link_text">＜外部リンク＞</span></span></p>
+
+<h2><span style="font-size:100%">運行車両</span></h2>
+
+<ul>
+<li><span style="font-size:100%">小型バス</span></li>
+<li><span style="font-size:100%">スロープ、リフト付き（車イスやベビーカーもご利用いただけます。）</span></li>
+<li><span style="font-size:100%">※ 車イスやベビーカーをご利用の方で、スロープ、リフトでのご乗車を希望される場合は、事前に防長交通（株）周南営業所へご相談ください。</span></li>
+</ul>
+
+<h2><span style="font-size:100%">共用駐車場</span></h2>
+
+<p><span style="font-size:100%">動物園・文化会館・美術博物館・『ちょい乗り100円バス』を利用される方の共用駐車場です。<br>
+遠方からマイカーでお越しになる皆さまも、ぜひ「ちょい乗り100円バス」に乗り換えて、ゆっくりと徳山駅周辺を散策してください。ぜひ、まちなかへお越しください。<br>
+<img alt="共用駐車場" src="/uploaded/image/32302.JPG" style="height:263px; width:350px"></span></p>
+
+<h3><span style="font-size:100%">場所</span></h3>
+
+<p><span style="font-size:100%">美術博物館前バス停前（周南市岐南町74番）</span></p>
+
+<h3><span style="font-size:100%">利用時間</span></h3>
+
+<p><span style="font-size:100%">「ちょい乗り100円バス」運行日の8時30分～22時00分</span></p>
+
+<h3><span style="font-size:100%">利用料金</span></h3>
+
+<p><span style="font-size:100%">無料</span></p>
+
+<h2><span style="font-size:100%">バスの運行・時刻に関する問合せ</span></h2>
+
+<p><span style="font-size:100%">防長交通株式会社 周南営業所 電話 0833-43-2200</span></p>
+
+</div>
+
+
+
+						
+						
+
+						<!-- お問い合わせ先 ここから-->
+						<div id="section_footer"><div id="section_footer_title"><h2>このページに関するお問い合わせ先</h2></div>
+<div id="section_footer_name"><strong><a href="/soshiki/102/">公共交通対策課</a></strong></div>
+<div id="section_footer_info">
+
+
+<span class="section_footer_grpname">公共交通対策担当</span><br>
+<span class="section_footer_tel">Tel：0834-22-8426</span><br>
+<span class="section_footer_fax">Fax：0834-22-3707</span><br>
+<p class="list_email"><a href="https://www.city.shunan.lg.jp/form/detail.php?sec_sec1=102&lif_id=150308">メールでのお問い合わせはこちら</a></p>
+</div></div>
+						<!-- お問い合わせ先 ここまで-->
+
+						<!-- カレンダー登録・SNSボタンここから -->
+						<div id="content_footer">
+							
+							
+						</div>
+						<!-- カレンダー登録・SNSボタンここまで -->
+
+						<!-- [[add-template-pdf]] -->
+						<!-- [[add-template-windowsmediaplayer]] -->
+						
+					</div>
+					<!-- main_bodyここまで -->
+
+				</div>
+			</div>
+			<!-- メインここまで -->
+			<hr class="hide">
+
+			<!-- サイドバー1ここから -->
+			<div id="sidebar1">
+				
+				<!-- 目的でさがすここから -->
+				<div class="sidebar_purpose">
+					<strong>目的でさがす</strong>
+					<ul>
+						<li class="purpose_icon1"><a href="/site/kodomosien/list601.html">妊娠・出産</a></li>
+						<li class="purpose_icon2"><a href="/site/kodomosien/list602.html">健康・医療</a></li>
+						<li class="purpose_icon3"><a href="/site/kodomosien/list603.html">お金・生活のサポート</a></li>
+						<li class="purpose_icon4"><a href="/site/kodomosien/list604.html">相談する</a></li>
+						<li class="purpose_icon5"><a href="/site/kodomosien/list605.html">預ける・通う</a></li>
+						<li class="purpose_icon6"><a href="/site/kodomosien/list606.html">学ぶ・体験する</a></li>
+						<li class="purpose_icon7"><a href="/site/kodomosien/list607.html">おでかけ</a></li>
+						<li class="purpose_icon8"><a href="/site/kodomosien/list608.html">応援する・つながる</a></li>
+					</ul>
+				</div>
+				<!-- 目的でさがすここから -->
+
+				<!-- レコメンドここから -->
+				<div id="recommend_tag">
+					<div id="sidebar_recommend">
+						<div id="recommend_title"><h2><span>このページを見ている人は</span><span>こんなページも見ています</span></h2></div>
+						<!-- [[recommend_tag]] -->
+					</div>
+				</div>
+				<!-- レコメンドここまで -->
+
+				<!-- 見つからないときは.よくある質問と回答 ここから -->
+				<div id="common_banner_link">
+					<ul>
+						<li><a href="/site/kodomosien/138076.html"><span>見つからないときは</span></a></li>
+						<li><a href="/site/kodomosien/list610.html"><span>よくある質問と回答</span></a></li>
+					</ul>
+				</div>
+				<!-- 見つからないときは.よくある質問と回答 ここまで -->
+
+			</div>
+			<!-- サイドバー1ここまで -->
+
+		</div><!-- 3カラム終わり -->
+
+		<!-- ぱんくずナビここから -->
+		<div id="pankuzu_wrap"></div>
+		<!-- ぱんくずナビここまで -->
+
+		<!-- 自由編集項目（メニュー下）ここから -->
+		<div id="jiyuu_tail">
+			<!-- サブサイト共通自由記入エリア ここから -->
+			<div class="free_box_wrap free_box_wrap2"><!-- [[item_free_area_3001_head]] --><div class="free_box"><p><a href="/site/kodomosien/65087.html"><img alt="【画像】はぴはぐby母子モ" src="/uploaded/image/50321.png" style="height:100px; width:333px"></a></p>
+</div><div class="free_box"><p><a href="https://www.shunancitypromotion.jp/"><img alt="周南市移住交流スペシャルサイト" src="/uploaded/image/50251.png" style="height:100px; width:333px"></a><span class="external_link_text">＜外部リンク＞</span></p>
+</div><div class="free_box"><p><a href="/soshiki/3/139619.html"><img alt="周南市公式LINE" src="/uploaded/image/50252.png" style="height:100px; width:333px"></a></p>
+</div><!-- [[item_free_area_3001_tail]] --></div>
+			<!-- サブサイト共通自由記入エリア ここまで -->
+		</div>
+		<!-- 自由編集項目（メニュー下）ここまで -->
+
+		<!-- フッタここから -->
+		<div id="footer">
+			<div id="footer_link_pagetop">
+				<a href="#pagetop">このページの先頭へ</a>
+			</div>
+			<div id="author_wrap">
+				<div id="footer_logo">
+					<a href="/site/kodomosien/"><img src="/img/sites/kosodate/pc/footer_logo.png" alt="こどもや子育てに優しいまち周南市こども・子育てサイト"></a>
+				</div>
+				<!-- 専用フッタここから -->
+				<div id="site_footer">
+					<div id="site_footer_box"><p>周南市役所 <a href="/soshiki/103/">あんしん子育て推進課</a></p>
+
+<p>〒745-0005 山口県周南市児玉町1－1（徳山保健センター内）<br>
+Tel：0834-22-8452 Fax：0834-22-8815</p></div>
+				</div>
+				<!-- 専用フッタここまで -->
+				<div id="footer_logo2">
+					<a href="/"><img src="/img/sites/kosodate/pc/footer_logo2.png" alt="周南市"></a>
+				</div>
+			</div>
+			<div id="copyright"><p lang="en">Copyright &#169; Shunan City. All Rights Reserved.</p></div>
+		</div>
+		<!-- フッタここまで -->
+
+	</div>
+	<!-- コンテナここまで -->
+</div>
+
+
+</body>
+</html>

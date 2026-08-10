@@ -1,0 +1,517 @@
+取得日時: 2026-08-09 JST
+取得元  : https://yamaguchi-opendata.jp/ckan/about
+取得方法: curl -sL (生バイト取得、要約なし)
+---
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="ja" class="ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="ja"  > <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+      <meta name="csrf_field_name" content="_csrf_token" />
+      <meta name="_csrf_token" content="ImMxOWM5MjQyOTllMDI0Nzg3NjQ5NWE0OWZhNzdjYmM1OWEyMTBmN2Qi.anhhhQ.kjaBigTLT1WODIUOSGjMg2t7hjA" />
+
+      <meta name="generator" content="ckan 2.10.4" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - CKAN</title>
+
+    
+    <link rel="shortcut icon" href="/base/images/ckan.ico" />
+    
+      
+      
+      
+    
+
+    
+      
+      
+    
+
+    
+    <link href="/ckan/webassets/base/5b7e7171_main.css" rel="stylesheet"/>
+    
+  </head>
+
+  
+  <body data-site-root="https://yamaguchi-opendata.jp/ckan/" data-locale-root="https://yamaguchi-opendata.jp/ckan/" >
+
+    
+    <div class="visually-hidden-focusable"><a href="#content">Skip to main content</a></div>
+  
+
+  
+    
+
+ 
+<div class="account-masthead">
+  <div class="container">
+     
+    <nav class="account not-authed" aria-label="Account">
+      <ul class="list-unstyled">
+        
+        <li><a href="/ckan/user/login">ログイン</a></li>
+         
+      </ul>
+    </nav>
+     
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="container">
+      
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <hgroup class="header-image navbar-left">
+
+      
+      
+      <a class="logo" href="https://yamaguchi-opendata.jp">
+        <img src="/ckan/base/images/ckan-logo.png?v=new" alt="CKAN"
+          title="CKAN" />
+      </a>
+      
+      
+
+       </hgroup>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navigation-toggle"
+        aria-controls="main-navigation-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars text-white"></span>
+      </button>
+
+      <div class="main-navbar collapse navbar-collapse" id="main-navigation-toggle">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          
+            
+              
+              
+          
+          <li><a href="https://yamaguchi-opendata.jp">Top</a></li>
+          <li><a href="https://yamaguchi-opendata.jp/index.html#ai-search">AI検索</a></li>
+          <li><a href="/ckan/dataset/">データセット</a></li><li><a href="/ckan/organization/">団体</a></li><li><a href="/ckan/group/">カテゴリ</a></li><li><a href="/ckan/tag/">タグ</a></li><li class="active"><a href="/ckan/about">About</a></li>
+          
+          
+          
+          </ul>
+
+      
+      
+          <form class="d-flex site-search" action="/ckan/dataset/" method="get">
+              <label class="d-none" for="field-sitewide-search">Search Datasets...</label>
+              <input id="field-sitewide-search" class="form-control me-2"  type="text" name="q" placeholder="検索" aria-label="データセット検索..."/>
+              <button class="btn" type="submit" aria-label="Submit"><i class="fa fa-search"></i></button>
+          </form>
+      
+      </div>
+    </nav>
+  </div>
+</header>
+
+  
+    <div class="main">
+      <div id="content" class="container">
+        
+          
+            <div class="flash-messages">
+              
+                
+              
+            </div>
+          
+
+          
+            <div class="toolbar" role="navigation" aria-label="Breadcrumb">
+              
+                
+                  <ol class="breadcrumb">
+                    
+<li class="home"><a href="/ckan/" aria-label="ホーム"><i class="fa fa-home"></i><span> ホーム</span></a></li>
+                    
+  <li class="active"><a href="/ckan/about">About</a></li>
+
+                  </ol>
+                
+              
+            </div>
+          
+
+          <div class="row wrapper no-nav">
+            
+            
+            
+
+            
+
+            
+  <article class="module" role="main">
+    <div class="module-content">
+      
+        
+          <h1 class="page-heading">About</h1>
+          <p>CKANは世界をリードするオープンソースのデータポータルプラットホームです。</p><p>CKANはデータをアクセス可能で使用可能にするための完全に枠を超えたソフトウェアソリューションです。データをストリームラインで公開、共有、発見、使用するためのツールを提供しています(データストレージや頑強なデータAPIの提供も含みます)。CKANはデータをオープンにして公開したいと思っているデータ公開者(国や地方行政、会社や団体)のために作られています。</p><p>CKANは世界中の行政やユーザグループによって使用されています。イギリスの <a href="https://data.gov.uk">data.gov.uk</a>、EUの <a href="https://publicdata.eu/">publicdata.eu</a>、ブラジルの <a href="https://dados.gov.br/">dados.gov.br</a>、オランダの政府ポータル、US、UK、アルゼンチン、フィンランド等の地方自治体のように、地方、国、国際的な行政を含む、様々な公的あるいはコミュニティのデータポータルの力となっています。</p><p>CKAN: <a href="https://ckan.org/">https://ckan.org/</a><br /> CKAN Showcases: <a href="https://ckan.org/showcase">https://ckan.org/showcase</a><br /> 概要: <a href="https://ckan.org/features/">https://ckan.org/features/</a></p>
+        
+      
+    </div>
+  </article>
+
+          </div>
+        
+      </div>
+    </div>
+  
+    <footer class="site-footer">
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-md-8 footer-links">
+        
+          <ul class="list-unstyled">
+            
+              <li><a href="/ckan/about">About CKAN</a></li>
+            
+          </ul>
+          <ul class="list-unstyled">
+            
+              
+              <li><a href="http://docs.ckan.org/en/2.10/api/">CKAN API</a></li>
+              <li><a href="http://www.ckan.org/">CKANアソシエーション</a></li>
+              <li><a href="http://www.opendefinition.org/okd/"><img src="/ckan/base/images/od_80x15_blue.png" alt="Open Data"></a></li>
+            
+          </ul>
+        
+      </div>
+      <div class="col-md-4 attribution">
+        
+          <p><strong>Powered by</strong> <a class="hide-text ckan-footer-logo" href="http://ckan.org">CKAN</a></p>
+        
+        
+          
+<form class="lang-select" action="/ckan/util/redirect" data-module="select-switch" method="POST">
+  
+<input type="hidden" name="_csrf_token" value="ImMxOWM5MjQyOTllMDI0Nzg3NjQ5NWE0OWZhNzdjYmM1OWEyMTBmN2Qi.anhhhQ.kjaBigTLT1WODIUOSGjMg2t7hjA"/> 
+  <div class="form-group">
+    <label for="field-lang-select">言語</label>
+    <select id="field-lang-select" name="url" data-module="autocomplete" data-module-dropdown-class="lang-dropdown" data-module-container-class="lang-container">
+      
+        
+        <option value="/ckan/ja/about" selected="selected">
+          日本語
+        </option>
+      
+        
+        <option value="/ckan/en/about" >
+          English
+        </option>
+      
+        
+        <option value="/ckan/pt_BR/about" >
+          português (Brasil)
+        </option>
+      
+        
+        <option value="/ckan/it/about" >
+          italiano
+        </option>
+      
+        
+        <option value="/ckan/cs_CZ/about" >
+          čeština (Česko)
+        </option>
+      
+        
+        <option value="/ckan/ca/about" >
+          català
+        </option>
+      
+        
+        <option value="/ckan/es/about" >
+          español
+        </option>
+      
+        
+        <option value="/ckan/fr/about" >
+          français
+        </option>
+      
+        
+        <option value="/ckan/el/about" >
+          Ελληνικά
+        </option>
+      
+        
+        <option value="/ckan/sv/about" >
+          svenska
+        </option>
+      
+        
+        <option value="/ckan/sr/about" >
+          српски
+        </option>
+      
+        
+        <option value="/ckan/no/about" >
+          norsk
+        </option>
+      
+        
+        <option value="/ckan/sk/about" >
+          slovenčina
+        </option>
+      
+        
+        <option value="/ckan/fi/about" >
+          suomi
+        </option>
+      
+        
+        <option value="/ckan/ru/about" >
+          русский
+        </option>
+      
+        
+        <option value="/ckan/de/about" >
+          Deutsch
+        </option>
+      
+        
+        <option value="/ckan/pl/about" >
+          polski
+        </option>
+      
+        
+        <option value="/ckan/nl/about" >
+          Nederlands
+        </option>
+      
+        
+        <option value="/ckan/bg/about" >
+          български
+        </option>
+      
+        
+        <option value="/ckan/ko_KR/about" >
+          한국어 (대한민국)
+        </option>
+      
+        
+        <option value="/ckan/hu/about" >
+          magyar
+        </option>
+      
+        
+        <option value="/ckan/sl/about" >
+          slovenščina
+        </option>
+      
+        
+        <option value="/ckan/lv/about" >
+          latviešu
+        </option>
+      
+        
+        <option value="/ckan/uk_UA/about" >
+          українська (Україна)
+        </option>
+      
+        
+        <option value="/ckan/gl/about" >
+          galego
+        </option>
+      
+        
+        <option value="/ckan/th/about" >
+          ไทย
+        </option>
+      
+        
+        <option value="/ckan/fa_IR/about" >
+          فارسی (ایران)
+        </option>
+      
+        
+        <option value="/ckan/pt_PT/about" >
+          português (Portugal)
+        </option>
+      
+        
+        <option value="/ckan/vi/about" >
+          Tiếng Việt
+        </option>
+      
+        
+        <option value="/ckan/am/about" >
+          አማርኛ
+        </option>
+      
+        
+        <option value="/ckan/sr_Latn/about" >
+          srpski (latinica)
+        </option>
+      
+        
+        <option value="/ckan/en_GB/about" >
+          English (United Kingdom)
+        </option>
+      
+        
+        <option value="/ckan/he/about" >
+          עברית
+        </option>
+      
+        
+        <option value="/ckan/ne/about" >
+          नेपाली
+        </option>
+      
+        
+        <option value="/ckan/es_AR/about" >
+          español (Argentina)
+        </option>
+      
+        
+        <option value="/ckan/is/about" >
+          íslenska
+        </option>
+      
+        
+        <option value="/ckan/mk/about" >
+          македонски
+        </option>
+      
+        
+        <option value="/ckan/mn_MN/about" >
+          монгол (Монгол)
+        </option>
+      
+        
+        <option value="/ckan/zh_Hant_TW/about" >
+          中文 (繁體, 台灣)
+        </option>
+      
+        
+        <option value="/ckan/lt/about" >
+          lietuvių
+        </option>
+      
+        
+        <option value="/ckan/eu/about" >
+          euskara
+        </option>
+      
+        
+        <option value="/ckan/uk/about" >
+          українська
+        </option>
+      
+        
+        <option value="/ckan/id/about" >
+          Indonesia
+        </option>
+      
+        
+        <option value="/ckan/ro/about" >
+          română
+        </option>
+      
+        
+        <option value="/ckan/my_MM/about" >
+          မြန်မာ (မြန်မာ)
+        </option>
+      
+        
+        <option value="/ckan/hr/about" >
+          hrvatski
+        </option>
+      
+        
+        <option value="/ckan/nb_NO/about" >
+          norsk bokmål (Norge)
+        </option>
+      
+        
+        <option value="/ckan/ar/about" >
+          العربية
+        </option>
+      
+        
+        <option value="/ckan/tl/about" >
+          Filipino (Pilipinas)
+        </option>
+      
+        
+        <option value="/ckan/bs/about" >
+          bosanski
+        </option>
+      
+        
+        <option value="/ckan/tr/about" >
+          Türkçe
+        </option>
+      
+        
+        <option value="/ckan/sq/about" >
+          shqip
+        </option>
+      
+        
+        <option value="/ckan/zh_Hans_CN/about" >
+          中文 (简体, 中国)
+        </option>
+      
+        
+        <option value="/ckan/km/about" >
+          ខ្មែរ
+        </option>
+      
+        
+        <option value="/ckan/en_AU/about" >
+          English (Australia)
+        </option>
+      
+        
+        <option value="/ckan/da_DK/about" >
+          dansk (Danmark)
+        </option>
+      
+    </select>
+  </div>
+  <button class="btn btn-default d-none " type="submit">Go</button>
+</form>
+
+
+        
+      </div>
+    </div>
+    
+  </div>
+</footer>
+  
+  
+  
+  
+    
+  
+  
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8107CQRRPE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8107CQRRPE');
+    </script>
+    
+
+      
+
+    
+    
+    <link href="/ckan/webassets/vendor/f3b8236b_select2.css" rel="stylesheet"/>
+<link href="/ckan/webassets/vendor/d05bf0e7_fontawesome.css" rel="stylesheet"/>
+    <script src="/ckan/webassets/vendor/8c3c143a_jquery.js" type="text/javascript"></script>
+<script src="/ckan/webassets/vendor/5027b870_vendor.js" type="text/javascript"></script>
+<script src="/ckan/webassets/vendor/6d1ad7e6_bootstrap.js" type="text/javascript"></script>
+<script src="/ckan/webassets/base/6fddaa3f_main.js" type="text/javascript"></script>
+<script src="/ckan/webassets/base/0d750fad_ckan.js" type="text/javascript"></script>
+<script src="/ckan/webassets/base/cd2c0272_tracking.js" type="text/javascript"></script>
+  </body>
+</html>

@@ -1,0 +1,218 @@
+取得日時: 2026-08-09 JST
+取得元  : https://www.city.kudamatsu.lg.jp/kikaku/koukyoukoutsuu-top.html
+取得方法: curl -sL (生バイト取得、要約なし)
+---
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+
+<title>山口県下松市／公共交通</title>
+
+<meta name="author" content="下松市" />
+<meta name="viewport" content="width=device-width, maximum-scale=3.0" />
+<meta name="format-detection" content="telephone=no" />
+<link href="/shared/site/style/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/shared/site/style/shared.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/shared/site/style/color/color0.css" rel="stylesheet" type="text/css" media="all" id="tmp_color" title="default" class="tmp_color" />
+<link href="/shared/site/style/color/color1.css" rel="alternate stylesheet" type="text/css" media="all" title="darkblue" class="tmp_color" />
+<link href="/shared/site/style/color/color2.css" rel="alternate stylesheet" type="text/css" media="all" title="yellow" class="tmp_color" />
+<link href="/shared/site/style/color/color3.css" rel="alternate stylesheet" type="text/css" media="all" title="black" class="tmp_color" />
+<link href="/shared/site/style/font/normal.css" rel="stylesheet" type="text/css" id="tmp_font" media="all" title="default" class="tmp_font" />
+<link href="/shared/site/style/font/small.css" rel="alternate stylesheet" type="text/css" media="all" title="small" class="tmp_font" />
+<link href="/shared/site/style/font/big.css" rel="alternate stylesheet" type="text/css" media="all" title="big" class="tmp_font" />
+<link href="/shared/templates/free_site/style/edit.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/shared/site/style/smartphone.css" rel="stylesheet" media="only screen and (max-width : 480px)" type="text/css" id="tmp_smartphone_css" class="mc_css" />
+<link href="/shared/images/favicon/favicon.ico" rel="shortcut icon"  type="image/vnd.microsoft.icon" />
+<script type="text/javascript" src="/shared/site/js/jquery.js"></script>
+<script type="text/javascript" src="/shared/site/js/gd.js"></script>
+<script type="text/javascript" src="/shared/site/js/setting_head.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="/shared/site/js/ga.js"></script>
+</head>
+<body class="format_free no_javascript">
+<script type="text/javascript" src="/shared/site/js/setting_body.js"></script>
+<div id="tmp_wrapper">
+<noscript>
+<p>JavaScriptが無効なため一部の機能が動作しません。動作させるためにはJavaScriptを有効にしてください。またはブラウザの機能をご利用ください。</p>
+</noscript>
+
+<div id="tmp_wrap_header" class="rnew">
+<div id="tmp_header">
+<p><a href="#tmp_honbun" class="skip">本文へスキップします。</a></p>
+<div id="tmp_hlogo">
+<p><a href="/index.html"><img alt="下松市" width="240" height="95" src="/shared/site/images/header/hlogo.gif" /></a></p>
+</div>
+<div id="tmp_means">
+<div id="tmp_means_primary"><dl id="tmp_func_txt"><dt>文字サイズ変更 </dt><dd><a href="javascript:void(0);" class="text_size_up"><img alt="拡大" width="40" height="22" src="/shared/site/images/header/func_txt_big.gif" /></a> </dd><dd><a href="javascript:void(0);" class="text_size_normal"><img alt="標準" width="40" height="22" src="/shared/site/images/header/func_txt_dft.gif" /></a> </dd><dd><a href="javascript:void(0);" class="text_size_down"><img alt="縮小" width="40" height="22" src="/shared/site/images/header/func_txt_sml.gif" /></a> </dd></dl><dl id="tmp_func_clr"><dt>色合い変更 </dt><dd><a id="tmp_color_default" href="javascript:void(0);" class="changestyle"><img alt="標準：白色地に黒文字" width="44" height="22" src="/shared/site/images/header/func_clr_white.gif" /></a> </dd><dd><a id="tmp_darkblue" href="javascript:void(0);" class="changestyle"><img alt="青地に黄色文字" width="24" height="22" src="/shared/site/images/header/func_clr_blue.gif" /></a> </dd><dd><a id="tmp_yellow" href="javascript:void(0);" class="changestyle"><img alt="黄色地に青文字" width="24" height="22" src="/shared/site/images/header/func_clr_yellow.gif" /></a> </dd><dd><a id="tmp_black" href="javascript:void(0);" class="changestyle"><img alt="黒色地に白文字" width="24" height="22" src="/shared/site/images/header/func_clr_black.gif" /></a> </dd></dl>
+<p lang="en" id="tmp_foreign" xml:lang="en"><a href="/foreigner/foreigner.html"><span>Foreign Language</span></a></p>
+</div>
+<div id="tmp_means_secondary">
+<div id="tmp_search">
+<form id="tmp_gsearch" action="/search/result.html" name="tmp_gsearch">
+    <dl><dt><label for="tmp_query">サイト内検索</label> </dt><dd>
+    <p><input id="tmp_query" size="31" name="q" /> </p>
+    <p><input id="tmp_func_sch_btn" type="submit" name="sa" value="検索" /> </p>
+    <p id="tmp_search_hidden"><input type="hidden" name="cx" value="010755202457643610294:s9fqtayj2r4" /> <input type="hidden" name="ie" value="UTF-8" /> <input type="hidden" name="cof" value="FORID:9" /> </p>
+    </dd></dl>
+</form>
+</div>
+</div>
+<div id="tmp_means_tertiary">
+<ul id="tmp_snavi">
+    <li class="soshiki"><a href="/shiseijouhou/soshiki/index.html">組織から探す</a> </li>
+    <li class="shisetsu"><a href="/shisetsu/index.html">施設案内</a> </li>
+    <li class="faq"><a href="/faq/index.html">よくある質問</a> </li>
+    <li class="keitai"><a href="/about-site/keitaisite.html">携帯サイト</a> </li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="tmp_gnavi">
+<ul>
+    <li><a href="/kurashi/index.html"><img height="42" alt="くらし・手続き" width="156" src="/shared/images/navi/gnavi/gnavi_kurashi_off.jpg" /></a> </li>
+    <li><a href="/kosodate/index.html"><img height="42" alt="子育て・教育" width="156" src="/shared/images/navi/gnavi/gnavi_kosodate_off.jpg" /></a> </li>
+    <li><a href="/fukushi/index.html"><img height="42" alt="福祉・健康" width="156" src="/shared/images/navi/gnavi/gnavi_fukushi_off.jpg" /></a> </li>
+    <li><a href="/anzen/index.html"><img height="42" alt="安全・安心" width="156" src="/shared/images/navi/gnavi/gnavi_anzen_off.jpg" /></a> </li>
+    <li class="last"><a href="/kankou/index.html"><img height="42" alt="イベント・観光" width="156" src="/shared/images/navi/gnavi/gnavi_event_off.jpg" /></a> </li>
+</ul>
+</div>
+
+<div id="tmp_pankuzu">
+<p><a href="/index.html">トップ</a> &gt; <a href="/kurashi/index.html">くらし・手続き</a> &gt; <a href="/kurashi/toshiseibi/index.html">まちづくり・交通</a> &gt; 公共交通</p>
+</div>
+<div id="tmp_wrap_main" class="column_lnavi">
+
+
+<div id="tmp_main">
+<div class="wrap_col_lft_navi">
+<div class="col_lft_navi">
+<div class="wrap_box_navi">
+<div class="box_cnavi iken_box">
+<div class="box_cnavi_ttl">
+<p><img alt="ご意見・ご要望をお聞かせください" height="54" src="/shared/images/navi/menu/ttl_iken.jpg" width="182" /></p>
+</div>
+<div class="wrap_box_cnavi_cnt">
+<div class="box_cnavi_cnt">
+<ul>
+	<li><a href="/kikaku/hisyo/goiken.html">ご意見・ご要望</a></li>
+	<li><a href="/kikaku/shiseijouhou/public-comment/index.html">パブリックコメント</a></li>
+	<li><a href="/soumu/jyouhou/kdmtdxbox.html">デジタル改善ポスト</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="box_cnavi online_box">
+<div class="box_cnavi_ttl">
+<p><a href="/jyouhou/onlineservice/index.html"><img alt="オンラインサービス" height="51" src="/shared/images/navi/menu/ttl_online.jpg" width="182" /></a></p>
+</div>
+<div class="box_cnavi_cnt">
+<ul>
+	<li><a href="/jyouhou/onlineservice/onlinetop.html">オンライン手続</a></li>
+	<li><a href="/onlineservice/download/index.html">申請書ダウンロード</a></li>
+	<li><a href="/kaikei/kaikei1.html">電子通知システム</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="wrap_col_main">
+<div class="col_main">
+<p id="tmp_honbun" class="skip">ここから本文です。</p>
+<div id="tmp_contents">
+
+<p id="tmp_update">更新日：2026年7月7日</p>
+
+
+
+<h1>公共交通</h1>
+<p><span class="space_lft1">下</span>松市では、環境にやさしい交通手段である公共交通の積極的な利用を促進するとともに、事業者等と連携し、路線網の維持・確保に取り組んでいます。<span class="space_lft1">ま</span>た、子どもから高齢者まで、誰にとっても安全で利用しやすい交通環境づくりを目指しています。</p>
+<h2>お知らせ</h2>
+<h3>岩徳線昼間時間帯集中工事に伴う列車の運休について</h3>
+<p><span class="space_lft1">下</span>記のとおり岩徳線が運休します。なお、運休区間のバス及びタクシーによる代行輸送はありませんのでご注意ください。詳しくは、<a href="https://www.westjr.co.jp/press/">JR西日本ホームページ（外部サイトへリンク）</a>をご確認ください。</p>
+<p><span class="space_lft1">現</span>在運休はありません</p>
+<h2>下松市地域公共交通計画</h2>
+<ul>
+	<li><a href="/kikaku/koutuukeikaku.html">下松市地域公共交通計画</a></li>
+</ul>
+<h2>下松市地域公共交通活性化協議会</h2>
+<ul>
+	<li><a href="/kikaku/koutuukyougikai.html">下松市地域公共交通活性化協議会</a></li>
+</ul>
+<h2>下松市コミュニティバス</h2>
+<ul>
+	<li><a href="/kikaku/komibasu.html">米泉号</a></li>
+</ul>
+<h2>JR岩徳線利用促進委員会</h2>
+<ul>
+	<li><a href="/kikaku/gantokuriyou.html">JR岩徳線利用促進委員会</a></li>
+</ul>
+<h2>公共交通マップ</h2>
+<ul>
+	<li><a href="/kikaku/220725.html">公共交通マップ</a></li>
+</ul>
+<h2>笠戸島地区デマンド型乗合タクシー実証実験</h2>
+<ul>
+	<li><a href="/kikaku/kasadojimademanndotaxi.html">笠戸島地区デマンド型乗合タクシー実証実験</a><strong><span class="txt_red"><span class="space_lft1">（</span>終了しました）</span></strong></li>
+</ul>
+<h2>リンク集（運行状況の確認はこちらから）</h2>
+<ul>
+	<li>
+	<p class="clear"><a href="https://www.bochobus.co.jp/">防長交通（株）路線バス路線図・時刻表等（外部サイトへリンク）</a></p>
+	</li>
+	<li><a href="http://www.chugoku-jrbus.co.jp/route_bus/yamaguchi/detail/index.html#hikari_1">中国ジェイアールバス（株）路線バス路線図・時刻表等（外部サイトへリンク）</a></li>
+	<li><a href="http://www.jr-odekake.net/railroad/">JR西日本鉄道のご案内（外部サイトへリンク）</a></li>
+	<li><a href="http://www.solasi.com/ymgbus/">（社）山口県バス協会（外部サイトへリンク）</a></li>
+	<li><a href="http://www.jrkbus.co.jp/">ジェイアール九州バス(株)（外部サイトへリンク）</a></li>
+</ul>
+<p>&nbsp;</p>
+
+
+<div id="tmp_inquiry">
+<div id="tmp_inquiry_ttl">
+<p>お問い合わせ</p>
+</div>
+<div id="tmp_inquiry_cnt">
+<form method="post" action="https://www.city.kudamatsu.lg.jp/cgi-bin/simple_faq/form.cgi">
+<div class="inquiry_parts">
+<p>
+所属課室：企画政策課公共交通政策係</p>
+<p>山口県下松市大手町3丁目3番3号</p>
+<p>電話番号：0833-48-4026</p>
+<p>ファックス番号：0833-44-2459</p>
+<p><input type="image" src="/shared/images/main/inquiry/inquiry_btn.jpg" alt="お問い合わせフォーム" class="inquiry_btn" /></p>
+</div>
+<p>
+<input type="hidden" name="code" value="020010400" />
+<input type="hidden" name="dept" value="8840:9172:9670:9587:9504:9670:5271:8176:8674:9587:10002:3777:8840:9670:8259:8010:9006:8010:9587:9504:9670:3777:8923:8508:3777:8757:9255" />
+<input type="hidden" name="page" value="/kikaku/koukyoukoutsuu-top.html" />
+<input type="hidden" name="ENQ_RETURN_MAIL_SEND_FLG" value="1" />
+<input type="hidden" name="publish_ssl_flg" value="1" />
+</p>
+</form>
+</div>
+</div>
+<div class="pnavi">
+<p class="ptop"><a href="#tmp_header"><img src="/shared/images/navi/pnavi/ptop.gif" width="108" height="20" alt="ページの先頭へ戻る" /></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<script type="text/javascript" src="/shared/site/js/setting_responsive.js"></script>
+<script type="text/javascript" src="/shared/site/js/setting_onload.js"></script>
+</body>
+</html>

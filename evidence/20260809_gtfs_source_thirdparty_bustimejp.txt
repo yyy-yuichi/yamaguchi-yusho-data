@@ -1,0 +1,264 @@
+取得日時: 2026-08-09 JST
+取得元  : https://bustime.jp/GtfsAgency/data_list/?p1=35
+取得方法: curl -sL (生バイト取得、要約なし)。※第三者の非公式まとめサイト。候補発見にのみ使用し、確認済み事実の根拠にはしない
+---
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+	<meta name="description"content="山口県の路線バスGTFSオープンデータ利用状況 完全無料。" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	
+	<!-- Twitterカードの設定用 -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@bustei_kensaku" />
+	<meta property="og:title" content="山口県の路線バスGTFSオープンデータ利用状況｜バス時刻検索" />
+	<meta property="og:url" content="https://bustime.jp/GtfsAgency/data_list/?p1=35" />
+	<meta property="og:image" content="https://bustime.jp/img/ogp_image.png" />
+
+    <title>山口県の路線バスGTFSオープンデータ利用状況｜バス時刻検索</title>
+    <link href="/favicon.ico" type="image/x-icon" rel="icon"/><link href="/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
+
+    <!-- <link rel="stylesheet" href="/css/base.css"/> -->
+    <link rel="stylesheet" href="/css/new2023/style.css"/>	<!-- tuika 2024/02/16 -->
+	
+    <!--          -->
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-65CB2Z34YE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-65CB2Z34YE');
+</script>
+
+
+<!-- Clarity tracking code for https://bustime.jp/ -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "hem3rmutw4");
+</script>
+
+
+
+<!-- GDPR等の対応 -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+<!-- GDPR等の対応 -->
+
+
+<!-- 自動広告の表示用 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9958897018140795" crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+[
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+  {
+    "@type": "ListItem",
+    "position": 1,
+    "name": "バス時刻検索",
+    "item": "https://bustime.jp/"
+  },
+  {
+    "@type": "ListItem",
+    "position": 2,
+    "name": "GTFSオープンデータ利用状況",
+    "item": "https://bustime.jp/GtfsAgency/data_list/"
+  }  ]
+}]
+</script>
+
+<script type="text/javascript"><!--
+	var url2 = "https://bustime.jp/";
+	function showMap(position) {
+		var url = "https://buste.in/search/bus/?lat1=";
+		url += position.coords.latitude + "&lng1=";
+		url += position.coords.longitude + "&gtfs=1";
+		location.assign(url); /* リダイレクトする */
+	}
+
+	function noMap() {
+		document.write('<p><a href="' + url2 + '">元のページへ戻る</a>＞位置情報を取得</p><b>※位置情報を取得出来ませんでした。</b><br><br><hr><a href="' + url2 + '">元のページへ戻る</a>');
+	}
+
+	function getGeoLocation(){
+		navigator.geolocation.getCurrentPosition(showMap, noMap)
+	}
+--></script>
+
+</head>
+<body>
+	<ul class="top">
+		<li class="title">
+			<a href="https://bustime.jp/">バス時刻検索</a>
+		</li>
+		<li class="search-box" style="text-align: center;">
+			<!--検索ボックス欄-->
+<!--
+			<form action="cgi-bin/example.cgi" method="post">
+				<input type="search" name="search" placeholder="バス停名検索">
+				<input type="submit" name="submit" value="検索">
+			</form>
+-->
+		</li>
+		<li class="gps">
+		<a title="位置情報から最寄りバス停を検索する" href="javascript:void(0);" onclick="getGeoLocation();"><img src="https://bustime.jp/img/gps.png" alt="現在地周辺のバス停を探す"></a>
+		</li>
+	</ul>
+
+    <!--パンくずリスト-->
+	<p class="breadcrumbs"><a href="https://bustime.jp/">バス時刻検索</a>＞<a href="https://bustime.jp/GtfsAgency/data_list/">路線バスGTFSオープンデータ利用状況</a>＞山口県</p>
+<!--パンくずリスト-->
+
+<h1>山口県の路線バスGTFSオープンデータ利用状況</h1>
+<p>時刻表示に使用しているオープンデータ「標準的なバス情報フォーマット(通称：GTFS-JP)」ファイルの一覧です。<br />
+<br />
+バス事業者名をクリックすると、GTFS-JPファイルの配信URLへ遷移します。<br />
+「バス停数」は運行データが紐付いているバス停データを数えたものです。<br />
+</p>
+
+<p>本サービスの表示内容について、関連するバス会社、公共交通事業者や市町村へ直接問合せは行わないでください。<br />
+本サービスに関するお問い合わせは、
+<a href="https://buste.in/search/bus/toiawase/?url1=https%3A%2F%2Fbustime.jp%2FGtfsAgency%2Fdata_list%2F%3Fp1%3D35">お問い合わせフォーム</a>(バス停検索と兼用)
+よりお願いします。<br />
+</p>
+
+<hr />
+<div align="left">
+<span>スポンサーリンク</span><br />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9958897018140795"
+     crossorigin="anonymous"></script>
+<!-- bustime.jp バス時刻検索 トップ用上rs -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9958897018140795"
+     data-ad-slot="5848593324"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div><hr /><br />
+
+<p>・<a href="/GtfsFeed/index/">「feed_info.txt」(GTFSデータ基本情報)更新情報</a><br />
+・<a href="/GtfsAgency/gtfs_list/">公共交通GTFS・標準的なバス情報フォーマット(GTFS-JP)オープンデータ一覧</a><br />
+</p>
+
+<h2>○都道府県で利用状況を絞り込む</h2>
+<p>
+<a href="/GtfsAgency/data_list/?p1=1">北海道</a> </p>
+<p><a href="/GtfsAgency/data_list/?p1=2">青森県</a> <a href="/GtfsAgency/data_list/?p1=3">岩手県</a> <a href="/GtfsAgency/data_list/?p1=4">宮城県</a> <a href="/GtfsAgency/data_list/?p1=5">秋田県</a> <a href="/GtfsAgency/data_list/?p1=6">山形県</a> <a href="/GtfsAgency/data_list/?p1=7">福島県</a> </p>
+<p><a href="/GtfsAgency/data_list/?p1=8">茨城県</a> <a href="/GtfsAgency/data_list/?p1=9">栃木県</a> <a href="/GtfsAgency/data_list/?p1=10">群馬県</a> </p>
+<p><a href="/GtfsAgency/data_list/?p1=11">埼玉県</a> <a href="/GtfsAgency/data_list/?p1=12">千葉県</a> <a href="/GtfsAgency/data_list/?p1=13">東京都</a> <a href="/GtfsAgency/data_list/?p1=14">神奈川県</a> </p>
+<p><a href="/GtfsAgency/data_list/?p1=15">新潟県</a> <a href="/GtfsAgency/data_list/?p1=19">山梨県</a> <a href="/GtfsAgency/data_list/?p1=20">長野県</a> </p>
+<p><a href="/GtfsAgency/data_list/?p1=16">富山県</a> <a href="/GtfsAgency/data_list/?p1=17">石川県</a> <a href="/GtfsAgency/data_list/?p1=18">福井県</a> </p>
+<p><a href="/GtfsAgency/data_list/?p1=22">静岡県</a> <a href="/GtfsAgency/data_list/?p1=21">岐阜県</a> <a href="/GtfsAgency/data_list/?p1=23">愛知県</a> <a href="/GtfsAgency/data_list/?p1=24">三重県</a> </p>
+<p><a href="/GtfsAgency/data_list/?p1=25">滋賀県</a> <a href="/GtfsAgency/data_list/?p1=26">京都府</a> 大阪府 <a href="/GtfsAgency/data_list/?p1=28">兵庫県</a> <a href="/GtfsAgency/data_list/?p1=29">奈良県</a> <a href="/GtfsAgency/data_list/?p1=30">和歌山県</a> </p>
+<p><a href="/GtfsAgency/data_list/?p1=31">鳥取県</a> <a href="/GtfsAgency/data_list/?p1=32">島根県</a> <a href="/GtfsAgency/data_list/?p1=33">岡山県</a> <a href="/GtfsAgency/data_list/?p1=34">広島県</a> <a href="/GtfsAgency/data_list/?p1=35">山口県</a> </p>
+<p><a href="/GtfsAgency/data_list/?p1=36">徳島県</a> <a href="/GtfsAgency/data_list/?p1=37">香川県</a> <a href="/GtfsAgency/data_list/?p1=38">愛媛県</a> <a href="/GtfsAgency/data_list/?p1=39">高知県</a> </p>
+<p><a href="/GtfsAgency/data_list/?p1=40">福岡県</a> <a href="/GtfsAgency/data_list/?p1=41">佐賀県</a> <a href="/GtfsAgency/data_list/?p1=42">長崎県</a> <a href="/GtfsAgency/data_list/?p1=43">熊本県</a> <a href="/GtfsAgency/data_list/?p1=44">大分県</a> <a href="/GtfsAgency/data_list/?p1=45">宮崎県</a> <a href="/GtfsAgency/data_list/?p1=46">鹿児島県</a> </p>
+<p><a href="/GtfsAgency/data_list/?p1=47">沖縄県</a> <br />
+<a href="/GtfsAgency/data_list/">＞全国表示する</a> </p>
+<p><a href="https://bustime.jp/GtfsAgency/list1/?id1=35">・山口県内のバス会社や鉄道会社から時刻表探す</a></p>
+
+<div class="timetable"><!--データ一覧start-->
+<table><tr><th>都道府県</th><th>バス事業者名</th><th>バス停数</th><th>ライセンス表示等</th></tr><tr><td>山口県</td><th><a href="https://bustime.jp/GtfsStops/index/?id1=629">船鉄バス(船木鉄道)</a>　(<a href="https://ckan.odpt.org/dataset/sentetsu_bus_all_lines">配信ページ</a>)</th><td>585</td><td>バス時刻検索は「<a href="https://ckan.odpt.org/dataset/sentetsu_bus_all_lines">船鉄バス(船木鉄道)</a>」(公共交通オープンデータセンター提供)を改変して利用。<br /></td></tr>
+<tr><td>山口県</td><th><a href="https://bustime.jp/GtfsStops/index/?id1=771">岩国市生活交通バス・由宇地区バス</a>　(<a href="https://yamaguchi-opendata.jp/ckan/dataset/352080-gtfsjp">配信ページ</a>)</th><td>800</td><td>「<a href="https://yamaguchi-opendata.jp/ckan/dataset/352080-gtfsjp">岩国市生活交通バス・由宇地区バス</a>」を改変して利用。<a href="https://www.city.iwakuni.lg.jp/">岩国市</a>、<a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC BY 4.0</a></td></tr>
+</table>
+</div><!--データ一覧end-->
+
+<p><a href="https://bustime.jp/GtfsAgency/list1/?id1=35">・山口県内のバス会社や鉄道会社から時刻表探す</a></p>
+
+<!-- Google検索ボックス -->
+<script async src="https://cse.google.com/cse.js?cx=85bedf6921cd70730"></script>
+<div class="gcse-search"></div>
+
+<!-- ▼ソーシャルボタンリンク -->
+<div>
+	<a href="https://b.hatena.ne.jp/entry/https://bustime.jp/GtfsAgency/data_list/?p1=35" class="hatena-bookmark-button" data-hatena-bookmark-title="バス時刻検索" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"> <img src="https://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+	<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="バス時刻検索 @bustei_kensakuより" data-url="https://bustime.jp/GtfsAgency/data_list/?p1=35" data-hashtags="バス時刻検索" data-related="" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><!-- 2023/08/22時点の最新コード -->
+</div>
+<!-- ▲ソーシャルボタンリンク -->
+<a href="#">▲ページトップへ</a>
+
+<br /><br />
+
+<h2>お知らせ</h2>
+<ul class="main">
+	<li><strong>岐阜県、愛知県、三重県内でバス停毎の時刻表ページを追加公開しました</strong><br />
+	岐阜＜八幡バス、白鳥交通＞、愛知＜春日井市 かすがいシティバス、名古屋市バス＞、三重＜四日市市自主運行バス、伊勢市沼木地区自主運行バス「沼木バス」、いなべ市福祉バス「アイバス」＞で乗り場毎の時刻表ページを公開しました。<br />
+	・表示例：<a href="https://bustime.jp/GtfsAgency/list1/?id1=21">岐阜県のバス会社から時刻表探す</a>、<a href="https://bustime.jp/GtfsAgency/list1/?id1=23">愛知県のバス会社から時刻表探す</a>、<a href="https://bustime.jp/GtfsAgency/list1/?id1=24">三重県のバス会社から時刻表探す</a>(2025/09/28)</li>
+
+	<li><strong>福島県、群馬県、静岡県、愛知県、福岡県内でバス停毎の時刻表ページを追加公開しました</strong><br />
+	福島＜新常磐交通＞、群馬＜上信観光バス、安中市路線バス＞、静岡＜秋葉バスサービス、森町、静岡市の各コミュニティバス等＞、愛知＜長久手市 N-バス＞、福岡＜久留米市、直方市、豊前市、みやま市、宗像市、須恵町、新宮町、遠賀町、川崎町、添田町の各コミュニティバス、定期旅客船等＞で乗り場毎の時刻表ページを公開しました。<br />
+	・表示例：<a href="https://bustime.jp/GtfsAgency/detail1/?id1=1005">新常磐交通のバス停時刻表探す</a>、<a href="https://bustime.jp/GtfsAgency/list1/?id1=22">静岡県のバス会社から時刻表探す</a>、<a href="https://bustime.jp/GtfsAgency/list1/?id1=40">福岡県のバス会社から時刻表探す</a>(2024/07/28)</li>
+
+</ul>
+<ul class="main">
+<li><a href="https://bustime.jp/Pages/info01">＞過去のお知らせを見る</a></li>
+</ul>
+<br />
+
+
+<div class="image">
+	<a title="位置情報から最寄りバス停を検索する" href="javascript:void(0);" onclick="getGeoLocation();"><img src="https://bustime.jp/img/gps-button.png" alt="現在地周辺のバス停を探す"></a>
+
+<br />
+　(周辺地域に時刻表を表示可能なバス停が存在しない場合もあり。※「<a href="https://buste.in/search/bus/">バス停検索</a>」サービスへリンク)<br />
+</div>
+
+<p>
+<a href="/GtfsAgency/gtfs_list/">・全国のGTFSオープンデータ一覧</a><br />
+<a href="https://bustime.jp/Pages/guide01/">・当サイトの使い方や注意点</a><br />
+<a href="https://bustime.jp/GtfsAgency/data_list/">・使用する時刻表データについて</a><br />
+<a href="https://bustime.jp/Pages/privacy/">・プライバシーに関するポリシー</a><br />
+<a href="https://bustime.jp/Pages/sitemap/">・サイトマップ</a></p>
+
+<p>・当サイトへのご意見、感想等は、<a href="https://buste.in/search/bus/toiawase/?url1=https%3A%2F%2Fbustime.jp%2FGtfsAgency%2Fdata_list%2F%3Fp1%3D35">こちらのお問い合わせフォーム</a>(バス停検索と兼用)からお願いします。</p>
+
+<a href="#">▲ページトップへ</a>
+
+<div class="footer">
+	Copyright(c) 2022 バス時刻検索 Inc. All Rights Reserved.
+</div>
+
+<br /><br />
+<br />
+
+
+
+<!-- GDPR等の対応 -->
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#237afc"
+    },
+    "button": {
+      "background": "#fff",
+      "text": "#237afc"
+    }
+  },
+  "content": {
+    "message": "このウェブサイトでは、お客様の利便性向上のためにCookie等を使用しています。このウェブサイトに留まり続けた場合は、同意を示したことになります。",
+    "dismiss": "同意する",
+    "link": "詳細はCookie ポリシーをお読み下さい。",
+    "href": "https://bustime.jp/Pages/privacy/"
+  }
+});
+</script>
+<!-- GDPR等の対応 -->
+
+</body>
+</html>

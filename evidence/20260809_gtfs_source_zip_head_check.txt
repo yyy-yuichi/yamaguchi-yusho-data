@@ -1,0 +1,43 @@
+取得日時: 2026-08-09 JST
+取得元  : GTFS-JP/GTFSデータZIP本体へのHEADリクエスト（山口県オープンデータカタログサイト配信、岩国市・光市）
+取得方法: curl -sI (HEADのみ。本体ダウンロードはしていない)
+---
+== 岩国市 GTFS-JP ==
+URL: https://yamaguchi-opendata.jp/ckan/dataset/2dbaeb43-5134-4880-90a3-62870504f1d3/resource/bac76226-a946-466f-a94c-d61dcb6ab0dc/download/gtfs-jp2026-03-27_1458_.zip
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sun, 09 Aug 2026 11:22:28 GMT
+Content-Type: application/zip
+Content-Length: 719723
+Connection: keep-alive
+Content-Disposition: inline; filename=gtfs-jp2026-03-27_1458_.zip
+Last-Modified: Fri, 10 Apr 2026 00:58:44 GMT
+Cache-Control: no-cache, public, max-age=0, must-revalidate
+ETag: "1775782724.819647-719723-532877741"
+Set-cookie: [削除。CLAUDE.mdの方針によりCookie値は保存しない]
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Pragma: no-cache
+Cache-Control: private, no-store, no-cache, must-revalidate, max-age=0
+
+
+== 光市 GTFS ==
+URL: https://yamaguchi-opendata.jp/ckan/dataset/db885818-b1bd-4848-986f-45119e8acb31/resource/c804039c-7d37-4e45-9288-f09fc1bbd249/download/hikari_gtfs_20260401_.zip
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sun, 09 Aug 2026 11:22:29 GMT
+Content-Type: application/zip
+Content-Length: 86273
+Connection: keep-alive
+Content-Disposition: inline; filename=hikari_gtfs_20260401_.zip
+Last-Modified: Tue, 03 Mar 2026 05:04:53 GMT
+Cache-Control: no-cache, public, max-age=0, must-revalidate
+ETag: "1772514293.7143364-86273-300552401"
+Set-cookie: [削除。CLAUDE.mdの方針によりCookie値は保存しない]
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Pragma: no-cache
+Cache-Control: private, no-store, no-cache, must-revalidate, max-age=0
+

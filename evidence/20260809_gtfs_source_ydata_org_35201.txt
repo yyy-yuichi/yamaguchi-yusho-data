@@ -1,0 +1,2321 @@
+取得日時: 2026-08-09 JST
+取得元  : https://yamaguchi-opendata.jp/ckan/organization/35201 (page1)
+取得方法: curl -sL (生バイト取得、要約なし)
+---
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="ja" class="ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="ja"  > <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+      <meta name="csrf_field_name" content="_csrf_token" />
+      <meta name="_csrf_token" content="IjIxNTM2OTFhZDg5N2JjNTEyODdhZWU5ZDdlM2QyNzY5NTEwNDdiYmEi.anhhIQ.ng8RM-w2eutoEbaOpPSckAsbun4" />
+
+      <meta name="generator" content="ckan 2.10.4" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下関市 - 団体 - CKAN</title>
+
+    
+    
+  <link rel="shortcut icon" href="/base/images/ckan.ico" />
+    
+  <link rel="alternate" type="application/atom+xml" title="CKAN - 団体: 下関市 のデータセット" href="/ckan/feeds/organization/35201.atom" />
+
+      
+      
+      
+    
+
+    
+      
+      
+    
+
+    
+    <link href="/ckan/webassets/base/5b7e7171_main.css" rel="stylesheet"/>
+    
+  </head>
+
+  
+  <body data-site-root="https://yamaguchi-opendata.jp/ckan/" data-locale-root="https://yamaguchi-opendata.jp/ckan/" >
+
+    
+    <div class="visually-hidden-focusable"><a href="#content">Skip to main content</a></div>
+  
+
+  
+    
+
+ 
+<div class="account-masthead">
+  <div class="container">
+     
+    <nav class="account not-authed" aria-label="Account">
+      <ul class="list-unstyled">
+        
+        <li><a href="/ckan/user/login">ログイン</a></li>
+         
+      </ul>
+    </nav>
+     
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="container">
+      
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <hgroup class="header-image navbar-left">
+
+      
+      
+      <a class="logo" href="https://yamaguchi-opendata.jp">
+        <img src="/ckan/base/images/ckan-logo.png?v=new" alt="CKAN"
+          title="CKAN" />
+      </a>
+      
+      
+
+       </hgroup>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navigation-toggle"
+        aria-controls="main-navigation-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars text-white"></span>
+      </button>
+
+      <div class="main-navbar collapse navbar-collapse" id="main-navigation-toggle">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          
+            
+              
+              
+          
+          <li><a href="https://yamaguchi-opendata.jp">Top</a></li>
+          <li><a href="https://yamaguchi-opendata.jp/index.html#ai-search">AI検索</a></li>
+          <li><a href="/ckan/dataset/">データセット</a></li><li class="active"><a href="/ckan/organization/">団体</a></li><li><a href="/ckan/group/">カテゴリ</a></li><li><a href="/ckan/tag/">タグ</a></li><li><a href="/ckan/about">About</a></li>
+          
+          
+          
+          </ul>
+
+      
+      
+          <form class="d-flex site-search" action="/ckan/dataset/" method="get">
+              <label class="d-none" for="field-sitewide-search">Search Datasets...</label>
+              <input id="field-sitewide-search" class="form-control me-2"  type="text" name="q" placeholder="検索" aria-label="データセット検索..."/>
+              <button class="btn" type="submit" aria-label="Submit"><i class="fa fa-search"></i></button>
+          </form>
+      
+      </div>
+    </nav>
+  </div>
+</header>
+
+  
+    <div class="main">
+      <div id="content" class="container">
+        
+          
+            <div class="flash-messages">
+              
+                
+              
+            </div>
+          
+
+          
+            <div class="toolbar" role="navigation" aria-label="Breadcrumb">
+              
+                
+                  <ol class="breadcrumb">
+                    
+<li class="home"><a href="/ckan/" aria-label="ホーム"><i class="fa fa-home"></i><span> ホーム</span></a></li>
+                    
+  <li><a href="/ckan/organization/">団体</a></li>
+  <li class="active"><a href="/ckan/organization/35201" title="下関市">下関市</a></li>
+
+                  </ol>
+                
+              
+            </div>
+          
+
+          <div class="row wrapper">
+            
+            
+            
+
+            
+              <aside class="secondary col-md-3">
+                
+                
+  
+
+
+
+
+
+  <div class="module module-narrow module-shallow context-info">
+    
+    <section class="module-content">
+      
+      
+        <div class="image">
+          <a href="/ckan/organization/35201">
+            <img src="https://yamaguchi-opendata.jp/ckan/uploads/group/2025-12-24-012241.268009.jpg" width="200" alt="35201" />
+          </a>
+        </div>
+      
+      
+      <h1 class="heading">下関市
+        
+      </h1>
+      
+      
+      
+        <p class="description">
+          海峡と歴史のまち下関　
+https://www.city.shimonoseki.lg.jp/
+        </p>
+        <p class="read-more">
+          <a href="/ckan/organization/about/35201">もっと読む</a>
+        </p>
+      
+      
+      
+        
+        <div class="nums">
+          <dl>
+            <dt>フォロワー</dt>
+            <dd data-module="followers-counter" data-module-id="d7ebc414-3550-4123-8f98-4de6efb3feb5" data-module-num_followers="0"><span>0</span></dd>
+          </dl>
+          <dl>
+            <dt>データセット</dt>
+            <dd><span>47</span></dd>
+          </dl>
+        </div>
+        
+        
+        <div class="follow_button">
+          
+        </div>
+        
+      
+      
+    </section>
+  </div>
+  
+  
+  <div class="filters">
+    <div>
+      
+        
+
+    
+    
+	
+	    
+		<section class="module module-narrow module-shallow">
+		    
+			<h2 class="module-heading">
+			    <i class="fa fa-filter"></i>
+			    団体
+			</h2>
+		    
+		    
+			
+			    
+				<nav aria-label="団体">
+				    <ul class="list-unstyled nav nav-simple nav-facet">
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?organization=35201" title="">
+						    <span class="item-label">下関市</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">47</span>
+							
+						</a>
+					    </li>
+					
+				    </ul>
+				</nav>
+
+				<p class="module-footer">
+				    
+					
+				    
+				</p>
+			    
+			
+		    
+		</section>
+	    
+	
+    
+
+      
+        
+
+    
+    
+	
+	    
+		<section class="module module-narrow module-shallow">
+		    
+			<h2 class="module-heading">
+			    <i class="fa fa-filter"></i>
+			    カテゴリ
+			</h2>
+		    
+		    
+			
+			    
+				<nav aria-label="カテゴリ">
+				    <ul class="list-unstyled nav nav-simple nav-facet">
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?groups=c001" title="">
+						    <span class="item-label">くらし</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">15</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?groups=c010" title="">
+						    <span class="item-label">行政</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">14</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?groups=c011" title="">
+						    <span class="item-label">統計</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">10</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?groups=c012" title="">
+						    <span class="item-label">防災・防犯</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">8</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?groups=c009" title="">
+						    <span class="item-label">観光</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">5</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?groups=c005" title="">
+						    <span class="item-label">子育て・教育</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">4</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?groups=c013" title="">
+						    <span class="item-label">交通</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">3</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?groups=c004" title="">
+						    <span class="item-label">福祉</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">3</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?groups=c006" title="">
+						    <span class="item-label">文化・スポーツ</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">2</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?groups=c007" title="">
+						    <span class="item-label">しごと</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">1</span>
+							
+						</a>
+					    </li>
+					
+				    </ul>
+				</nav>
+
+				<p class="module-footer">
+				    
+					
+					    <a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?_groups_limit=0" class="read-more">カテゴリをもっと見る</a>
+					
+				    
+				</p>
+			    
+			
+		    
+		</section>
+	    
+	
+    
+
+      
+        
+
+    
+    
+	
+	    
+		<section class="module module-narrow module-shallow">
+		    
+			<h2 class="module-heading">
+			    <i class="fa fa-filter"></i>
+			    タグ
+			</h2>
+		    
+		    
+			
+			    
+				<nav aria-label="タグ">
+				    <ul class="list-unstyled nav nav-simple nav-facet">
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?tags=%E4%BD%8D%E7%BD%AE%E6%83%85%E5%A0%B1" title="">
+						    <span class="item-label">位置情報</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">11</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?tags=%E7%B5%B1%E8%A8%88" title="">
+						    <span class="item-label">統計</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">8</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?tags=%E3%83%9E%E3%83%83%E3%83%97%E6%83%85%E5%A0%B1" title="">
+						    <span class="item-label">マップ情報</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">5</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?tags=%E3%81%8F%E3%82%89%E3%81%97%E3%81%AE%E6%83%85%E5%A0%B1" title="">
+						    <span class="item-label">くらしの情報</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">4</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?tags=%E8%A6%B3%E5%85%89" title="">
+						    <span class="item-label">観光</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">3</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?tags=%E3%83%8F%E3%82%B6%E3%83%BC%E3%83%89%E3%83%9E%E3%83%83%E3%83%97" title="">
+						    <span class="item-label">ハザードマップ</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">1</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?tags=%E5%85%A5%E6%9C%AD" title="">
+						    <span class="item-label">入札</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">1</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?tags=%E5%B8%82%E9%81%93" title="">
+						    <span class="item-label">市道</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">1</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?tags=%E8%B7%AF%E7%B7%9A" title="">
+						    <span class="item-label">路線</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">1</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?tags=%E9%98%B2%E7%81%BD%E8%A1%8C%E6%94%BF%E7%84%A1%E7%B7%9A" title="">
+						    <span class="item-label">防災行政無線</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">1</span>
+							
+						</a>
+					    </li>
+					
+				    </ul>
+				</nav>
+
+				<p class="module-footer">
+				    
+					
+				    
+				</p>
+			    
+			
+		    
+		</section>
+	    
+	
+    
+
+      
+        
+
+    
+    
+	
+	    
+		<section class="module module-narrow module-shallow">
+		    
+			<h2 class="module-heading">
+			    <i class="fa fa-filter"></i>
+			    フォーマット
+			</h2>
+		    
+		    
+			
+			    
+				<nav aria-label="フォーマット">
+				    <ul class="list-unstyled nav nav-simple nav-facet">
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?res_format=HTML" title="">
+						    <span class="item-label">HTML</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">26</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?res_format=XLSX" title="">
+						    <span class="item-label">XLSX</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">21</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?res_format=CSV" title="">
+						    <span class="item-label">CSV</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">18</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?res_format=GeoJSON" title="">
+						    <span class="item-label">GeoJSON</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">5</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?res_format=PDF" title="">
+						    <span class="item-label">PDF</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">2</span>
+							
+						</a>
+					    </li>
+					
+				    </ul>
+				</nav>
+
+				<p class="module-footer">
+				    
+					
+				    
+				</p>
+			    
+			
+		    
+		</section>
+	    
+	
+    
+
+      
+        
+
+    
+    
+	
+	    
+		<section class="module module-narrow module-shallow">
+		    
+			<h2 class="module-heading">
+			    <i class="fa fa-filter"></i>
+			    ライセンス
+			</h2>
+		    
+		    
+			
+			    
+				<nav aria-label="ライセンス">
+				    <ul class="list-unstyled nav nav-simple nav-facet">
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/organization/d7ebc414-3550-4123-8f98-4de6efb3feb5?license_id=cc-by" title="">
+						    <span class="item-label">クリエイティブ・コモンズ 表示</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">46</span>
+							
+						</a>
+					    </li>
+					
+				    </ul>
+				</nav>
+
+				<p class="module-footer">
+				    
+					
+				    
+				</p>
+			    
+			
+		    
+		</section>
+	    
+	
+    
+
+      
+    </div>
+    <a class="close no-text hide-filters"><i class="fa fa-times-circle"></i><span class="text">close</span></a>
+  </div>
+
+
+              </aside>
+            
+
+            
+              <div class="primary col-md-9 col-xs-12" role="main">
+                
+                
+                  <article class="module">
+                    
+                      <header class="module-content page-header">
+                        
+                        <ul class="nav nav-tabs">
+                          
+  <li class="active"><a href="/ckan/organization/35201"><i class="fa fa-sitemap"></i> データセット</a></li>
+  <li><a href="/ckan/organization/about/35201"><i class="fa fa-info-circle"></i> About</a></li>
+
+                        </ul>
+                      </header>
+                    
+                    <div class="module-content">
+                      
+                      
+    
+      
+      
+      
+
+
+
+
+
+
+
+<form id="organization-datasets-search-form" class="search-form" method="get" data-module="select-switch">
+
+  
+    <div class="input-group search-input-group">
+      <input aria-label="データセット検索..." id="field-giant-search" type="text" class="form-control input-lg" name="q" value="" autocomplete="off" placeholder="データセット検索...">
+      
+      <span class="input-group-btn">
+        <button class="btn btn-default btn-lg" type="submit" value="search" aria-label="Submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+      
+    </div>
+  
+
+  
+    
+  
+
+  
+    
+      <div class="form-group control-order-by">
+        <label for="field-order-by">並び順</label>
+        <select id="field-order-by" name="sort" class="form-control form-select">
+          
+            
+              <option value="score desc, metadata_modified desc">関連性</option>
+            
+          
+            
+              <option value="title_string asc">名前で昇順</option>
+            
+          
+            
+              <option value="title_string desc">名前で降順</option>
+            
+          
+            
+              <option value="metadata_modified desc">最終更新日</option>
+            
+          
+            
+              <option value="views_recent desc">人気</option>
+            
+          
+        </select>
+        
+        <button class="btn btn-default js-hide" type="submit">Go</button>
+        
+      </div>
+    
+  
+
+  
+    
+      <h1>
+
+  
+  
+  
+  
+
+47 件のデータセットが見つかりました</h1>
+    
+  
+
+  
+    
+      <p class="filter-list">
+        
+      </p>
+      <a class="show-filters btn btn-default">フィルタ結果</a>
+    
+  
+
+</form>
+
+
+
+
+    
+  
+    
+      
+
+  
+    <ul class="dataset-list list-unstyled">
+    	
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/352012_evacuation" title="【下関市】指定緊急避難場所一覧">
+      【下関市】指定緊急避難場所一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>下関市の指定緊急避難場所をまとめた一覧</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/352012_evacuation" class="badge badge-default" data-format="xlsx">XLSX</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/352012_evacuation" class="badge badge-default" data-format="csv">CSV</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/8-4" title="【下関市】食品営業許可一覧">
+      【下関市】食品営業許可一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>下関市内の食品営業許可施設の一覧</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/8-4" class="badge badge-default" data-format="csv">CSV</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/8-4" class="badge badge-default" data-format="xlsx">XLSX</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/8-4" class="badge badge-default" data-format="pdf">PDF</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/352012_nursinghome" title="【下関市】高齢者施設一覧">
+      【下関市】高齢者施設一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>高齢者施設一覧
+老人ホーム
+介護老人保健施設
+高齢者向け住宅
+グループホーム　等</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/352012_nursinghome" class="badge badge-default" data-format="csv">CSV</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/352012_nursinghome" class="badge badge-default" data-format="xlsx">XLSX</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/352012_broadcasting" title="【下関市】防災行政無線設置一覧">
+      【下関市】防災行政無線設置一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>【下関市】防災行政無線設置一覧</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/352012_broadcasting" class="badge badge-default" data-format="xlsx">XLSX</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/352012_broadcasting" class="badge badge-default" data-format="csv">CSV</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/352012-public-2" title="【下関市】公共施設一覧（公民館）">
+      【下関市】公共施設一覧（公民館）
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>下関市内の公共施設（公民館）の一覧</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/352012-public-2" class="badge badge-default" data-format="xlsx">XLSX</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/352012-public-2" class="badge badge-default" data-format="csv">CSV</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/352012-cultual-p" title="【下関市】文化財一覧">
+      【下関市】文化財一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>下関市内の指定文化財の一覧</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/352012-cultual-p" class="badge badge-default" data-format="xlsx">XLSX</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/352012-cultual-p" class="badge badge-default" data-format="csv">CSV</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/352012-public-1" title="【下関市】公共施設一覧（公立学校）">
+      【下関市】公共施設一覧（公立学校）
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>下関市の公共施設（公立学校）の一覧</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/352012-public-1" class="badge badge-default" data-format="xlsx">XLSX</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/352012-public-1" class="badge badge-default" data-format="csv">CSV</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/352012_schoolmeals" title="【下関市】学校給食献立情報">
+      【下関市】学校給食献立情報
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>学校給食献立情報
+<a href="https://www.city.shimonoseki.lg.jp/soshiki/102/" rel="noopener">https://www.city.shimonoseki.lg.jp/soshiki/102/</a></div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/352012_schoolmeals" class="badge badge-default" data-format="html">HTML</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/352012-polling" title="【下関市】投票所一覧">
+      【下関市】投票所一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>下関市内の投票所の一覧</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/352012-polling" class="badge badge-default" data-format="xlsx">XLSX</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/352012-polling" class="badge badge-default" data-format="csv">CSV</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/352012_bicycle_parking" title="【下関市】公営駐輪場一覧（下関市自転車等駐車条例）">
+      【下関市】公営駐輪場一覧（下関市自転車等駐車条例）
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>下関市自転車等駐車場条例に基づく自転車等駐車場の一覧</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/352012_bicycle_parking" class="badge badge-default" data-format="xlsx">XLSX</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/352012_bicycle_parking" class="badge badge-default" data-format="csv">CSV</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/352012_car_park" title="【下関市】公営駐車場一覧（都市計画駐車場）">
+      【下関市】公営駐車場一覧（都市計画駐車場）
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>下関市営駐車場（都市計画駐車場）の一覧</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/352012_car_park" class="badge badge-default" data-format="xlsx">XLSX</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/352012_car_park" class="badge badge-default" data-format="csv">CSV</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/352012_community-living-support" title="【下関市】介護予防・日常生活支援総合事業の指定事業者一覧">
+      【下関市】介護予防・日常生活支援総合事業の指定事業者一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>介護予防・日常生活支援総合事業の指定事業者一覧　<a href="https://www.city.shimonoseki.lg.jp/soshiki/40/3536.html" rel="noopener">https://www.city.shimonoseki.lg.jp/soshiki/40/3536.html</a></div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/352012_community-living-support" class="badge badge-default" data-format="html">HTML</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/352012_kaikyoreborn" title="【下関市】カイキョーリボーンプロジェクト">
+      【下関市】カイキョーリボーンプロジェクト
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>カイキョーリボーンプロジェクト
+<a href="https://kaikyoreborn.jp/" rel="noopener">https://kaikyoreborn.jp/</a></div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/352012_kaikyoreborn" class="badge badge-default" data-format="html">HTML</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/352012_tunami" title="【下関市】津波浸水想定区域図">
+      【下関市】津波浸水想定区域図
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>津波浸水想定区域図</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/352012_tunami" class="badge badge-default" data-format="geojson">GeoJSON</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/352012_tunami" class="badge badge-default" data-format="xlsx">XLSX</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/352012_tunami" class="badge badge-default" data-format="html">HTML</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/352012_stormsurge" title="【下関市】高潮浸水想定区域">
+      【下関市】高潮浸水想定区域
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>高潮浸水想定区域</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/352012_stormsurge" class="badge badge-default" data-format="geojson">GeoJSON</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/352012_stormsurge" class="badge badge-default" data-format="xlsx">XLSX</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/352012_stormsurge" class="badge badge-default" data-format="html">HTML</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/352012_seismic_hazard" title="【下関市】揺れやすさマップ">
+      【下関市】揺れやすさマップ
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>揺れやすさマップ</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/352012_seismic_hazard" class="badge badge-default" data-format="geojson">GeoJSON</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/352012_seismic_hazard" class="badge badge-default" data-format="xlsx">XLSX</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/352012_seismic_hazard" class="badge badge-default" data-format="html">HTML</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/352012_renovatin" title="【下関市】リノベーションまちづくり">
+      【下関市】リノベーションまちづくり
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>リノベーションまちづくり
+<a href="https://www.shimonoseki-kyoso.com/" rel="noopener">https://www.shimonoseki-kyoso.com/</a></div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/352012_renovatin" class="badge badge-default" data-format="html">HTML</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/352012_relocation" title="【下関市】下関にダイブする移住サイト&#34;S&#34;">
+      【下関市】下関にダイブする移住サイト&#34;S&#34;
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>【下関市】下関にダイブする移住サイト"S"
+<a href="https://www.shimonosekicitypromotion.jp/" rel="noopener">https://www.shimonosekicitypromotion.jp/</a></div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/352012_relocation" class="badge badge-default" data-format="html">HTML</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/352012_livehub" title="【下関市】LiveHUBしものせき">
+      【下関市】LiveHUBしものせき
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>LiveHUBしものせき
+<a href="https://www.city.shimonoseki.lg.jp/site/iju-tokusetsu/" rel="noopener">https://www.city.shimonoseki.lg.jp/site/iju-tokusetsu/</a></div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/352012_livehub" class="badge badge-default" data-format="html">HTML</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/352012_kouzui" title="【下関市】洪水浸水想定区域">
+      【下関市】洪水浸水想定区域
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>洪水浸水想定区域</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/352012_kouzui" class="badge badge-default" data-format="geojson">GeoJSON</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/352012_kouzui" class="badge badge-default" data-format="xlsx">XLSX</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/352012_kouzui" class="badge badge-default" data-format="html">HTML</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	    
+    </ul>
+  
+
+    
+  
+  
+    <div class="pagination-wrapper">
+  <ul class="pagination justify-content-center"> <li class="page-item active">
+  <a class="page-link" href="/ckan/organization/35201?page=1">1</a>
+</li> <li class="page-item">
+  <a class="page-link" href="/ckan/organization/35201?page=2">2</a>
+</li> <li class="page-item">
+  <a class="page-link" href="/ckan/organization/35201?page=3">3</a>
+</li> <li class="page-item">
+  <a class="page-link" href="/ckan/organization/35201?page=2">»</a>
+</li></ul>
+</div>
+  
+
+                    </div>
+                  </article>
+                
+              </div>
+            
+          </div>
+        
+      </div>
+    </div>
+  
+    <footer class="site-footer">
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-md-8 footer-links">
+        
+          <ul class="list-unstyled">
+            
+              <li><a href="/ckan/about">About CKAN</a></li>
+            
+          </ul>
+          <ul class="list-unstyled">
+            
+              
+              <li><a href="http://docs.ckan.org/en/2.10/api/">CKAN API</a></li>
+              <li><a href="http://www.ckan.org/">CKANアソシエーション</a></li>
+              <li><a href="http://www.opendefinition.org/okd/"><img src="/ckan/base/images/od_80x15_blue.png" alt="Open Data"></a></li>
+            
+          </ul>
+        
+      </div>
+      <div class="col-md-4 attribution">
+        
+          <p><strong>Powered by</strong> <a class="hide-text ckan-footer-logo" href="http://ckan.org">CKAN</a></p>
+        
+        
+          
+<form class="lang-select" action="/ckan/util/redirect" data-module="select-switch" method="POST">
+  
+<input type="hidden" name="_csrf_token" value="IjIxNTM2OTFhZDg5N2JjNTEyODdhZWU5ZDdlM2QyNzY5NTEwNDdiYmEi.anhhIQ.ng8RM-w2eutoEbaOpPSckAsbun4"/> 
+  <div class="form-group">
+    <label for="field-lang-select">言語</label>
+    <select id="field-lang-select" name="url" data-module="autocomplete" data-module-dropdown-class="lang-dropdown" data-module-container-class="lang-container">
+      
+        
+        <option value="/ckan/ja/organization/35201" selected="selected">
+          日本語
+        </option>
+      
+        
+        <option value="/ckan/en/organization/35201" >
+          English
+        </option>
+      
+        
+        <option value="/ckan/pt_BR/organization/35201" >
+          português (Brasil)
+        </option>
+      
+        
+        <option value="/ckan/it/organization/35201" >
+          italiano
+        </option>
+      
+        
+        <option value="/ckan/cs_CZ/organization/35201" >
+          čeština (Česko)
+        </option>
+      
+        
+        <option value="/ckan/ca/organization/35201" >
+          català
+        </option>
+      
+        
+        <option value="/ckan/es/organization/35201" >
+          español
+        </option>
+      
+        
+        <option value="/ckan/fr/organization/35201" >
+          français
+        </option>
+      
+        
+        <option value="/ckan/el/organization/35201" >
+          Ελληνικά
+        </option>
+      
+        
+        <option value="/ckan/sv/organization/35201" >
+          svenska
+        </option>
+      
+        
+        <option value="/ckan/sr/organization/35201" >
+          српски
+        </option>
+      
+        
+        <option value="/ckan/no/organization/35201" >
+          norsk
+        </option>
+      
+        
+        <option value="/ckan/sk/organization/35201" >
+          slovenčina
+        </option>
+      
+        
+        <option value="/ckan/fi/organization/35201" >
+          suomi
+        </option>
+      
+        
+        <option value="/ckan/ru/organization/35201" >
+          русский
+        </option>
+      
+        
+        <option value="/ckan/de/organization/35201" >
+          Deutsch
+        </option>
+      
+        
+        <option value="/ckan/pl/organization/35201" >
+          polski
+        </option>
+      
+        
+        <option value="/ckan/nl/organization/35201" >
+          Nederlands
+        </option>
+      
+        
+        <option value="/ckan/bg/organization/35201" >
+          български
+        </option>
+      
+        
+        <option value="/ckan/ko_KR/organization/35201" >
+          한국어 (대한민국)
+        </option>
+      
+        
+        <option value="/ckan/hu/organization/35201" >
+          magyar
+        </option>
+      
+        
+        <option value="/ckan/sl/organization/35201" >
+          slovenščina
+        </option>
+      
+        
+        <option value="/ckan/lv/organization/35201" >
+          latviešu
+        </option>
+      
+        
+        <option value="/ckan/uk_UA/organization/35201" >
+          українська (Україна)
+        </option>
+      
+        
+        <option value="/ckan/gl/organization/35201" >
+          galego
+        </option>
+      
+        
+        <option value="/ckan/th/organization/35201" >
+          ไทย
+        </option>
+      
+        
+        <option value="/ckan/fa_IR/organization/35201" >
+          فارسی (ایران)
+        </option>
+      
+        
+        <option value="/ckan/pt_PT/organization/35201" >
+          português (Portugal)
+        </option>
+      
+        
+        <option value="/ckan/vi/organization/35201" >
+          Tiếng Việt
+        </option>
+      
+        
+        <option value="/ckan/am/organization/35201" >
+          አማርኛ
+        </option>
+      
+        
+        <option value="/ckan/sr_Latn/organization/35201" >
+          srpski (latinica)
+        </option>
+      
+        
+        <option value="/ckan/en_GB/organization/35201" >
+          English (United Kingdom)
+        </option>
+      
+        
+        <option value="/ckan/he/organization/35201" >
+          עברית
+        </option>
+      
+        
+        <option value="/ckan/ne/organization/35201" >
+          नेपाली
+        </option>
+      
+        
+        <option value="/ckan/es_AR/organization/35201" >
+          español (Argentina)
+        </option>
+      
+        
+        <option value="/ckan/is/organization/35201" >
+          íslenska
+        </option>
+      
+        
+        <option value="/ckan/mk/organization/35201" >
+          македонски
+        </option>
+      
+        
+        <option value="/ckan/mn_MN/organization/35201" >
+          монгол (Монгол)
+        </option>
+      
+        
+        <option value="/ckan/zh_Hant_TW/organization/35201" >
+          中文 (繁體, 台灣)
+        </option>
+      
+        
+        <option value="/ckan/lt/organization/35201" >
+          lietuvių
+        </option>
+      
+        
+        <option value="/ckan/eu/organization/35201" >
+          euskara
+        </option>
+      
+        
+        <option value="/ckan/uk/organization/35201" >
+          українська
+        </option>
+      
+        
+        <option value="/ckan/id/organization/35201" >
+          Indonesia
+        </option>
+      
+        
+        <option value="/ckan/ro/organization/35201" >
+          română
+        </option>
+      
+        
+        <option value="/ckan/my_MM/organization/35201" >
+          မြန်မာ (မြန်မာ)
+        </option>
+      
+        
+        <option value="/ckan/hr/organization/35201" >
+          hrvatski
+        </option>
+      
+        
+        <option value="/ckan/nb_NO/organization/35201" >
+          norsk bokmål (Norge)
+        </option>
+      
+        
+        <option value="/ckan/ar/organization/35201" >
+          العربية
+        </option>
+      
+        
+        <option value="/ckan/tl/organization/35201" >
+          Filipino (Pilipinas)
+        </option>
+      
+        
+        <option value="/ckan/bs/organization/35201" >
+          bosanski
+        </option>
+      
+        
+        <option value="/ckan/tr/organization/35201" >
+          Türkçe
+        </option>
+      
+        
+        <option value="/ckan/sq/organization/35201" >
+          shqip
+        </option>
+      
+        
+        <option value="/ckan/zh_Hans_CN/organization/35201" >
+          中文 (简体, 中国)
+        </option>
+      
+        
+        <option value="/ckan/km/organization/35201" >
+          ខ្មែរ
+        </option>
+      
+        
+        <option value="/ckan/en_AU/organization/35201" >
+          English (Australia)
+        </option>
+      
+        
+        <option value="/ckan/da_DK/organization/35201" >
+          dansk (Danmark)
+        </option>
+      
+    </select>
+  </div>
+  <button class="btn btn-default d-none " type="submit">Go</button>
+</form>
+
+
+        
+      </div>
+    </div>
+    
+  </div>
+</footer>
+  
+  
+  
+  
+    
+  
+  
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8107CQRRPE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8107CQRRPE');
+    </script>
+    
+
+      
+
+    
+    
+    <link href="/ckan/webassets/vendor/f3b8236b_select2.css" rel="stylesheet"/>
+<link href="/ckan/webassets/vendor/d05bf0e7_fontawesome.css" rel="stylesheet"/>
+    <script src="/ckan/webassets/vendor/8c3c143a_jquery.js" type="text/javascript"></script>
+<script src="/ckan/webassets/vendor/5027b870_vendor.js" type="text/javascript"></script>
+<script src="/ckan/webassets/vendor/6d1ad7e6_bootstrap.js" type="text/javascript"></script>
+<script src="/ckan/webassets/base/6fddaa3f_main.js" type="text/javascript"></script>
+<script src="/ckan/webassets/base/0d750fad_ckan.js" type="text/javascript"></script>
+<script src="/ckan/webassets/base/cd2c0272_tracking.js" type="text/javascript"></script>
+  </body>
+</html>

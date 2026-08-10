@@ -1,0 +1,2288 @@
+取得日時: 2026-08-09 JST
+取得元  : https://www.city.hikari.lg.jp/index.html
+取得方法: curl -sL (生バイト取得、要約なし)
+---
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+                                                                                                      
+
+        <meta name="keywords" content="">
+<meta name="description" content="光市の公式ウェブサイトです。">    <meta property="og:title" content="ホーム|光市">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.city.hikari.lg.jp/index.html">
+  <meta property="og:image" content="https://www.city.hikari.lg.jp/material/images/group/1/pc_header_logo3.png" />
+  <meta property="og:description" content="光市の公式ウェブサイトです。" />  <meta name="viewport" content="width=750, user-scalable=yes" />      <meta name="nsls:timestamp" content="Fri, 31 Jul 2026 23:30:00 GMT">            <title>ホーム／光市</title>    <link rel="canonical" href="https://www.city.hikari.lg.jp/index.html">        
+                          <link rel="icon" href="//www.city.hikari.lg.jp/favicon.ico">
+        <link rel="apple-touch-icon" href="//www.city.hikari.lg.jp/smartphone.png">
+                                                  <link href="//www.city.hikari.lg.jp/theme/base/css/top.css" rel="stylesheet" type="text/css" class="sp-style">              
+
+                                                        <script src="//www.city.hikari.lg.jp/theme/base/js/jquery.js"></script>
+<script src="//www.city.hikari.lg.jp/theme/base/js/jquery_cookie.js"></script>
+<script src="//www.city.hikari.lg.jp/theme/base/js/common_lib.js"></script>
+<script src="//www.city.hikari.lg.jp/theme/base/js/jquery.easing.1.3.js"></script>
+<script src="//www.city.hikari.lg.jp/theme/base/js/jquery.bxslider.js"></script>
+<script src="//www.city.hikari.lg.jp/theme/base/js/jquery_dropmenu.js"></script>
+<script src="//www.city.hikari.lg.jp/theme/base/js/common.js"></script>
+<script src="//www.google.com/jsapi"></script>
+<script src="//www.city.hikari.lg.jp/theme/base/js/mutual_switching/mutual_switching.js"></script>
+                  <script src="//www.city.hikari.lg.jp/theme/base/js/top.js"></script>
+          
+
+      
+  <!--[if lt IE 9]>
+  <script src="//www.city.hikari.lg.jp/theme/base/js/html5shiv-printshiv.min.js"></script>
+  <script src="//www.city.hikari.lg.jp/theme/base/js/css3-mediaqueries.js"></script>
+  <![endif]-->
+
+  <script>
+    var cms_api_token="REDACTED_PUBLIC_CLIENT_TOKEN_1_SHA256_0da4ffc05d3a9d356aee6553858dc46dcf645ab512b61a67787d85c3ef6764ac_LEN_152";
+    var cms_api_domain="api6th.smart-lgov.jp";
+    var cms_api_site="";
+    var cms_app_version="";
+    var cms_app_id="";
+    var site_domain = "https://www.city.hikari.lg.jp";
+    var theme_name = "base";
+    var cms_recruit_no = "0";
+    var cms_recruit_history_no = "0";
+    var cms_recruit_search_item = '[]';
+    var is_smartphone = false;  </script>
+
+  
+  
+
+    <script src="//www.city.hikari.lg.jp/resource/js/scms_yahoo_agreement.js"></script>
+  
+  <script src="//www.city.hikari.lg.jp/theme/base/js/ofi.min.js"></script>
+</head>
+<body>
+
+    
+        
+
+
+
+
+ 
+
+
+ 
+  
+        
+  
+
+
+    
+  <p id="smartphone" class="jqs-go-to-sp">
+    <a href="https://www.city.hikari.lg.jp/index.html" class="jqs-go-to-sp"><img src="//www.city.hikari.lg.jp/theme/base/img_common/btn_display_smartphone.png" alt="スマートフォン版を表示"></a>
+  </p>
+  <div id="wrapper">
+    <div id="wrapper-in">
+      <div id="wrapper-in2">
+
+        <!-- header-print : start -->
+        <div id="header-print" class="chg-color chg-edit chg-size">
+
+                                
+
+                    <!-- PC用ヘッダー : start -->
+          <header id="header-top" class="view-pc">
+
+            <div class="header-view-support">
+              <div id="tab-menu">
+                <ul class="list">
+                  <li><a href="#container" tabindex="1">本文へ</a></li>
+                </ul>
+              </div>
+              <dl id="header-size2">
+                <dt class="title">文字サイズ</dt>
+                <dd><a href="#" class="scsize normal"><img src="//www.city.hikari.lg.jp/theme/base/img_common/header_size_normal_on.png" alt="標準"></a></dd>
+                <dd><a href="#" class="scsize up"><img src="//www.city.hikari.lg.jp/theme/base/img_common/header_size_big_off.png" alt="拡大"></a></dd>
+              </dl>
+              <dl id="header-color">
+                <dt class="title">背景色変更</dt>
+                <dd><a href="#" class="sccolor" id="color_black"><img src="//www.city.hikari.lg.jp/theme/base/img_common/header_color_black.png" alt="背景色を黒色にする"></a></dd>
+                <dd><a href="#" class="sccolor" id="color_blue"><img src="//www.city.hikari.lg.jp/theme/base/img_common/header_color_blue.png" alt="背景色を青色にする"></a></dd>
+                <dd><a href="#" class="sccolor" id="color_normal"><img src="//www.city.hikari.lg.jp/theme/base/img_common/header_color_white.png" alt="背景色を白色にする"></a></dd>
+              </dl>
+              <div class="header-language">
+                <a lang="en" href="https://www.city.hikari.lg.jp/Foreign_language.html">Foreign language</a>
+              </div>
+              <div class="header-line">
+                <a href="https://www.city.hikari.lg.jp/online_service/13040.html"><img src="//www.city.hikari.lg.jp/theme/base/img_common/ico_line.png" alt="光市公式Lineへのリンク"></a>
+              </div>
+              <div class="header-insta">
+                <a href="https://www.instagram.com/hikari_city/" target="_blank"><img src="//www.city.hikari.lg.jp/theme/base/img_common/ico_insta.png" alt="光市公式Instagramへのリンク"></a>
+              </div>
+              <div class="header-fb">
+                <a href="https://www.facebook.com/city.hikari/" target="_blank"><img src="//www.city.hikari.lg.jp/theme/base/img_common/ico_fb.png" alt="光市公式Facebookへのリンク"></a>
+              </div>
+            </div>
+
+            <div class="header-1st-menu">
+              <h1 class="header-logo">
+                <img src="//www.city.hikari.lg.jp/theme/base/img_top/pc_header_logo2.png" alt="光市 Hikari City">
+              </h1>
+              <div class="in">
+                <p class="copy"><img src="//www.city.hikari.lg.jp/theme/base/img_common/top_copy_s.png" alt="人が輝き やさしさつながる 幸せ創造都市 ひかり"></p>
+                <div class="google-search">
+                                                  
+
+
+
+
+                          
+                
+                  
+                  
+                                      <div class="gcse-searchbox-only" data-resultsurl="//www.city.hikari.lg.jp/result.html" data-enableAutoComplete="true"></div>
+  
+                                        </div>
+                <div class="slogan">
+                  <p class="title"><img src="//www.city.hikari.lg.jp/theme/base/img_top/slogan_title.png" alt="光市3つの都市宣言"></p>
+                  <ul class="list">
+                    <li><a href="https://www.city.hikari.lg.jp/soshiki/6/kodomo/kosodate/1/oppaitoshi/1069.html"><img src="//www.city.hikari.lg.jp/theme/base/img_top/menu_slogan1.png" alt="おっぱい 都市宣言"></a></li>
+                    <li><a href="https://www.city.hikari.lg.jp/soshiki/3/kankyoseisaku/seisaku/1770.html"><img src="//www.city.hikari.lg.jp/theme/base/img_top/menu_slogan2.png" alt="自然敬愛 都市宣言"></a></li>
+                    <li><a href="https://www.city.hikari.lg.jp/soshiki/3/seikatsu/shisei/2/1741.html"><img src="//www.city.hikari.lg.jp/theme/base/img_top/menu_slogan3.png" alt="安全・安心 都市宣言"></a></li>
+                  </ul>
+                </div>
+                <div class="other-menu">
+                  <ul class="list">
+                    <li><a href="//www.city.hikari.lg.jp/section/bousai_portal/bousai_portal.html"><img src="//www.city.hikari.lg.jp/theme/base/img_top/menu_kinkyu.png" alt="光市防災ポータル"></a></li>
+                    <li><a href="https://www.city.hikari.lg.jp/safety_info/index.html"><img src="//www.city.hikari.lg.jp/theme/base/img_top/menu_anzen.png" alt="安全・安心情報"></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </header>
+          <!-- PC用ヘッダー : end -->
+
+
+          
+
+                                
+          <!-- SP用ヘッダー : start -->
+                    <header id="sp-header-top" class="view-sp">
+          
+
+                                                  
+            <div class="header-area">
+                              <h1 class="header-logo">
+                  <a href="https://www.city.hikari.lg.jp/index.html"><img src="//www.city.hikari.lg.jp/theme/base/img_mobile/sp_header_logo.png" alt="光市 Hikari City 人が輝き やさしさつながる 幸せ創造都市 ひかり"></a>
+                </h1>
+                            <ul class="list">
+                <li class="menu-search"><a href="#"><img src="//www.city.hikari.lg.jp/theme/base/img_mobile/btn_search.png" alt="検索"></a></li>
+                <li class="open-btn"><a href="#"><img src="//www.city.hikari.lg.jp/theme/base/img_mobile/btn_menu_open.png" alt="メニューを開く"></a></li>
+              </ul>
+            </div>
+
+            <!-- 展開メニュー : start -->
+            <div class="modal-menu-bg"></div>
+            <div class="modal-menu">
+
+              <div class="header-area">
+                <div class="header-logo">
+                  <a href="https://www.city.hikari.lg.jp/index.html"><img src="//www.city.hikari.lg.jp/theme/base/img_mobile/sp_header_logo.png" alt="光市 Hikari City 人が輝き やさしさつながる 幸せ創造都市 ひかり"></a>
+                </div>
+                <ul class="list">
+                  <li class="menu-search"><a href="#"><img src="//www.city.hikari.lg.jp/theme/base/img_mobile/btn_search.png" alt="検索"></a></li>
+                  <li class="close-btn"><a href="#"><img src="//www.city.hikari.lg.jp/theme/base/img_mobile/btn_menu_close.png" alt="メニューを閉じる"></a></li>
+                </ul>
+              </div>
+              <div class="header-language">
+                <ul class="list">
+                  <li><a lang="en" href="https://www.city.hikari.lg.jp/Foreign_language.html">Foreign language</a></li>
+                </ul>
+              </div>
+              <div class="in">
+
+
+                
+                <!-- ヘッダーメニュー : start -->
+                                                  
+                <script>
+$(function() {
+  $('.headerNaviDynBlock').each(function() {
+    var block = $(this);
+    var list = block.find('.headerNaviDynList');
+    block.css('display', 'none');
+
+    var url = block.attr('url');
+    if (!url) {
+      url = block.attr('data-url');
+      if (!url) {
+        return;
+      }
+    }
+
+    $.getJSON(url, function(json) {
+      var templateOrig = block.find('.headerNaviPageTemplate');
+      if (templateOrig.length == 0) {
+        return;
+      }
+      var template = templateOrig.clone().removeClass('headerNaviPageTemplate').addClass('pageEntity').css('display', '');
+      block.find('.pageEntity').remove();
+      var count = 0;
+      for (var j=0; j<json.length; j++) {
+        var item = json[j];
+        if (item.is_category_index && item.child_pages_count == 0) {
+          continue;
+        }
+        var entity = template.clone();
+        entity.find('.pageLink').attr('href', item.url).text(item.page_name);
+        entity.find('.pageDescription').text(item.description);
+        list.append(entity);
+        count++;
+      }
+      if (count > 0) {
+        block.css('display', '');
+      }
+      templateOrig.remove();
+    });
+  });
+});
+</script>
+
+                <nav class="header-menu">
+                  <div class="bloc">
+                    <div class="title"><a href="https://www.city.hikari.lg.jp/index.html">ホーム</a></div>
+                  </div>
+                  <div class="bloc">
+                    <div class="title"><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/index.html">くらし・手続き</a><span></span></div>
+                    <ul class="list">
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/gomi/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/gomi/index.html">ごみ・リサイクル</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/pet/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/pet/index.html">ペット</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/hikkoshi/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/hikkoshi/index.html">引っ越し</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/uji/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/uji/index.html">光市UJIターン情報</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/shiminkatsudo/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/shiminkatsudo/index.html">市民活動</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/jutaku/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/jutaku/index.html">住宅</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/shohiseikatsu/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/shohiseikatsu/index.html">消費生活</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/jogesuido/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/jogesuido/index.html">上下水道</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/zeikin/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/zeikin/index.html">税金</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/zeikin/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/hoken_nenkin/index.html">保険・年金</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/todokede_shomei/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/todokede_shomei/index.html">届出・証明</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/bosai_shobo/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/bosai_shobo/index.html">防災・消防</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/shakaihosho/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/shakaihosho/index.html">社会保障・税番号制度</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/okuyami/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/okuyami/index.html">お悔やみ</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/kekkon/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/kekkon/index.html">結婚・離婚</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="bloc">
+                    <div class="title"><a href="https://www.city.hikari.lg.jp/kosodate_kyoiku/index.html">子育て・教育</a><span></span></div>
+                    <ul class="list">
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kosodate_kyoiku/ninshin_shussan/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kosodate_kyoiku/ninshin_shussan/index.html">妊娠・出産</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kosodate_kyoiku/kosodate/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kosodate_kyoiku/kosodate/index.html">子育て</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kosodate_kyoiku/nyuen_nyugaku/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kosodate_kyoiku/nyuen_nyugaku/index.html">入園・入学</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kosodate_kyoiku/kyouikunitsuite/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kosodate_kyoiku/kyouikunitsuite/index.html">教育について</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kosodate_kyoiku/kanrenshisetsu/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kosodate_kyoiku/kanrenshisetsu/index.html">子育て・教育関連施設</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="bloc">
+                    <div class="title"><a href="https://www.city.hikari.lg.jp/kenko_fukushi/index.html">健康・福祉</a><span></span></div>
+                    <ul class="list">
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kenko_fukushi/kaigohoken/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kenko_fukushi/kaigohoken/index.html">介護保険</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kenko_fukushi/kenko_iryo_kenshin/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kenko_fukushi/kenko_iryo_kenshin/index.html">健康・医療・検診</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kenko_fukushi/koreisha/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kenko_fukushi/koreisha/index.html">高齢者</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kenko_fukushi/shogaisha/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kenko_fukushi/shogaisha/index.html">障害者（児）</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kenko_fukushi/seikatuhogo/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kenko_fukushi/seikatuhogo/index.html">生活保護制度</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="bloc">
+                    <div class="title"><a href="https://www.city.hikari.lg.jp/kanko_bunka/index.html">観光・文化</a><span></span></div>
+                    <ul class="list">
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kanko_bunka/event/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kanko_bunka/event/index.html">イベント</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kanko_bunka/fishingpark/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kanko_bunka/fishingpark/index.html">フィッシングパーク光</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kanko_bunka/itoko/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kanko_bunka/itoko/index.html">伊藤公資料館</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kanko_bunka/kammuriyama/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kanko_bunka/kammuriyama/index.html">冠山総合公園</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kanko_bunka/shizen/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kanko_bunka/shizen/index.html">自然</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kanko_bunka/bunka/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kanko_bunka/bunka/index.html">文化・行事</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kanko_bunka/rekishi/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kanko_bunka/rekishi/index.html">歴史</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kanko_bunka/satonokuriya/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kanko_bunka/satonokuriya/index.html">里の厨</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kanko_bunka/sports/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/kanko_bunka/sports/index.html">スポーツ</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="bloc">
+                    <div class="title"><a href="https://www.city.hikari.lg.jp/jigyosha/index.html">事業者の方へ</a><span></span></div>
+                    <ul class="list">
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/jigyosha/kankyo/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/jigyosha/kankyo/index.html">環境・廃棄物</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/jigyosha/mynumber/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/jigyosha/mynumber/index.html">事業者向けマイナンバー制度</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/jigyosha/shokogyo/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/jigyosha/shokogyo/index.html">商工業</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/jigyosha/suisangyo/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/jigyosha/suisangyo/index.html">水産業</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/jigyosha/doro/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/jigyosha/doro/index.html">道路・建設・土地</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/jigyosha/nyusatsu/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/jigyosha/nyusatsu/index.html">入札・契約情報</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/jigyosha/nogyo/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/jigyosha/nogyo/index.html">農業</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/jigyosha/yushi/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/jigyosha/yushi/index.html">融資・助成・企業立地</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/jigyosha/ringyo/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/jigyosha/ringyo/index.html">林業</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/jigyosha/rodo/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/jigyosha/rodo/index.html">労働・就職・就業</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="bloc">
+                    <div class="title"><a href="https://www.city.hikari.lg.jp/shisei/index.html">市政情報</a><span></span></div>
+                    <ul class="list">
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/shisei/machizukuri/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/shisei/machizukuri/index.html">まちづくり・建設・道路</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/shisei/kankyo/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/shisei/kankyo/index.html">環境・公害</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/shisei/keikaku/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/shisei/keikaku/index.html">計画・施策</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/shisei/kohokocho/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/shisei/kohokocho/index.html">広報・広聴</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/shisei/shokai/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/shisei/shokai/index.html">市の紹介</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/shisei/shicho/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/shisei/shicho/index.html">市長の部屋</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/shisei/shimin/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/shisei/shimin/index.html">市民参加</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/shisei/kanrisha/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/shisei/kanrisha/index.html">指定管理者制度</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/shisei/hogoseido/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/shisei/hogoseido/index.html">情報公開制度と個人情報保護制度</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/shisei/senkyo/index.tree.json">
+                        <div class="title2"><a href="https://www.city.hikari.lg.jp/shisei/senkyo/index.html">選挙</a><span></span></div>
+                        <ul class="list2 headerNaviDynList">
+                          <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                        </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
+
+
+
+
+                                <!-- ヘッダーメニュー : end -->
+
+                                                                  <div class="header-line">
+                  <ul class="list">
+                    <li><a href="https://www.city.hikari.lg.jp/online_service/13040.html">光市公式 LINE</a></li>
+                  </ul>
+                </div>              
+                <div class="header-insta">
+                  <ul class="list">
+                    <li><a href="https://www.instagram.com/hikari_city/" target="_blank">光市公式 Instagram</a></li>
+                  </ul>
+                </div>
+                <div class="header-fb">
+                  <ul class="list">
+                    <li><a href="https://www.facebook.com/city.hikari/" target="_blank">光市公式 Facebook</a></li>
+                  </ul>
+                </div>
+                <div class="header-btn">
+                  <ul class="list jqs-go-to-pc">
+                    <li class="pc-view-btn"><a href="https://www.city.hikari.lg.jp/index.html" class="jqs-go-to-pc">PC版を表示</a></li>
+                    <li class="close-btn"><a href="#">メニューを閉じる</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- 展開メニュー : end-->
+
+            <!-- 展開検索 : start -->
+            <div class="modal-search-bg"></div>
+            <div class="modal-search">
+              <div class="header-area">
+                <div class="header-logo">
+                  <a href="https://www.city.hikari.lg.jp/index.html"><img src="//www.city.hikari.lg.jp/theme/base/img_mobile/sp_header_logo.png" alt="光市 Hikari City 人が輝き やさしさつながる 幸せ創造都市 ひかり"></a>
+                </div>
+                <ul class="list">
+                  <li class="close-btn"><a href="#"><img src="//www.city.hikari.lg.jp/theme/base/img_mobile/btn_menu_close.png" alt="メニューを閉じる"></a></li>
+                  <li class="open-btn"><a href="#"><img src="//www.city.hikari.lg.jp/theme/base/img_mobile/btn_menu_open.png" alt="メニューを開く"></a></li>
+                </ul>
+              </div>
+              <div class="in">
+                <div class="google-search">
+                                                  
+
+
+
+
+                          
+                
+                  
+                  
+                                      <div class="gcse-searchbox-only" data-resultsurl="//www.city.hikari.lg.jp/result.html" data-enableAutoComplete="true"></div>
+  
+                                        </div>
+                <div class="header-btn">
+                  <ul class="list">
+                    <li class="close-btn"><a href="#">メニューを閉じる</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- 展開検索 : end-->
+
+                
+
+
+          </header>
+          <!-- SP用ヘッダー : end -->
+          
+          
+          <!-- メイン画像エリア : start -->
+          <div id="main-img">
+            
+            
+                        <div class="slider-area">
+              <ul class="bxslider list">
+                                
+
+          
+  
+
+    
+        
+                                          
+                              
+                  
+                                                                  
+                                      
+                      
+                                    
+
+    <li class="img-item1">
+      <a href="https://www.city.hikari.lg.jp/soshiki/7/kanko_1/kanko/16609.html">      
+        <img alt="虹ケ浜・ナショナルビーチパークプロジェクト" src="//www.city.hikari.lg.jp/material/images/group/1/20260729kannkousitelipuromo-syonnsuisinnka-ver06.png">
+
+      </a>    </li>
+  
+                  
+                                                                  
+                                      
+                      
+                                    
+
+    <li class="img-item2">
+      <a href="https://www.city.hikari.lg.jp/soshiki/6/kenko/1/3/2401.html">      
+        <img alt="熱中症に注意" src="//www.city.hikari.lg.jp/material/images/group/1/R8heatstroke1.jpg">
+
+      </a>    </li>
+  
+                  
+                                                                  
+                                      
+                      
+                                    
+
+    <li class="img-item3">
+      <a href="https://www.city.hikari.lg.jp/soshiki/9/bunka/bunkashinkou/1/events/16389.html">      
+        <img alt="伊藤公資料館コレクション展（夏）" src="//www.city.hikari.lg.jp/material/images/group/1/bunnkasyakaikyouikuka-ver02.jpg">
+
+      </a>    </li>
+  
+                  
+                                                                  
+                                      
+                      
+                                    
+
+    <li class="img-item4">
+      <a href="https://www.city.hikari.lg.jp/soshiki/7/kanko_1/citypro/15640.html">      
+        <img alt="カンロ飴食堂のまちひかり" src="//www.city.hikari.lg.jp/material/images/group/1/kanrosyokudo.jpg">
+
+      </a>    </li>
+  
+                  
+                                                                  
+                                      
+                      
+                                    
+
+    <li class="img-item5">
+      <a href="http://www.city.hikari.lg.jp/soshiki/1/kikaku/ijyuu_teijyuu/index.html">      
+        <img alt="光つながりサイト" src="//www.city.hikari.lg.jp/material/images/group/1/tunagarisaito1.jpg">
+
+      </a>    </li>
+  
+                  
+                                                                      
+    
+                              </ul>
+              <div class="pager-auto">
+                <div class="pager"></div>
+                <div class="auto"></div>
+              </div>
+            </div>
+                        
+          </div>
+          <!-- メイン画像エリア : end -->
+
+
+                                  
+            
+          
+          <div class="sp-parts">
+            <div class="header-1st-menu">
+              <div class="slogan">
+                <p class="title"><img src="theme/base/img_mobile/sp_slogan_title.png" alt="光市3つの都市宣言"></p>
+                <ul class="list">
+                  <li><a href="https://www.city.hikari.lg.jp/soshiki/6/kodomo/kosodate/1/oppaitoshi/1069.html"><img src="theme/base/img_mobile/sp_menu_slogan1.png" alt="おっぱい 都市宣言"></a></li>
+                  <li><a href="https://www.city.hikari.lg.jp/soshiki/3/kankyoseisaku/seisaku/1770.html"><img src="theme/base/img_mobile/sp_menu_slogan2.png" alt="自然敬愛 都市宣言"></a></li>
+                  <li><a href="https://www.city.hikari.lg.jp/soshiki/3/seikatsu/shisei/2/1741.html"><img src="theme/base/img_mobile/sp_menu_slogan3.png" alt="安全・安心 都市宣言"></a></li>
+                </ul>
+              </div>
+              <div class="other-menu">
+                <ul class="list">
+                  <li><a href="//www.city.hikari.lg.jp/section/bousai_portal/bousai_portal.html"><img src="//www.city.hikari.lg.jp/theme/base/img_mobile/sp_menu_kinkyu.png" alt="光市防災ポータル"></a></li>
+                  <li><a href="https://www.city.hikari.lg.jp/safety_info/index.html"><img src="//www.city.hikari.lg.jp/theme/base/img_mobile/sp_menu_anzen.png" alt="安全・安心情報"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <!-- header-print : end -->
+
+
+
+        <section id="container">
+          <div id="container-in" class="clearfix chg-color">
+
+            <!-- Gナビ : start -->
+                          
+<script>
+$(function() {
+  $('.headerNaviDynBlock').each(function() {
+    var block = $(this);
+    var list = block.find('.headerNaviDynList');
+    block.css('display', 'none');
+
+    var url = block.attr('url');
+    if (!url) {
+      url = block.attr('data-url');
+      if (!url) {
+        return;
+      }
+    }
+
+    $.getJSON(url, function(json) {
+      var templateOrig = block.find('.headerNaviPageTemplate');
+      if (templateOrig.length == 0) {
+        return;
+      }
+      var template = templateOrig.clone().removeClass('headerNaviPageTemplate').addClass('pageEntity').css('display', '');
+      block.find('.pageEntity').remove();
+      var count = 0;
+      for (var j=0; j<json.length; j++) {
+        var item = json[j];
+        if (item.is_category_index && item.child_pages_count == 0) {
+          continue;
+        }
+        var entity = template.clone();
+        entity.find('.pageLink').attr('href', item.url).text(item.page_name);
+        entity.find('.pageDescription').text(item.description);
+        list.append(entity);
+        count++;
+      }
+      if (count > 0) {
+        block.css('display', '');
+      }
+      templateOrig.remove();
+    });
+  });
+});
+</script>
+
+
+            <nav id="global-nav">
+                            <div class="outer nav1">
+                              <div class="in">
+                  <ul class="bloc">
+                                        <li class="logo">
+                      <a href="https://www.city.hikari.lg.jp/index.html"><img src="//www.city.hikari.lg.jp/theme/base/img_top/pc_header_logo3.png" alt="光市 Hikari City"></a>
+                    </li>
+                                        <li class="title">
+                      <a class="target" href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/index.html"><span>くらし・手続き</span></a>
+                                            <div class="box top-nav">
+                                              <div class="inner">
+                          <div class="left-area">
+                            <ul class="list">
+                              <li><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/gomi/index.html">ごみ・リサイクル</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/pet/index.html">ペット</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/hikkoshi/index.html">引っ越し</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/uji/index.html">光市UJIターン情報</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/shiminkatsudo/index.html">市民活動</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/jutaku/index.html">住宅</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/shohiseikatsu/index.html">消費生活</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/jogesuido/index.html">上下水道</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/zeikin/index.html">税金</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/hoken_nenkin/index.html">保険・年金</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/todokede_shomei/index.html">届出・証明</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/bosai_shobo/index.html">防災・消防</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/shakaihosho/index.html">社会保障・税番号制度</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/okuyami/index.html">お悔やみ</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kurashi_tetsuzuki/kekkon/index.html">結婚・離婚</a></li>
+                            </ul>
+                          </div>
+                          <div class="right-area">
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/gomi/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/pet/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/hikkoshi/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/uji/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/shiminkatsudo/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/jutaku/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/shohiseikatsu/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/jogesuido/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/zeikin/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/hoken_nenkin/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/todokede_shomei/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/bosai_shobo/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/shakaihosho/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/okuyami/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kurashi_tetsuzuki/kekkon/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="title">
+                      <a class="target" href="https://www.city.hikari.lg.jp/kosodate_kyoiku/index.html"><span>子育て・教育</span></a>
+                                            <div class="box top-nav">
+                                              <div class="inner">
+                          <div class="left-area">
+                            <ul class="list">
+                              <li><a href="https://www.city.hikari.lg.jp/kosodate_kyoiku/ninshin_shussan/index.html">妊娠・出産</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kosodate_kyoiku/kosodate/index.html">子育て</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kosodate_kyoiku/nyuen_nyugaku/index.html">入園・入学</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kosodate_kyoiku/kyouikunitsuite/index.html">教育について</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kosodate_kyoiku/kanrenshisetsu/index.html">子育て・教育関連施設</a></li>
+                            </ul>
+                          </div>
+                          <div class="right-area">
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kosodate_kyoiku/ninshin_shussan/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kosodate_kyoiku/kosodate/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kosodate_kyoiku/nyuen_nyugaku/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kosodate_kyoiku/kyouikunitsuite/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kosodate_kyoiku/kanrenshisetsu/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="title">
+                      <a class="target" href="https://www.city.hikari.lg.jp/kenko_fukushi/index.html"><span>健康・福祉</span></a>
+                                            <div class="box top-nav">
+                                              <div class="inner">
+                          <div class="left-area">
+                            <ul class="list">
+                              <li><a href="https://www.city.hikari.lg.jp/kenko_fukushi/kaigohoken/index.html">介護保険</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kenko_fukushi/kenko_iryo_kenshin/index.html">健康・医療・検診</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kenko_fukushi/koreisha/index.html">高齢者</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kenko_fukushi/shogaisha/index.html">障害者（児）</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kenko_fukushi/seikatuhogo/index.html">生活保護制度</a></li>
+                            </ul>
+                          </div>
+                          <div class="right-area">
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kenko_fukushi/kaigohoken/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kenko_fukushi/kenko_iryo_kenshin/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kenko_fukushi/koreisha/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kenko_fukushi/shogaisha/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kenko_fukushi/seikatuhogo/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="title">
+                      <a class="target" href="https://www.city.hikari.lg.jp/kanko_bunka/index.html"><span>観光・文化</span></a>
+                                            <div class="box top-nav">
+                                              <div class="inner">
+                          <div class="left-area">
+                            <ul class="list">
+                              <li><a href="https://www.city.hikari.lg.jp/kanko_bunka/event/index.html">イベント</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kanko_bunka/fishingpark/index.html">フィッシングパーク光</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kanko_bunka/itoko/index.html">伊藤公資料館</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kanko_bunka/kammuriyama/index.html">冠山総合公園</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kanko_bunka/shizen/index.html">自然</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kanko_bunka/bunka/index.html">文化・行事</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kanko_bunka/rekishi/index.html">歴史</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kanko_bunka/satonokuriya/index.html">里の厨</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/kanko_bunka/sports/index.html">スポーツ</a></li>
+                            </ul>
+                          </div>
+                          <div class="right-area">
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kanko_bunka/event/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kanko_bunka/fishingpark/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kanko_bunka/itoko/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kanko_bunka/kammuriyama/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kanko_bunka/shizen/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kanko_bunka/bunka/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kanko_bunka/rekishi/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kanko_bunka/satonokuriya/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/kanko_bunka/sports/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="title">
+                      <a class="target" href="https://www.city.hikari.lg.jp/jigyosha/index.html"><span>事業者の方へ</span></a>
+                                            <div class="box top-nav">
+                                              <div class="inner">
+                          <div class="left-area">
+                            <ul class="list">
+                              <li><a href="https://www.city.hikari.lg.jp/jigyosha/kankyo/index.html">環境・廃棄物</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/jigyosha/mynumber/index.html">事業者向けマイナンバー制度</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/jigyosha/shokogyo/index.html">商工業</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/jigyosha/suisangyo/index.html">水産業</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/jigyosha/doro/index.html">道路・建設・土地</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/jigyosha/nyusatsu/index.html">入札・契約情報</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/jigyosha/nogyo/index.html">農業</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/jigyosha/yushi/index.html">融資・助成・企業立地</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/jigyosha/ringyo/index.html">林業</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/jigyosha/rodo/index.html">労働・就職・就業</a></li>
+                            </ul>
+                          </div>
+                          <div class="right-area">
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/jigyosha/kankyo/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/jigyosha/mynumber/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/jigyosha/shokogyo/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/jigyosha/suisangyo/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/jigyosha/doro/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/jigyosha/nyusatsu/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/jigyosha/nogyo/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/jigyosha/yushi/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/jigyosha/ringyo/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/jigyosha/rodo/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="title">
+                      <a class="target" href="https://www.city.hikari.lg.jp/shisei/index.html"><span>市政情報</span></a>
+                                            <div class="box top-nav">
+                                              <div class="inner">
+                          <div class="left-area">
+                            <ul class="list">
+                              <li><a href="https://www.city.hikari.lg.jp/shisei/machizukuri/index.html">まちづくり・建設・道路</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/shisei/kankyo/index.html">環境・公害</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/shisei/keikaku/index.html">計画・施策</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/shisei/kohokocho/index.html">広報・広聴</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/shisei/shokai/index.html">市の紹介</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/shisei/shicho/index.html">市長の部屋</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/shisei/shimin/index.html">市民参加</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/shisei/kanrisha/index.html">指定管理者制度</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/shisei/hogoseido/index.html">情報公開制度と個人情報保護制度</a></li>
+                              <li><a href="https://www.city.hikari.lg.jp/shisei/senkyo/index.html">選挙</a></li>
+                            </ul>
+                          </div>
+                          <div class="right-area">
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/shisei/machizukuri/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/shisei/kankyo/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/shisei/keikaku/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/shisei/kohokocho/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/shisei/shokai/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/shisei/shicho/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/shisei/shimin/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/shisei/kanrisha/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/shisei/hogoseido/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                            <div class="headerNaviDynBlock" data-url="//www.city.hikari.lg.jp/shisei/senkyo/index.tree.json">
+                            <ul class="list headerNaviDynList">
+                              <li class="headerNaviPageTemplate"><a class="pageLink"></a></li>
+                            </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+                        <!-- Gナビ : end -->
+
+
+
+            <!-- ライフシーンで探す : start -->
+            <div id="lifescene">
+              <h2 class="contents-title">
+                <span class="jp">ライフシーンで探す</span>
+                <span class="en"><span lang="en">Search by life scene</span></span>
+              </h2>
+              <ul class="list">
+                <li class="process"><a href="https://www.city.hikari.lg.jp/life_scene/procedure_proof/index.html">手続き・証明</a></li>
+                <li class="children"><a href="https://www.city.hikari.lg.jp/life_scene/birth_parenting/index.html">出産・子育て</a></li>
+                <li class="school"><a href="https://www.city.hikari.lg.jp/life_scene/lifescene_admission/index.html">入園・入学</a></li>
+                <li class="job"><a href="https://www.city.hikari.lg.jp/life_scene/employment_retirement/index.html">就職・退職</a></li>
+                <li class="marriage"><a href="https://www.city.hikari.lg.jp/life_scene/marriage_divorce/index.html">結婚・離婚</a></li>
+                <li class="welfare"><a href="https://www.city.hikari.lg.jp/life_scene/oldage_care/index.html">高齢・介護</a></li>
+                <li class="okuyami"><a href="https://www.city.hikari.lg.jp/life_scene/lifescene_condolence/index.html">お悔やみ</a></li>
+                <li class="recycle"><a href="https://www.city.hikari.lg.jp/life_scene/lifescene_garbage/index.html">ごみ</a></li>
+                <li class="tax"><a href="https://www.city.hikari.lg.jp/life_scene/lifescene_tax/index.html">税金</a></li>
+                <li class="medical"><a href="https://www.city.hikari.lg.jp/life_scene/sick_injury/index.html">病気・けが</a></li>
+              </ul>
+            </div>
+            <!-- ライフシーンで探す : end -->
+
+
+            <!-- ニュース＆イベント : start -->
+            <div id="news-event">
+              <div class="outer">
+                <div class="inner">
+                  <h2 class="contents-title">
+                    <span class="jp">ニュース＆イベント</span>
+                    <span class="en"><span lang="en">News & Event</span></span>
+                  </h2>
+
+                  <!-- タブ -->
+                  <div class="tab-bloc">
+
+                    <ul class="tab">
+                      <li class="whats">
+                        <div class="inner2">
+                          <h3 class="title"><a href="#whats-contents"><span>新着情報</span></a></h3>
+                          <div id="whats-contents" class="bloc">
+                            <div class="area" tabindex="-1">
+                              <div class="pageListDynBlock"
+                                data-url="//www.city.hikari.lg.jp/index.update.json"
+                                data-show-shortcut="1"
+                                data-limit="10"
+                                data-date-span="90"
+                                data-date-format="%Y年%m月%d日"
+                                data-current-page-no="1"
+                                data-show-index="1">
+                                <div class="pageListExists">
+                                  <ul class="list pageListBlock">
+                                    <li class="pageEntity">
+                                      <span class="date pageDate"></span>
+                                      <span class="txt"><a class="pageLink"></a></span>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="pageListNotExists">
+                                  <span>現在、新着情報はございません。</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="bottom-btn">
+                              <p class="goto-btn"><a href="https://www.city.hikari.lg.jp/news_list.html">新着情報一覧</a></p>
+                              <p class="rss-btn"><a href="//www.city.hikari.lg.jp/cgi-bin/feed.php?siteNew=1">RSS</a></p>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="pickup">
+                        <div class="inner2">
+                          <h3 class="title"><a href="#pickup-contents"><span>注目情報</span></a></h3>
+                          <div id="pickup-contents" class="bloc">
+                            <div class="area" tabindex="-1">
+                                                            <div class="pageListDynBlock" data-url="//www.city.hikari.lg.jp/index.update.json"
+                              data-limit="10"
+                              data-date-span="90"
+                              data-date-format="%Y年%m月%d日"
+                              data-current-page-no="1"
+                              data-show-index="1"
+                              data-show-tags="0"
+                              data-tags-position="0"
+                              data-tag-filter-targets="1">
+                                <div class="pageListExists">
+                                  <ul class="list pageListBlock">
+                                    <li class="pageEntity">
+                                      <span class="date pageDate"></span>
+                                      <span class="txt"><a class="pageLink"></a></span>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="pageListNotExists">
+                                  <p>現在、注目情報はございません。</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="bottom-btn">
+                              <p class="goto-btn"><a href="https://www.city.hikari.lg.jp/attention_info.html">注目情報一覧</a></p>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+
+                  </div>
+                  <!-- タブ : end -->
+
+                  <!-- イベントカレンダー : start -->
+                  <div class="calendar-bloc">
+                    <div class="event-calendar-inner">
+                      <h2 class="title">イベントカレンダー</h2>
+                              
+
+
+
+
+<script src="//www.city.hikari.lg.jp/material/calendar_common.js?20190101"></script>
+<script src="//www.city.hikari.lg.jp/material/calendar.js?20190101"></script>
+
+  <div id="miniCalendarTable1" class="notranslate">
+  <div class="mini-calendar">
+    <div class="ctrl">
+      <a href="javascript:void(0)" class="miniCalGoPrevMonth back nav">
+      <img src="//www.city.hikari.lg.jp/theme/base/img_top/top_cal_prev.png" title="前の月へ" alt="前の月へ">      </a>
+      <span class="date">
+        <span class="miniCalendarYearAD"></span>年 <span class="miniCalendarMonth"></span>月
+      </span>
+      <a href="javascript:void(0)" class="miniCalGoNextMonth next nav">
+      <img src="//www.city.hikari.lg.jp/theme/base/img_top/top_cal_next.png" title="次の月へ" alt="次の月へ">      </a>
+    </div>
+    <table class="calendar-area miniCalGridTable table">
+      <tr class="week-row">
+        <th class="sun"><img src="//www.city.hikari.lg.jp/theme/base/img_top/wday_1.jpg" alt="日曜"></th>
+        <th><img src="//www.city.hikari.lg.jp/theme/base/img_top/wday_2.jpg" alt="月曜"></th>
+        <th><img src="//www.city.hikari.lg.jp/theme/base/img_top/wday_3.jpg" alt="火曜"></th>
+        <th><img src="//www.city.hikari.lg.jp/theme/base/img_top/wday_4.jpg" alt="水曜"></th>
+        <th><img src="//www.city.hikari.lg.jp/theme/base/img_top/wday_5.jpg" alt="木曜"></th>
+        <th><img src="//www.city.hikari.lg.jp/theme/base/img_top/wday_6.jpg" alt="金曜"></th>
+        <th class="sat"><img src="//www.city.hikari.lg.jp/theme/base/img_top/wday_7.jpg" alt="土曜"></th>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<form id="miniCalendarStateBlock1" style="display:none;">
+<input type="hidden" name="date" value="" />
+</form>
+
+<script>
+$(function() {
+  var calendar = new SmartCMSCalendar(
+      "//www.city.hikari.lg.jp/calendar.html",
+      "//www.city.hikari.lg.jp/cgi-bin/get_event_calendar.php?categoryNo=1",
+      1,
+      0,
+      1
+  );
+  calendar.initMiniCalendar(
+    "//www.city.hikari.lg.jp/calendar.json"
+  );
+});
+</script>
+                      <p class="kosodate-top-btn calendar-btn">
+                        <a href="//www.city.hikari.lg.jp/calendar.html"><span>イベント一覧を見る</span></a>
+                      </p>
+                    </div>
+                  </div>
+                  <!-- イベントカレンダー : end -->
+
+                </div>
+              </div>
+            </div>
+            <!-- ニュース＆イベント : end -->
+
+
+            <!-- インフォメーション : start -->
+                        
+
+            <div id="info">
+              <h2 class="contents-title">
+                <span class="jp">インフォメーション</span>
+                <span class="en"><span lang="en">Information</span></span>
+              </h2>
+              <div class="type1">
+                <ul class="list">
+                
+                                                                                  
+                                                                                      
+                                  
+                                                                                                                                                              <li><a href="https://www.city.hikari.lg.jp/shisei/shicho/6394.html">
+                        <span class="txt">市長の部屋</span>
+                        <span class="photo"><img alt="市長" src="//www.city.hikari.lg.jp/material/images/group/1/shityonoheya1.jpg"></span>
+                      </a></li>
+                                                                                                  
+                                  
+                                                                                                                                                              <li><a href="https://www.city.hikari.lg.jp/shisei/shimin/shigikai/8724.html">
+                        <span class="txt">市議会</span>
+                        <span class="photo"><img alt="市議会" src="//www.city.hikari.lg.jp/material/images/group/1/gizyou_info3.jpg"></span>
+                      </a></li>
+                                                                                                  
+                                  
+                                                                                                                                                              <li><a href="https://www.city.hikari.lg.jp/shisei/shokai/index.html">
+                        <span class="txt">光市のご案内</span>
+                        <span class="photo"><img alt="光市のご案内" src="//www.city.hikari.lg.jp/material/images/group/1/info_hikari_.png"></span>
+                      </a></li>
+                                                                                                  
+                                  
+                                                                                                                                                              <li><a href="https://webgis.alandis.jp/hikari35/portal/index.html" target="_blank">
+                        <span class="txt">ひかりピカピカマップ</span>
+                        <span class="photo"><img alt="公開型GIS" src="//www.city.hikari.lg.jp/material/images/group/1/koukaigataGIS.png"></span>
+                      </a></li>
+                                                                                                                      
+                                  
+                                                                                                                                                              <li><a href="https://www.city.hikari.lg.jp/online_service/13053.html">
+                        <span class="txt">オンライン行政手続</span>
+                        <span class="photo"><img alt="オンライン行政手続" src="//www.city.hikari.lg.jp/material/images/group/1/online3.jpg"></span>
+                      </a></li>
+                                                                                                  
+                                  
+                                                                                                                                                              <li><a href="https://www.city.hikari.lg.jp/soshiki/1/johosuishin/kenko/2297.html">
+                        <span class="txt">光市情報カメラ</span>
+                        <span class="photo"><img alt="情報カメラ" src="//www.city.hikari.lg.jp/material/images/group/1/jyouhoukamera.jpg"></span>
+                      </a></li>
+                                                                                                  
+                                  
+                                                                                                                                                              <li><a href="https://www.city.hikari.lg.jp/soshiki/2/nyusatsu/4061.html">
+                        <span class="txt">入札契約情報</span>
+                        <span class="photo"><img alt="入札情報" src="//www.city.hikari.lg.jp/material/images/group/1/nyusatsu.jpg"></span>
+                      </a></li>
+                                                                                                  
+                                  
+                                                                                                                                                              <li><a href="https://www.city.hikari.lg.jp/soshiki/index.html">
+                        <span class="txt">各課のご案内</span>
+                        <span class="photo"><img alt="各課のご案内" src="//www.city.hikari.lg.jp/material/images/group/1/info6.jpg"></span>
+                      </a></li>
+                                                                                                  
+                                  
+                                                                                                                                                              <li><a href="https://www.hikari-kanko.org/" target="_blank">
+                        <span class="txt">観光協会</span>
+                        <span class="photo"><img alt="kanko" src="//www.city.hikari.lg.jp/material/images/group/1/kanko.jpg"></span>
+                      </a></li>
+                                                                                                                      
+                                  
+                                                                                                                                                              <li><a href="https://www.city.hikari.lg.jp/soshiki/1/koho/kouhou/koho/16649.html">
+                        <span class="txt">広報紙「ひかり」</span>
+                        <span class="photo"><img alt="広報ひかり" src="//www.city.hikari.lg.jp/material/images/group/1/kouhouhikari.png"></span>
+                      </a></li>
+                                                                                                  
+                                                
+
+                </ul>
+              </div>
+
+              <div class="type2">
+                <ul class="list">
+                
+
+                                                <li id="h_idx_info_flex_2_0">
+
+                  <a class="icon" href="https://www.city.hikari.lg.jp/soshiki/1/johosuishin/site/2275.html">メール配信サービス</a>                </li>                                <li id="h_idx_info_flex_2_1">
+
+                  <a class="icon" href="https://www.city.hikari.lg.jp/soshiki/3/shimin/kurashi/3031.html">行政手続きチェックシート</a>                </li>                                <li id="h_idx_info_flex_2_2">
+
+                  <a class="icon" href="https://www.city.hikari.lg.jp/soshiki/1/johosuishin/938.html">ご意見・お問い合わせ</a>                </li>                                <li id="h_idx_info_flex_2_3">
+
+                  <a class="icon" href="https://www.city.hikari.lg.jp/soshiki/1/koho/kouhou/8/1297_6/index.html">令和8年度記者発表資料</a>                </li>                                <li id="h_idx_info_flex_2_4">
+
+                  <a class="icon" href="https://www.city.hikari.lg.jp/soshiki/2/somu/soumuhourei/3593.html">光市の条例と規則</a>                </li>                                <li id="h_idx_info_flex_2_5">
+
+                  <a class="icon" href="https://www.city.hikari.lg.jp/soshiki/3/chiikizukuri/5/1/4054.html">生涯学習</a>                </li>                                <li id="h_idx_info_flex_2_6">
+
+                  <a class="icon" href="https://www.city.hikari.lg.jp/shisei/machizukuri/koukyoukoutsu/9615.html">バス時刻表</a>                </li>                                <li id="h_idx_info_flex_2_7">
+
+                  <a class="icon2" href="http://www.city.hikari.lg.jp/cgi-bin/chatbot_faq.php/1">よくある質問</a>                </li>                                <li id="h_idx_info_flex_2_8">
+
+                  <a class="icon" href="https://www.city.hikari.lg.jp/soshiki/6/kenko/1/4/2397.html">光市休日診療所</a>                </li>                                <li id="h_idx_info_flex_2_9">
+
+                  <a class="icon2" href="https://weathernews.jp/onebox/tenki/yamaguchi/35210/" target="_blank">光市の天気</a>                </li>                                <li id="h_idx_info_flex_2_10">
+
+                  <a class="icon" href="https://www.city.hikari.lg.jp/soshiki/2/somu/2243.html">職員採用情報</a>                </li>                                <li id="h_idx_info_flex_2_11">
+
+                  <a class="icon" href="https://www.city.hikari.lg.jp/soshiki/1/zaisei/jigyosha/1/index.html">市有地の売払いについて</a>                </li>                                <li id="h_idx_info_flex_2_12">
+
+                  <a class="icon2" href="https://1b1300b1.viewer.kintoneapp.com/public/04240a3a49215b1384007ee8f0d00b6a874ed4884092597a7a794c56cd501313" target="_blank">補助金等一覧</a>                </li>                                                
+
+                </ul>
+              </div>
+            </div>
+            <!-- インフォメーション : end -->
+
+
+            <!-- ピックアップ : start -->
+            
+                        
+                        <div id="pickup2">
+              <h2 class="contents-title">
+                <span class="jp">ピックアップ</span>
+                <span class="en"><span lang="en">Pick up</span></span>
+              </h2>
+              <div class="in">
+                <div class="slider">
+                  <ul class="list no-bxslider">
+                  
+
+          
+  
+
+    
+        
+                                          
+                              
+                  
+                                                                  
+                                      
+                      
+                                    
+
+    <li class="img-item1">
+      <a href="https://www.city.hikari.lg.jp/soshiki/1/koho/kouhou/channel/935.html">      
+        <img alt="ひかりチャンネル" src="//www.city.hikari.lg.jp/material/images/group/1/bnr05.jpg">
+
+      </a>    </li>
+  
+                  
+                                                                  
+                                      
+                      
+                                    
+
+    <li class="img-item2">
+      <a href="https://www.city.hikari.lg.jp/soshiki/1/koho/5/979.html">      
+        <img alt="ふるさと光応援寄付金" src="//www.city.hikari.lg.jp/material/images/group/1/bnr02.jpg">
+
+      </a>    </li>
+  
+                  
+                                                                  
+                                      
+                      
+                                    
+
+    <li class="img-item3">
+      <a href="https://www.city.hikari.lg.jp/soshiki/1/kikaku/chihusousei/kigyobanfurusatonouzei/10773.html">      
+        <img alt="企業版ふるさと納税" src="//www.city.hikari.lg.jp/material/images/group/1/hurunou_company1.jpg">
+
+      </a>    </li>
+  
+                  
+                                                                  
+                                      
+                      
+                                    
+
+    <li class="img-item4">
+      <a href="https://www.city.hikari.lg.jp/soshiki/1/johosuishin/site/12950.html">      
+        <img alt="光市LINE公式アカウント登録者募集" src="//www.city.hikari.lg.jp/material/images/group/1/R6HPpickupLINE.jpg">
+
+      </a>    </li>
+  
+                  
+                                                                  
+                                      
+                      
+                                    
+
+    <li class="img-item5">
+      <a href="https://www.city.hikari.lg.jp/soshiki/6/fukushi/nisseki/9631.html">      
+        <img alt="能登半島地震災害義援金の受付" src="//www.city.hikari.lg.jp/material/images/group/1/R6HPpickupgienkin.jpg">
+
+      </a>    </li>
+  
+                  
+                                                                  
+                                      
+                      
+                                    
+
+    <li class="img-item6">
+      <a href="https://www.city.hikari.lg.jp/link/4548.html">      
+        <img alt="フェイスブックページ" src="//www.city.hikari.lg.jp/material/images/group/1/bnr09.jpg">
+
+      </a>    </li>
+  
+                  
+                                                                  
+                                      
+                      
+                                    
+
+    <li class="img-item7">
+      <a href="https://www.city.hikari.lg.jp/soshiki/1/koho/kouhou/photolibrary/index.html">      
+        <img alt="ひかりフォトライブラリー" src="//www.city.hikari.lg.jp/material/images/group/9/main_pick_fotoraiburari.jpg">
+
+      </a>    </li>
+  
+                  
+                                                                  
+                                      
+                      
+                                    
+
+    <li class="img-item8">
+      <a href="https://www.city.hikari.lg.jp/soshiki/6/kenko/1/3/3/2387.html">      
+        <img alt="こころの体温計" src="//www.city.hikari.lg.jp/material/images/group/1/bnr12.jpg">
+
+      </a>    </li>
+  
+                  
+                                                                  
+                  
+                                                                  
+                  
+                                                                  
+                  
+                                                                      
+    
+
+                  </ul>
+                  <div class="control">
+                    <p class="prev"></p>
+                    <p class="next"></p>
+                  </div>
+                  <div class="pager-auto">
+                    <div class="pager"></div>
+                    <div class="auto"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+                                    
+
+            <!-- ピックアップ : end -->
+
+
+            <!-- データ : start -->
+            <div id="city-data">
+              <div class="in">
+                <p class="visually-hidden">光市内の地図。市内の東西にJR山陽本線が通っており、市内の西側に虹ケ浜海水浴場、市内の中心部から少し南西に光市役所がある。光市役所の南東に冠山総合公園があり、南には室積海水浴場がある。</p>
+                <p class="map pc"><img src="theme/base/img_top/city_map.png" alt=""></p>
+                <p class="map sp"><img src="theme/base/img_mobile/sp_city_map.png" alt=""></p>
+                
+
+                <div class="data-area">
+                  <div class="box">
+                    <h2 class="contents-title2">人口と世帯数</h2>
+                                          <p class="date">令和8年7月末日現在</p>
+                                        <dl class="house">
+                      <dt>総世帯数</dt>
+                                              <dd>23,293</dd>
+                                          </dl>
+                    <dl class="people">
+                      <dt>総人口</dt>
+                                              <dd>46,669</dd>
+                                          </dl>
+                    <dl class="male">
+                      <dt>男性</dt>
+                                              <dd>22,333</dd>
+                                          </dl>
+                    <dl class="female">
+                      <dt>女性</dt>
+                                              <dd>24,336</dd>
+                                          </dl>
+                  </div>
+                  <div class="bottom-btn">
+                    <p class="goto-btn"><a href="https://www.city.hikari.lg.jp/soshiki/1/kikaku/1_1/1985.html">統計情報</a></p>
+                  </div>
+                </div>
+                
+
+              </div>
+            </div>
+            <!-- データ : end -->
+
+
+            <!-- 広告 : start -->
+            
+            
+            <div id="k-bnr">
+              <h2 class="contents-title2">広告</h2>
+              <ul class="list">
+                
+                                
+                                
+                                
+                <li id="h_idx_kb_flex_1_3">
+                                <a href="https://tsuru-wagaya.jp/hidamari/html/about/"><img alt="介護施設をお探しなら 有料老人ホーム ひだまりの家" src="//www.city.hikari.lg.jp/material/images/group/1/12.jpg"></a>                
+                </li>                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                <li id="h_idx_kb_flex_1_20">
+                                <a href="https://suo-sousai.com/"><img alt="ヒラソー" src="//www.city.hikari.lg.jp/material/images/group/1/hiraso-.png"></a>                
+                </li>                
+                <li id="h_idx_kb_flex_1_21">
+                                <a href="https://www.city.hikari.lg.jp/soshiki/1/johosuishin/site/1992.html"><img alt="広告募集中" src="//www.city.hikari.lg.jp/material/images/group/1/6.gif"></a>                
+                </li>                
+              </ul>
+              <p class="caution">各バナー広告とそのリンク先の内容は、光市が保証・推奨するものではありません。<a href="https://www.city.hikari.lg.jp/soshiki/1/johosuishin/site/1992.html">広告について</a></p>
+            </div>
+                        
+            <!-- 広告 : end -->
+
+
+          <!-- //#container-in  -->
+          </div>
+        <!-- //#container  -->
+        </section>
+
+
+
+
+                    
+
+        <div id="footer-print" class="chg-color">
+          <footer id="footer">
+            <div class="bg">
+              <p id="pagetop-btn"><a href="#wrapper" class="scroll"><img src="//www.city.hikari.lg.jp/theme/base/img_common/btn_pagetop.png" alt="トップへ"></a></p>
+              <div class="footer-area">
+                <div class="header-logo">
+                  <p class="visually-hidden">光市 Hikari City</p>
+                  <a href="https://www.city.hikari.lg.jp/index.html"><img src="//www.city.hikari.lg.jp/theme/base/img_common/pc_footer_logo.png" alt="" class="view-pc"></a>
+                  <a tabindex="-1" href="https://www.city.hikari.lg.jp/index.html"><img src="//www.city.hikari.lg.jp/theme/base/img_mobile/sp_footer_logo.png" alt="" class="view-sp"></a>
+                </div>
+                <div class="in">
+                  <div class="box footer-flex">
+                    <div>
+                      <p class="city-name">光市役所</p>
+                    </div>
+                    <div>
+                      <p class="RegistrationNumber">法人番号<br class="view-sp">6000020352101<br>
+                        適格請求書発行事業者登録番号<br class="view-sp">T6000020352101</p>
+                    </div>               
+                  </div>
+                  <div class="box">
+                    <p class="city-address">〒743-8501 <br class="sp">山口県光市中央六丁目1番1号</p>
+                    <p class="section-btn goto-btn"><a href="https://www.city.hikari.lg.jp/soshiki/1/johosuishin/938.html">各課の連絡先</a></p>
+                  </div>
+                  <div class="box">
+                    <p class="city-info">開庁時間：午前8時30分から午後5時15分まで<br>
+                    開庁日：月曜日から金曜日[祝日・休日および年末年始を除く]</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <nav class="footer-menu">
+              <ul class="list">
+                <li><a href="https://www.city.hikari.lg.jp/sitemap.html">サイトマップ</a></li>
+                <li><a href="https://www.city.hikari.lg.jp/soshiki/1/johosuishin/938.html">ご意見・お問い合わせ</a></li>
+                <li><a href="https://www.city.hikari.lg.jp/soshiki/1/johosuishin/site/3592.html">このサイトについて</a></li>
+                <li><a href="https://www.city.hikari.lg.jp/soshiki/1/johosuishin/site/2741.html">プライバシーポリシー</a></li>
+                <li><a href="https://www.city.hikari.lg.jp/soshiki/1/johosuishin/shisei/1/636.html">アクセスマップ</a></li>
+              </ul>
+            </nav>
+            <p class="copyright" lang="en">Copyright (c) 2020 Hikari City. All Rights Reserved.</p>
+          </footer>
+        </div>
+
+
+                 
+
+  
+          
+        
+    
+          
+          
+
+    
+          
+
+              <script id="chatbot-load" src="//chatbot.smart-lgov.jp/view/js/chatbot.js?1786240807" data-chatbot-endpoint="//chatbot.smart-lgov.jp/v1/" data-chatbot-id="chatbot_hikari" data-chatbot-token="REDACTED_PUBLIC_CLIENT_TOKEN_2_SHA256_c2d424915c180bceed0996482d41ed2bd0e4115cdb975eb1a9a35f0b955507c1_LEN_157" data-chatbot-ui="1"></script>
+                          <link rel="stylesheet" href="//www.city.hikari.lg.jp/theme/base/css/chatbot/chatbot_custom_type_1.css?1786240807">
+            
+                          <div id="WagamachiPortalBanner"></div>
+              
+
+      <!-- //#wrapper-in2  -->
+      </div>
+    <!-- //#wrapper-in  -->
+    </div>
+  <!-- //#wrapper  -->
+  </div>
+
+  <script>
+  function cmsDynDateFormat(date, format) {
+    var jpWeek = ['日', '月', '火', '水', '木', '金', '土'];
+    return format.replace('%Y', date.getFullYear()).replace('%m', ('0' + (date.getMonth() + 1)).slice(-2)).replace('%d', ('0' + date.getDate()).slice(-2)).replace('%a', jpWeek[date.getDay()])
+        .replace('%H', ('0' + date.getHours()).slice(-2)).replace('%M', ('0' + date.getMinutes()).slice(-2)).replace('%S', ('0' + date.getSeconds()).slice(-2));
+  }
+  function cmsDynExecuteGetPageList() {
+    var outerBlocks = $('.pageListDynBlock');
+    outerBlocks.each(function() {
+      var block = $(this);
+      block.find('.pageListExists').css('display', 'none');
+      block.find('.pageListNotExists').css('display', 'none');
+
+      var url = block.attr('data-url');
+
+      var cond = {};
+
+      cond.limit = parseInt(block.attr('data-limit'));
+      cond.showIndex = parseInt(block.attr('data-show-index'));
+      cond.showMobile = parseInt(block.attr('data-show-mobile'));
+      dateBegin = block.attr('data-date-begin');
+      dateSpan = block.attr('data-date-span');
+
+      cond.curPageNo = block.attr('data-current-page-no');
+      cond.dirClass = block.attr('data-dir-class');
+      cond.pageClass = block.attr('data-page-class');
+
+      cond.timeBegin = 0;
+      if (dateBegin) {
+        cond.timeBegin = new Date(dateBegin);
+      } else if (dateSpan) {
+        cond.timeBegin = Date.now() - dateSpan * 86400000;
+      }
+      var recentSpan = block.attr('data-recent-span');
+      cond.recentBegin = 0;
+      if (recentSpan) {
+        cond.recentBegin = Date.now() - recentSpan * 86400000;
+      }
+      cond.dateFormat = block.attr('data-date-format');
+      if (!cond.dateFormat) {
+        cond.dateFormat = '%Y/%m/%d %H:%M:%S';
+      }
+      cond.joinGrue = block.attr('data-join-grue');
+      if (!cond.joinGrue) {
+        cond.joinGrue = ' , ';
+      }
+      cond.eventDateFormat = block.attr('data-event-date-format');
+      if (!cond.eventDateFormat) {
+        cond.eventDateFormat = cond.dateFormat;
+      }
+      cond.eventType = block.attr('data-event-type');
+      cond.eventField = block.attr('data-event-field');
+      cond.eventArea = block.attr('data-event-area');
+      eventDateSpan = block.attr('data-event-date-span');
+      cond.eventTimeEnd = 0;
+      if (eventDateSpan) {
+        cond.eventTimeEnd = Date.now() + eventDateSpan * 86400000;
+      }
+
+      // タグ
+      cond.tagDisplay = block.attr('data-show-tags');
+      cond.tagPosition = block.attr('data-tags-position');
+      cond.tagFilterTargets = block.attr('data-tag-filter-targets');
+
+      $.getJSON(url, function(json) {
+        cmsDynApplyPageListJson(block, json, cond);
+      }).fail(function(jqxhr, textStatus, error) {
+        block.css('display', 'none');
+      });
+    });
+  }
+  function cmsDynApplyPageListJson(block, json, cond) {
+    var now = Date.now();
+    var list = block.find('.pageListBlock');
+    var template = list.find('.pageEntity:first').clone();
+    list.find('.pageEntity').remove();
+
+    var count = 0;
+
+    for (var i = 0; i < json.length; i++) {
+      var item = json[i];
+      var itemDate = new Date(item.publish_datetime);
+
+      if (!cond.showIndex && item.is_category_index) {
+        continue;
+      }
+      if (!cond.showMobile && item.is_keitai_page) {
+        continue;
+      }
+      if (cond.timeBegin && itemDate.getTime() < cond.timeBegin) {
+        continue;
+      }
+
+      // タグによる絞込み
+      if ('tag' in item && item.tag && cond.tagFilterTargets != null) {
+        var filteringNos = (!isNaN(cond.tagFilterTargets)) ? [cond.tagFilterTargets] : cond.tagFilterTargets.split(/,|\s/);
+        var isTarget = false;
+        item.tag.forEach(function(tagItem, idx) {
+          if (filteringNos.indexOf(tagItem.tag_no + "") >= 0) {
+            isTarget = true;
+          }
+        });
+        if (!isTarget) {
+          continue;
+        }
+      }
+
+      var entity = template.clone();
+      if ('event' in item && item['event']) {
+        var pageEvent = item['event'];
+        if (cond.eventType && cond.eventType != pageEvent.event_type_name) {
+          continue;
+        }
+        if (cond.eventField && $.inArray(cond.eventField, pageEvent.event_fields) < 0) {
+          continue;
+        }
+        if (cond.eventArea && $.inArray(cond.eventArea, pageEvent.event_area) < 0) {
+          continue;
+        }
+
+        var eventDateString = '';
+        if (cond.eventTimeEnd) {
+          if (pageEvent.event_date_type_id == 0) {
+            var startDatetime = pageEvent.event_start_datetime ? new Date(pageEvent.event_start_datetime) : false;
+            var endDatetime = pageEvent.event_end_datetime ? new Date(pageEvent.event_end_datetime) : false;
+            if (startDatetime && endDatetime) {
+              if (startDatetime.getTime() > cond.eventTimeEnd || endDatetime.getTime() <= now) {
+                continue;
+              }
+              eventDateString = cmsDynDateFormat(startDatetime, cond.eventDateFormat) + '～' + cmsDynDateFormat(endDatetime, cond.eventDateFormat);
+            } else if (startDatetime) {
+              if (startDatetime.getTime() > cond.eventTimeEnd) {
+                continue;
+              }
+            } else {
+              if (endDatetime.getTime() <= now) {
+                continue;
+              }
+              eventDateString = '～' + cmsDynDateFormat(endDatetime, cond.eventDateFormat);
+            }
+          } else if (pageEvent.event_date_type_id == 1) {
+            var filteredDates = $.grep(pageEvent.event_dates, function(value, index) {
+              var eventTime1 = new Date(value[0]+'T00:00:00+09:00').getTime();
+              var eventTime2 = new Date(value[1]+'T23:59:59+09:00').getTime();
+              return (eventTime1 <= cond.eventTimeEnd && eventTime2 >= now);
+            });
+            if (filteredDates.length == 0) {
+              continue;
+            }
+          }
+        }
+        if (pageEvent.event_place) {
+          entity.find('.pageEventPlaceExists').css('display', '');
+          entity.find('.pageEventPlace').text(pageEvent.event_place);
+        } else {
+          entity.find('.pageEventPlaceExists').css('display', 'none');
+          entity.find('.pageEventPlace').text('');
+        }
+        if (pageEvent.event_date_supplement) {
+          entity.find('.pageEventDateExists').css('display', '');
+          entity.find('.pageEventDate').text(pageEvent.event_date_supplement);
+        } else if (eventDateString.length > 0) {
+          entity.find('.pageEventDateExists').css('display', '');
+          entity.find('.pageEventDate').text(eventDateString);
+        } else {
+          entity.find('.pageEventDateExists').css('display', 'none');
+          entity.find('.pageEventDate').text('');
+        }
+
+        if (pageEvent.event_type_name) {
+          entity.find('.pageEventTypeExists').css('display', '');
+          entity.find('.pageEventType').text(pageEvent.event_type_name);
+        } else {
+          entity.find('.pageEventTypeExists').css('display', 'none');
+          entity.find('.pageEventType').text('');
+        }
+        if (pageEvent.event_fields && pageEvent.event_fields.length > 0) {
+          entity.find('.pageEventFieldsExists').css('display', '');
+          entity.find('.pageEventFields').text(pageEvent.event_fields.join(cond.joinGrue));
+        } else {
+          entity.find('.pageEventFieldsExists').css('display', 'none');
+          entity.find('.pageEventFields').text('');
+        }
+        if (pageEvent.event_area && pageEvent.event_area.length > 0) {
+          entity.find('.pageEventAreaExists').css('display', '');
+          entity.find('.pageEventArea').text(pageEvent.event_area.join(cond.joinGrue));
+        } else {
+          entity.find('.pageEventAreaExists').css('display', 'none');
+          entity.find('.pageEventArea').text('');
+        }
+        entity.find('.pageEventExists').css('display', '');
+      } else {
+        entity.find('.pageEventExists').css('display', 'none');
+      }
+
+      entity.find('.pageDate').each(function() {
+        var dateString = cmsDynDateFormat(itemDate, cond.dateFormat);
+        $(this).text(dateString);
+      });
+      var pageLink = entity.find('a.pageLink');
+      if (cond.curPageNo == item.page_no) {
+        pageLink.removeAttr('href').removeAttr('page_no').css('display', 'none');
+        pageLink.parent().append('<span class="pageNoLink">' + item.page_name + '</span>');
+      } else {
+        pageLink.attr('page_no', item.page_no).attr('href', item.url).text(item.page_name);
+        pageLink.find('.pageNoLink').remove();
+      }
+
+      entity.find('.pageDescription').text(item.description);
+
+      if ('thumbnail_image' in item && item.thumbnail_image) {
+        entity.find('.pageThumbnail').append($('<img>', {src: item.thumbnail_image, alt: ""}));
+      } else {
+        entity.find('.pageThumbnail').remove();
+      }
+
+      if (cond.recentBegin && itemDate.getTime() >= cond.recentBegin) {
+        entity.find('.pageRecent').css('display', '');
+      } else {
+        entity.find('.pageRecent').css('display', 'none');
+      }
+
+      // タグ付与
+      if ('tag' in item && item.tag) {
+        if (item.tag.length > 0) {
+          var DEFINE_CLASS_NAME_WHEN_TAG_TYPE_IMAGE = 'tag-type-image';
+          var DEFINE_CLASS_NAME_WHEN_TAG_TYPE_TEXT = 'tag-type-text';
+          var DEFINE_CLASS_NAME_WHEN_TAG_POSITION_BEFORE = 'tag-pos-before';
+          var DEFINE_CLASS_NAME_WHEN_TAG_POSITION_AFTER = 'tag-pos-after';
+          var DEFINE_CLASS_NAME_TAG_BLOCK = 'tags';
+          var DEFINE_CLASS_NAME_TAG = 'tag';
+          var DEFINE_CLASS_NAME_TAG_INNER = 'tag-bg';
+
+          // タグの表示位置を判定
+          var tagPositionClassName = (cond.tagPosition == 1) ? DEFINE_CLASS_NAME_WHEN_TAG_POSITION_BEFORE : DEFINE_CLASS_NAME_WHEN_TAG_POSITION_AFTER;
+
+          // タグ出力の外枠を生成
+          var tagListWrapperHtml = $('<span>', {
+            class: [DEFINE_CLASS_NAME_TAG_BLOCK, tagPositionClassName].join(' ')
+          });
+
+          item.tag.forEach(function(tagItem, idx) {
+            // タグの中身を設定
+            var tagBody;
+            if (tagItem.image_file_name != null && tagItem.image_file_name != "") {
+              // 画像
+              tagBody = $('<span>', {
+                class: DEFINE_CLASS_NAME_TAG + tagItem.tag_no,
+              }).append($('<img>', {
+                class: [DEFINE_CLASS_NAME_TAG_INNER, DEFINE_CLASS_NAME_WHEN_TAG_TYPE_IMAGE].join(' '),
+                src: tagItem.image_url,
+                alt: tagItem.tag_name
+              }));
+            } else {
+              // テキスト
+              tagBody = $('<span>', {
+                class: DEFINE_CLASS_NAME_TAG + tagItem.tag_no,
+              }).append($('<span>', {
+                class: [DEFINE_CLASS_NAME_TAG_INNER, DEFINE_CLASS_NAME_WHEN_TAG_TYPE_TEXT].join(' '),
+                text: tagItem.tag_name
+              }));
+            }
+            tagListWrapperHtml.append(tagBody);
+          });
+
+          // 出力
+          if (cond.tagDisplay == 1) {
+            if (tagPositionClassName === DEFINE_CLASS_NAME_WHEN_TAG_POSITION_BEFORE) {
+              entity.find('a.pageLink').before(tagListWrapperHtml);
+            } else {
+              entity.find('a.pageLink').after(tagListWrapperHtml);
+            }
+          }
+        }
+      }
+
+      var removeClasses = [];
+      var appendClasses = [];
+      if (item.is_category_index) {
+        appendClasses = cond.dirClass ? cond.dirClass.split(' ') : [];
+        removeClasses = cond.pageClass ? cond.pageClass.split(' ') : [];
+      } else {
+        removeClasses = cond.dirClass ? cond.dirClass.split(' ') : [];
+        appendClasses = cond.pageClass ? cond.pageClass.split(' ') : [];
+      }
+      $.each(removeClasses, function(idx, val){
+        entity.removeClass(val);
+      });
+      $.each(appendClasses, function(idx, val){
+        entity.addClass(val);
+      });
+
+      entity.css('display', '');
+      list.append(entity);
+      count++;
+      if (cond.limit && count >= cond.limit) {
+        break;
+      }
+    }
+    if (count) {
+      block.css('display', '');
+      block.find('.pageListExists').css('display', '');
+      block.find('.pageListNotExists').css('display', 'none');
+    } else {
+      block.css('display', '');
+      block.find('.pageListExists').css('display', 'none');
+      block.find('.pageListNotExists').css('display', '');
+    }
+  };
+</script>
+
+<script>
+$(function() {
+  cmsDynExecuteGetPageList();
+});
+</script>
+
+
+                <script src="//www.city.hikari.lg.jp/theme/base/js/external.js"></script>
+<script type="text/javascript" src="//www.city.hikari.lg.jp/theme/base/js/WagamachiBanner/sxBanner.js"></script>
+      
+</body>
+</html>

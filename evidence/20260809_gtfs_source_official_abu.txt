@@ -1,0 +1,455 @@
+取得日時: 2026-08-09 JST
+取得元  : http://www.town.abu.lg.jp/guide/cyoueibasunituite-2/
+取得方法: curl -sL (生バイト取得、要約なし)
+---
+<!doctype html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<title>  町営バス及び定期便について｜山口県阿武町役場</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="description" content="山口県阿武町のイベント情報や観光マップ。四季の写真アルバム。まちの概要、暮らしのメニュー。 ">
+<meta property="fb:app_id" content="254343638327698">
+<meta property="og:title" content="町営バス及び定期便について | 阿武町役場">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.town.abu.lg.jp/guide/cyoueibasunituite-2/">
+<meta property="og:site_name" content="阿武町役場">
+<meta property="og:image" content="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/common/facebook-ogp.png">
+<meta property="og:description" content="山口県阿武町のイベント情報や観光マップ。四季の写真アルバム。まちの概要、暮らしのメニュー。 ">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="町営バス及び定期便について | 阿武町役場">
+<meta name="twitter:description" content="山口県阿武町のイベント情報や観光マップ。四季の写真アルバム。まちの概要、暮らしのメニュー。 ">
+<link rel="shortcut icon" href="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/common/favicon.ico">
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//townabu2.sakura.ne.jp' />
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.town.abu.lg.jp/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.town.abu.lg.jp%2Fguide%2Fcyoueibasunituite-2%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.town.abu.lg.jp/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.town.abu.lg.jp%2Fguide%2Fcyoueibasunituite-2%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-color]){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='abucho-style-css' href='https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/css/style.css?ver=3' media='all' />
+<script id="js-head-js" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/js/head.js?ver=3"></script>
+<link rel="https://api.w.org/" href="https://www.town.abu.lg.jp/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://townabu2.sakura.ne.jp/wp/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.0.3" />
+<link rel="canonical" href="https://www.town.abu.lg.jp/guide/cyoueibasunituite-2/" />
+<link rel='shortlink' href='https://www.town.abu.lg.jp/?p=427' />
+<style>.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><meta name="redi-version" content="1.3.0" /><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-102206941-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body class="single-guide">
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" class="defs"><symbol id="ico_bousai" viewBox="0 0 240 240"><path d="M210.31 240H29.69a4 4 0 0 1-4-4v-13a14.8 14.8 0 0 1 14.76-14.76h159.1A14.8 14.8 0 0 1 214.31 223v13a4 4 0 0 1-4 4z" fill="#98c622"/><path d="M121.67 62.92h-3.34a66.54 66.54 0 0 0-66.54 66.54v67.2h136.42v-67.2a66.54 66.54 0 0 0-66.54-66.54zm-19.21 46.22c-9.47 8.91-21.72 12-27 7S73.5 99.68 83 90.77s21.72-12 27-7 1.93 16.46-7.54 25.37z" fill="#38a3ce"/><path d="M117.77 0c-3.34 0-6.13 2.51-6.13 5.57v29.79c0 3.06 2.78 5.57 6.13 5.57s6.13-2.51 6.13-5.57V5.57c0-3.06-2.79-5.57-6.13-5.57zm65.15 26.45a6.41 6.41 0 0 0-8.63 0l-22.55 21.16a5.28 5.28 0 0 0 0 8.07 6.41 6.41 0 0 0 8.63 0l22.55-21.16a5.28 5.28 0 0 0 0-8.07zm-130.3 0a6.41 6.41 0 0 1 8.63 0l22.56 21.16a5.28 5.28 0 0 1 0 8.07 6.41 6.41 0 0 1-8.63 0L52.62 34.52a5.71 5.71 0 0 1 0-8.07z" fill="#98c622"/></symbol><symbol id="ico_bunka" viewBox="0 0 240 240"><path d="M220 146.48a28.24 28.24 0 0 0 20-8.29S185.38 55.79 185.38.4H54.65C54.65 53.9 0 138.19 0 138.19a28.29 28.29 0 0 0 20 8.29z" fill="#98c622"/><path d="M220 154.48H20a36.12 36.12 0 0 1-11.7-2v82.76a4 4 0 0 0 4 4h12.53v-47.51c15-10 22.21-10 37.24 0v47.54h16.55v-67.78c15-10 67.73-10 82.76 0v67.78h16.55v-47.54c15-10 22.23-10 37.26 0v47.87h12.55a4 4 0 0 0 4-4v-83.06a36.19 36.19 0 0 1-11.74 1.94z" fill="#38a3ce"/><path d="M43.45 192.21c2.78 0 6.06 1.19 10.62 3.91v43.48H32.83v-43.48c4.56-2.72 7.84-3.91 10.62-3.91m51.72 47.39v-56.77a118.72 118.72 0 0 1 24.83-2.3 118.37 118.37 0 0 1 24.83 2.3v56.77zm101.39-47.39c2.78 0 6.07 1.19 10.63 3.92v43.47h-21.26v-43.47c4.56-2.72 7.85-3.92 10.63-3.92" fill="#38a3ce"/></symbol><symbol id="ico_gikaijyohou" viewBox="0 0 240 240"><path d="M237.8 62.55h-49.45V240h39.95a4 4 0 0 0 4-4V80.44h5.5a2.17 2.17 0 0 0 2.2-2.2V64.75a2.21 2.21 0 0 0-2.2-2.2zm-13.62 126.33h-27.72v-16.52h27.73zm0-26.42h-27.72v-16.52h27.73zm0-27h-27.72V119h27.73zm0-26.7h-27.72V92.27h27.73zM2.2 62.55a2.21 2.21 0 0 0-2.2 2.2v13.48a2.17 2.17 0 0 0 2.2 2.2h5.5V236a4 4 0 0 0 4 4h39.95V62.55zm41.34 126.88H15.82v-16.52h27.72zm0-27H15.82v-16.49h27.72zm0-27H15.82V119h27.72zm0-26.7H15.82V92.27h27.72z" fill="#38a3ce"/><path d="M189.63 33.1L122.48.62a5.83 5.83 0 0 0-5.23 0L50.09 33.37a6 6 0 0 0 5.23 10.73l6.88-3.34V240h30.5v-45.94h54.6V240h30.5V40.89l6.61 3.22a12.11 12.11 0 0 0 2.75.55 5.27 5.27 0 0 0 5.23-3.58 5.72 5.72 0 0 0-2.76-7.98zm-99.91 140H73.21v-16.48h16.51zm0-27.09H73.21v-16.47h16.51zm0-27.36H73.21v-16.48h16.51zm0-27.36H73.21V74.81h16.51zm25.87 81.81H99.08v-16.48h16.52zm0-27.09H99.08v-16.47h16.52zm0-27.36H99.08v-16.48h16.52zm0-27.36H99.08V74.81h16.52zm25.6 81.81h-16.51v-16.48h16.51zm0-27.09h-16.51v-16.47h16.51zm0-27.36h-16.51v-16.48h16.51zm0-27.36h-16.51V74.81h16.51zm25.6 81.81h-16.52v-16.48h16.51zm0-27.09h-16.52v-16.47h16.51zm0-27.36h-16.52v-16.48h16.51zm0-27.36h-16.52V74.81h16.51z" fill="#38a3ce"/><path d="M122.48 14.13a5.83 5.83 0 0 0-5.23 0l-55 26.63-6.88 3.34a6 6 0 0 1-5.23-10.73L117.25.62a5.83 5.83 0 0 1 5.23 0l67.15 32.48a5.72 5.72 0 0 1 2.75 8 5.27 5.27 0 0 1-5.23 3.58 12.11 12.11 0 0 1-2.75-.55l-6.61-3.22zm65.87 66.31h49.45a2.17 2.17 0 0 0 2.2-2.2V64.75a2.37 2.37 0 0 0-2.2-2.2h-49.45zM51.65 62.55H2.2a2.37 2.37 0 0 0-2.2 2.2v13.48a2.17 2.17 0 0 0 2.2 2.2h49.45z" fill="#98c622"/></symbol><symbol id="ico_hataraku" viewBox="0 0 240 240"><path d="M236.92 146.88a8.9 8.9 0 0 0-10.34-3.12l-.16.06L163 164.93v1.54a16.56 16.56 0 0 1-14.9 15.43l-38.24 4a4.4 4.4 0 0 1-.91-8.76l38.24-4a7.79 7.79 0 0 0-.3-15.53l-50.77-3.31a29.88 29.88 0 0 0-16.37 3.7l-67 36.87 18.13 36.56 16.82-14.67a31.51 31.51 0 0 1 26-7.36l56.22 9.34a40.69 40.69 0 0 0 29.08-7.28l76.54-52.72a8.91 8.91 0 0 0 1.38-11.86z" fill="#98c622"/><path fill="#38a3ce" d="M51.9 222.84l-23.04 15.74-27.44-42.77 23.04-15.75 27.44 42.78zM149 1.42a67.28 67.28 0 1 0 67.25 67.28A67.28 67.28 0 0 0 149 1.42zm26.61 75.91a3.65 3.65 0 0 1 2.76 1.4 5.18 5.18 0 0 1 1.24 3.57 5.33 5.33 0 0 1-1.24 3.61 3.62 3.62 0 0 1-2.76 1.44h-20.87v22.86a4.11 4.11 0 0 1-1.64 3.17 7 7 0 0 1-8.41 0 4.1 4.1 0 0 1-1.64-3.17V87.34h-20.69a3.61 3.61 0 0 1-2.76-1.44 5.33 5.33 0 0 1-1.24-3.61 5.22 5.22 0 0 1 1.24-3.53 3.61 3.61 0 0 1 2.76-1.44H143v-9.61h-20.64a3.61 3.61 0 0 1-2.76-1.44 5.33 5.33 0 0 1-1.24-3.61 5.21 5.21 0 0 1 1.24-3.53 3.61 3.61 0 0 1 2.76-1.44h15.39l-14.67-21.62a3.94 3.94 0 0 1-.56-2 4.23 4.23 0 0 1 1.36-3.07 6.27 6.27 0 0 1 4.65-1.69 6.73 6.73 0 0 1 2.93.56 4.79 4.79 0 0 1 1.88 1.6L149 54.73l15.63-23.24a5.47 5.47 0 0 1 4.81-2.16 6.74 6.74 0 0 1 4.25 1.36 4.26 4.26 0 0 1 1.76 3.53 3.27 3.27 0 0 1-.56 1.92l-15.26 21.55h15.95a3.65 3.65 0 0 1 2.76 1.4 5.18 5.18 0 0 1 1.24 3.57 5.33 5.33 0 0 1-1.24 3.61 3.62 3.62 0 0 1-2.76 1.44h-20.84v9.62z"/></symbol><symbol id="ico_kaigo" viewBox="0 0 240 240"><path d="M128.39 141.48l18 18a166.94 166.94 0 0 0 13.08-17.1 182.47 182.47 0 0 0 9.12-16.54L164.8 122a67.47 67.47 0 0 1-36.41 19.48zM120 8.51c28.65 0 52 25.54 52 56.92s-23.31 56.92-52 56.92-52-25.53-52-56.91S91.31 8.51 120 8.51m0-9.29c-33.83 0-61.25 29.64-61.25 66.21s27.39 66.22 61.25 66.22 61.22-29.65 61.22-66.21S153.8-.77 120-.77z" fill="#38a3ce"/><path d="M61.89 65.51c-.8-1-1.58-2.07-2.31-3.12l-.58-.87.35-1c9.52-27 33.89-45.09 60.65-45.09 26.58 0 50.19 17.18 60.16 43.77l.37 1-.59.88c-.77 1.15-1.5 2.19-2.23 3.17l-2.35 3.14-1.26-3.71c-8.33-24.53-30.07-41-54.11-41-24.55 0-46.45 17-54.49 42.21l-1.2 3.69z" fill="#38a3ce"/><path d="M173.4 70.1c-8.74-17.1-24.76-28.94-43.05-31.19a54.06 54.06 0 0 0-31.56 5.79c-3 1.56-7 3.37-9.2 3.1a2.49 2.49 0 0 1-2.28-2c-.18-1-.54-3 8.48-7.66a61.25 61.25 0 0 1 35.44-6.39c20 2.45 37.15 14.5 47.21 32.44 2.18 3.88-3.44 9.13-5.04 5.91zm-61.86 71.38l-18 18a166.94 166.94 0 0 1-13.08-17.1 182.47 182.47 0 0 1-9.12-16.54l3.79-3.84a67.47 67.47 0 0 0 36.41 19.48zm8.46 38.15a5.16 5.16 0 1 0-5.16-5.16 5.17 5.17 0 0 0 5.16 5.16zm0-22.22a5.16 5.16 0 1 0-5.16-5.16 5.17 5.17 0 0 0 5.16 5.16z" fill="#38a3ce"/><path d="M12.81 179.39C4.41 202.66 0 229.42 0 240.77h35.14zm14.93-29.14l32.95 90.52 179.31-.1c0-20-14.69-87.44-38.74-99.93l-22.92-13.64s-14.48 26-27.81 42.12-30.26 27.12-30.53 27.12c-.3 0-17.25-11-30.57-27.12S61.59 127.1 61.59 127.1l-22.92 13.64a33.2 33.2 0 0 0-10.93 9.51z" fill="#98c622"/><path d="M46.46 240.77a4 4 0 0 1-3.76-2.63L1.44 124.78a23.82 23.82 0 0 1 44.76-16.3 4 4 0 0 1-7.52 2.74A15.82 15.82 0 0 0 9 122l41.22 113.41a4 4 0 0 1-3.76 5.37z" fill="#38a3ce"/></symbol><symbol id="ico_kakushukeikaku" viewBox="0 0 240 240"><rect y="171.23" width="240" height="20" rx="3" ry="3" fill="#98c622"/><rect x="110" y="202.57" width="20" height="36.99" rx="3" ry="3" fill="#98c622"/><path d="M191.56 237.81l-14.25-31a3 3 0 0 1 2.73-4.25h13.4a3 3 0 0 1 2.73 1.75l14.25 31a3 3 0 0 1-2.73 4.25h-13.4a3 3 0 0 1-2.73-1.75zm-161.97-2.5l14.25-31a3 3 0 0 1 2.73-1.75H60a3 3 0 0 1 2.73 4.25l-14.25 31a3 3 0 0 1-2.73 1.75H32.32a3 3 0 0 1-2.73-4.25z" fill="#98c622"/><path d="M231 .44H9a4 4 0 0 0-4 4v151.45a4 4 0 0 0 4 4h222a4 4 0 0 0 4-4V4.44a4 4 0 0 0-4-4z" fill="#38a3ce"/><path d="M207.67 48.53l-11.2 27.85a5 5 0 0 1-8.18 1.62l-5.94-5.94L145 107.8a4 4 0 0 1-5.22.26l-43.51-34-59 56.29a4 4 0 1 1-5.52-5.79L93.2 65.89a4 4 0 0 1 5.22-.26l43.51 34 34.75-33.18-5-5a5 5 0 0 1 1.67-8.17L201.16 42a5 5 0 0 1 6.51 6.53z" fill="#f7f7f7"/></symbol><symbol id="ico_kankou" viewBox="0 0 240 240"><path d="M90 41.64a39.42 39.42 0 1 0 39.38 39.42A39.51 39.51 0 0 0 90 41.64zm0 60.54a21.12 21.12 0 1 1 21.09-21.12A21.08 21.08 0 0 1 90 102.18zm52.76 100.08l-5.41-14.85-13.1-9.17-11.58 16.54 2.94 16.69 29.29-5.16a17 17 0 0 1-2.14-4.05z" fill="#98c622"/><path d="M193.9 208.56l-23.65 8.61a19.85 19.85 0 0 1-6.81 1.2 20.08 20.08 0 0 1-13.92-5.64l-39.05 6.89-3.47-19.4-7.66-43.46 25.93-4.57-2.69-7.4-21.3 3.76a12 12 0 0 0-9.73 13.89l11.94 67.71a12 12 0 0 0 13.89 9.73l67.71-11.94a12 12 0 0 0 9.77-13.94z" fill="#38a3ce"/><path fill="#98c622" d="M194.28 130.48l-11.29 24.35-18.19-8.48-8.53 18.3 5.79 15.93 55.81-20.31-8.24-22.63-15.35-7.16z"/><path d="M239.28 170.77l-23.51-64.6A12 12 0 0 0 200.4 99l-64.6 23.51a12 12 0 0 0-7.17 15.37l23.51 64.6a12 12 0 0 0 15.37 7.17l64.6-23.51a12 12 0 0 0 7.17-15.37zm-82.14 20.17l-6.74-18.52-15.1-41.47 70.88-25.8 21.83 60z" fill="#38a3ce"/><path d="M181.64 130.5a6.6 6.6 0 1 1-8.46-3.94 6.6 6.6 0 0 1 8.46 3.94zm-81.7 10.15l20.25-3.57A20 20 0 0 1 133.06 115L180 97.91V33.05a12.67 12.67 0 0 0-11.53-12.53 2.66 2.66 0 0 0 .28-1.13 3.92 3.92 0 0 0-4.22-3.94h-9.84a4.15 4.15 0 0 0-4.22 4.22c0 .56.14 0 .28 1.41h-20.11l-6.19-12.67C122.2 3.77 116.16 0 111.09 0H68.91C63.7 0 57.8 3.77 55.55 8.41l-6.19 12.67h-5.77v-6.33c0-.85-.56-.7-1.41-.7H14.06c-.84 0-1.41-.14-1.41.7v5.63A12.61 12.61 0 0 0 0 33.05v95.75c0 7 5.63 13.38 12.66 13.38h82.45a20 20 0 0 1 4.83-1.53zM67.5 12.78a1.33 1.33 0 0 1 1.41-1.41h42.19a1.33 1.33 0 0 1 1.41 1.41v5.63a1.33 1.33 0 0 1-1.41 1.41H68.91a1.33 1.33 0 0 1-1.41-1.41zm-47.81 35.9a8.45 8.45 0 1 1 8.44-8.45 8.47 8.47 0 0 1-8.44 8.45zm11.25 7a4.22 4.22 0 1 1 4.22-4.22 4.15 4.15 0 0 1-4.22 4.26zm9.84 25.34A49.22 49.22 0 1 1 90 130.35a49.3 49.3 0 0 1-49.22-49.28z" fill="#38a3ce"/></symbol><symbol id="ico_kekkon" viewBox="0 0 240 240"><path d="M8.46 240h122.17c0-.47 8.49-70.59 8.47-71.11-.55-13.87.34-44.94-2.41-51.34-1.36-3.17-4.83-5.16-8.09-6.4l-30.51-9.4-10.57-8.23-14.15 15.67 10.17 96.49a.57.57 0 0 1-.12.44l-13.34 15.4a.66.66 0 0 1-.52.25.67.67 0 0 1-.52-.25l-13.33-15.4a.57.57 0 0 1-.12-.44l10.17-96.49-14.19-15.67L41 101.79l-30.51 9.4c-3.26 1.24-6.72 3.23-8.09 6.4C-.35 124 .59 154.81 0 168.76c0 .58 8.47 70.75 8.47 71.27z" fill="#38a3ce"/><path d="M216.27 110.09C225.89 52 206.2 19 175.93 19c-29.42 0-48.83 31.15-41.07 86.24 4.45 2.31 7.55 5.38 9.18 9.17 2.42 5.63 2.69 18.52 2.83 39.09 0 5.77.08 11.21.23 15.1 0 .92 0 .92-4.89 41.92-1.55 12.9-3.15 26.19-3.53 29.5h85.66S240 202.47 240 160.53c0-24.7-8.79-42.66-23.73-50.44zm-40.6 23.41c-14.22 0-21.9-10.95-21.9-10.95l12-19a22.53 22.53 0 0 0 20.35.16l12.17 18.92s-8.39 10.87-22.62 10.87zm.43-34.38c-15.75 0-28.56-16.61-29-37.32 13.51-13.34 31.15-19.17 44.19-19.17 3.22 10.59 13.49 24.1 13.49 24.1-2.21 18.35-14.21 32.39-28.68 32.39z" fill="#38a3ce"/><path d="M8.46 240h122.17c0-.47 8.49-70.59 8.47-71.11-.55-13.87.34-44.94-2.41-51.34-1.36-3.17-4.83-5.16-8.09-6.4l-30.51-9.4-10.57-8.23-14.15 15.67 10.17 96.49a.57.57 0 0 1-.12.44l-13.34 15.4a.66.66 0 0 1-.52.25.67.67 0 0 1-.52-.25l-13.33-15.4a.57.57 0 0 1-.12-.44l10.17-96.49-14.19-15.67L41 101.79l-30.51 9.4c-3.26 1.24-6.72 3.23-8.09 6.4C-.35 124 .59 154.81 0 168.76c0 .58 8.47 70.75 8.47 71.27zM111.85 16.15S94.2 10.45 85.93 5.3s-30.34-10.66-35.3 4.78c0 0-16-2-20.41 14.52s-.43 27.92-.38 28.07c2.52 22.88 19 40.55 39 40.55s36.52-17.67 39-40.55 9.71-13.91 4.01-36.52zm-43 71.15c-18.42 0-33.44-18.3-33.44-40.71v-.67c.87-11.79 14.39-13.18 14.39-13.18S58.06 53 93 47.15c0 0 8.66-3.23 9.2 3.12C100.66 71 86.31 87.3 68.88 87.3z" fill="#38a3ce"/><path d="M146.55 133.63c.19 5.57.26 12.19.32 19.88 0 5.77.08 11.21.23 15.1 0 .92 0 .92-4.89 41.92-1.55 12.9-3.15 26.19-3.53 29.5h85.66S240 202.47 240 160.53c0-24.69-8.8-42.66-23.74-50.44a198.23 198.23 0 0 1-7.8 29.8s-6.37-11.37-10.18-17.23c0 0-8.39 10.85-22.62 10.85-12.36 0-20.32-8.19-22.19-10.34-1.84 2.97-4.04 6.17-6.92 10.46zm-73.2-24.44l10.17 96.49a.57.57 0 0 1-.12.44l-13.34 15.4a.66.66 0 0 1-.52.25.67.67 0 0 1-.52-.25l-13.33-15.4a.57.57 0 0 1-.12-.44l10.17-96.49z" fill="#98c622"/></symbol><symbol id="ico_kenkou" viewBox="0 0 240 240"><path d="M125.85 148.84H160a5.91 5.91 0 1 1 0 11.82h-34.15zm-23.18 0V128a18 18 0 0 1-9.67-7.87L40.46 33.69A18.07 18.07 0 0 1 56 6.33h13a5.91 5.91 0 1 1 0 11.82H56a6.26 6.26 0 0 0-5.4 9.45l52.56 86.4a6.29 6.29 0 0 0 5.42 3.12 6.19 6.19 0 0 0 5.42-3.02l51.1-86.5a6.26 6.26 0 0 0-5.37-9.46h-11.56a5.91 5.91 0 1 1 0-11.82h11.56a18.08 18.08 0 0 1 15.56 27.31l-51.14 86.49a18 18 0 0 1-9.64 7.88v66.31A45.51 45.51 0 1 1 69 148.84h22.33v11.82H69a33.68 33.68 0 1 0 33.66 33.67v-45.49z" fill="#38a3ce"/><path d="M188 126.15a28.47 28.47 0 1 0 28.46 28.46A28.48 28.48 0 0 0 188 126.15zm0 44.75a16.28 16.28 0 1 1 16.27-16.29A16.29 16.29 0 0 1 188 170.9z" fill="#98c622"/><path d="M188 146.49a8.13 8.13 0 1 0 8.12 8.12 8.15 8.15 0 0 0-8.12-8.12z" fill="#38a3ce"/><path d="M97.31 12.37c0 6.74-15.21 12.2-21.95 12.2a12.2 12.2 0 1 1 0-24.41c6.74 0 21.95 5.46 21.95 12.2zm18.69 0c0 6.74 15.23 12.2 22 12.2a12.2 12.2 0 1 0 0-24.4c-6.75 0-22 5.46-22 12.2z" fill="#98c622"/></symbol><symbol id="ico_kosodate" viewBox="0 0 240 240"><path d="M140.92 239.8c0-7.31 3-20.65 10.73-32.93 4.7-7.41 11.35-12.22 15-15.1.37-.28 1.18-.8 1.75-1.25 11.65 9.65 32.58 8.48 44.11.2.57.45 1.37 1 1.75 1.25 3.66 2.88 10.31 7.69 15 15.1C237 219.35 240 232.69 240 240zm47.16-142.09c-2.77-.16-38.74 2.71-40.22 39.16v.38c-.34 5.35 1 13.17 1.76 17.31 3.42 20.46 19.57 36 39 36 18.84 0 34.6-14.59 38.65-34.14v-.25a48.76 48.76 0 0 0 .94-8.45c.13-2.35.15-4.44.12-6.23 1.67-41-37.33-43.95-40.25-43.78zm.52 85.29c-17.74 0-32.17-16.4-32.17-36.56a41.4 41.4 0 0 1 .65-7.32c0-.08 0-.15.05-.23 1-1.05 1.83-1.91 2.4-2.45 10.48-9.91 19.93.71 29.77 5.12 7.55 3.38 16.4 5.73 24.51 2.89a21.12 21.12 0 0 0 6.39-3.77l.19.29v.1a41.6 41.6 0 0 1 .35 5.37c.03 20.19-14.4 36.56-32.14 36.56z" fill="#38a3ce"/><path d="M144.89 202.6a61.63 61.63 0 0 1 14.32-15.15A52.78 52.78 0 0 1 141.73 156c-1.07-5.55-2.25-13.36-1.87-19.23v-.33c.89-20.81 11.54-32.8 23-39.41C162.9 33.18 136.5 0 97.94 0 51.67 0 21.58 50.31 36.29 138.95 13.45 150.81 0 228.25 0 239.8h132.92c0-8.45 3.14-23.26 11.97-37.2zM121.14 37.78c4.93 16.16 20.62 36.76 20.62 36.76-3.35 28-21.69 49.42-43.82 49.42C73.87 124 54.29 98.62 53.6 67c20.64-20.33 47.6-29.22 67.54-29.22zM97.28 176.41c-21.74 0-33.47-16.7-33.47-16.7l18.33-28.95a34.49 34.49 0 0 0 31.1.24l18.6 28.87S119 176.41 97.28 176.41z" fill="#38a3ce"/><path d="M36.29 138.95C13.45 150.81 0 228.25 0 239.8h132.92c0-8.45 3.14-23.25 12-37.19a61.63 61.63 0 0 1 14.32-15.15 50.38 50.38 0 0 1-8.36-9.18c-1 3.52-1.76 6.26-2.32 8.09l-16.67-26.5S119 176.41 97.28 176.41s-33.47-16.7-33.47-16.7l-16.93 26.7a347 347 0 0 1-10.6-47.46" fill="#98c622"/></symbol><symbol id="ico_nenkin" viewBox="0 0 240 240"><path d="M140.09 144.93l-111.6-19.68a14.21 14.21 0 0 0-16.41 11.49L.28 203.7a14.21 14.21 0 0 0 11.49 16.41l111.6 19.68a14.21 14.21 0 0 0 16.41-11.49l11.81-67a14.21 14.21 0 0 0-11.5-16.37z" fill="#98c622"/><path d="M26.49 184.84l36.76 6.48a2.83 2.83 0 1 1-1 5.58l-36.75-6.48a2.83 2.83 0 1 1 1-5.58zm-1.1-10.11a2.84 2.84 0 0 1 3.28-2.3l23.08 4.07a2.83 2.83 0 1 1-1 5.58L27.69 178a2.84 2.84 0 0 1-2.3-3.27zM58 180.48a2.84 2.84 0 0 1 3.28-2.3l4.19.74a2.83 2.83 0 0 1-1 5.58l-4.19-.74a2.84 2.84 0 0 1-2.28-3.28zM41.38 206l-18.06-3.18a2.83 2.83 0 1 1 1-5.58l18.06 3.18a2.83 2.83 0 1 1-1 5.58zm31.52 5.57l-22.23-3.92a2.83 2.83 0 1 1 1-5.58L73.88 206a2.83 2.83 0 1 1-1 5.58zm2.19-12.4l-4.19-.74a2.83 2.83 0 1 1 1-5.58l4.19.74a2.83 2.83 0 1 1-1 5.58zm4.37-24.82l-49.58-8.75a2.83 2.83 0 1 1 1-5.58l49.58 8.74a2.83 2.83 0 1 1-1 5.58zm2.19-12.41l-49.58-8.74a2.83 2.83 0 1 1 1-5.58l49.58 8.74a2.83 2.83 0 1 1-1 5.58zm24.05 55.42l-22.23-3.92a2.83 2.83 0 1 1 1-5.58l22.23 3.92a2.83 2.83 0 1 1-1 5.58zm16.72-9.85L85.66 201a2.83 2.83 0 1 1 1-5.58l36.76 6.48a2.83 2.83 0 1 1-1 5.58zm6.58-37.22l-36.78-6.49a2.83 2.83 0 1 1 1-5.58L130 164.7a2.83 2.83 0 1 1-1 5.58z" fill="#38a3ce"/><path d="M239.84 168.41L213.77 20.53a6 6 0 0 0-7-4.87l-13 2.29L191.55 5a6 6 0 0 0-7.91-4.66l-110.1 38.9a6 6 0 0 0-3.91 6.7l14.27 81L141.48 137a22.19 22.19 0 0 1 18 25.68l-4.72 26.78 80.24-14.1a6 6 0 0 0 4.84-6.95zM168.31 55.62l-59.38 20.22a6.24 6.24 0 0 1-.9.23 6 6 0 0 1-3-11.59l59.38-20.22a6 6 0 1 1 3.87 11.36zM172 174.27l41.69-14.72a6 6 0 0 0 3.91-6.7L195.92 29.77l7.08-1.25 24 136.06z" fill="#38a3ce"/></symbol><symbol id="ico_nyugaku" viewBox="0 0 240 240"><path d="M14.59 240.28h210.82c0-17.57-10.93-62.43-14.8-71.41-1.84-4.28-6.53-7-10.93-8.65l-41.09-12.7-14.29-11.19-23 21.19 9.93 61.48a.77.77 0 0 1-.16.6l-10.36 13.15a.89.89 0 0 1-.71.33.9.9 0 0 1-.71-.33l-10.36-13.15a.77.77 0 0 1-.16-.6l9.91-61.46-23-21.19-14.27 11.16-41.09 12.7c-4.4 1.67-9.09 4.37-10.93 8.65-3.87 9-14.8 53.85-14.8 71.41zM198.75 35.71L201 35a4.35 4.35 0 0 0 0-8.37L121.63 0a5.18 5.18 0 0 0-3.26 0L39 26.59A4.35 4.35 0 0 0 39 35l29.34 9.8a62 62 0 0 0-2.93 20.74c.52 44.1 28.11 70.39 53.65 70.39 25.24 0 53.13-26.3 53.65-70.39A62.75 62.75 0 0 0 170 45.36l21.33-7.15v16.27h-1.29a1.63 1.63 0 0 0-1.79 1.36l-1.67 13.43a1.46 1.46 0 0 0 .42 1.13 1.66 1.66 0 0 0 1.13.56h13.25a1.7 1.7 0 0 0 1.13-.56 1.45 1.45 0 0 0 .36-1.15l-1-7.91-.69-5.52a1.64 1.64 0 0 0-1.8-1.35h-1.29V35.94zm-79.68 89.51c-22.28 0-37.65-24.21-40.75-48.41-2.87-22.38 32-23.42 34.05-9.55.62 4.27-4.66 8.83-4.06 10.59 3 8.69 51.85-28.38 51.51-1.05-.23 19.29-19.53 48.42-40.75 48.42z" fill="#38a3ce"/><path d="M118.37 61.57a5.18 5.18 0 0 0 3.26 0L170 45.36l21.33-7.15v16.27h-1.29a1.63 1.63 0 0 0-1.79 1.36l-1.67 13.43a1.46 1.46 0 0 0 .42 1.13 1.67 1.67 0 0 0 1.13.56h13.25a1.7 1.7 0 0 0 1.13-.56 1.45 1.45 0 0 0 .36-1.15l-1-7.91-.69-5.52a1.64 1.64 0 0 0-1.8-1.35h-1.29V35.94l.67-.22L201 35a4.35 4.35 0 0 0 0-8.37L121.63 0a5.18 5.18 0 0 0-3.26 0L39 26.59A4.35 4.35 0 0 0 39 35l29.34 9.8zm2.95 95.95l9.91 61.48a.77.77 0 0 1-.16.6l-10.36 13.15a.89.89 0 0 1-.71.33.9.9 0 0 1-.71-.33l-10.36-13.15a.77.77 0 0 1-.16-.6l9.91-61.46z" fill="#98c622"/></symbol><symbol id="ico_okuyami" viewBox="0 0 240 240"><path d="M124.67 157l10 10a92.94 92.94 0 0 0 7.28-9.52 101.59 101.59 0 0 0 5.08-9.21l-2.13-2.12A37.57 37.57 0 0 1 124.67 157zm-9.38 0l-10 10a92.94 92.94 0 0 1-7.29-9.46 101.59 101.59 0 0 1-5.08-9.21l2.08-2.12A37.57 37.57 0 0 0 115.29 157z" fill="#38a3ce"/><path d="M87 212.32l99.83-.06c0-11.12-8.18-48.68-21.57-55.63L152.48 149s-8.06 14.5-15.48 23.45a79.18 79.18 0 0 1-17 15.1 79.18 79.18 0 0 1-17-15.1C95.54 163.54 87.48 149 87.48 149l-12.76 7.59a18.48 18.48 0 0 0-6.09 5.29 65 65 0 0 0-8.31 16.22c-4.68 13-7.13 27.85-7.13 34.17H87z" fill="#98c622"/><path d="M133.92 76.57c-7.52-3.55-25.88-9.1-30.11 4.08 0 0-13.64-1.73-17.41 12.39s-.4 23.81-.32 23.96c2.15 19.52 16.23 34.59 33.3 34.59s31.16-15.08 33.3-34.59c.01 0 4.46-29.46-18.76-40.43zm-14.54 69.95c-15.74 0-28.55-15.58-28.55-34.73v-.57c.74-10.06 12.28-11.24 12.28-11.24S114 115.11 147 101.39a42.84 42.84 0 0 1 .79 13.54c-1.29 17.68-13.54 31.59-28.41 31.59zm4.18 10.75L126 180s-5.86 4.56-6 4.41l-5.95-4.3 2.41-22.86z" fill="#38a3ce"/><path d="M203.67 12v216H36.33V12h167.34m8-12H28.33a4 4 0 0 0-4 4v232a4 4 0 0 0 4 4h183.34a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4z" fill="#38a3ce"/><path d="M215.67 81.83c-17.85 0-42.22-11.23-65.19-30C132.84 37.37 114 16.18 114 0h12c0 7.83 10 24.48 32.08 42.51 20.58 16.85 42.65 27.31 57.59 27.31z" fill="#98c622"/><path d="M24.33 81.83v-12c14.94 0 37-10.47 57.59-27.31C104 24.48 114 7.83 114 0h12c0 16.18-18.84 37.37-36.48 51.8-22.97 18.8-47.34 30.03-65.19 30.03z" fill="#98c622"/></symbol><symbol id="ico_sangyo" viewBox="0 0 240 240"><path d="M129.7 11.83a13 13 0 0 1 3.46-4.94 33.43 33.43 0 0 0-14.34-5.17C106.39.33 97.4 6.85 98.74 16.29c1.15 8.09 23.64 52.25 30.07 64.75-.58-14.97-2.14-61.45.89-69.21zm63.17 18.77a33.39 33.39 0 0 0-13.57-5.8 13 13 0 0 1-.79 6.07c-3 7.62-34.51 39.76-45.64 51 14.47-5.33 58.75-21.85 64.91-26.9 7.38-6.09 5.22-16.97-4.91-24.37z" fill="#98c622"/><path d="M164.83 25a5.24 5.24 0 0 0-5.15-2l-1.35.32 1.55-4c.54-1.38-.65-3.14-2.67-3.93s-4.08-.3-4.62 1.09l-5.46 14-.78-1.15a5.24 5.24 0 0 0-5.15-2 2.15 2.15 0 0 0-1.38 3.54l4.55 6.7-19 45.61c-.54 1.38.65 3.14 2.67 3.93s4.08.3 4.62-1.08l22.88-55.63 7.89-1.85a2.15 2.15 0 0 0 1.4-3.55z" fill="#98c622"/><path d="M92.61 162c3.62-2.78 7.34-5.45 11.17-8a34.63 34.63 0 0 1-3.57-5.24l-3.89-7 13.26-7.37a3.9 3.9 0 0 1 3.19-7.11l5.64 2.2 11.59-6.39a34.52 34.52 0 0 1 24.74-3.43 39.1 39.1 0 0 0-25.19-36.17c-18.28-7-39.38 1.31-48.59 18.56-10.68 20 2.19 41 10 55.07a15.66 15.66 0 0 1 1.65 4.88zm33.75-58.74a3.91 3.91 0 0 1 5.06-2.22l7.29 2.84a3.91 3.91 0 1 1-2.84 7.29l-7.29-2.84a3.91 3.91 0 0 1-2.22-5.09zm1.6 17.41a3.91 3.91 0 0 1-5.06 2.22l-10.9-4.28a3.91 3.91 0 1 1 2.84-7.29l10.93 4.26a3.91 3.91 0 0 1 2.23 5.07zM104.5 94.71a3.91 3.91 0 0 1 5.06-2.22l7.29 2.84a3.91 3.91 0 1 1-2.84 7.29l-7.29-2.84a3.91 3.91 0 0 1-2.22-5.07zm-15 27.72a3.91 3.91 0 0 1 5.06-2.22l7.29 2.84a3.91 3.91 0 0 1-2.85 7.29l-7.29-2.84a3.91 3.91 0 0 1-2.22-5.06z" fill="#38a3ce"/><path d="M160.65 4.56C156.28 2.86 156.3 2 147.78 2s-15.64 3.52-18.08 9.78c-3.62 9.27-.7 73.86-.7 73.86s45.89-45.56 49.5-54.83-4.37-20.99-17.85-26.25zm12.27 24.12c-1.43 3.56-15.89 20.13-38.47 43-1.1-32.15-.52-54.13.84-57.72s6.22-6 12.49-6a29.79 29.79 0 0 1 10.68 2.1A27.28 27.28 0 0 1 171 19.58c1.32 1.9 3.28 5.61 1.92 9.1z" fill="#98c622"/><path d="M92.61 162c3.62-2.78 7.34-5.45 11.17-8a34.63 34.63 0 0 1-3.57-5.24l-3.89-7 13.26-7.37a3.9 3.9 0 0 1 3.19-7.11l5.64 2.2 11.59-6.39a34.52 34.52 0 0 1 24.74-3.43 39.1 39.1 0 0 0-25.19-36.17c-18.28-7-39.38 1.31-48.59 18.56-10.68 20 2.19 41 10 55.07a15.66 15.66 0 0 1 1.65 4.88zm33.75-58.74a3.91 3.91 0 0 1 5.06-2.22l7.29 2.84a3.91 3.91 0 1 1-2.84 7.29l-7.29-2.84a3.91 3.91 0 0 1-2.22-5.09zm1.6 17.41a3.91 3.91 0 0 1-5.06 2.22l-10.9-4.28a3.91 3.91 0 1 1 2.84-7.29l10.93 4.26a3.91 3.91 0 0 1 2.23 5.07zM104.5 94.71a3.91 3.91 0 0 1 5.06-2.22l7.29 2.84a3.91 3.91 0 1 1-2.84 7.29l-7.29-2.84a3.91 3.91 0 0 1-2.22-5.07zm-15 27.72a3.91 3.91 0 0 1 5.06-2.22l7.29 2.84a3.91 3.91 0 0 1-2.85 7.29l-7.29-2.84a3.91 3.91 0 0 1-2.22-5.06z" fill="#38a3ce"/><path d="M42.45 182.79a30.93 30.93 0 0 1 19-.13 24.27 24.27 0 0 1 5.13-2.82 29.61 29.61 0 0 1 6.76-.7q5.84-6 12.19-11.42l-.77-4.36a7.63 7.63 0 0 0-.84-2.38l-1.19-2.14c-8.38-15-21-37.72-8.83-60.57A46.73 46.73 0 0 1 81.31 88a21.92 21.92 0 0 0-25.74-16.3h-.16a41.44 41.44 0 0 0-3.52-14.48 34.51 34.51 0 0 0-11.46 12.16 41.21 41.21 0 0 0-13.49-15.89c-4 8.5-4.27 16-2.73 22.25a33.87 33.87 0 0 0-17.79-4.08A41.5 41.5 0 0 0 12 85.72a21.9 21.9 0 0 0-10.08 28.37l36.81 63.65a29.28 29.28 0 0 0 3.72 5.05z" fill="#98c622"/><path d="M192.41 183.88a67.42 67.42 0 0 1-20-48.9c-1.82.33-3.64.71-5.45 1.1a26.57 26.57 0 0 0-33.14-6l-26.63 14.82a26.44 26.44 0 0 0 10.13 10.21 173.88 173.88 0 0 0-48.52 41.06A23.4 23.4 0 0 0 43.32 191l-10.19 4.16a23.41 23.41 0 0 0 25.94 14.14l-.5.73.85.17a23.41 23.41 0 0 0-8.6 28.27L61 234.3a23.4 23.4 0 0 0 14.55-21.54 173.87 173.87 0 0 0 36.49.2 20.06 20.06 0 0 0-4.28 21.67l21.32-8.71a20.06 20.06 0 0 0 12.47-18.51 174.66 174.66 0 0 0 19.09-6.53c1-.4 1.93-.81 2.9-1.23a20.06 20.06 0 0 0 6.49 21l14.67-17.75a20 20 0 0 0 4.19-16.76q1.78-1.09 3.52-2.26z" fill="#98c622"/><path d="M180.46 133.7A59.69 59.69 0 0 0 199 179.2a173.93 173.93 0 0 0 41-43.26 173.93 173.93 0 0 0-59.54-2.24zm25.59 27.25a10.33 10.33 0 1 1 5.66-13.47 10.33 10.33 0 0 1-5.66 13.47z" fill="#38a3ce"/><path d="M208 149a6.32 6.32 0 1 1-8.24-3.46A6.32 6.32 0 0 1 208 149zM59.07 209.3l-.5.73.85.17c4.65.88 8.35 1.56 16.15 2.57a173.87 173.87 0 0 0 36.49.2 197.33 197.33 0 0 0 29.51-5.55 174.66 174.66 0 0 0 19.09-6.53c1-.4 1.93-.81 2.9-1.23 9.62-3.81 20.46-10.46 25.35-13.47q1.76-1.13 3.49-2.3a67.42 67.42 0 0 1-20-48.9c-1.82.33-3.64.71-5.45 1.1-17.48 3.74-31.24 8.94-49.67 19a173.88 173.88 0 0 0-48.48 41.08c-5.1 6.34-7.5 10.11-9.73 13.13zm2.34-26.64a30.93 30.93 0 0 0-19 .13 29.28 29.28 0 0 1-3.72-5.05L1.92 114.09A21.9 21.9 0 0 1 12 85.72c9.81-4.46 21.51-2.55 23.36-2.13 2.86.64 3.31-.54 4-1.74.91-1.52 6.54-8.06 16-10.11h.16A21.92 21.92 0 0 1 81.31 88a46.73 46.73 0 0 0-7.45 10.26c-12.21 22.85.45 45.55 8.83 60.57l1.2 2.17a7.63 7.63 0 0 1 .84 2.38l.77 4.36q-6.35 5.42-12.19 11.42c-3.27 3.2-6 6.45-6 6.45-2.84-1.7-2.96-2.19-5.9-2.95z" fill="#38a3ce"/></symbol><symbol id="ico_seikatu" viewBox="0 0 240 240"><path d="M120 16.83l-93.45 91.51V236a4 4 0 0 0 4 4h81.71c0-.29.87-2.89 1.16-4a14.64 14.64 0 0 0 .58-3.75c.58-4.91-.18-15.78-1-21.26a55.63 55.63 0 0 0-2-9.63c-13.23-2.09-44.43-10.46-46.7-42.93a69.69 69.69 0 0 0-6.93-26.86l-.87-1.73s69.41 2.22 61 67.82c1.05 3 2 17.37 2.65 20.45.65-2.89 1.49-17.1 2.46-19.91-8.84-66.12 60.95-68.35 60.95-68.35l-.87 1.73a69.7 69.7 0 0 0-6.93 26.86c-2.26 32.26-33.05 40.73-46.43 42.89a55.63 55.63 0 0 0-2 9.67c-.87 5.49-1.61 16.36-1 21.26a14.62 14.62 0 0 0 .58 3.75c.29 1.16 1.16 3.75 1.16 4h81.45a4 4 0 0 0 4-4V108.34z" fill="#38a3ce"/><path d="M127.57 186.17c2-5.46 3.89-13.82 12.55-23.52 10.5-11.75 23.73-20.49 24.63-18.87.63 1.13-15.87 13.67-22.25 22.5-9.75 13.5-12.5 24.38-13.37 28.13s-2.88-4.61-1.56-8.24zm-15.74 0c-2-5.46-3.89-13.82-12.55-23.52-10.5-11.75-23.73-20.49-24.62-18.87-.62 1.13 15.87 13.67 22.25 22.5 9.75 13.5 12.5 24.38 13.37 28.13s2.87-4.61 1.55-8.24zM225 131.12l15-13.57L120 0 0 117.55l15 13.57L120 28.17z" fill="#98c622"/></symbol><symbol id="ico_shisetu" viewBox="0 0 240 240"><path d="M4 0a4 4 0 0 0-4 4v166.08a4 4 0 0 0 4 4h232a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4zm35.41 104.18c13.47-4.6 21.4-12.39 26-19.32 7.71-11.56 7.93-59.79 7.93-61v-7.92h93.28v7.88c0 1.26.22 49.48 7.93 61 4.62 6.93 12.55 14.72 26 19.32-4.55 5.38-7.55 12.7-7.55 22.41v31.55H47v-31.55c0-9.71-3-17-7.59-22.38z" fill="#38a3ce"/><path d="M106.82 210.81H54.11a8 8 0 0 0-8 8V235a5 5 0 0 0 5 5h58.69a5 5 0 0 0 5-5v-16.2a8 8 0 0 0-8-8zm79.07 0h-52.72a8 8 0 0 0-8 8V235a5 5 0 0 0 5 5h58.69a5 5 0 0 0 5-5v-16.2a8 8 0 0 0-8-8zm-131.78-8h21.17v-10.37a8 8 0 0 0-8-8h-52.7a8 8 0 0 0-8 8v16.23a5 5 0 0 0 5 5H39a16 16 0 0 1 15.11-10.86zm171.31-18.35h-52.71a8 8 0 0 0-8 8v10.37h21.17A16 16 0 0 1 201 213.68h27.39a5 5 0 0 0 5-5v-16.24a8 8 0 0 0-7.97-7.98zm-79.06 0H93.65a8 8 0 0 0-8 8v10.37h21.16a16 16 0 0 1 13.19 7 16 16 0 0 1 13.17-7h21.16v-10.39a8 8 0 0 0-7.97-7.98z" fill="#98c622"/></symbol><symbol id="ico_shougai" viewBox="0 0 240 242"><path d="M91.93 115.93H19.17a3 3 0 0 0-3 3v40.43a3 3 0 0 0 3 3h58.6a84.6 84.6 0 0 1 14.16-46.43z" fill="#38a3ce"/><path d="M162.88 85.76A77.12 77.12 0 1 0 240 162.88a77.12 77.12 0 0 0-77.12-77.12zm0 141.54a64.42 64.42 0 1 1 64.42-64.42 64.42 64.42 0 0 1-64.42 64.42z" fill="#98c622"/><path d="M162.88 115A47.88 47.88 0 1 1 115 162.88 47.93 47.93 0 0 1 162.88 115m0-8a55.88 55.88 0 1 0 55.88 55.88A55.94 55.94 0 0 0 162.88 107zM46.46 190.26a28.7 28.7 0 0 1 10.73 2.08v-22H36.32v21.76a28.72 28.72 0 0 1 10.14-1.84z" fill="#38a3ce"/><path d="M46.46 198.26a20.87 20.87 0 1 0 20.87 20.87 20.87 20.87 0 0 0-20.87-20.87zm0 31.6a10.73 10.73 0 1 1 10.73-10.73 10.73 10.73 0 0 1-10.73 10.73z" fill="#98c622"/><path d="M164.42 2.62l-5.72 44.86H72.84A36.52 36.52 0 0 0 36.32 84v23.93h20.87V84a15.65 15.65 0 0 1 15.65-15.65H156l-1.25 9.81c2.67-.25 5.37-.4 8.1-.4a85.43 85.43 0 0 1 12.87 1l7-55.24a3 3 0 0 1 3-2.62h27.75a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3h-46.08a3 3 0 0 0-2.97 2.62zM17.59 219.13a28.71 28.71 0 0 1 2-10.43H3a3 3 0 0 0-3 3v14.87a3 3 0 0 0 3 3h16.55a28.7 28.7 0 0 1-1.96-10.44z" fill="#38a3ce"/></symbol><symbol id="ico_shoumeisho" viewBox="0 0 240 240"><path d="M155.18 7.24v47.69a3 3 0 0 0 3 3h47.69a3 3 0 0 0 2.13-5.12L160.3 5.12a3 3 0 0 0-5.12 2.12z" fill="#98c622"/><path d="M147.18 54.93V0H30.89a4 4 0 0 0-4 4v232a4 4 0 0 0 4 4h178.22a4 4 0 0 0 4-4V65.93h-54.93a11 11 0 0 1-11-11zm-78.91-1.14h41.38a4.14 4.14 0 0 1 0 8.29H68.27a4.14 4.14 0 1 1 0-8.29zM171.73 194.5H68.27a4.14 4.14 0 1 1 0-8.29h103.46a4.14 4.14 0 1 1 0 8.29zm0-33.12H68.27a4.13 4.13 0 1 1 0-8.26h103.46a4.13 4.13 0 1 1 0 8.26zm0-33.09H68.27a4.14 4.14 0 1 1 0-8.29h103.46a4.14 4.14 0 1 1 0 8.29zM175.87 91a4.13 4.13 0 0 1-4.14 4.12H68.27a4.13 4.13 0 1 1 0-8.26h103.46a4.14 4.14 0 0 1 4.14 4.14z" fill="#38a3ce"/></symbol><symbol id="ico_tenkyo" viewBox="0 0 240 240"><path d="M91.5 209.23a15.3 15.3 0 1 0 15.3 15.3 15.32 15.32 0 0 0-15.3-15.3z" fill="#38a3ce"/><path d="M93 145.63a3.6 3.6 0 0 0-2.76 1.29L60.84 182a3.59 3.59 0 0 0-.84 2.31v35.1a3.6 3.6 0 0 0 3.6 3.6h3.81A3.59 3.59 0 0 0 71 220c1.41-10.83 10-17.54 20.49-17.54s19.09 6.7 20.51 17.54a3.59 3.59 0 0 0 3.59 3.05h3.82a3.6 3.6 0 0 0 3.6-3.6v-70.2a3.6 3.6 0 0 0-3.6-3.6zm22.83 28.8a3.6 3.6 0 0 1-3.6 3.6H81.34a3.6 3.6 0 0 1-2.77-5.9l15-18a3.6 3.6 0 0 1 2.76-1.3h15.87a3.6 3.6 0 0 1 3.6 3.6v18z" fill="#38a3ce"/><path d="M236.4 223a3.6 3.6 0 0 0 3.6-3.6v-90a3.6 3.6 0 0 0-3.6-3.6H133.8a3.6 3.6 0 0 0-3.6 3.6v90a3.6 3.6 0 0 0 3.6 3.6H179a3.58 3.58 0 0 0 3.59-3.05c1.41-10.83 10-17.54 20.49-17.54s19.08 6.71 20.49 17.54a3.59 3.59 0 0 0 3.59 3.05z" fill="#98c622"/><path d="M203.1 209.23a15.3 15.3 0 1 0 15.3 15.3 15.32 15.32 0 0 0-15.3-15.3zM90 11L18.61 76.07v88.16a4 4 0 0 0 4 4h39.34l22.12-26.44a11.57 11.57 0 0 1 8.9-4.16h26.43a11.55 11.55 0 0 1 2.8.36v-8.55a11.6 11.6 0 0 1 11.6-11.6h27.59V76.07zm-2.63 111.46a3 3 0 0 1-3 3h-13a3 3 0 0 1-3-3v-13a3 3 0 0 1 3-3h13a3 3 0 0 1 3 3zm0-24.05a3 3 0 0 1-3 3h-13a3 3 0 0 1-3-3v-13a3 3 0 0 1 3-3h13a3 3 0 0 1 3 3zm24.3 24.05a3 3 0 0 1-3 3h-13a3 3 0 0 1-3-3v-13a3 3 0 0 1 3-3h13a3 3 0 0 1 3 3zm0-24.05a3 3 0 0 1-3 3h-13a3 3 0 0 1-3-3v-13a3 3 0 0 1 3-3h13a3 3 0 0 1 3 3z" fill="#38a3ce"/><path fill="#98c622" d="M90 19.3l71.39 65.28 8.09 7.41L180 82.48 90 .17 0 82.48l10.52 9.51 8.09-7.41L90 19.3z"/></symbol><symbol id="ico_zei" viewBox="0 0 240 240"><path d="M236.92 146.88a8.9 8.9 0 0 0-10.34-3.12l-.16.06L163 164.93v1.54a16.56 16.56 0 0 1-14.9 15.43l-38.24 4a4.4 4.4 0 0 1-.91-8.76l38.24-4a7.79 7.79 0 0 0-.3-15.53l-50.77-3.31a29.88 29.88 0 0 0-16.37 3.7l-67 36.87 18.13 36.56 16.82-14.67a31.51 31.51 0 0 1 26-7.36l56.22 9.34a40.69 40.69 0 0 0 29.08-7.28l76.54-52.72a8.91 8.91 0 0 0 1.38-11.86z" fill="#98c622"/><path fill="#38a3ce" d="M51.9 222.84l-23.04 15.74-27.44-42.77 23.04-15.75 27.44 42.78zM149 1.42a68.1 68.1 0 1 0 68.1 68.1A68.1 68.1 0 0 0 149 1.42zm-5 78.31a5.17 5.17 0 0 1-1.43 3.53 4.46 4.46 0 0 1-3.45 1.6 3.12 3.12 0 0 1-2.61-1.18l-3.87-5v25.63a3.76 3.76 0 0 1-1.47 2.82 5.43 5.43 0 0 1-3.74 1.3 5.83 5.83 0 0 1-3.87-1.26 3.67 3.67 0 0 1-1.51-2.86V86.12q-1.68 5.21-1.93 5.8-1.76 3.53-4.54 3.53a5.28 5.28 0 0 1-3.49-1.3 4.14 4.14 0 0 1-1.55-3.32 3.14 3.14 0 0 1 .59-2.1 67.22 67.22 0 0 0 5.5-12.35 90.5 90.5 0 0 0 4-14.37h-6.89a3.45 3.45 0 0 1-2.74-1.48 6.05 6.05 0 0 1 0-7.23 3.41 3.41 0 0 1 2.69-1.47H122v-7.14l-6.89.42a3.45 3.45 0 0 1-3-1.68 6.33 6.33 0 0 1-1.11-3.62 4.58 4.58 0 0 1 1.09-3.11 3.12 3.12 0 0 1 2.35-1.26 87 87 0 0 0 11.85-.88 100.13 100.13 0 0 0 11.26-2.14l.76-.08a4.39 4.39 0 0 1 3.4 1.55 5.32 5.32 0 0 1 1.39 3.66q0 4-5.46 5.13-3.61.5-5 .76v8.4h7.48a3.46 3.46 0 0 1 2.65 1.47 5.42 5.42 0 0 1 1.22 3.57 5.66 5.66 0 0 1-1.18 3.66 3.4 3.4 0 0 1-2.75 1.46h-7.48v2.94l10.5 12.52a2.9 2.9 0 0 1 .84 2.27zm44.2 17.14a9.62 9.62 0 0 1-2.1 5.71 7.63 7.63 0 0 1-6.39 3.45h-6.72a8.11 8.11 0 0 1-6.35-2.56 9.47 9.47 0 0 1-2.31-6.6V79.56h-3a32.91 32.91 0 0 1-3.53 15.8 29.84 29.84 0 0 1-10.5 11 4.27 4.27 0 0 1-2.3.64 4.77 4.77 0 0 1-3.82-1.89 6.51 6.51 0 0 1-1.55-4.24q0-1.76 5.88-6.64t5.88-14.62h-.59a6 6 0 0 1-6.05-6.05V48a5.89 5.89 0 0 1 5.46-6.05q-1.09-3.36-2.1-6.72a3.85 3.85 0 0 1 1.79-3.28 6.65 6.65 0 0 1 3.92-1.26 5.15 5.15 0 0 1 4.43 2.27q.85 1.18 3 8.82h8l2.67-8.24a3.44 3.44 0 0 1 1.63-2.06 5.84 5.84 0 0 1 3.13-.8 6.27 6.27 0 0 1 3.81 1.32 4.06 4.06 0 0 1 1.75 3.41l-.08.84-1.93 5.65a5.83 5.83 0 0 1 4.87 6v25.55a6 6 0 0 1-6.05 6.07h-4.45v14.83q0 1.43 1.34 1.43h.76q.76 0 1.34-1.51a4.67 4.67 0 0 1 4.71-3.27 5 5 0 0 1 4.08 1.55 6.55 6.55 0 0 1 1.3 4.32zm-14-28.24V53a1.19 1.19 0 0 0-1.34-1.34H157q-1.43 0-1.43 1.34v15.64a1.26 1.26 0 0 0 1.43 1.43h15.8q1.38 0 1.38-1.43z"/></symbol></svg><!--[if lte IE 9]><div class="browserupgrade"><div class="browserupgrade-container">お使いのブラウザはバージョンが古いため、サイトを快適にご利用いただけないかもしれません。快適にご利用頂くために、今すぐブラウザをアップグレードしてください。</div></div><![endif]--><header id="header" class="header">
+	<div class="header-container">
+		<div id="header-inner" class="header-inner">
+			<h1 id="header-logo" class="header-logo logo-header-pc">
+				<a href="https://www.town.abu.lg.jp/">
+					<img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/common/logo_header_abucho.png" alt="山口県阿武町役場 PC">
+				</a>
+			</h1>
+			<h1 class="logo-header-sp">
+				<a href="https://www.town.abu.lg.jp/">
+					<img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/common/logo_header_abucho_sp.png" alt="山口県阿武町役場 SP">
+				</a>
+			</h1>
+			<div id="btn-search-sp" class="ico-search-sp"></div>
+			<div id="btn-menu-sp" class="btn-menu-sp"><span></span><span></span><span></span></div>
+			<div class="search-outline">
+				<div class="search-element">
+					<form role="search" method="get" id="searchform" class="searchform" action="https://www.town.abu.lg.jp/">
+	<label class="screen-reader-text" for="s"></label>
+	<input class="search-input" type="text" value="" name="s" id="s" />
+	<span id="btn-close-form" class="btn-close-form"></span>
+</form> 
+					<img class="ico-search-pc" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/common/ico_search.png" alt="検索">
+				</div>
+			</div>
+			<div id="g-nav-wrap" class="g-nav-wrap">
+				<ul id="g-nav" class="g-nav">
+					<li class="g-nav-about g-nav-second-hierarchy">
+						<a class="g-nav-a_tag_1" href="https://www.town.abu.lg.jp/about/"><span class="g-nav-second-hierarchy-text">阿武町<span class="auto-break">について</span></span></a>
+					</li>
+					<li class="g-nav-news g-nav-second-hierarchy">
+						<a class="g-nav-a_tag_1" href="https://www.town.abu.lg.jp/news/"><span class="g-nav-second-hierarchy-text">新着情報</span></a>
+					</li>
+					<li class="g-nav-life g-nav-second-hierarchy js-hover">
+						<a class="g-nav-a_tag_1" href="https://www.town.abu.lg.jp/guide/#kurasu"><span class="g-nav-second-hierarchy-text">まちで<span class="auto-break">暮らす</span></span></a>
+						<div class="g-nav-third-hierarchy-overlay"></div>
+						<div class="g-nav-third-hierarchy-viewport">
+							<div class="g-nav-third-hierarchy">
+								<div class="g-nav-third-hierarchy-container">
+									<div class="g-nav-third-hierarchy_title">
+										<p class="title-left">まちで暮らす</p>
+										<p class="title-right">町内のみなさまへ</p>
+									</div>
+									<div class="ico-element">
+										<div class="ico-element-container">
+											<div class="ico-parts-1">
+												<a href="https://www.town.abu.lg.jp/guide//?id=kosodate">													<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_kosodate"></use></svg> --><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_kosodate.svg" alt=""></span>
+													<span class="ico-parts-1-name">出産・子育て</span>
+												</a>
+											</div><div class="ico-parts-1">
+												<a href="https://www.town.abu.lg.jp/guide//?id=nyugaku">													<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_nyugaku"></use></svg> --><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_kyouiku.svg" alt=""></span>
+													<span class="ico-parts-1-name">教育・生涯学習</span>
+												</a>
+											</div><div class="ico-parts-1 ico-parts-1-ico_hataraku">
+												<a href="https://www.town.abu.lg.jp/guide//?id=hataraku">													<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_hataraku"></use></svg> --><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_hataraku.svg" alt=""></span>
+													<span class="ico-parts-1-name">働く</span>
+												</a>
+											</div><div class="ico-parts-1">
+												<a href="https://www.town.abu.lg.jp/guide//?id=kekkon">													<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_kekkon"></use></svg> --><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_kekkon.svg" alt=""></span>
+													<span class="ico-parts-1-name">結婚・離婚</span>
+												</a>
+											</div><div class="ico-parts-1">
+												<a href="https://www.town.abu.lg.jp/guide//?id=tenkyo">													<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_tenkyo"></use></svg> --><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_hikkoshi.svg" alt=""></span>
+													<span class="ico-parts-1-name">引越し</span>
+												</a>
+											</div><div class="ico-parts-1">
+												<a href="https://www.town.abu.lg.jp/guide//?id=rougo">													<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_kaigo"></use></svg> --><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_kourei.svg" alt=""></span>
+													<span class="ico-parts-1-name">高齢・介護</span>
+												</a>
+											</div><div class="ico-parts-1">
+												<a href="https://www.town.abu.lg.jp/guide//?id=okuyami">													<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_okuyami"></use></svg> --><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_okuyami.svg" alt=""></span>
+													<span class="ico-parts-1-name">おくやみ</span>
+												</a>
+											</div><div class="ico-parts-1">
+												<a href="https://www.town.abu.lg.jp/guide//?id=bousai">													<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_bousai"></use></svg> --><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_bousai.svg" alt=""></span>
+													<span class="ico-parts-1-name">防災</span>
+												</a>
+											</div><div class="ico-parts-1">
+												<a href="https://www.town.abu.lg.jp/guide//?id=hoken">													<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_nenkin"></use></svg> --><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_kokuho.svg" alt=""></span>
+													<span class="ico-parts-1-name">国保・年金</span>
+												</a>
+											</div><div class="ico-parts-1">
+												<a href="https://www.town.abu.lg.jp/guide//?id=zei">													<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_zei"></use></svg> --><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_zei.svg" alt=""></span>
+													<span class="ico-parts-1-name">税</span>
+												</a>
+											</div><div class="ico-parts-1">
+												<a href="https://www.town.abu.lg.jp/guide//?id=shomei">													<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_shoumeisho"></use></svg> --><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_shoumei.svg" alt=""></span>
+													<span class="ico-parts-1-name">証明書</span>
+												</a>
+											</div><div class="ico-parts-1 ico-kenkou">
+												<a href="https://www.town.abu.lg.jp/guide//?id=kenkou">													<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_kenkou"></use></svg> --><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_kenkou.svg" alt=""></span>
+													<span class="ico-parts-1-name">健康</span>
+												</a>
+											</div><div class="ico-parts-1">
+												<a href="https://www.town.abu.lg.jp/guide//?id=seikatu">													<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_seikatu"></use></svg> --><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_seikatu.svg" alt=""></span>
+													<span class="ico-parts-1-name">生活・環境</span>
+												</a>
+											</div><div class="ico-parts-1">
+												<a href="https://www.town.abu.lg.jp/guide//?id=shi">													<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_shisetu"></use></svg> --><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_shisetu.svg" alt=""></span>
+													<span class="ico-parts-1-name">施設行事</span>
+												</a>
+											</div><div class="ico-parts-1 ico-shougai">
+												<a href="https://www.town.abu.lg.jp/guide//?id=shougai">													<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_shougai"></use></svg> --><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_shougai.svg" alt=""></span>
+													<span class="ico-parts-1-name">障害者の方へ</span>
+												</a>
+											</div>
+										</div>
+									</div><!-- ico-element -->
+								</div><!-- .g-nav-life-third-hierarchy -->
+							</div><!-- .g-nav-third-hierarchy-wrap -->
+						</div>
+					</li>
+					<li class="g-nav-know g-nav-second-hierarchy js-hover">
+						<a class="g-nav-a_tag_1" href="https://www.town.abu.lg.jp/guide/#siru"><span class="g-nav-second-hierarchy-text">まちを<span class="auto-break">知る</span></span></a>
+						<div class="g-nav-third-hierarchy-overlay"></div>
+						<div class="g-nav-third-hierarchy-viewport">
+							<div class="g-nav-third-hierarchy">
+								<div class="g-nav-third-hierarchy-container">
+									<div class="g-nav-third-hierarchy_title">
+										<p class="title-left">まちを知る</p>
+										<p class="title-right">町外のみなさまへ</p>
+									</div>
+									<div class="ico-element">
+										<div class="ico-element-container">
+											<div class="ico-parts-1">
+												<a href="https://www.town.abu.lg.jp/guide//?id=kankou">													<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_kankou"></use></svg> --><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_kankou.svg" alt=""></span>
+													<span class="ico-parts-1-name">観光</span>
+												</a>
+											</div><div class="ico-parts-1">
+												<a href="https://www.town.abu.lg.jp/guide//?id=bunka">													<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_bunka"></use></svg> --><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_bunka.svg" alt=""></span>
+													<span class="ico-parts-1-name">文化</span>
+												</a>
+											</div><div class="ico-parts-1">
+												<a href="https://www.town.abu.lg.jp/guide//?id=sangyo">													<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_sangyo"></use></svg> --><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_sangyo.svg" alt=""></span>
+													<span class="ico-parts-1-name">産業・ビジネス</span>
+												</a>
+											</div><div class="ico-parts-1">
+												<a href="https://www.town.abu.lg.jp/guide//?id=kakushu">													<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_kakushukeikaku"></use></svg> --><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_kakushu.svg" alt=""></span>
+													<span class="ico-parts-1-name">各種計画</span>
+												</a>
+											</div><div class="ico-parts-1">
+												<a href="https://www.town.abu.lg.jp/guide//?id=gikai">													<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_gikaijyohou"></use></svg> --><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_gikai.svg" alt=""></span>
+													<span class="ico-parts-1-name">議会情報</span>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div><!-- .g-nav-know-third-hierarchy -->
+							</div><!-- .g-nav-third-hierarchy-wrap -->
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div><!-- .header-inner -->
+	</div>
+</header>
+<div id="menu-bg" class="menu-bg"></div>
+<main id="main" class="main" role="main">
+<div class="breadcrumb-wrap"><div class="breadcrumb-container"><div id="breadcrumb" class="cf"><div itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://www.town.abu.lg.jp" itemprop="url"><span itemprop="title">TOP</span></a><div itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://www.town.abu.lg.jp/guide" itemprop="url"><span itemprop="title">まちで暮らす</span></a></div><div>  町営バス及び定期便について</div></div></div></div></div>
+	<article class="single-guide-article container">
+		<h1 class="single-guide-title">町営バス及び定期便について</h1>
+				<p><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">阿武町では、通院や買物などの日常生活がより便利になるよう、奈古と宇田郷地区の間で町営バス、奈古と福賀地区の間で福賀コミュニティ交通ふくすけ定期便を運行しています。</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">町営バス及び定期便は、道の駅阿武町と奈古駅で防長バスや鉄道に連絡している為、萩市へのアクセスも簡単です。</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">また、運賃は奈古－宇田郷地区間が一律１００円、奈古－福賀地区間が一律２００円（それぞれ同一地区内１００円）と利用しやすい運賃設定となっております。なお、町営バスの<a href="http://www.bochobus.co.jp/publics/index/95/">障がい者手帳による割引制度</a>については防長バスの規定が適用されます。</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">皆さん、町内での移動には是非、町営バスや定期便をご利用下さい。</span></p>
+<p><img fetchpriority="high" decoding="async" class="aligncenter wp-image-16763 size-full" src="https://www.town.abu.lg.jp/wp/wp-content/uploads/2020/08/9e7928281548171b18806d15e3ef1c13-scaled-e1775001236809.jpg" alt="" width="1689" height="2466" srcset="https://townabu2.sakura.ne.jp/wp/wp-content/uploads/2020/08/9e7928281548171b18806d15e3ef1c13-scaled-e1775001236809.jpg 1689w, https://townabu2.sakura.ne.jp/wp/wp-content/uploads/2020/08/9e7928281548171b18806d15e3ef1c13-scaled-e1775001236809-205x300.jpg 205w, https://townabu2.sakura.ne.jp/wp/wp-content/uploads/2020/08/9e7928281548171b18806d15e3ef1c13-scaled-e1775001236809-658x960.jpg 658w, https://townabu2.sakura.ne.jp/wp/wp-content/uploads/2020/08/9e7928281548171b18806d15e3ef1c13-scaled-e1775001236809-768x1121.jpg 768w, https://townabu2.sakura.ne.jp/wp/wp-content/uploads/2020/08/9e7928281548171b18806d15e3ef1c13-scaled-e1775001236809-1052x1536.jpg 1052w, https://townabu2.sakura.ne.jp/wp/wp-content/uploads/2020/08/9e7928281548171b18806d15e3ef1c13-scaled-e1775001236809-1403x2048.jpg 1403w" sizes="(max-width: 1689px) 100vw, 1689px" /></p>
+<p style="text-align: center;"><a href="https://townabu2.sakura.ne.jp/12346/" target="_blank" rel="noopener">《デマンド型交通のご案内はこちら》</a></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;"><tt><br />
+◆ 町営バスに関するお問い合わせは、阿武町役場 まちづくり推進課(2-3111)までお願いします。</tt></span></p>
+			<div class="g-nav-third-hierarchy_title">
+				<span class="title-left">まちで暮らす</span>
+				<span class="title-right">町内のみなさまへ</span>
+			</div>
+			<div class="ico-element" style="margin-bottom: 30px;">
+				<div class="ico-element-container">
+				<div class="ico-parts-1">
+					<a href="https://www.town.abu.lg.jp/guide/?id=kosodate">
+						<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_kosodate"></use></svg> --><img class="icon" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_kosodate.svg" alt=""></span>
+						<span class="ico-parts-1-name">出産・子育て</span>
+					</a>
+				</div><div class="ico-parts-1">
+					<a href="https://www.town.abu.lg.jp/./guide/?id=nyugaku">
+						<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_nyugaku"></use></svg> --><img class="icon" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_kyouiku.svg" alt=""></span>
+						<span class="ico-parts-1-name">教育・生涯学習</span>
+					</a>
+				</div><div class="ico-parts-1 ico-parts-1-ico_hataraku">
+					<a href="https://www.town.abu.lg.jp/./guide/?id=hataraku">
+						<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_hataraku"></use></svg> --><img class="icon" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_hataraku.svg" alt=""></span>
+						<span class="ico-parts-1-name">働く</span>
+					</a>
+				</div><div class="ico-parts-1">
+					<a href="https://www.town.abu.lg.jp/./guide/?id=kekkon">
+						<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_kekkon"></use></svg> --><img class="icon" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_kekkon.svg" alt=""></span>
+						<span class="ico-parts-1-name">結婚・離婚</span>
+					</a>
+				</div><div class="ico-parts-1">
+					<a href="https://www.town.abu.lg.jp/./guide/?id=tenkyo">
+						<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_tenkyo"></use></svg> --><img class="icon" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_hikkoshi.svg" alt=""></span>
+						<span class="ico-parts-1-name">引越し</span>
+					</a>
+				</div><div class="ico-parts-1">
+					<a href="https://www.town.abu.lg.jp/./guide/?id=rougo">
+						<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_kaigo"></use></svg> --><img class="icon" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_kourei.svg" alt=""></span>
+						<span class="ico-parts-1-name">高齢・介護</span>
+					</a>
+				</div><div class="ico-parts-1">
+					<a href="https://www.town.abu.lg.jp/./guide/?id=okuyami">
+						<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_okuyami"></use></svg> --><img class="icon" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_okuyami.svg" alt=""></span>
+						<span class="ico-parts-1-name">おくやみ</span>
+					</a>
+				</div><div class="ico-parts-1">
+					<a href="https://www.town.abu.lg.jp/./guide/?id=bousai">
+						<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_bousai"></use></svg> --><img class="icon" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_bousai.svg" alt=""></span>
+						<span class="ico-parts-1-name">防災</span>
+					</a>
+				</div><div class="ico-parts-1">
+					<a href="https://www.town.abu.lg.jp/./guide/?id=hoken">
+						<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_nenkin"></use></svg> --><img class="icon" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_kokuho.svg" alt=""></span>
+						<span class="ico-parts-1-name">国保・年金</span>
+					</a>
+				</div><div class="ico-parts-1">
+					<a href="https://www.town.abu.lg.jp/./guide/?id=zei">
+						<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_zei"></use></svg> --><img class="icon" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_zei.svg" alt=""></span>
+						<span class="ico-parts-1-name">税</span>
+					</a>
+				</div><div class="ico-parts-1">
+					<a href="https://www.town.abu.lg.jp/./guide/?id=shoumei">
+						<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_shoumeisho"></use></svg> --><img class="icon" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_shoumei.svg" alt=""></span>
+						<span class="ico-parts-1-name">証明書</span>
+					</a>
+				</div><div class="ico-parts-1 ico-kenkou">
+					<a href="https://www.town.abu.lg.jp/./guide/?id=kenkou">
+						<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_kenkou"></use></svg> --><img class="icon" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_kenkou.svg" alt=""></span>
+						<span class="ico-parts-1-name">健康</span>
+					</a>
+				</div><div class="ico-parts-1">
+					<a href="https://www.town.abu.lg.jp/./guide/?id=seikatu">
+						<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_seikatu"></use></svg> --><img class="icon" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_seikatu.svg" alt=""></span>
+						<span class="ico-parts-1-name">生活・環境</span>
+					</a>
+				</div><div class="ico-parts-1">
+					<a href="https://www.town.abu.lg.jp/./guide/?id=shisetu">
+						<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_shisetu"></use></svg> --><img class="icon" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_shisetu.svg" alt=""></span>
+						<span class="ico-parts-1-name">施設行事</span>
+					</a>
+				</div><div class="ico-parts-1 ico-shougai">
+					<a href="https://www.town.abu.lg.jp/./guide/?id=shougai">
+						<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_shougai"></use></svg> --><img class="icon" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_shougai.svg" alt=""></span>
+						<span class="ico-parts-1-name">障害者の方へ</span>
+					</a>
+				</div>
+			</div>
+			</div><!-- ico-element -->
+			<div class="g-nav-third-hierarchy_title">
+				<span class="title-left">まちを知る</span>
+				<span class="title-right">町内のみなさまへ</span>
+			</div>
+			<div class="ico-element">
+			<div class="ico-element-container">
+				<div class="ico-parts-1">
+					<a href="https://www.town.abu.lg.jp/./guide/?id=kankou">
+						<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_kankou"></use></svg> --><img class="icon" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_kankou.svg" alt=""></span>
+						<span class="ico-parts-1-name">観光</span>
+					</a>
+				</div><div class="ico-parts-1">
+					<a href="https://www.town.abu.lg.jp/./guide/?id=bunka">
+						<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_bunka"></use></svg> --><img class="icon" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_bunka.svg" alt=""></span>
+						<span class="ico-parts-1-name">文化</span>
+					</a>
+				</div><div class="ico-parts-1">
+					<a href="https://www.town.abu.lg.jp/./guide/?id=sangyo">
+						<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_sangyo"></use></svg> --><img class="icon" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_sangyo.svg" alt=""></span>
+						<span class="ico-parts-1-name">産業</span>
+					</a>
+				</div><div class="ico-parts-1">
+					<a href="https://www.town.abu.lg.jp/./guide/?id=kakushu">
+						<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_kakushukeikaku"></use></svg> --><img class="icon" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_kakushu.svg" alt=""></span>
+						<span class="ico-parts-1-name">各種計画</span>
+					</a>
+				</div><div class="ico-parts-1">
+					<a href="https://www.town.abu.lg.jp/./guide/?id=gikai">
+						<span class="symbol symbol-icon"><!-- <svg><use xlink:href="#ico_gikaijyohou"></use></svg> --><img class="icon" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/top/ico_gikai.svg" alt=""></span>
+						<span class="ico-parts-1-name">議会情報</span>
+					</a>
+				</div>
+			</div>
+		</div>
+			</article>
+</main>
+<footer id="footer" class="footer">
+	<div class="footer-inner">
+		<div class="footer-content">
+			<div class="footer-content-inner">
+				<div id="footer-logo" class="footer-logo"><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/common/logo_footer_abucho.png" alt="阿武町役場"></div>
+				<p>&nbsp;</p>
+<table class="table01" style="width: 77%; height: 294px;">
+<tbody>
+<tr style="height: 49px;">
+<th style="height: 49px;" scope="col">地区別</th>
+<th style="height: 49px;" scope="col">人口</th>
+<th style="height: 49px;" scope="col">世帯数</th>
+</tr>
+<tr style="height: 49px;">
+<td style="height: 49px;" align="center">奈古</td>
+<td style="height: 49px;" align="right">1,963(-7)</td>
+<td style="height: 49px;" align="right">954(2)</td>
+</tr>
+<tr style="height: 49px;">
+<td style="height: 49px;" align="center">福賀</td>
+<td style="height: 49px;" align="right">448(-)</td>
+<td style="height: 49px;" align="right">243(-)</td>
+</tr>
+<tr style="height: 49px;">
+<td style="height: 49px;" align="center">宇田郷</td>
+<td style="height: 49px;" align="right">425(-3)</td>
+<td style="height: 49px;" align="right">237(-2)</td>
+</tr>
+<tr style="height: 49px;">
+<td style="height: 49px;" align="center">合計</td>
+<td style="height: 49px;" align="right">2,836(-10)</td>
+<td style="height: 49px;" align="right">1,434(-)</td>
+</tr>
+<tr style="height: 49px;">
+<td style="height: 49px;">移動内訳</td>
+<td style="height: 49px;" colspan="2">転入8、転出16、出生2、死亡4</td>
+</tr>
+</tbody>
+</table>
+<p class="hosoku">令和8年3月末現在の人口と世帯数　（）内数字は対前月比です</p>
+				<div class="footer-detail-1">
+					<p class="footer-detail-1-txt"><span>町役場本庁</span><span>山口県阿武郡阿武町大字奈古2636番地</span></p>
+					<p class="footer-detail-1-txt"><span>福賀支所</span><span>山口県阿武郡阿武町大字福田下1365番地</span></p>
+					<p class="footer-detail-1-txt"><span>宇田郷支所</span><span>山口県阿武郡阿武町大字宇田2224番地</span></p>
+				</div>
+				<div class="footer-detail-2">
+					<p class="footer-detail-2-txt"><span>〒759-3622</span><span>山口県阿武郡阿武町大字奈古2636番地</span></p>
+					<p class="footer-detail-2-txt"><span>Tel&nbsp;&nbsp;</span><span> : 08388-2-3110</span></p>
+					<p class="footer-detail-2-txt"><span>Fax&nbsp;</span><span> : 08388-2-2090</span></p>
+					<p class="footer-detail-2-txt"><span>Mail</span><span><a href="mailto:soumu@town.abu.lg.jp"> : soumu@town.abu.lg.jp</a></span></p>
+				</div>
+				<div class="footer-content-txt">出生、死亡などの戸籍の届出は、土曜、日曜、祝日などの<br>閉庁時でも宿直で受付しています。<br>開庁時間：午前8時30分〜午後5時15分<br><span> （土曜、日曜、祝日及び年末年始を除く）</span></div>
+				<ul class="footer-sns">
+					<li class="footer-sns-list">
+						<a href="https://www.facebook.com/abutown/" target="_blank"><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/common/ico_fb.png" alt="Facebook"></a>
+					</li><li class="footer-sns-list">
+						<a href="https://www.instagram.com/abutown_official/" target="_blank"><img src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/img/common/ico_insta.png" alt="Instagram"></a>
+					</li>
+				</ul>
+			</div>
+		</div><!--
+		--><div id="map_canvas_footer" class="footer-map ggmap"><iframe src="https://www.google.com/maps/d/u/0/embed?mid=1g6usyu4Q3kAQj5ljS8VpUNhx7Ell0N8A" width="100%" height="100%"></iframe></div>
+	</div>
+	<aside class="section-aside-contents-2">
+	<div class="section-aside-contents-2-inner">
+		<p class="section-aside-contents-2-txt">私たち企業・事業所も「第７次 阿武総合計画」に定める、夢と笑顔あふれる「豊かで住みよい文化の町」づくりを応援しています。</p>
+		<div class="section-aside-contents-2-wrap">
+<ul class="section-aside-contents-2-ul"><li><a href="https://www.hagiabu-shokokai.com" target="_blank"><img src="https://townabu2.sakura.ne.jp/wp/wp-content/uploads/2017/11/bnr_footer_13.jpg" alt="萩阿武商工会"></a></li><li><a href="https://www.mihagi.co.jp"><img src="https://townabu2.sakura.ne.jp/wp/wp-content/uploads/2021/09/dcfdc728d3d087205fd608ccff412902.jpg" alt="美萩工芸"></a></li><li><a href="http://e-g-f.jp/" target="_blank"><img src="https://townabu2.sakura.ne.jp/wp/wp-content/uploads/2019/08/bd68239b7bfc00498197f121cf2c7081.png" alt=""></a></li><li><a href="https://www.ja-ymg.or.jp/" target="_blank"><img src="https://townabu2.sakura.ne.jp/wp/wp-content/uploads/2019/04/8d79ecd9e39c818f2222c1bd9ba990fb.jpg" alt="JA山口県"></a></li><li><a href="http://abufukushi.com/" target="_blank"><img src="https://townabu2.sakura.ne.jp/wp/wp-content/uploads/2017/11/bnr_footer_10.jpg" alt="社会福祉法人 阿武福祉会"></a></li><li><a href="http://www.bellows.co.jp/ja/" target="_blank"><img src="https://townabu2.sakura.ne.jp/wp/wp-content/uploads/2017/11/bnr_footer_11.jpg" alt="Bella-Flex"></a></li><li><a href="http://www.turuso.co.jp/" target="_blank"><img src="https://townabu2.sakura.ne.jp/wp/wp-content/uploads/2017/11/bnr_footer_12.jpg" alt="鶴惣工業株式会社"></a></li><li><a href="http://www.gi-paddlers.com/" target="_blank"><img src="https://townabu2.sakura.ne.jp/wp/wp-content/uploads/2017/11/bnr_footer_15.jpg" alt="GI Paddlers"></a></li><li><a href="http://yoshioka-doken.com/" target="_blank"><img src="https://townabu2.sakura.ne.jp/wp/wp-content/uploads/2017/11/bnr_footer_16.jpg" alt="YOSHIOKA"></a></li><li><a href="https://tokyoart.co.jp/" target="_blank"><img src="https://townabu2.sakura.ne.jp/wp/wp-content/uploads/2017/11/bnr_footer_17.jpg" alt="TOKYO ART"></a></li><li><a href="https://azumino-h2o.jp" target="_blank"><img src="https://townabu2.sakura.ne.jp/wp/wp-content/uploads/2017/11/bnr_footer_18.jpg" alt="あづみ野湧水"></a></li><li><a href="https://townabu2.sakura.ne.jp/sys/topics/detail.php?detailID=451" target="_blank"><img src="https://townabu2.sakura.ne.jp/wp/wp-content/uploads/2017/11/bnr_footer_20.jpg" alt="バナー広告主 募集中！"></a></li></ul>		</div>
+	</div>
+	<small id="copyright">Copyright (C)2017 Town Abu. All Rights Reserved.</small>
+</aside><!-- .section-aside-contents-2 -->
+</footer><script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp/wp-*.php","/wp/wp-admin/*","/wp/wp-content/uploads/*","/wp/wp-content/*","/wp/wp-content/plugins/*","/wp/wp-content/themes/abucho_work/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script id="jquery-js" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/js/vendor/jquery-2.1.4.min.js"><\/script>')</script>
+<script id="js-common-js" src="https://townabu2.sakura.ne.jp/wp/wp-content/themes/abucho_work/js/common.js"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://townabu2.sakura.ne.jp/wp/wp-includes/js/wp-emoji-release.min.js?ver=7.0.3"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=https://townabu2.sakura.ne.jp/wp/wp-includes/js/wp-emoji-loader.min.js
+</script>
+</body>
+</html>

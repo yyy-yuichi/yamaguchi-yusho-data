@@ -1,0 +1,733 @@
+取得日時: 2026-08-09 JST
+取得元  : https://yamaguchi-opendata.jp/ckan/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7
+取得方法: curl -sL (生バイト取得、要約なし)
+---
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="ja" class="ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="ja"  > <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+      <meta name="csrf_field_name" content="_csrf_token" />
+      <meta name="_csrf_token" content="ImRjNDdkZWI5ZjdiYzk1NWU5NmE3Nzg1YjdmNGFiY2M1YjMzNmUwOWIi.anhhVA.-qa_xUB0tDjBxU6gM-c5G9VsGWM" />
+
+      <meta name="generator" content="ckan 2.10.4" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【周防大島町】公共交通機関時刻表 - 周防大島町公共交通機関時刻表ページ - CKAN</title>
+
+    
+    <link rel="shortcut icon" href="/base/images/ckan.ico" />
+    
+      
+      
+      
+    
+
+    
+      
+      
+    
+  
+  <meta property="og:title" content="【周防大島町】公共交通機関時刻表 - 周防大島町公共交通機関時刻表ページ - CKAN">
+  <meta property="og:description" content="周防大島町公共交通機関時刻表サイト
+https://www.town.suo-oshima.lg.jp/soshiki/38/11883.html">
+
+
+    
+    <link href="/ckan/webassets/base/5b7e7171_main.css" rel="stylesheet"/>
+    
+  </head>
+
+  
+  <body data-site-root="https://yamaguchi-opendata.jp/ckan/" data-locale-root="https://yamaguchi-opendata.jp/ckan/" >
+
+    
+    <div class="visually-hidden-focusable"><a href="#content">Skip to main content</a></div>
+  
+
+  
+    
+
+ 
+<div class="account-masthead">
+  <div class="container">
+     
+    <nav class="account not-authed" aria-label="Account">
+      <ul class="list-unstyled">
+        
+        <li><a href="/ckan/user/login">ログイン</a></li>
+         
+      </ul>
+    </nav>
+     
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="container">
+      
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <hgroup class="header-image navbar-left">
+
+      
+      
+      <a class="logo" href="https://yamaguchi-opendata.jp">
+        <img src="/ckan/base/images/ckan-logo.png?v=new" alt="CKAN"
+          title="CKAN" />
+      </a>
+      
+      
+
+       </hgroup>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navigation-toggle"
+        aria-controls="main-navigation-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars text-white"></span>
+      </button>
+
+      <div class="main-navbar collapse navbar-collapse" id="main-navigation-toggle">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          
+            
+              
+              
+          
+          <li><a href="https://yamaguchi-opendata.jp">Top</a></li>
+          <li><a href="https://yamaguchi-opendata.jp/index.html#ai-search">AI検索</a></li>
+          <li class="active"><a href="/ckan/dataset/">データセット</a></li><li><a href="/ckan/organization/">団体</a></li><li><a href="/ckan/group/">カテゴリ</a></li><li><a href="/ckan/tag/">タグ</a></li><li><a href="/ckan/about">About</a></li>
+          
+          
+          
+          </ul>
+
+      
+      
+          <form class="d-flex site-search" action="/ckan/dataset/" method="get">
+              <label class="d-none" for="field-sitewide-search">Search Datasets...</label>
+              <input id="field-sitewide-search" class="form-control me-2"  type="text" name="q" placeholder="検索" aria-label="データセット検索..."/>
+              <button class="btn" type="submit" aria-label="Submit"><i class="fa fa-search"></i></button>
+          </form>
+      
+      </div>
+    </nav>
+  </div>
+</header>
+
+  
+    <div class="main">
+      <div id="content" class="container">
+        
+          
+            <div class="flash-messages">
+              
+                
+              
+            </div>
+          
+
+          
+            <div class="toolbar" role="navigation" aria-label="Breadcrumb">
+              
+                
+                  <ol class="breadcrumb">
+                    
+<li class="home"><a href="/ckan/" aria-label="ホーム"><i class="fa fa-home"></i><span> ホーム</span></a></li>
+                    
+  
+  
+    
+    
+      
+      
+      <li><a href="/ckan/organization/">団体</a></li>
+      <li><a href="/ckan/organization/35305" title="周防大島町">周防大島町</a></li>
+    
+    <li><a href="/ckan/dataset/jikokuhyou" title="【周防大島町】公共交通機関時刻表">【周防大島町】公共交通機関時刻表</a></li>
+  
+
+  <li class="active"><a href="" title="周防大島町公共交通機関時刻表ページ">周防大島町公共交通機関時刻表ページ</a></li>
+
+                  </ol>
+                
+              
+            </div>
+          
+
+          <div class="row wrapper">
+            
+            
+  
+    <section class="module module-resource" role="complementary">
+      
+      <div class="module-content">
+        <div class="actions">
+          
+            <ul>
+              
+  
+                
+                  
+                
+                <li>
+                  <div class="btn-group">
+                    
+                      <a class="btn btn-primary resource-url-analytics" href="https://www.town.suo-oshima.lg.jp/soshiki/7/1629.html">
+                        
+                          <i class="fa fa-external-link"></i> データをダウンロード
+                        
+                      </a>
+                    
+                    
+                      
+                    
+                  </div>
+                </li>
+              
+  
+
+            </ul>
+          
+        </div>
+        
+          <h1 class="page-heading" title="周防大島町公共交通機関時刻表ページ">周防大島町公共交通機関時刻表ページ</h1>
+          
+            
+              <p class="text-muted ellipsis">URL: <a class="resource-url-analytics" href="https://www.town.suo-oshima.lg.jp/soshiki/7/1629.html" title="https://www.town.suo-oshima.lg.jp/soshiki/7/1629.html">https://www.town.suo-oshima.lg.jp/soshiki/7/1629.html</a></p>
+            
+          
+          <div class="prose notes" property="rdfs:label">
+            
+            
+              <h3>データセットの概要より</h3>
+              <blockquote>周防大島町公共交通機関時刻表サイト
+https://www.town.suo-oshima.lg.jp/soshiki/38/11883.html</blockquote>
+              <p>Source: <a href="/ckan/dataset/jikokuhyou">【周防大島町】公共交通機関時刻表</a>
+            
+          </div>
+        
+      
+      
+        
+          
+        
+          
+            <div class="resource-view">
+              
+                
+                <div class="data-viewer-info">
+                  <p>このリソースのために作成されたビューはまだありません</p>
+                  
+                </div>
+              
+            </div>
+          
+        </div>
+      
+      
+      
+    </section>
+  
+
+
+            
+              <aside class="secondary col-md-3">
+                
+                
+
+  
+    
+
+
+  
+    <section class="module module-narrow resources">
+      
+        
+          <h2 class="module-heading"><i class="fa fa-copy"></i> リソース</h2>
+        
+        
+          <ul class="list-unstyled nav nav-simple">
+            
+              <li class="nav-item active">
+                <a href="/ckan/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7?inner_span=True" title="周防大島町公共交通機関時刻表ページ">周防大島町公共交通機関時刻表ページ</a>
+              </li>
+            
+          </ul>
+        
+      
+    </section>
+  
+
+  
+
+  
+    
+
+  <section class="module module-narrow social">
+    
+      <h2 class="module-heading"><i class="fa fa-share-square"></i> ソーシャル</h2>
+    
+    
+      <ul class="nav nav-simple">
+        <li class="nav-item"><a href="https://twitter.com/share?url=https://yamaguchi-opendata.jp/ckan/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" target="_blank"><i class="fa-brands fa-twitter-square"></i> Twitter</a></li>
+        <li class="nav-item"><a href="https://www.facebook.com/sharer.php?u=https://yamaguchi-opendata.jp/ckan/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" target="_blank"><i class="fa-brands fa-facebook-square"></i> Facebook</a></li>
+      </ul>
+    
+  </section>
+
+  
+
+              </aside>
+            
+
+            
+              <div class="primary col-md-9 col-xs-12" role="main">
+                
+                
+  
+    
+      <section class="module">
+        
+  
+  
+        <div class="module-content">
+          <h2>追加情報</h2>
+          <table class="table table-striped table-bordered table-condensed" data-module="table-toggle-more">
+            <thead>
+              <tr>
+                <th scope="col">項目</th>
+                <th scope="col">内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">最終更新日</th>
+                <td>2024年4月16日</td>
+              </tr>
+              <tr>
+                <th scope="row">メタデータ最終更新日時</th>
+                <td>2024年4月16日</td>
+              </tr>
+              <tr>
+                <th scope="row">作成日</th>
+                <td>2024年4月16日</td>
+              </tr>
+              <tr>
+                <th scope="row">データ形式</th>
+                <td>HTML</td>
+              </tr>
+              <tr>
+                <th scope="row">ライセンス</th>
+                <td>
+
+
+  
+    
+  
+    <a href="http://www.opendefinition.org/licenses/gfdl" rel="dc:rights">GNU Free Documentation License</a>
+  
+
+  
+</td>
+              </tr>
+              
+                
+              
+                
+                  <tr class="toggle-more"><th scope="row">Datastore active</th><td>False</td></tr>
+                
+              
+                
+              
+                
+                  <tr class="toggle-more"><th scope="row">Has views</th><td>False</td></tr>
+                
+              
+                
+                  <tr class="toggle-more"><th scope="row">Id</th><td>5adf1401-7a53-4f89-8699-f80390f301c7</td></tr>
+                
+              
+                
+              
+                
+                  <tr class="toggle-more"><th scope="row">Package id</th><td>f08cd6a6-7359-4a10-ab22-36d2d9a37c63</td></tr>
+                
+              
+                
+                  <tr class="toggle-more"><th scope="row">Position</th><td>0</td></tr>
+                
+              
+                
+                  <tr class="toggle-more"><th scope="row">State</th><td>active</td></tr>
+                
+              
+            </tbody>
+          </table>
+        </div>
+        
+
+      </section>
+    
+  
+
+              </div>
+            
+          </div>
+        
+      </div>
+    </div>
+  
+    <footer class="site-footer">
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-md-8 footer-links">
+        
+          <ul class="list-unstyled">
+            
+              <li><a href="/ckan/about">About CKAN</a></li>
+            
+          </ul>
+          <ul class="list-unstyled">
+            
+              
+              <li><a href="http://docs.ckan.org/en/2.10/api/">CKAN API</a></li>
+              <li><a href="http://www.ckan.org/">CKANアソシエーション</a></li>
+              <li><a href="http://www.opendefinition.org/okd/"><img src="/ckan/base/images/od_80x15_blue.png" alt="Open Data"></a></li>
+            
+          </ul>
+        
+      </div>
+      <div class="col-md-4 attribution">
+        
+          <p><strong>Powered by</strong> <a class="hide-text ckan-footer-logo" href="http://ckan.org">CKAN</a></p>
+        
+        
+          
+<form class="lang-select" action="/ckan/util/redirect" data-module="select-switch" method="POST">
+  
+<input type="hidden" name="_csrf_token" value="ImRjNDdkZWI5ZjdiYzk1NWU5NmE3Nzg1YjdmNGFiY2M1YjMzNmUwOWIi.anhhVA.-qa_xUB0tDjBxU6gM-c5G9VsGWM"/> 
+  <div class="form-group">
+    <label for="field-lang-select">言語</label>
+    <select id="field-lang-select" name="url" data-module="autocomplete" data-module-dropdown-class="lang-dropdown" data-module-container-class="lang-container">
+      
+        
+        <option value="/ckan/ja/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" selected="selected">
+          日本語
+        </option>
+      
+        
+        <option value="/ckan/en/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          English
+        </option>
+      
+        
+        <option value="/ckan/pt_BR/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          português (Brasil)
+        </option>
+      
+        
+        <option value="/ckan/it/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          italiano
+        </option>
+      
+        
+        <option value="/ckan/cs_CZ/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          čeština (Česko)
+        </option>
+      
+        
+        <option value="/ckan/ca/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          català
+        </option>
+      
+        
+        <option value="/ckan/es/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          español
+        </option>
+      
+        
+        <option value="/ckan/fr/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          français
+        </option>
+      
+        
+        <option value="/ckan/el/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          Ελληνικά
+        </option>
+      
+        
+        <option value="/ckan/sv/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          svenska
+        </option>
+      
+        
+        <option value="/ckan/sr/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          српски
+        </option>
+      
+        
+        <option value="/ckan/no/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          norsk
+        </option>
+      
+        
+        <option value="/ckan/sk/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          slovenčina
+        </option>
+      
+        
+        <option value="/ckan/fi/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          suomi
+        </option>
+      
+        
+        <option value="/ckan/ru/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          русский
+        </option>
+      
+        
+        <option value="/ckan/de/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          Deutsch
+        </option>
+      
+        
+        <option value="/ckan/pl/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          polski
+        </option>
+      
+        
+        <option value="/ckan/nl/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          Nederlands
+        </option>
+      
+        
+        <option value="/ckan/bg/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          български
+        </option>
+      
+        
+        <option value="/ckan/ko_KR/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          한국어 (대한민국)
+        </option>
+      
+        
+        <option value="/ckan/hu/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          magyar
+        </option>
+      
+        
+        <option value="/ckan/sl/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          slovenščina
+        </option>
+      
+        
+        <option value="/ckan/lv/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          latviešu
+        </option>
+      
+        
+        <option value="/ckan/uk_UA/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          українська (Україна)
+        </option>
+      
+        
+        <option value="/ckan/gl/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          galego
+        </option>
+      
+        
+        <option value="/ckan/th/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          ไทย
+        </option>
+      
+        
+        <option value="/ckan/fa_IR/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          فارسی (ایران)
+        </option>
+      
+        
+        <option value="/ckan/pt_PT/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          português (Portugal)
+        </option>
+      
+        
+        <option value="/ckan/vi/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          Tiếng Việt
+        </option>
+      
+        
+        <option value="/ckan/am/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          አማርኛ
+        </option>
+      
+        
+        <option value="/ckan/sr_Latn/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          srpski (latinica)
+        </option>
+      
+        
+        <option value="/ckan/en_GB/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          English (United Kingdom)
+        </option>
+      
+        
+        <option value="/ckan/he/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          עברית
+        </option>
+      
+        
+        <option value="/ckan/ne/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          नेपाली
+        </option>
+      
+        
+        <option value="/ckan/es_AR/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          español (Argentina)
+        </option>
+      
+        
+        <option value="/ckan/is/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          íslenska
+        </option>
+      
+        
+        <option value="/ckan/mk/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          македонски
+        </option>
+      
+        
+        <option value="/ckan/mn_MN/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          монгол (Монгол)
+        </option>
+      
+        
+        <option value="/ckan/zh_Hant_TW/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          中文 (繁體, 台灣)
+        </option>
+      
+        
+        <option value="/ckan/lt/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          lietuvių
+        </option>
+      
+        
+        <option value="/ckan/eu/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          euskara
+        </option>
+      
+        
+        <option value="/ckan/uk/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          українська
+        </option>
+      
+        
+        <option value="/ckan/id/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          Indonesia
+        </option>
+      
+        
+        <option value="/ckan/ro/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          română
+        </option>
+      
+        
+        <option value="/ckan/my_MM/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          မြန်မာ (မြန်မာ)
+        </option>
+      
+        
+        <option value="/ckan/hr/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          hrvatski
+        </option>
+      
+        
+        <option value="/ckan/nb_NO/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          norsk bokmål (Norge)
+        </option>
+      
+        
+        <option value="/ckan/ar/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          العربية
+        </option>
+      
+        
+        <option value="/ckan/tl/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          Filipino (Pilipinas)
+        </option>
+      
+        
+        <option value="/ckan/bs/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          bosanski
+        </option>
+      
+        
+        <option value="/ckan/tr/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          Türkçe
+        </option>
+      
+        
+        <option value="/ckan/sq/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          shqip
+        </option>
+      
+        
+        <option value="/ckan/zh_Hans_CN/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          中文 (简体, 中国)
+        </option>
+      
+        
+        <option value="/ckan/km/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          ខ្មែរ
+        </option>
+      
+        
+        <option value="/ckan/en_AU/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          English (Australia)
+        </option>
+      
+        
+        <option value="/ckan/da_DK/dataset/jikokuhyou/resource/5adf1401-7a53-4f89-8699-f80390f301c7" >
+          dansk (Danmark)
+        </option>
+      
+    </select>
+  </div>
+  <button class="btn btn-default d-none " type="submit">Go</button>
+</form>
+
+
+        
+      </div>
+    </div>
+    
+  </div>
+</footer>
+  
+  
+  
+  
+    
+  
+  
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8107CQRRPE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8107CQRRPE');
+    </script>
+    
+
+      
+
+    
+    
+    <link href="/ckan/webassets/vendor/f3b8236b_select2.css" rel="stylesheet"/>
+<link href="/ckan/webassets/vendor/d05bf0e7_fontawesome.css" rel="stylesheet"/>
+    <script src="/ckan/webassets/vendor/8c3c143a_jquery.js" type="text/javascript"></script>
+<script src="/ckan/webassets/vendor/5027b870_vendor.js" type="text/javascript"></script>
+<script src="/ckan/webassets/vendor/6d1ad7e6_bootstrap.js" type="text/javascript"></script>
+<script src="/ckan/webassets/base/6fddaa3f_main.js" type="text/javascript"></script>
+<script src="/ckan/webassets/base/0d750fad_ckan.js" type="text/javascript"></script>
+<script src="/ckan/webassets/base/cd2c0272_tracking.js" type="text/javascript"></script>
+  </body>
+</html>

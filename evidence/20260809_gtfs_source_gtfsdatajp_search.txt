@@ -1,0 +1,5 @@
+取得日時: 2026-08-09 JST
+取得元  : https://gtfs-data.jp/search?text=%E5%B1%B1%E5%8F%A3
+取得方法: curl -sL (生バイト取得、要約なし)
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="GTFSを管理・公開し、様々なプラットフォームと連携することができるデータプラットフォームです。"/><link rel="manifest" href="/manifest.json"/><title>GTFSデータリポジトリ</title><script defer="defer" src="/static/js/main.31d12d80.js"></script><link href="/static/css/main.f583cf4a.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>

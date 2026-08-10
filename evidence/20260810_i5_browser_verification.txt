@@ -1,0 +1,68 @@
+取得日時: 2026-08-10 11:03 JST
+取得元  : http://localhost:8793/status.html （docs/ を python -m http.server 8793 で配信）
+取得方法: msedge.exe --headless=new --remote-debugging-port=9335 を Node.js から
+          Chrome DevTools Protocol 経由で操作（npmパッケージのインストールなし。
+          Node組み込みの WebSocket のみ使用）。
+          スクリプト: evidence/20260810_i5_cdp_driver.mjs（画面幅2種の検査とリンク操作）、
+          evidence/20260810_i5_cdp_driver_sections.mjs（GTFSセクション・T1〜T4セクションの
+          スクリーンショット）。生JSONは evidence/20260810_i5_cdp_raw_output.json。
+
+# I-5 ブラウザ実操作検証（docs/status.html）
+
+## 1. 画面幅2種の検査（デスクトップ1280×900、モバイル390×844）
+
+| 項目 | デスクトップ | モバイル |
+|---|---|---|
+| document.documentElement.scrollWidth - clientWidth | 0 | 0 |
+| console.* イベント件数 | 0 | 0 |
+| Runtime.exceptionThrown 件数 | 0 | 0 |
+| <section> 要素数 | 10 | 10 |
+| T1〜T4・「未達」の本文出現 | あり | あり |
+| GTFSセクション（#gtfs-title）の存在 | あり | あり |
+| roadmap（工程）li要素数 | 8 | 8 |
+| document.title | 山口県 市町別の登録供給ビュー｜検証状況 | 同左 |
+
+スクリーンショット:
+- evidence/20260810_i5_screenshot_desktop_status.png（ヘッダー〜受入済み成果、1280×900）
+- evidence/20260810_i5_screenshot_mobile_status.png（同、390×844）
+- evidence/20260810_i5_screenshot_desktop_gtfs_section.png（GTFS/GTFS-JP確認状況セクション、デスクトップ）
+- evidence/20260810_i5_screenshot_mobile_gtfs_section.png（同、モバイル）
+- evidence/20260810_i5_screenshot_desktop_terms_section.png（T1〜T4終了条件セクション、デスクトップ）
+- evidence/20260810_i5_screenshot_mobile_terms_section.png（同、モバイル）
+
+すべてのスクリーンショットで、横方向のはみ出し・崩れ・文字の欠けは見られない。
+GTFSセクションの「5 / 19」「14 / 19」、T1〜T4セクションの「未達」バッジは、
+本文と同じ通常サイズ・高コントラストで常時表示されている（隠れた注記やhoverでのみ
+表示される文言ではない）。
+
+## 2. リンク実操作（docs/status.html 上のリンクを実クリックして確認）
+
+status.html 上のアンカー要素に対して `element.click()` を実行し、実際に遷移させて
+到達先を確認した（URLパラメータの直接書き換えではない）。各クリックの前後で
+status.htmlへ再遷移し、コンソールメッセージ・例外を計測し直している。
+
+| リンク（href） | クリック結果 | 到達後の内容確認 | console/例外 |
+|---|---|---|---|
+| index.html?v=20260810 | 成功 | docs/index.htmlへ遷移。title「山口市｜山口県 市町別の登録供給ビュー」。本文に「SOURCE COVERAGE」「4 / 4 PDF」等の実データを表示 | 0件/0件 |
+| data/gtfs_feeds.json | 成功 | 有効なJSON、配列長3（build_gtfs_status.pyの実測値と一致） | 0件/0件 |
+| data/municipality_gtfs.json | 成功 | 有効なJSON、配列長19（同上） | 0件/0件 |
+| data/operators.json | 成功 | 有効なJSON、配列長23（同上） | 0件/0件 |
+| data/vehicles.json | 成功 | 有効なJSON、配列長90（同上） | 0件/0件 |
+
+index.html遷移後にtitleが「山口市｜...」となっているのは、docs/index.html側の
+クライアントJSが前回選択市町（または既定値）を復元して表示しているためで、
+今回のI-5では docs/index.html 自体を変更していない（変更禁止ファイル）。
+リンク遷移そのものが実際に到達可能であることの確認が目的であり、到達先の挙動は
+I-4以前の受入済み実装のままである。
+
+国土交通省ウェブサイト利用ルール（https://www.mlit.go.jp/link.html）への外部リンクは、
+I-2/I-3で既に実在確認済み（evidence/20260809_mlit_usage_terms.txt）のため、
+本検証では実際の外部アクセスは行わず、status.html内のhref文字列の存在を
+tests/test_site.py の自動テストで検査した。
+
+## 3. 検証結論
+
+- 横方向のページはみ出し: デスクトップ・モバイルともに0
+- ブラウザコンソールのエラー・例外: 0件（画面表示2通り＋リンク操作5通り、計7通り全て）
+- docs/index.htmlと指定した公開JSON（gtfs_feeds.json、municipality_gtfs.json、
+  operators.json、vehicles.json）は、いずれも実クリックで実際に開けることを確認した

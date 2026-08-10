@@ -1,0 +1,465 @@
+取得日時: 2026-08-09 JST
+取得元  : https://www.city.iwakuni.lg.jp/soshiki/12/
+取得方法: curl -sL (生バイト取得、要約なし)
+---
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="ja" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>交通政策課 - 岩国市</title>
+<style type="text/css" media="all">
+@import url("/ssi/css/soshiki-kakuka.css");
+@import url("/ssi/css/sp-soshiki-kakuka.css") screen and (max-width: 1100px);
+</style>
+<link rel="stylesheet" type="text/css" media="print" href="/ssi/css/print.css" />
+<script type="text/javascript" src="/ssi/js/color.js" ></script>
+<script type="text/javascript" src="/ssi/js/fontsize.js" ></script>
+<meta name="description" content="山口県岩国市の公式ホームページです。" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+<script type="text/javascript" src="/ssi/js/jquery.js"></script>
+<script type="text/javascript" src="/ssi/js/jquery-migrate.js"></script>
+<script type="text/javascript" src="/ssi/js/common.js"></script>
+<script type="text/javascript" src="/ssi/js/checksp.js"></script>
+<script type="text/javascript" src="/ssi/js/matchheight.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W8QG5MQG1L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W8QG5MQG1L');
+  gtag('config', 'UA-74079385-1');
+</script>
+</head>
+<body>
+<!-- コンテナここから -->
+<div id="container">
+
+<span class="hide"><a name="pagetop" id="pagetop">ページの先頭です。</a></span>
+<span class="hide"><a href="#skip">メニューを飛ばして本文へ</a></span>
+
+<!-- ヘッダー全体ここから -->
+<div id="header">
+<!-- header1ここから -->
+<div id="header2">
+<ul id="spMenu">
+<li id="spm_lang"><a href="/site/userguide/5723.html"><span class="hide">Foreign Language</span></a></li>
+<li id="spm_menu"><button type="button" id="btn_sp_menu"><span class="hide">メニュー</span></button></li>
+<li id="spm_search"><button type="button" id="btn_sp_search"><span class="hide">検索</span></button></li>
+</ul>
+<!-- ヘッダーここから -->
+<div id="he_left">
+	<p id="logo"><a href="/"><img src="/img/logo.png" alt="岩国市" width="200" height="60" class="img_b" /></a></p>
+</div>
+
+<div id="he_right">
+	<div id="he_right_a">
+		<div class="header_nav">
+			<ul>
+				<li><a href="/site/userguide/"><img src="/img/hl_hajimete.png" width="85" height="28" alt="はじめての方へ" /></a></li><!-- 
+				 --><li><a href="/site/userguide/5723.html"><img src="/img/hl_foreign.png" width="108" height="28" alt="Foreign Language" /></a></li><!-- 
+				 --><li><a href="/sitemap.html"><img src="/img/hl_sitemap.png" width="82" height="28" alt="サイトマップ" /></a></li>
+			</ul>
+		</div>
+		<div class="header_nav">
+			<noscript><p>JavaScriptが無効のため、文字の大きさ・背景色を変更する機能を使用できません。</p></noscript>
+			<ul>
+				<li id="haikei_color">
+					<!-- 背景の変更ここから -->
+					<img src="/img/haikei_title.png" alt="背景色を変える" width="39" height="28" class="img_b" />
+					<span>
+						<a id="haikei_white" href="javascript:SetCss(1);"><span class="hide">白色</span></a><!-- 
+						 --><a id="haikei_black" href="javascript:SetCss(2);"><span class="hide">黒色</span></a><!-- 
+						 --><a id="haikei_blue" href="javascript:SetCss(3);"><span class="hide">青色</span></a>
+					</span>
+					<!-- 背景の変更ここまで -->
+				</li><!-- 
+				 --><li id="moji_size">
+					<!-- 文字の大きさ変更ここから -->
+					<img src="/img/moji_title.png" alt="文字の大きさ" width="65" height="28" class="img_b" />
+					<span>
+						<a id="moji_default" href="javascript:fsc('default');"><span class="hide">標準</span></a><!-- 
+						 --><a id="moji_large" href="javascript:fsc('larger');"><span class="hide">拡大</span></a>
+					</span>
+					<!-- 文字の大きさ変更ここまで -->
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- header1ここまで -->
+<!-- header2ここから -->
+<!-- グローバルここから -->
+	<div id="top_search">
+		<!-- グローバルタブここから -->
+		<div id="top_search_a">
+			<ul>
+				<li id="gnav1"><a href="/life/1/"><span class="hide">くらしの情報</span></a></li><!-- 
+				 --><li id="gnav2"><a href="/life/2/"><span class="hide">事業者向けの情報</span></a></li><!-- 
+				 --><li id="gnav3"><a href="http://kankou.iwakuni-city.net/"><span class="hide">観光情報</span></a><span class="external_link_text">＜外部リンク＞</span></li><!-- 
+				 --><li id="gnav4"><a href="/life/4/"><span class="hide">市政情報</span></a></li><!-- 
+				 --><li id="gnav5"><a href="/life/5/"><span class="hide">デジタル支所</span></a></li>
+			</ul>
+		</div>
+		<!-- グローバルタブここまで -->
+	</div>
+	<div id="top_search_box">
+		<!-- 検索ここから -->
+		<div id="top_search_keyword">
+			<form action="/search.html" id="cse-search-box" name="cse-search-box">
+				<input type="hidden" name="cx" value="016662453446541186250:4ofjiynaqma" /><!-- 
+				--><input type="hidden" name="cof" value="FORID:11" /><!-- 
+				--><input type="hidden" name="ie" value="UTF-8" /><!-- 
+				--><label for="tmp_query"><span class="hide">Googleカスタム検索</span></label><!-- 
+				--><input type="text" name="q" value="" id="tmp_query" /><!-- 
+				--><input type="image" src="/img/kensaku.png" alt="検索" id="submit" name="sa" />
+			</form>
+			<script type="text/javascript" src="https://www.google.com/coop/cse/brand?form=cse-search-box"></script>
+		</div>
+		<!-- 検索ここまで -->
+		<div id="top_search_link">
+			<ul>
+				<li id="top_search_link_map"><a href="/soshiki/2/4512.html"><span class="hide">地図でさがす</span></a></li><!-- 
+				 --><li id="top_search_link_calendar"><a href="/calendar/"><span class="hide">カレンダーでさがす</span></a></li><!-- 
+				 --><li id="top_search_link_soshiki"><a href="/soshiki/"><span class="hide">組織でさがす</span></a></li>
+			</ul>
+		</div>
+	</div>
+	
+</div><!-- #header2 -->
+<!-- header2ここまで -->
+</div>
+<!-- ヘッダー全体ここまで -->
+
+<div id="mymainback" class="cf">
+<!-- ぱんくずナビここから -->
+<div id="pankuzu_wrap">
+<div class="pankuzu"><a href="/">トップページ</a> &gt; <a href="/soshiki">組織でさがす</a> &gt; 交通政策課</div>
+</div>
+<!-- ぱんくずナビここまで -->
+
+<!-- サイドバー1ここから -->
+<!-- サイドバー1ここまで -->
+
+<!-- メインここから -->
+<div id="main" class="cf">
+<div id="main_a">
+<hr class="hide" />
+<p class="hide"><a id="skip" name="skip">本文</a></p>
+
+<div id="main_header">
+<h1>交通政策課</h1>
+</div>
+
+<!-- PR画像ここから -->
+
+<!-- PR画像ここまで -->
+
+<!-- 新着情報ここから -->
+<div class="list_type_a_list cf">
+	<div class="list_type_a_title"><h2>新着情報</h2></div>
+	
+	<div class="list_ccc"> 
+	<ul>
+	<li><span class="span_a article_date">2026年8月1日更新</span><span class="span_b article_title"><a href="/soshiki/12/92861.html">JR岩徳線団体利用助成事業</a></span></li><li><span class="span_a article_date">2026年5月20日更新</span><span class="span_b article_title"><a href="/soshiki/12/93225.html">「岩国市地域公共交通計画」の改正について</a></span></li><li><span class="span_a article_date">2026年5月1日更新</span><span class="span_b article_title"><a href="/soshiki/12/22827.html">岩国市公共交通マップ＆時刻表</a></span></li><li><span class="span_a article_date">2026年5月1日更新</span><span class="span_b article_title"><a href="/soshiki/12/112570.html">第二種運転免許取得助成金</a></span></li><li><span class="span_a article_date">2026年5月1日更新</span><span class="span_b article_title"><a href="/soshiki/12/46423.html">通学定期券利用促進事業について</a></span></li><!-- [[section_information_more_head]] --><!-- [[section_information_more_tail]] -->
+
+	</ul>
+
+	<div class="link_box">
+		<span class="link_rss"><a href="/rss/10/soshiki-2-12.xml">新着情報のRSS配信</a></span>
+		<!-- [[section_information2_kako_head]] -->
+			<span class="link_ichiran"><a href="/soshiki/12/index-2.html">新着情報の一覧を見る</a></span>
+		<!-- [[section_information2_kako_tail]] -->
+	</div>
+	</div>
+	
+
+</div>
+<!-- 新着情報ここまで -->
+
+<!-- main_bodyここから -->
+<div id="main_body">
+	
+
+	<!-- 掲載見出しここから -->
+	
+	<div class="list_type_b_list">
+		<h2>岩国市の公共交通機関一覧</h2>
+		<div class="list_title">
+			<ul>
+			
+			<li><span class="article_title"><a href="/soshiki/12/59150.html">岩国市の公共交通機関の一覧・運行状況の確認について</a></span></li>
+			
+			</ul>
+		</div>
+	</div>
+	
+	<div class="list_type_b_list">
+		<h2>岩国市公共交通マップ・総合時刻表</h2>
+		<div class="list_title">
+			<ul>
+			
+			<li><span class="article_title"><a href="/soshiki/12/22827.html">岩国市公共交通マップ＆時刻表</a></span></li>
+			
+			<li><span class="article_title"><a href="/soshiki/12/116876.html">岩国市公共交通スタートブック</a></span></li>
+			
+			</ul>
+		</div>
+	</div>
+	
+	<div class="list_type_b_list">
+		<h2>公共交通機関の運転士を目指す方への支援</h2>
+		<div class="list_title">
+			<ul>
+			
+			<li><span class="article_title"><a href="/soshiki/12/112570.html">第二種運転免許取得助成金</a></span></li>
+			
+			<li><span class="article_title"><a href="/soshiki/12/93875.html">公共交通機関の運転士を目指す方を応援します</a></span></li>
+			
+			</ul>
+		</div>
+	</div>
+	
+	<div class="list_type_b_list">
+		<h2>通学定期券利用促進事業</h2>
+		<div class="list_title">
+			<ul>
+			
+			<li><span class="article_title"><a href="/soshiki/12/46423.html">通学定期券利用促進事業について</a></span></li>
+			
+			</ul>
+		</div>
+	</div>
+	
+	<div class="list_type_b_list">
+		<h2>岩国市地域公共交通計画</h2>
+		<div class="list_title">
+			<ul>
+			
+			<li><span class="article_title"><a href="/soshiki/12/93225.html">「岩国市地域公共交通計画」の改正について</a></span></li>
+			
+			</ul>
+		</div>
+	</div>
+	
+	<div class="list_type_b_list">
+		<h2>ＪＲ岩徳線の利用促進への取り組み</h2>
+		<div class="list_title">
+			<ul>
+			
+			<li><span class="article_title"><a href="/soshiki/12/92861.html">JR岩徳線団体利用助成事業</a></span></li>
+			
+			<li><span class="article_title"><a href="/soshiki/12/92863.html">JR岩徳線利用促進委員会について</a></span></li>
+			
+			</ul>
+		</div>
+	</div>
+	
+	<div class="list_type_b_list">
+		<h2>予約型乗合タクシーについて</h2>
+		<div class="list_title">
+			<ul>
+			
+			<li><span class="article_title"><a href="/soshiki/12/74011.html">岩国市乗合タクシー「よべるん」運行中！</a></span></li>
+			
+			</ul>
+		</div>
+	</div>
+	
+	<div class="list_type_b_list">
+		<h2>岩国市地域公共交通活性化再生法協議会</h2>
+		<div class="list_title">
+			<ul>
+			
+			<li><span class="article_title"><a href="/soshiki/12/2797.html">岩国市地域公共交通活性化再生法協議会及び岩国市地域公共交通会議</a></span></li>
+			
+			</ul>
+		</div>
+	</div>
+	
+	<div class="list_type_b_list">
+		<h2>第三セクター等の経営健全化方針策定について</h2>
+		<div class="list_title">
+			<ul>
+			
+			<li><span class="article_title"><a href="/soshiki/12/34714.html">（岩国柱島海運株式会社）第三セクター等の経営健全化方針策定について</a></span></li>
+			
+			</ul>
+		</div>
+	</div>
+	
+	<div class="list_type_b_list">
+		<h2>岩国市錦川清流線あり方検討</h2>
+		<div class="list_title">
+			<ul>
+			
+			<li><span class="article_title"><a href="/soshiki/12/113991.html">錦川清流線の今後のあり方について</a></span></li>
+			
+			</ul>
+		</div>
+	</div>
+	
+	<div class="list_type_b_list">
+		<h2>広島広域都市圏事業</h2>
+		<div class="list_title">
+			<ul>
+			
+			<li><span class="article_title"><a href="/soshiki/12/89283.html">（広島広域都市圏事業） 地域団体などへ公共交通の運賃を一部補助します。</a></span></li>
+			
+			</ul>
+		</div>
+	</div>
+	
+	<div class="list_type_b_list">
+		<h2>生活交通バスについて</h2>
+		<div class="list_title">
+			<ul>
+			
+			<li><span class="article_title"><a href="/soshiki/12/116738.html">生活交通バスについて</a></span></li>
+			
+			</ul>
+		</div>
+	</div>
+	
+	<!-- 掲載見出しここまで -->
+</div>
+<!-- main_bodyここまで -->
+
+</div>
+</div>
+<!-- メインここまで -->
+<hr class="hide" />
+
+
+<!-- サイドバー2ここから -->
+<div id="sidebar2" class="cf">
+	<div id="sidebar_kakuka_info">
+		<div class="sidebar1_box">
+			<!-- 連絡先ここから -->
+			<div class="sidebar_title"><h2 class="sidebar_title2">連絡先</h2></div>
+			<div class="sidebar_detail">
+				<p class="list_address">〒740-8585</p>
+				<p class="list_address">山口県岩国市今津町一丁目14-51<br />
+岩国市役所本庁舎3階</p>
+				
+				<div class="list_tel">
+				<ul><li>Tel：0827-29-5106<span class="section_group_name">（交通政策班）</span></li></ul>
+				</div>
+				
+				<p class="list_fax">Fax（代表）：0827-24-4209</p>
+				<p class="list_email"><a href="https://www.city.iwakuni.lg.jp/form/detail.php?sec_sec1=12">メールでのお問い合わせはこちら</a></p>
+				
+				<!-- 連絡先ここまで -->
+	
+				<!-- 外観写真ここから -->
+				
+				<!-- 外観写真ここまで -->
+			</div>
+		</div>
+
+		<!-- 主な業務内容ここから -->
+		
+		<div class="sidebar1_box">
+			<div class="sidebar_title"><h2 class="sidebar_title2">主な業務内容</h2></div>
+			<div class="sidebar_detail">
+				<div><p>交通政策班<br />
+1　交通全般に係る企画・調整に関すること<br />
+2　生活交通バスに関すること<br />
+3　一般乗合旅客自動車運送事業に関すること<br />
+4　鉄道に関すること<br />
+5　離島航路に関すること</p></div>
+				<!-- もっと詳しい業務内容へのリンクここから -->
+				
+				<!-- もっと詳しい業務内容へのリンクここまで -->
+			</div>
+			<!-- 主な業務内容ここまで -->
+		</div>
+		
+
+		<!-- 関連リンクここから -->
+		
+		<!-- 関連リンクここまで -->
+	</div>
+
+	<div id="kanren_info" class="sidebar1_box">
+		<div class="sidebar_title"><h2 class="sidebar_title2">関連情報</h2></div>
+		
+		<div class="menu_list_c">
+		<h3>支援・助成・手当</h3>
+		<ul><li><a href="/soshiki/12/92861.html">JR岩徳線団体利用助成事業</a></li><li><a href="/soshiki/12/46423.html">通学定期券利用促進事業について</a></li><li><a href="/soshiki/12/93875.html">公共交通機関の運転士を目指す方を応援します</a></li></ul>
+		</div>
+		
+		<div class="menu_list_c">
+		<h3>計画・方針・制度</h3>
+		<ul><li><a href="/soshiki/12/2797.html">岩国市地域公共交通活性化再生法協議会及び岩国市地域公共交通会議</a></li><li><a href="/soshiki/12/74011.html">岩国市乗合タクシー「よべるん」運行中！</a></li><li><a href="/soshiki/12/34714.html">（岩国柱島海運株式会社）第三セクター等の経営健全化方針策定について</a></li><li><a href="/soshiki/12/113991.html">錦川清流線の今後のあり方について</a></li><li><a href="/soshiki/12/92863.html">JR岩徳線利用促進委員会について</a></li></ul>
+		</div>
+		
+		
+	
+	</div>
+	<!-- GoogleMapここから -->
+	
+	<!-- GoogleMapここまで -->
+
+</div>
+<!-- サイドバー2ここまで -->
+<!-- footer0ここから -->
+<div id="back_or_pagetop">
+<div id="to_page_back"><a href="javascript:history.back();"><span class="hide">前のページに戻る</span></a></div>
+<div id="to_page_top"><a href="#pagetop"><span class="hide">このページのトップへ</span></a></div>
+</div>
+<!-- footer0ここまで -->
+</div><!-- 3カラム終わり -->
+
+<!-- フッターここから -->
+<div id="footer">
+<!-- footer1ここから -->
+<!-- author_infoここから -->
+<div id="author_info">
+	<div class="footer_navi">
+		<ul>
+			<li><a href="/site/userguide/5708.html">リンク・著作権・免責事項</a></li>
+			<li><a href="/site/userguide/5718.html">個人情報保護</a></li>
+			<li><a href="/site/userguide/5721.html">アクセシビリティ</a></li>
+			<li><a href="/site/userguide/6246.html">広告掲載について</a></li>
+		</ul>
+	</div>
+<!-- footer1ここまで -->
+<!-- author_infoここから -->
+<div id="author_box">
+		<p>
+			<span id="footer_author_name"><strong>岩国市役所</strong>　（法人番号1000020352080）</span>
+			<span id="footer_author_address">〒740-8585　山口県岩国市今津町1丁目14-51（<a href="/map/5991.html">地図</a>）</span>
+			<span id="footer_author_info">Tel:0827-29-5000(代表) | <a href="/soshiki/">各課へのお問い合わせはこちら</a></span>
+			<span id="footer_author_info2">
+				本庁業務時間：月曜から金曜 午前8時30分から午後5時15分まで　（土曜・日曜・祝日・年末年始を除く）<br />
+				休日・夜間の受付は本庁守衛室、各総合支所で行います。
+			</span>
+		</p>
+<!--
+		<div id="footer_link_social_wrap">
+			<div id="fls_box1">
+				<div id="fls_fb"><img src="/img/fls_social_fb.png" width="200" height="50" alt="facebook" /></div>
+				<div id="fls_tw"><img src="/img/fls_social_tw.png" width="200" height="50" alt="twitter" /></div>
+			</div>
+			<a href=""><img src="/img/fls_social_ichiran.png" width="400" height="50" alt="岩国市ソーシャルメディア公式アカウント一覧" /></a>
+		</div>
+ -->
+		<p id="copyright">Copyright （C） Iwakuni City All rights reserved.</p>
+	</div>
+	<!-- author_infoここまで -->
+</div>
+<!-- author_infoここまで -->
+<!-- バナー広告ここから -->
+<!-- バナー広告ここまで -->
+</div><!-- フッターここまで -->
+</div><!-- コンテナここまで -->
+</body>
+</html>

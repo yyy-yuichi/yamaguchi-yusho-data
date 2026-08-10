@@ -1,0 +1,2229 @@
+取得日時: 2026-08-09 JST
+取得元  : https://yamaguchi-opendata.jp/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA (page1)
+取得方法: curl -sL (生バイト取得、要約なし)
+---
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="ja" class="ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="ja"  > <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+      <meta name="csrf_field_name" content="_csrf_token" />
+      <meta name="_csrf_token" content="ImI1YThkN2JmNTU4MjE2NDM5YmRhNDA1ZThkMDMyNzJhMTU5NzRlNWIi.anhhYw._q9bOI7oQmefSZME_yYiRCG-EsA" />
+
+      <meta name="generator" content="ckan 2.10.4" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>データセット - CKAN</title>
+
+    
+    <link rel="shortcut icon" href="/base/images/ckan.ico" />
+    
+      
+      
+      
+    
+
+    
+      
+      
+    
+
+    
+    <link href="/ckan/webassets/base/5b7e7171_main.css" rel="stylesheet"/>
+    
+  </head>
+
+  
+  <body data-site-root="https://yamaguchi-opendata.jp/ckan/" data-locale-root="https://yamaguchi-opendata.jp/ckan/" >
+
+    
+    <div class="visually-hidden-focusable"><a href="#content">Skip to main content</a></div>
+  
+
+  
+    
+
+ 
+<div class="account-masthead">
+  <div class="container">
+     
+    <nav class="account not-authed" aria-label="Account">
+      <ul class="list-unstyled">
+        
+        <li><a href="/ckan/user/login">ログイン</a></li>
+         
+      </ul>
+    </nav>
+     
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="container">
+      
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <hgroup class="header-image navbar-left">
+
+      
+      
+      <a class="logo" href="https://yamaguchi-opendata.jp">
+        <img src="/ckan/base/images/ckan-logo.png?v=new" alt="CKAN"
+          title="CKAN" />
+      </a>
+      
+      
+
+       </hgroup>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navigation-toggle"
+        aria-controls="main-navigation-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars text-white"></span>
+      </button>
+
+      <div class="main-navbar collapse navbar-collapse" id="main-navigation-toggle">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          
+            
+              
+              
+          
+          <li><a href="https://yamaguchi-opendata.jp">Top</a></li>
+          <li><a href="https://yamaguchi-opendata.jp/index.html#ai-search">AI検索</a></li>
+          <li class="active"><a href="/ckan/dataset/">データセット</a></li><li><a href="/ckan/organization/">団体</a></li><li><a href="/ckan/group/">カテゴリ</a></li><li><a href="/ckan/tag/">タグ</a></li><li><a href="/ckan/about">About</a></li>
+          
+          
+          
+          </ul>
+
+      
+      
+          <form class="d-flex site-search" action="/ckan/dataset/" method="get">
+              <label class="d-none" for="field-sitewide-search">Search Datasets...</label>
+              <input id="field-sitewide-search" class="form-control me-2"  type="text" name="q" placeholder="検索" aria-label="データセット検索..."/>
+              <button class="btn" type="submit" aria-label="Submit"><i class="fa fa-search"></i></button>
+          </form>
+      
+      </div>
+    </nav>
+  </div>
+</header>
+
+  
+    <div class="main">
+      <div id="content" class="container">
+        
+          
+            <div class="flash-messages">
+              
+                
+              
+            </div>
+          
+
+          
+            <div class="toolbar" role="navigation" aria-label="Breadcrumb">
+              
+                
+                  <ol class="breadcrumb">
+                    
+<li class="home"><a href="/ckan/" aria-label="ホーム"><i class="fa fa-home"></i><span> ホーム</span></a></li>
+                    
+  <li class="active"><a href="/ckan/dataset/">データセット</a></li>
+
+                  </ol>
+                
+              
+            </div>
+          
+
+          <div class="row wrapper">
+            
+            
+            
+
+            
+              <aside class="secondary col-md-3">
+                
+                
+  <div class="filters">
+    <div>
+      
+        
+
+    
+    
+	
+	    
+		<section class="module module-narrow module-shallow">
+		    
+			<h2 class="module-heading">
+			    <i class="fa fa-filter"></i>
+			    団体
+			</h2>
+		    
+		    
+			
+			    
+				<nav aria-label="団体">
+				    <ul class="list-unstyled nav nav-simple nav-facet">
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;organization=35321" title="">
+						    <span class="item-label">和木町</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">21</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;organization=35000" title="">
+						    <span class="item-label">山口県</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">4</span>
+							
+						</a>
+					    </li>
+					
+				    </ul>
+				</nav>
+
+				<p class="module-footer">
+				    
+					
+				    
+				</p>
+			    
+			
+		    
+		</section>
+	    
+	
+    
+
+      
+        
+
+    
+    
+	
+	    
+		<section class="module module-narrow module-shallow">
+		    
+			<h2 class="module-heading">
+			    <i class="fa fa-filter"></i>
+			    カテゴリ
+			</h2>
+		    
+		    
+			
+			    
+				<nav aria-label="カテゴリ">
+				    <ul class="list-unstyled nav nav-simple nav-facet">
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;groups=c001" title="">
+						    <span class="item-label">くらし</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">4</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;groups=c008" title="">
+						    <span class="item-label">産業</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">3</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;groups=c010" title="">
+						    <span class="item-label">行政</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">3</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;groups=c002" title="">
+						    <span class="item-label">環境</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">2</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;groups=c007" title="">
+						    <span class="item-label">しごと</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">1</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;groups=c014" title="">
+						    <span class="item-label">その他</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">1</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;groups=c013" title="">
+						    <span class="item-label">交通</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">1</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;groups=c003" title="">
+						    <span class="item-label">医療</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">1</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;groups=c005" title="">
+						    <span class="item-label">子育て・教育</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">1</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;groups=c006" title="">
+						    <span class="item-label">文化・スポーツ</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">1</span>
+							
+						</a>
+					    </li>
+					
+				    </ul>
+				</nav>
+
+				<p class="module-footer">
+				    
+					
+					    <a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;_groups_limit=0" class="read-more">カテゴリをもっと見る</a>
+					
+				    
+				</p>
+			    
+			
+		    
+		</section>
+	    
+	
+    
+
+      
+        
+
+    
+    
+	
+	    
+		<section class="module module-narrow module-shallow">
+		    
+			<h2 class="module-heading">
+			    <i class="fa fa-filter"></i>
+			    タグ
+			</h2>
+		    
+		    
+			
+			    
+				<nav aria-label="タグ">
+				    <ul class="list-unstyled nav nav-simple nav-facet">
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;tags=%E5%85%AC%E5%85%B1%E6%96%BD%E8%A8%AD" title="">
+						    <span class="item-label">公共施設</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">6</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;tags=%E9%98%B2%E7%81%BD" title="">
+						    <span class="item-label">防災</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">3</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;tags=%E4%BA%BA%E5%B7%A5%E6%9E%97" title="">
+						    <span class="item-label">人工林</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">2</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;tags=%E4%BC%90%E6%8E%A1" title="">
+						    <span class="item-label">伐採</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">2</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;tags=%E5%A4%A9%E7%84%B6%E6%9E%97" title="">
+						    <span class="item-label">天然林</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">2</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;tags=%E6%9E%97%E6%A5%AD" title="">
+						    <span class="item-label">林業</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">2</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;tags=%E6%A3%AE%E6%9E%97" title="">
+						    <span class="item-label">森林</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">2</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;tags=%E6%A3%AE%E6%9E%97%E7%B0%BF" title="">
+						    <span class="item-label">森林簿</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">2</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;tags=%E6%A3%AE%E6%9E%97%E8%A8%88%E7%94%BB%E5%9B%B3" title="">
+						    <span class="item-label">森林計画図</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">2</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;tags=%E7%94%9F%E7%89%A9%E5%A4%9A%E6%A7%98%E6%80%A7" title="">
+						    <span class="item-label">生物多様性</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">2</span>
+							
+						</a>
+					    </li>
+					
+				    </ul>
+				</nav>
+
+				<p class="module-footer">
+				    
+					
+					    <a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;_tags_limit=0" class="read-more">タグをもっと見る</a>
+					
+				    
+				</p>
+			    
+			
+		    
+		</section>
+	    
+	
+    
+
+      
+        
+
+    
+    
+	
+	    
+		<section class="module module-narrow module-shallow">
+		    
+			<h2 class="module-heading">
+			    <i class="fa fa-filter"></i>
+			    フォーマット
+			</h2>
+		    
+		    
+			
+			    
+				<nav aria-label="フォーマット">
+				    <ul class="list-unstyled nav nav-simple nav-facet">
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;res_format=CSV" title="">
+						    <span class="item-label">CSV</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">9</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;res_format=XLSX" title="">
+						    <span class="item-label">XLSX</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">5</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;res_format=HTML" title="">
+						    <span class="item-label">HTML</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">4</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;res_format=XLS" title="">
+						    <span class="item-label">XLS</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">4</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;res_format=ZIP" title="">
+						    <span class="item-label">ZIP</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">3</span>
+							
+						</a>
+					    </li>
+					
+				    </ul>
+				</nav>
+
+				<p class="module-footer">
+				    
+					
+				    
+				</p>
+			    
+			
+		    
+		</section>
+	    
+	
+    
+
+      
+        
+
+    
+    
+	
+	    
+		<section class="module module-narrow module-shallow">
+		    
+			<h2 class="module-heading">
+			    <i class="fa fa-filter"></i>
+			    ライセンス
+			</h2>
+		    
+		    
+			
+			    
+				<nav aria-label="ライセンス">
+				    <ul class="list-unstyled nav nav-simple nav-facet">
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;license_id=cc-by" title="">
+						    <span class="item-label">クリエイティブ・コモンズ 表示</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">10</span>
+							
+						</a>
+					    </li>
+					
+					    
+					    
+					    
+					    
+					    <li class="nav-item ">
+						<a href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;license_id=cc-zero" title="">
+						    <span class="item-label">クリエイティブ・コモンズ CC0</span>
+						    <span class="hidden separator"> - </span>
+						    <span class="item-count badge">1</span>
+							
+						</a>
+					    </li>
+					
+				    </ul>
+				</nav>
+
+				<p class="module-footer">
+				    
+					
+				    
+				</p>
+			    
+			
+		    
+		</section>
+	    
+	
+    
+
+      
+    </div>
+    <a class="close no-text hide-filters"><i class="fa fa-times-circle"></i><span class="text">close</span></a>
+  </div>
+
+              </aside>
+            
+
+            
+              <div class="primary col-md-9 col-xs-12" role="main">
+                
+                
+  <section class="module">
+    <div class="module-content">
+      
+          <div class="page_primary_action">
+            
+            
+            <form method="post" action="/ckan/dataset/export_csv_by_query" style="display:inline">
+              
+<input type="hidden" name="_csrf_token" value="ImI1YThkN2JmNTU4MjE2NDM5YmRhNDA1ZThkMDMyNzJhMTU5NzRlNWIi.anhhYw._q9bOI7oQmefSZME_yYiRCG-EsA"/>
+              <input type="hidden" name="q" value="和木町">
+              <input type="hidden" name="search_url_params" value="q=和木町">
+              <input type="hidden" name="search_facets" value="{&#34;organization&#34;: {&#34;title&#34;: &#34;organization&#34;, &#34;items&#34;: [{&#34;name&#34;: &#34;35000&#34;, &#34;display_name&#34;: &#34;\u5c71\u53e3\u770c&#34;, &#34;count&#34;: 4}, {&#34;name&#34;: &#34;35321&#34;, &#34;display_name&#34;: &#34;\u548c\u6728\u753a&#34;, &#34;count&#34;: 21}]}, &#34;groups&#34;: {&#34;title&#34;: &#34;groups&#34;, &#34;items&#34;: [{&#34;name&#34;: &#34;c012&#34;, &#34;display_name&#34;: &#34;\u9632\u707d\u30fb\u9632\u72af&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;c009&#34;, &#34;display_name&#34;: &#34;\u89b3\u5149&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;c010&#34;, &#34;display_name&#34;: &#34;\u884c\u653f&#34;, &#34;count&#34;: 3}, {&#34;name&#34;: &#34;c011&#34;, &#34;display_name&#34;: &#34;\u7d71\u8a08&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;c008&#34;, &#34;display_name&#34;: &#34;\u7523\u696d&#34;, &#34;count&#34;: 3}, {&#34;name&#34;: &#34;c002&#34;, &#34;display_name&#34;: &#34;\u74b0\u5883&#34;, &#34;count&#34;: 2}, {&#34;name&#34;: &#34;c006&#34;, &#34;display_name&#34;: &#34;\u6587\u5316\u30fb\u30b9\u30dd\u30fc\u30c4&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;c005&#34;, &#34;display_name&#34;: &#34;\u5b50\u80b2\u3066\u30fb\u6559\u80b2&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;c003&#34;, &#34;display_name&#34;: &#34;\u533b\u7642&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;c013&#34;, &#34;display_name&#34;: &#34;\u4ea4\u901a&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;c014&#34;, &#34;display_name&#34;: &#34;\u305d\u306e\u4ed6&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;c007&#34;, &#34;display_name&#34;: &#34;\u3057\u3054\u3068&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;c001&#34;, &#34;display_name&#34;: &#34;\u304f\u3089\u3057&#34;, &#34;count&#34;: 4}]}, &#34;tags&#34;: {&#34;title&#34;: &#34;tags&#34;, &#34;items&#34;: [{&#34;name&#34;: &#34;\u9632\u707d&#34;, &#34;display_name&#34;: &#34;\u9632\u707d&#34;, &#34;count&#34;: 3}, {&#34;name&#34;: &#34;\u90fd\u5e02\u8a08\u753b\u57fa\u790e\u8abf\u67fb&#34;, &#34;display_name&#34;: &#34;\u90fd\u5e02\u8a08\u753b\u57fa\u790e\u8abf\u67fb&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;\u907f\u96e3\u5834\u6240&#34;, &#34;display_name&#34;: &#34;\u907f\u96e3\u5834\u6240&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;\u89b3\u5149&#34;, &#34;display_name&#34;: &#34;\u89b3\u5149&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;\u884c\u653f&#34;, &#34;display_name&#34;: &#34;\u884c\u653f&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;\u8131\u70ad\u7d20&#34;, &#34;display_name&#34;: &#34;\u8131\u70ad\u7d20&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;\u7d71\u8a08&#34;, &#34;display_name&#34;: &#34;\u7d71\u8a08&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;\u751f\u7269\u591a\u69d8\u6027&#34;, &#34;display_name&#34;: &#34;\u751f\u7269\u591a\u69d8\u6027&#34;, &#34;count&#34;: 2}, {&#34;name&#34;: &#34;\u68ee\u6797\u8a08\u753b\u56f3&#34;, &#34;display_name&#34;: &#34;\u68ee\u6797\u8a08\u753b\u56f3&#34;, &#34;count&#34;: 2}, {&#34;name&#34;: &#34;\u68ee\u6797\u7c3f&#34;, &#34;display_name&#34;: &#34;\u68ee\u6797\u7c3f&#34;, &#34;count&#34;: 2}, {&#34;name&#34;: &#34;\u68ee\u6797&#34;, &#34;display_name&#34;: &#34;\u68ee\u6797&#34;, &#34;count&#34;: 2}, {&#34;name&#34;: &#34;\u6797\u696d&#34;, &#34;display_name&#34;: &#34;\u6797\u696d&#34;, &#34;count&#34;: 2}, {&#34;name&#34;: &#34;\u6587\u5316\u8ca1&#34;, &#34;display_name&#34;: &#34;\u6587\u5316\u8ca1&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;\u6559\u80b2&#34;, &#34;display_name&#34;: &#34;\u6559\u80b2&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;\u5b66\u6821&#34;, &#34;display_name&#34;: &#34;\u5b66\u6821&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;\u5b50\u80b2\u3066&#34;, &#34;display_name&#34;: &#34;\u5b50\u80b2\u3066&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;\u5929\u7136\u6797&#34;, &#34;display_name&#34;: &#34;\u5929\u7136\u6797&#34;, &#34;count&#34;: 2}, {&#34;name&#34;: &#34;\u548c\u6728\u753a&#34;, &#34;display_name&#34;: &#34;\u548c\u6728\u753a&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;\u516c\u5712&#34;, &#34;display_name&#34;: &#34;\u516c\u5712&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;\u516c\u5171\u65bd\u8a2d&#34;, &#34;display_name&#34;: &#34;\u516c\u5171\u65bd\u8a2d&#34;, &#34;count&#34;: 6}, {&#34;name&#34;: &#34;\u4f4d\u7f6e\u60c5\u5831&#34;, &#34;display_name&#34;: &#34;\u4f4d\u7f6e\u60c5\u5831&#34;, &#34;count&#34;: 1}, {&#34;name&#34;: &#34;\u4f10\u63a1&#34;, &#34;display_name&#34;: &#34;\u4f10\u63a1&#34;, &#34;count&#34;: 2}, {&#34;name&#34;: &#34;\u4eba\u5de5\u6797&#34;, &#34;display_name&#34;: &#34;\u4eba\u5de5\u6797&#34;, &#34;count&#34;: 2}]}, &#34;res_format&#34;: {&#34;title&#34;: &#34;res_format&#34;, &#34;items&#34;: [{&#34;name&#34;: &#34;ZIP&#34;, &#34;display_name&#34;: &#34;ZIP&#34;, &#34;count&#34;: 3}, {&#34;name&#34;: &#34;XLSX&#34;, &#34;display_name&#34;: &#34;XLSX&#34;, &#34;count&#34;: 5}, {&#34;name&#34;: &#34;XLS&#34;, &#34;display_name&#34;: &#34;XLS&#34;, &#34;count&#34;: 4}, {&#34;name&#34;: &#34;HTML&#34;, &#34;display_name&#34;: &#34;HTML&#34;, &#34;count&#34;: 4}, {&#34;name&#34;: &#34;CSV&#34;, &#34;display_name&#34;: &#34;CSV&#34;, &#34;count&#34;: 9}]}, &#34;license_id&#34;: {&#34;title&#34;: &#34;license_id&#34;, &#34;items&#34;: [{&#34;name&#34;: &#34;cc-by&#34;, &#34;display_name&#34;: &#34;\u30af\u30ea\u30a8\u30a4\u30c6\u30a3\u30d6\u30fb\u30b3\u30e2\u30f3\u30ba \u8868\u793a&#34;, &#34;count&#34;: 10}, {&#34;name&#34;: &#34;cc-zero&#34;, &#34;display_name&#34;: &#34;\u30af\u30ea\u30a8\u30a4\u30c6\u30a3\u30d6\u30fb\u30b3\u30e2\u30f3\u30ba CC0&#34;, &#34;count&#34;: 1}]}}">
+              <button type="submit" class="btn btn-csvfile">検索結果を出力</button>
+            </form>
+          </div>
+      
+      
+        
+        
+        
+
+
+
+
+
+
+
+<form id="dataset-search-form" class="search-form" method="get" data-module="select-switch">
+
+  
+    <div class="input-group search-input-group">
+      <input aria-label="データセット検索..." id="field-giant-search" type="text" class="form-control input-lg" name="q" value="和木町" autocomplete="off" placeholder="データセット検索...">
+      
+      <span class="input-group-btn">
+        <button class="btn btn-default btn-lg" type="submit" value="search" aria-label="Submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+      
+    </div>
+  
+
+  
+    
+  
+
+  
+    
+      <div class="form-group control-order-by">
+        <label for="field-order-by">並び順</label>
+        <select id="field-order-by" name="sort" class="form-control form-select">
+          
+            
+              <option value="score desc, metadata_modified desc" selected="selected">関連性</option>
+            
+          
+            
+              <option value="title_string asc">名前で昇順</option>
+            
+          
+            
+              <option value="title_string desc">名前で降順</option>
+            
+          
+            
+              <option value="metadata_modified desc">最終更新日</option>
+            
+          
+            
+              <option value="views_recent desc">人気</option>
+            
+          
+        </select>
+        
+        <button class="btn btn-default js-hide" type="submit">Go</button>
+        
+      </div>
+    
+  
+
+  
+    
+      <h1>
+
+  
+  
+  
+  
+
+&#34;和木町&#34; に対して 25 件のデータセットが見つかりました</h1>
+    
+  
+
+  
+    
+      <p class="filter-list">
+        
+      </p>
+      <a class="show-filters btn btn-default">フィルタ結果</a>
+    
+  
+
+</form>
+
+
+
+
+      
+      
+        
+
+  
+    <ul class="dataset-list list-unstyled">
+    	
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/https-www-town-waki-lg-jp-soshiki-list5-1-html" title="【和木町】イベント一覧">
+      【和木町】イベント一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>和木町のイベント一覧につきましては、以下の町ホームページにて公開しております。
+<a href="https://www.town.waki.lg.jp/soshiki/list5-1.html" rel="noopener">https://www.town.waki.lg.jp/soshiki/list5-1.html</a></div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/https-www-town-waki-lg-jp-soshiki-list5-1-html" class="badge badge-default" data-format="html">HTML</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/https-www-town-waki-lg-jp-life-2-2-26" title="【和木町】調達情報">
+      【和木町】調達情報
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>"和木町の調達情報につきましては、以下の町ホームページにて公開しております。
+入札・契約
+<a href="https://www.town.waki.lg.jp/life/2/2/26/"" rel="noopener">https://www.town.waki.lg.jp/life/2/2/26/"</a></div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/https-www-town-waki-lg-jp-life-3-3" title="【和木町】観光ポイント">
+      【和木町】観光ポイント
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>和木町の観光ポイントにつきましては、以下の町ホームページにて公開しております。
+観光・移住定住
+<a href="https://www.town.waki.lg.jp/life/3/3/" rel="noopener">https://www.town.waki.lg.jp/life/3/3/</a></div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/https-www-town-waki-lg-jp-site-kyoiku-439-html" title="【和木町】文化財一覧">
+      【和木町】文化財一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>和木町の文化財一覧につきましては、以下の町ホームページにて公開しております。
+<a href="https://www.town.waki.lg.jp/site/kyoiku/439.html" rel="noopener">https://www.town.waki.lg.jp/site/kyoiku/439.html</a></div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/https-www-town-waki-lg-jp-site-kyoiku-439-html" class="badge badge-default" data-format="html">HTML</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/353213_pub_facility" title="【和木町】公共施設一覧">
+      【和木町】公共施設一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>公共施設の一覧データです。</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/353213_pub_facility" class="badge badge-default" data-format="csv">CSV</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/353213_pub_facility" class="badge badge-default" data-format="xls">XLS</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/353213_opendata" title="【和木町】オープンデータ一覧">
+      【和木町】オープンデータ一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>オープンデータの一覧データです。</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/353213_opendata" class="badge badge-default" data-format="csv">CSV</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/353213_opendata" class="badge badge-default" data-format="xls">XLS</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/353213_tourism" title="【和木町】観光施設一覧">
+      【和木町】観光施設一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>観光施設の一覧データです。</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/353213_tourism" class="badge badge-default" data-format="csv">CSV</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/353213_tourism" class="badge badge-default" data-format="xlsx">XLSX</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/353213_school" title="【和木町】教育施設一覧">
+      【和木町】教育施設一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>教育施設の一覧データです。</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/353213_school" class="badge badge-default" data-format="csv">CSV</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/353213_school" class="badge badge-default" data-format="xls">XLS</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/353213_preschool" title="【和木町】子育て施設一覧">
+      【和木町】子育て施設一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>子育て施設の一覧データです。</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/353213_preschool" class="badge badge-default" data-format="csv">CSV</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/353213_preschool" class="badge badge-default" data-format="xlsx">XLSX</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/akachan-eki" title="【和木町】赤ちゃんの駅">
+      【和木町】赤ちゃんの駅
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>乳幼児を連れた保護者と子供が自由に立ち寄り、おむつ替えや授乳ができるスペース（設備）としての役割をもつ「赤ちゃんの駅」について、本町では登録整備を実施しておりません。
+そのため、該当するデータを保有していないこと、御理解いただきますようお願いいたします。</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/https-www-town-waki-lg-jp-soshiki-1-471-html" title="【和木町】地域・年齢別人口">
+      【和木町】地域・年齢別人口
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>和木町の年齢別人口につきましては、以下の町ホームページにて公開しております。
+<a href="https://www.town.waki.lg.jp/soshiki/1/471.html" rel="noopener">https://www.town.waki.lg.jp/soshiki/1/471.html</a></div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/https-www-town-waki-lg-jp-soshiki-1-471-html" class="badge badge-default" data-format="html">HTML</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/353213_community-center" title="【和木町】公民館・集会所一覧">
+      【和木町】公民館・集会所一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>公民館・集会所の一覧データです。</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/353213_community-center" class="badge badge-default" data-format="csv">CSV</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/353213_community-center" class="badge badge-default" data-format="xls">XLS</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/suiri" title="【和木町】消防水利施設一覧">
+      【和木町】消防水利施設一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>「消防水利施設一覧」につきましては、本町では非公開としております。御理解いただきますようお願いいたします。</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/aed" title="【和木町】AED設置箇所一覧">
+      【和木町】AED設置箇所一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>AED（自動体外式除細動器）は、心臓がけいれんし、心臓本来の血液を流すポンプ機能を失った状態（心室細動）の心臓に電気ショックを与えることにより、心臓の動きを正常な状態に戻すことを試みる医療機器です。...</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/35321_gakku" title="【和木町】小中学校通学区域一覧">
+      【和木町】小中学校通学区域一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>和木町のの小学校、中学校の通学区域一覧です。</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/35321_gakku" class="badge badge-default" data-format="csv">CSV</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/https-www-town-waki-lg-jp-soshiki-4-225-html" title="【和木町】ゴミの分別方法一覧">
+      【和木町】ゴミの分別方法一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>和木町のゴミの分別方法一覧につきましては、以下の町ホームページにて公開しております。
+和木町家庭ごみ収集カレンダー
+<a href="https://www.town.waki.lg.jp/soshiki/4/225.html" rel="noopener">https://www.town.waki.lg.jp/soshiki/4/225.html</a></div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/https-www-town-waki-lg-jp-soshiki-4-225-html" class="badge badge-default" data-format="html">HTML</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/353213_evacuation" title="【和木町】指定緊急避難場所一覧">
+      【和木町】指定緊急避難場所一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>指定緊急避難場所の一覧データです。</div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+                <li>
+                  <a href="/ckan/dataset/353213_evacuation" class="badge badge-default" data-format="csv">CSV</a>
+                </li>
+                
+                <li>
+                  <a href="/ckan/dataset/353213_evacuation" class="badge badge-default" data-format="xlsx">XLSX</a>
+                </li>
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/https-yamaguchi-opendata-jp-ckan-dataset-toshikeikakukisotyousa" title="【和木町】都市計画基礎調査情報">
+      【和木町】都市計画基礎調査情報
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>都市計画基礎調査情報につきましては、県内市町のデータを山口県庁が一括してデータ公開しております。
+以下URLから山口県庁公開のページをご覧いただき、オープンデータの御確認をお願いいたします。
+【山口県】都市計画基礎調査結果
+<a href="https://yamaguchi-opendata.jp/ckan/dataset/toshikeikakukisotyousa" rel="noopener">https://yamaguchi-opendata.jp/ckan/dataset/toshikeikakukisotyousa</a></div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/https-yamaguchi-opendata-jp-ckan-dataset-care_service" title="【和木町】介護サービス事業所一覧">
+      【和木町】介護サービス事業所一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>介護サービス事業所一覧につきましては、県内市町のデータを山口県庁が一括してデータ公開しております。
+以下URLから山口県庁公開のページをご覧いただき、オープンデータの御確認をお願いいたします。
+【山口県】介護サービス事業所一覧
+<a href="https://yamaguchi-opendata.jp/ckan/dataset/care_service" rel="noopener">https://yamaguchi-opendata.jp/ckan/dataset/care_service</a></div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	        
+
+
+
+
+  <li class="dataset-item">
+    
+      <div class="dataset-content">
+        
+          <h2 class="dataset-heading">
+            
+              
+            
+            
+    <a href="/ckan/dataset/https-yamaguchi-opendata-jp-ckan-dataset-350001-evacuation" title="【和木町】指定緊急避難場所一覧">
+      【和木町】指定緊急避難場所一覧
+    </a>
+            
+            
+              
+              
+            
+          </h2>
+        
+        
+          
+            <div>指定緊急避難場所一覧につきましては、県内市町のデータを山口県庁が一括してデータ公開しております。
+以下URLから山口県庁公開のページをご覧いただき、オープンデータの御確認をお願いいたします。
+【山口県】指定緊急避難場所一覧
+<a href="https://yamaguchi-opendata.jp/ckan/dataset/350001-evacuation" rel="noopener">https://yamaguchi-opendata.jp/ckan/dataset/350001-evacuation</a></div>
+          
+        
+      </div>
+      
+        
+          
+            <ul class="dataset-resources list-unstyled">
+              
+                
+              
+            </ul>
+          
+        
+      
+    
+  </li>
+
+	      
+	    
+    </ul>
+  
+
+      
+    </div>
+
+    
+      <div class="pagination-wrapper">
+  <ul class="pagination justify-content-center"> <li class="page-item active">
+  <a class="page-link" href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;page=1">1</a>
+</li> <li class="page-item">
+  <a class="page-link" href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;page=2">2</a>
+</li> <li class="page-item">
+  <a class="page-link" href="/ckan/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA&amp;page=2">»</a>
+</li></ul>
+</div>
+    
+  </section>
+
+  
+    <section class="module">
+      <div class="module-content">
+        
+          <small>
+            
+            
+            
+          API Keyを使ってこのレジストリーにもアクセス可能です <a href="/ckan/api/3">API</a> (see <a href="http://docs.ckan.org/en/2.10/api/">APIドキュメント</a>). 
+          </small>
+        
+      </div>
+    </section>
+  
+
+              </div>
+            
+          </div>
+        
+      </div>
+    </div>
+  
+    <footer class="site-footer">
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-md-8 footer-links">
+        
+          <ul class="list-unstyled">
+            
+              <li><a href="/ckan/about">About CKAN</a></li>
+            
+          </ul>
+          <ul class="list-unstyled">
+            
+              
+              <li><a href="http://docs.ckan.org/en/2.10/api/">CKAN API</a></li>
+              <li><a href="http://www.ckan.org/">CKANアソシエーション</a></li>
+              <li><a href="http://www.opendefinition.org/okd/"><img src="/ckan/base/images/od_80x15_blue.png" alt="Open Data"></a></li>
+            
+          </ul>
+        
+      </div>
+      <div class="col-md-4 attribution">
+        
+          <p><strong>Powered by</strong> <a class="hide-text ckan-footer-logo" href="http://ckan.org">CKAN</a></p>
+        
+        
+          
+<form class="lang-select" action="/ckan/util/redirect" data-module="select-switch" method="POST">
+  
+<input type="hidden" name="_csrf_token" value="ImI1YThkN2JmNTU4MjE2NDM5YmRhNDA1ZThkMDMyNzJhMTU5NzRlNWIi.anhhYw._q9bOI7oQmefSZME_yYiRCG-EsA"/> 
+  <div class="form-group">
+    <label for="field-lang-select">言語</label>
+    <select id="field-lang-select" name="url" data-module="autocomplete" data-module-dropdown-class="lang-dropdown" data-module-container-class="lang-container">
+      
+        
+        <option value="/ckan/ja/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" selected="selected">
+          日本語
+        </option>
+      
+        
+        <option value="/ckan/en/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          English
+        </option>
+      
+        
+        <option value="/ckan/pt_BR/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          português (Brasil)
+        </option>
+      
+        
+        <option value="/ckan/it/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          italiano
+        </option>
+      
+        
+        <option value="/ckan/cs_CZ/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          čeština (Česko)
+        </option>
+      
+        
+        <option value="/ckan/ca/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          català
+        </option>
+      
+        
+        <option value="/ckan/es/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          español
+        </option>
+      
+        
+        <option value="/ckan/fr/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          français
+        </option>
+      
+        
+        <option value="/ckan/el/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          Ελληνικά
+        </option>
+      
+        
+        <option value="/ckan/sv/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          svenska
+        </option>
+      
+        
+        <option value="/ckan/sr/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          српски
+        </option>
+      
+        
+        <option value="/ckan/no/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          norsk
+        </option>
+      
+        
+        <option value="/ckan/sk/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          slovenčina
+        </option>
+      
+        
+        <option value="/ckan/fi/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          suomi
+        </option>
+      
+        
+        <option value="/ckan/ru/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          русский
+        </option>
+      
+        
+        <option value="/ckan/de/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          Deutsch
+        </option>
+      
+        
+        <option value="/ckan/pl/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          polski
+        </option>
+      
+        
+        <option value="/ckan/nl/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          Nederlands
+        </option>
+      
+        
+        <option value="/ckan/bg/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          български
+        </option>
+      
+        
+        <option value="/ckan/ko_KR/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          한국어 (대한민국)
+        </option>
+      
+        
+        <option value="/ckan/hu/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          magyar
+        </option>
+      
+        
+        <option value="/ckan/sl/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          slovenščina
+        </option>
+      
+        
+        <option value="/ckan/lv/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          latviešu
+        </option>
+      
+        
+        <option value="/ckan/uk_UA/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          українська (Україна)
+        </option>
+      
+        
+        <option value="/ckan/gl/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          galego
+        </option>
+      
+        
+        <option value="/ckan/th/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          ไทย
+        </option>
+      
+        
+        <option value="/ckan/fa_IR/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          فارسی (ایران)
+        </option>
+      
+        
+        <option value="/ckan/pt_PT/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          português (Portugal)
+        </option>
+      
+        
+        <option value="/ckan/vi/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          Tiếng Việt
+        </option>
+      
+        
+        <option value="/ckan/am/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          አማርኛ
+        </option>
+      
+        
+        <option value="/ckan/sr_Latn/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          srpski (latinica)
+        </option>
+      
+        
+        <option value="/ckan/en_GB/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          English (United Kingdom)
+        </option>
+      
+        
+        <option value="/ckan/he/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          עברית
+        </option>
+      
+        
+        <option value="/ckan/ne/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          नेपाली
+        </option>
+      
+        
+        <option value="/ckan/es_AR/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          español (Argentina)
+        </option>
+      
+        
+        <option value="/ckan/is/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          íslenska
+        </option>
+      
+        
+        <option value="/ckan/mk/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          македонски
+        </option>
+      
+        
+        <option value="/ckan/mn_MN/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          монгол (Монгол)
+        </option>
+      
+        
+        <option value="/ckan/zh_Hant_TW/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          中文 (繁體, 台灣)
+        </option>
+      
+        
+        <option value="/ckan/lt/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          lietuvių
+        </option>
+      
+        
+        <option value="/ckan/eu/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          euskara
+        </option>
+      
+        
+        <option value="/ckan/uk/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          українська
+        </option>
+      
+        
+        <option value="/ckan/id/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          Indonesia
+        </option>
+      
+        
+        <option value="/ckan/ro/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          română
+        </option>
+      
+        
+        <option value="/ckan/my_MM/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          မြန်မာ (မြန်မာ)
+        </option>
+      
+        
+        <option value="/ckan/hr/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          hrvatski
+        </option>
+      
+        
+        <option value="/ckan/nb_NO/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          norsk bokmål (Norge)
+        </option>
+      
+        
+        <option value="/ckan/ar/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          العربية
+        </option>
+      
+        
+        <option value="/ckan/tl/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          Filipino (Pilipinas)
+        </option>
+      
+        
+        <option value="/ckan/bs/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          bosanski
+        </option>
+      
+        
+        <option value="/ckan/tr/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          Türkçe
+        </option>
+      
+        
+        <option value="/ckan/sq/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          shqip
+        </option>
+      
+        
+        <option value="/ckan/zh_Hans_CN/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          中文 (简体, 中国)
+        </option>
+      
+        
+        <option value="/ckan/km/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          ខ្មែរ
+        </option>
+      
+        
+        <option value="/ckan/en_AU/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          English (Australia)
+        </option>
+      
+        
+        <option value="/ckan/da_DK/dataset/?q=%E5%92%8C%E6%9C%A8%E7%94%BA" >
+          dansk (Danmark)
+        </option>
+      
+    </select>
+  </div>
+  <button class="btn btn-default d-none " type="submit">Go</button>
+</form>
+
+
+        
+      </div>
+    </div>
+    
+  </div>
+</footer>
+  
+  
+  
+  
+    
+  
+  
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8107CQRRPE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8107CQRRPE');
+    </script>
+    
+
+      
+
+    
+    
+    <link href="/ckan/webassets/vendor/f3b8236b_select2.css" rel="stylesheet"/>
+<link href="/ckan/webassets/vendor/d05bf0e7_fontawesome.css" rel="stylesheet"/>
+    <script src="/ckan/webassets/vendor/8c3c143a_jquery.js" type="text/javascript"></script>
+<script src="/ckan/webassets/vendor/5027b870_vendor.js" type="text/javascript"></script>
+<script src="/ckan/webassets/vendor/6d1ad7e6_bootstrap.js" type="text/javascript"></script>
+<script src="/ckan/webassets/base/6fddaa3f_main.js" type="text/javascript"></script>
+<script src="/ckan/webassets/base/0d750fad_ckan.js" type="text/javascript"></script>
+<script src="/ckan/webassets/base/cd2c0272_tracking.js" type="text/javascript"></script>
+  </body>
+</html>

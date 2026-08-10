@@ -1,0 +1,239 @@
+取得日時: 2026-08-09 JST
+取得元  : https://bus-routes.net/gtfs_list.php?kid=35
+取得方法: curl -sL (生バイト取得、要約なし)。※第三者の非公式まとめサイト。候補発見にのみ使用し、確認済み事実の根拠にはしない
+---
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-50833588-4"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-50833588-4', {
+				'linker': {
+					'domains': ['yuru-to.net', 'yadococo.net']
+				}
+			});
+		</script>
+		<title>山口県のGTFSデータリスト</title>
+		<meta charset="utf-8">
+		<meta http-equiv="content-language" content="ja">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="山口県のGTFS（標準的なバス情報フォーマット）のオープンデータリストです。">
+		<meta name="keywords" content="バス,時刻表">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+		<link rel="icon" href="./favicon.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon-180x180.png">
+		<link rel="mask-icon" href="/icons/mask-icon.svg" color="#bc0000">
+		<meta name="msapplication-TileColor" content="#b9cbf0">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<link rel="stylesheet" href="//base.bus-routes.net/css/reset2.min.css" type="text/css" />
+		<link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="//base.bus-routes.net/css/gtfs_list20260218.min.css" type="text/css" />
+	</head>
+	<body>
+		<header>
+			<h1 class='title'>山口県のGTFSデータリスト</h1>
+		</header>
+		<main>
+			<div id="nav">
+				<div class="breadcrumb">
+					<div class="breadcrumb-inner" itemscope itemtype="http://schema.org/BreadcrumbList">
+						<span class="breadcrumb-child" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+							<a class="breadcrumb-child-link" itemprop="item" href="/"><span itemprop="name">バスルート</span></a>
+							<meta itemprop="position" content="1">
+						</span>
+						<span class="breadcrumb-gt">&gt;</span>
+						<span class="breadcrumb-child" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+							<a class="breadcrumb-child-link" itemprop="item" href="/gtfs_list.php/"><span itemprop="name">GTFS</span></a>
+							<meta itemprop="position" content="2">
+						</span>
+						<span class="breadcrumb-gt">&gt;</span>
+						<span class="breadcrumb-child breadcrumb-current" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+							<a class="breadcrumb-child-link" itemprop="item" href="/gtfs_list.php?kid=35">
+								<span itemprop="name">山口県</span>
+							</a>
+							<meta itemprop="position" content="3">
+						</span>
+					</div>
+				</div>
+			</div>
+			<p>山口県のバス路線のGTFS・標準的なバス情報フォーマット（GTFS-JP）データのうち、オープンデータとして公開されているものの一覧です。</p>
+			<span class='last'>最終更新日：2026.08.09</span>&nbsp;<span class='red'>（赤字は有効期限切れ）</span>
+			<span id='gtfs_data' class='tap_btn' onclick='toggleMess();' >掲載データについて ▼</span>
+			<ul id='gtfs_mess'>
+					<li>GTFSデータは、<a href='https://bustime.jp/'>バス時刻検索</a>様が公開している<a href='https://bustime.jp/GtfsAgency/gtfs_list/'>全国GTFS一覧</a>（国内のGTFSデータを毎日収集し最新化しているサイトです）を元に、1日1回更新しております。</li>
+					<li>最新状態に保つことを目指していますが、元のGTFSデータが更新されていないなどの理由で有効期限内のデータでも最新化されていない可能性もありますので、ご利用の際は公式サイトで再確認をおすすめします。<br>
+						（バス路線の時刻を選択すると、公式サイトのリンクが表示されるようにしています）</li>
+					<li>期限切れのデータについては、バス停・路線・時刻表データを削除し、表示できないようにしています。</li>
+					<li>もし、当サイトへの掲載停止を希望するバス事業者様がいらっしゃいましたら、<a href="https://yuru-to.net/contact/">問い合わせ</a>から連絡をいただけますでしょうか。すぐに削除いたします。</li>
+			</ul>
+		<div id="grid-wrapper"></div>
+	</main>
+	<div id="foot">
+	<p>&copy; 2015-2026 バスルート <a class='white' href='https://yuru-to.net/policy'>利用規約・プライバシーポリシー</a></p>
+	</div>
+	<script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+	<script type="text/javascript">
+		let gtfs_list = [["",{"display":"<a class='vl' href='\/gtfs_list.php?kid=35'>\u5c71\u53e3\u770c<\/a>","sort":35,"agid":1155},{"display":"<a class='vl' href='\/gtfs_agency.php?agid=1155'><span class='nm'>\u5ca9\u56fd\u5e02\u5f79\u6240<\/span><\/a>","sort":"\u5ca9\u56fd\u5e02\u5f79\u6240"},{"display":"2026.04.10","sort":20260410},{"display":"2026.03.27","sort":20260327},{"display":"2027.03.26","sort":20270326},{"display":"<a href='https:\/\/www.city.iwakuni.lg.jp\/soshiki\/12\/'>\u5ca9\u56fd\u5e02\u5f79\u6240\u3000\u5730\u57df\u4ea4\u901a\u8ab2<\/a>","sort":"\u5ca9\u56fd\u5e02\u5f79\u6240\u3000\u5730\u57df\u4ea4\u901a\u8ab2"},{"display":"<a href='https:\/\/yamaguchi-opendata.jp\/ckan\/dataset\/352080-gtfsjp'><img class='hp' src='\/\/imgs.bus-routes.net\/icon\/home@2x.png'><\/a>"},{"display":"<a class='vl' href='https:\/\/creativecommons.org\/licenses\/by\/4.0\/deed.ja'>CC BY 4.0<\/a>","sort":4}],["",{"display":"<a class='vl' href='\/gtfs_list.php?kid=35'>\u5c71\u53e3\u770c<\/a>","sort":35,"agid":1617},{"display":"<a class='vl' href='\/gtfs_agency.php?agid=1617'><span class='nm'>\u5149\u5e02<\/span><\/a>","sort":"\u5149\u5e02"},{"display":"2026.04.01","sort":20260401},{"display":"2026.04.01","sort":20260401},{"display":"2027.03.31","sort":20270331},{"display":"<a href='https:\/\/www.city.hikari.lg.jp\/index.html'>\u5149\u5e02<\/a>","sort":"\u5149\u5e02"},{"display":"<a href='https:\/\/yamaguchi-opendata.jp\/ckan\/dataset\/352101_kotsu001'><img class='hp' src='\/\/imgs.bus-routes.net\/icon\/home@2x.png'><\/a>"},{"display":"<a class='vl' href='https:\/\/creativecommons.org\/licenses\/by\/4.0\/deed.ja'>CC BY 4.0<\/a>","sort":4}]];
+
+		const gridStyle = (cell, row, td_name) =>  {
+			if (!row) {
+				return {
+					className: 'th-grid'
+				};
+			}
+			return {
+				className: 'td-grid td-' + td_name
+			};
+		}
+
+		const noStyle = (cell, row) =>  {
+			return gridStyle(cell, row, 'no');
+		}
+
+		const prefStyle = (cell, row) =>  {
+			return gridStyle(cell, row, 'pref');
+		}
+
+		const agencyStyle = (cell, row) =>  {
+			return gridStyle(cell, row, 'agency');
+		}
+		
+		const lastStyle = (cell, row) =>  {
+			return gridStyle(cell, row, 'last');
+		}
+
+		const startStyle = (cell, row) =>  {
+			return gridStyle(cell, row, 'start');
+		}
+
+		const endStyle = (cell, row) =>  {
+			return gridStyle(cell, row, 'end');
+		}
+
+		const providerStyle = (cell, row) =>  {
+			return gridStyle(cell, row, 'provider');
+		}
+
+		const dataStyle = (cell, row) =>  {
+			return gridStyle(cell, row, 'data');
+		}
+
+		const licenseStyle = (cell, row) =>  {
+			return gridStyle(cell, row, 'license');
+		}
+
+		const sortAsc = {
+			compare: (a, b) => {
+				const valA = a.sort;
+				const valB = b.sort;
+				if (valA > valB) return 1;
+				if (valA < valB) return -1;
+				return 0;
+			}
+		};
+
+		const sortDesc = {
+			compare: (a, b) => {
+				const valA = a.sort;
+				const valB = b.sort;
+				if (valA > valB) return -1;
+				if (valA < valB) return 1;
+				return 0;
+			}
+		};
+
+		const grid = new gridjs.Grid({
+			data: gtfs_list,
+			autoWidth: false,
+			columns: [
+				{
+					name: 'No.',
+					attributes: noStyle,
+					sort: false
+				},
+				{
+					name: '都道府県',
+					sort: sortAsc,
+					attributes: prefStyle,
+					formatter: (cell) => gridjs.html(cell.display)
+				},
+				{
+					name: '事業者名',
+					sort: sortAsc,
+					attributes: agencyStyle,
+					formatter: (cell) => gridjs.html(cell.display)
+				},
+				{
+					name: '最終更新',
+					sort: sortDesc,
+					attributes: lastStyle,
+					formatter: (cell) => gridjs.html(cell.display)
+				},
+				{
+					name: '開始',
+					sort: sortDesc,
+					attributes: startStyle,
+					formatter: (cell) => gridjs.html(cell.display)
+				},
+				{
+					name: '終了',
+					sort: sortDesc,
+					attributes: endStyle,
+					formatter: (cell) => gridjs.html(cell.display)
+				},
+				{
+					name: '提供元',
+					sort: sortAsc,
+					attributes: providerStyle,
+					formatter: (cell) => gridjs.html(cell.display)
+				},
+				{
+					name: 'データ',
+					sort: false,
+					attributes: dataStyle,
+					formatter: (cell) => gridjs.html(cell.display)
+				},
+				{
+					name: 'ライセンス',
+					sort: sortAsc,
+					attributes: licenseStyle,
+					formatter: (cell) => gridjs.html(cell.display)
+				}
+			],
+			sort: true,
+			pagination: false
+		});
+
+		grid.on('rowClick', (e, row) => {
+			const targetTd = e.target.closest('td');
+			if (!targetTd) return;
+
+			const col = targetTd.cellIndex;
+			const agid = row.cells[1].data.agid;
+			
+			if (col >= 2 && col <= 5 && agid > 0) {
+				location.href = "gtfs_agency.php?agid=" + agid;
+			}
+		});
+
+		grid.render(document.getElementById("grid-wrapper"));
+
+	function toggleMess() {
+
+		let el = document.getElementById('gtfs_mess');
+		
+		if (el.style.display != 'block') {	
+			el.style.display = 'block';
+			document.getElementById('gtfs_data').innerHTML = '掲載データについて ▲';
+        }
+		else {
+			el.style.display = 'none';
+			document.getElementById('gtfs_data').innerHTML = '掲載データについて ▼';
+        }
+	}
+		</script>
+	</body>
+</html>

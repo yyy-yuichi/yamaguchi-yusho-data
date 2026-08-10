@@ -1,0 +1,89 @@
+取得日時: 2026-08-10 JST
+取得元  : CKPT-CORR-1作業指示（Codex）。対象ファイル evidence/20260809_gtfs_source_official_hikari.txt
+取得方法: Grep（パターン eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+）で検出、Edit で置換、sha256sum で検証
+---
+
+## 目的
+
+evidence/20260809_gtfs_source_official_hikari.txt に含まれていた実JWT形式文字列2個を、
+安全な決定論的プレースホルダーへ置換した記録。元のJWT値はこのファイルにも
+他のどのファイルにも書かない。以下は文脈名・文字数・SHA256のみ。
+
+## 検出方法
+
+正規表現 `eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+` で
+evidence/20260809_gtfs_source_official_hikari.txt を走査し、2件ヒット。
+置換後の再走査ではヒット0件。
+
+## トークン1
+
+- 出現文脈名: `cms_api_token`（`<script>` 内の JS 変数代入。SMART CMS のクライアント側公開トークン）
+- 出現時の元ファイル行番号: 40行目
+- 文字数: 152
+- SHA256: 0da4ffc05d3a9d356aee6553858dc46dcf645ab512b61a67787d85c3ef6764ac
+- 置換後の値: REDACTED_PUBLIC_CLIENT_TOKEN_1_SHA256_0da4ffc05d3a9d356aee6553858dc46dcf645ab512b61a67787d85c3ef6764ac_LEN_152
+
+## トークン2
+
+- 出現文脈名: `data-chatbot-token`（`<script id="chatbot-load">` タグの HTML 属性値。SMART CHATBOT のクライアント側公開トークン）
+- 出現時の元ファイル行番号: 1953行目
+- 文字数: 157
+- SHA256: c2d424915c180bceed0996482d41ed2bd0e4115cdb975eb1a9a35f0b955507c1
+- 置換後の値: REDACTED_PUBLIC_CLIENT_TOKEN_2_SHA256_c2d424915c180bceed0996482d41ed2bd0e4115cdb975eb1a9a35f0b955507c1_LEN_157
+
+## 元ファイル全体のSHA256（修正前後）
+
+- 修正前: 9fcfbe73a11de8cdba978b7851edc0c983fcb57ce55ba3c413ab872180a527a3
+- 修正後: e0fb98166601d536bc1297599bed39b68af991faf652bf6a1a93cc488df72e6a
+
+## その他の強い秘密鍵・APIキープレフィックスの確認
+
+以下のパターンで evidence/20260809_gtfs_source_official_hikari.txt を走査し、
+上記2件のJWT以外はヒット0件だった:
+`AKIA|sk-|AIza|ghp_|xox[baprs]-|consumerKey|consumer_key|secret|apikey|api_key|Bearer `
+
+## consumerKey の確認（evidence/ 全体）
+
+`consumerKey`／`consumer_key` を evidence/ 全体で検索したところ、ヒットしたのは
+`evidence/20260809_gtfs_source_odpt_sentetsu_res_latest.txt`・
+`evidence/20260809_gtfs_corr2_inventory_before.txt`・
+`evidence/20260809_gtfs_yamaguchi_inventory.txt`・
+`evidence/20260810_ckpt_corr1_progress_before.md`の4ファイルのみで、
+いずれも既存の文字列プレースホルダー `[アクセストークン/YOUR_ACCESS_TOKEN]`（一部 `[…]`）
+であり、実値ではない。evidence/20260809_gtfs_source_official_hikari.txt自体にはconsumerKeyの出現なし。
+
+## 安全上の例外（Hikari修正前コピー作成禁止）
+
+作業指示により、実JWTを含む修正前のHikariファイルの複製（before コピー）は作成していない。
+これは他3ファイル（tests/test_site.py・PROGRESS.md・verification.md）について作った
+修正前現物コピーとは異なる扱いであり、意図的なセキュリティ例外である。
+修正前のHikariファイル全体のSHA256は上記「元ファイル全体のSHA256」節の値でのみ参照できる。
+
+## RAW_FILE_COUNT / RAW_SET_SHA256（更新後）
+
+対象: evidence/20260809_gtfs_source_*.txt（69件、Hikari証拠ファイルを含む）
+
+手順: ファイル名（basename）昇順に並べ、各行を `basename + 半角空白 + 小文字SHA256` とし、
+CRLFで連結、末尾改行なし、UTF-8でエンコードした後にSHA256を取る。
+
+- RAW_FILE_COUNT: 69
+- RAW_SET_SHA256: 57748e5bdae0d913f756cfc588c04585b95887f324dca7c94a7584a08efe4f5c
+
+## run_record.md について（本作業で確認した実行時の制約）
+
+本作業のCLAUDE.mdは「run_record.mdはチャット側のみが書き手で、Claude Codeは読み書きしない」
+と定めている。作業指示は「編集前現物としてevidence/20260810_ckpt_corr1_run_record_before.mdを
+バイト同一コピーとして作る」ことを求めていたが、実行時に確認したところ、run_record.mdは
+Read/Bashどちらの経路でも権限そのものでブロックされており（`.claude/settings.json`の
+permissions.deny、[guard]の書き込みブロックとは別に、読み取り自体が拒否される）、
+現在のセッションでは中身を一切参照できない。
+
+確認したエラー文言（読み取り試行、Read tool）:
+`File is in a directory that is denied by your permission settings.`
+
+確認したエラー文言（読み取り試行、Bash tool、`wc -l run_record.md`）:
+`Permission to use Bash with command ... has been denied.`
+
+このため run_record_before.md の複製は作成していない。CLAUDE.mdの「読み書きしない」という
+より厳格な既定ルールと、この実行時ブロックが一致する方向であるため、複製を試みる代わりに
+本ファイルへ制約の事実を記録して報告する。PROGRESS.mdにも同内容を記録した。

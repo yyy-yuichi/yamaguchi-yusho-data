@@ -1,0 +1,280 @@
+取得日時: 2026-08-09 JST
+取得元  : https://www.town.suo-oshima.lg.jp/soshiki/7/1629.html
+取得方法: curl -sL (生バイト取得、要約なし)
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P58TB06656"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P58TB06656');
+</script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お探しのページを見つけることができませんでした。- 周防大島町公式ホームページ</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" media="print" href="/ssi/css/print.css">
+<script src="/ssi/js/escapeurl.js"></script>
+<script src="/ssi/js/jquery.js"></script>
+<script src="/ssi/js/jquery-migrate.js"></script>
+<script src="/ssi/js/common.js"></script>
+<script src="/ssi/js/search-trend.js"></script>
+<script src="/ssi/js/s-google.js"></script>
+<script src="/ssi/js/search-open-page-id.js"></script>
+<script src="/ssi/js/last-page-parts-load-1.js"></script>
+<script src="/ssi/js/footstep.js"></script>
+<link rel="stylesheet" href="/ssi/css/footstep.css">
+<style media="all">
+@import url("/ssi/css/detail.css");
+</style>
+
+</head>
+<body>
+
+<div class="notfound">
+	<!-- コンテナここから -->
+	<div id="container">
+		<span class="hide" id="pagetop">ページの先頭です。</span>
+		<span class="hide"><a href="#skip">メニューを飛ばして本文へ</a></span>
+
+		<!-- ヘッダここから -->
+		<div id="header">
+			<div id="spm_wrap">
+	<button type="button" id="spm_menu"><span class="hide">メニュー</span></button>
+	<button type="button" id="spm_search"><span class="hide">検索</span></button>
+</div>
+<!-- ヘッダーここから -->
+<div id="he_left">
+	<div id="logo"><a href="/"><img src="/img/common/logo.png" alt="周防大島町公式ホームページ"></a></div>
+</div>
+<div id="header_wrap">
+	<div id="header_menu_wrap">
+		<div id="header2">
+			<div id="he_right">
+				<noscript><p>JavaScriptが無効のため、文字の大きさ・背景色を変更する機能を使用できません。</p></noscript>
+				<!-- リンクここから -->
+				<ul id="header_navi">
+					<li class="h_main"><a href="#skip">本文へ</a></li>
+					<li class="h_translate"><a href="/soshiki/2/6609.html">Translation</a></li>
+					<li class="h_support">
+						<!-- 文字の大きさ変更ここから -->
+						<dl class="moji_size">
+							<dt>文字サイズ</dt>
+							<dd><a id="moji_large" href="javascript:fsc('larger');" title="文字サイズを拡大する">拡大</a></dd>
+							<dd><a id="moji_default" href="javascript:fsc('default');" title="文字サイズを標準にする">標準</a></dd>
+						</dl>
+						<!-- 文字の大きさ変更ここまで -->
+						<!-- 背景の変更ここから -->
+						<dl class="haikei_color">
+							<dt>背景色</dt>
+							<dd><a id="haikei_white" href="javascript:SetCss(1);" title="背景色を白色に変更する">白</a></dd>
+							<dd><a id="haikei_black" href="javascript:SetCss(2);" title="背景色を黒色に変更する">黒</a></dd>
+							<dd><a id="haikei_blue"  href="javascript:SetCss(3);" title="背景色を青色に変更する">青</a></dd>
+						</dl>
+						<!-- 背景の変更ここまで -->
+					</li>
+					<li class="h_mypage">
+						<button type="button" id="keep_page_sw" title="このページのアドレスを保存します">一時保存</button>
+					</li>
+				</ul>
+				<!-- リンクここまで -->
+			</div>
+		</div>
+		<!-- グローバルここから -->
+		<div id="top_search">
+			<div id="top_search_box">
+				<ul id="gnav">
+					<li id="gnav1"><a href="/life/1/">くらしの情報</a></li>
+					<li id="gnav2"><a href="/life/3/">観光情報</a></li>
+					<li id="gnav3"><a href="/life/4/">町政情報</a></li>
+					<li id="gnav4"><a href="/life/2/">企業・事業者</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- グローバルここまで -->
+		<button type="button" id="search_menu"><span>検索する</span></button>
+	</div>
+</div>
+<!-- ヘッダーここまで -->
+<div class="search_content_wrap">
+	<div class="search_content_div">
+		<div id="search_content">
+			<div class="search_ttl">情報をさがす</div>
+			<div id="top_search_wrap">
+				<!-- 検索ここから -->
+				<div id="top_search_keyword">
+					<div id="top_search_keyword_ttl"><label for="tmp_query"><span>サイト内検索</span></label></div>
+					<!-- Googleカスタム検索ここから -->
+					<form action="/search.html" method="get" id="cse-search-box" name="cse-search-box">
+						<input type="hidden" name="cx" value="009120660755016619279:srb3zitwxs8"><!--
+						--><input type="hidden" name="cof" value="FORID:11"><!--
+						--><input type="hidden" name="ie" value="UTF-8"><!--
+						--><label for="tmp_query"><span class="hide">Googleカスタム検索</span></label><!--
+						--><input type="text" name="q" value="" id="tmp_query" maxlength="100"><!--
+						--><input type="submit" value="検索" id="submit" name="sa">
+					</form>
+					<script src="https://www.google.com/coop/cse/brand?form=cse-search-box"></script>
+					<!-- Googleカスタム検索ここまで -->
+					<div id="cse_filetype">
+						<fieldset>
+							<legend><span class="hide">検索対象</span></legend>
+							<span class="cse_filetypeselect"><input type="radio" name="google_filetype" id="filetype_all" checked="checked"><label for="filetype_all">すべて</label></span>
+							<span class="cse_filetypeselect"><input type="radio" name="google_filetype" id="filetype_html"><label for="filetype_html">ページ</label></span>
+							<span class="cse_filetypeselect"><input type="radio" name="google_filetype" id="filetype_pdf"><label for="filetype_pdf">PDF</label></span>
+						</fieldset>
+					</div>
+				</div>
+				<!-- 検索ここまで -->
+				<div id="top_search_page_id">
+					<div id="top_search_page_id_ttl"><label for="open_page_id"><span>ページID検索</span></label></div>
+					<div id="page_id_box">
+						<div id="open_page_id_box">
+							<div id="page_id_div">
+								<label for="open_page_id" class="hide">ID検索</label>
+								<input type="text" id="open_page_id" name="open_page_id" value="" maxlength="20">
+								<input type="submit" value="表示" id="open_page_id_submit" name="open_page_id_submit" onclick="javascript:search_open_page_id();" onkeypress="javascript:search_open_page_id();">
+							</div>
+							<div id="open_page_id_message"></div>
+						</div>
+						<a href="/site/userguide/7045.html">ページID検索とは？</a>
+					</div>
+				</div>
+			</div>
+			<!-- 注目ワードここから -->
+			<div id="search_trend_word">
+				<div id="search_trend_word_ttl">よく検索されるキーワード</div>
+				<p>大島大橋
+移住
+広報
+議会</p>
+			</div>
+			<!-- 注目ワードここまで -->
+			<div class="life_menu_wrap">
+				<div class="life_menu_ttl">さがしかた別</div>
+				<ul>
+					<li><a href="/soshiki/">組織でさがす</a></li>
+					<li><a href="/life/">分類でさがす</a></li>
+					<li><a href="/map/">地図でさがす</a></li>
+					<li><a href="/life/sub/2/">よくある質問</a></li>
+					<li><a href="https://suo-oshima-event.com/">イベント情報</a></li>
+				</ul>
+			</div>
+		</div>
+		<button type="button" id="search_menu_close">閉じる</button>
+	</div>
+</div>
+		</div>
+		<!-- ヘッダここまで -->
+
+		<!-- ぱんくずナビここから -->
+		<div id="pankuzu_wrap">
+			<div class="pankuzu">
+				<span class="icon_current">現在地</span>
+				<span class="pankuzu_class pankuzu_class_top"><a href="/">トップページ</a></span>
+				<span class="pankuzu_mark"> &gt; </span>
+				<span class="pankuzu_class pankuzu_class_current">お探しのページを見つけることができませんでした。</span>
+			</div>
+		</div>
+		<!-- ぱんくずナビここまで -->
+
+		<div id="mymainback">
+
+			<!-- メインここから -->
+			<div id="main">
+				<div id="main_a">
+					<hr class="hide">
+					<p class="hide" id="skip">本文</p>
+					<div id="main_header">
+						<h1>お探しのページを見つけることができませんでした。</h1>
+					</div>
+					<!-- main_bodyここから -->
+					<div id="main_body">
+						<p>
+							周防大島町公式ホームページでは、従来のページからの問題点が改善されるようにサイト構成や分類の見直しを行い、令和6年2月27日に大幅にリニューアルいたしました。<br>
+							それに伴ない、ページのアドレスが変更されております。<br>
+							誠に申し訳ありませんが、前のページに戻っていただくか、下記の「周防大島町公式ホームページへ」のリンクから、周防大島町公式ホームページのトップページにアクセスしていただき、再度、情報をお探しくださいますようお願いします。
+						</p>
+						<p><a href="/">周防大島町公式ホームページへ</a></p>
+					</div>
+					<!-- main_bodyここまで -->
+				</div>
+			</div>
+			<!-- メインここまで -->
+			<hr class="hide">
+
+			<!-- サイドバー1ここから -->
+			<!-- サイドバー1ここまで -->
+
+			<!-- サイドバー2ここから -->
+			<!-- サイドバー2ここまで -->
+
+		</div><!-- 3カラム終わり -->
+
+		<!-- フッタここから -->
+		<div id="footer">
+			<div id="footer_link_pagetop">
+	<a href="#pagetop"><img src="/img/common/to_top.png" alt="Top"></a>
+</div>
+			<div id="footer_search_div">
+	<div id="footer_search_box">
+		<p>お探しの情報が見つからない場合は「検索する」ボタンから情報をお探しください</p>
+		<button type="button" id="search_footer_menu"><span>検索する</span></button>
+	</div>
+</div>
+			<div id="author_info">
+	<div id="author_info_wrap">
+		<div id="footer_logo_box">
+			<a href="/"><img src="/img/common/footer_logo.png" alt="周防大島町役場"></a>
+		</div>
+		<div id="author_box">
+			<p class="f_address">〒742-2192　山口県大島郡周防大島町大字小松126-2</p>
+			<p class="f_contact">電話：0820-74-1000（代表）／Fax：0820-74-1016</p>
+		</div>
+		<div id="footer_navi">
+			<ul>
+				<li><a href="/site/userguide/">サイトの利用ガイド</a></li>
+				<li><a href="/site/userguide/">このサイトについて</a></li>
+				<li><a href="/soshiki/">お問合せ先一覧</a></li>
+				<li><a href="/sitemap.html">サイトマップ</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="copyright"><p lang="en">Copyright(C) Suo-Oshima Town All Rights Reserved.</p></div>
+</div>
+<!-- おすすめ情報ここから -->
+<div id="osusume_banner">
+	<div id="osusume_banner_box">
+		<div id="osusume_banner_ttl">
+			<button type="button" id="osusume_banner_open">
+				<img src="/img/common/pickup.png" alt="Pickup!">
+			</button>
+		</div>
+		<div id="osusume_banner_list">
+			<div id="osusume_banner_list_box">
+				<ul class="osusume_banner_list_detail">
+					<li><a href="https://teiju-suo-oshima.com/"><img src="/img/common/osusume_banner1.png" alt="周防大島移住なび"></a></li>
+					<li><a href="https://sazan-seto.com/"><img src="/img/common/osusume_banner2.png" alt="道の駅サザンセトとうわ"></a></li>
+				</ul>
+				<button type="button" id="osusume_banner_close">閉じる</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- おすすめ情報ここまで -->
+		</div>
+		<!-- フッタここまで -->
+
+	</div>
+	<!-- コンテナここまで -->
+</div>
+
+</body>
+</html>

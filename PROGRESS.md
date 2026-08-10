@@ -1175,3 +1175,435 @@ Codexが生成物と独立集計を読み戻して確認した。パーサの成
 - パーサ実装・既存データへの統合は、この受入判定の後の別作業とする。Claude Codeは
   次の一指示があるまで着手しない
 - 他県への展開・`run_record.md` の参照はいずれも指示があるまで着手しない
+
+## 2026-08-09 GTFS-1 山口県内GTFS/GTFS-JPの公式一次資料と対象範囲の棚卸し
+
+### やったこと
+
+- 作業開始前に `git status --short --branch` と `git log -1 --oneline` を確認し、
+  main / HEAD `fae504a` / origin/main `b281540` から24コミット先行 / 作業ツリーclean の
+  期待状態と一致することを確認した
+- `CLAUDE.md` 全文、`SPEC.md` §0・§1・§1.5・§2〜§7（横断的に）・§8・§9を読んだ
+- `run_record.md` は読み書きしていない
+- 山口県19市町（`evidence/20260809_yamaguchi_municipalities.txt`）を母集団に、
+  GTFS/GTFS-JPの公式一次資料を市町別に確認した。GTFSのダウンロード・統合・可視化は行っていない
+- 候補発見にはWebSearch、および第三者まとめサイト bustime.jp・bus-routes.net の生ページを
+  使い、確認根拠には使っていない。gtfs-data.jp はReactのSPAでサーバ側HTMLに一覧が含まれず、
+  robots.txt・sitemap.xmlも手掛かりがなかったため3手で打ち切った
+- 確認の一次資料は、山口県公式オープンデータカタログサイト（https://yamaguchi-opendata.jp/ ）と
+  公共交通オープンデータセンター（ODPT, https://ckan.odpt.org/ ）、および個別の市町・事業者公式
+  サイトに限定した。すべて `curl -sL` / `curl -sI` で生バイトを取得し、WebFetchの要約は
+  候補発見にのみ使い確認根拠にしていない
+- GTFS本体ZIPは `curl -sI` のHEADリクエストのみで到達確認し、本体はダウンロードしていない
+
+### 確認できた事実（件数を含める）
+
+- 公式一次資料で確認できたフィードは3件。内訳は山口県オープンデータカタログ2件
+  （岩国市、光市）、ODPT 1件（船木鉄道株式会社、対象は宇部市・山陽小野田市・美祢市）
+- フィードA（岩国市）・フィードB（光市）は、データセット説明文に公式のデータ基準日
+  「令和８年４月１日時点」（2026年4月1日）が明記されている。これはカタログの最終更新日／
+  HTTP Last-Modified（岩国市2026-04-10、光市2026-03-03）とも、GTFS内部の有効期間
+  （ZIP未展開のため未確認）とも別の日付であり、3種類を混同していない
+- フィードC（船木鉄道）は最新リソースに公式記載の有効期間「2025年11月17日〜2026年11月16日」
+  がある。認証キーを含む公式ダウンロードURL雛形
+  （https://api.odpt.org/api/v4/files/odpt/SentetsuBus/AllLines.zip?date=20251117&acl:consumerKey=[…]）
+  は確認したが、開発者サイトでのアカウント登録・トークン取得を伴う認証済みダウンロードと
+  ファイル本体そのものへの到達は未実施
+- GTFS本体ZIPへのHEADリクエストによる到達確認は、フィードA・フィードBの2件のみで実施した。
+  フィードCはURL雛形と有効期間の記載を確認したにとどまり、HEAD確認はしていない
+- 公式GTFSを確認できた市は5市（岩国市・光市・宇部市・美祢市・山陽小野田市）。
+  うち宇部市・美祢市・山陽小野田市の3市は、市自身の公式データセットには
+  「データを保有していない」「公開していない」という趣旨の明記があり、市が自ら公開する
+  GTFSではなく、市内で運行する船木鉄道（船鉄バス）が公式に公開するGTFSが対象地域として
+  これら3市を明記している、という別々の事実として確認した
+- 対象範囲未確認とした市町は0
+- 今回確認した公式資料の範囲では確認できなかった市町は14
+  （下関市・山口市・萩市・防府市・下松市・長門市・柳井市・周南市・周防大島町・和木町・
+  上関町・田布施町・平生町・阿武町）
+- 「見つからない」ではなく市町自身が公式に「データを保有していない」「事業を実施していない」と
+  明記していた例が6件: 山口市（データセット`busdata`）、防府市（`352063-bus_information`）、
+  柳井市（`352128_bus`）、美祢市（`352136_gtfs-jp`、GTFS-JPを名指しで非公開と明記）、
+  田布施町（`33`、町営バス事業自体が無い旨）、平生町（`353442_gtfs-jp`、同）
+- 根拠は `evidence/20260809_gtfs_yamaguchi_inventory.txt` にまとめ、個別の生出力69件を
+  `evidence/20260809_gtfs_source_*.txt` として保存した
+
+### 詰まったこと、SPEC.md と食い違ったこと
+
+- 今回はSPEC.mdのスコープ外（I-1とは別のGTFS棚卸し作業）のため、SPEC.mdとの食い違いは無い
+- gtfs-data.jp はSPA構成のためcurlの生バイト取得だけでは一覧を得られず、候補発見の経路として
+  使えなかった。WebFetchでの要約取得も試したが同様に内容を得られなかった
+  （`evidence/20260809_gtfs_source_gtfsdatajp_*.txt`）
+- 作業中に一度、`curl -o` の出力先をリポジトリ外（`/tmp_check.html` 相当のパス）に向けて
+  実行しかけた。実際にはサンドボックスの許可分類器に拒否され、書き込みは発生しなかった
+  （該当パスに生成物が無いことを確認済み）。以後はすべて `evidence/` 配下への出力に限定した
+- `curl -sI` のHEADレスポンスに `Set-cookie` ヘッダが含まれていたため、
+  `evidence/20260809_gtfs_source_zip_head_check.txt` からCookie値を削除して保存し直した
+  （CLAUDE.mdの「代表者氏名、認証情報、Cookieなどは保存しない」に基づく処置）
+
+### 今回はGTFS統合や作品機能の実装をしていないこと
+
+- GTFSデータの本体ダウンロード・パース・GTFS-JP検証・可視化はいずれも行っていない
+- `docs/` `src/` `data/` `tests/` `SPEC.md` `CLAUDE.md` `run_record.md` はいずれも変更していない
+
+### 次にやること
+
+- 次はCodexが `evidence/20260809_gtfs_yamaguchi_inventory.txt` と個別の
+  `evidence/20260809_gtfs_source_*.txt` を読み戻して受入判定すること
+- 未確認事項（inventory §5のU-GTFS-1〜5）のうち、フィードCは認証キーを含む公式ダウンロードURL
+  雛形までは確認済みだが、実際の認証済みダウンロード・ファイル本体への到達にはODPT開発者サイトでの
+  アカウント登録・トークン取得が必要で、今回の作業指示（アカウント作成禁止）の範囲では対応できない。
+  次の作業でどう扱うかはCodex側の判断が必要
+- GTFSの整備状況・鮮度を作品①の指標にどう落とし込むかの仕様化は、この作業のスコープ外であり、
+  次の仕様決定を待つ
+- 他県への展開・`run_record.md` の参照はいずれも指示があるまで着手しない
+
+## 2026-08-09 I-4 山口県19市町のGTFS/GTFS-JP公式状況表示
+
+### やったこと
+
+- 作業開始前に `pwd`・`git status --short --branch`・`git log -1 --oneline` を確認し、
+  main / HEAD `fae504a` / origin/main `b281540` から24コミット先行、PROGRESS.mdと
+  evidence/配下・Codex改訂のSPEC.md・run_record.mdが未コミットという期待状態と一致することを
+  確認した。既存の未コミット変更（SPEC.md・run_record.md）は今回も読むだけで書き換えていない
+- `CLAUDE.md` 全文、`SPEC.md` 全文（特に §12）、`evidence/20260809_gtfs_yamaguchi_inventory.txt`、
+  現在の `docs/index.html`・`src/build_site_data.py`・`tests/test_site.py` を読んだ。
+  `run_record.md` は読んでいない
+- `SPEC.md` §12.4 の `municipality_code`（既存の公式19市町一覧の自治体コード）が
+  リポジトリ内のどこにも定義されていなかったため、推定で埋めずに総務省
+  「都道府県コード及び市区町村コード」（令和6年1月1日更新、PDF）を新たに一次資料として取得し、
+  山口県19市町全件のコードを確認した。証拠は
+  `evidence/20260809_i4_soumu_local_gov_code_list.pdf` と同 `_inspection.txt`
+- `src/build_gtfs_status.py` を新設し、`data/gtfs_feeds.csv`・`data/municipality_gtfs.csv`と
+  対応する `data/*.json`・`docs/data/*.json`（`data/`と同一バイト）を生成するようにした。
+  値はすべて `evidence/20260809_gtfs_yamaguchi_inventory.txt` と総務省コード一覧からの
+  手入力（転記）で、新規のGTFS調査・推測は行っていない
+- `docs/index.html` を、GTFS-1-CORR-1完了報告の前に保存した現物
+  （`evidence/20260809_i4_index_before.html`）から改訂した。既存の市町セレクタ・登録供給表示・
+  出典・注意書きは変更せず、県全体のGTFS概要パネルと市町別のGTFS/GTFS-JP公式確認状況カード
+  （軸A・B・C、フィード詳細、断定しない注記）を追加した
+- `tests/test_site.py` に `GtfsStatusDataTest`（12件）と `IndexHtmlContractTest` への追加2件
+  （禁止表現不在・GTFS要素の存在）を追加し、`setUpModule()` が `build_gtfs_status.main()` も
+  呼ぶようにした
+- `tools/spec_coverage.py` で `evidence/20260809_i4_index_before.html` と `docs/index.html` を
+  比較し、合格出力を `evidence/20260809_i4_spec_coverage_index_before_vs_after.txt` に保存した
+- ブラウザでの実操作検証は、`python -m http.server` で `docs/` を配信し、
+  `msedge --headless=new` を Chrome DevTools Protocol 経由で Node.js から操作して行った。
+  npmパッケージのインストールは行わず、Node組み込みの `WebSocket` のみを使った
+  （リポジトリ外への書き込みを避けるため）。証拠は `evidence/20260809_i4_browser_verification.txt`、
+  `evidence/20260809_i4_cdp_raw_output.json`、`evidence/20260809_i4_screenshot_*.png`
+- `verification.md` に自動検証・spec_coverage出力・ブラウザ実操作結果・完了条件チェック表を追記した
+
+### 確認できた事実（件数を含める）
+
+- `data/gtfs_feeds.csv` は3行（岩国市・光市・船木鉄道株式会社）、`data/municipality_gtfs.csv` は
+  公式順19行。`feed_id`・`municipality_code` はそれぞれ一意
+- `availability_status` の内訳: `confirmed`=5（岩国市・光市・宇部市・美祢市・山陽小野田市）、
+  `not_confirmed_in_checked_sources`=14、`unassessed`=0
+- 3フィードと5市町の対応に重複はなく、船木鉄道1フィードが宇部市・美祢市・山陽小野田市の
+  3市に関連付いている（3フィードとして二重計上していないことを自動テストで検査）
+- `python -m unittest discover -s tests -v`: `Ran 55 tests`、`OK`
+  （既存41件は退行なし、新規14件すべて成功）
+- `tools/spec_coverage.py evidence/20260809_i4_index_before.html docs/index.html`:
+  識別子12/12が新版に存在、欠落・説明なし0件、判定「合格」、終了コード0
+- ブラウザ実操作: デスクトップ1280×900・モバイル390×844の2幅×7市町=14通り全てで、
+  横方向はみ出し0（`scrollWidth - clientWidth = 0`）、コンソールのエラー・例外イベント0件
+- `git status --short` で変更が確認できたのは `PROGRESS.md`・`verification.md`・
+  `docs/index.html`・`tests/test_site.py`（いずれも今回の許可範囲）と、
+  今回作成した `src/build_gtfs_status.py`・`data/gtfs_feeds.*`・`data/municipality_gtfs.*`・
+  `docs/data/gtfs_feeds.json`・`docs/data/municipality_gtfs.json`・`evidence/20260809_i4_*`。
+  `SPEC.md`・`run_record.md` の変更はCodex側の既存差分のままで、今回追加の変更はない
+- `git diff --check`: 追跡対象への差分（今回変更したテキストファイル）で終了コード0
+
+### 詰まったこと、SPEC.md と食い違ったこと
+
+- ブラウザ自動操作ツール（chromium-cli等）がこの環境に無く、`npx playwright` は
+  ブラウザ本体が未キャッシュのバージョンを要求した。npmパッケージをリポジトリ内外どちらに
+  インストールしてもCLAUDE.mdの制約（リポジトリ外への書き込み禁止／今回変更可能なファイルの
+  範囲限定）に抵触する可能性があったため、システムに既にあった `msedge.exe` を
+  `--headless=new --remote-debugging-port` で直接起動し、Node.js組み込みの `WebSocket` で
+  Chrome DevTools Protocolを直接叩く方式にした。npm installは一度も行っていない
+- GTFS-1調査時に和木町の公式カタログ組織IDを`organization/35304`と根拠のない推測で試したところ
+  404で、当時は「和木町という登録組織自体が見当たらない」と`evidence/20260809_gtfs_yamaguchi_inventory.txt`
+  §4に記録していた。総務省の一次資料（`evidence/20260809_i4_soumu_local_gov_code_list.pdf`）で
+  確認した和木町の6桁地方公共団体コードは353213であり、山口県オープンデータカタログサイトの
+  正しいCKAN組織IDはその先頭5桁と一致する`35321`だった（35304は誤った候補URL）。
+  この誤りは2026-08-10のGTFS-1-CORR-2作業でinventory §4・新設§7を訂正済みで、正しい組織
+  `35321`には21件のデータセットが登録されており、名称・説明にGTFSの記載が無いことも
+  `evidence/20260809_gtfs_corr2_waki_org_35321_p1.txt`・同`_p2.txt`で確認した
+  （「今回確認した公式資料の範囲ではGTFS未確認」という結論自体は変えていない）。
+  GTFS-1の生証拠 `evidence/20260809_gtfs_source_ydata_org_35304.txt`（誤った候補URLの404という
+  取得時の現物）は今回も意図的に変更していない。今回新規に作った `data/municipality_gtfs.csv` の
+  和木町の行は、当初から総務省一次資料の正しいコード353213を使っており、誤ったコードを
+  引き継いでいない
+- SPEC.mdとの食い違いは無い
+
+### 次にやること
+
+- Codexが `src/build_gtfs_status.py`・`data/gtfs_feeds.*`・`data/municipality_gtfs.*`・
+  `docs/index.html`・`tests/test_site.py`・`verification.md` の実ファイルと差分、
+  `evidence/20260809_i4_*` の証拠、テスト結果、画面を読み戻して受入判定すること
+- 船木鉄道のGTFS本体への認証済みアクセス（ODPT開発者登録・トークン取得）をどう扱うかは
+  Codex側の判断が必要
+- 他県への展開・`run_record.md` の参照はいずれも指示があるまで着手しない
+- commit・push・GitHub Pages公開・外部提出はいずれも行っていない
+
+## 2026-08-10 I-5 READMEと状況ページの現況説明同期
+
+### やったこと
+
+- `SPEC.md` §13、`run_record.md` §0.5・§4のI-5部分を読み、完了条件・変更可能範囲を確認した
+- `README.md`と`docs/status.html`の現物を、それぞれ`evidence/20260810_i5_readme_before.md`・
+  `evidence/20260810_i5_status_before.html`へ保存してから改訂を開始した
+- `README.md`を改訂: 「自動テスト: 30件成功」の固定値を除き、「現在の受入状況（I-1〜I-4）」節と
+  「公式GTFS/GTFS-JPの確認状況」節を新設。4PDF・23団体・90行・136台・軽20台は保持したまま、
+  GTFS公式フィード3件・対象市町名確認5/19・未確認14/19を追加し、「収録データ」節を
+  「収録データ・利用画面」に改めて`data/gtfs_feeds.*`・`data/municipality_gtfs.*`・
+  `docs/index.html`・`docs/status.html`を案内した。「公開」節にこのリポジトリ・ローカル実装を
+  UDC応募・公開・受賞の完了として扱わない旨とT1〜T4未達を明記した
+- `docs/status.html`を改訂: 「I-1 / I-2」「41テスト」「7工程中4工程」「I-3受入後に一つだけ
+  再評価」「I-3はここまでで止める」を除いた。ロードマップにGTFS確認状況の工程を追加して
+  8工程中5工程受入済みへ更新し、I-1〜I-4それぞれの受入済み成果をチェックリストで表示。
+  4PDF集計とは別集計であることを明記した新設「公式GTFS/GTFS-JPの確認状況」セクションで
+  3件・5/19・14/19を、率や達成度の指標と呼ばず、GTFS不存在とも断定せずに表示した。
+  T1〜T3（自力終了条件）とT4（成果条件）を分離し、4件とも「未達」バッジで表示する新設
+  セクションを追加し、締切日は主表示ではなくセクション末尾の参考情報に留めた。
+  `docs/index.html`・公開JSON5点（operators/vehicles/municipal_supply/gtfs_feeds/
+  municipality_gtfs）・国土交通省利用ルールへの実在リンクを設置した
+- `tests/test_site.py`にI-5用テスト12件を追加: `StatusHtmlContractTest`6件、
+  `ReadmeContractTest`6件（新設クラス）。既存の`test_current_status_scope_and_main_view_link_are_present`は
+  新しい現況表示に合わせて内容を更新し、`test_stale_progress_claims_are_absent`に
+  I-3受入時点の古い表示5点を追加した
+- `verification.md`にI-5検証結果の節を追記した（自動検証・spec_coverage出力・
+  ブラウザ実操作・完了条件チェック表）
+- 旧新版比較として`tools/spec_coverage.py`をREADME.md・docs/status.htmlそれぞれに実行し、
+  全出力を`evidence/20260810_i5_spec_coverage_readme.txt`・
+  `evidence/20260810_i5_spec_coverage_status.txt`へ保存した
+- ブラウザでの実操作検証は、`python -m http.server 8793`で`docs/`を配信し、
+  `msedge --headless=new`をChrome DevTools Protocol経由でNode.jsから操作して行った。
+  npmパッケージのインストールは行わず、Node組み込みの`WebSocket`のみを使った。
+  証拠は`evidence/20260810_i5_browser_verification.txt`、
+  `evidence/20260810_i5_cdp_raw_output.json`、`evidence/20260810_i5_screenshot_*.png`
+
+### 確認できた事実（件数を含める）
+
+- `python -m unittest discover -s tests -v`: `Ran 67 tests`、`OK`
+  （既存55件は退行なし、新規12件すべて成功）
+- `tools/spec_coverage.py evidence/20260810_i5_readme_before.md README.md`:
+  見出し10/10・識別子20/20・コードブロック行1/1が新版に存在、欠落・説明なし0件、
+  判定「合格」、終了コード0
+- `tools/spec_coverage.py evidence/20260810_i5_status_before.html docs/status.html`:
+  検査トークン数0件（HTML本文にmarkdown見出し・バックティック識別子が無いため）、
+  欠落・説明なし0件、判定「合格」、終了コード0。I-3受入検証時と同じ理由で、この出力単独は
+  十分な証拠とせず、67テスト・ブラウザ実操作・目視差分を併用した
+- ブラウザ実操作: デスクトップ1280×900・モバイル390×844の画面表示2通りと、
+  `docs/index.html`・公開JSON4点への実クリック遷移5通り、計7通り全てで横方向はみ出し0
+  （`scrollWidth - clientWidth = 0`）、コンソールのエラー・例外イベント0件。
+  クリック遷移先のJSON配列長は`gtfs_feeds.json`=3、`municipality_gtfs.json`=19、
+  `operators.json`=23、`vehicles.json`=90で、いずれもビルド済みデータの実測値と一致した
+- `git status --short`で変更が確認できたのは`README.md`・`docs/status.html`・
+  `tests/test_site.py`・`PROGRESS.md`・`verification.md`（いずれも今回の許可範囲）と、
+  今回新規作成した`evidence/20260810_i5_*`のみ。`SPEC.md`・`run_record.md`・`docs/index.html`は
+  今回のI-5作業では変更していない（既存差分はCodex側または前回I-4作業のもの）
+- `git diff --check`: 終了コード0
+
+### 詰まったこと、SPEC.md と食い違ったこと
+
+- `tools/spec_coverage.py`の標準出力をそのまま`>`でファイルへリダイレクトしたところ、
+  Windowsのコンソール既定符号化（cp932）で出力され、日本語部分が文字化けした状態で
+  保存されてしまった。`PYTHONUTF8=1 PYTHONIOENCODING=utf-8`を指定して再実行し、
+  UTF-8で読める状態の`evidence/20260810_i5_spec_coverage_readme.txt`・
+  `evidence/20260810_i5_spec_coverage_status.txt`に保存し直した
+- README.mdの初稿で「5 / 19は整備率・網羅率・交通カバー率ではない」という否定文で
+  禁止語をそのまま使ってしまい、自作のテスト（禁止語の完全不在を検査）に失敗した。
+  `docs/index.html`が実際に採用している言い回し（「交通の充足度や達成度を測る指標では
+  ない」等、禁止語自体を使わない表現）に合わせて書き直し、解消した
+- SPEC.mdとの食い違いは無い
+
+### 次にやること
+
+- Codexが`README.md`・`docs/status.html`・`tests/test_site.py`・`verification.md`の
+  実ファイルと差分、`evidence/20260810_i5_*`の証拠、67テストの結果、
+  `tools/spec_coverage.py`の出力、PC・スマホ・リンク操作の結果を読み戻して受入判定すること
+- 次の作品機能の選定・実装、GTFS本体取得・解析、地図・経路検索、登録簿4PDFの再処理・再集計、
+  作品②、他県展開、UDC応募・外部公開はいずれも指示があるまで着手しない
+- commit・push・GitHub Pages公開・外部提出はいずれも行っていない
+
+## 2026-08-10 I-5-CORR-1 READMEの旧テスト件数残存とテスト漏れの訂正
+
+### やったこと
+
+- 編集前の現物を`evidence/20260810_i5_corr1_readme_before.md`・
+  `evidence/20260810_i5_corr1_test_site_before.py`へ保存してから訂正を開始した
+- `README.md`の「改訂点」節にあった「「自動テスト: 30件成功」という固定値を除き、
+  I-5完了時点の実測値（67件成功）に置き換えた。30件はI-1（4PDF統合）時点の値で、
+  I-2〜I-4で追加したテストを反映していなかった。」という記述を、旧件数「30」を再掲しない
+  文章（「自動テスト件数の固定値をI-5完了時点の実測値へ同期した。旧版の値はI-1（4PDF統合）
+  時点のものでしかなく、I-2〜I-4で追加したテストを反映していなかった。」）へ直した
+  （README.md 154〜155行目）。I-5完了報告時の「30テスト」1語だけの検査では、
+  この「自動テスト: 30件成功」「30件」という改訂点内の引用を見落としていた
+- `tests/test_site.py`の`ReadmeContractTest.test_stale_fixed_test_count_is_absent`を強化し、
+  「30テスト」「30テスト成功」「30件成功」「自動テスト: 30」の4パターンを個別に検査するよう
+  拡張した。加えて、全角数字・空白を正規化（NFKC＋空白除去）したテキストに対しても
+  「30(件|本|個)?のテスト」「テスト…30(件|本|個)」「自動テスト:30」の3パターンを
+  正規表現で検査し、表記ゆれでの再発を防ぐようにした。テストメソッドは追加せず、
+  既存メソッドの中身を強化した（テスト総数は67件のまま）
+- `tools/spec_coverage.py`を、`evidence/20260810_i5_readme_before.md`（I-5開始前の現物）と
+  最終`README.md`、`evidence/20260810_i5_corr1_readme_before.md`（今回の訂正前の現物）と
+  最終`README.md`の2通りで実行し、それぞれの全出力を`evidence/20260810_i5_spec_coverage_readme.txt`・
+  `evidence/20260810_i5_corr1_spec_coverage_readme.txt`へ保存した
+- `verification.md`にI-5-CORR-1の検証結果を追記した
+
+### 確認できた事実（件数を含める）
+
+- README.md内の「30テスト」「30件成功」「自動テスト: 30」「30テスト成功」の検索件数は、
+  訂正後いずれも0件（`grep -n`で確認）
+- `python -m unittest discover -s tests -v`: `Ran 67 tests`、`OK`（テストメソッド数は
+  `tests/test_site.py`37件＋`tests/test_verify.py`30件で訂正前と変わらず、67件のまま一致）
+- `tools/spec_coverage.py evidence/20260810_i5_readme_before.md README.md`:
+  見出し10/10・識別子20/20・コードブロック行1/1が新版に存在、欠落・説明なし0件、
+  判定「合格」、終了コード0
+- `tools/spec_coverage.py evidence/20260810_i5_corr1_readme_before.md README.md`:
+  見出し12/12・識別子30/30・コードブロック行1/1が新版に存在、欠落・説明なし0件、
+  判定「合格」、終了コード0
+- `git diff --check`: 終了コード0
+- `git status --short`で変更が確認できたのは`README.md`・`tests/test_site.py`・
+  `PROGRESS.md`・`verification.md`（いずれも今回の許可範囲）と、今回新規作成した
+  `evidence/20260810_i5_corr1_readme_before.md`・`evidence/20260810_i5_corr1_test_site_before.py`・
+  `evidence/20260810_i5_corr1_spec_coverage_readme.txt`、更新した
+  `evidence/20260810_i5_spec_coverage_readme.txt`のみ。`docs/status.html`・`docs/index.html`・
+  `SPEC.md`・`run_record.md`・`tools/spec_coverage.py`・I-5以外の既存`evidence/`は変更していない
+
+### 詰まったこと、SPEC.md と食い違ったこと
+
+- SPEC.mdとの食い違いは無い
+
+### 次にやること
+
+- Codexが`README.md`・`tests/test_site.py`の実ファイルと差分、
+  `evidence/20260810_i5_corr1_*`の証拠、67テストの結果、`tools/spec_coverage.py`2件の出力を
+  読み戻して受入判定すること
+- commit・push・GitHub Pages公開・外部提出はいずれも行っていない
+
+## 2026-08-10 CKPT-CORR-1 GTFS証拠ファイル内の実JWT混入の訂正
+
+I-5-CORR-1はCodex受入済み。今回は別系統のCKPT-AUDIT-1で見つかった問題への本訂正
+（1作業限定）。`evidence/20260809_gtfs_source_official_hikari.txt`（curlで生バイト取得した
+光市公式サイトのHTML）に、JWT形式の実トークン文字列が2個そのままコミットされていた
+問題を、安全な決定論的プレースホルダーへ置換した。新機能・他ファイルの変更は行っていない。
+
+### やったこと
+
+1. 開始前に`git status --porcelain=v1 --untracked-files=all`が変更8件・未追跡124件、
+   `HEAD=fae504a`・`origin/main=b281540`と一致することを確認した
+2. `evidence/20260809_gtfs_source_official_hikari.txt`を正規表現
+   `eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+`で走査し、JWT形式文字列2個を検出した
+   （40行目`cms_api_token`のJS変数、1953行目`data-chatbot-token`のHTML属性値）
+3. 修正前・修正後それぞれのファイル全体SHA256と、各トークンの文字数・SHA256のみを
+   `evidence/20260810_ckpt_corr1_token_redaction.txt`に記録した（元のJWT値そのものは
+   このファイルにも他のどのファイルにも一切書いていない）
+4. 2箇所を`REDACTED_PUBLIC_CLIENT_TOKEN_{1,2}_SHA256_<hash>_LEN_<length>`という
+   決定論的プレースホルダーへ置換した（Edit、HTML属性値内で1語）
+5. `tests/test_site.py`の`GtfsStatusDataTest.test_no_real_access_token_is_recorded`を強化し、
+   Hikari証拠ファイルにJWT形式の文字列が0件であること、上記プレースホルダーが2件存在する
+   ことを検査する処理を追加した。新しいテストメソッドは増やしていない（総数は67件のまま）
+6. `tests/test_site.py`・`PROGRESS.md`・`verification.md`について、編集前の現物を
+   `evidence/20260810_ckpt_corr1_test_site_before.py`・
+   `evidence/20260810_ckpt_corr1_progress_before.md`・
+   `evidence/20260810_ckpt_corr1_verification_before.md`としてバイト同一コピーで保存した
+   （`sha256sum`で編集前後の値が一致することを確認済み）
+7. `run_record.md`の編集前現物コピーは**作成しなかった**。理由は次節「詰まったこと」参照
+8. `evidence/20260809_gtfs_source_*.txt`（69件）から、ファイル名昇順・
+   `basename + 半角空白 + 小文字SHA256`・CRLF連結・末尾改行なし・UTF-8という手順で
+   新しいRAW_SET_SHA256を計算した
+9. `python -m unittest discover -s tests -v`を実行し、67件成功を確認した
+10. `tools/spec_coverage.py`を3組（`tests/test_site.py`・`PROGRESS.md`・`verification.md`の
+    各編集前現物 vs 現行）で実行し、全出力を`evidence/20260810_ckpt_corr1_spec_coverage_*.txt`
+    へ保存した
+
+### 確認できた事実（数字を含める）
+
+- Hikari証拠ファイルの修正前SHA256: `9fcfbe73a11de8cdba978b7851edc0c983fcb57ce55ba3c413ab872180a527a3`
+- 同、修正後SHA256: `e0fb98166601d536bc1297599bed39b68af991faf652bf6a1a93cc488df72e6a`
+- トークン1（`cms_api_token`）: 152文字、SHA256
+  `0da4ffc05d3a9d356aee6553858dc46dcf645ab512b61a67787d85c3ef6764ac`
+- トークン2（`data-chatbot-token`）: 157文字、SHA256
+  `c2d424915c180bceed0996482d41ed2bd0e4115cdb975eb1a9a35f0b955507c1`
+- 置換後の再走査でJWT形式文字列は0件、決定論的プレースホルダーは2件
+  （`evidence/20260810_ckpt_corr1_token_redaction.txt`）
+- `AKIA|sk-|AIza|ghp_|xox[baprs]-|consumerKey|consumer_key|secret|apikey|api_key|Bearer `の
+  走査でHikari証拠ファイル内の他の強い秘密鍵・APIキープレフィックスは0件
+- `consumerKey`／`consumer_key`はevidence/全体で4ファイルにのみ出現し、いずれも既存の
+  文字列プレースホルダー`[アクセストークン/YOUR_ACCESS_TOKEN]`（一部`[…]`）であり実値ではない
+- `evidence/20260809_gtfs_source_*.txt`: **69件のまま**（変化なし）
+- RAW_FILE_COUNT=**69**、RAW_SET_SHA256=
+  `57748e5bdae0d913f756cfc588c04585b95887f324dca7c94a7584a08efe4f5c`
+  （`evidence/20260810_ckpt_corr1_token_redaction.txt`に手順・値とも記録）
+- `python -m unittest discover -s tests -v`: `Ran 67 tests`、`OK`
+  （`tests/test_site.py`のテストメソッド数37件、`tests/test_verify.py`30件で訂正前と変わらず）
+- `tools/spec_coverage.py`の3比較（`evidence/20260810_ckpt_corr1_test_site_before.py`
+  vs `tests/test_site.py`、`evidence/20260810_ckpt_corr1_progress_before.md` vs `PROGRESS.md`、
+  `evidence/20260810_ckpt_corr1_verification_before.md` vs `verification.md`）はいずれも
+  終了コード0・判定「合格」（全出力は`evidence/20260810_ckpt_corr1_spec_coverage_*.txt`）
+- `git diff --check`: 終了コード0
+
+### 詰まったこと、SPEC.md と食い違ったこと
+
+- **作業指示は`evidence/20260810_ckpt_corr1_run_record_before.md`をバイト同一コピーとして
+  作ることを求めていたが、実行できなかった。**
+  `run_record.md`はReadツールでもBashツールでも、権限そのものでアクセスが拒否される
+  （返ってきた文言はそれぞれ`File is in a directory that is denied by your permission
+  settings.`と`Permission to use Bash with command ... has been denied.`で、
+  `[guard] blocked write`という書き込みガードの文言とは別種のブロック）。
+  `CLAUDE.md`の「`run_record.md`はClaude Codeが読み書きしない」というより厳格な既定と
+  一致する方向のブロックだったため、迂回せず複製を断念し、この事実を
+  `evidence/20260810_ckpt_corr1_token_redaction.txt`と本節に記録して報告する
+- `SPEC.md`との食い違いは無い
+
+### 次にやること
+
+- Codexが`evidence/20260809_gtfs_source_official_hikari.txt`の差分、
+  `evidence/20260810_ckpt_corr1_*`の証拠、67テストの結果、`tools/spec_coverage.py`3件の出力、
+  新RAW_SET_SHA256を読み戻して受入判定すること
+- Codex側で`run_record.md`の旧ハッシュ・関連記録を更新すること（本作業の対象外）
+- commit・push・GitHub Pages公開・外部提出はいずれも行っていない
+
+## 2026-08-10 CKPT-CORR-1 Codex受入
+
+上記「次にやること」にあった受入待ちは、記録時点（2026-08-10 CKPT-CORR-1完了直後）では
+未了だったが、**Codexが実ファイルを独立に読み戻し、以下を確認して受入済みとした。**
+
+- `evidence/20260809_gtfs_source_official_hikari.txt`の修正後SHA256:
+  `e0fb98166601d536bc1297599bed39b68af991faf652bf6a1a93cc488df72e6a`
+- 同ファイルのJWT形式文字列0件、決定論的プレースホルダー2件
+- 全dirtyテキストのJWT形式文字列0件、標準的な秘密鍵/APIキープレフィックス0件
+- RAW_FILE_COUNT=69、RAW_SET_SHA256=
+  `57748e5bdae0d913f756cfc588c04585b95887f324dca7c94a7584a08efe4f5c`
+- `python -m unittest discover -s tests -v`は`Ran 67 tests`・`OK`
+- `test_site`・`PROGRESS`・`verification`・`run_record`の旧版比較4件はいずれも
+  終了コード0・判定合格
+- `git diff --check`終了コード0、staged 0件
+- HEAD `fae504a1dfba282335b107b5e2293a85c17f2505`、
+  origin/main `b281540db03cb69ec4f7efd41d6c43abf75127e1`のまま
+- `run_record.md`はCodex側でrev.28へ同期済み（Claude Codeは読み書きしていない）
+
+**次の一作業はCKPT-CORR-1後のチェックポイント再監査であり、
+git add・commit・push・公開・外部提出はまだ行わない。**
+
+## 2026-08-10 CKPT-AUDIT-1 再監査完了
+
+直前の節の「次はCKPT-CORR-1後のチェックポイント再監査」は記録時点のものであり、
+**現在はCodexによる再監査が完了している。**
+
+- CKPT-CORR-1後のCodex再監査と記録同期後の最終集合は151件。
+  内訳はA（受入済み成果）15件、B（必要証拠）136件、C（削除候補）0件、D（未確認・停止要因）0件。
+- 全dirtyテキストのJWT形式値0件、標準的な秘密鍵/APIキープレフィックス0件。
+- Hikari証拠はJWT0件・決定論的プレースホルダー2件。
+- RAW_FILE_COUNT=69、RAW_SET_SHA256=
+  `57748e5bdae0d913f756cfc588c04585b95887f324dca7c94a7584a08efe4f5c`。
+- 67テスト成功、旧版比較合格、`git diff --check`成功、staged 0件。
+- HEAD `fae504a1dfba282335b107b5e2293a85c17f2505`、
+  origin/main `b281540db03cb69ec4f7efd41d6c43abf75127e1`のまま。
+- `run_record.md`はCodex側でrev.29へ同期済み（Claude Codeは読み書きしていない）。
+
+**次の一作業は、本人が明示承認した場合に限り、確定151件をローカルチェックポイントとして
+commitして停止することである。push・公開・外部提出は行わない。**

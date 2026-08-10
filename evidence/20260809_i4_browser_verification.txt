@@ -1,0 +1,115 @@
+取得日時: 2026-08-09 JST
+取得元  : ローカル実行。python -m http.server 8791（docs/配下を配信）+ msedge --headless=new --remote-debugging-port=9333 をCDP経由でNode.js（evidence/_i4_cdp_driver.mjs、本ファイルと同時に保存）から操作
+取得方法: Chrome DevTools Protocol (Page.navigate / Runtime.evaluate / Page.captureScreenshot)。npmパッケージのインストールは行っていない（Node.js組み込みのWebSocketのみ使用）
+---
+[desktop] 岩国市      overflowX=   0 gtfsHidden=False feedCards=1 caveatHidden=False errorShown=False consoleMsgs=0 pageErrors=0
+    badge='公式フィードを確認'
+    body='公式一次資料が、この市町を運行対象に含むGTFS/GTFS-JPフィードを明記しています。'
+    scopeNote='公式データセット名称にある生活交通バス・由宇地区バスが対象。市域全体・全路線を網羅するとは公式記載からは確認していない。'
+    feedCount='3' muniCount='5 / 19'
+    title='岩国市｜山口県 市町別の登録供給ビュー'
+    screenshot=C:/Users/user/dev/udc2026/yamaguchi-yusho-data/evidence/20260809_i4_screenshot_desktop____.png
+
+[desktop] 光市       overflowX=   0 gtfsHidden=False feedCards=1 caveatHidden=False errorShown=False consoleMsgs=0 pageErrors=0
+    badge='公式フィードを確認'
+    body='公式一次資料が、この市町を運行対象に含むGTFS/GTFS-JPフィードを明記しています。'
+    scopeNote='公式データセット名称にある広域生活交通、ひかりぐるりんバス、光市営バスが対象。市域全体・全路線を網羅するとは公式記載からは確認していない。'
+    feedCount='3' muniCount='5 / 19'
+    title='光市｜山口県 市町別の登録供給ビュー'
+    screenshot=C:/Users/user/dev/udc2026/yamaguchi-yusho-data/evidence/20260809_i4_screenshot_desktop___.png
+
+[desktop] 宇部市      overflowX=   0 gtfsHidden=False feedCards=1 caveatHidden=False errorShown=False consoleMsgs=0 pageErrors=0
+    badge='公式フィードを確認'
+    body='公式一次資料が、この市町を運行対象に含むGTFS/GTFS-JPフィードを明記しています。'
+    scopeNote='宇部市自身の公式データセットにGTFSの記載は無く、市が自ら公開しているとは確認できない。市内で運行する船木鉄道の公式GTFSが対象地域に宇部市を明記している。市域全体・全路線を網羅するとは公式記載からは確認していない。'
+    feedCount='3' muniCount='5 / 19'
+    title='宇部市｜山口県 市町別の登録供給ビュー'
+    screenshot=C:/Users/user/dev/udc2026/yamaguchi-yusho-data/evidence/20260809_i4_screenshot_desktop____.png
+
+[desktop] 美祢市      overflowX=   0 gtfsHidden=False feedCards=1 caveatHidden=False errorShown=False consoleMsgs=0 pageErrors=0
+    badge='公式フィードを確認'
+    body='公式一次資料が、この市町を運行対象に含むGTFS/GTFS-JPフィードを明記しています。'
+    scopeNote='美祢市自身の公式データセットページには「標準的なバス情報フォーマット（GTFS-JP）について公開しておりません」と明記されているが、市内で運行する船木鉄道の公式GTFSが対象地域に美祢市を明記している。市域全体・全路線を網羅するとは公式記載からは確認していない。'
+    feedCount='3' muniCount='5 / 19'
+    title='美祢市｜山口県 市町別の登録供給ビュー'
+    screenshot=C:/Users/user/dev/udc2026/yamaguchi-yusho-data/evidence/20260809_i4_screenshot_desktop____.png
+
+[desktop] 山陽小野田市   overflowX=   0 gtfsHidden=False feedCards=1 caveatHidden=False errorShown=False consoleMsgs=0 pageErrors=0
+    badge='公式フィードを確認'
+    body='公式一次資料が、この市町を運行対象に含むGTFS/GTFS-JPフィードを明記しています。'
+    scopeNote='山陽小野田市自身の公式データセットは市公式ページへのリンクのみでGTFSの記載は無いが、市内で運行する船木鉄道の公式GTFSが対象地域に山陽小野田市を明記している。市域全体・全路線を網羅するとは公式記載からは確認していない。'
+    feedCount='3' muniCount='5 / 19'
+    title='山陽小野田市｜山口県 市町別の登録供給ビュー'
+    screenshot=C:/Users/user/dev/udc2026/yamaguchi-yusho-data/evidence/20260809_i4_screenshot_desktop_______.png
+
+[desktop] 山口市      overflowX=   0 gtfsHidden=False feedCards=0 caveatHidden=True  errorShown=False consoleMsgs=0 pageErrors=0
+    badge='今回確認した公式資料の範囲では未確認'
+    body='今回確認した公式資料の範囲ではGTFS/GTFS-JPを確認できませんでした。'
+    scopeNote='公式データセットページに「本市では該当するデータを保有しておりません。」と明記。'
+    feedCount='3' muniCount='5 / 19'
+    title='山口市｜山口県 市町別の登録供給ビュー'
+    screenshot=C:/Users/user/dev/udc2026/yamaguchi-yusho-data/evidence/20260809_i4_screenshot_desktop____.png
+
+[desktop] 下関市      overflowX=   0 gtfsHidden=False feedCards=0 caveatHidden=True  errorShown=False consoleMsgs=0 pageErrors=0
+    badge='今回確認した公式資料の範囲では未確認'
+    body='今回確認した公式資料の範囲ではGTFS/GTFS-JPを確認できませんでした。'
+    scopeNote='山口県オープンデータカタログサイトの下関市データセット47件（全3ページ）にバス・GTFS関連は無かった。市内主要バス事業者サンデン交通の公式バス情報ページにもGTFSの記載は無い。今回確認した公式資料の範囲での結果であり、GTFSが存在しないと断定するものではない。'
+    feedCount='3' muniCount='5 / 19'
+    title='下関市｜山口県 市町別の登録供給ビュー'
+    screenshot=C:/Users/user/dev/udc2026/yamaguchi-yusho-data/evidence/20260809_i4_screenshot_desktop____.png
+
+[mobile ] 岩国市      overflowX=   0 gtfsHidden=False feedCards=1 caveatHidden=False errorShown=False consoleMsgs=0 pageErrors=0
+    badge='公式フィードを確認'
+    body='公式一次資料が、この市町を運行対象に含むGTFS/GTFS-JPフィードを明記しています。'
+    scopeNote='公式データセット名称にある生活交通バス・由宇地区バスが対象。市域全体・全路線を網羅するとは公式記載からは確認していない。'
+    feedCount='3' muniCount='5 / 19'
+    title='岩国市｜山口県 市町別の登録供給ビュー'
+    screenshot=C:/Users/user/dev/udc2026/yamaguchi-yusho-data/evidence/20260809_i4_screenshot_mobile____.png
+
+[mobile ] 光市       overflowX=   0 gtfsHidden=False feedCards=1 caveatHidden=False errorShown=False consoleMsgs=0 pageErrors=0
+    badge='公式フィードを確認'
+    body='公式一次資料が、この市町を運行対象に含むGTFS/GTFS-JPフィードを明記しています。'
+    scopeNote='公式データセット名称にある広域生活交通、ひかりぐるりんバス、光市営バスが対象。市域全体・全路線を網羅するとは公式記載からは確認していない。'
+    feedCount='3' muniCount='5 / 19'
+    title='光市｜山口県 市町別の登録供給ビュー'
+    screenshot=C:/Users/user/dev/udc2026/yamaguchi-yusho-data/evidence/20260809_i4_screenshot_mobile___.png
+
+[mobile ] 宇部市      overflowX=   0 gtfsHidden=False feedCards=1 caveatHidden=False errorShown=False consoleMsgs=0 pageErrors=0
+    badge='公式フィードを確認'
+    body='公式一次資料が、この市町を運行対象に含むGTFS/GTFS-JPフィードを明記しています。'
+    scopeNote='宇部市自身の公式データセットにGTFSの記載は無く、市が自ら公開しているとは確認できない。市内で運行する船木鉄道の公式GTFSが対象地域に宇部市を明記している。市域全体・全路線を網羅するとは公式記載からは確認していない。'
+    feedCount='3' muniCount='5 / 19'
+    title='宇部市｜山口県 市町別の登録供給ビュー'
+    screenshot=C:/Users/user/dev/udc2026/yamaguchi-yusho-data/evidence/20260809_i4_screenshot_mobile____.png
+
+[mobile ] 美祢市      overflowX=   0 gtfsHidden=False feedCards=1 caveatHidden=False errorShown=False consoleMsgs=0 pageErrors=0
+    badge='公式フィードを確認'
+    body='公式一次資料が、この市町を運行対象に含むGTFS/GTFS-JPフィードを明記しています。'
+    scopeNote='美祢市自身の公式データセットページには「標準的なバス情報フォーマット（GTFS-JP）について公開しておりません」と明記されているが、市内で運行する船木鉄道の公式GTFSが対象地域に美祢市を明記している。市域全体・全路線を網羅するとは公式記載からは確認していない。'
+    feedCount='3' muniCount='5 / 19'
+    title='美祢市｜山口県 市町別の登録供給ビュー'
+    screenshot=C:/Users/user/dev/udc2026/yamaguchi-yusho-data/evidence/20260809_i4_screenshot_mobile____.png
+
+[mobile ] 山陽小野田市   overflowX=   0 gtfsHidden=False feedCards=1 caveatHidden=False errorShown=False consoleMsgs=0 pageErrors=0
+    badge='公式フィードを確認'
+    body='公式一次資料が、この市町を運行対象に含むGTFS/GTFS-JPフィードを明記しています。'
+    scopeNote='山陽小野田市自身の公式データセットは市公式ページへのリンクのみでGTFSの記載は無いが、市内で運行する船木鉄道の公式GTFSが対象地域に山陽小野田市を明記している。市域全体・全路線を網羅するとは公式記載からは確認していない。'
+    feedCount='3' muniCount='5 / 19'
+    title='山陽小野田市｜山口県 市町別の登録供給ビュー'
+    screenshot=C:/Users/user/dev/udc2026/yamaguchi-yusho-data/evidence/20260809_i4_screenshot_mobile_______.png
+
+[mobile ] 山口市      overflowX=   0 gtfsHidden=False feedCards=0 caveatHidden=True  errorShown=False consoleMsgs=0 pageErrors=0
+    badge='今回確認した公式資料の範囲では未確認'
+    body='今回確認した公式資料の範囲ではGTFS/GTFS-JPを確認できませんでした。'
+    scopeNote='公式データセットページに「本市では該当するデータを保有しておりません。」と明記。'
+    feedCount='3' muniCount='5 / 19'
+    title='山口市｜山口県 市町別の登録供給ビュー'
+    screenshot=C:/Users/user/dev/udc2026/yamaguchi-yusho-data/evidence/20260809_i4_screenshot_mobile____.png
+
+[mobile ] 下関市      overflowX=   0 gtfsHidden=False feedCards=0 caveatHidden=True  errorShown=False consoleMsgs=0 pageErrors=0
+    badge='今回確認した公式資料の範囲では未確認'
+    body='今回確認した公式資料の範囲ではGTFS/GTFS-JPを確認できませんでした。'
+    scopeNote='山口県オープンデータカタログサイトの下関市データセット47件（全3ページ）にバス・GTFS関連は無かった。市内主要バス事業者サンデン交通の公式バス情報ページにもGTFSの記載は無い。今回確認した公式資料の範囲での結果であり、GTFSが存在しないと断定するものではない。'
+    feedCount='3' muniCount='5 / 19'
+    title='下関市｜山口県 市町別の登録供給ビュー'
+    screenshot=C:/Users/user/dev/udc2026/yamaguchi-yusho-data/evidence/20260809_i4_screenshot_mobile____.png

@@ -386,6 +386,23 @@
     </div>
   </div>
 
+  <section class="page-shell panel" aria-labelledby="gtfs-overview-title" style="margin-top: 16px">
+    <p class="eyebrow">Official GTFS / GTFS-JP coverage check</p>
+    <h2 id="gtfs-overview-title">公式GTFS/GTFS-JPの確認状況（山口県全体）</h2>
+    <p class="section-copy">
+      山口県オープンデータカタログサイトと公共交通オープンデータセンター（ODPT）を確認した結果、
+      公式フィードは <strong id="gtfs-feed-count">—</strong> 件。そのうち公式資料が対象市町名を
+      明記していた市町は <strong id="gtfs-municipality-count">—</strong> です（確認日 2026-08-09）。
+    </p>
+    <div class="notice warning">
+      <h3>この件数が意味しないこと</h3>
+      <p>
+        この件数は、今回確認した公式資料に対象市町名の記載があった市町数を数えたものです。
+        交通の充足度や達成度を測る指標ではなく、市町どうしの優劣や順位を示すものでもありません。
+      </p>
+    </div>
+  </section>
+
   <main id="main" class="page-shell">
     <section class="panel selector-panel" aria-labelledby="selector-title">
       <div>
@@ -459,6 +476,32 @@
       </div>
     </section>
 
+    <section id="gtfs-result" class="panel" aria-labelledby="gtfs-result-title" aria-live="polite" hidden>
+      <div class="result-heading">
+        <div>
+          <p class="eyebrow">Official GTFS / GTFS-JP status</p>
+          <h2 id="gtfs-result-title">GTFS/GTFS-JPの公式確認状況</h2>
+        </div>
+        <span id="gtfs-availability-badge" class="record-badge">—</span>
+      </div>
+      <p class="section-copy">
+        国・山口県・市町の公式サイト、公式オープンデータサイト、公共交通オープンデータセンター（ODPT）
+        を確認した結果です（確認日 2026-08-09）。GTFS本体のダウンロード・認証・解析は行っていません。
+      </p>
+      <p id="gtfs-availability-body" class="section-copy"></p>
+      <p id="gtfs-scope-note" class="section-copy"></p>
+
+      <div id="gtfs-caveat" class="notice warning" hidden>
+        <h3>この確認が意味しないこと</h3>
+        <p>
+          公式資料がこの市町を運行対象として明記していることの確認であり、
+          市域全体・全事業者・全路線を網羅することは意味しません。
+        </p>
+      </div>
+
+      <div id="gtfs-feed-list" class="breakdown-grid" aria-label="確認できた公式フィード"></div>
+    </section>
+
     <section class="panel" aria-labelledby="limits-title">
       <p class="eyebrow">How to read</p>
       <h2 id="limits-title">この数字が示すもの</h2>
@@ -484,12 +527,20 @@
       <ul class="source-list">
         <li>原本: 国土交通省中国運輸局「<a href="https://wwwtb.mlit.go.jp/chugoku/00001_00903.html">自家用有償旅客運送者の登録簿</a>」山口県分4PDF</li>
         <li>市町一覧: 山口県「<a href="https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html">市町｜関連リンク</a>」</li>
-        <li>公開データ: <a href="data/operators.json">operators.json</a> / <a href="data/vehicles.json">vehicles.json</a> / <a href="data/municipal_supply.json">municipal_supply.json</a></li>
+        <li>GTFS/GTFS-JP確認: 「<a href="https://yamaguchi-opendata.jp/">山口県オープンデータカタログサイト</a>」（岩国市・光市のフィードを掲載）、
+          公共交通オープンデータセンター「<a href="https://ckan.odpt.org/organization/sentetsu_bus">船木鉄道株式会社</a>」（確認日2026-08-09）</li>
+        <li>公開データ: <a href="data/operators.json">operators.json</a> / <a href="data/vehicles.json">vehicles.json</a> / <a href="data/municipal_supply.json">municipal_supply.json</a> / <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a></li>
       </ul>
       <p class="section-copy">
         原本を加工して作成。原本は公共データ利用規約（第1.0版）PDL1.0準拠、
         派生データはCC BY 4.0。加工物は国土交通省が作成したものではありません。
         原本取得日は1PDFが2026-08-07、3PDFが2026-08-09です。
+      </p>
+      <p class="section-copy">
+        GTFS/GTFS-JPの確認は、今回確認した公式資料の範囲に限ります。全市町・全事業者のサイトを
+        網羅的に確認したものではなく、確認できなかった市町についてGTFSが存在しないと断定するもの
+        ではありません。認証が必要な配布は認証キー付きURL雛形の確認にとどめ、実際の認証済み
+        ダウンロード・GTFS本体の解析は行っていません。
       </p>
     </section>
   </main>
@@ -510,6 +561,8 @@
       "use strict";
 
       const dataUrl = "data/municipal_supply.json";
+      const gtfsFeedsUrl = "data/gtfs_feeds.json";
+      const municipalityGtfsUrl = "data/municipality_gtfs.json";
       const select = document.getElementById("municipality-select");
       const loading = document.getElementById("loading");
       const error = document.getElementById("error");
@@ -519,7 +572,29 @@
       const zeroState = document.getElementById("zero-state");
       const recordsBlock = document.getElementById("records-block");
 
+      const gtfsResult = document.getElementById("gtfs-result");
+      const gtfsAvailabilityBadge = document.getElementById("gtfs-availability-badge");
+      const gtfsAvailabilityBody = document.getElementById("gtfs-availability-body");
+      const gtfsScopeNote = document.getElementById("gtfs-scope-note");
+      const gtfsCaveat = document.getElementById("gtfs-caveat");
+      const gtfsFeedList = document.getElementById("gtfs-feed-list");
+
+      // SPEC.md §12.3 axis A: display text is fixed vocabulary, not inferred.
+      const AVAILABILITY_BADGE_TEXT = {
+        confirmed: "公式フィードを確認",
+        not_confirmed_in_checked_sources: "今回確認した公式資料の範囲では未確認",
+        unassessed: "未調査",
+      };
+      const AVAILABILITY_BODY_TEXT = {
+        confirmed: "公式一次資料が、この市町を運行対象に含むGTFS/GTFS-JPフィードを明記しています。",
+        not_confirmed_in_checked_sources: "今回確認した公式資料の範囲ではGTFS/GTFS-JPを確認できませんでした。",
+        unassessed: "対象範囲の調査自体が、まだ完了していません。",
+      };
+
       let supplyData = null;
+      let gtfsFeeds = [];
+      let feedsById = {};
+      let gtfsByMunicipality = {};
 
       function setText(id, value) {
         document.getElementById(id).textContent = String(value);
@@ -585,6 +660,78 @@
         }
       }
 
+      function referenceDateText(feed) {
+        if (feed.reference_date_status === "confirmed" && feed.official_reference_date) {
+          return `公式ページ記載のデータ基準日: ${feed.official_reference_date}`;
+        }
+        return "公式ページにデータ基準日の記載はありません";
+      }
+
+      function validityText(feed) {
+        if (feed.validity_status_at_check === "within_official_period") {
+          return `公式有効期間: ${feed.official_valid_from} 〜 ${feed.official_valid_to}（確認日 ${feed.checked_at} 時点で期間内）`;
+        }
+        if (feed.validity_status_at_check === "outside_official_period") {
+          return `公式有効期間: ${feed.official_valid_from} 〜 ${feed.official_valid_to}（確認日 ${feed.checked_at} 時点で期間外）`;
+        }
+        return "公式有効期間は確認していません";
+      }
+
+      function accessStatusText(feed) {
+        if (feed.access_status === "public_head_confirmed") {
+          return "ファイル本体へのHTTP到達をHEADリクエストで確認済み（ダウンロードはしていません）";
+        }
+        if (feed.access_status === "authentication_required_not_retrieved") {
+          return "認証キーを含む公式ダウンロードURL雛形を確認済み。認証済みの本体取得は行っていません";
+        }
+        return feed.access_status;
+      }
+
+      function renderGtfsFeedCard(feed) {
+        const card = document.createElement("article");
+        card.className = "breakdown-card";
+        addText(card, "h3", feed.dataset_name);
+        addText(card, "p", `公開主体: ${feed.publisher} ／ 形式: ${feed.format_label}`, "section-copy");
+
+        const link = document.createElement("a");
+        link.href = feed.official_page_url;
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.textContent = "公式データセットページを開く";
+        card.appendChild(link);
+
+        addText(card, "p", referenceDateText(feed), "section-copy");
+        addText(card, "p", validityText(feed), "section-copy");
+        addText(card, "p", accessStatusText(feed), "section-copy");
+        addText(card, "p", `利用条件: ${feed.license_name}`, "section-copy");
+        addText(card, "p", feed.scope_note, "section-copy");
+        addText(card, "p", `確認日 ${feed.checked_at}`, "subtext");
+        return card;
+      }
+
+      function renderGtfsStatus(municipalityName) {
+        const row = gtfsByMunicipality[municipalityName];
+        gtfsFeedList.replaceChildren();
+        if (!row) {
+          gtfsResult.hidden = true;
+          return;
+        }
+
+        const status = row.availability_status;
+        setText("gtfs-availability-badge", AVAILABILITY_BADGE_TEXT[status] || status);
+        setText("gtfs-availability-body", AVAILABILITY_BODY_TEXT[status] || "");
+        setText("gtfs-scope-note", row.scope_note);
+        gtfsCaveat.hidden = status !== "confirmed";
+
+        const feedIds = row.feed_ids ? row.feed_ids.split(";") : [];
+        for (const feedId of feedIds) {
+          const feed = feedsById[feedId];
+          if (feed) gtfsFeedList.appendChild(renderGtfsFeedCard(feed));
+        }
+
+        gtfsResult.hidden = false;
+      }
+
       function renderMunicipality(municipalityName) {
         const item = supplyData.municipalities.find(entry => entry.municipality === municipalityName);
         if (!item) return;
@@ -604,18 +751,29 @@
         result.hidden = false;
         document.title = `${item.municipality}｜山口県 市町別の登録供給ビュー`;
 
+        renderGtfsStatus(item.municipality);
+
         const url = new URL(window.location.href);
         url.searchParams.set("municipality", item.municipality);
         window.history.replaceState({}, "", url);
       }
 
-      function initialize(data) {
+      function initialize(data, feeds, municipalityGtfs) {
         supplyData = data;
         const meta = data.meta;
         setText("pref-municipalities", `${meta.municipality_count}市町`);
         setText("pref-with-records", `${meta.municipalities_with_records} / ${meta.municipality_count}`);
         setText("pref-operators", `${meta.unique_prefecture_totals.operator_count}団体`);
         setText("pref-vehicles", `${meta.unique_prefecture_totals.vehicles_total}台`);
+
+        gtfsFeeds = feeds;
+        feedsById = {};
+        for (const feed of feeds) feedsById[feed.feed_id] = feed;
+        gtfsByMunicipality = {};
+        for (const row of municipalityGtfs) gtfsByMunicipality[row.municipality] = row;
+        const confirmedCount = municipalityGtfs.filter(row => row.availability_status === "confirmed").length;
+        setText("gtfs-feed-count", `${feeds.length}`);
+        setText("gtfs-municipality-count", `${confirmedCount} / ${municipalityGtfs.length}`);
 
         select.replaceChildren();
         for (const item of data.municipalities) {
@@ -637,12 +795,15 @@
 
       select.addEventListener("change", event => renderMunicipality(event.target.value));
 
-      fetch(dataUrl)
-        .then(response => {
-          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      function fetchJson(url) {
+        return fetch(url).then(response => {
+          if (!response.ok) throw new Error(`HTTP ${response.status} (${url})`);
           return response.json();
-        })
-        .then(initialize)
+        });
+      }
+
+      Promise.all([fetchJson(dataUrl), fetchJson(gtfsFeedsUrl), fetchJson(municipalityGtfsUrl)])
+        .then(([supply, feeds, municipalityGtfs]) => initialize(supply, feeds, municipalityGtfs))
         .catch(cause => {
           console.error("municipal supply data load failed", cause);
           loading.hidden = true;

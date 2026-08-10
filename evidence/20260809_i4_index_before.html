@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="山口県19市町の自家用有償旅客運送登録簿を、市町別に確認できる静的データビュー。">
+  <title>山口県 市町別の登録供給ビュー｜UDC2026 作品①</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172228;
+      --muted: #59676d;
+      --paper: #ffffff;
+      --canvas: #f2f5f3;
+      --line: #d7dedb;
+      --green: #176b55;
+      --green-dark: #0f4f3f;
+      --green-soft: #e4f1eb;
+      --blue: #1d5f82;
+      --blue-soft: #e6f0f6;
+      --amber: #9a5d12;
+      --amber-soft: #fff3dc;
+      --shadow: 0 18px 50px rgba(25, 48, 40, 0.08);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 8% 2%, rgba(23, 107, 85, 0.10), transparent 28rem),
+        linear-gradient(180deg, #f8faf9 0, var(--canvas) 38rem);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: var(--blue); }
+    a:hover { color: var(--green-dark); }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -5rem;
+      z-index: 10;
+      padding: 0.7rem 1rem;
+      border-radius: 0 0 0.7rem 0.7rem;
+      background: var(--ink);
+      color: white;
+    }
+
+    .skip-link:focus { top: 0; }
+
+    .page-shell {
+      width: min(1180px, calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    .hero { padding: 54px 0 28px; }
+
+    .eyebrow {
+      margin: 0 0 0.65rem;
+      color: var(--green-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(250px, 0.5fr);
+      gap: 32px;
+      align-items: end;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 0;
+      font-size: clamp(2.25rem, 6.5vw, 5.6rem);
+      line-height: 1.03;
+      letter-spacing: -0.045em;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 1.35rem 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.8vw, 1.18rem);
+    }
+
+    .coverage-card {
+      padding: 22px;
+      border: 1px solid rgba(23, 107, 85, 0.22);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .coverage-card strong {
+      display: block;
+      color: var(--green-dark);
+      font-size: 2.15rem;
+      line-height: 1.15;
+    }
+
+    .coverage-card span { color: var(--muted); }
+
+    .summary-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      overflow: hidden;
+      margin: 16px 0 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .summary-item { padding: 21px 24px; }
+    .summary-item + .summary-item { border-left: 1px solid var(--line); }
+
+    .summary-label {
+      display: block;
+      margin-bottom: 0.2rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .summary-value {
+      display: block;
+      font-size: clamp(1.45rem, 3vw, 2.15rem);
+      font-weight: 850;
+      line-height: 1.2;
+    }
+
+    main { padding-bottom: 72px; }
+
+    .panel {
+      margin-top: 22px;
+      padding: clamp(22px, 4vw, 40px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .selector-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(280px, 1.2fr);
+      gap: 34px;
+      align-items: end;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.65rem, 3.7vw, 2.7rem);
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+    }
+
+    h3 { margin: 0; font-size: 1.08rem; }
+
+    .section-copy { margin: 0.8rem 0 0; color: var(--muted); }
+
+    label {
+      display: block;
+      margin-bottom: 0.55rem;
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    select {
+      width: 100%;
+      min-height: 54px;
+      padding: 0 48px 0 16px;
+      border: 2px solid var(--green);
+      border-radius: 14px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-size: 1.08rem;
+      font-weight: 750;
+    }
+
+    select:focus-visible {
+      outline: 4px solid rgba(29, 95, 130, 0.22);
+      outline-offset: 2px;
+    }
+
+    .loading, .error {
+      margin: 22px 0 0;
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: var(--blue-soft);
+    }
+
+    .error { background: #fde9e5; color: #812c1f; }
+    [hidden] { display: none !important; }
+
+    .result-heading {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .record-badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 4px 11px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green-dark);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 25px;
+    }
+
+    .metric {
+      min-height: 138px;
+      padding: 20px;
+      border-radius: 17px;
+      background: var(--green-soft);
+    }
+
+    .metric:nth-child(2) { background: var(--blue-soft); }
+    .metric:nth-child(3) { background: var(--amber-soft); }
+
+    .metric-label { color: var(--muted); font-size: 0.88rem; font-weight: 750; }
+    .metric-value { display: block; margin-top: 0.3rem; font-size: 2.8rem; font-weight: 900; line-height: 1; }
+    .metric-unit { margin-left: 0.18rem; font-size: 0.9rem; font-weight: 750; }
+
+    .breakdown-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .breakdown-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: #fbfcfb;
+    }
+
+    .breakdown-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      margin: 0.8rem 0 0;
+      color: var(--muted);
+    }
+
+    .breakdown-stats strong { color: var(--ink); font-size: 1.25rem; }
+
+    .zero-state {
+      margin-top: 20px;
+      padding: 22px;
+      border: 1px solid #e8ca93;
+      border-radius: 17px;
+      background: var(--amber-soft);
+    }
+
+    .zero-state strong { display: block; color: #6f430d; font-size: 1.08rem; }
+    .zero-state p { margin: 0.45rem 0 0; }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 22px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+
+    table { width: 100%; border-collapse: collapse; min-width: 830px; }
+    th, td { padding: 14px 15px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { background: #f5f8f6; color: var(--muted); font-size: 0.78rem; letter-spacing: 0.04em; }
+    tbody tr:last-child td { border-bottom: 0; }
+    td strong { display: block; }
+    .subtext { color: var(--muted); font-size: 0.8rem; }
+
+    .notice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .notice {
+      padding: 20px;
+      border-left: 5px solid var(--green);
+      border-radius: 12px;
+      background: #f5f8f6;
+    }
+
+    .notice.warning { border-left-color: var(--amber); background: #fff9ed; }
+    .notice p { margin: 0.45rem 0 0; color: var(--muted); }
+
+    .source-list { margin: 1rem 0 0; padding-left: 1.25rem; }
+    .source-list li + li { margin-top: 0.55rem; }
+
+    footer {
+      padding: 28px 0 48px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    footer p { margin: 0.35rem 0; }
+
+    @media (max-width: 800px) {
+      .hero { padding-top: 36px; }
+      .hero-grid, .selector-panel { grid-template-columns: 1fr; }
+      .summary-strip { grid-template-columns: repeat(2, 1fr); }
+      .summary-item:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
+      .summary-item:nth-child(4) { border-top: 1px solid var(--line); }
+      .metric-grid, .breakdown-grid, .notice-grid { grid-template-columns: 1fr; }
+      .metric { min-height: 112px; }
+    }
+
+    @media (max-width: 470px) {
+      .page-shell { width: min(100% - 20px, 1180px); }
+      .hero { padding-top: 26px; }
+      .coverage-card, .panel { border-radius: 17px; }
+      .summary-item { padding: 16px; }
+      .summary-value { font-size: 1.35rem; }
+      .panel { padding: 20px 16px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#municipality-select">市町選択へ移動</a>
+
+  <header class="hero page-shell">
+    <p class="eyebrow">UDC2026 作品① / 道路・交通</p>
+    <div class="hero-grid">
+      <div>
+        <h1>山口県<br>市町別の登録供給ビュー</h1>
+        <p class="lead">
+          福祉有償運送と交通空白地有償運送の登録簿を、市町から確認できます。
+          県・市町の交通担当者が、公開情報として確認できる団体と登録車両を追跡するためのビューです。
+        </p>
+      </div>
+      <aside class="coverage-card" aria-label="原本処理状況">
+        <span class="summary-label">Source coverage</span>
+        <strong>4 / 4 PDF</strong>
+        <span>山口県分の登録簿4区分を処理・検証済み</span>
+      </aside>
+    </div>
+  </header>
+
+  <div class="page-shell summary-strip" aria-label="山口県全体の一意な集計">
+    <div class="summary-item">
+      <span class="summary-label">Municipalities</span>
+      <span class="summary-value" id="pref-municipalities">19市町</span>
+    </div>
+    <div class="summary-item">
+      <span class="summary-label">With records</span>
+      <span class="summary-value" id="pref-with-records">—</span>
+    </div>
+    <div class="summary-item">
+      <span class="summary-label">Operators</span>
+      <span class="summary-value" id="pref-operators">—</span>
+    </div>
+    <div class="summary-item">
+      <span class="summary-label">Vehicles</span>
+      <span class="summary-value" id="pref-vehicles">—</span>
+    </div>
+  </div>
+
+  <main id="main" class="page-shell">
+    <section class="panel selector-panel" aria-labelledby="selector-title">
+      <div>
+        <p class="eyebrow">Choose municipality</p>
+        <h2 id="selector-title">確認する市町を選ぶ</h2>
+        <p class="section-copy">山口県公式一覧の19市町を掲載順に並べています。</p>
+      </div>
+      <div>
+        <label for="municipality-select">市町名</label>
+        <select id="municipality-select" disabled>
+          <option>データを読み込み中…</option>
+        </select>
+      </div>
+    </section>
+
+    <p id="loading" class="loading" role="status">検証済みデータを読み込んでいます。</p>
+    <p id="error" class="error" role="alert" hidden>データを読み込めませんでした。公開JSONの配置を確認してください。</p>
+
+    <section id="result" class="panel" aria-labelledby="result-title" aria-live="polite" hidden>
+      <div class="result-heading">
+        <div>
+          <p class="eyebrow">Registered supply</p>
+          <h2 id="result-title">市町別の登録供給</h2>
+        </div>
+        <span id="record-badge" class="record-badge">登録簿データ</span>
+      </div>
+      <p id="result-description" class="section-copy"></p>
+
+      <div class="metric-grid" aria-label="選択市町の集計">
+        <div class="metric">
+          <span class="metric-label">関係する登録団体</span>
+          <span class="metric-value"><span id="metric-operators">0</span><span class="metric-unit">団体</span></span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">登録車両</span>
+          <span class="metric-value"><span id="metric-vehicles">0</span><span class="metric-unit">台</span></span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">うち軽自動車（内数）</span>
+          <span class="metric-value"><span id="metric-light">0</span><span class="metric-unit">台</span></span>
+        </div>
+      </div>
+
+      <div id="breakdown" class="breakdown-grid" aria-label="運送種別の内訳"></div>
+
+      <div id="zero-state" class="zero-state" hidden>
+        <strong>登録簿上の該当記録は0件です。</strong>
+        <p>この表示は、当該市町に交通手段や移動支援が存在しないことを意味しません。</p>
+      </div>
+
+      <div id="records-block">
+        <div class="result-heading" style="margin-top: 30px">
+          <h3 id="records-title">該当する登録一覧</h3>
+          <span class="subtext">団体名は登録簿の公表情報。代表者氏名は収録していません。</span>
+        </div>
+        <div class="table-wrap">
+          <table aria-labelledby="records-title">
+            <thead>
+              <tr>
+                <th>団体・登録番号</th>
+                <th>運送種別</th>
+                <th>実施主体</th>
+                <th>登録車両</th>
+                <th>有効期限</th>
+                <th>原本</th>
+              </tr>
+            </thead>
+            <tbody id="records-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="limits-title">
+      <p class="eyebrow">How to read</p>
+      <h2 id="limits-title">この数字が示すもの</h2>
+      <div class="notice-grid">
+        <div class="notice">
+          <h3>確認できること</h3>
+          <p>中国運輸局の登録簿に掲載された団体、登録車両数、軽内数、運送種別、有効期限です。</p>
+        </div>
+        <div class="notice warning">
+          <h3>断定できないこと</h3>
+          <p>運行頻度、予約可否、実際の稼働台数、一般の方が利用できるか、地域の交通充足度はこのデータだけでは分かりません。</p>
+        </div>
+      </div>
+      <div class="notice warning" style="margin-top: 16px">
+        <h3>市町値は県計として足し合わせない</h3>
+        <p>複数市町を運送区域に含む団体の同じ車両が、それぞれの市町ビューに表示されます。市町別の値を合算すると重複する場合があります。</p>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="sources-title">
+      <p class="eyebrow">Sources &amp; license</p>
+      <h2 id="sources-title">第三者が追跡できる出典</h2>
+      <ul class="source-list">
+        <li>原本: 国土交通省中国運輸局「<a href="https://wwwtb.mlit.go.jp/chugoku/00001_00903.html">自家用有償旅客運送者の登録簿</a>」山口県分4PDF</li>
+        <li>市町一覧: 山口県「<a href="https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html">市町｜関連リンク</a>」</li>
+        <li>公開データ: <a href="data/operators.json">operators.json</a> / <a href="data/vehicles.json">vehicles.json</a> / <a href="data/municipal_supply.json">municipal_supply.json</a></li>
+      </ul>
+      <p class="section-copy">
+        原本を加工して作成。原本は公共データ利用規約（第1.0版）PDL1.0準拠、
+        派生データはCC BY 4.0。加工物は国土交通省が作成したものではありません。
+        原本取得日は1PDFが2026-08-07、3PDFが2026-08-09です。
+      </p>
+    </section>
+  </main>
+
+  <noscript>
+    <p class="page-shell error">このビューの市町選択にはJavaScriptが必要です。公開JSONは出典欄から直接確認できます。</p>
+  </noscript>
+
+  <footer>
+    <div class="page-shell">
+      <p><strong>UDC2026 応募作品①</strong> — 山口県の公共交通における供給側データの欠落を埋める静的アプリ／サービス。</p>
+      <p>この画面は登録簿データの最初の利用可能な縦切りです。GTFS-JPの整備状況・鮮度との統合は今後の別工程です。</p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const dataUrl = "data/municipal_supply.json";
+      const select = document.getElementById("municipality-select");
+      const loading = document.getElementById("loading");
+      const error = document.getElementById("error");
+      const result = document.getElementById("result");
+      const breakdown = document.getElementById("breakdown");
+      const recordsBody = document.getElementById("records-body");
+      const zeroState = document.getElementById("zero-state");
+      const recordsBlock = document.getElementById("records-block");
+
+      let supplyData = null;
+
+      function setText(id, value) {
+        document.getElementById(id).textContent = String(value);
+      }
+
+      function addText(parent, tagName, text, className) {
+        const element = document.createElement(tagName);
+        element.textContent = text;
+        if (className) element.className = className;
+        parent.appendChild(element);
+        return element;
+      }
+
+      function renderBreakdown(groups) {
+        breakdown.replaceChildren();
+        for (const group of groups) {
+          const card = document.createElement("article");
+          card.className = "breakdown-card";
+          addText(card, "h3", group.transport_type);
+          const stats = document.createElement("p");
+          stats.className = "breakdown-stats";
+          const items = [
+            [group.operator_count, "団体"],
+            [group.vehicles_total, "台"],
+            [group.vehicles_total_kei, "軽（内数）"],
+          ];
+          for (const [value, label] of items) {
+            const span = document.createElement("span");
+            addText(span, "strong", value);
+            span.append(` ${label}`);
+            stats.appendChild(span);
+          }
+          card.appendChild(stats);
+          breakdown.appendChild(card);
+        }
+      }
+
+      function renderRecords(operators) {
+        recordsBody.replaceChildren();
+        for (const operator of operators) {
+          const row = document.createElement("tr");
+
+          const identity = document.createElement("td");
+          addText(identity, "strong", operator.org_name);
+          addText(identity, "span", operator.registration_no, "subtext");
+          row.appendChild(identity);
+
+          addText(row, "td", operator.transport_type);
+          addText(row, "td", operator.operator_type);
+          addText(row, "td", `${operator.vehicles_total}台（軽${operator.vehicles_total_kei}台）`);
+          addText(row, "td", operator.valid_to);
+
+          const sourceCell = document.createElement("td");
+          const link = document.createElement("a");
+          link.href = operator.source_url;
+          link.target = "_blank";
+          link.rel = "noopener";
+          link.textContent = `${operator.source_pdf} p.${operator.source_page}`;
+          sourceCell.appendChild(link);
+          row.appendChild(sourceCell);
+
+          recordsBody.appendChild(row);
+        }
+      }
+
+      function renderMunicipality(municipalityName) {
+        const item = supplyData.municipalities.find(entry => entry.municipality === municipalityName);
+        if (!item) return;
+
+        setText("result-title", `${item.municipality}の登録供給`);
+        setText("record-badge", `登録簿上 ${item.operator_count}団体`);
+        setText("result-description", `${item.municipality}を運送区域に含む登録団体を、4PDFの公表登録簿から集計しています。`);
+        setText("metric-operators", item.operator_count);
+        setText("metric-vehicles", item.vehicles_total);
+        setText("metric-light", item.vehicles_total_kei);
+        renderBreakdown(item.by_transport_type);
+        renderRecords(item.operators);
+
+        const isEmpty = item.operator_count === 0;
+        zeroState.hidden = !isEmpty;
+        recordsBlock.hidden = isEmpty;
+        result.hidden = false;
+        document.title = `${item.municipality}｜山口県 市町別の登録供給ビュー`;
+
+        const url = new URL(window.location.href);
+        url.searchParams.set("municipality", item.municipality);
+        window.history.replaceState({}, "", url);
+      }
+
+      function initialize(data) {
+        supplyData = data;
+        const meta = data.meta;
+        setText("pref-municipalities", `${meta.municipality_count}市町`);
+        setText("pref-with-records", `${meta.municipalities_with_records} / ${meta.municipality_count}`);
+        setText("pref-operators", `${meta.unique_prefecture_totals.operator_count}団体`);
+        setText("pref-vehicles", `${meta.unique_prefecture_totals.vehicles_total}台`);
+
+        select.replaceChildren();
+        for (const item of data.municipalities) {
+          const option = document.createElement("option");
+          option.value = item.municipality;
+          option.textContent = item.municipality;
+          select.appendChild(option);
+        }
+        select.disabled = false;
+
+        const requested = new URL(window.location.href).searchParams.get("municipality");
+        const initial = data.municipalities.some(item => item.municipality === requested)
+          ? requested
+          : "山口市";
+        select.value = initial;
+        renderMunicipality(initial);
+        loading.hidden = true;
+      }
+
+      select.addEventListener("change", event => renderMunicipality(event.target.value));
+
+      fetch(dataUrl)
+        .then(response => {
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          return response.json();
+        })
+        .then(initialize)
+        .catch(cause => {
+          console.error("municipal supply data load failed", cause);
+          loading.hidden = true;
+          error.hidden = false;
+        });
+    })();
+  </script>
+</body>
+</html>

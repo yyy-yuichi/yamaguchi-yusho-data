@@ -1,0 +1,751 @@
+取得日時: 2026-08-09 JST
+取得元  : https://yamaguchi-opendata.jp/
+取得方法: curl -sL (生バイト取得、要約なし)
+---
+<!doctype html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8" />
+<title>山口県オープンデータカタログサイト</title>
+
+   
+
+<meta name="keywords" content="山口オープンデータカタログサイト" />
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="keywords" content="山口県オープンデータカタログサイト,山口県" />
+<meta name="description" content="山口県及び県内市町が保有するオープンデータを公開するための専用サイトです。" />
+
+<meta property="og:title" content="山口県オープンデータカタログサイト" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yamaguchi-opendata.jp/" />
+<meta property="og:image" content="https://yamaguchi-opendata.jp/www/assets/img/yamaguchi-od.png" />
+<meta property="og:site_name" content="山口県オープンデータカタログサイト" />
+<meta property="og:locale" content="ja_JP" />
+  
+<link rel="stylesheet" href="www/assets/css/style.css" media="all">
+<script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+<script src="www/assets/js/marked.min.js"></script>
+<script src="www/assets/js/ai_search.js"></script>
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8107CQRRPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8107CQRRPE');
+</script>  
+
+
+
+
+</head>
+
+<body class="" id="top-bgi">
+
+<div id="wrap">
+
+<header class="top-hdr">
+<div class="hdr-inr">
+	<div class="hdr-ttl">
+	<h1><img src="www/assets/img/logo.svg" alt="山口県オープンデータカタログサイト"/></h1>
+	<p>山口県及び県内市町が保有するオープンデータを公開するための専用サイトです。<br>オープンデータの横断的な検索、ダウンロードが可能で、ダウンロードしたデータは、二次利用していただくことができます。</p>
+	</div>
+	<div class="hdr-dc">
+		<div class="hdr-dc-box">
+			    <div class="dataset">
+        <a href="/ckan/dataset">
+          <div class="hdr-dc-icon"><img src="www/assets/img/dc_icon_data.svg" alt=""/></div>
+          <div class="hdr-dc-number">770</div>
+          <div class="hdr-dc-txt">データ一覧</div>
+</a>    </div>
+
+			    <div class="group">
+        <a href="/ckan/group">
+          <div class="hdr-dc-icon"><img src="www/assets/img/dc_icon_category.svg" alt=""/></div>
+          <div class="hdr-dc-number">14</div>
+          <div class="hdr-dc-txt">カテゴリ</div>
+</a>    </div>
+
+			    <div class="tag">
+        <a href="/ckan/tag">
+          <div class="hdr-dc-icon"><img src="www/assets/img/dc_icon_tag.svg" alt=""/></div>
+          <div class="hdr-dc-number">295</div>
+          <div class="hdr-dc-txt">タグ</div>
+</a>    </div>
+
+		</div>
+		<div class="hdr-dc-search">
+			<form method="get" action="/ckan/dataset" class="hdr-dc-search-form">
+				<label>
+				<input type="search" name="q" placeholder="キーワードで検索" >
+				</label>
+				<button type="submit" aria-label="検索"></button>
+			</form>
+		</div>
+		<div class="hdr-odm"><a href="/dashboard">オープンデータマップ</a></div>
+	</div>
+<!--/.hdr-inr--></div>
+<div class="nav-box">
+	<input id="drawer-input" class="drawer-hidden" type="checkbox">
+	<label for="drawer-input" class="drawer-open"><span></span></label>
+	<nav class="global-nav">
+		<ul>
+		<li class="sp-only"><a href="">TOP</a></li>
+		<li class="sp-only"><a href="/index.html#ai-search">AI検索</a></li>
+		<li><a href="/ckan/dataset">データ一覧</a></li>
+		<li><a href="www/yamaguchi-in-data/index.html">ダッシュボード山口</a></li>
+		<li><a href="www/case-study/index.html">活用事例</a></li>
+		<li><a href="www/api-manual.html">APIについて</a></li>
+		</ul>
+	</nav>
+	<div class="menubg"></div>
+</div>
+</header>
+
+<section class="ai-search">
+<div class="inr">
+<div class="ai-ttl">
+<h2 class="top-ttl" id="ai-search">AIで検索</h2>
+<div><a href="www/ai-search.html">AIで検索とは</a></div>
+</div>
+<div class="ai-search-form">
+	<label>
+	<input id="aiSearchWord" type="search" name="search" placeholder="キーワードでAI検索" maxlength="100">
+	</label>
+	<button id="aiSearchBtn" type="button" aria-label="検索" onclick="aiSearch()"></button>
+</div>
+<div class="article-pages pages">
+<ul class="ai-list">
+
+  <li id="sampleWord1" onClick="sampleWord('1')" tabindex="0">山口県内のAED設置箇所を教えてください。</li>
+
+</ul>
+</div>
+
+
+<div id="aiSearchResults" class="ai-search-results">
+<h3 class="ai-search-results-q" id="keyword"></h3>
+<div id="loadingArea" class="loading" >
+	<div class="load-circle"></div>
+</div>
+<div id="answerArea">
+<p id="answer"></p>
+<p id="dataset"></p>
+<p><span id="title1"></span><br><a id="url1" href=""></a></p>
+<p><span id="title2"></span><br><a id="url2" href=""></a></p>
+<p><span id="title3"></span><br><a id="url3" href=""></a></p>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="newdata-info bgc-light-red">
+<div class="inr">
+<div class="info-box">
+	<h2 class="top-ttl">新着データ</h2>
+	          <ul class="info-list">
+              <li >
+              <a href="/ckan/dataset/18800jyuutakutyakkoukosuu">
+                <span class="date">2026年08月07日</span><br>
+                <span class="info-ttl">【山口県】山口県新設住宅着工戸数についてが更新されました。</span>
+</a>            </li>
+              <li >
+              <a href="/ckan/dataset/352080-population_movement">
+                <span class="date">2026年08月07日</span><br>
+                <span class="info-ttl">【岩国市】人口移動調査が更新されました。</span>
+</a>            </li>
+              <li >
+              <a href="/ckan/dataset/yp-2026">
+                <span class="date">2026年08月06日</span><br>
+                <span class="info-ttl">熊の目撃情報２０２６（山口県警察認知のもの）が更新されました。</span>
+</a>            </li>
+              <li >
+              <a href="/ckan/dataset/2025">
+                <span class="date">2026年08月06日</span><br>
+                <span class="info-ttl">熊の目撃情報2025（山口県警察認知のもの）が更新されました。</span>
+</a>            </li>
+              <li >
+              <a href="/ckan/dataset/2024">
+                <span class="date">2026年08月06日</span><br>
+                <span class="info-ttl">熊の目撃情報2024（山口県警察認知のもの）が更新されました。</span>
+</a>            </li>
+              <li class=sp-hidden>
+              <a href="/ckan/dataset/sonotakasen-kouzui-shinsuisoutei">
+                <span class="date">2026年08月06日</span><br>
+                <span class="info-ttl">洪水浸水想定区域図（洪水予報河川及び水位周知河川以外の河川）が更新されました。</span>
+</a>            </li>
+              <li class=sp-hidden>
+              <a href="/ckan/dataset/352161_population">
+                <span class="date">2026年08月04日</span><br>
+                <span class="info-ttl">【山陽小野田市】地域・年齢別人口が更新されました。</span>
+</a>            </li>
+              <li class=sp-hidden>
+              <a href="/ckan/dataset/yamaguchi-iiip">
+                <span class="date">2026年07月30日</span><br>
+                <span class="info-ttl">毎月勤労統計調査（地方調査）が更新されました。</span>
+</a>            </li>
+              <li class=sp-hidden>
+              <a href="/ckan/dataset/12-1-30-1">
+                <span class="date">2026年07月30日</span><br>
+                <span class="info-ttl">【山口県】盛土規制法に基づく工事の許可及び届出の公表が更新されました。</span>
+</a>            </li>
+              <li class=sp-hidden>
+              <a href="/ckan/dataset/jinkouidou">
+                <span class="date">2026年07月29日</span><br>
+                <span class="info-ttl">【山口県】山口県人口移動統計調査が更新されました。</span>
+</a>            </li>
+          </ul>
+
+	<div class="btn"><a href="www/new.html">もっと見る</a></div>
+</div>
+<div class="info-box">
+	<h2 class="top-ttl">お知らせ</h2>
+	<div class="article-pages pages">
+<ul  class="info-list">
+
+
+  
+    
+      <li>
+    
+      <a href=/www/news/299.html>
+        <span class="date">2026年06月04日</span>
+        
+          <span class="cat cat-info">お知らせ</span><br>
+        
+        <span class="info-ttl">システムメンテナンスのお知らせ（2026年06月17日（水）18:00 ～ 21:00）</span>
+      </a>    
+  </li>  
+  
+    
+      <li>
+    
+      <a href=/www/news/296.html>
+        <span class="date">2026年02月25日</span>
+        
+          <span class="cat cat-info">お知らせ</span><br>
+        
+        <span class="info-ttl">システムメンテナンスのお知らせ（2026年03月18日（水）18:00 ～ 21:00）</span>
+      </a>    
+  </li>  
+  
+    
+      <li>
+    
+      <a href=/www/case-study/298.html>
+        <span class="date">2026年02月23日</span>
+        
+          <span class="cat cat-case">活用事例</span><br>
+        
+        <span class="info-ttl">「デジタルアーカイブ制作ワークショップ」作品のご紹介【2026年2月20日実施】</span>
+      </a>    
+  </li>  
+  
+    
+      <li>
+    
+      <a href=/www/news/295.html>
+        <span class="date">2025年06月19日</span>
+        
+          <span class="cat cat-info">お知らせ</span><br>
+        
+        <span class="info-ttl">システムメンテナンスのお知らせ（2025年07月03日（木）19:00 ～ 21:00）</span>
+      </a>    
+  </li>  
+  
+    
+      <li>
+    
+      <a href=/www/news/282.html>
+        <span class="date">2024年12月19日</span>
+        
+          <span class="cat cat-info">お知らせ</span><br>
+        
+        <span class="info-ttl">「山口県オープンデータ可視化チャレンジ」を開催しました（2024年11月30日）</span>
+      </a>    
+  </li>  
+  
+    
+      <li class="sp-hidden">
+    
+      <a href=/www/news/279.html>
+        <span class="date">2024年09月04日</span>
+        
+          <span class="cat cat-info">お知らせ</span><br>
+        
+        <span class="info-ttl">「山口県オープンデータカタログサイト」リニューアルのお知らせ</span>
+      </a>    
+  </li>  
+  
+    
+      <li class="sp-hidden">
+    
+      <a href=/www/case-study/275.html>
+        <span class="date">2024年08月30日</span>
+        
+          <span class="cat cat-case">活用事例</span><br>
+        
+        <span class="info-ttl">ラーメン食べても罪滅ぼしウォーキング</span>
+      </a>    
+  </li>  
+  
+    
+      <li class="sp-hidden">
+    
+      <a href=/www/case-study/274.html>
+        <span class="date">2024年08月30日</span>
+        
+          <span class="cat cat-case">活用事例</span><br>
+        
+        <span class="info-ttl">激アツ！昆虫マップ</span>
+      </a>    
+  </li>  
+  
+    
+      <li class="sp-hidden">
+    
+      <a href=/www/case-study/268.html>
+        <span class="date">2024年08月28日</span>
+        
+          <span class="cat cat-case">活用事例</span><br>
+        
+        <span class="info-ttl">【山口県】各種統計データの可視化</span>
+      </a>    
+  </li>  
+  
+    
+      <li class="sp-hidden">
+    
+      <a href=/www/case-study/266.html>
+        <span class="date">2020年07月29日</span>
+        
+          <span class="cat cat-case">活用事例</span><br>
+        
+        <span class="info-ttl">【山口県】山口県新型コロナウイルス対策サイト</span>
+      </a>    
+  </li>  
+  
+    
+</ul>
+</div>
+
+	<div class="btn"><a href="www/news/index.html">もっと見る</a></div>
+</div>
+</div>
+</section>
+
+<section class="group">
+<div class="inr">
+	<div class="category-box">
+	<h2 class="top-ttl">カテゴリから探す</h2>
+	<div class="category">
+		<div class="category-btn"><a href="/ckan/group/c001">
+			<div class="category-icon"><img src="www/assets/img/icon_cat01.svg" alt=""/></div>
+			<p>くらし</p>
+		</a></div>
+		<div class="category-btn"><a href="/ckan/group/c002">
+			<div class="category-icon"><img src="www/assets/img/icon_cat02.svg" alt=""/></div>
+			<p>環境</p>
+		</a></div>
+		<div class="category-btn"><a href="/ckan/group/c003">
+			<div class="category-icon"><img src="www/assets/img/icon_cat03.svg" alt=""/></div>
+			<p>医療</p>
+		</a></div>
+		<div class="category-btn"><a href="/ckan/group/c004">
+			<div class="category-icon"><img src="www/assets/img/icon_cat04.svg" alt=""/></div>
+			<p>福祉</p>
+		</a></div>
+		<div class="category-btn"><a href="/ckan/group/c005">
+			<div class="category-icon"><img src="www/assets/img/icon_cat05.svg" alt=""/></div>
+			<p>子育て・教育</p>
+		</a></div>
+		<div class="category-btn"><a href="/ckan/group/c006">
+			<div class="category-icon"><img src="www/assets/img/icon_cat06.svg" alt=""/></div>
+			<p>文化・スポーツ</p>
+		</a></div>
+		<div class="category-btn"><a href="/ckan/group/c007">
+			<div class="category-icon"><img src="www/assets/img/icon_cat07.svg" alt=""/></div>
+			<p>しごと</p>
+		</a></div>
+		<div class="category-btn"><a href="/ckan/group/c008">
+			<div class="category-icon"><img src="www/assets/img/icon_cat08.svg" alt=""/></div>
+			<p>産業</p>
+		</a></div>
+		<div class="category-btn"><a href="/ckan/group/c009">
+			<div class="category-icon"><img src="www/assets/img/icon_cat09.svg" alt=""/></div>
+			<p>観光</p>
+		</a></div>
+		<div class="category-btn"><a href="/ckan/group/c010">
+			<div class="category-icon"><img src="www/assets/img/icon_cat10.svg" alt=""/></div>
+			<p>行政</p>
+		</a></div>
+		<div class="category-btn"><a href="/ckan/group/c011">
+			<div class="category-icon"><img src="www/assets/img/icon_cat11.svg" alt=""/></div>
+			<p>統計</p>
+		</a></div>
+		<div class="category-btn"><a href="/ckan/group/c012">
+			<div class="category-icon"><img src="www/assets/img/icon_cat12.svg" alt=""/></div>
+			<p>防犯・防災</p>
+		</a></div>
+		<div class="category-btn"><a href="/ckan/group/c013">
+			<div class="category-icon"><img src="www/assets/img/icon_cat13.svg" alt=""/></div>
+			<p>交通</p>
+		</a></div>
+		<div class="category-btn"><a href="/ckan/group/c014">
+			<div class="category-icon"><img src="www/assets/img/icon_cat14.svg" alt=""/></div>
+			<p>その他</p>
+		</a></div>
+	</div>
+	</div>
+	<div class="city-box">
+	<h2 class="top-ttl">県・市町別に探す</h2>
+	<div class="city">
+		      <div class="city-btn">
+      <a href="/ckan/organization/35000">
+        <span>100</span><br>
+        <p>山口県</p>
+</a>      </div>
+      <div class="city-btn">
+      <a href="/ckan/organization/35201">
+        <span>47</span><br>
+        <p>下関市</p>
+</a>      </div>
+      <div class="city-btn">
+      <a href="/ckan/organization/35202">
+        <span>76</span><br>
+        <p>宇部市</p>
+</a>      </div>
+      <div class="city-btn">
+      <a href="/ckan/organization/35203">
+        <span>44</span><br>
+        <p>山口市</p>
+</a>      </div>
+      <div class="city-btn">
+      <a href="/ckan/organization/35204">
+        <span>35</span><br>
+        <p>萩市</p>
+</a>      </div>
+      <div class="city-btn">
+      <a href="/ckan/organization/35206">
+        <span>33</span><br>
+        <p>防府市</p>
+</a>      </div>
+      <div class="city-btn">
+      <a href="/ckan/organization/35207">
+        <span>48</span><br>
+        <p>下松市</p>
+</a>      </div>
+      <div class="city-btn">
+      <a href="/ckan/organization/35208">
+        <span>42</span><br>
+        <p>岩国市</p>
+</a>      </div>
+      <div class="city-btn">
+      <a href="/ckan/organization/35210">
+        <span>22</span><br>
+        <p>光市</p>
+</a>      </div>
+      <div class="city-btn">
+      <a href="/ckan/organization/35211">
+        <span>34</span><br>
+        <p>長門市</p>
+</a>      </div>
+      <div class="city-btn">
+      <a href="/ckan/organization/35212">
+        <span>31</span><br>
+        <p>柳井市</p>
+</a>      </div>
+      <div class="city-btn">
+      <a href="/ckan/organization/35213">
+        <span>27</span><br>
+        <p>美祢市</p>
+</a>      </div>
+      <div class="city-btn">
+      <a href="/ckan/organization/35215">
+        <span>46</span><br>
+        <p>周南市</p>
+</a>      </div>
+      <div class="city-btn">
+      <a href="/ckan/organization/35216">
+        <span>20</span><br>
+        <p>山陽小野田市</p>
+</a>      </div>
+      <div class="city-btn">
+      <a href="/ckan/organization/35305">
+        <span>33</span><br>
+        <p>周防大島町</p>
+</a>      </div>
+      <div class="city-btn">
+      <a href="/ckan/organization/35321">
+        <span>21</span><br>
+        <p>和木町</p>
+</a>      </div>
+      <div class="city-btn">
+      <a href="/ckan/organization/35341">
+        <span>33</span><br>
+        <p>上関町</p>
+</a>      </div>
+      <div class="city-btn">
+      <a href="/ckan/organization/35343">
+        <span>22</span><br>
+        <p>田布施町</p>
+</a>      </div>
+      <div class="city-btn">
+      <a href="/ckan/organization/35344">
+        <span>36</span><br>
+        <p>平生町</p>
+</a>      </div>
+      <div class="city-btn">
+      <a href="/ckan/organization/35502">
+        <span>20</span><br>
+        <p>阿武町</p>
+</a>      </div>
+
+	</div>
+	</div>
+</div>
+</section>
+
+<!-- ダッシュボード山口 -->
+<div class="article-pages pages">
+
+
+
+<section class="dashboard bgc-light-red">
+<div class="inr">
+<h2 class="top-ttl">ダッシュボード山口</h2>
+
+        
+          
+          <div class="dashboard-l">
+            <a href="/www/yamaguchi-in-data/281.html">
+              <div class="dashboard-img">
+                <img src="/fs/6/6/8/_/_____________________.PNG" alt="" >
+              </div>
+              <p>「山口県オープンデータ可視化チャレンジ」作成ダッシュボードのご紹介【2024年11月30日実施】</p>
+            </a>
+            </div>
+          
+        
+ 
+
+<div class="dashboard-s-box">
+
+
+    
+    
+
+    
+    
+      
+        <div class="dashboard-s">
+          <a href="/www/yamaguchi-in-data/272.html">
+            <div class="dashboard-img">
+              <img src="/fs/2/4/9/_/__________2024-08-28_125302__1_.png" alt="" >
+            </div>
+            <p>【山口県】市町民経済計算の可視化</p>
+          </a>
+        </div>
+        
+      
+    
+
+    
+    
+      
+        <div class="dashboard-s">
+          <a href="/www/yamaguchi-in-data/271.html">
+            <div class="dashboard-img">
+              <img src="/fs/2/4/4/_/__________2024-08-26_164834.png" alt="" >
+            </div>
+            <p>【防府市】まちなか人流データの公開</p>
+          </a>
+        </div>
+        
+      
+    
+
+    
+    
+      
+        <div class="dashboard-s">
+          <a href="/www/yamaguchi-in-data/260.html">
+            <div class="dashboard-img">
+              <img src="/fs/2/4/7/_/__________2024-08-26_181038.png" alt="" >
+            </div>
+            <p>山口交通安全メッセージ</p>
+          </a>
+        </div>
+        
+      
+    
+
+    
+      
+  
+ 
+</div> 
+<div class="btn"><a href="www/yamaguchi-in-data/index.html">もっと見る</a></div>
+</div>
+</section>
+
+</div>
+
+
+<!-- 活用事例 -->
+<div class="article-pages pages">
+
+
+<section class="dashboard">
+  <div class="inr">
+  <h2 class="top-ttl">活用事例</h2>
+  <div class="dashboard-s-box">
+    
+    
+      
+      
+        <div class="dashboard-s">
+          <a href="/www/case-study/298.html">
+            <div class="dashboard-img">
+              <img src="/fs/7/0/1/_/__________________.png" alt="" >
+            </div>
+            <p>「デジタルアーカイブ制作ワークショップ」作品のご紹介【2026年2月20日実施】</p>
+          </a>
+        </div>
+      
+      
+    
+      
+      
+        <div class="dashboard-s">
+          <a href="/www/case-study/275.html">
+            <div class="dashboard-img">
+              <img src="/fs/2/5/3/_/__________2024-08-30_095508.png" alt="" >
+            </div>
+            <p>ラーメン食べても罪滅ぼしウォーキング</p>
+          </a>
+        </div>
+      
+      
+    
+      
+      
+        <div class="dashboard-s">
+          <a href="/www/case-study/274.html">
+            <div class="dashboard-img">
+              <img src="/fs/2/5/4/_/__________2024-08-30_095359.png" alt="" >
+            </div>
+            <p>激アツ！昆虫マップ</p>
+          </a>
+        </div>
+      
+      
+    
+      
+        
+        
+  </div>
+  <div class="btn"><a href="www/case-study/index.html">もっと見る</a></div>
+  </div>
+  </section>
+
+</div>
+
+
+<section class="dlrank bgc-light-red">
+<div class="inr">
+<h2 class="top-ttl">ダウンロードランキング</h2>
+          <ul  class="dlrank-list">
+              <li>
+                <a href="/ckan/dataset/350001-forest">
+                  <span class="rank rank01">1</span>
+                  <span class="rank-ttl">【山口県】森林計画図及び森林簿（DL用）</span>
+</a>              </li>
+              <li>
+                <a href="/ckan/dataset/18800jyuutakutyakkoukosuu">
+                  <span class="rank rank02">2</span>
+                  <span class="rank-ttl">【山口県】山口県新設住宅着工戸数について</span>
+</a>              </li>
+              <li>
+                <a href="/ckan/dataset/350001-kozui-shinsuisoutei">
+                  <span class="rank rank02">2</span>
+                  <span class="rank-ttl">【山口県】洪水浸水想定区域図（洪水予報河川及び水位周知河川）</span>
+</a>              </li>
+              <li>
+                <a href="/ckan/dataset/sonotakasen-kouzui-shinsuisoutei">
+                  <span class="rank rank02">2</span>
+                  <span class="rank-ttl">洪水浸水想定区域図（洪水予報河川及び水位周知河川以外の河川）</span>
+</a>              </li>
+              <li>
+                <a href="/ckan/dataset/tikeizu2500-111">
+                  <span class="rank rank02">2</span>
+                  <span class="rank-ttl">【周南市】地形図（都市計画基本図、白図）縮尺1/2,500</span>
+</a>              </li>
+          </ul>
+
+
+<div class="btn"><a href="www/ranking.html">もっと見る</a></div>
+</div>
+</section>
+
+<!-- リンク -->
+<div class="article-pages pages">
+
+
+
+</div>
+
+
+<!-- フッター -->
+<footer>
+<div class="ftr-inr">
+	<div class="ftr-info">
+	<div class="ftr-ttl">山口県オープンデータカタログサイト</div>
+	<div class="ftr-copy">&copy; Yamaguchi Pref.Digital Technology Foundation.All Rights Reserved.</div>
+	</div>
+	<ul class="ftr-nav">
+	<li><a href="/www/terms.html">利用規約</a></li>
+	<li><a href="/www/contact.html">お問い合わせ</a></li>
+	<li><a href="/www/faq.html">FAQ</a></li>
+	<li><a href="/www/case-study/index.html">活用事例</a></li>
+	<li><a href="/www/api-manual.html">APIについて</a></li>
+	</ul>
+</div>
+</footer>
+
+<div class="backtotop"><a href="#wrap" alt=""><span class="pagetop">PAGE TOP</span></a></div>
+
+<!--/#wrap--></div>
+
+<script src="/www/assets/js/jquery-3.6.3.min.js"></script>
+<script src="/www/assets/js/gototop.js"></script>
+
+<script>
+jQuery(function($){
+	var state = false;
+	var pos;
+	$('.drawer-open').click(function(){
+		if (state == false) {
+			pos = $(window).scrollTop();
+			$('body').addClass('fixed').css({'top': -pos});
+			state = true;
+		} else {
+			$('body').removeClass('fixed').css({'top': 0});
+			window.scrollTo(0, pos);
+			state = false;
+		}
+	});
+	
+});
+</script>
+
+</body>
+
+</html>

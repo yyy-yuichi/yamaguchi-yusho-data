@@ -1,0 +1,572 @@
+取得日時: 2026-08-09 JST
+取得元  : https://ckan.odpt.org/dataset/sentetsu_bus_all_lines
+取得方法: curl -sL (生バイト取得、要約なし)
+---
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="ja" class="ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="ja"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+      <meta name="generator" content="ckan 2.9.6" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>船木鉄道株式会社 / Funaki Tetsudou Corporation - データセット - 公共交通オープンデータセンター データカタログサイト</title>
+
+    
+    <link rel="shortcut icon" href="/images/icons/favicon.ico" />
+    
+  
+      
+      
+      
+    
+  
+  
+
+
+    
+      
+      
+    
+  
+  <meta property="og:title" content="船木鉄道株式会社 / Funaki Tetsudou Corporation - 公共交通オープンデータセンター データカタログサイト">
+  <meta property="og:description" content="山口県宇部市・山陽小野田市・美祢市を運行するバス事業者のGTFSデータです。   
+公共交通オープンデータ基本ライセンス、および、その特定利用条件をよく読んで、ご利用ください。 / Read &amp;#34;Public Transportation Open Data Basic License&amp;#34; and its &amp;#34;Specific Terms of Use&amp;#34; before use.">
+
+
+    
+    <link href="/webassets/base/4f3188fa_main.css" rel="stylesheet"/>
+<link href="/webassets/webassets-external/a982bdda489f6cabb84a5db0614758d0_odpt.css" rel="stylesheet"/>
+    
+  </head>
+
+  
+  <body data-site-root="https://ckan.odpt.org/" data-locale-root="https://ckan.odpt.org/" >
+
+    
+    <div class="sr-only sr-only-focusable"><a href="#content">スキップして内容へ</a></div>
+  
+
+  
+     
+<div class="account-masthead">
+  <div class="container">
+     
+    <nav class="account not-authed" aria-label="Account">
+      <ul class="list-unstyled">
+        
+
+      </ul>
+    </nav>
+     
+  </div>
+</div>
+
+<header class="navbar navbar-static-top masthead">
+    
+  <div class="container">
+    <div class="navbar-right">
+      <button data-target="#main-navigation-toggle" data-toggle="collapse" class="navbar-toggle collapsed" type="button" aria-label="expand or collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="fa fa-bars"></span>
+      </button>
+    </div>
+    <hgroup class="header-image navbar-left">
+      
+  <a class="logo" href="https://www.odpt.org/"><img src="/images/dc-logo.png" alt="公共交通オープンデータセンター" title="公共交通オープンデータセンター" /></a>
+
+    </hgroup>
+
+    <div class="collapse navbar-collapse" id="main-navigation-toggle">
+      
+      <nav class="section navigation">
+        <ul class="nav nav-pills">
+            
+		<li><a href="/dataset/">データセット</a></li><li><a href="/organization/">組織</a></li><li><a href="/group/">グループ</a></li><li><a href="/about">About</a></li>
+	    
+        </ul>
+      </nav>
+       
+      <form class="section site-search simple-input" action="/dataset/" method="get">
+        <div class="field">
+          <label for="field-sitewide-search">データセットを検索</label>
+          <input id="field-sitewide-search" type="text" class="form-control" name="q" placeholder="検索" aria-label="データセット検索"/>
+          <button class="btn-search" type="submit" aria-label="Submit"><i class="fa fa-search"></i></button>
+        </div>
+      </form>
+      
+    </div>
+  </div>
+</header>
+
+  
+    <div class="main">
+      <div id="content" class="container">
+        
+          
+            <div class="flash-messages">
+              
+                
+              
+            </div>
+          
+
+          
+            <div class="toolbar" role="navigation" aria-label="Breadcrumb">
+              
+                
+                  <ol class="breadcrumb">
+                    
+<li class="home"><a href="/" aria-label="ホーム"><i class="fa fa-home"></i><span> ホーム</span></a></li>
+                    
+  
+    
+    
+      
+      
+      <li><a href="/organization/">組織</a></li>
+      <li><a href="/organization/sentetsu_bus">船木鉄道株式会社 / Funaki Tetsudou...</a></li>
+    
+    <li class="active"><a href="/dataset/sentetsu_bus_all_lines">船木鉄道株式会社 / Funaki Tetsudou...</a></li>
+  
+
+                  </ol>
+                
+              
+            </div>
+          
+
+          <div class="row wrapper">
+            
+            
+            
+
+            
+              <aside class="secondary col-sm-3">
+                
+                
+
+  
+
+  
+    
+
+  
+    <section class="module module-narrow">
+      <div class="module context-info">
+        <div class="module-content">
+          
+            
+              <h1 class="heading">船木鉄道株式会社 / Funaki Tetsudou Corporation</h1>
+            
+            
+
+            
+              
+                <div class="follow_button">
+                  
+                </div>
+              
+            
+          
+        </div>
+      </div>
+    </section>
+  
+
+  
+
+  
+    
+      
+      
+
+
+
+
+  
+  <div class="module module-narrow module-shallow context-info">
+    
+      <h2 class="module-heading"><i class="fa fa-building-o"></i> 組織</h2>
+    
+    <section class="module-content">
+      
+      
+        <div class="image">
+          <a href="/organization/sentetsu_bus">
+            <img src="https://members-portal.odpt.org/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbFlMIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--46b0fc12973e8743cb4cd7870133d169dd2ee317/%E6%96%B0%E3%81%9B%E3%82%93%E3%81%A6%E3%81%A4%E3%83%AD%E3%82%B4%E3%80%80%E8%83%8C%E6%99%AF%E6%9C%89.jpg" width="200" alt="sentetsu_bus" />
+          </a>
+        </div>
+      
+      
+      <h1 class="heading">船木鉄道株式会社 / Funaki Tetsudou Corporation
+        
+      </h1>
+      
+      
+  
+
+      
+      
+    </section>
+  </div>
+  
+    
+  
+
+  
+    
+
+
+  
+
+  
+    
+
+
+  
+      
+        <section class="module module-narrow module-shallow license">
+          
+            <h2 class="module-heading"><i class="fa fa-lock"></i> ライセンス</h2>
+          
+          
+            <p class="module-content">
+              
+                
+  
+    <a href="https://developer.odpt.org/terms" rel="dc:rights">公共交通オープンデータ基本ライセンス / Public Transportation Open Data Basic License</a>
+  
+
+                
+              
+            </p>
+          
+        </section>
+      
+  
+
+  
+
+
+              </aside>
+            
+
+            
+              <div class="primary col-sm-9 col-xs-12" role="main">
+                
+                
+                  <article class="module">
+                    
+                      <header class="module-content page-header">
+                        
+                        <ul class="nav nav-tabs">
+                          
+  <li class="active"><a href="/dataset/sentetsu_bus_all_lines">データセット</a></li>
+
+                        </ul>
+                      </header>
+                    
+                    <div class="module-content">
+                      
+                      
+  
+                      
+  
+    
+    
+      
+    
+    <h1>
+      
+        船木鉄道株式会社 / Funaki Tetsudou Corporation
+        
+        
+      
+    </h1>
+    
+      
+        <div class="notes embedded-content">
+          <p>山口県宇部市・山陽小野田市・美祢市を運行するバス事業者のGTFSデータです。   </p>
+<p>公共交通オープンデータ基本ライセンス、および、その特定利用条件をよく読んで、ご利用ください。 / Read "Public Transportation Open Data Basic License" and its "Specific Terms of Use" before use.</p>
+        </div>
+      
+    
+    
+    <span class="insert-comment-thread"></span>
+  
+
+  
+    
+<section id="dataset-resources" class="resources">
+  
+    
+      <h3>データとリソース</h3>
+      <ul class="resource-list">
+        
+          
+          
+            
+
+
+
+<li class="resource-item" data-id="4c14ccb1-408f-4152-b265-78a4de16bd3c">
+  
+  <a class="heading" href="/dataset/sentetsu_bus_all_lines/resource/4c14ccb1-408f-4152-b265-78a4de16bd3c" title="船木鉄道株式会社-20251117 / Funaki Tetsudou Corporation-20251117">
+    船木鉄道株式会社-20251117 / Funaki Tetsudou...<span class="format-label" property="dc:format" data-format="gtfs/gtfs-jp">GTFS/GTFS-JP</span>
+    
+
+  </a>
+  
+  
+    <p class="description">
+      
+        高畑循環線の一部時刻を改正しました。
+※本データは、開発者サイト でユーザ登録していただくことによりご利用できます。
+
+有効期間 :...
+      
+    </p>
+  
+  
+
+</li>
+          
+            
+
+
+
+<li class="resource-item" data-id="8a71b617-3566-4006-aa1c-972a8369f005">
+  
+  <a class="heading" href="/dataset/sentetsu_bus_all_lines/resource/8a71b617-3566-4006-aa1c-972a8369f005" title="船木鉄道株式会社-20251030 / Funaki Tetsudou Corporation-20251030">
+    船木鉄道株式会社-20251030 / Funaki Tetsudou...<span class="format-label" property="dc:format" data-format="gtfs/gtfs-jp">GTFS/GTFS-JP</span>
+    
+
+  </a>
+  
+  
+    <p class="description">
+      
+        令和7年11月2日に運行する臨時便を追加しました。  
+※本データは、開発者サイト でユーザ登録していただくことによりご利用できます。
+
+有効期間 :...
+      
+    </p>
+  
+  
+
+</li>
+          
+            
+
+
+
+<li class="resource-item" data-id="29f67c0f-34a2-40d9-ac3a-8bf6c2f8912d">
+  
+  <a class="heading" href="/dataset/sentetsu_bus_all_lines/resource/29f67c0f-34a2-40d9-ac3a-8bf6c2f8912d" title="船木鉄道株式会社-20251001 / Funaki Tetsudou Corporation-20251001">
+    船木鉄道株式会社-20251001 / Funaki Tetsudou...<span class="format-label" property="dc:format" data-format="gtfs/gtfs-jp">GTFS/GTFS-JP</span>
+    
+
+  </a>
+  
+  
+    <p class="description">
+      
+        令和7年10月1日改正のデータです。
+・宇部方面、小野田方面、厚狭方面の一部時間調整
+・ねたろう号・いとね号の一部時間調整
+・高畑循環線の一部時間調整...
+      
+    </p>
+  
+  
+
+</li>
+          
+            
+
+
+
+<li class="resource-item" data-id="30383078-7203-4142-8a0b-39f08cbdbb6b">
+  
+  <a class="heading" href="/dataset/sentetsu_bus_all_lines/resource/30383078-7203-4142-8a0b-39f08cbdbb6b" title="船木鉄道株式会社-20250401 / Funaki Tetsudou Corporation-20250401">
+    船木鉄道株式会社-20250401 / Funaki Tetsudou...<span class="format-label" property="dc:format" data-format="gtfs/gtfs-jp">GTFS/GTFS-JP</span>
+    
+
+  </a>
+  
+  
+    <p class="description">
+      
+        令和7年4月1日改正のデータです。
+くすのき号の一部時間調整
+「船木～吉部線」を「瀬戸」まで延伸
+あんもないと号の一部時間調整...
+      
+    </p>
+  
+  
+
+</li>
+          
+            
+
+
+
+<li class="resource-item" data-id="3f30eb5a-f484-4366-ac33-b3f3237fedea">
+  
+  <a class="heading" href="/dataset/sentetsu_bus_all_lines/resource/3f30eb5a-f484-4366-ac33-b3f3237fedea" title="船木鉄道株式会社-20241001 / Funaki Tetsudou Corporation-20241001">
+    船木鉄道株式会社-20241001 / Funaki Tetsudou...<span class="format-label" property="dc:format" data-format="gtfs/gtfs-jp">GTFS/GTFS-JP</span>
+    
+
+  </a>
+  
+  
+    <p class="description">
+      
+        令和6年10月1日改正のデータです。
+主な改正内容
+・宇部方面、小野田方面、厚狭方面の一部時間調整
+・ねたろう号・いとね号の一部時間調整...
+      
+    </p>
+  
+  
+
+</li>
+          
+            
+
+
+
+<li class="resource-item" data-id="ecd81996-4c07-4adf-9551-0cbb9112d3a7">
+  
+  <a class="heading" href="/dataset/sentetsu_bus_all_lines/resource/ecd81996-4c07-4adf-9551-0cbb9112d3a7" title="船木鉄道株式会社-20231001 / Funaki Tetsudou Corporation-20231001">
+    船木鉄道株式会社-20231001 / Funaki Tetsudou...<span class="format-label" property="dc:format" data-format="gtfs/gtfs-jp">GTFS/GTFS-JP</span>
+    
+
+  </a>
+  
+  
+    <p class="description">
+      
+        令和5年10月1日改正のデータです。  
+※本データは、開発者サイト でユーザ登録していただくことによりご利用できます。
+
+有効期間 :...
+      
+    </p>
+  
+  
+
+</li>
+          
+        
+      </ul>
+    
+    
+</section>
+  
+
+  
+    
+
+  <section class="tags">
+    
+
+
+  <ul class="tag-list well">
+    
+      <li>
+        <a class="tag" href="/dataset/?tags=%E3%83%90%E3%82%B9-bus">バス-bus</a>
+      </li>
+    
+  </ul>
+
+  </section>
+
+  
+
+  
+
+
+
+                    </div>
+                  </article>
+                
+              </div>
+            
+          </div>
+        
+      </div>
+    </div>
+  
+    <footer class="site-footer">
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-md-8 footer-links">
+        
+          <ul class="list-unstyled">
+            
+  <li><a href="https://www.odpt.org/">公共交通オープンデータ協議会</a></li>
+
+          </ul>
+          <ul class="list-unstyled">
+            
+
+          </ul>
+        
+      </div>
+      <div class="col-md-4 attribution">
+        
+  
+  <p><strong>Powered by</strong> CKAN</p>
+
+        
+          
+<form class="form-inline form-select lang-select" action="/util/redirect" data-module="select-switch" method="POST">
+  <label for="field-lang-select">言語</label>
+  <select id="field-lang-select" name="url" data-module="autocomplete" data-module-dropdown-class="lang-dropdown" data-module-container-class="lang-container">
+    
+      <option value="/ja/dataset/sentetsu_bus_all_lines" selected="selected">
+        日本語
+      </option>
+    
+      <option value="/en/dataset/sentetsu_bus_all_lines" >
+        English
+      </option>
+    
+  </select>
+  <button class="btn btn-default js-hide" type="submit">Go</button>
+</form>
+        
+      </div>
+    </div>
+    
+  </div>
+
+  
+    
+  
+</footer>
+  
+  
+  
+  
+  
+    
+
+      
+
+    
+    
+    <link href="/webassets/vendor/f3b8236b_select2.css" rel="stylesheet"/>
+<link href="/webassets/vendor/0b01aef1_font-awesome.css" rel="stylesheet"/>
+    <script src="/webassets/vendor/d8ae4bed_jquery.js" type="text/javascript"></script>
+<script src="/webassets/vendor/fb6095a0_vendor.js" type="text/javascript"></script>
+<script src="/webassets/vendor/580fa18d_bootstrap.js" type="text/javascript"></script>
+<script src="/webassets/base/15a18f6c_main.js" type="text/javascript"></script>
+<script src="/webassets/base/2448af8b_ckan.js" type="text/javascript"></script>
+  </body>
+</html>

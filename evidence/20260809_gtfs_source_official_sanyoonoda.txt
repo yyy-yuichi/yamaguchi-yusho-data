@@ -1,0 +1,711 @@
+取得日時: 2026-08-09 JST
+取得元  : https://www.city.sanyo-onoda.lg.jp/soshiki/23/basujikokuhyou2023.html
+取得方法: curl -sL (生バイト取得、要約なし)
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	
+	
+	
+	<meta name="keywords" content="バス,時刻表,山陽小野田市" >
+	<meta name="description" content="" >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>市内路線バスについて - 山口県山陽小野田市公式ホームページ</title>
+	<style  media="all">
+		@import url("/ssi/css/detail.css");
+	</style>
+	<link rel="stylesheet"  media="print" href="/ssi/css/print.css" >
+	<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script src="/ssi/js/escapeurl.js"></script>
+<script src="/ssi/js/jquery.js"></script>
+<script src="/ssi/js/jquery-migrate.js"></script>
+<script src="/ssi/js/common.js"></script>
+<script src="/ssi/js/s-google.js"></script>
+<script src="/ssi/js/footstep.js"></script>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NG2HKJZ6BP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NG2HKJZ6BP');
+  gtag('config', 'UA-42158663-1');
+</script>
+</head>
+<body class="soshiki-detail detail side2">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- コンテナここから -->
+<div id="container">
+	<!-- レコメンドここから -->
+	<script src="/ssi/js/recommend.js"></script>
+<iframe style="display:none;" id="oProxy" src="https://wwwa.netcrew-analysis.jp/recommend/proxy.html" title="レコメンド情報" sandbox="allow-scripts"></iframe>
+	<!-- レコメンドここまで -->
+	<span class="hide" id="pagetop">ページの先頭です。</span>
+	<span class="hide"><a href="#skip">メニューを飛ばして本文へ</a></span>
+
+	<!-- ヘッダここから -->
+	<div id="header">
+		<div id="spm_wrap"><button type="button" id="spm_menu"><span class="hide">メニュー</span></button></div>
+<!-- ヘッダーここから -->
+<div id="header2">
+
+	<div id="he_left">
+		<div id="logo"><a href="/index2.html"><img src="/img/common/logo.png" alt="山陽小野田市" width="608" height="137" ></a></div>
+	</div>
+	<div id="he_right">
+		<div id="he_right_a">
+			<div id="header_link">
+				<ul id="header_link1">
+					<li><a href="#main">本文へ</a></li>
+					<li><a href="/site/userguide/">はじめての方へ</a></li>
+					<li><a href="/sitemap.html">サイトマップ</a></li>
+					<li><a href="/soshiki/81/foreign-language.html">Foreign Language</a></li>
+				</ul>
+			</div>
+			<div id="header_func">
+				<noscript><p>JavaScriptが無効のため、文字の大きさ・背景色を変更する機能を使用できません。</p></noscript>
+				<ul>
+					<li id="haikei_color">
+						<!-- 背景の変更ここから -->
+						<dl>
+							<dt>背景色</dt><!--
+							--><dd><a id="haikei_white" href="javascript:SetCss(1);" title="背景色を白色に変更する">白</a></dd><!--
+							--><dd><a id="haikei_black" href="javascript:SetCss(2);" title="背景色を黒色に変更する">黒</a></dd><!--
+							--><dd><a id="haikei_blue"  href="javascript:SetCss(3);" title="背景色を青色に変更する">青</a></dd>
+						</dl>
+						<!-- 背景の変更ここまで -->
+					</li><li id="moji_size">
+						<!-- 文字の大きさ変更ここから -->
+						<dl>
+						<dt>文字サイズ</dt><!--
+						--><dd><a id="moji_default" href="javascript:fsc('default');" title="文字サイズを標準にする">標準</a></dd><!--
+						--><dd><a id="moji_large" href="javascript:fsc('larger');" title="文字サイズを拡大する">拡大</a></dd>
+						</dl>
+						<!-- 文字の大きさ変更ここまで -->
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
+</div>
+<!-- ヘッダーここまで -->
+		<!-- グローバルここから -->
+<div id="top_search">
+	<!-- グローバルタブここから -->
+	<div id="top_search_a">
+		<ul class="nav_life3">
+			<li>
+				<a href="/index2.html">トップ</a>
+			</li>
+			<li>
+				<a href="/life/5/">くらし・手続き</a>
+				<ul class="nav_life2">
+					<li>
+						<a href="/life/5/42/">戸籍・住民票・証明</a>
+						<ul class="nav_life1">
+							<li><a href="/life/5/42/199/">戸籍</a></li>
+							<li><a href="/life/5/42/200/">マイナンバー</a></li>
+							<li><a href="/life/5/42/201/">パスポート</a></li>
+							<li><a href="/life/5/42/202/">住民票・各種証明書</a></li>
+							<li><a href="/life/5/42/203/">住民基本台帳カード</a></li>
+							<li><a href="/life/5/42/204/">住居表示</a></li>
+							<li><a href="/life/5/42/205/">結婚・離婚</a></li>
+							<li><a href="/life/5/42/206/">引越し（転入・転居など）</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/5/44/">ごみ・リサイクル・環境</a>
+						<ul class="nav_life1">
+							<li><a href="/life/5/44/216/">ごみ</a></li>
+							<li><a href="/life/5/44/217/">環境</a></li>
+							<li><a href="/life/5/44/218/">地球温暖化対策</a></li>
+							<li><a href="/life/5/44/219/">し尿・浄化槽</a></li>
+							<li><a href="/life/5/44/220/">動物</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/5/43/">税金</a>
+						<ul class="nav_life1">
+							<li><a href="/life/5/43/207/">個人市・県民税</a></li>
+							<li><a href="/life/5/43/208/">法人市民税</a></li>
+							<li><a href="/life/5/43/209/">固定資産税・都市計画税</a></li>
+							<li><a href="/life/5/43/210/">軽自動車税</a></li>
+							<li><a href="/life/5/43/211/">その他の税</a></li>
+							<li><a href="/life/5/43/213/">ふるさと納税</a></li>
+							<li><a href="/life/5/43/214/">納税方法</a></li>
+							<li><a href="/life/5/43/215/">税関係証明書</a></li>
+							<li><a href="/life/5/43/330/">公売</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/5/45/">おくやみ</a>
+						<ul class="nav_life1">
+							<li><a href="/life/5/45/221/">斎場・霊園</a></li>
+							<li><a href="/life/5/45/331/">新火葬場建設</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/5/46/">市民協働</a>
+						<ul class="nav_life1">
+							<li><a href="/life/5/46/222/">市民活動</a></li>
+							<li><a href="/life/5/46/223/">自治会</a></li>
+							<li><a href="/life/5/46/224/">ボランティア</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/5/47/">人権・男女共同参画</a>
+						<ul class="nav_life1">
+							<li><a href="/life/5/47/225/">人権啓発</a></li>
+							<li><a href="/life/5/47/226/">男女共同参画</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/5/48/">まちづくり・住まい</a>
+						<ul class="nav_life1">
+							<li><a href="/life/5/48/227/">住宅</a></li>
+							<li><a href="/life/5/48/228/">市営住宅</a></li>
+							<li><a href="/life/5/48/229/">土地</a></li>
+							<li><a href="/life/5/48/332/">都市計画</a></li>
+							<li><a href="/life/5/48/230/">景観・街並み</a></li>
+							<li><a href="/life/5/48/231/">公園</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/5/49/">道路・交通</a>
+						<ul class="nav_life1">
+							<li><a href="/life/5/49/232/">河川・港湾・道路</a></li>
+							<li><a href="/life/5/49/233/">公共交通</a></li>
+							<li><a href="/life/5/49/234/">境界確認</a></li>
+							<li><a href="/life/5/49/235/">道路占用・使用許可申請</a></li>
+							<li><a href="/life/5/49/236/">駐輪場・駐車場</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/5/50/">上下水道</a>
+						<ul class="nav_life1">
+							<li><a href="/life/5/50/333/">水道</a></li>
+							<li><a href="/life/5/50/237/">下水道</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/5/75/">移住・地域おこし協力隊</a>
+						<ul class="nav_life1">
+							<li><a href="/life/5/75/351/">制度・体験</a></li>
+							<li><a href="/site/chikiokoshi/">地域おこし協力隊</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="/life/6/">子育て・健康・福祉</a>
+				<ul class="nav_life2">
+					<li>
+						<a href="/life/6/51/">子育て支援</a>
+						<ul class="nav_life1">
+							<li><a href="/life/6/51/238/">妊娠・出産</a></li>
+							<li><a href="/life/6/51/239/">保育園・幼稚園</a></li>
+							<li><a href="/life/6/51/240/">児童クラブ</a></li>
+							<li><a href="/life/6/51/241/">児童館</a></li>
+							<li><a href="/life/6/51/242/">乳幼児健診</a></li>
+							<li><a href="/life/6/51/243/">子どもの予防接種</a></li>
+							<li><a href="/life/6/51/244/">ひとり親支援</a></li>
+							<li><a href="/life/6/51/334/">各種子育て手当</a></li>
+							<li><a href="/life/6/51/335/">子育て医療支援</a></li>
+							<li><a href="/life/6/51/336/">スマイルキッズ</a></li>
+							<li><a href="/life/6/51/337/">その他の子育て支援</a></li>
+
+						</ul>
+					</li>
+					<li>
+						<a href="/life/6/52/">健康・医療</a>
+						<ul class="nav_life1">
+							<li><a href="/life/6/52/245/">健康づくり</a></li>
+							<li><a href="/life/6/52/246/">食育</a></li>
+							<li><a href="/life/6/52/247/">健康診断</a></li>
+							<li><a href="/life/6/52/248/">感染症</a></li>
+							<li><a href="/life/6/52/249/">医療費助成</a></li>
+							<li><a href="/life/6/52/250/">予防接種</a></li>
+							<li><a href="/life/6/52/338/">市民病院</a></li>
+							<li><a href="/life/6/52/353/">こころの健康</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/6/53/">介護・福祉</a>
+						<ul class="nav_life1">
+							<li><a href="/life/6/53/252/">高齢者福祉</a></li>
+							<li><a href="/life/6/53/253/">障がい者福祉</a></li>
+							<li><a href="/life/6/53/254/">地域福祉</a></li>
+							<li><a href="/life/6/53/255/">生活保護・自立支援</a></li>
+							<li><a href="/life/6/53/339/">社会福祉法人</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/6/54/">保険・年金</a>
+						<ul class="nav_life1">
+							<li><a href="/life/6/54/256/">国民健康保険</a></li>
+							<li><a href="/life/6/54/257/">介護保険</a></li>
+							<li><a href="/life/6/54/258/">後期高齢者医療保険</a></li>
+							<li><a href="/life/6/54/259/">国民年金</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="/life/7/">教育・文化・スポーツ</a>
+				<ul class="nav_life2">
+					<li>
+						<a href="/life/7/55/">学校・教育</a>
+						<ul class="nav_life1">
+							<li><a href="/life/7/55/260/">教育</a></li>
+							<li><a href="/life/7/55/261/">学校</a></li>
+							<li><a href="/life/7/55/340/">学校給食</a></li>
+							<li><a href="/life/7/55/262/">青少年の健全育成</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/7/56/">生涯学習・スポーツ</a>
+						<ul class="nav_life1">
+							<li><a href="/life/7/56/263/">生涯学習・社会教育</a></li>
+							<li><a href="/life/7/56/264/">スポーツ</a></li>
+							<li><a href="/life/7/56/265/">青年の家</a></li>
+							<li><a href="/life/7/56/266/">図書館</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/7/57/">芸術・文化・歴史</a>
+						<ul class="nav_life1">
+							<li><a href="/life/7/57/267/">芸術・文化</a></li>
+							<li><a href="/life/7/57/268/">歴史・史跡</a></li>
+							<li><a href="/life/7/57/269/">文化財</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="/life/8/">産業・観光</a>
+				<ul class="nav_life2">
+					<li>
+						<a href="/life/8/58/">入札・契約</a>
+						<ul class="nav_life1">
+							<li><a href="/life/8/58/270/">公募</a></li>
+							<li><a href="/life/8/58/352/">プロポーザル情報</a></li>
+							<li><a href="/life/8/58/271/">入札結果</a></li>
+							<li><a href="/life/8/58/272/">発注見通し</a></li>
+							<li><a href="/life/8/58/273/">指名停止業者</a></li>
+							<li><a href="/life/8/58/274/">各種申請・登録制度</a></li>
+							<li><a href="/life/8/58/275/">要領・要綱等</a></li>
+							<li><a href="/life/8/58/329/">その他の入札・契約情報</a></li>
+							<li><a href="/life/8/58/341/">水道局の入札関連情報</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/8/59/">労働・就労支援</a>
+						<ul class="nav_life1">
+							<li><a href="/life/8/59/276/">就職・退職</a></li>
+							<li><a href="/life/8/59/277/">中小企業支援制度</a></li>
+							<li><a href="/life/8/59/278/">離職者等に対する再就職支援・生活支援</a></li>
+							<li><a href="/life/8/59/279/">地域産業相談</a></li>
+							<li><a href="/life/8/59/281/">融資・補助制度</a></li>
+							<li><a href="/life/8/59/282/">指定管理者制度</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/8/60/">産業振興</a>
+						<ul class="nav_life1">
+							<li><a href="/life/8/60/283/">商業</a></li>
+							<li><a href="/life/8/60/284/">工業</a></li>
+							<li><a href="/life/8/60/285/">農業</a></li>
+							<li><a href="/life/8/60/286/">林業</a></li>
+							<li><a href="/life/8/60/287/">水産業</a></li>
+							<li><a href="/life/8/60/288/">商店街</a></li>
+							<li><a href="/life/8/60/342/">産業振興イベント</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/8/61/">観光</a>
+						<ul class="nav_life1">
+							<li><a href="/life/8/61/289/">観光情報</a></li>
+							<li><a href="/life/8/61/290/">観光施策</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="/life/9/">安全安心ガイド</a>
+				<ul class="nav_life2">
+					<li>
+						<a href="/life/9/62/">防災・消防</a>
+						<ul class="nav_life1">
+							<li><a href="/life/9/62/291/">防災</a></li>
+							<li><a href="/life/9/62/292/">避難所</a></li>
+							<li><a href="/life/9/62/293/">消防・救急</a></li>
+							<li><a href="/life/9/62/294/">国民保護</a></li>
+							<li><a href="/life/9/62/365/">個別避難計画</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/9/63/">災害</a>
+						<ul class="nav_life1">
+							<li><a href="/life/9/63/295/">災害情報</a></li>
+							<li><a href="/life/9/63/296/">災害支援</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/9/64/">交通・防犯・安全</a>
+						<ul class="nav_life1">
+							<li><a href="/life/9/64/297/">交通安全</a></li>
+							<li><a href="/life/9/64/298/">防犯</a></li>
+							<li><a href="/life/9/64/299/">消費生活</a></li>
+							<li><a href="/life/9/64/360/">空き家対策</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="/life/10/">市政情報</a>
+				<ul class="nav_life2">
+					<li>							
+						<a href="/life/10/65/">市のプロフィール</a>
+						<ul class="nav_life1">
+							<li><a href="/life/10/65/300/">市の概要</a></li>
+							<li><a href="/life/10/65/301/">市章・市の木・市の花</a></li>
+							<li><a href="/life/10/65/324/">市の組織と業務</a></li>
+							<li><a href="/life/10/65/302/">市役所の位置</a></li>
+							<li><a href="/life/10/65/303/">略年表</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/10/66/">シティセールス・地方創生</a>
+						<ul class="nav_life1">
+							<li><a href="/life/10/66/304/">シティセールス</a></li>
+							<li><a href="/life/10/66/343/">地方創生</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/10/67/">行財政</a>
+						<ul class="nav_life1">
+							<li><a href="/life/10/67/305/">財政情報の公表</a></li>
+							<li><a href="/life/10/67/306/">予算・決算</a></li>
+							<li><a href="/life/10/67/344/">行政改革</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/10/68/">人事・採用</a>
+						<ul class="nav_life1">
+							<li><a href="/life/10/68/307/">採用情報</a></li>
+							<li><a href="/life/10/68/308/">人事制度</a></li>
+							<li><a href="/life/10/68/309/">制度・給与</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/10/69/">情報公開・個人情報保護</a>
+						<ul class="nav_life1">
+							<li><a href="/life/10/69/310/">情報公開制度</a></li>
+							<li><a href="/life/10/69/311/">個人情報保護制度</a></li>
+							<li><a href="/life/10/69/312/">寄附の公表制度</a></li>
+							<li><a href="/life/10/69/313/">市有地等売却情報</a></li>
+							<li><a href="/life/10/69/345/">情報管理</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/10/70/">広報・広告</a>
+						<ul class="nav_life1">
+							<li><a href="/life/10/70/314/">広報紙・刊行物</a></li>
+							<li><a href="/life/10/70/346/">市政情報番組・SNS・動画</a></li>
+							<li><a href="/life/10/70/356/">記者発表</a></li>
+							<li><a href="/life/10/70/315/">広告</a></li>
+							<li><a href="/life/10/70/369/">公示送達</a></li>
+							<li><a href="/life/10/70/347/">その他の広報活動</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/10/71/">市政への参加</a>
+						<ul class="nav_life1">
+							<li><a href="/life/10/71/348/">市議会</a></li>
+							<li><a href="/life/10/71/316/">選挙</a></li>
+							<li><a href="/life/10/71/317/">監査</a></li>
+							<li><a href="/life/10/71/318/">市への提言・提案</a></li>
+							<li><a href="/life/10/71/319/">自治基本条例</a></li>
+							<li><a href="/life/10/71/320/">まちづくり懇談会</a></li>
+							<li><a href="/life/10/71/323/">出前講座</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/10/72/">交流事業</a>
+						<ul class="nav_life1">
+							<li><a href="/life/10/72/321/">国際交流</a></li>
+							<li><a href="/life/10/72/322/">友好都市</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/10/24/">市長の部屋から</a>
+						<ul class="nav_life1">
+							<li><a href="/life/10/24/196/">プロフィール</a></li>
+							<li><a href="/life/10/24/118/">市長コラム「市長の独り言」</a></li>
+							<li><a href="/life/10/24/164/">市長施政方針</a></li>
+							<li><a href="/life/10/24/156/">写真で見る市長活動日誌</a></li>
+							<li><a href="/life/10/24/325/">みんな de スマイルトーク</a></li>
+							<li><a href="/life/10/24/119/">市長交際費</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/10/74/">総合計画・個別計画</a>
+						<ul class="nav_life1">
+							<li><a href="/life/10/74/134/">総合計画</a></li>
+							<li><a href="/life/10/74/327/">個別計画</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="/life/10/28/">統計情報</a>
+						<ul class="nav_life1">
+							<li><a href="/life/10/28/125/">国勢調査</a></li>
+							<li><a href="/life/10/28/130/">経済センサス</a></li>
+							<li><a href="/life/10/28/367/">漁業センサス</a></li>
+							<li><a href="/life/10/28/127/">農林業センサス</a></li>
+							<li><a href="/life/10/28/168/">その他統計調査</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<!-- グローバルタブここまで -->
+
+</div>
+<!-- グローバルここまで -->
+		<div id="header_search_wrap">
+	<div id="header_search">
+		<!-- 検索ここから -->
+		<div id="top_search_keyword">
+			<!-- Googleカスタム検索ここから -->
+			<form action="/search.html" method="get" id="cse-search-box" name="cse-search-box">
+				<input type="hidden" name="cx" value="004379934828329488065:cc81d32zuis" ><!--
+				--><input type="hidden" name="cof" value="FORID:11" ><!--
+				--><input type="hidden" name="ie" value="UTF-8" ><!--
+				--><label for="tmp_query"><span class="hide">Googleカスタム検索</span></label><!--
+				--><input type="text" name="q" value="" id="tmp_query" ><!--
+				--><input type="submit" value="検索" id="submit" name="sa" >
+				<div id="cse_filetype">
+					<fieldset>
+						<legend><span class="hide">検索対象</span></legend>
+						<span class="cse_filetypeselect"><input type="radio" name="google_filetype" id="filetype_all" checked="checked" ><label for="filetype_all">すべて</label></span>
+						<span class="cse_filetypeselect"><input type="radio" name="google_filetype" id="filetype_html" ><label for="filetype_html">ページ</label></span>
+						<span class="cse_filetypeselect"><input type="radio" name="google_filetype" id="filetype_pdf" ><label for="filetype_pdf">PDF</label></span>
+					</fieldset>
+				</div>
+			</form>
+			<script src="https://www.google.com/coop/cse/brand?form=cse-search-box"></script>
+			<!-- Googleカスタム検索ここまで -->
+		</div>
+		<!-- 検索ここまで -->
+		<!-- メニューここから -->
+		<div id="header_search_link">
+			<ul>
+				<li><a href="/life/">分類でさがす</a></li>
+				<li><a href="/soshiki/">組織でさがす</a></li>
+			</ul>
+		</div>
+		<!-- メニューここまで -->
+	</div>
+</div>
+	</div>
+	<!-- ヘッダここまで -->
+
+	<!-- ぱんくずナビここから -->
+	<div id="pankuzu_wrap">
+		<!-- [[pankuzu_start]] -->
+		<div class="pankuzu">
+			<span class="pankuzu_class pankuzu_class_top"><a href="/">トップページ</a></span>
+			<span class="pankuzu_mark"> &gt; </span>
+			<span class="pankuzu_class"><a href="/soshiki/">組織で探す</a></span>
+			<span class="pankuzu_mark"> &gt; </span>
+			<span class="pankuzu_class"><a href="/soshiki/23/">商工労働課</a></span>
+			<span class="pankuzu_mark"> &gt; </span>
+			<span class="pankuzu_class pankuzu_class_current">市内路線バスについて</span>
+		</div>
+		<!-- [[pankuzu_end]] -->
+		<!-- [[pankuzu2_start]] --><!-- [[pankuzu2_end]] -->
+		<!-- [[pankuzu_life_start]] --><!-- [[pankuzu_life_end]] -->
+	</div>
+	<!-- ぱんくずナビここまで -->
+
+	<div id="mymainback">
+
+		<!-- メインここから -->
+		<div id="main">
+			<div id="main_a">
+				<hr class="hide" >
+				<p class="hide" id="skip">本文</p>
+
+				<div id="main_header">
+					<h1>市内路線バスについて</h1>
+				</div>
+
+				<div id="content_header">
+					<span><a id="print_mode_link" href="javascript:print_mode();">印刷ページ表示</a></span>
+					<span><a id="print_mode_link_large" href="javascript:print_mode_large();">大きな文字で印刷ページ表示</a></span>
+					<span>更新日：2025年4月1日更新</span>
+				</div>
+
+				<!-- main_bodyここから -->
+				<div id="main_body">
+
+					
+					<div class="detail_free" ><h2 style="text-align: left;">本市のバス路線の時刻表について（令和7年4月1日～）</h2>
+
+<p style="text-align: left;">　本市のバス路線の時刻表は、以下のとおりです。詳細につきましては、各バス会社へお問い合わせください。</p>
+
+<p style="text-align: left;">　※運行上の事情により、時刻は変更となる場合があります。</p>
+
+<p style="text-align: left;">　<a href="/uploaded/attachment/68752.pdf">バス時刻表（令和7年4月1日版） [PDFファイル／625KB]</a></p>
+
+<p style="text-align: left;">&nbsp;</p>
+
+<h2>バスの運行に関するお問い合わせ先</h2>
+
+<p>　船木鉄道株式会社　　　　Tel0836-67-0074&nbsp; 　<a href="https://www.sentetsu.jp/" target="_blank">ホームページ（外部リンク）</a></p>
+
+<p>　サンデン交通株式会社　 Tel083-282-0606　　<a href="http://www.sandenkotsu.co.jp/" target="_blank">ホームページ（外部リンク）</a></p>
+
+<p>　宇部市交通局　　　　　　&nbsp; Tel0836-31-1133　　<a href="http://www.ubebus.jp/" target="_blank">ホームページ（外部リンク）</a></p>
+</div>
+					
+					
+
+					<div class="pdf_download">
+<p class="pdf_img"><a href="http://get.adobe.com/jp/reader/"><img src="/uploaded/library/get_adobe_reader.png" width="158" height="39" alt="Adobe Reader" class="img_b" ></a></p>
+<p class="tenpu_txt">
+PDF形式のファイルをご覧いただく場合には、Adobe社が提供するAdobe Readerが必要です。<br>
+Adobe Readerをお持ちでない方は、バナーのリンク先からダウンロードしてください。（無料）<br class="floatend">
+</p>
+</div>
+					<!-- [[add-template-windowsmediaplayer]] -->
+
+					<!-- section_footerここから -->
+					<div id="section_footer">
+	<div id="section_footer_ttl"><h2>このページに関するお問い合わせ先</h2></div>
+	<div id="section_footer_detail">
+		<div class="sf_name"><a href="/soshiki/23/">商工労働課</a></div>
+		<span class="sf_zip">〒756-8601</span>
+		<span class="sf_address">山口県山陽小野田市日の出一丁目1番1号庁舎2階10番窓口</span>
+		<div class="sf_name2">代表</div>
+		<div class="sf_tel">Tel：0836-82-1150</div>
+		<div class="sf_fax">Fax：0836-83-2604</div>
+		<div class="sf_email"><a href="https://www.city.sanyo-onoda.lg.jp/form/detail.php?sec_sec1=23&lif_id=143366">メールでのお問い合わせはこちら</a></div>
+	</div>
+</div>
+					<!-- section_footerここまで -->
+
+					<!-- SNSボタンここから -->
+					<div id="button_sns_box">
+<div id="sns_button_facebook"><script>document.write('<a href="https://www.facebook.com/sharer/sharer.php?u='+htmlspecialchars_URL(location.href)+'" target="_blank"><img src="/img/common/btn_sns_facebook.png" width="240" height="50" alt="Facebookでシェアする"></a>');</script></div><!--
+--><div id="sns_button_x"><script>document.write('<a href="https://twitter.com/share?url='+htmlspecialchars_URL(location.href)+'&text='+encodeURI(document.title)+'" target="_blank"><img src="/img/common/bgn_sns_x.png" width="240" height="50" alt="ポストする"></a>');</script></div><!--
+--><div id="sns_button_line"><script>document.write('<a href="https://line.me/R/msg/text/?'+htmlspecialchars_URL(location.href)+'" target="_blank"><img src="/img/common/btn_sns_line.png" width="240" height="50" alt="ラインで送る"></a>');</script></div>
+</div>
+					<!-- SNSボタンここまで -->
+
+				</div>
+				<!-- main_bodyここまで -->
+
+			</div>
+		</div>
+		<!-- メインここまで -->
+		<hr class="hide" >
+
+		<!-- サイドバー1ここから -->
+		<!-- サイドバー1ここまで -->
+
+		<!-- サイドバー2ここから -->
+		<div id="sidebar2">
+
+			<!-- 重要なお知らせここから -->
+			<div id="important_noticest_area"></div>
+			<!-- 重要なお知らせここまで -->
+
+			<!-- レコメンドここから -->
+			<div id="recommend_tag" style="display: none;">
+				<div id="sidebar_recommend">
+					<div id="recommend_title"><h2>このページを見ている方は<br>こんなページも見ています</h2></div>
+					<!-- [[recommend_tag]] -->
+				</div>
+			</div>
+			<!-- レコメンドここまで -->
+
+			<!-- 「見つからないとき」「よくある質問」ここから -->
+			
+			<!-- 「見つからないとき」「よくある質問」ここまで -->
+
+			<!-- 評価エリアここから -->
+			
+			<!-- 評価エリアここまで -->
+
+		</div>
+		<!-- サイドバー2ここまで -->
+
+	</div><!-- 3カラム終わり -->
+
+	<!-- フッターここから -->
+	<div id="footer">
+		<div id="back_or_pagetop">
+	<div id="to_page_top"><a href="#">このページの先頭へ</a></div>
+</div>
+<div id="footer_link">
+	<div class="footer_navi">
+		<ul>
+			<li><a href="/soshiki/81/privacy.html">個人情報の保護</a></li>
+			<li><a href="/soshiki/81/exclusion.html">免責事項</a></li>
+			<li><a href="/soshiki/81/chosakun.html">著作権等</a></li>
+			<li><a href="/soshiki/81/about.html">このホームページについて</a></li>
+			<li class="navi_end"><a href="/soshiki/81/ad-top.html">広告掲載について</a></li>
+		</ul>
+	</div>
+</div>
+		<div id="author_box_wrap">
+	<div id="author_box">
+		<div class="author_detail_box">
+			<div class="author_detail_box_info">
+				<div class="footer_logo">
+					<img src="/img/common/footer_logo.png" width="120" height="80" alt="山陽小野田市の市章の画像" >
+				</div>
+				<p class="author_detail">
+					<strong>山陽小野田市</strong><span class="houjinbangou">法人番号 3000020352161</span><br>
+					<span>〒756-8601 山口県山陽小野田市日の出一丁目1番1号</span><br>
+					<span>電話：0836-82-1111(代表)</span>　 <span>Fax：0836-83-2604</span>
+				</p>
+			</div>
+			<p class="opentime">
+				開庁時間：月曜日から金曜日（祝日・休日・年末年始を除く）の8時30分から17時15分<br>
+				※本庁では毎週水曜日に、市民課・税務課では一部窓口を19時まで延長しています。<a href="/soshiki/6/madoguchi-enchou.html">（取扱業務）</a>
+			</p>
+			<ul class="footer_link_contact">
+				<li class="fl_contact_shiyakusyo"><a href="/soshiki/2/access.html"><span>市役所への行き方</span></a></li><!-- 
+				 --><li class="fl_contact_toiawase"><a href="/soshiki/"><span>お問い合わせ（組織別）</span></a></li>
+			</ul>
+		</div>
+		<div id="copyright"><p>Copyright &#169; 2019 Sanyo Onoda City All rights reserved.</p></div>
+	</div>
+</div>
+	</div>
+	<!-- フッターここまで -->
+
+</div>
+<!-- コンテナここまで -->
+
+</body>
+</html>
