@@ -1,0 +1,30 @@
+取得日時: 2026-08-10 17:35 JST
+取得元  : C:\Users\user\dev\udc2026\.venv\Scripts\python.exe -B _scratch_manual_crosscheck.py （リポジトリルートで実行。raw/gtfs/の2ZIPのみ読み取り、ネットワーク接続なし）
+取得方法: 標準ライブラリ実行。src/calculate_gtfs_supply_metrics.py とは別に手書きした
+          簡易実装（frequencies.txt非対応、calendar/calendar_dates/tripsのみ）で
+          scheduled_trip_count_by_date を独立に再計算し、本実装の出力と突き合わせるための
+          検証専用スクリプト。実行後にリポジトリから削除した一時ファイル
+          （_scratch_manual_crosscheck.py。CLAUDE.mdの「リポジトリの外に一切書かない」を
+          満たすため、一時ファイルもリポジトリ内に置いてから削除する運用は
+          GTFS-2セッションのPROGRESS.md記載パターンを踏襲）。
+
+==================== iwakuni ====================
+frequencies.txt present: False
+trips.txt total rows: 267
+20260406 (monday): trip_total=185
+20260407 (tuesday): trip_total=186
+20260408 (wednesday): trip_total=183
+20260409 (thursday): trip_total=161
+20260410 (friday): trip_total=188
+20260411 (saturday): trip_total=146
+20260412 (sunday): trip_total=39
+==================== hikari ====================
+frequencies.txt present: False
+trips.txt total rows: 63
+20260406 (monday): trip_total=55
+20260407 (tuesday): trip_total=55
+20260408 (wednesday): trip_total=55
+20260409 (thursday): trip_total=55
+20260410 (friday): trip_total=55
+20260411 (saturday): trip_total=41
+20260412 (sunday): trip_total=41

@@ -1,0 +1,75 @@
+取得日時: 2026-08-11 JST
+取得元  : ローカル作業ツリー最終状態
+取得方法: git diff --check / staged確認 / SHA256 / 禁止API / dirtyテキスト秘密情報らしき値検査 / git status
+
+Exit code: 0
+Wall time: 1.2 seconds
+Output:
+git_diff_check_exit=0
+staged_count=0
+--- SHA256 ---
+26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b  data/gtfs_supply_metrics.json
+26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b  docs/data/gtfs_supply_metrics.json
+d236a58ff4a0edb4812a8bed543d4897670441164a1019e88d5e35ded5052de2  raw/gtfs/iwakuni_gtfsjp_20260401.zip
+f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7  raw/gtfs/hikari_gtfs_20260401.zip
+--- JavaScript / prohibited API ---
+innerHTML_count=0
+comparison_before_selector=True
+--- secret-like scan of dirty text ---
+secret_like_hits=0
+secret_like_files=0
+--- git status --short --branch ---
+## main...origin/main [ahead 26]
+ M PROGRESS.md
+ M README.md
+ M SPEC.md
+ M docs/index.html
+ M docs/status.html
+ M run_record.md
+ M src/build_site_data.py
+ M tests/test_site.py
+ M verification.md
+?? data/gtfs_supply_metrics.json
+?? docs/data/gtfs_supply_metrics.json
+?? evidence/20260810_gtfs2_content_probe.txt
+?? evidence/20260810_gtfs2_encoding_probe.txt
+?? evidence/20260810_gtfs2_fetch_hikari.txt
+?? evidence/20260810_gtfs2_fetch_iwakuni.txt
+?? evidence/20260810_gtfs2_git_diff_check.txt
+?? evidence/20260810_gtfs2_inspection_run_raw.txt
+?? evidence/20260810_gtfs2_member_explore_raw.txt
+?? evidence/20260810_gtfs2_progress_before.md
+?? evidence/20260810_gtfs2_readme_before.md
+?? evidence/20260810_gtfs2_spec_coverage_progress.txt
+?? evidence/20260810_gtfs2_spec_coverage_readme.txt
+?? evidence/20260810_gtfs2_spec_coverage_status.txt
+?? evidence/20260810_gtfs2_spec_coverage_test_site.txt
+?? evidence/20260810_gtfs2_spec_coverage_verification.txt
+?? evidence/20260810_gtfs2_status_before.html
+?? evidence/20260810_gtfs2_test_site_before.py
+?? evidence/20260810_gtfs2_unittest_full_raw.txt
+?? evidence/20260810_gtfs2_verification_before.md
+?? evidence/20260810_supply_metric2_calculation_run_raw.txt
+?? evidence/20260810_supply_metric2_corr1_fix_verification_raw.txt
+?? evidence/20260810_supply_metric2_corr1_git_diff_check.txt
+?? evidence/20260810_supply_metric2_crosscheck_raw.txt
+?? evidence/20260810_supply_metric2_focused_test_raw.txt
+?? evidence/20260810_supply_metric2_git_diff_check.txt
+?? evidence/20260810_supply_metric2_manual_crosscheck_raw.txt
+?? evidence/20260810_supply_metric2_script_run_raw.txt
+?? evidence/20260810_supply_metric2_unittest_full_raw.txt
+?? evidence/20260810_supply_view1_before_scope_raw.txt
+?? evidence/20260810_supply_view1_build_raw.txt
+?? evidence/20260810_supply_view1_focused_test_raw.txt
+?? evidence/20260810_supply_view1_index_before.html
+?? evidence/20260810_supply_view1_readme_before.md
+?? evidence/20260810_supply_view1_spec_coverage_raw.txt
+?? evidence/20260810_supply_view1_static_check_raw.txt
+?? evidence/20260810_supply_view1_status_before.html
+?? evidence/20260810_supply_view1_unittest_full_raw.txt
+?? evidence/20260810_supply_view1_write_probe.txt
+?? raw/gtfs/
+?? src/calculate_gtfs_supply_metrics.py
+?? src/inspect_gtfs_archives.py
+?? tests/test_gtfs_inspection.py
+?? tests/test_gtfs_supply_metrics.py

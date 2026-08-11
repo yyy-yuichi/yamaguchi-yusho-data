@@ -1,0 +1,34 @@
+取得日時: 2026-08-10 04:40:01 UTC (13:40:01 JST)
+取得元  : https://yamaguchi-opendata.jp/ckan/dataset/db885818-b1bd-4848-986f-45119e8acb31/resource/c804039c-7d37-4e45-9288-f09fc1bbd249/download/hikari_gtfs_20260401_.zip
+取得方法: curl -sS -L --max-time 120 --max-filesize 20971520 -D <headers> -o <zip> -w "..." <URL>（Cookie・認証情報・既存セッションは付与していない。SPEC.md §14.4 に従いHTTPS GETのみ）
+
+feed_id: hikari-gtfs（data/gtfs_feeds.csv より。SPEC.md §14.2）
+
+=== 転送メタデータ（curl -w の出力） ===
+REQUEST_URL=https://yamaguchi-opendata.jp/ckan/dataset/db885818-b1bd-4848-986f-45119e8acb31/resource/c804039c-7d37-4e45-9288-f09fc1bbd249/download/hikari_gtfs_20260401_.zip
+FINAL_URL=https://yamaguchi-opendata.jp/ckan/dataset/db885818-b1bd-4848-986f-45119e8acb31/resource/c804039c-7d37-4e45-9288-f09fc1bbd249/download/hikari_gtfs_20260401_.zip
+HTTP_CODE=200
+SIZE_DOWNLOAD=86273
+TIME_TOTAL=0.441783
+NUM_REDIRECTS=0
+
+=== 保存した公開可能ヘッダーのみ（SPEC.md §14.4-3 が定める範囲。Set-Cookie等は保存しない） ===
+Date: Mon, 10 Aug 2026 04:40:01 GMT
+Content-Type: application/zip
+Content-Length: 86273
+Content-Disposition: inline; filename=hikari_gtfs_20260401_.zip
+Last-Modified: Tue, 03 Mar 2026 05:04:53 GMT
+Cache-Control: no-cache, public, max-age=0, must-revalidate
+ETag: "1772514293.7143364-86273-300552401"
+Cache-Control: private, no-store, no-cache, must-revalidate, max-age=0
+
+=== 除外したヘッダー（保存していない。値は本ファイルにも他のどのファイルにも書いていない） ===
+Set-cookie（curlの生ヘッダーダンプに含まれていたため確認したが、本ファイルへは転記していない）
+
+=== 保存先とハッシュ ===
+保存先        : raw/gtfs/hikari_gtfs_20260401.zip
+バイト数      : 86273
+SHA256（取得直後）: f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7
+SHA256（最終ファイル）: f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7
+ZIPマジックバイト: 50 4b 03 04 (b'PK\x03\x04')。python zipfile.is_zipfile() = True
+20 MiB (20971520バイト) 以下     : 満たす（86273バイト）

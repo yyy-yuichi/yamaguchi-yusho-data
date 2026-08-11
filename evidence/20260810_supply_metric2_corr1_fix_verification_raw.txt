@@ -1,0 +1,232 @@
+取得日時: 2026-08-10 18:10 JST
+取得元  : Codex受入監査（SUPPLY-METRIC-2-CORR-1指摘）への対応。src/calculate_gtfs_supply_metrics.py
+          （Editツールでの直接編集）、および tests/test_gtfs_supply_metrics.py の実行
+取得方法: ソースコード編集の記録（Edit操作の old_string/new_string）と、
+          C:\Users\user\dev\udc2026\.venv\Scripts\python.exe -B での実行結果
+
+## 見つかった問題（Codex受入監査からの指摘、原文要約）
+
+1. SPEC.md §15.4.3手順5「exact_times=1の行がある場合は、時刻範囲が正で割り切れることを
+   検証し」は文字どおりの整除要求である。旧実装は3900秒/600秒（余り300）を7便のmeasuredと
+   誤って算出していた。正しくはscheduled_trip_count_by_dateをinvalid_inputにすべき。
+2. SPEC.md §15.2・§15.4.3が要求するtrips.txtの参照整合性検証が欠落していた。
+   - 未知のservice_id（calendar.txt/calendar_dates.txtに存在しない）を参照するtripが
+     measured 0（無視されるだけ）になっていた
+   - 未知のroute_id（routes.txtに存在しない）を参照するtripがmeasured 1（無視されず
+     普通にカウントされる）になっていた
+   - route_id列が丸ごと無いtrips.txtがmeasured 1になっていた
+
+## 修正内容（src/calculate_gtfs_supply_metrics.py）
+
+### 修正1: exact_times=1の整除検証
+
+`_prepare_trip_count_context()`のfrequencies.txt検証ループへ、exact_times=1の行についてのみ
+`(end_sec - start_sec) % headway != 0` を検査し、割り切れない場合はinvalid_inputで打ち切る分岐を
+追加した。
+
+修正前（該当箇所の抜粋。除算不能を防ぐ最小限の検証のみで、余りは許容していた）:
+```python
+            exact = row[exact_idx2] if (exact_idx2 is not None and exact_idx2 < len(row)) else ""
+            if exact not in ("", "0", "1"):
+                return None, f"frequencies.txtのtrip_id '{tid}' のexact_timesが不正: {exact!r}"
+            key = (tid, start_raw)
+```
+
+修正後:
+```python
+            exact = row[exact_idx2] if (exact_idx2 is not None and exact_idx2 < len(row)) else ""
+            if exact not in ("", "0", "1"):
+                return None, f"frequencies.txtのtrip_id '{tid}' のexact_timesが不正: {exact!r}"
+            if exact == "1" and (end_sec - start_sec) % headway != 0:
+                return None, (
+                    f"frequencies.txtのtrip_id '{tid}' はexact_times=1だが時刻範囲が"
+                    f"headway_secsで割り切れない (start_time={start_raw!r}, end_time={end_raw!r}, "
+                    f"headway_secs={hw_raw!r})"
+                )
+            key = (tid, start_raw)
+```
+
+`compute_scheduled_trip_count_for_date()`の便数計算式も、余り処理が到達しなくなったことに
+合わせて単純化した。
+
+修正前:
+```python
+        for w in windows:
+            q, r = divmod(w.end_sec - w.start_sec, w.headway_secs)
+            total += q if r == 0 else q + 1
+```
+
+修正後:
+```python
+        for w in windows:
+            # exact_times=1のwindowは_prepare_trip_count_context()で
+            # (end_sec - start_sec) % headway_secs == 0 を検証済み（SPEC.md §15.4.3手順5）。
+            total += (w.end_sec - w.start_sec) // w.headway_secs
+```
+
+### 修正2: route_id/service_id参照整合性
+
+`_prepare_trip_count_context()`のシグネチャに`routes: FileTable`引数を追加し、
+`compute_feed_metrics_from_zipfile()`から渡すよう変更した。
+
+追加した検証（関数冒頭、calendar.txt検証より前）:
+```python
+    if not routes.present:
+        return None, "routes.txtが存在しない"
+    if routes.decode_error:
+        return None, f"routes.txtの文字コードが不正: {routes.decode_error}"
+    if "route_id" not in routes.header:
+        return None, "routes.txtにroute_id列が無い"
+    route_stats = gi.compute_id_stats(routes.header, routes.rows, "route_id")
+    if route_stats.blank_count:
+        return None, f"routes.txtのroute_idが空欄の行が{route_stats.blank_count}件ある"
+    if route_stats.duplicate_count:
+        return None, f"routes.txtのroute_idが重複する行が{route_stats.duplicate_count}件ある"
+    route_id_idx = routes.header.index("route_id")
+    valid_route_ids = {row[route_id_idx] for row in routes.rows if route_id_idx < len(row)}
+```
+
+`calendar_service_ids`（calendar.txt・calendar_dates.txtに出現する全service_idの和集合）を、
+両ファイルのパースループ内で`calendar_service_ids.add(sid)`として収集するよう追加した。
+
+trips.txt側の必須列を`("service_id", "trip_id")`から`("route_id", "service_id", "trip_id")`へ
+拡張し、各行についてroute_id/service_idの空欄チェックと参照チェックを追加した。
+
+修正前（該当箇所の抜粋）:
+```python
+    missing = [c for c in ("service_id", "trip_id") if c not in trips.header]
+    if missing:
+        return None, f"trips.txtに必須列が無い: {','.join(missing)}"
+    sid_idx = trips.header.index("service_id")
+    tid_idx = trips.header.index("trip_id")
+    seen_trip: set = set()
+    service_to_trip_ids: Dict[str, List[str]] = {}
+    for i, row in enumerate(trips.rows):
+        tid = row[tid_idx] if tid_idx < len(row) else ""
+        sid = row[sid_idx] if sid_idx < len(row) else ""
+        if tid.strip() == "":
+            return None, f"trips.txt {i}行目のtrip_idが空欄"
+        if tid in seen_trip:
+            return None, f"trips.txtのtrip_id '{tid}' が重複している"
+        seen_trip.add(tid)
+        service_to_trip_ids.setdefault(sid, []).append(tid)
+```
+
+修正後:
+```python
+    missing = [c for c in ("route_id", "service_id", "trip_id") if c not in trips.header]
+    if missing:
+        return None, f"trips.txtに必須列が無い: {','.join(missing)}"
+    rid_idx = trips.header.index("route_id")
+    sid_idx = trips.header.index("service_id")
+    tid_idx = trips.header.index("trip_id")
+    seen_trip: set = set()
+    service_to_trip_ids: Dict[str, List[str]] = {}
+    for i, row in enumerate(trips.rows):
+        tid = row[tid_idx] if tid_idx < len(row) else ""
+        sid = row[sid_idx] if sid_idx < len(row) else ""
+        rid = row[rid_idx] if rid_idx < len(row) else ""
+        if tid.strip() == "":
+            return None, f"trips.txt {i}行目のtrip_idが空欄"
+        if tid in seen_trip:
+            return None, f"trips.txtのtrip_id '{tid}' が重複している"
+        if sid.strip() == "":
+            return None, f"trips.txtのtrip_id '{tid}' のservice_idが空欄"
+        if rid.strip() == "":
+            return None, f"trips.txtのtrip_id '{tid}' のroute_idが空欄"
+        if rid not in valid_route_ids:
+            return None, f"trips.txtのtrip_id '{tid}' のroute_id '{rid}' がroutes.txtに存在しない"
+        if sid not in calendar_service_ids:
+            return None, (
+                f"trips.txtのtrip_id '{tid}' のservice_id '{sid}' が"
+                "calendar.txt/calendar_dates.txtのいずれにも存在しない"
+            )
+        seen_trip.add(tid)
+        service_to_trip_ids.setdefault(sid, []).append(tid)
+```
+
+`calendar.txt`の`start_date > end_date`検査も、is_valid_gtfs_dateの後段に追加した:
+```python
+            if start > end:
+                return None, (
+                    f"calendar.txtのservice_id '{sid}' の日付範囲が不正 "
+                    f"(start_date={start!r} > end_date={end!r})"
+                )
+```
+
+モジュールdocstringの「実装上の判断」節から、誤りだった「割り切れることを別途の前提条件に
+すると数式が無意味になる」という記述を削除し、正しい整除要求の説明と、route_id/service_id
+参照整合性要求の説明に置き換えた（詳細はsrc/calculate_gtfs_supply_metrics.py本体を参照）。
+
+## 実データの指標値が不変であることの確認
+
+修正前後で `data/gtfs_supply_metrics.json` のSHA256を比較した。
+
+修正前（SUPPLY-METRIC-2初回実装時、evidence/20260810_supply_metric2_calculation_run_raw.txt
+記載の値）: 26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b
+
+修正後（`python -B src/calculate_gtfs_supply_metrics.py` 再実行後）:
+26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b
+
+完全一致。理由は、事前確認スクリプト（一時ファイル、実行後削除）で、岩国市・光市の実ZIPが
+どちらも
+(a) trips.txtの全route_idがroutes.txtのroute_id集合に含まれる、
+(b) trips.txtの全service_idがcalendar.txt∪calendar_dates.txtのservice_id集合に含まれる、
+(c) route_id/service_idの空欄行が無い、
+(d) calendar.txtにstart_date > end_dateの行が無い、
+(e) frequencies.txtが存在しない（exact_times=1の整除検証は経由しない）
+ことを確認済みだったため（事前確認の生出力）:
+
+==================== iwakuni-gtfsjp ====================
+route_id count: 46 blank: 0
+calendar service_ids: {'平日'} start>end rows: 0
+calendar_dates unique service_id count: 22
+trips.txt unique route_id referenced: 46
+unknown route_id referenced by trips.txt (not in routes.txt): set()
+unknown service_id referenced by trips.txt (not in calendar+calendar_dates): set()
+blank route_id rows: 0 blank service_id rows: 0
+==================== hikari-gtfs ====================
+route_id count: 7 blank: 0
+calendar service_ids: {'土日祝日（広域）', '毎日', '平日（広域）', '平日（ぐるりん）'} start>end rows: 0
+calendar_dates unique service_id count: 3
+trips.txt unique route_id referenced: 7
+unknown route_id referenced by trips.txt (not in routes.txt): set()
+unknown service_id referenced by trips.txt (not in calendar+calendar_dates): set()
+blank route_id rows: 0 blank service_id rows: 0
+
+（実行時のターミナルはUTF-8でなくcp932相当の文字化けを表示したため、上記は文字化けした
+生出力を日本語へ書き起こしたもの。判定に使った値そのもの＝route_id/service_idの集合演算結果は
+文字化けの影響を受けない。事前確認スクリプトは実行後にリポジトリから削除した一時ファイル）。
+
+## テスト変更内容
+
+`tests/test_gtfs_supply_metrics.py`のsubTestを29件から39件へ変更した。
+
+- `3b_frequencies_exact_times_1_remainder_rounds_up`（誤った仕様解釈に基づく旧テスト、
+  3900秒/600秒をmeasured 7と期待していた）を`3b_frequencies_exact_times_1_non_divisible_invalid_input`
+  へ置き換え、同じ入力（3900秒/600秒）がinvalid_inputになることを検証するよう修正した
+- 新規セクション「6. trips.txtのroute_id/service_id参照整合性」を追加し、次の10件のsubTestで
+  修正2を検証した:
+  - `6a_trips_unknown_route_id_invalid_input`
+  - `6b_trips_unknown_service_id_invalid_input`
+  - `6c_trips_missing_route_id_column_invalid_input`
+  - `6d_trips_blank_route_id_invalid_input`
+  - `6e_trips_blank_service_id_invalid_input`
+  - `6f_routes_missing_route_id_column_invalid_input`
+  - `6g_routes_absent_invalid_input`
+  - `6h_routes_duplicate_route_id_invalid_input`
+  - `6i_calendar_start_after_end_invalid_input`
+  - `6j_calendar_dates_only_service_reference_remains_allowed`
+    （calendar_dates.txtだけで定義されたservice_idの参照が、引き続き有効として扱われることを
+    確認する回帰テスト）
+
+## `python -B -m unittest tests.test_gtfs_supply_metrics -v` の結果（修正後）
+
+test_supply_metrics_calculation (tests.test_gtfs_supply_metrics.GtfsSupplyMetricsTest.test_supply_metrics_calculation) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.298s
+
+OK
+
+39件のsubTestすべてが失敗なしで完走した。

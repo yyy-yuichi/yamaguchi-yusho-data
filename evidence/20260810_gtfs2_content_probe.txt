@@ -1,0 +1,44 @@
+===== iwakuni =====
+all_members: ['agency.txt', 'calendar.txt', 'calendar_dates.txt', 'fare_attributes.txt', 'fare_rules.txt', 'feed_info.txt', 'routes.txt', 'shapes.txt', 'stops.txt', 'stop_times.txt', 'translations.txt', 'trips.txt']
+agency.txt bom= True header= ['agency_id', 'agency_name', 'agency_url', 'agency_timezone', 'agency_lang', 'agency_phone', 'agency_fare_url', 'agency_email'] data_rows= 1
+  agency_id blank= 0 unique= 1 dup_rows= 0
+stops.txt bom= True header= ['stop_id', 'stop_code', 'stop_name', 'stop_desc', 'stop_lat', 'stop_lon', 'zone_id', 'stop_url', 'location_type', 'platform_code', 'parent_station'] data_rows= 800
+  location_type counts: {'0': 800}
+  stop_id blank= 0 unique= 800 dup_rows= 0
+routes.txt bom= True header= ['route_id', 'agency_id', 'route_short_name', 'route_long_name', 'route_desc', 'route_type'] data_rows= 46
+  route_id blank= 0 unique= 46 dup_rows= 0
+trips.txt bom= True header= ['route_id', 'service_id', 'trip_id', 'trip_headsign', 'block_id', 'trip_short_name', 'direction_id', 'shape_id', 'bikes_allowed'] data_rows= 267
+  trip_id blank= 0 unique= 267 dup_rows= 0
+  trips service_id set: {'火・木・金曜日運行', '火曜日運行', '月・土曜日運行', '月～土曜日運行', '月・木曜日運行', '月・水・金曜日運行', '月・火・水曜日運行', '月曜日運行', '金曜日運行', '月・火・水・金曜日運行', '火・水・木・土曜日運行', '月・水・土曜日運行', '毎日運行1', '月・木・金・土曜日運行', '火・木曜日運行', '火・水・金曜日運行', '火・土曜日運行', '水・金曜日運行', '水曜日運行', '火・金曜日運行', '毎日運行', '木曜日運行'}
+stop_times.txt bom= True header= ['trip_id', 'arrival_time', 'departure_time', 'stop_id', 'stop_sequence', 'stop_headsign', 'pickup_type', 'drop_off_type', 'timepoint'] data_rows= 7362
+calendar.txt bom= True header= ['service_id', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'start_date', 'end_date'] data_rows= 1
+  rows: [['平日', '1', '1', '1', '1', '1', '0', '0', '20260327', '20270326']]
+calendar_dates.txt bom= True header= ['service_id', 'date', 'exception_type'] data_rows= 1641
+  exception_type counts: {'1': 1641}
+  calendar_dates service_id unique: 22
+  added(1) date min/max: 20260327 20260930
+  removed(2) date min/max: None None
+feed_info.txt bom= True header= ['feed_publisher_name', 'feed_publisher_url', 'feed_contact_url', 'feed_contact_email', 'feed_lang', 'feed_start_date', 'feed_end_date', 'feed_version'] data_rows= 1
+  rows: [['岩国市役所\u3000地域交通課', 'https://www.city.iwakuni.lg.jp/soshiki/12/', 'https://www.city.iwakuni.lg.jp/soshiki/12/', 'sonosujiya@gmail.com', 'ja', '20260327', '20270326', '20260326_2026年03月26日（改正） その筋屋 2.016']]
+===== hikari =====
+all_members: ['agency.txt', 'calendar_dates.txt', 'calendar.txt', 'fare_attributes.txt', 'fare_rules.txt', 'feed_info.txt', 'result.txt', 'routes.txt', 'shapes.txt', 'stops.txt', 'stop_times.txt', 'transfers.txt', 'translations.txt', 'trips.txt']
+agency.txt bom= False header= ['agency_id', 'agency_name', 'agency_url', 'agency_timezone', 'agency_lang', 'agency_phone', 'agency_fare_url', 'agency_email'] data_rows= 1
+  agency_id blank= 0 unique= 1 dup_rows= 0
+stops.txt bom= False header= ['stop_id', 'stop_code', 'stop_name', 'stop_desc', 'stop_lat', 'stop_lon', 'zone_id', 'stop_url', 'location_type', 'platform_code'] data_rows= 172
+  location_type counts: {'0': 172}
+  stop_id blank= 0 unique= 172 dup_rows= 0
+routes.txt bom= False header= ['route_id', 'agency_id', 'route_short_name', 'route_long_name', 'route_desc', 'route_type', 'route_color', 'route_text_color'] data_rows= 7
+  route_id blank= 0 unique= 7 dup_rows= 0
+trips.txt bom= False header= ['route_id', 'service_id', 'trip_id', 'trip_headsign', 'direction_id', 'block_id', 'trip_short_name', 'shape_id', 'jp_trip_desc', 'jp_pattern_id'] data_rows= 63
+  trip_id blank= 0 unique= 63 dup_rows= 0
+  trips service_id set: {'土日祝日（広域）', '毎日', '平日（ぐるりん）', '平日（広域）'}
+stop_times.txt bom= False header= ['trip_id', 'arrival_time', 'departure_time', 'stop_id', 'stop_sequence', 'stop_headsign', 'pickup_type', 'drop_off_type', 'timepoint'] data_rows= 1344
+calendar.txt bom= False header= ['service_id', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'start_date', 'end_date'] data_rows= 4
+  rows: [['毎日', '1', '1', '1', '1', '1', '1', '1', '20260401', '20270331'], ['平日（ぐるりん）', '1', '1', '1', '1', '1', '0', '0', '20260401', '20270331'], ['平日（広域）', '1', '1', '1', '1', '1', '0', '0', '20260401', '20270331'], ['土日祝日（広域）', '0', '0', '0', '0', '0', '1', '1', '20260401', '20270331']]
+calendar_dates.txt bom= False header= ['service_id', 'date', 'exception_type'] data_rows= 61
+  exception_type counts: {'1': 22, '2': 39}
+  calendar_dates service_id unique: 3
+  added(1) date min/max: 20260429 20270322
+  removed(2) date min/max: 20260429 20270322
+feed_info.txt bom= False header= ['feed_publisher_name', 'feed_publisher_url', 'feed_lang', 'feed_start_date', 'feed_end_date', 'feed_version'] data_rows= 1
+  rows: [['光市', 'https://www.city.hikari.lg.jp/index.html', 'ja', '20260401', '20270331', '2026/04/01改正-見える化ver2.6e']]

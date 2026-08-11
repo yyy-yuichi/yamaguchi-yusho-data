@@ -1,0 +1,64 @@
+取得日時: 2026-08-10 18:15 JST
+取得元  : C:\Users\user\dev\udc2026\.venv\Scripts\python.exe -B -m unittest tests.test_gtfs_supply_metrics -v
+取得方法: repo親の .venv Python で -B 付きで実行（Claude Code, リポジトリ直下から実行）
+
+このファイルはSUPPLY-METRIC-2-CORR-1（exact_times割り切れ要件・route_id/service_id参照整合性の
+訂正）後の最新状態を反映するため再生成した。旧版（29件のsubTest一覧、`3b_frequencies_exact_times_1_remainder_rounds_up`が
+measured 7を期待していた版）は誤った仕様解釈に基づいており、
+`evidence/20260810_supply_metric2_corr1_fix_verification_raw.txt`に修正内容を記録している。
+
+## tests/test_gtfs_supply_metrics.py に含まれるsubTest一覧（39件、grep結果）
+
+1a_agency_route_stop_counts_normal
+1b_agency_absent_not_calculable
+1c_route_id_blank_invalid_input
+1d_route_id_duplicate_invalid_input
+1e_boarding_location_type_column_absent_defaults_to_counted
+1f_route_id_column_missing_not_calculable
+2a_calendar_only_weekday_active_and_inactive
+2b_sunday_zero_valid_trips_measured_zero
+2c_calendar_dates_addition_only_service
+2d_calendar_dates_removal_overrides_weekday
+2e_both_calendar_and_calendar_dates_absent_invalid_input
+2f_calendar_missing_required_column_invalid_input
+2g_calendar_duplicate_service_id_invalid_input
+2h_calendar_dates_duplicate_key_invalid_input
+2i_calendar_dates_invalid_exception_type
+2j_calendar_invalid_weekday_flag_value
+2k_calendar_invalid_date_format
+2l_trips_absent_invalid_input
+2m_trips_duplicate_trip_id_invalid_input
+3a_frequencies_exact_times_1_exact_multiple
+3b_frequencies_exact_times_1_non_divisible_invalid_input
+3c_frequencies_exact_times_0_not_exact_frequency_based
+3d_frequencies_exact_times_blank_not_exact_frequency_based
+3e_frequencies_mixed_normal_trip_plus_frequency_trip
+3f_frequencies_unknown_trip_id_invalid_input
+6a_trips_unknown_route_id_invalid_input
+6b_trips_unknown_service_id_invalid_input
+6c_trips_missing_route_id_column_invalid_input
+6d_trips_blank_route_id_invalid_input
+6e_trips_blank_service_id_invalid_input
+6f_routes_missing_route_id_column_invalid_input
+6g_routes_absent_invalid_input
+6h_routes_duplicate_route_id_invalid_input
+6i_calendar_start_after_end_invalid_input
+6j_calendar_dates_only_service_reference_remains_allowed
+4a_iwakuni_saved_zip_fixed_values
+4b_hikari_saved_zip_fixed_values
+5a_output_json_regeneration_byte_identical
+5b_build_dataset_deterministic_across_runs
+
+（セクション番号2→3→6→4→5の順で、6は今回のCORR-1でセクション3の直後・4の直前に挿入した）
+
+## 実行結果（生の標準出力）
+
+test_supply_metrics_calculation (tests.test_gtfs_supply_metrics.GtfsSupplyMetricsTest.test_supply_metrics_calculation) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.298s
+
+OK
+
+全39件のsubTestが失敗なしで完走した（unittestはsubTest失敗時のみ個別に報告する仕様のため、
+失敗が1件も出力されていないことが全件成功の証跡になる）。

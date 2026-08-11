@@ -1,0 +1,45 @@
+取得日時: 2026-08-10 17:39 JST
+取得元  : git diff --check ; git diff --cached --name-only ; git status --short --branch （リポジトリルートで実行）
+取得方法: git コマンド実行
+
+---git diff --check---
+(上が空なら異常なし)
+---git diff --cached --name-only---
+(上が空ならstage 0件)
+---git status --short --branch---
+## main...origin/main [ahead 26]
+ M PROGRESS.md
+ M README.md
+ M SPEC.md
+ M docs/status.html
+ M run_record.md
+ M tests/test_site.py
+ M verification.md
+?? data/gtfs_supply_metrics.json
+?? evidence/20260810_gtfs2_content_probe.txt
+?? evidence/20260810_gtfs2_encoding_probe.txt
+?? evidence/20260810_gtfs2_fetch_hikari.txt
+?? evidence/20260810_gtfs2_fetch_iwakuni.txt
+?? evidence/20260810_gtfs2_git_diff_check.txt
+?? evidence/20260810_gtfs2_inspection_run_raw.txt
+?? evidence/20260810_gtfs2_member_explore_raw.txt
+?? evidence/20260810_gtfs2_progress_before.md
+?? evidence/20260810_gtfs2_readme_before.md
+?? evidence/20260810_gtfs2_spec_coverage_progress.txt
+?? evidence/20260810_gtfs2_spec_coverage_readme.txt
+?? evidence/20260810_gtfs2_spec_coverage_status.txt
+?? evidence/20260810_gtfs2_spec_coverage_test_site.txt
+?? evidence/20260810_gtfs2_spec_coverage_verification.txt
+?? evidence/20260810_gtfs2_status_before.html
+?? evidence/20260810_gtfs2_test_site_before.py
+?? evidence/20260810_gtfs2_unittest_full_raw.txt
+?? evidence/20260810_gtfs2_verification_before.md
+?? evidence/20260810_supply_metric2_git_diff_check.txt
+?? evidence/20260810_supply_metric2_manual_crosscheck_raw.txt
+?? evidence/20260810_supply_metric2_script_run_raw.txt
+?? evidence/20260810_supply_metric2_unittest_full_raw.txt
+?? raw/gtfs/
+?? src/calculate_gtfs_supply_metrics.py
+?? src/inspect_gtfs_archives.py
+?? tests/test_gtfs_inspection.py
+?? tests/test_gtfs_supply_metrics.py

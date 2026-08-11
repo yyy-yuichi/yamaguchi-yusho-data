@@ -1,0 +1,182 @@
+[
+  {
+    "metric_version": "SUPPLY-METRIC-1",
+    "feed_id": "iwakuni-gtfsjp",
+    "municipality_code": "352080",
+    "municipality": "岩国市",
+    "source_zip_path": "raw/gtfs/iwakuni_gtfsjp_20260401.zip",
+    "source_zip_sha256": "d236a58ff4a0edb4812a8bed543d4897670441164a1019e88d5e35ded5052de2",
+    "source_zip_size_bytes": 719723,
+    "scope_note": "対象は公式データセット名称にある生活交通バス・由宇地区バス（岩国市）。市域全体・全路線を網羅するとは公式記載からは確認していない。 公式データセット名称にある生活交通バス・由宇地区バスが対象。市域全体・全路線を網羅するとは公式記載からは確認していない。 この値は当該市町に関連付けて確認したフィード全体の収録値であり、市町内だけの値・市町の全公共交通の値ではない（SPEC.md §15.3）。",
+    "official_reference_date": "2026-04-01",
+    "checked_at": "2026-08-09",
+    "metric_computed_at": "2026-08-10",
+    "comparison_week_start": "2026-04-06",
+    "comparison_week_end": "2026-04-12",
+    "date_basis": {
+      "feed_info": {
+        "present": true,
+        "feed_start_date": "20260327",
+        "feed_end_date": "20270326"
+      },
+      "calendar": {
+        "present": true,
+        "min_start_date": "20260327",
+        "max_end_date": "20270326",
+        "service_id_unique_count": 1
+      },
+      "calendar_dates": {
+        "present": true,
+        "added_date_min": "20260327",
+        "added_date_max": "20260930",
+        "removed_date_min": null,
+        "removed_date_max": null,
+        "service_id_unique_count": 22
+      }
+    },
+    "metrics": {
+      "gtfs_agency_record_count": {
+        "value": 1,
+        "metric_status": "measured",
+        "reason": null
+      },
+      "gtfs_route_id_count": {
+        "value": 46,
+        "metric_status": "measured",
+        "reason": null
+      },
+      "gtfs_boarding_location_id_count": {
+        "value": 800,
+        "metric_status": "measured",
+        "reason": null
+      }
+    },
+    "scheduled_trip_count_by_date": {
+      "2026-04-06": {
+        "value": 185,
+        "metric_status": "measured",
+        "reason": null
+      },
+      "2026-04-07": {
+        "value": 186,
+        "metric_status": "measured",
+        "reason": null
+      },
+      "2026-04-08": {
+        "value": 183,
+        "metric_status": "measured",
+        "reason": null
+      },
+      "2026-04-09": {
+        "value": 161,
+        "metric_status": "measured",
+        "reason": null
+      },
+      "2026-04-10": {
+        "value": 188,
+        "metric_status": "measured",
+        "reason": null
+      },
+      "2026-04-11": {
+        "value": 146,
+        "metric_status": "measured",
+        "reason": null
+      },
+      "2026-04-12": {
+        "value": 39,
+        "metric_status": "measured",
+        "reason": null
+      }
+    }
+  },
+  {
+    "metric_version": "SUPPLY-METRIC-1",
+    "feed_id": "hikari-gtfs",
+    "municipality_code": "352101",
+    "municipality": "光市",
+    "source_zip_path": "raw/gtfs/hikari_gtfs_20260401.zip",
+    "source_zip_sha256": "f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7",
+    "source_zip_size_bytes": 86273,
+    "scope_note": "対象は公式データセット名称にある広域生活交通、ひかりぐるりんバス、光市営バス（光市）。市域全体・全路線を網羅するとは公式記載からは確認していない。 公式データセット名称にある広域生活交通、ひかりぐるりんバス、光市営バスが対象。市域全体・全路線を網羅するとは公式記載からは確認していない。 この値は当該市町に関連付けて確認したフィード全体の収録値であり、市町内だけの値・市町の全公共交通の値ではない（SPEC.md §15.3）。",
+    "official_reference_date": "2026-04-01",
+    "checked_at": "2026-08-09",
+    "metric_computed_at": "2026-08-10",
+    "comparison_week_start": "2026-04-06",
+    "comparison_week_end": "2026-04-12",
+    "date_basis": {
+      "feed_info": {
+        "present": true,
+        "feed_start_date": "20260401",
+        "feed_end_date": "20270331"
+      },
+      "calendar": {
+        "present": true,
+        "min_start_date": "20260401",
+        "max_end_date": "20270331",
+        "service_id_unique_count": 4
+      },
+      "calendar_dates": {
+        "present": true,
+        "added_date_min": "20260429",
+        "added_date_max": "20270322",
+        "removed_date_min": "20260429",
+        "removed_date_max": "20270322",
+        "service_id_unique_count": 3
+      }
+    },
+    "metrics": {
+      "gtfs_agency_record_count": {
+        "value": 1,
+        "metric_status": "measured",
+        "reason": null
+      },
+      "gtfs_route_id_count": {
+        "value": 7,
+        "metric_status": "measured",
+        "reason": null
+      },
+      "gtfs_boarding_location_id_count": {
+        "value": 172,
+        "metric_status": "measured",
+        "reason": null
+      }
+    },
+    "scheduled_trip_count_by_date": {
+      "2026-04-06": {
+        "value": 55,
+        "metric_status": "measured",
+        "reason": null
+      },
+      "2026-04-07": {
+        "value": 55,
+        "metric_status": "measured",
+        "reason": null
+      },
+      "2026-04-08": {
+        "value": 55,
+        "metric_status": "measured",
+        "reason": null
+      },
+      "2026-04-09": {
+        "value": 55,
+        "metric_status": "measured",
+        "reason": null
+      },
+      "2026-04-10": {
+        "value": 55,
+        "metric_status": "measured",
+        "reason": null
+      },
+      "2026-04-11": {
+        "value": 41,
+        "metric_status": "measured",
+        "reason": null
+      },
+      "2026-04-12": {
+        "value": 41,
+        "metric_status": "measured",
+        "reason": null
+      }
+    }
+  }
+]

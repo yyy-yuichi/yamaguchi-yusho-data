@@ -2,7 +2,9 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import shutil
+from datetime import date, timedelta
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -24,10 +26,118 @@ SOURCE_ACQUIRED_DATES = {
     "000359215.pdf": "2026-08-09",
     "000268896.pdf": "2026-08-09",
 }
+SUPPLY_METRICS_FILENAME = "gtfs_supply_metrics.json"
+SUPPLY_METRICS_SHA256 = "26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b"
+SUPPLY_FEED_ORDER = ("iwakuni-gtfsjp", "hikari-gtfs")
+SUPPLY_METRIC_KEYS = (
+    "gtfs_agency_record_count",
+    "gtfs_route_id_count",
+    "gtfs_boarding_location_id_count",
+)
+SUPPLY_METRIC_STATUSES = {
+    "measured",
+    "not_confirmed",
+    "not_calculable",
+    "invalid_input",
+    "not_comparable_scope",
+    "not_exact_frequency_based",
+    "not_comparable_no_common_week",
+}
 
 
 def read_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _validate_metric_value(metric, location):
+    if not isinstance(metric, dict):
+        raise ValueError(f"{location}: metric must be an object")
+    status = metric.get("metric_status")
+    value = metric.get("value")
+    reason = metric.get("reason")
+    if status not in SUPPLY_METRIC_STATUSES:
+        raise ValueError(f"{location}: unknown metric_status {status!r}")
+    if status == "measured":
+        if isinstance(value, bool) or not isinstance(value, int) or value < 0:
+            raise ValueError(f"{location}: measured value must be a non-negative integer")
+        if reason is not None:
+            raise ValueError(f"{location}: measured reason must be null")
+        return
+    if value is not None:
+        raise ValueError(f"{location}: non-measured value must be null")
+    if status != "not_confirmed" and (not isinstance(reason, str) or not reason.strip()):
+        raise ValueError(f"{location}: {status} requires a reason")
+    if reason is not None and not isinstance(reason, str):
+        raise ValueError(f"{location}: reason must be text or null")
+
+
+def validate_supply_metrics(records):
+    if not isinstance(records, list) or len(records) != len(SUPPLY_FEED_ORDER):
+        raise ValueError("supply metrics must contain exactly two feed records")
+    if tuple(record.get("feed_id") for record in records) != SUPPLY_FEED_ORDER:
+        raise ValueError("supply metric feed order or IDs do not match the accepted input")
+
+    versions = {record.get("metric_version") for record in records}
+    week_ranges = {
+        (record.get("comparison_week_start"), record.get("comparison_week_end"))
+        for record in records
+    }
+    if versions != {"SUPPLY-METRIC-1"}:
+        raise ValueError("supply metric_version mismatch")
+    if len(week_ranges) != 1:
+        raise ValueError("supply comparison week mismatch")
+
+    common_dates = None
+    for record in records:
+        required_text = (
+            "municipality", "municipality_code", "source_zip_path", "source_zip_sha256",
+            "scope_note", "official_reference_date", "checked_at", "metric_computed_at",
+        )
+        for key in required_text:
+            if not isinstance(record.get(key), str) or not record[key].strip():
+                raise ValueError(f"{record.get('feed_id')}: missing {key}")
+        source_hash = record["source_zip_sha256"]
+        if len(source_hash) != 64 or any(character not in "0123456789abcdef" for character in source_hash):
+            raise ValueError(f"{record['feed_id']}: invalid source ZIP SHA256")
+        if not isinstance(record.get("date_basis"), dict):
+            raise ValueError(f"{record['feed_id']}: date_basis must be an object")
+
+        metrics = record.get("metrics")
+        if not isinstance(metrics, dict) or tuple(metrics) != SUPPLY_METRIC_KEYS:
+            raise ValueError(f"{record['feed_id']}: structural metric keys or order mismatch")
+        for metric_id in SUPPLY_METRIC_KEYS:
+            _validate_metric_value(metrics[metric_id], f"{record['feed_id']}.{metric_id}")
+
+        scheduled = record.get("scheduled_trip_count_by_date")
+        if not isinstance(scheduled, dict) or len(scheduled) != 7:
+            raise ValueError(f"{record['feed_id']}: comparison week must contain seven dates")
+        date_keys = tuple(scheduled)
+        if common_dates is None:
+            common_dates = date_keys
+        elif date_keys != common_dates:
+            raise ValueError("supply comparison date keys mismatch")
+        parsed_dates = [date.fromisoformat(key) for key in date_keys]
+        if any(right - left != timedelta(days=1) for left, right in zip(parsed_dates, parsed_dates[1:])):
+            raise ValueError(f"{record['feed_id']}: comparison dates are not consecutive")
+        if date_keys[0] != record["comparison_week_start"] or date_keys[-1] != record["comparison_week_end"]:
+            raise ValueError(f"{record['feed_id']}: comparison week bounds mismatch")
+        for date_key, metric in scheduled.items():
+            _validate_metric_value(metric, f"{record['feed_id']}.{date_key}")
+
+
+def publish_supply_metrics(source: Path, destination: Path):
+    raw = source.read_bytes()
+    digest = hashlib.sha256(raw).hexdigest()
+    if digest != SUPPLY_METRICS_SHA256:
+        raise ValueError(f"unexpected {SUPPLY_METRICS_FILENAME} SHA256: {digest}")
+    try:
+        records = json.loads(raw.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise ValueError(f"invalid {SUPPLY_METRICS_FILENAME}: {error}") from error
+    validate_supply_metrics(records)
+    shutil.copyfile(source, destination)
+    if destination.read_bytes() != raw:
+        raise RuntimeError(f"published {SUPPLY_METRICS_FILENAME} is not byte-identical")
 
 
 def in_municipality(operator, municipality):
@@ -102,6 +212,10 @@ def main():
     # Published source tables must remain byte-for-byte identical to the verified outputs.
     for filename in ("operators.json", "vehicles.json"):
         shutil.copyfile(DATA_DIR / filename, DOCS_DATA_DIR / filename)
+    publish_supply_metrics(
+        DATA_DIR / SUPPLY_METRICS_FILENAME,
+        DOCS_DATA_DIR / SUPPLY_METRICS_FILENAME,
+    )
 
     supply = build_supply(operators)
     (DOCS_DATA_DIR / "municipal_supply.json").write_text(

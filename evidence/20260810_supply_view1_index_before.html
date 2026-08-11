@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="山口県19市町の自家用有償旅客運送登録簿を、市町別に確認できる静的データビュー。">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle fill='%23176b55' cx='8' cy='8' r='8'/%3E%3C/svg%3E">
   <title>山口県 市町別の登録供給ビュー｜UDC2026 作品①</title>
   <style>
     :root {
@@ -294,48 +293,6 @@
     td strong { display: block; }
     .subtext { color: var(--muted); font-size: 0.8rem; }
 
-    .supply-comparison { margin-top: 16px; }
-    .comparison-block { margin-top: 28px; }
-    .comparison-block h3 { margin-bottom: 0.75rem; }
-    .comparison-table {
-      min-width: 0;
-      table-layout: fixed;
-    }
-    .comparison-table th,
-    .comparison-table td {
-      width: 31%;
-      padding: 12px 10px;
-      overflow-wrap: anywhere;
-    }
-    .comparison-table th:first-child,
-    .comparison-table td:first-child { width: 38%; }
-    .comparison-table tbody th {
-      border-bottom: 1px solid var(--line);
-      background: #fbfcfb;
-      color: var(--ink);
-      font-size: 0.86rem;
-      letter-spacing: 0;
-    }
-    .comparison-value { font-weight: 850; }
-    .comparison-state { display: block; color: var(--muted); font-size: 0.76rem; font-weight: 650; }
-    .comparison-notes { margin: 0.55rem 0 0; color: var(--muted); font-size: 0.83rem; }
-    .evidence-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 18px;
-    }
-    .evidence-card {
-      min-width: 0;
-      padding: 16px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: #fbfcfb;
-    }
-    .evidence-card summary { cursor: pointer; font-weight: 800; }
-    .evidence-card p { overflow-wrap: anywhere; }
-    .hash-text { word-break: break-all; }
-
     .notice-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -372,7 +329,6 @@
       .summary-item:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
       .summary-item:nth-child(4) { border-top: 1px solid var(--line); }
       .metric-grid, .breakdown-grid, .notice-grid { grid-template-columns: 1fr; }
-      .evidence-grid { grid-template-columns: 1fr; }
       .metric { min-height: 112px; }
     }
 
@@ -383,8 +339,6 @@
       .summary-item { padding: 16px; }
       .summary-value { font-size: 1.35rem; }
       .panel { padding: 20px 16px; }
-      .comparison-table th, .comparison-table td { padding: 10px 6px; font-size: 0.82rem; }
-      .comparison-table tbody th { font-size: 0.78rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -447,74 +401,6 @@
         交通の充足度や達成度を測る指標ではなく、市町どうしの優劣や順位を示すものでもありません。
       </p>
     </div>
-  </section>
-
-  <section id="supply-comparison" class="page-shell panel supply-comparison" aria-labelledby="supply-comparison-title">
-    <p class="eyebrow">Verified GTFS supply comparison</p>
-    <h2 id="supply-comparison-title">岩国市・光市のGTFS供給を同じ日付で確認</h2>
-    <p class="section-copy">
-      GTFSは予定運行を表すデータです。ここでは、確認した各フィード全体に収録された情報と
-      予定便を同じ条件で並べます。市内だけの値や、市内のすべての公共交通を示す値ではありません。
-    </p>
-    <p id="supply-comparison-loading" class="loading" role="status">検証済みの供給指標を読み込んでいます。</p>
-    <p id="supply-comparison-error" class="error" role="alert" hidden>
-      供給指標を表示できません。入力異常または比較条件不一致です。
-      既存の市町別登録供給とGTFS確認状況は引き続き利用できます。
-    </p>
-
-    <div id="supply-comparison-content" hidden>
-      <div class="comparison-block">
-        <h3>フィードに収録された情報の件数</h3>
-        <div class="table-wrap">
-          <table class="comparison-table">
-            <caption>岩国市関連・光市関連フィードの構造指標</caption>
-            <thead>
-              <tr>
-                <th scope="col">指標</th>
-                <th scope="col">岩国市関連</th>
-                <th scope="col">光市関連</th>
-              </tr>
-            </thead>
-            <tbody id="supply-structure-body"></tbody>
-          </table>
-        </div>
-        <p class="comparison-notes">
-          交通ブランド情報は法人格を持つ事業者の数ではありません。路線情報IDは現実の路線・系統の本数ではなく、
-          乗降場所IDは物理的な停留所の個数ではありません。
-        </p>
-      </div>
-
-      <div class="comparison-block">
-        <h3>この日にGTFSで予定された運行便</h3>
-        <div class="table-wrap">
-          <table class="comparison-table">
-            <caption>同じ7実日付にGTFSで予定された運行便</caption>
-            <thead>
-              <tr>
-                <th scope="col">実日付</th>
-                <th scope="col">岩国市関連</th>
-                <th scope="col">光市関連</th>
-              </tr>
-            </thead>
-            <tbody id="supply-daily-body"></tbody>
-          </table>
-        </div>
-        <p class="comparison-notes">
-          予定運行便は実運行、利用者数、便利さ、定時性を表しません。曜日を平均や単一の値へ丸めず、実日付ごとに表示します。
-        </p>
-      </div>
-
-      <div class="comparison-block">
-        <h3>値の状態と根拠</h3>
-        <p id="supply-comparison-summary" class="section-copy"></p>
-        <div id="supply-evidence-list" class="evidence-grid"></div>
-        <p class="section-copy">表示用の検証済みJSON: <a href="data/gtfs_supply_metrics.json">gtfs_supply_metrics.json</a></p>
-      </div>
-    </div>
-
-    <noscript>
-      <p class="error">比較表の表示にはJavaScriptが必要です。<a href="data/gtfs_supply_metrics.json">検証済みJSONを直接確認できます。</a></p>
-    </noscript>
   </section>
 
   <main id="main" class="page-shell">
@@ -643,7 +529,7 @@
         <li>市町一覧: 山口県「<a href="https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html">市町｜関連リンク</a>」</li>
         <li>GTFS/GTFS-JP確認: 「<a href="https://yamaguchi-opendata.jp/">山口県オープンデータカタログサイト</a>」（岩国市・光市のフィードを掲載）、
           公共交通オープンデータセンター「<a href="https://ckan.odpt.org/organization/sentetsu_bus">船木鉄道株式会社</a>」（確認日2026-08-09）</li>
-        <li>公開データ: <a href="data/operators.json">operators.json</a> / <a href="data/vehicles.json">vehicles.json</a> / <a href="data/municipal_supply.json">municipal_supply.json</a> / <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a> / <a href="data/gtfs_supply_metrics.json">gtfs_supply_metrics.json</a></li>
+        <li>公開データ: <a href="data/operators.json">operators.json</a> / <a href="data/vehicles.json">vehicles.json</a> / <a href="data/municipal_supply.json">municipal_supply.json</a> / <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a></li>
       </ul>
       <p class="section-copy">
         原本を加工して作成。原本は公共データ利用規約（第1.0版）PDL1.0準拠、
@@ -666,7 +552,7 @@
   <footer>
     <div class="page-shell">
       <p><strong>UDC2026 応募作品①</strong> — 山口県の公共交通における供給側データの欠落を埋める静的アプリ／サービス。</p>
-      <p>この画面では、登録簿の市町別供給、公式GTFS/GTFS-JPの確認状況、岩国市・光市関連フィードの同一週比較を利用できます。地図・経路検索・リアルタイム情報は今後の別工程です。</p>
+      <p>この画面は登録簿データの最初の利用可能な縦切りです。GTFS-JPの整備状況・鮮度との統合は今後の別工程です。</p>
     </div>
   </footer>
 
@@ -677,7 +563,6 @@
       const dataUrl = "data/municipal_supply.json";
       const gtfsFeedsUrl = "data/gtfs_feeds.json";
       const municipalityGtfsUrl = "data/municipality_gtfs.json";
-      const supplyMetricsUrl = "data/gtfs_supply_metrics.json";
       const select = document.getElementById("municipality-select");
       const loading = document.getElementById("loading");
       const error = document.getElementById("error");
@@ -693,28 +578,6 @@
       const gtfsScopeNote = document.getElementById("gtfs-scope-note");
       const gtfsCaveat = document.getElementById("gtfs-caveat");
       const gtfsFeedList = document.getElementById("gtfs-feed-list");
-      const supplyComparisonLoading = document.getElementById("supply-comparison-loading");
-      const supplyComparisonError = document.getElementById("supply-comparison-error");
-      const supplyComparisonContent = document.getElementById("supply-comparison-content");
-      const supplyStructureBody = document.getElementById("supply-structure-body");
-      const supplyDailyBody = document.getElementById("supply-daily-body");
-      const supplyEvidenceList = document.getElementById("supply-evidence-list");
-
-      const SUPPLY_FEED_ORDER = ["iwakuni-gtfsjp", "hikari-gtfs"];
-      const STRUCTURE_METRICS = [
-        ["gtfs_agency_record_count", "GTFS収録の交通ブランド情報", "件"],
-        ["gtfs_route_id_count", "GTFS収録の路線情報ID", "ID"],
-        ["gtfs_boarding_location_id_count", "GTFS収録の乗降場所ID", "ID"],
-      ];
-      const METRIC_STATUS_TEXT = {
-        measured: "測定済み",
-        not_confirmed: "今回未確認",
-        not_calculable: "算出不能",
-        invalid_input: "入力異常",
-        not_comparable_scope: "範囲が異なり比較対象外",
-        not_exact_frequency_based: "正確な発車回数を固定できない",
-        not_comparable_no_common_week: "共通の比較週なし",
-      };
 
       // SPEC.md §12.3 axis A: display text is fixed vocabulary, not inferred.
       const AVAILABILITY_BADGE_TEXT = {
@@ -743,203 +606,6 @@
         if (className) element.className = className;
         parent.appendChild(element);
         return element;
-      }
-
-      function sameList(left, right) {
-        return left.length === right.length && left.every((value, index) => value === right[index]);
-      }
-
-      function validateSupplyMetric(metric, location) {
-        if (!metric || typeof metric !== "object" || Array.isArray(metric)) {
-          throw new Error(`${location}: 指標値がオブジェクトではありません`);
-        }
-        const status = metric.metric_status;
-        if (!Object.prototype.hasOwnProperty.call(METRIC_STATUS_TEXT, status)) {
-          throw new Error(`${location}: 未知の状態です`);
-        }
-        if (status === "measured") {
-          if (!Number.isInteger(metric.value) || metric.value < 0 || metric.reason !== null) {
-            throw new Error(`${location}: 測定済みの値または理由が不正です`);
-          }
-          return;
-        }
-        if (metric.value !== null && metric.value !== undefined) {
-          throw new Error(`${location}: 未測定状態に数値があります`);
-        }
-        if (status !== "not_confirmed" && (typeof metric.reason !== "string" || !metric.reason.trim())) {
-          throw new Error(`${location}: 状態の理由がありません`);
-        }
-        if (metric.reason !== null && metric.reason !== undefined && typeof metric.reason !== "string") {
-          throw new Error(`${location}: 理由が文字列ではありません`);
-        }
-      }
-
-      function validateSupplyComparison(records, feeds) {
-        if (!Array.isArray(records) || records.length !== SUPPLY_FEED_ORDER.length) {
-          throw new Error("供給指標は2フィードでなければなりません");
-        }
-        const recordsById = new Map(records.map(record => [record.feed_id, record]));
-        const ordered = SUPPLY_FEED_ORDER.map(feedId => recordsById.get(feedId));
-        if (recordsById.size !== records.length || ordered.some(record => !record)) {
-          throw new Error("供給指標のfeed_idが一致しません");
-        }
-        const feedMap = new Map(feeds.map(feed => [feed.feed_id, feed]));
-        if (SUPPLY_FEED_ORDER.some(feedId => !feedMap.has(feedId))) {
-          throw new Error("供給指標と公式フィード情報を結合できません");
-        }
-
-        const version = ordered[0].metric_version;
-        const weekStart = ordered[0].comparison_week_start;
-        const weekEnd = ordered[0].comparison_week_end;
-        const dates = Object.keys(ordered[0].scheduled_trip_count_by_date || {});
-        if (!version || dates.length !== 7 || dates[0] !== weekStart || dates[dates.length - 1] !== weekEnd) {
-          throw new Error("供給指標の比較週が不正です");
-        }
-
-        const metricIds = STRUCTURE_METRICS.map(item => item[0]);
-        for (const record of ordered) {
-          if (
-            record.metric_version !== version ||
-            record.comparison_week_start !== weekStart ||
-            record.comparison_week_end !== weekEnd ||
-            !sameList(Object.keys(record.scheduled_trip_count_by_date || {}), dates)
-          ) {
-            throw new Error("2フィードの版・比較週・日付キーが一致しません");
-          }
-          if (!record.metrics || !sameList(Object.keys(record.metrics), metricIds)) {
-            throw new Error(`${record.feed_id}: 構造指標が一致しません`);
-          }
-          if (!/^[0-9a-f]{64}$/.test(record.source_zip_sha256 || "") || !record.date_basis) {
-            throw new Error(`${record.feed_id}: 原本または内部日付の根拠が不正です`);
-          }
-          for (const metricId of metricIds) {
-            validateSupplyMetric(record.metrics[metricId], `${record.feed_id}.${metricId}`);
-          }
-          for (const dateKey of dates) {
-            validateSupplyMetric(record.scheduled_trip_count_by_date[dateKey], `${record.feed_id}.${dateKey}`);
-          }
-        }
-        return { ordered, feedMap, dates, version, weekStart, weekEnd };
-      }
-
-      function appendMetricCell(row, metric, unit) {
-        const cell = document.createElement("td");
-        const statusText = METRIC_STATUS_TEXT[metric.metric_status];
-        if (metric.metric_status === "measured") {
-          addText(cell, "span", `${metric.value}${unit}`, "comparison-value");
-        } else {
-          addText(cell, "span", "—", "comparison-value");
-        }
-        addText(cell, "span", statusText, "comparison-state");
-        if (metric.reason) addText(cell, "span", metric.reason, "comparison-state");
-        row.appendChild(cell);
-      }
-
-      function appendComparisonRow(body, label, metrics, unit) {
-        const row = document.createElement("tr");
-        const heading = document.createElement("th");
-        heading.scope = "row";
-        heading.textContent = label;
-        row.appendChild(heading);
-        for (const metric of metrics) appendMetricCell(row, metric, unit);
-        body.appendChild(row);
-      }
-
-      function formatActualDate(dateKey) {
-        const parsed = new Date(`${dateKey}T00:00:00Z`);
-        if (Number.isNaN(parsed.getTime())) throw new Error(`不正な実日付: ${dateKey}`);
-        return new Intl.DateTimeFormat("ja-JP", {
-          year: "numeric", month: "numeric", day: "numeric", weekday: "short", timeZone: "UTC",
-        }).format(parsed);
-      }
-
-      function internalDateText(dateBasis) {
-        const parts = [];
-        if (dateBasis.feed_info && dateBasis.feed_info.present) {
-          parts.push(`feed_info.txt: ${dateBasis.feed_info.feed_start_date}〜${dateBasis.feed_info.feed_end_date}`);
-        } else {
-          parts.push("feed_info.txt: 日付なし");
-        }
-        if (dateBasis.calendar && dateBasis.calendar.present) {
-          parts.push(`calendar.txt: ${dateBasis.calendar.min_start_date}〜${dateBasis.calendar.max_end_date}`);
-        } else {
-          parts.push("calendar.txt: 日付なし");
-        }
-        if (dateBasis.calendar_dates && dateBasis.calendar_dates.present) {
-          const added = `${dateBasis.calendar_dates.added_date_min}〜${dateBasis.calendar_dates.added_date_max}`;
-          const removed = dateBasis.calendar_dates.removed_date_min
-            ? `${dateBasis.calendar_dates.removed_date_min}〜${dateBasis.calendar_dates.removed_date_max}`
-            : "なし";
-          parts.push(`calendar_dates.txt: 追加日 ${added}、除外日 ${removed}`);
-        } else {
-          parts.push("calendar_dates.txt: 日付なし");
-        }
-        return parts.join(" ／ ");
-      }
-
-      function appendSafeExternalLink(parent, rawUrl, text) {
-        const url = new URL(rawUrl, window.location.href);
-        if (url.protocol !== "https:" && url.protocol !== "http:") {
-          throw new Error("出典URLの方式が不正です");
-        }
-        const link = document.createElement("a");
-        link.href = url.href;
-        link.target = "_blank";
-        link.rel = "noopener";
-        link.textContent = text;
-        parent.appendChild(link);
-      }
-
-      function appendSupplyEvidence(record, feed) {
-        const details = document.createElement("details");
-        details.className = "evidence-card";
-        const summary = document.createElement("summary");
-        summary.textContent = `${record.municipality}関連フィードの根拠`;
-        details.appendChild(summary);
-        addText(details, "p", `データセット: ${feed.dataset_name} ／ 公開主体: ${feed.publisher}`, "section-copy");
-        addText(details, "p", `対象範囲: ${record.scope_note}`, "section-copy");
-        addText(details, "p", `比較週: ${record.comparison_week_start}〜${record.comparison_week_end} ／ 指標版: ${record.metric_version}`, "section-copy");
-        addText(details, "p", `公式ページ記載のデータ基準日: ${record.official_reference_date} ／ 確認日: ${record.checked_at} ／ 計算日: ${record.metric_computed_at}`, "section-copy");
-        addText(details, "p", `原本ZIP: ${record.source_zip_path}（${record.source_zip_size_bytes} bytes）`, "section-copy");
-        addText(details, "p", `原本ZIP SHA256: ${record.source_zip_sha256}`, "section-copy hash-text");
-        addText(details, "p", `GTFS内部日付: ${internalDateText(record.date_basis)}`, "section-copy");
-        addText(details, "p", `利用条件: ${feed.license_name}`, "section-copy");
-        appendSafeExternalLink(details, feed.official_page_url, "公式データセットページを開く");
-        supplyEvidenceList.appendChild(details);
-      }
-
-      function renderSupplyComparison(records, feeds) {
-        const comparison = validateSupplyComparison(records, feeds);
-        supplyStructureBody.replaceChildren();
-        supplyDailyBody.replaceChildren();
-        supplyEvidenceList.replaceChildren();
-
-        for (const [metricId, label, unit] of STRUCTURE_METRICS) {
-          appendComparisonRow(
-            supplyStructureBody,
-            label,
-            comparison.ordered.map(record => record.metrics[metricId]),
-            unit,
-          );
-        }
-        for (const dateKey of comparison.dates) {
-          appendComparisonRow(
-            supplyDailyBody,
-            formatActualDate(dateKey),
-            comparison.ordered.map(record => record.scheduled_trip_count_by_date[dateKey]),
-            "便",
-          );
-        }
-        for (const record of comparison.ordered) {
-          appendSupplyEvidence(record, comparison.feedMap.get(record.feed_id));
-        }
-        setText(
-          "supply-comparison-summary",
-          `比較条件: ${comparison.weekStart}〜${comparison.weekEnd} ／ ${comparison.version}。各値に測定状態を併記しています。`,
-        );
-        supplyComparisonLoading.hidden = true;
-        supplyComparisonError.hidden = true;
-        supplyComparisonContent.hidden = false;
       }
 
       function renderBreakdown(groups) {
@@ -1142,15 +808,6 @@
           console.error("municipal supply data load failed", cause);
           loading.hidden = true;
           error.hidden = false;
-        });
-
-      Promise.all([fetchJson(supplyMetricsUrl), fetchJson(gtfsFeedsUrl)])
-        .then(([records, feeds]) => renderSupplyComparison(records, feeds))
-        .catch(cause => {
-          console.error("GTFS supply comparison data load failed", cause);
-          supplyComparisonLoading.hidden = true;
-          supplyComparisonContent.hidden = true;
-          supplyComparisonError.hidden = false;
         });
     })();
   </script>

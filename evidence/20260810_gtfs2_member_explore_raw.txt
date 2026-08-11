@@ -1,0 +1,48 @@
+取得日時: 2026-08-10 04:45 UTC (13:45 JST)
+取得元  : raw/gtfs/iwakuni_gtfsjp_20260401.zip, raw/gtfs/hikari_gtfs_20260401.zip（本リポジトリに保存済みの原本。ネットワークアクセスなし）
+取得方法: C:/Users/user/dev/udc2026/.venv/Scripts/python.exe raw/gtfs/.explore.py（標準ライブラリ zipfile。作業ディレクトリへの展開なし、メモリ内のみ）
+
+===== iwakuni raw/gtfs/iwakuni_gtfsjp_20260401.zip =====
+sha256 d236a58ff4a0edb4812a8bed543d4897670441164a1019e88d5e35ded5052de2
+bytes 719723
+member_count 12
+'agency.txt' compress_type= 8 compress_size= 175 file_size= 239 flag_bits= 2048 external_attr= 32 unix_mode= 0o0 create_system= 0
+'calendar.txt' compress_type= 8 compress_size= 101 file_size= 132 flag_bits= 2048 external_attr= 32 unix_mode= 0o0 create_system= 0
+'calendar_dates.txt' compress_type= 8 compress_size= 4965 file_size= 57811 flag_bits= 2048 external_attr= 32 unix_mode= 0o0 create_system= 0
+'fare_attributes.txt' compress_type= 8 compress_size= 664 file_size= 4624 flag_bits= 2048 external_attr= 32 unix_mode= 0o0 create_system= 0
+'fare_rules.txt' compress_type= 8 compress_size= 177557 file_size= 2142013 flag_bits= 2048 external_attr= 32 unix_mode= 0o0 create_system= 0
+'feed_info.txt' compress_type= 8 compress_size= 250 file_size= 353 flag_bits= 2048 external_attr= 32 unix_mode= 0o0 create_system= 0
+'routes.txt' compress_type= 8 compress_size= 816 file_size= 3326 flag_bits= 2048 external_attr= 32 unix_mode= 0o0 create_system= 0
+'shapes.txt' compress_type= 8 compress_size= 427711 file_size= 1405870 flag_bits= 2048 external_attr= 32 unix_mode= 0o0 create_system= 0
+'stops.txt' compress_type= 8 compress_size= 19036 file_size= 51233 flag_bits= 2048 external_attr= 32 unix_mode= 0o0 create_system= 0
+'stop_times.txt' compress_type= 8 compress_size= 74681 file_size= 906248 flag_bits= 2048 external_attr= 32 unix_mode= 0o0 create_system= 0
+'translations.txt' compress_type= 8 compress_size= 7854 file_size= 34456 flag_bits= 2048 external_attr= 32 unix_mode= 0o0 create_system= 0
+'trips.txt' compress_type= 8 compress_size= 4671 file_size= 38418 flag_bits= 2048 external_attr= 32 unix_mode= 0o0 create_system= 0
+total_uncompressed 4644723
+===== hikari raw/gtfs/hikari_gtfs_20260401.zip =====
+sha256 f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7
+bytes 86273
+member_count 14
+'agency.txt' compress_type= 8 compress_size= 159 file_size= 221 flag_bits= 0 external_attr= 2175008768 unix_mode= 0o100644 create_system= 0
+'calendar_dates.txt' compress_type= 8 compress_size= 309 file_size= 2157 flag_bits= 0 external_attr= 2175008768 unix_mode= 0o100644 create_system= 0
+'calendar.txt' compress_type= 8 compress_size= 150 file_size= 297 flag_bits= 0 external_attr= 2175008768 unix_mode= 0o100644 create_system= 0
+'fare_attributes.txt' compress_type= 8 compress_size= 82 file_size= 105 flag_bits= 0 external_attr= 2175008768 unix_mode= 0o100644 create_system= 0
+'fare_rules.txt' compress_type= 8 compress_size= 4020 file_size= 31834 flag_bits= 0 external_attr= 2175008768 unix_mode= 0o100644 create_system= 0
+'feed_info.txt' compress_type= 8 compress_size= 163 file_size= 200 flag_bits= 0 external_attr= 2175008768 unix_mode= 0o100644 create_system= 0
+'result.txt' compress_type= 0 compress_size= 30 file_size= 30 flag_bits= 0 external_attr= 2175008768 unix_mode= 0o100644 create_system= 0
+'routes.txt' compress_type= 8 compress_size= 277 file_size= 541 flag_bits= 0 external_attr= 2175008768 unix_mode= 0o100644 create_system= 0
+'shapes.txt' compress_type= 8 compress_size= 59787 file_size= 274004 flag_bits= 0 external_attr= 2175008768 unix_mode= 0o100644 create_system= 0
+'stops.txt' compress_type= 8 compress_size= 3134 file_size= 9092 flag_bits= 0 external_attr= 2175008768 unix_mode= 0o100644 create_system= 0
+'stop_times.txt' compress_type= 8 compress_size= 11961 file_size= 119332 flag_bits= 0 external_attr= 2175008768 unix_mode= 0o100644 create_system= 0
+'transfers.txt' compress_type= 8 compress_size= 42 file_size= 57 flag_bits= 0 external_attr= 2175008768 unix_mode= 0o100644 create_system= 0
+'translations.txt' compress_type= 8 compress_size= 3129 file_size= 19288 flag_bits= 0 external_attr= 2175008768 unix_mode= 0o100644 create_system= 0
+'trips.txt' compress_type= 8 compress_size= 862 file_size= 5412 flag_bits= 0 external_attr= 2175008768 unix_mode= 0o100644 create_system= 0
+total_uncompressed 462570
+
+備考: hikariのZIPには標準GTFSファイルに加えて result.txt という非標準メンバーが1件含まれる。
+安全検査（SPEC.md §14.5）はメンバー名・サイズ・圧縮比・重複・暗号化・シンボリックリンク・
+CRCのみを見る一般規則であり、result.txtも同じ規則で検査する（内容は§14.6の対象外ファイル
+として実測レポートに記録するのみで、GTFS必須テーブルとしては扱わない）。
+両ZIPともメンバー名に "/" を含まない（ディレクトリ階層なし）、絶対パス・ドライブ名・".."・
+バックスラッシュ・NULを含まない、unix_mode はいずれも通常ファイル（0o100644またはWindows由来の
+0）でシンボリックリンクではない、flag_bits に暗号化ビット(0x1)は立っていない。

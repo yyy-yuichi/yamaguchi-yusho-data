@@ -1,0 +1,13 @@
+取得日時: 2026-08-11 JST
+取得元  : docs/index.html
+取得方法: Node.js new FunctionによるJavaScript構文検査と静的契約検査
+
+Exit code: 0
+Wall time: 0.6 seconds
+Output:
+javascript_syntax=OK
+innerHTML_count=0
+supply_json_links=4
+comparison_before_selector=true
+hardcoded_week_start=false
+hardcoded_week_end=false

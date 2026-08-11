@@ -1,0 +1,1557 @@
+{
+  "task": "SUPPLY-VIEW-1 V4 actual-browser verification",
+  "generatedAt": "2026-08-10T20:33:28.896Z",
+  "siteBase": "http://localhost:60359",
+  "cdpPort": 60360,
+  "ownedProcesses": {
+    "serverPid": 8,
+    "edgePid": 1612
+  },
+  "expectedSource": "docs/data/gtfs_supply_metrics.json",
+  "viewports": [
+    {
+      "label": "desktop-1440",
+      "requestedViewport": {
+        "width": 1440,
+        "height": 1600
+      },
+      "ready": {
+        "ready": "complete",
+        "supplyVisible": true,
+        "municipalVisible": true,
+        "gtfsVisible": true,
+        "supplyError": false,
+        "existingError": false
+      },
+      "screenshot": "C:/Users/user/dev/udc2026/yamaguchi-yusho-data/evidence/20260810_supply_view1_screenshot_1440.png",
+      "screenshotPixels": {
+        "width": 1425,
+        "height": 5580
+      },
+      "dom": {
+        "title": "山口市｜山口県 市町別の登録供給ビュー",
+        "viewport": {
+          "innerWidth": 1440,
+          "innerHeight": 1600
+        },
+        "documentWidth": {
+          "scrollWidth": 1425,
+          "clientWidth": 1425,
+          "difference": 0
+        },
+        "supplyExists": true,
+        "supplyHeading": "岩国市・光市のGTFS供給を同じ日付で確認",
+        "supplyContentHidden": false,
+        "supplyErrorHidden": true,
+        "existingErrorHidden": true,
+        "municipalResultVisible": true,
+        "gtfsResultVisible": true,
+        "municipalHeading": "山口市の登録供給",
+        "gtfsHeading": "GTFS/GTFS-JPの公式確認状況",
+        "structureHeading": "フィードに収録された情報の件数",
+        "dailyHeading": "この日にGTFSで予定された運行便",
+        "evidenceHeading": "値の状態と根拠",
+        "sectionOffsets": {
+          "supply": 914,
+          "structure": 1183,
+          "daily": 1580,
+          "evidence": 2296
+        },
+        "structure": {
+          "headerCells": [
+            "指標",
+            "岩国市関連",
+            "光市関連"
+          ],
+          "rows": [
+            [
+              "GTFS収録の交通ブランド情報",
+              "1件測定済み",
+              "1件測定済み"
+            ],
+            [
+              "GTFS収録の路線情報ID",
+              "46ID測定済み",
+              "7ID測定済み"
+            ],
+            [
+              "GTFS収録の乗降場所ID",
+              "800ID測定済み",
+              "172ID測定済み"
+            ]
+          ],
+          "tableWidth": 1096,
+          "wrapperClientWidth": 1096,
+          "wrapperScrollWidth": 1096,
+          "allCellsVisible": true
+        },
+        "daily": {
+          "headerCells": [
+            "実日付",
+            "岩国市関連",
+            "光市関連"
+          ],
+          "rows": [
+            [
+              "2026/4/6(月)",
+              "185便測定済み",
+              "55便測定済み"
+            ],
+            [
+              "2026/4/7(火)",
+              "186便測定済み",
+              "55便測定済み"
+            ],
+            [
+              "2026/4/8(水)",
+              "183便測定済み",
+              "55便測定済み"
+            ],
+            [
+              "2026/4/9(木)",
+              "161便測定済み",
+              "55便測定済み"
+            ],
+            [
+              "2026/4/10(金)",
+              "188便測定済み",
+              "55便測定済み"
+            ],
+            [
+              "2026/4/11(土)",
+              "146便測定済み",
+              "41便測定済み"
+            ],
+            [
+              "2026/4/12(日)",
+              "39便測定済み",
+              "41便測定済み"
+            ]
+          ],
+          "tableWidth": 1096,
+          "wrapperClientWidth": 1096,
+          "wrapperScrollWidth": 1096,
+          "allCellsVisible": true
+        },
+        "evidenceDetails": [
+          {
+            "open": true,
+            "text": "岩国市関連フィードの根拠データセット: 岩国市（生活交通バス・由宇地区バス）GTFS-JPデータ ／ 公開主体: 岩国市対象範囲: 対象は公式データセット名称にある生活交通バス・由宇地区バス（岩国市）。市域全体・全路線を網羅するとは公式記載からは確認していない。 公式データセット名称にある生活交通バス・由宇地区バスが対象。市域全体・全路線を網羅するとは公式記載からは確認していない。 この値は当該市町に関連付けて確認したフィード全体の収録値であり、市町内だけの値・市町の全公共交通の値ではない（SPEC.md §15.3）。比較週: 2026-04-06〜2026-04-12 ／ 指標版: SUPPLY-METRIC-1公式ページ記載のデータ基準日: 2026-04-01 ／ 確認日: 2026-08-09 ／ 計算日: 2026-08-10原本ZIP: raw/gtfs/iwakuni_gtfsjp_20260401.zip（719723 bytes）原本ZIP SHA256: d236a58ff4a0edb4812a8bed543d4897670441164a1019e88d5e35ded5052de2GTFS内部日付: feed_info.txt: 20260327〜20270326 ／ calendar.txt: 20260327〜20270326 ／ calendar_dates.txt: 追加日 20260327〜20260930、除外日 なし利用条件: クリエイティブ・コモンズ 表示（CC BY）公式データセットページを開く"
+          },
+          {
+            "open": true,
+            "text": "光市関連フィードの根拠データセット: 光市（広域生活交通、ひかりぐるりんバス、光市営バス）GTFSデータ ／ 公開主体: 光市対象範囲: 対象は公式データセット名称にある広域生活交通、ひかりぐるりんバス、光市営バス（光市）。市域全体・全路線を網羅するとは公式記載からは確認していない。 公式データセット名称にある広域生活交通、ひかりぐるりんバス、光市営バスが対象。市域全体・全路線を網羅するとは公式記載からは確認していない。 この値は当該市町に関連付けて確認したフィード全体の収録値であり、市町内だけの値・市町の全公共交通の値ではない（SPEC.md §15.3）。比較週: 2026-04-06〜2026-04-12 ／ 指標版: SUPPLY-METRIC-1公式ページ記載のデータ基準日: 2026-04-01 ／ 確認日: 2026-08-09 ／ 計算日: 2026-08-10原本ZIP: raw/gtfs/hikari_gtfs_20260401.zip（86273 bytes）原本ZIP SHA256: f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7GTFS内部日付: feed_info.txt: 20260401〜20270331 ／ calendar.txt: 20260401〜20270331 ／ calendar_dates.txt: 追加日 20260429〜20270322、除外日 20260429〜20270322利用条件: クリエイティブ・コモンズ 表示（CC BY）公式データセットページを開く"
+          }
+        ]
+      },
+      "networkResponses": [
+        {
+          "url": "http://localhost:60359/index.html",
+          "status": 200,
+          "type": "Document"
+        },
+        {
+          "url": "http://localhost:60359/data/municipal_supply.json",
+          "status": 200,
+          "type": "Fetch"
+        },
+        {
+          "url": "http://localhost:60359/data/gtfs_feeds.json",
+          "status": 200,
+          "type": "Fetch"
+        },
+        {
+          "url": "http://localhost:60359/data/gtfs_feeds.json",
+          "status": 200,
+          "type": "Fetch"
+        },
+        {
+          "url": "http://localhost:60359/data/municipality_gtfs.json",
+          "status": 200,
+          "type": "Fetch"
+        },
+        {
+          "url": "http://localhost:60359/data/gtfs_supply_metrics.json",
+          "status": 200,
+          "type": "Fetch"
+        }
+      ],
+      "consoleMessages": [],
+      "runtimeExceptions": [],
+      "logEntries": [],
+      "loadingFailed": [],
+      "assertions": [
+        {
+          "name": "desktop-1440: requested viewport applied",
+          "pass": true,
+          "actual": {
+            "innerWidth": 1440,
+            "innerHeight": 1600
+          }
+        },
+        {
+          "name": "desktop-1440: document horizontal overflow is zero",
+          "pass": true,
+          "actual": {
+            "scrollWidth": 1425,
+            "clientWidth": 1425,
+            "difference": 0
+          }
+        },
+        {
+          "name": "desktop-1440: comparison headings and evidence are reachable",
+          "pass": true,
+          "actual": {
+            "supply": "岩国市・光市のGTFS供給を同じ日付で確認",
+            "structure": "フィードに収録された情報の件数",
+            "daily": "この日にGTFSで予定された運行便",
+            "evidence": "値の状態と根拠",
+            "offsets": {
+              "supply": 914,
+              "structure": 1183,
+              "daily": 1580,
+              "evidence": 2296
+            },
+            "detailCount": 2
+          }
+        },
+        {
+          "name": "desktop-1440: supply comparison rendered without failure",
+          "pass": true,
+          "actual": {
+            "supplyContentHidden": false,
+            "supplyErrorHidden": true
+          }
+        },
+        {
+          "name": "desktop-1440: existing municipal and GTFS views remain rendered",
+          "pass": true,
+          "actual": {
+            "existingErrorHidden": true,
+            "municipalResultVisible": true,
+            "gtfsResultVisible": true,
+            "municipalHeading": "山口市の登録供給",
+            "gtfsHeading": "GTFS/GTFS-JPの公式確認状況"
+          }
+        },
+        {
+          "name": "desktop-1440: structure table has both cities simultaneously visible",
+          "pass": true,
+          "actual": {
+            "headerCells": [
+              "指標",
+              "岩国市関連",
+              "光市関連"
+            ],
+            "rows": [
+              [
+                "GTFS収録の交通ブランド情報",
+                "1件測定済み",
+                "1件測定済み"
+              ],
+              [
+                "GTFS収録の路線情報ID",
+                "46ID測定済み",
+                "7ID測定済み"
+              ],
+              [
+                "GTFS収録の乗降場所ID",
+                "800ID測定済み",
+                "172ID測定済み"
+              ]
+            ],
+            "tableWidth": 1096,
+            "wrapperClientWidth": 1096,
+            "wrapperScrollWidth": 1096,
+            "allCellsVisible": true
+          }
+        },
+        {
+          "name": "desktop-1440: all six structure values match JSON",
+          "pass": true,
+          "actual": {
+            "expected": [
+              [
+                1,
+                1
+              ],
+              [
+                46,
+                7
+              ],
+              [
+                800,
+                172
+              ]
+            ],
+            "actual": [
+              [
+                1,
+                1
+              ],
+              [
+                46,
+                7
+              ],
+              [
+                800,
+                172
+              ]
+            ]
+          }
+        },
+        {
+          "name": "desktop-1440: seven real dates match JSON",
+          "pass": true,
+          "actual": {
+            "expected": [
+              "2026-04-06",
+              "2026-04-07",
+              "2026-04-08",
+              "2026-04-09",
+              "2026-04-10",
+              "2026-04-11",
+              "2026-04-12"
+            ],
+            "actual": [
+              "2026-04-06",
+              "2026-04-07",
+              "2026-04-08",
+              "2026-04-09",
+              "2026-04-10",
+              "2026-04-11",
+              "2026-04-12"
+            ]
+          }
+        },
+        {
+          "name": "desktop-1440: all fourteen daily values match JSON",
+          "pass": true,
+          "actual": {
+            "expected": [
+              [
+                185,
+                55
+              ],
+              [
+                186,
+                55
+              ],
+              [
+                183,
+                55
+              ],
+              [
+                161,
+                55
+              ],
+              [
+                188,
+                55
+              ],
+              [
+                146,
+                41
+              ],
+              [
+                39,
+                41
+              ]
+            ],
+            "actual": [
+              [
+                185,
+                55
+              ],
+              [
+                186,
+                55
+              ],
+              [
+                183,
+                55
+              ],
+              [
+                161,
+                55
+              ],
+              [
+                188,
+                55
+              ],
+              [
+                146,
+                41
+              ],
+              [
+                39,
+                41
+              ]
+            ]
+          }
+        },
+        {
+          "name": "desktop-1440: daily table has both cities simultaneously visible",
+          "pass": true,
+          "actual": {
+            "headerCells": [
+              "実日付",
+              "岩国市関連",
+              "光市関連"
+            ],
+            "rows": [
+              [
+                "2026/4/6(月)",
+                "185便測定済み",
+                "55便測定済み"
+              ],
+              [
+                "2026/4/7(火)",
+                "186便測定済み",
+                "55便測定済み"
+              ],
+              [
+                "2026/4/8(水)",
+                "183便測定済み",
+                "55便測定済み"
+              ],
+              [
+                "2026/4/9(木)",
+                "161便測定済み",
+                "55便測定済み"
+              ],
+              [
+                "2026/4/10(金)",
+                "188便測定済み",
+                "55便測定済み"
+              ],
+              [
+                "2026/4/11(土)",
+                "146便測定済み",
+                "41便測定済み"
+              ],
+              [
+                "2026/4/12(日)",
+                "39便測定済み",
+                "41便測定済み"
+              ]
+            ],
+            "tableWidth": 1096,
+            "wrapperClientWidth": 1096,
+            "wrapperScrollWidth": 1096,
+            "allCellsVisible": true
+          }
+        },
+        {
+          "name": "desktop-1440: status, scope limit, labelled dates, ZIP and full SHA are present",
+          "pass": true,
+          "actual": {
+            "measured": true,
+            "feedWideLimit": true,
+            "labelledDates": true,
+            "exactEvidenceChecks": 18,
+            "exactEvidenceTotal": 18
+          }
+        },
+        {
+          "name": "desktop-1440: supply and gtfs_feeds JSON loaded with HTTP 200",
+          "pass": true,
+          "actual": {
+            "supplyStatus": [
+              200
+            ],
+            "feedsStatus": [
+              200,
+              200
+            ]
+          }
+        },
+        {
+          "name": "desktop-1440: browser error channels are empty",
+          "pass": true,
+          "actual": {
+            "consoleErrors": [],
+            "runtimeExceptions": [],
+            "logErrors": [],
+            "loadingFailed": []
+          }
+        }
+      ],
+      "pass": true
+    },
+    {
+      "label": "mobile-390x844",
+      "requestedViewport": {
+        "width": 390,
+        "height": 844
+      },
+      "ready": {
+        "ready": "complete",
+        "supplyVisible": true,
+        "municipalVisible": true,
+        "gtfsVisible": true,
+        "supplyError": false,
+        "existingError": false
+      },
+      "screenshot": "C:/Users/user/dev/udc2026/yamaguchi-yusho-data/evidence/20260810_supply_view1_screenshot_390x844.png",
+      "screenshotPixels": {
+        "width": 390,
+        "height": 8261
+      },
+      "dom": {
+        "title": "山口市｜山口県 市町別の登録供給ビュー",
+        "viewport": {
+          "innerWidth": 390,
+          "innerHeight": 844
+        },
+        "documentWidth": {
+          "scrollWidth": 390,
+          "clientWidth": 390,
+          "difference": 0
+        },
+        "supplyExists": true,
+        "supplyHeading": "岩国市・光市のGTFS供給を同じ日付で確認",
+        "supplyContentHidden": false,
+        "supplyErrorHidden": true,
+        "existingErrorHidden": true,
+        "municipalResultVisible": true,
+        "gtfsResultVisible": true,
+        "municipalHeading": "山口市の登録供給",
+        "gtfsHeading": "GTFS/GTFS-JPの公式確認状況",
+        "structureHeading": "フィードに収録された情報の件数",
+        "dailyHeading": "この日にGTFSで予定された運行便",
+        "evidenceHeading": "値の状態と根拠",
+        "sectionOffsets": {
+          "supply": 1148,
+          "structure": 1460,
+          "daily": 1872,
+          "evidence": 2573
+        },
+        "structure": {
+          "headerCells": [
+            "指標",
+            "岩国市関連",
+            "光市関連"
+          ],
+          "rows": [
+            [
+              "GTFS収録の交通ブランド情報",
+              "1件測定済み",
+              "1件測定済み"
+            ],
+            [
+              "GTFS収録の路線情報ID",
+              "46ID測定済み",
+              "7ID測定済み"
+            ],
+            [
+              "GTFS収録の乗降場所ID",
+              "800ID測定済み",
+              "172ID測定済み"
+            ]
+          ],
+          "tableWidth": 334,
+          "wrapperClientWidth": 334,
+          "wrapperScrollWidth": 334,
+          "allCellsVisible": true
+        },
+        "daily": {
+          "headerCells": [
+            "実日付",
+            "岩国市関連",
+            "光市関連"
+          ],
+          "rows": [
+            [
+              "2026/4/6(月)",
+              "185便測定済み",
+              "55便測定済み"
+            ],
+            [
+              "2026/4/7(火)",
+              "186便測定済み",
+              "55便測定済み"
+            ],
+            [
+              "2026/4/8(水)",
+              "183便測定済み",
+              "55便測定済み"
+            ],
+            [
+              "2026/4/9(木)",
+              "161便測定済み",
+              "55便測定済み"
+            ],
+            [
+              "2026/4/10(金)",
+              "188便測定済み",
+              "55便測定済み"
+            ],
+            [
+              "2026/4/11(土)",
+              "146便測定済み",
+              "41便測定済み"
+            ],
+            [
+              "2026/4/12(日)",
+              "39便測定済み",
+              "41便測定済み"
+            ]
+          ],
+          "tableWidth": 334,
+          "wrapperClientWidth": 334,
+          "wrapperScrollWidth": 334,
+          "allCellsVisible": true
+        },
+        "evidenceDetails": [
+          {
+            "open": true,
+            "text": "岩国市関連フィードの根拠データセット: 岩国市（生活交通バス・由宇地区バス）GTFS-JPデータ ／ 公開主体: 岩国市対象範囲: 対象は公式データセット名称にある生活交通バス・由宇地区バス（岩国市）。市域全体・全路線を網羅するとは公式記載からは確認していない。 公式データセット名称にある生活交通バス・由宇地区バスが対象。市域全体・全路線を網羅するとは公式記載からは確認していない。 この値は当該市町に関連付けて確認したフィード全体の収録値であり、市町内だけの値・市町の全公共交通の値ではない（SPEC.md §15.3）。比較週: 2026-04-06〜2026-04-12 ／ 指標版: SUPPLY-METRIC-1公式ページ記載のデータ基準日: 2026-04-01 ／ 確認日: 2026-08-09 ／ 計算日: 2026-08-10原本ZIP: raw/gtfs/iwakuni_gtfsjp_20260401.zip（719723 bytes）原本ZIP SHA256: d236a58ff4a0edb4812a8bed543d4897670441164a1019e88d5e35ded5052de2GTFS内部日付: feed_info.txt: 20260327〜20270326 ／ calendar.txt: 20260327〜20270326 ／ calendar_dates.txt: 追加日 20260327〜20260930、除外日 なし利用条件: クリエイティブ・コモンズ 表示（CC BY）公式データセットページを開く"
+          },
+          {
+            "open": true,
+            "text": "光市関連フィードの根拠データセット: 光市（広域生活交通、ひかりぐるりんバス、光市営バス）GTFSデータ ／ 公開主体: 光市対象範囲: 対象は公式データセット名称にある広域生活交通、ひかりぐるりんバス、光市営バス（光市）。市域全体・全路線を網羅するとは公式記載からは確認していない。 公式データセット名称にある広域生活交通、ひかりぐるりんバス、光市営バスが対象。市域全体・全路線を網羅するとは公式記載からは確認していない。 この値は当該市町に関連付けて確認したフィード全体の収録値であり、市町内だけの値・市町の全公共交通の値ではない（SPEC.md §15.3）。比較週: 2026-04-06〜2026-04-12 ／ 指標版: SUPPLY-METRIC-1公式ページ記載のデータ基準日: 2026-04-01 ／ 確認日: 2026-08-09 ／ 計算日: 2026-08-10原本ZIP: raw/gtfs/hikari_gtfs_20260401.zip（86273 bytes）原本ZIP SHA256: f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7GTFS内部日付: feed_info.txt: 20260401〜20270331 ／ calendar.txt: 20260401〜20270331 ／ calendar_dates.txt: 追加日 20260429〜20270322、除外日 20260429〜20270322利用条件: クリエイティブ・コモンズ 表示（CC BY）公式データセットページを開く"
+          }
+        ]
+      },
+      "networkResponses": [
+        {
+          "url": "http://localhost:60359/index.html",
+          "status": 200,
+          "type": "Document"
+        },
+        {
+          "url": "http://localhost:60359/data/municipal_supply.json",
+          "status": 200,
+          "type": "Fetch"
+        },
+        {
+          "url": "http://localhost:60359/data/gtfs_feeds.json",
+          "status": 200,
+          "type": "Fetch"
+        },
+        {
+          "url": "http://localhost:60359/data/municipality_gtfs.json",
+          "status": 200,
+          "type": "Fetch"
+        },
+        {
+          "url": "http://localhost:60359/data/gtfs_supply_metrics.json",
+          "status": 200,
+          "type": "Fetch"
+        },
+        {
+          "url": "http://localhost:60359/data/gtfs_feeds.json",
+          "status": 200,
+          "type": "Fetch"
+        }
+      ],
+      "consoleMessages": [],
+      "runtimeExceptions": [],
+      "logEntries": [],
+      "loadingFailed": [],
+      "assertions": [
+        {
+          "name": "mobile-390x844: requested viewport applied",
+          "pass": true,
+          "actual": {
+            "innerWidth": 390,
+            "innerHeight": 844
+          }
+        },
+        {
+          "name": "mobile-390x844: document horizontal overflow is zero",
+          "pass": true,
+          "actual": {
+            "scrollWidth": 390,
+            "clientWidth": 390,
+            "difference": 0
+          }
+        },
+        {
+          "name": "mobile-390x844: comparison headings and evidence are reachable",
+          "pass": true,
+          "actual": {
+            "supply": "岩国市・光市のGTFS供給を同じ日付で確認",
+            "structure": "フィードに収録された情報の件数",
+            "daily": "この日にGTFSで予定された運行便",
+            "evidence": "値の状態と根拠",
+            "offsets": {
+              "supply": 1148,
+              "structure": 1460,
+              "daily": 1872,
+              "evidence": 2573
+            },
+            "detailCount": 2
+          }
+        },
+        {
+          "name": "mobile-390x844: supply comparison rendered without failure",
+          "pass": true,
+          "actual": {
+            "supplyContentHidden": false,
+            "supplyErrorHidden": true
+          }
+        },
+        {
+          "name": "mobile-390x844: existing municipal and GTFS views remain rendered",
+          "pass": true,
+          "actual": {
+            "existingErrorHidden": true,
+            "municipalResultVisible": true,
+            "gtfsResultVisible": true,
+            "municipalHeading": "山口市の登録供給",
+            "gtfsHeading": "GTFS/GTFS-JPの公式確認状況"
+          }
+        },
+        {
+          "name": "mobile-390x844: structure table has both cities simultaneously visible",
+          "pass": true,
+          "actual": {
+            "headerCells": [
+              "指標",
+              "岩国市関連",
+              "光市関連"
+            ],
+            "rows": [
+              [
+                "GTFS収録の交通ブランド情報",
+                "1件測定済み",
+                "1件測定済み"
+              ],
+              [
+                "GTFS収録の路線情報ID",
+                "46ID測定済み",
+                "7ID測定済み"
+              ],
+              [
+                "GTFS収録の乗降場所ID",
+                "800ID測定済み",
+                "172ID測定済み"
+              ]
+            ],
+            "tableWidth": 334,
+            "wrapperClientWidth": 334,
+            "wrapperScrollWidth": 334,
+            "allCellsVisible": true
+          }
+        },
+        {
+          "name": "mobile-390x844: all six structure values match JSON",
+          "pass": true,
+          "actual": {
+            "expected": [
+              [
+                1,
+                1
+              ],
+              [
+                46,
+                7
+              ],
+              [
+                800,
+                172
+              ]
+            ],
+            "actual": [
+              [
+                1,
+                1
+              ],
+              [
+                46,
+                7
+              ],
+              [
+                800,
+                172
+              ]
+            ]
+          }
+        },
+        {
+          "name": "mobile-390x844: seven real dates match JSON",
+          "pass": true,
+          "actual": {
+            "expected": [
+              "2026-04-06",
+              "2026-04-07",
+              "2026-04-08",
+              "2026-04-09",
+              "2026-04-10",
+              "2026-04-11",
+              "2026-04-12"
+            ],
+            "actual": [
+              "2026-04-06",
+              "2026-04-07",
+              "2026-04-08",
+              "2026-04-09",
+              "2026-04-10",
+              "2026-04-11",
+              "2026-04-12"
+            ]
+          }
+        },
+        {
+          "name": "mobile-390x844: all fourteen daily values match JSON",
+          "pass": true,
+          "actual": {
+            "expected": [
+              [
+                185,
+                55
+              ],
+              [
+                186,
+                55
+              ],
+              [
+                183,
+                55
+              ],
+              [
+                161,
+                55
+              ],
+              [
+                188,
+                55
+              ],
+              [
+                146,
+                41
+              ],
+              [
+                39,
+                41
+              ]
+            ],
+            "actual": [
+              [
+                185,
+                55
+              ],
+              [
+                186,
+                55
+              ],
+              [
+                183,
+                55
+              ],
+              [
+                161,
+                55
+              ],
+              [
+                188,
+                55
+              ],
+              [
+                146,
+                41
+              ],
+              [
+                39,
+                41
+              ]
+            ]
+          }
+        },
+        {
+          "name": "mobile-390x844: daily table has both cities simultaneously visible",
+          "pass": true,
+          "actual": {
+            "headerCells": [
+              "実日付",
+              "岩国市関連",
+              "光市関連"
+            ],
+            "rows": [
+              [
+                "2026/4/6(月)",
+                "185便測定済み",
+                "55便測定済み"
+              ],
+              [
+                "2026/4/7(火)",
+                "186便測定済み",
+                "55便測定済み"
+              ],
+              [
+                "2026/4/8(水)",
+                "183便測定済み",
+                "55便測定済み"
+              ],
+              [
+                "2026/4/9(木)",
+                "161便測定済み",
+                "55便測定済み"
+              ],
+              [
+                "2026/4/10(金)",
+                "188便測定済み",
+                "55便測定済み"
+              ],
+              [
+                "2026/4/11(土)",
+                "146便測定済み",
+                "41便測定済み"
+              ],
+              [
+                "2026/4/12(日)",
+                "39便測定済み",
+                "41便測定済み"
+              ]
+            ],
+            "tableWidth": 334,
+            "wrapperClientWidth": 334,
+            "wrapperScrollWidth": 334,
+            "allCellsVisible": true
+          }
+        },
+        {
+          "name": "mobile-390x844: status, scope limit, labelled dates, ZIP and full SHA are present",
+          "pass": true,
+          "actual": {
+            "measured": true,
+            "feedWideLimit": true,
+            "labelledDates": true,
+            "exactEvidenceChecks": 18,
+            "exactEvidenceTotal": 18
+          }
+        },
+        {
+          "name": "mobile-390x844: supply and gtfs_feeds JSON loaded with HTTP 200",
+          "pass": true,
+          "actual": {
+            "supplyStatus": [
+              200
+            ],
+            "feedsStatus": [
+              200,
+              200
+            ]
+          }
+        },
+        {
+          "name": "mobile-390x844: browser error channels are empty",
+          "pass": true,
+          "actual": {
+            "consoleErrors": [],
+            "runtimeExceptions": [],
+            "logErrors": [],
+            "loadingFailed": []
+          }
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "assertions": [
+    {
+      "name": "preflight supply JSON HTTP 200",
+      "pass": true,
+      "actual": 200
+    },
+    {
+      "name": "preflight gtfs_feeds JSON HTTP 200",
+      "pass": true,
+      "actual": 200
+    },
+    {
+      "name": "desktop-1440: requested viewport applied",
+      "pass": true,
+      "actual": {
+        "innerWidth": 1440,
+        "innerHeight": 1600
+      }
+    },
+    {
+      "name": "desktop-1440: document horizontal overflow is zero",
+      "pass": true,
+      "actual": {
+        "scrollWidth": 1425,
+        "clientWidth": 1425,
+        "difference": 0
+      }
+    },
+    {
+      "name": "desktop-1440: comparison headings and evidence are reachable",
+      "pass": true,
+      "actual": {
+        "supply": "岩国市・光市のGTFS供給を同じ日付で確認",
+        "structure": "フィードに収録された情報の件数",
+        "daily": "この日にGTFSで予定された運行便",
+        "evidence": "値の状態と根拠",
+        "offsets": {
+          "supply": 914,
+          "structure": 1183,
+          "daily": 1580,
+          "evidence": 2296
+        },
+        "detailCount": 2
+      }
+    },
+    {
+      "name": "desktop-1440: supply comparison rendered without failure",
+      "pass": true,
+      "actual": {
+        "supplyContentHidden": false,
+        "supplyErrorHidden": true
+      }
+    },
+    {
+      "name": "desktop-1440: existing municipal and GTFS views remain rendered",
+      "pass": true,
+      "actual": {
+        "existingErrorHidden": true,
+        "municipalResultVisible": true,
+        "gtfsResultVisible": true,
+        "municipalHeading": "山口市の登録供給",
+        "gtfsHeading": "GTFS/GTFS-JPの公式確認状況"
+      }
+    },
+    {
+      "name": "desktop-1440: structure table has both cities simultaneously visible",
+      "pass": true,
+      "actual": {
+        "headerCells": [
+          "指標",
+          "岩国市関連",
+          "光市関連"
+        ],
+        "rows": [
+          [
+            "GTFS収録の交通ブランド情報",
+            "1件測定済み",
+            "1件測定済み"
+          ],
+          [
+            "GTFS収録の路線情報ID",
+            "46ID測定済み",
+            "7ID測定済み"
+          ],
+          [
+            "GTFS収録の乗降場所ID",
+            "800ID測定済み",
+            "172ID測定済み"
+          ]
+        ],
+        "tableWidth": 1096,
+        "wrapperClientWidth": 1096,
+        "wrapperScrollWidth": 1096,
+        "allCellsVisible": true
+      }
+    },
+    {
+      "name": "desktop-1440: all six structure values match JSON",
+      "pass": true,
+      "actual": {
+        "expected": [
+          [
+            1,
+            1
+          ],
+          [
+            46,
+            7
+          ],
+          [
+            800,
+            172
+          ]
+        ],
+        "actual": [
+          [
+            1,
+            1
+          ],
+          [
+            46,
+            7
+          ],
+          [
+            800,
+            172
+          ]
+        ]
+      }
+    },
+    {
+      "name": "desktop-1440: seven real dates match JSON",
+      "pass": true,
+      "actual": {
+        "expected": [
+          "2026-04-06",
+          "2026-04-07",
+          "2026-04-08",
+          "2026-04-09",
+          "2026-04-10",
+          "2026-04-11",
+          "2026-04-12"
+        ],
+        "actual": [
+          "2026-04-06",
+          "2026-04-07",
+          "2026-04-08",
+          "2026-04-09",
+          "2026-04-10",
+          "2026-04-11",
+          "2026-04-12"
+        ]
+      }
+    },
+    {
+      "name": "desktop-1440: all fourteen daily values match JSON",
+      "pass": true,
+      "actual": {
+        "expected": [
+          [
+            185,
+            55
+          ],
+          [
+            186,
+            55
+          ],
+          [
+            183,
+            55
+          ],
+          [
+            161,
+            55
+          ],
+          [
+            188,
+            55
+          ],
+          [
+            146,
+            41
+          ],
+          [
+            39,
+            41
+          ]
+        ],
+        "actual": [
+          [
+            185,
+            55
+          ],
+          [
+            186,
+            55
+          ],
+          [
+            183,
+            55
+          ],
+          [
+            161,
+            55
+          ],
+          [
+            188,
+            55
+          ],
+          [
+            146,
+            41
+          ],
+          [
+            39,
+            41
+          ]
+        ]
+      }
+    },
+    {
+      "name": "desktop-1440: daily table has both cities simultaneously visible",
+      "pass": true,
+      "actual": {
+        "headerCells": [
+          "実日付",
+          "岩国市関連",
+          "光市関連"
+        ],
+        "rows": [
+          [
+            "2026/4/6(月)",
+            "185便測定済み",
+            "55便測定済み"
+          ],
+          [
+            "2026/4/7(火)",
+            "186便測定済み",
+            "55便測定済み"
+          ],
+          [
+            "2026/4/8(水)",
+            "183便測定済み",
+            "55便測定済み"
+          ],
+          [
+            "2026/4/9(木)",
+            "161便測定済み",
+            "55便測定済み"
+          ],
+          [
+            "2026/4/10(金)",
+            "188便測定済み",
+            "55便測定済み"
+          ],
+          [
+            "2026/4/11(土)",
+            "146便測定済み",
+            "41便測定済み"
+          ],
+          [
+            "2026/4/12(日)",
+            "39便測定済み",
+            "41便測定済み"
+          ]
+        ],
+        "tableWidth": 1096,
+        "wrapperClientWidth": 1096,
+        "wrapperScrollWidth": 1096,
+        "allCellsVisible": true
+      }
+    },
+    {
+      "name": "desktop-1440: status, scope limit, labelled dates, ZIP and full SHA are present",
+      "pass": true,
+      "actual": {
+        "measured": true,
+        "feedWideLimit": true,
+        "labelledDates": true,
+        "exactEvidenceChecks": 18,
+        "exactEvidenceTotal": 18
+      }
+    },
+    {
+      "name": "desktop-1440: supply and gtfs_feeds JSON loaded with HTTP 200",
+      "pass": true,
+      "actual": {
+        "supplyStatus": [
+          200
+        ],
+        "feedsStatus": [
+          200,
+          200
+        ]
+      }
+    },
+    {
+      "name": "desktop-1440: browser error channels are empty",
+      "pass": true,
+      "actual": {
+        "consoleErrors": [],
+        "runtimeExceptions": [],
+        "logErrors": [],
+        "loadingFailed": []
+      }
+    },
+    {
+      "name": "mobile-390x844: requested viewport applied",
+      "pass": true,
+      "actual": {
+        "innerWidth": 390,
+        "innerHeight": 844
+      }
+    },
+    {
+      "name": "mobile-390x844: document horizontal overflow is zero",
+      "pass": true,
+      "actual": {
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "difference": 0
+      }
+    },
+    {
+      "name": "mobile-390x844: comparison headings and evidence are reachable",
+      "pass": true,
+      "actual": {
+        "supply": "岩国市・光市のGTFS供給を同じ日付で確認",
+        "structure": "フィードに収録された情報の件数",
+        "daily": "この日にGTFSで予定された運行便",
+        "evidence": "値の状態と根拠",
+        "offsets": {
+          "supply": 1148,
+          "structure": 1460,
+          "daily": 1872,
+          "evidence": 2573
+        },
+        "detailCount": 2
+      }
+    },
+    {
+      "name": "mobile-390x844: supply comparison rendered without failure",
+      "pass": true,
+      "actual": {
+        "supplyContentHidden": false,
+        "supplyErrorHidden": true
+      }
+    },
+    {
+      "name": "mobile-390x844: existing municipal and GTFS views remain rendered",
+      "pass": true,
+      "actual": {
+        "existingErrorHidden": true,
+        "municipalResultVisible": true,
+        "gtfsResultVisible": true,
+        "municipalHeading": "山口市の登録供給",
+        "gtfsHeading": "GTFS/GTFS-JPの公式確認状況"
+      }
+    },
+    {
+      "name": "mobile-390x844: structure table has both cities simultaneously visible",
+      "pass": true,
+      "actual": {
+        "headerCells": [
+          "指標",
+          "岩国市関連",
+          "光市関連"
+        ],
+        "rows": [
+          [
+            "GTFS収録の交通ブランド情報",
+            "1件測定済み",
+            "1件測定済み"
+          ],
+          [
+            "GTFS収録の路線情報ID",
+            "46ID測定済み",
+            "7ID測定済み"
+          ],
+          [
+            "GTFS収録の乗降場所ID",
+            "800ID測定済み",
+            "172ID測定済み"
+          ]
+        ],
+        "tableWidth": 334,
+        "wrapperClientWidth": 334,
+        "wrapperScrollWidth": 334,
+        "allCellsVisible": true
+      }
+    },
+    {
+      "name": "mobile-390x844: all six structure values match JSON",
+      "pass": true,
+      "actual": {
+        "expected": [
+          [
+            1,
+            1
+          ],
+          [
+            46,
+            7
+          ],
+          [
+            800,
+            172
+          ]
+        ],
+        "actual": [
+          [
+            1,
+            1
+          ],
+          [
+            46,
+            7
+          ],
+          [
+            800,
+            172
+          ]
+        ]
+      }
+    },
+    {
+      "name": "mobile-390x844: seven real dates match JSON",
+      "pass": true,
+      "actual": {
+        "expected": [
+          "2026-04-06",
+          "2026-04-07",
+          "2026-04-08",
+          "2026-04-09",
+          "2026-04-10",
+          "2026-04-11",
+          "2026-04-12"
+        ],
+        "actual": [
+          "2026-04-06",
+          "2026-04-07",
+          "2026-04-08",
+          "2026-04-09",
+          "2026-04-10",
+          "2026-04-11",
+          "2026-04-12"
+        ]
+      }
+    },
+    {
+      "name": "mobile-390x844: all fourteen daily values match JSON",
+      "pass": true,
+      "actual": {
+        "expected": [
+          [
+            185,
+            55
+          ],
+          [
+            186,
+            55
+          ],
+          [
+            183,
+            55
+          ],
+          [
+            161,
+            55
+          ],
+          [
+            188,
+            55
+          ],
+          [
+            146,
+            41
+          ],
+          [
+            39,
+            41
+          ]
+        ],
+        "actual": [
+          [
+            185,
+            55
+          ],
+          [
+            186,
+            55
+          ],
+          [
+            183,
+            55
+          ],
+          [
+            161,
+            55
+          ],
+          [
+            188,
+            55
+          ],
+          [
+            146,
+            41
+          ],
+          [
+            39,
+            41
+          ]
+        ]
+      }
+    },
+    {
+      "name": "mobile-390x844: daily table has both cities simultaneously visible",
+      "pass": true,
+      "actual": {
+        "headerCells": [
+          "実日付",
+          "岩国市関連",
+          "光市関連"
+        ],
+        "rows": [
+          [
+            "2026/4/6(月)",
+            "185便測定済み",
+            "55便測定済み"
+          ],
+          [
+            "2026/4/7(火)",
+            "186便測定済み",
+            "55便測定済み"
+          ],
+          [
+            "2026/4/8(水)",
+            "183便測定済み",
+            "55便測定済み"
+          ],
+          [
+            "2026/4/9(木)",
+            "161便測定済み",
+            "55便測定済み"
+          ],
+          [
+            "2026/4/10(金)",
+            "188便測定済み",
+            "55便測定済み"
+          ],
+          [
+            "2026/4/11(土)",
+            "146便測定済み",
+            "41便測定済み"
+          ],
+          [
+            "2026/4/12(日)",
+            "39便測定済み",
+            "41便測定済み"
+          ]
+        ],
+        "tableWidth": 334,
+        "wrapperClientWidth": 334,
+        "wrapperScrollWidth": 334,
+        "allCellsVisible": true
+      }
+    },
+    {
+      "name": "mobile-390x844: status, scope limit, labelled dates, ZIP and full SHA are present",
+      "pass": true,
+      "actual": {
+        "measured": true,
+        "feedWideLimit": true,
+        "labelledDates": true,
+        "exactEvidenceChecks": 18,
+        "exactEvidenceTotal": 18
+      }
+    },
+    {
+      "name": "mobile-390x844: supply and gtfs_feeds JSON loaded with HTTP 200",
+      "pass": true,
+      "actual": {
+        "supplyStatus": [
+          200
+        ],
+        "feedsStatus": [
+          200,
+          200
+        ]
+      }
+    },
+    {
+      "name": "mobile-390x844: browser error channels are empty",
+      "pass": true,
+      "actual": {
+        "consoleErrors": [],
+        "runtimeExceptions": [],
+        "logErrors": [],
+        "loadingFailed": []
+      }
+    }
+  ],
+  "overallPass": true,
+  "failedAssertions": []
+}

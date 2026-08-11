@@ -183,12 +183,12 @@
     }
 
     .overall-bar .done {
-      width: 75%;
+      width: 42.857%;
       background: var(--green);
     }
 
     .overall-bar .current {
-      width: 12.5%;
+      width: 14.286%;
       background: var(--blue);
     }
 
@@ -821,14 +821,14 @@
     <header>
       <p class="eyebrow">UDC2026 応募作品① / 検証状況</p>
       <h1>山口県 市町別の<br>登録供給ビュー</h1>
-      <p class="lead">福祉有償運送と交通空白地有償運送の公表登録簿を市町から確認し、公式GTFS/GTFS-JPの確認状況に加えて、岩国市・光市関連フィードの構造指標と同じ7実日付の予定運行便を根拠付きで比較できる静的アプリです。</p>
-      <a class="app-link" href="index.html?v=20260811#supply-comparison">GTFS供給比較を開く</a>
+      <p class="lead">福祉有償運送と交通空白地有償運送の公表登録簿を、市町から確認できる静的アプリです。県・市町の交通担当者が、関係団体と登録車両を原本まで追跡でき、公式GTFS/GTFS-JPの確認状況も同じ画面で比較できます。</p>
+      <a class="app-link" href="index.html?v=20260810">市町別の登録供給ビューを開く</a>
 
       <div class="metrics" aria-label="主要な進捗数値">
         <div class="metric complete">
           <span class="label">受入段階</span>
-          <strong class="metric-number">6 / 8</strong>
-          <span class="metric-caption">SUPPLY-VIEW-1までCodex受入済み</span>
+          <strong class="metric-number">I-1〜I-4</strong>
+          <span class="metric-caption">データ基盤・市町別ビュー・現況導線・GTFS確認</span>
         </div>
         <div class="metric complete">
           <span class="label">PDF</span>
@@ -852,14 +852,14 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">作品の現在地</p>
-          <h2 id="progress-title">受入済み成果と次作業未定義</h2>
-          <p>I-1〜I-4の登録簿・公式GTFS確認状況に加え、SUPPLY-VIEW-1のローカル比較画面もEdge/CDPによる実ブラウザ確認28/28とCodexの独立読戻しを終え、run_record.md rev.36で受入済みです。次の一作業はまだ定義していません。この現在地はUDC2026応募全体の終了条件T1〜T4（後述）の達成を意味しません。</p>
+          <h2 id="progress-title">受入済み成果と残る作業</h2>
+          <p>登録簿4PDFの機械可読化を基盤に、市町別の登録供給ビュー、状況ページからの導線、公式GTFS/GTFS-JPの確認状況までを受け入れています。I-1〜I-4の受入は、UDC2026応募全体の終了条件T1〜T4（後述）の達成を意味しません。</p>
         </div>
-        <strong class="progress-summary">SUPPLY-VIEW-1 Codex受入済み</strong>
+        <strong class="progress-summary">I-1〜I-4を受入済み</strong>
       </div>
 
-      <div class="overall-bar" role="progressbar" aria-label="8工程中6工程を受入済み、次作業未定義" aria-valuemin="0" aria-valuemax="8" aria-valuenow="6">
-        <span class="done" title="6工程を受入済み"></span>
+      <div class="overall-bar" role="progressbar" aria-label="8工程中5工程を受入済み、次の作品機能はI-5受入後に一つだけ再評価" aria-valuemin="0" aria-valuemax="8" aria-valuenow="5">
+        <span class="done" title="5工程を受入済み"></span>
       </div>
 
       <ol class="roadmap">
@@ -888,10 +888,10 @@
           <span class="step-title">GTFS/GTFS-JP公式確認状況</span>
           <span class="step-state">受入済み</span>
         </li>
-        <li class="done">
+        <li class="current">
           <span class="step-no">06</span>
-          <span class="step-title">SUPPLY-VIEW-1: 岩国市・光市のGTFS供給比較</span>
-          <span class="step-state">実ブラウザ確認・Codex受入済み</span>
+          <span class="step-title">次の作品機能</span>
+          <span class="step-state">I-5受入後に一つだけ再評価</span>
         </li>
         <li class="todo">
           <span class="step-no">07</span>
@@ -911,7 +911,7 @@
         <span><i class="swatch gray"></i>未着手</span>
       </div>
 
-      <ol class="checklist" aria-label="I-1からI-4とSUPPLY-VIEW-1で受入済みの成果">
+      <ol class="checklist" aria-label="I-1からI-4で受入済みの成果">
         <li>
           <span class="check-mark" aria-hidden="true">✓</span>
           <div><strong>I-1: 登録簿データ基盤</strong><p>山口県分4PDFを機械可読化。23団体、vehicles.csv 90行、実車両136台（軽20台は内数）を、目的である供給側データの一部として整備。</p></div>
@@ -928,14 +928,9 @@
           <span class="check-mark" aria-hidden="true">✓</span>
           <div><strong>I-4: GTFS/GTFS-JP公式確認状況</strong><p>公式一次資料で確認できたフィード3件、対象市町名を確認できた5/19市町を、同じ市町別ビューで登録供給と比較できるよう表示。</p></div>
         </li>
-        <li>
-          <span class="check-mark" aria-hidden="true">✓</span>
-          <div><strong>SUPPLY-VIEW-1: 岩国市・光市のGTFS供給比較</strong><p>同じ7実日付の供給量、値の状態、対象範囲、4種の日付、原本をスマホでも混同せず読めることを実ブラウザで確認し、Codexが受入。</p></div>
-        </li>
       </ol>
-      <div class="note"><strong>SUPPLY-VIEW-1で利用できる画面:</strong> 岩国市関連・光市関連フィードについて、GTFS収録の交通ブランド情報、路線情報ID、乗降場所IDと、2026-04-06〜2026-04-12の予定運行便を切替操作なしで確認できます。値は各フィード全体の収録値で、市内だけの値や市内の全公共交通、実運行、利用者数、便利さ、順位、良否を示すものではありません。</div>
-      <p class="lead">自動テストは80テストすべて成功しています（python -m unittest discover -s tests -v）。</p>
-      <p class="source-note">根拠: run_record.md §0.5・§4、SPEC.md §5・§12・§13・§16、verification.md</p>
+      <p class="lead">自動テストは67テストすべて成功しています（python -m unittest discover -s tests -v）。</p>
+      <p class="source-note">根拠: run_record.md §0.5・§4、SPEC.md §5・§12・§13、verification.md</p>
     </section>
 
     <section aria-labelledby="pdf-title">
@@ -1008,7 +1003,7 @@
           <li><span>登録簿記録あり</span><strong>15市町</strong></li>
           <li><span>登録簿上0件</span><strong>4市町</strong></li>
         </ul>
-        <a class="app-link" href="index.html?v=20260811">19市町から選んで確認する</a>
+        <a class="app-link" href="index.html?v=20260810">19市町から選んで確認する</a>
         <p class="source-note">市町一覧: 山口県「市町｜関連リンク」 <a href="https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html">公式ページ</a>。集計: docs/data/municipal_supply.json</p>
       </section>
     </div>
@@ -1040,11 +1035,11 @@
         </div>
       </div>
 
-      <p class="lead">「5 / 19」は、今回確認した公式資料に対象市町名の記載があった市町数です。交通の充足度や達成度を測る指標ではなく、市町どうしの優劣や順位を示すものでもありません。認証不要の岩国市・光市の公式2 ZIPは取得・検査済みですが、船木鉄道は認証が必要なため本体を取得していません。</p>
+      <p class="lead">「5 / 19」は、今回確認した公式資料に対象市町名の記載があった市町数です。交通の充足度や達成度を測る指標ではなく、市町どうしの優劣や順位を示すものでもありません。GTFS本体のダウンロード・認証・解析は行っていません。</p>
 
       <div class="note">残り14 / 19市町は「今回確認した公式資料の範囲では未確認」であり、これらの市町にGTFS/GTFS-JPが存在しないと断定するものではありません。全市町・全事業者のサイトを網羅的に確認したものでもありません。</div>
 
-      <p class="source-note">公開データ: <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a>。市町別の詳細は<a href="index.html?v=20260811">市町別の登録供給ビュー</a>で市町を選ぶと確認できます。根拠: SPEC.md §12・§14・§16、evidence/20260809_gtfs_*、verification.md</p>
+      <p class="source-note">公開データ: <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a>。市町別の詳細は<a href="index.html?v=20260810">市町別の登録供給ビュー</a>で市町を選ぶと確認できます。根拠: SPEC.md §12、evidence/20260809_gtfs_*、verification.md</p>
     </section>
 
     <section aria-labelledby="check-title">
@@ -1150,34 +1145,34 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">この作業の区切り</p>
-          <h2 id="next-title">SUPPLY-VIEW-1はCodex受入済みで停止</h2>
-          <p>岩国市・光市関連フィードの検証済み供給を、根拠と日付を混同せず同じ画面で確認できる状態まで受入済みです。次の一作業は未定義であり、地図、経路検索、船木鉄道取得、公開更新へは広げません。</p>
+          <h2 id="next-title">I-5はここまでで止める</h2>
+          <p>README.mdと状況ページの現況説明をI-1〜I-4の受入済み範囲へ同期しただけで、新しい作品機能へ広げません。</p>
         </div>
       </div>
 
       <ol class="next-list">
         <li>
-          <strong>検証済みJSONを画面へ同期</strong>
-          <p>data/gtfs_supply_metrics.jsonと静的サイト用JSONをバイト一致させ、20値をHTMLへ二重転記せず表示する。</p>
+          <strong>古い現況表示を現在値へ同期</strong>
+          <p>I-3受入時点のテスト件数・工程数・再評価時期の記述を除き、I-1〜I-4受入済み・GTFS確認状況・T1〜T4未達へ更新する。</p>
         </li>
         <li>
           <strong>デスクトップとモバイルで確認</strong>
-          <p>docs/index.htmlと公開JSONへのリンク操作、1440px・390×844相当の読みやすさ、横方向のはみ出し・コンソールエラー0件を確認する。</p>
+          <p>docs/index.htmlと公開JSONへのリンク操作、表示の読みやすさ、横方向のはみ出し・コンソールエラー0件を確認する。</p>
         </li>
         <li>
-          <strong>Codexが独立に受け入れる</strong>
-          <p>実ファイル・表示値・テスト・証拠を読み戻す。commit・push・公開・外部提出は行わない。</p>
+          <strong>ローカルコミットで受け入れる</strong>
+          <p>push・外部提出はしない。次の作品機能はI-5受入後に一つだけ再評価する。</p>
         </li>
       </ol>
-      <p class="source-note">根拠: run_record.md §4、SPEC.md §16</p>
+      <p class="source-note">根拠: run_record.md §4、SPEC.md §13</p>
     </section>
 
     <section class="sources" aria-labelledby="source-title">
       <h2 id="source-title">このページの根拠</h2>
       <ul>
-        <li>公開用アプリ（docs/index.html）: <a href="index.html?v=20260811">市町別の登録供給ビュー</a>（<a href="index.html?v=20260811#supply-comparison">岩国市・光市のGTFS供給比較</a>、<a href="index.html?v=20260811#limits-title">データの限界</a>、<a href="index.html?v=20260811#sources-title">出典と利用条件</a>）</li>
-        <li>公開JSON: <a href="data/operators.json">operators.json</a> / <a href="data/vehicles.json">vehicles.json</a> / <a href="data/municipal_supply.json">municipal_supply.json</a> / <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a> / <a href="data/gtfs_supply_metrics.json">gtfs_supply_metrics.json</a></li>
-        <li>リポジトリ内: run_record.md、SPEC.md、verification.md、data/operators.csv、data/vehicles.csv、data/gtfs_feeds.csv、data/municipality_gtfs.csv、data/gtfs_supply_metrics.json</li>
+        <li>公開アプリ（docs/index.html）: <a href="index.html?v=20260810">市町別の登録供給ビュー</a>（<a href="index.html?v=20260810#limits-title">データの限界</a>、<a href="index.html?v=20260810#sources-title">出典と利用条件</a>）</li>
+        <li>公開JSON: <a href="data/operators.json">operators.json</a> / <a href="data/vehicles.json">vehicles.json</a> / <a href="data/municipal_supply.json">municipal_supply.json</a> / <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a></li>
+        <li>リポジトリ内: run_record.md、SPEC.md、verification.md、data/operators.csv、data/vehicles.csv、data/gtfs_feeds.csv、data/municipality_gtfs.csv</li>
         <li>括弧付き台数の扱い: 国自旅第317号「<a href="https://www.mlit.go.jp/jidosha/content/001766049.pdf">福祉有償運送の登録に関する処理方針について</a>」2.(2)⑦</li>
         <li>交通空白地の車種区分: 国自旅第316号「<a href="https://www.mlit.go.jp/jidosha/content/001766048.pdf">交通空白地有償運送の登録に関する処理方針について</a>」2.(2)⑦</li>
         <li>山口県の市町数: 出典: 山口県「市町｜関連リンク」 <a href="https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html">https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html</a></li>

@@ -1,0 +1,96 @@
+取得日時: 2026-08-10 18:16 JST
+取得元  : C:\Users\user\dev\udc2026\.venv\Scripts\python.exe -B -m unittest discover -s tests -v
+取得方法: repo親の .venv Python で -B 付きで実行（Claude Code, リポジトリ直下から実行）
+
+このファイルはSUPPLY-METRIC-2-CORR-1（exact_times割り切れ要件・route_id/service_id参照整合性の
+訂正）後の再実行結果。訂正内容は`evidence/20260810_supply_metric2_corr1_fix_verification_raw.txt`
+参照。
+
+## 実行結果（生の標準出力。cp932でdocstringを書いたtest_verify.pyの一部行はUTF-8端末で文字化けするが、
+これはSUPPLY-METRIC-2の変更に起因しない既存の表示挙動であり、テスト結果（ok/FAIL）には影響しない）
+
+test_gtfs_archive_safety_and_measurement (test_gtfs_inspection.GtfsArchiveInspectionTest.test_gtfs_archive_safety_and_measurement) ... ok
+test_supply_metrics_calculation (test_gtfs_supply_metrics.GtfsSupplyMetricsTest.test_supply_metrics_calculation) ... ok
+test_access_status_is_limited_to_spec_enum (test_site.GtfsStatusDataTest.test_access_status_is_limited_to_spec_enum) ... ok
+test_availability_status_counts (test_site.GtfsStatusDataTest.test_availability_status_counts) ... ok
+test_csv_and_json_match (test_site.GtfsStatusDataTest.test_csv_and_json_match) ... ok
+test_csv_files_use_lf_line_endings (test_site.GtfsStatusDataTest.test_csv_files_use_lf_line_endings) ... ok
+test_feeds_row_count_and_unique_ids (test_site.GtfsStatusDataTest.test_feeds_row_count_and_unique_ids) ... ok
+test_iwakuni_and_hikari_reference_dates_and_validity (test_site.GtfsStatusDataTest.test_iwakuni_and_hikari_reference_dates_and_validity) ... ok
+test_municipality_row_count_official_order_and_unique_codes (test_site.GtfsStatusDataTest.test_municipality_row_count_official_order_and_unique_codes) ... ok
+test_no_real_access_token_is_recorded (test_site.GtfsStatusDataTest.test_no_real_access_token_is_recorded) ... ok
+test_published_gtfs_json_is_byte_identical (test_site.GtfsStatusDataTest.test_published_gtfs_json_is_byte_identical) ... ok
+test_sentetsu_validity_period_and_access_status (test_site.GtfsStatusDataTest.test_sentetsu_validity_period_and_access_status) ... ok
+test_source_evidence_files_exist (test_site.GtfsStatusDataTest.test_source_evidence_files_exist) ... ok
+test_three_feeds_map_to_five_municipalities_without_double_counting (test_site.GtfsStatusDataTest.test_three_feeds_map_to_five_municipalities_without_double_counting) ... ok
+test_gtfs_status_does_not_assert_coverage_or_maturity_metrics (test_site.IndexHtmlContractTest.test_gtfs_status_does_not_assert_coverage_or_maturity_metrics) ... ok
+test_gtfs_status_elements_are_present (test_site.IndexHtmlContractTest.test_gtfs_status_elements_are_present) ... ok
+test_limitations_attribution_and_licenses_are_present (test_site.IndexHtmlContractTest.test_limitations_attribution_and_licenses_are_present) ... ok
+test_user_outcome_and_controls_are_present (test_site.IndexHtmlContractTest.test_user_outcome_and_controls_are_present) ... ok
+test_each_municipality_has_no_duplicate_operator_and_breakdown_reconciles (test_site.MunicipalSupplyDataTest.test_each_municipality_has_no_duplicate_operator_and_breakdown_reconciles) ... ok
+test_official_roster_has_all_19_in_source_order (test_site.MunicipalSupplyDataTest.test_official_roster_has_all_19_in_source_order) ... ok
+test_prefecture_unique_totals_are_not_municipal_sums (test_site.MunicipalSupplyDataTest.test_prefecture_unique_totals_are_not_municipal_sums) ... ok
+test_shimonoseki_and_yamaguchi_hardcoded_totals (test_site.MunicipalSupplyDataTest.test_shimonoseki_and_yamaguchi_hardcoded_totals) ... ok
+test_zero_record_municipalities_are_exact (test_site.MunicipalSupplyDataTest.test_zero_record_municipalities_are_exact) ... ok
+test_public_json_has_no_representative_schema (test_site.PublishedSourceDataTest.test_public_json_has_no_representative_schema) ... ok
+test_published_source_json_is_byte_identical (test_site.PublishedSourceDataTest.test_published_source_json_is_byte_identical) ... ok
+test_current_state_spans_i1_to_i4_with_pdf_baseline (test_site.ReadmeContractTest.test_current_state_spans_i1_to_i4_with_pdf_baseline) ... ok
+test_gtfs_summary_present_without_banned_rate_terms (test_site.ReadmeContractTest.test_gtfs_summary_present_without_banned_rate_terms) ... ok
+test_included_artifacts_and_screens_are_listed (test_site.ReadmeContractTest.test_included_artifacts_and_screens_are_listed) ... ok
+test_repo_is_not_treated_as_submission_publication_or_award (test_site.ReadmeContractTest.test_repo_is_not_treated_as_submission_publication_or_award) ... ok
+test_role_description_covers_municipal_view_and_gtfs_status (test_site.ReadmeContractTest.test_role_description_covers_municipal_view_and_gtfs_status) ... ok
+test_stale_fixed_test_count_is_absent (test_site.ReadmeContractTest.test_stale_fixed_test_count_is_absent) ... ok
+test_current_status_reflects_i1_to_i4_and_main_view_link_is_present (test_site.StatusHtmlContractTest.test_current_status_reflects_i1_to_i4_and_main_view_link_is_present) ... ok
+test_gtfs_relationship_matches_built_data_without_banned_terms (test_site.StatusHtmlContractTest.test_gtfs_relationship_matches_built_data_without_banned_terms) ... ok
+test_i1_to_i4_accepted_outcomes_have_short_purpose_linked_descriptions (test_site.StatusHtmlContractTest.test_i1_to_i4_accepted_outcomes_have_short_purpose_linked_descriptions) ... ok
+test_no_external_publication_or_award_claims (test_site.StatusHtmlContractTest.test_no_external_publication_or_award_claims) ... ok
+test_pdf_numbers_and_gtfs_numbers_are_not_conflated (test_site.StatusHtmlContractTest.test_pdf_numbers_and_gtfs_numbers_are_not_conflated) ... ok
+test_real_links_to_index_json_and_terms_are_present (test_site.StatusHtmlContractTest.test_real_links_to_index_json_and_terms_are_present) ... ok
+test_stale_progress_claims_are_absent (test_site.StatusHtmlContractTest.test_stale_progress_claims_are_absent) ... ok
+test_t1_to_t3_and_t4_are_separated_and_marked_not_met (test_site.StatusHtmlContractTest.test_t1_to_t3_and_t4_are_separated_and_marked_not_met) ... ok
+test_composite_key_is_unique (test_verify.CompositeKeyTotalsTest.test_composite_key_is_unique) ... ok
+test_operator_counts_per_file_and_total (test_verify.CompositeKeyTotalsTest.test_operator_counts_per_file_and_total) ... ok
+test_registration_no_alone_duplicates_only_for_dai3gou (test_verify.CompositeKeyTotalsTest.test_registration_no_alone_duplicates_only_for_dai3gou) ... ok
+test_vehicle_row_and_grand_totals (test_verify.CompositeKeyTotalsTest.test_vehicle_row_and_grand_totals) ... ok
+test_operators_csv_and_json_match (test_verify.CsvJsonEquivalenceTest.test_operators_csv_and_json_match) ... ok
+test_vehicles_csv_and_json_match (test_verify.CsvJsonEquivalenceTest.test_vehicles_csv_and_json_match) ... ok
+test_record_pages_offices_rows_and_totals (test_verify.MunicipalTransportGapDetailTest.test_record_pages_offices_rows_and_totals) ... ok
+test_transport_gap_vehicle_mapping_and_totals (test_verify.MunicipalTransportGapDetailTest.test_transport_gap_vehicle_mapping_and_totals) ... ok
+test_transport_scope_and_appendix_exclusion (test_verify.MunicipalTransportGapDetailTest.test_transport_scope_and_appendix_exclusion) ... ok
+test_all_ownership_is_empty (test_verify.NewPdfVehicleDetailTest.test_all_ownership_is_empty) ... ok
+test_dai4gou_office_seq_1_to_4_with_kei_1_0_1_0 (test_verify.NewPdfVehicleDetailTest.test_dai4gou_office_seq_1_to_4_with_kei_1_0_1_0) ... ok
+test_operator_totals_and_pages (test_verify.NewPdfVehicleDetailTest.test_operator_totals_and_pages) ... ok
+test_row_count_is_12 (test_verify.NewPdfVehicleDetailTest.test_row_count_is_12) ... ok
+test_multiline_office_cells_match_top_table (test_verify.NpoTransportGapDetailTest.test_multiline_office_cells_match_top_table) ... ok
+test_page4_missing_total_cell_is_coordinate_recovered (test_verify.NpoTransportGapDetailTest.test_page4_missing_total_cell_is_coordinate_recovered) ... ok
+test_pages_dates_municipalities_and_totals (test_verify.NpoTransportGapDetailTest.test_pages_dates_municipalities_and_totals) ... ok
+test_transport_scope_partner_flags_and_ownership_are_empty (test_verify.NpoTransportGapDetailTest.test_transport_scope_partner_flags_and_ownership_are_empty) ... ok
+test_two_vehicle_rows_per_registration_and_source_labels (test_verify.NpoTransportGapDetailTest.test_two_vehicle_rows_per_registration_and_source_labels) ... ok
+test_000359215_office_level_differences_are_exact (test_verify.OfficeFlagsTest.test_000359215_office_level_differences_are_exact) ... ok
+test_dai4gou_office_name_location_element_counts_and_seq (test_verify.OfficeFlagsTest.test_dai4gou_office_name_location_element_counts_and_seq) ... ok
+test_office_flags_match_composite_key_expected_values (test_verify.OfficeFlagsTest.test_office_flags_match_composite_key_expected_values) ... ok
+test_extract_registration_block_matches_expected (test_verify.RegistrationBlockRealPdfTest.test_extract_registration_block_matches_expected) ... ok
+test_authority_code_is_uniform_nakayama (test_verify.RegistrationConsistencyTest.test_authority_code_is_uniform_nakayama) ... ok
+test_operator_type_by_file (test_verify.RegistrationConsistencyTest.test_operator_type_by_file) ... ok
+test_service_type_code_matches_file (test_verify.RegistrationConsistencyTest.test_service_type_code_matches_file) ... ok
+test_no_representative_column_in_schema (test_verify.RepresentativeNameNotOutputTest.test_no_representative_column_in_schema) ... ok
+test_raw_text_files_have_redaction_marker (test_verify.RepresentativeNameNotOutputTest.test_raw_text_files_have_redaction_marker) ... ok
+test_representative_name_absent_from_derived_text (test_verify.RepresentativeNameNotOutputTest.test_representative_name_absent_from_derived_text) ... ok
+test_count_kei_le_count (test_verify.VehicleTotalsTest.test_count_kei_le_count) ... ok
+test_count_sum_matches_vehicles_total (test_verify.VehicleTotalsTest.test_count_sum_matches_vehicles_total) ... ok
+
+----------------------------------------------------------------------
+Ran 69 tests in 5.791s
+
+OK
+municipalities: 19, with records: 15, operators: 23
+gtfs feeds: 3, municipalities: confirmed=5 not_confirmed=14 unassessed=0
+operators: 23 件
+vehicles: 90 行
+
+## 結果
+
+既存68件（GTFS-2 1件 + test_site 23件 + test_verify 24件 + 内訳は verification.md
+「2026-08-10 GTFS-2」節参照）+ SUPPLY-METRIC-2の`test_supply_metrics_calculation`1件
+（内部に39件の名前付きsubTest。旧29件からSUPPLY-METRIC-2-CORR-1で10件追加・1件修正）
+= 69件、全件成功（退行なし）。

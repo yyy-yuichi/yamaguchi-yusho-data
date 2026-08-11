@@ -1,0 +1,129 @@
+取得日時: 2026-08-10 17:35 JST
+取得元  : raw/gtfs/iwakuni_gtfsjp_20260401.zip, raw/gtfs/hikari_gtfs_20260401.zip
+取得方法: src/calculate_gtfs_supply_metrics.py とは別に手組みした一時スクリプト
+          （実行後に削除。標準ライブラリのみ、ネットワーク接続なし）で、
+          calendar.txt/calendar_dates.txt/trips.txtを直接読み、2026-04-06〜2026-04-12の
+          scheduled_trip_count_by_date、および3つの構造指標を独立に再計算した。
+          目的はsrc/calculate_gtfs_supply_metrics.pyの実装バグを、同じロジックの
+          二重実装ではなく別経路の計算で検出できるようにすること。
+
+## 一時スクリプトの内容（実行後に削除済み。tests/test_gtfs_supply_metrics.py には含まれない）
+
+"""SUPPLY-METRIC-2の再検証用: src/calculate_gtfs_supply_metrics.py とは独立に書いた
+手組みの計算で、2026-04-06..2026-04-12のscheduled_trip_count_by_dateを再現する。
+一時スクリプト。実行後にリポジトリから削除する。読み取り専用、ネットワーク接続なし。
+"""
+import csv
+import io
+import zipfile
+from collections import Counter
+from datetime import date, timedelta
+
+WEEKDAY_COLS = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+DATES = [date(2026, 4, 6) + timedelta(days=i) for i in range(7)]
+
+
+def read_csv(zf, name):
+    raw = zf.read(name)
+    if raw.startswith(b"\xef\xbb\xbf"):
+        raw = raw[3:]
+    text = raw.decode("utf-8")
+    rows = list(csv.reader(io.StringIO(text)))
+    return rows[0], rows[1:]
+
+
+for label, path in [
+    ("iwakuni-gtfsjp", "raw/gtfs/iwakuni_gtfsjp_20260401.zip"),
+    ("hikari-gtfs", "raw/gtfs/hikari_gtfs_20260401.zip"),
+]:
+    print("=" * 20, label, "=" * 20)
+    with zipfile.ZipFile(path) as zf:
+        cal_header, cal_rows = read_csv(zf, "calendar.txt")
+        cd_header, cd_rows = read_csv(zf, "calendar_dates.txt")
+        trips_header, trips_rows = read_csv(zf, "trips.txt")
+
+        sid_i = trips_header.index("service_id")
+        trip_counts = Counter(r[sid_i] for r in trips_rows)
+
+        cal_sid_i = cal_header.index("service_id")
+        start_i = cal_header.index("start_date")
+        end_i = cal_header.index("end_date")
+        weekday_idx = {d: cal_header.index(d) for d in WEEKDAY_COLS}
+
+        cd_sid_i = cd_header.index("service_id")
+        cd_date_i = cd_header.index("date")
+        cd_exc_i = cd_header.index("exception_type")
+
+        for d in DATES:
+            dstr = d.strftime("%Y%m%d")
+            weekday_name = WEEKDAY_COLS[d.weekday()]
+            valid = set()
+            for row in cal_rows:
+                sid = row[cal_sid_i]
+                start = row[start_i]
+                end = row[end_i]
+                flag = row[weekday_idx[weekday_name]]
+                if start <= dstr <= end and flag == "1":
+                    valid.add(sid)
+            for row in cd_rows:
+                if row[cd_date_i] != dstr:
+                    continue
+                sid = row[cd_sid_i]
+                exc = row[cd_exc_i]
+                if exc == "1":
+                    valid.add(sid)
+                elif exc == "2":
+                    valid.discard(sid)
+            total = sum(trip_counts.get(sid, 0) for sid in valid)
+            print(f"{d.isoformat()} ({weekday_name}): trip_total={total}")
+
+        print(f"agency.txt rows: {len(read_csv(zf, 'agency.txt')[1])}")
+        r_header, r_rows = read_csv(zf, "routes.txt")
+        r_id_i = r_header.index("route_id")
+        r_ids = [r[r_id_i] for r in r_rows]
+        print(f"routes.txt unique route_id: {len(set(r_ids))} (rows={len(r_rows)}, blank={sum(1 for v in r_ids if v.strip()=='')})")
+        s_header, s_rows = read_csv(zf, "stops.txt")
+        s_id_i = s_header.index("stop_id")
+        s_lt_i = s_header.index("location_type") if "location_type" in s_header else None
+        if s_lt_i is not None:
+            boarding = sum(1 for row in s_rows if row[s_lt_i].strip() in ("", "0"))
+        else:
+            boarding = len(s_rows)
+        print(f"stops.txt boarding-location stop_id count (location_type blank/0): {boarding} (rows={len(s_rows)})")
+        print(f"frequencies.txt present: {'frequencies.txt' in zf.namelist()}")
+
+## 実行結果（生の標準出力）
+
+==================== iwakuni-gtfsjp ====================
+2026-04-06 (monday): trip_total=185
+2026-04-07 (tuesday): trip_total=186
+2026-04-08 (wednesday): trip_total=183
+2026-04-09 (thursday): trip_total=161
+2026-04-10 (friday): trip_total=188
+2026-04-11 (saturday): trip_total=146
+2026-04-12 (sunday): trip_total=39
+agency.txt rows: 1
+routes.txt unique route_id: 46 (rows=46, blank=0)
+stops.txt boarding-location stop_id count (location_type blank/0): 800 (rows=800)
+frequencies.txt present: False
+==================== hikari-gtfs ====================
+2026-04-06 (monday): trip_total=55
+2026-04-07 (tuesday): trip_total=55
+2026-04-08 (wednesday): trip_total=55
+2026-04-09 (thursday): trip_total=55
+2026-04-10 (friday): trip_total=55
+2026-04-11 (saturday): trip_total=41
+2026-04-12 (sunday): trip_total=41
+agency.txt rows: 1
+routes.txt unique route_id: 7 (rows=7, blank=0)
+stops.txt boarding-location stop_id count (location_type blank/0): 172 (rows=172)
+frequencies.txt present: False
+
+## 結論
+
+src/calculate_gtfs_supply_metrics.py（compute_feed_metrics経由）が出す
+data/gtfs_supply_metrics.json の1フィードあたり10値（agency/route/boarding_location各1件の
+構造指標3+7日分のscheduled_trip_count_by_date）、2フィード合計20値と、
+この独立実装の出力が完全一致した。
+frequencies.txtは両ZIPとも存在しないため、frequencies関連の分岐（exact_times処理）は
+実データでは経由していない（合成GTFSでのみtests/test_gtfs_supply_metrics.pyが検証する）。

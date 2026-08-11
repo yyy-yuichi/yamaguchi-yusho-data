@@ -1,0 +1,12 @@
+取得日時: 2026-08-10 16:xx JST
+取得元  : git diff --check（このリポジトリの作業ツリー）
+取得方法: Bashツール（git diff --check を直接実行）
+
+コマンド: git diff --check
+結果: 標準出力・標準エラーとも空
+終了判定: git diff --check > /dev/null 2>&1 && echo GIT_DIFF_CHECK_EXIT_0 || echo GIT_DIFF_CHECK_EXIT_NONZERO
+出力    : GIT_DIFF_CHECK_EXIT_0（終了コード0、空白関連の問題0件）
+
+この実行は、evidence/20260810_gtfs2_inspection_run_raw.txt の再生成、
+python -B -m unittest discover -s tests -v（68テスト・OK）、
+tools/spec_coverage.py 5組（5件とも合格）をすべて完了した後の最終状態に対するものである。

@@ -1,0 +1,62 @@
+取得日時: 2026-08-10 16:xx JST
+取得元  : raw/gtfs/iwakuni_gtfsjp_20260401.zip, raw/gtfs/hikari_gtfs_20260401.zip（リポジトリ保存済み）
+取得方法: python -B（標準入力スクリプト、sys.stdout.reconfigure(encoding='utf-8')） inspect_gtfs_archives.inspect_archive()
+
+===== iwakuni raw/gtfs/iwakuni_gtfsjp_20260401.zip =====
+file_sha256: d236a58ff4a0edb4812a8bed543d4897670441164a1019e88d5e35ded5052de2
+file_size: 719723
+safety.ok: True
+safety.failures: ()
+member_count: 12
+  member: MemberRecord(name='agency.txt', compress_size=175, file_size=239, crc32=2932437498)
+  member: MemberRecord(name='calendar.txt', compress_size=101, file_size=132, crc32=2755463873)
+  member: MemberRecord(name='calendar_dates.txt', compress_size=4965, file_size=57811, crc32=2285693960)
+  member: MemberRecord(name='fare_attributes.txt', compress_size=664, file_size=4624, crc32=1080285882)
+  member: MemberRecord(name='fare_rules.txt', compress_size=177557, file_size=2142013, crc32=753901647)
+  member: MemberRecord(name='feed_info.txt', compress_size=250, file_size=353, crc32=1331866597)
+  member: MemberRecord(name='routes.txt', compress_size=816, file_size=3326, crc32=2669218571)
+  member: MemberRecord(name='shapes.txt', compress_size=427711, file_size=1405870, crc32=2356205952)
+  member: MemberRecord(name='stop_times.txt', compress_size=74681, file_size=906248, crc32=4098280688)
+  member: MemberRecord(name='stops.txt', compress_size=19036, file_size=51233, crc32=3448985910)
+  member: MemberRecord(name='translations.txt', compress_size=7854, file_size=34456, crc32=2209577187)
+  member: MemberRecord(name='trips.txt', compress_size=4671, file_size=38418, crc32=1727401524)
+agency.txt : present=True decode_error=None had_bom=True header=('agency_id', 'agency_name', 'agency_url', 'agency_timezone', 'agency_lang', 'agency_phone', 'agency_fare_url', 'agency_email') row_count=1 id_stats=IdColumnStats(column='agency_id', blank_count=0, unique_count=1, duplicate_count=0)
+stops.txt : present=True decode_error=None had_bom=True header=('stop_id', 'stop_code', 'stop_name', 'stop_desc', 'stop_lat', 'stop_lon', 'zone_id', 'stop_url', 'location_type', 'platform_code', 'parent_station') row_count=800 id_stats=IdColumnStats(column='stop_id', blank_count=0, unique_count=800, duplicate_count=0)
+routes.txt : present=True decode_error=None had_bom=True header=('route_id', 'agency_id', 'route_short_name', 'route_long_name', 'route_desc', 'route_type') row_count=46 id_stats=IdColumnStats(column='route_id', blank_count=0, unique_count=46, duplicate_count=0)
+trips.txt : present=True decode_error=None had_bom=True header=('route_id', 'service_id', 'trip_id', 'trip_headsign', 'block_id', 'trip_short_name', 'direction_id', 'shape_id', 'bikes_allowed') row_count=267 id_stats=IdColumnStats(column='trip_id', blank_count=0, unique_count=267, duplicate_count=0)
+stop_times.txt : present=True decode_error=None had_bom=True header=('trip_id', 'arrival_time', 'departure_time', 'stop_id', 'stop_sequence', 'stop_headsign', 'pickup_type', 'drop_off_type', 'timepoint') row_count=7362 id_stats=IdColumnStats(column='trip_id+stop_sequence', blank_count=0, unique_count=7362, duplicate_count=0)
+stops_location_type: LocationTypeStats(counts={'0': 800})
+calendar: CalendarStats(present=True, decode_error=None, header=('service_id', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'start_date', 'end_date'), row_count=1, service_id_unique_count=1, service_ids=frozenset({'平日'}), min_start_date='20260327', max_end_date='20270326', invalid_dates=(), weekday=WeekdayFlagStats(counts={'monday': {'1': 1}, 'tuesday': {'1': 1}, 'wednesday': {'1': 1}, 'thursday': {'1': 1}, 'friday': {'1': 1}, 'saturday': {'0': 1}, 'sunday': {'0': 1}}, invalid_count=0))
+calendar_dates: CalendarDatesStats(present=True, decode_error=None, header=('service_id', 'date', 'exception_type'), row_count=1641, service_id_unique_count=22, service_ids=frozenset({'水曜日運行', '月・水・土曜日運行', '火・木・金曜日運行', '火・木曜日運行', '火・土曜日運行', '毎日運行', '月・土曜日運行', '火・水・金曜日運行', '月・火・水曜日運行', '月曜日運行', '毎日運行1', '月・火・水・金曜日運行', '火・水・木・土曜日運行', '月・木曜日運行', '木曜日運行', '月～土曜日運行', '月・木・金・土曜日運行', '月・水・金曜日運行', '火・金曜日運行', '金曜日運行', '火曜日運行', '水・金曜日運行'}), exception_type_counts={'1': 1641}, added_date_min='20260327', added_date_max='20260930', removed_date_min=None, removed_date_max=None, invalid_dates=())
+feed_info: FeedInfoStats(present=True, decode_error=None, header=('feed_publisher_name', 'feed_publisher_url', 'feed_contact_url', 'feed_contact_email', 'feed_lang', 'feed_start_date', 'feed_end_date', 'feed_version'), row_count=1, feed_start_date='20260327', feed_end_date='20270326', feed_version='20260326_2026年03月26日（改正） その筋屋 2.016', invalid_dates=())
+service_id_cross_check: ServiceIdCrossCheck(trips_service_ids=frozenset({'月・水・土曜日運行', '火・木・金曜日運行', '月・火・水曜日運行', '毎日運行1', '木曜日運行', '月・木・金・土曜日運行', '火・金曜日運行', '火曜日運行', '水・金曜日運行', '水曜日運行', '火・木曜日運行', '火・土曜日運行', '毎日運行', '月・土曜日運行', '火・水・金曜日運行', '月曜日運行', '月・火・水・金曜日運行', '火・水・木・土曜日運行', '月・木曜日運行', '月～土曜日運行', '月・水・金曜日運行', '金曜日運行'}), calendar_union_service_ids=frozenset({'水曜日運行', '月・水・土曜日運行', '火・木・金曜日運行', '平日', '火・木曜日運行', '火・土曜日運行', '毎日運行', '月・土曜日運行', '火・水・金曜日運行', '月・火・水曜日運行', '月曜日運行', '毎日運行1', '月・火・水・金曜日運行', '火・水・木・土曜日運行', '月・木曜日運行', '木曜日運行', '月～土曜日運行', '月・木・金・土曜日運行', '月・水・金曜日運行', '火・金曜日運行', '金曜日運行', '火曜日運行', '水・金曜日運行'}), trips_only=frozenset(), calendar_union_only=frozenset({'平日'}))
+===== hikari raw/gtfs/hikari_gtfs_20260401.zip =====
+file_sha256: f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7
+file_size: 86273
+safety.ok: True
+safety.failures: ()
+member_count: 14
+  member: MemberRecord(name='agency.txt', compress_size=159, file_size=221, crc32=3977520170)
+  member: MemberRecord(name='calendar.txt', compress_size=150, file_size=297, crc32=2023978759)
+  member: MemberRecord(name='calendar_dates.txt', compress_size=309, file_size=2157, crc32=1076360322)
+  member: MemberRecord(name='fare_attributes.txt', compress_size=82, file_size=105, crc32=1203123053)
+  member: MemberRecord(name='fare_rules.txt', compress_size=4020, file_size=31834, crc32=3177992167)
+  member: MemberRecord(name='feed_info.txt', compress_size=163, file_size=200, crc32=1839542747)
+  member: MemberRecord(name='result.txt', compress_size=30, file_size=30, crc32=3655124825)
+  member: MemberRecord(name='routes.txt', compress_size=277, file_size=541, crc32=2100740810)
+  member: MemberRecord(name='shapes.txt', compress_size=59787, file_size=274004, crc32=2079141517)
+  member: MemberRecord(name='stop_times.txt', compress_size=11961, file_size=119332, crc32=3094733020)
+  member: MemberRecord(name='stops.txt', compress_size=3134, file_size=9092, crc32=274052986)
+  member: MemberRecord(name='transfers.txt', compress_size=42, file_size=57, crc32=625662686)
+  member: MemberRecord(name='translations.txt', compress_size=3129, file_size=19288, crc32=1818023417)
+  member: MemberRecord(name='trips.txt', compress_size=862, file_size=5412, crc32=623035204)
+agency.txt : present=True decode_error=None had_bom=False header=('agency_id', 'agency_name', 'agency_url', 'agency_timezone', 'agency_lang', 'agency_phone', 'agency_fare_url', 'agency_email') row_count=1 id_stats=IdColumnStats(column='agency_id', blank_count=0, unique_count=1, duplicate_count=0)
+stops.txt : present=True decode_error=None had_bom=False header=('stop_id', 'stop_code', 'stop_name', 'stop_desc', 'stop_lat', 'stop_lon', 'zone_id', 'stop_url', 'location_type', 'platform_code') row_count=172 id_stats=IdColumnStats(column='stop_id', blank_count=0, unique_count=172, duplicate_count=0)
+routes.txt : present=True decode_error=None had_bom=False header=('route_id', 'agency_id', 'route_short_name', 'route_long_name', 'route_desc', 'route_type', 'route_color', 'route_text_color') row_count=7 id_stats=IdColumnStats(column='route_id', blank_count=0, unique_count=7, duplicate_count=0)
+trips.txt : present=True decode_error=None had_bom=False header=('route_id', 'service_id', 'trip_id', 'trip_headsign', 'direction_id', 'block_id', 'trip_short_name', 'shape_id', 'jp_trip_desc', 'jp_pattern_id') row_count=63 id_stats=IdColumnStats(column='trip_id', blank_count=0, unique_count=63, duplicate_count=0)
+stop_times.txt : present=True decode_error=None had_bom=False header=('trip_id', 'arrival_time', 'departure_time', 'stop_id', 'stop_sequence', 'stop_headsign', 'pickup_type', 'drop_off_type', 'timepoint') row_count=1344 id_stats=IdColumnStats(column='trip_id+stop_sequence', blank_count=0, unique_count=1344, duplicate_count=0)
+stops_location_type: LocationTypeStats(counts={'0': 172})
+calendar: CalendarStats(present=True, decode_error=None, header=('service_id', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'start_date', 'end_date'), row_count=4, service_id_unique_count=4, service_ids=frozenset({'平日（広域）', '平日（ぐるりん）', '土日祝日（広域）', '毎日'}), min_start_date='20260401', max_end_date='20270331', invalid_dates=(), weekday=WeekdayFlagStats(counts={'monday': {'1': 3, '0': 1}, 'tuesday': {'1': 3, '0': 1}, 'wednesday': {'1': 3, '0': 1}, 'thursday': {'1': 3, '0': 1}, 'friday': {'1': 3, '0': 1}, 'saturday': {'1': 2, '0': 2}, 'sunday': {'1': 2, '0': 2}}, invalid_count=0))
+calendar_dates: CalendarDatesStats(present=True, decode_error=None, header=('service_id', 'date', 'exception_type'), row_count=61, service_id_unique_count=3, service_ids=frozenset({'平日（広域）', '平日（ぐるりん）', '土日祝日（広域）'}), exception_type_counts={'1': 22, '2': 39}, added_date_min='20260429', added_date_max='20270322', removed_date_min='20260429', removed_date_max='20270322', invalid_dates=())
+feed_info: FeedInfoStats(present=True, decode_error=None, header=('feed_publisher_name', 'feed_publisher_url', 'feed_lang', 'feed_start_date', 'feed_end_date', 'feed_version'), row_count=1, feed_start_date='20260401', feed_end_date='20270331', feed_version='2026/04/01改正-見える化ver2.6e', invalid_dates=())
+service_id_cross_check: ServiceIdCrossCheck(trips_service_ids=frozenset({'平日（広域）', '平日（ぐるりん）', '土日祝日（広域）', '毎日'}), calendar_union_service_ids=frozenset({'平日（広域）', '平日（ぐるりん）', '毎日', '土日祝日（広域）'}), trips_only=frozenset(), calendar_union_only=frozenset())

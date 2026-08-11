@@ -1,0 +1,12 @@
+取得日時: 2026-08-11 JST
+取得元  : C:\Users\user\dev\udc2026\.venv\Scripts\python.exe src\build_site_data.py + SHA256/byte comparison
+取得方法: PowerShell非対話実行（stdout/stderr生出力）
+
+Exit code: 0
+Wall time: 0.3 seconds
+Output:
+municipalities: 19, with records: 15, operators: 23
+source_sha256=26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b
+published_sha256=26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b
+byte_identical=True
+bytes=5904

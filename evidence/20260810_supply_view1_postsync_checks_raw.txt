@@ -1,0 +1,389 @@
+取得日時: 2026-08-11 JST
+取得元  : 文書同期後のローカル作業ツリー
+取得方法: focused/full unittest、spec_coverage、diff/staged、SHA256、秘密情報らしき値検査、git status
+
+Exit code: 0
+Wall time: 7.2 seconds
+Output:
+=== focused ===
+municipalities: 19, with records: 15, operators: 23
+gtfs feeds: 3, municipalities: confirmed=5 not_confirmed=14 unassessed=0
+=== full ===
+municipalities: 19, with records: 15, operators: 23
+gtfs feeds: 3, municipalities: confirmed=5 not_confirmed=14 unassessed=0
+operators: 23 Œ
+vehicles: 90 s
+=== coverage ===
+‹Œ”Å: evidence/20260810_supply_view1_readme_before.md
+V”Å: README.md
+========================================================================
+
+[Œ©o‚µ] 12/12 ‚ªV”Å‚É‘¶Ý
+
+[Ž¯•ÊŽq] 30/30 ‚ªV”Å‚É‘¶Ý
+
+[•\‚Ì1—ñ–Ú] 0/0 ‚ªV”Å‚É‘¶Ý
+
+[ƒR[ƒhƒuƒƒbƒNs] 1/1 ‚ªV”Å‚É‘¶Ý
+
+========================================================================
+ŒŸ¸ƒg[ƒNƒ“”        : 43
+Œ‡—ŽE‰ü’ù“_‚É‹LÚ‚ ‚è: 0
+Œ‡—ŽEà–¾‚È‚µ        : 0
+
+”»’è: ‡ŠiB‹Œ”Å‚Ìƒg[ƒNƒ“‚Í‚·‚×‚ÄV”Å‚ÉŽc‚Á‚Ä‚¢‚é‚©A‰ü’ù“_‚É——R‚ª‚ ‚éB
+‹Œ”Å: evidence/20260810_supply_view1_status_before.html
+V”Å: docs/status.html
+========================================================================
+
+[Œ©o‚µ] 0/0 ‚ªV”Å‚É‘¶Ý
+
+[Ž¯•ÊŽq] 0/0 ‚ªV”Å‚É‘¶Ý
+
+[•\‚Ì1—ñ–Ú] 0/0 ‚ªV”Å‚É‘¶Ý
+
+[ƒR[ƒhƒuƒƒbƒNs] 0/0 ‚ªV”Å‚É‘¶Ý
+
+========================================================================
+ŒŸ¸ƒg[ƒNƒ“”        : 0
+Œ‡—ŽE‰ü’ù“_‚É‹LÚ‚ ‚è: 0
+Œ‡—ŽEà–¾‚È‚µ        : 0
+
+”»’è: ‡ŠiB‹Œ”Å‚Ìƒg[ƒNƒ“‚Í‚·‚×‚ÄV”Å‚ÉŽc‚Á‚Ä‚¢‚é‚©A‰ü’ù“_‚É——R‚ª‚ ‚éB
+‹Œ”Å: evidence/20260810_supply_view1_index_before.html
+V”Å: docs/index.html
+========================================================================
+
+[Œ©o‚µ] 0/0 ‚ªV”Å‚É‘¶Ý
+
+[Ž¯•ÊŽq] 18/18 ‚ªV”Å‚É‘¶Ý
+
+[•\‚Ì1—ñ–Ú] 0/0 ‚ªV”Å‚É‘¶Ý
+
+[ƒR[ƒhƒuƒƒbƒNs] 0/0 ‚ªV”Å‚É‘¶Ý
+
+========================================================================
+ŒŸ¸ƒg[ƒNƒ“”        : 18
+Œ‡—ŽE‰ü’ù“_‚É‹LÚ‚ ‚è: 0
+Œ‡—ŽEà–¾‚È‚µ        : 0
+
+”»’è: ‡ŠiB‹Œ”Å‚Ìƒg[ƒNƒ“‚Í‚·‚×‚ÄV”Å‚ÉŽc‚Á‚Ä‚¢‚é‚©A‰ü’ù“_‚É——R‚ª‚ ‚éB
+=== diff/staged ===
+git_diff_check_exit=0
+staged_count=0
+=== hashes ===
+26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b  data/gtfs_supply_metrics.json
+26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b  docs/data/gtfs_supply_metrics.json
+d236a58ff4a0edb4812a8bed543d4897670441164a1019e88d5e35ded5052de2  raw/gtfs/iwakuni_gtfsjp_20260401.zip
+f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7  raw/gtfs/hikari_gtfs_20260401.zip
+=== secret-like scan ===
+secret_like_hits=0
+=== status ===
+## main...origin/main [ahead 26]
+ M PROGRESS.md
+ M README.md
+ M SPEC.md
+ M docs/index.html
+ M docs/status.html
+ M run_record.md
+ M src/build_site_data.py
+ M tests/test_site.py
+ M verification.md
+?? data/gtfs_supply_metrics.json
+?? docs/data/gtfs_supply_metrics.json
+?? evidence/20260810_gtfs2_content_probe.txt
+?? evidence/20260810_gtfs2_encoding_probe.txt
+?? evidence/20260810_gtfs2_fetch_hikari.txt
+?? evidence/20260810_gtfs2_fetch_iwakuni.txt
+?? evidence/20260810_gtfs2_git_diff_check.txt
+?? evidence/20260810_gtfs2_inspection_run_raw.txt
+?? evidence/20260810_gtfs2_member_explore_raw.txt
+?? evidence/20260810_gtfs2_progress_before.md
+?? evidence/20260810_gtfs2_readme_before.md
+?? evidence/20260810_gtfs2_spec_coverage_progress.txt
+?? evidence/20260810_gtfs2_spec_coverage_readme.txt
+?? evidence/20260810_gtfs2_spec_coverage_status.txt
+?? evidence/20260810_gtfs2_spec_coverage_test_site.txt
+?? evidence/20260810_gtfs2_spec_coverage_verification.txt
+?? evidence/20260810_gtfs2_status_before.html
+?? evidence/20260810_gtfs2_test_site_before.py
+?? evidence/20260810_gtfs2_unittest_full_raw.txt
+?? evidence/20260810_gtfs2_verification_before.md
+?? evidence/20260810_supply_metric2_calculation_run_raw.txt
+?? evidence/20260810_supply_metric2_corr1_fix_verification_raw.txt
+?? evidence/20260810_supply_metric2_corr1_git_diff_check.txt
+?? evidence/20260810_supply_metric2_crosscheck_raw.txt
+?? evidence/20260810_supply_metric2_focused_test_raw.txt
+?? evidence/20260810_supply_metric2_git_diff_check.txt
+?? evidence/20260810_supply_metric2_manual_crosscheck_raw.txt
+?? evidence/20260810_supply_metric2_script_run_raw.txt
+?? evidence/20260810_supply_metric2_unittest_full_raw.txt
+?? evidence/20260810_supply_view1_before_scope_raw.txt
+?? evidence/20260810_supply_view1_browser_unavailable_raw.txt
+?? evidence/20260810_supply_view1_build_raw.txt
+?? evidence/20260810_supply_view1_final_checks_raw.txt
+?? evidence/20260810_supply_view1_focused_test_raw.txt
+?? evidence/20260810_supply_view1_index_before.html
+?? evidence/20260810_supply_view1_readme_before.md
+?? evidence/20260810_supply_view1_spec_coverage_raw.txt
+?? evidence/20260810_supply_view1_static_check_raw.txt
+?? evidence/20260810_supply_view1_status_before.html
+?? evidence/20260810_supply_view1_unittest_full_raw.txt
+?? raw/gtfs/
+?? src/calculate_gtfs_supply_metrics.py
+?? src/inspect_gtfs_archives.py
+?? tests/test_gtfs_inspection.py
+?? tests/test_gtfs_supply_metrics.py
+python.exe : test_access_status_is_limited_to_spec_enum (tests.test_site.GtfsStatusDataTest.test_access_status_is_limit
+ed_to_spec_enum) ... ok
+At line:3 char:1
++ & 'C:\Users\user\dev\udc2026\.venv\Scripts\python.exe' -m unittest te ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_access_sta...ec_enum) ... ok:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+test_availability_status_counts (tests.test_site.GtfsStatusDataTest.test_availability_status_counts) ... ok
+test_csv_and_json_match (tests.test_site.GtfsStatusDataTest.test_csv_and_json_match) ... ok
+test_csv_files_use_lf_line_endings (tests.test_site.GtfsStatusDataTest.test_csv_files_use_lf_line_endings) ... ok
+test_feeds_row_count_and_unique_ids (tests.test_site.GtfsStatusDataTest.test_feeds_row_count_and_unique_ids) ... ok
+test_iwakuni_and_hikari_reference_dates_and_validity (tests.test_site.GtfsStatusDataTest.test_iwakuni_and_hikari_refere
+nce_dates_and_validity) ... ok
+test_municipality_row_count_official_order_and_unique_codes (tests.test_site.GtfsStatusDataTest.test_municipality_row_c
+ount_official_order_and_unique_codes) ... ok
+test_no_real_access_token_is_recorded (tests.test_site.GtfsStatusDataTest.test_no_real_access_token_is_recorded) ... ok
+test_published_gtfs_json_is_byte_identical (tests.test_site.GtfsStatusDataTest.test_published_gtfs_json_is_byte_identic
+al) ... ok
+test_sentetsu_validity_period_and_access_status (tests.test_site.GtfsStatusDataTest.test_sentetsu_validity_period_and_a
+ccess_status) ... ok
+test_source_evidence_files_exist (tests.test_site.GtfsStatusDataTest.test_source_evidence_files_exist) ... ok
+test_three_feeds_map_to_five_municipalities_without_double_counting (tests.test_site.GtfsStatusDataTest.test_three_feed
+s_map_to_five_municipalities_without_double_counting) ... ok
+test_supply_metrics_public_copy_is_byte_identical_and_accepted_hash (tests.test_site.GtfsSupplyMetricsDataTest.test_sup
+ply_metrics_public_copy_is_byte_identical_and_accepted_hash) ... ok
+test_supply_metrics_status_value_and_reason_are_consistent (tests.test_site.GtfsSupplyMetricsDataTest.test_supply_metri
+cs_status_value_and_reason_are_consistent) ... ok
+test_supply_metrics_two_feeds_and_all_twenty_values_are_fixed (tests.test_site.GtfsSupplyMetricsDataTest.test_supply_me
+trics_two_feeds_and_all_twenty_values_are_fixed) ... ok
+test_supply_metrics_validator_rejects_mismatches_and_unknown_status (tests.test_site.GtfsSupplyMetricsDataTest.test_sup
+ply_metrics_validator_rejects_mismatches_and_unknown_status) ... ok
+test_gtfs_status_does_not_assert_coverage_or_maturity_metrics (tests.test_site.IndexHtmlContractTest.test_gtfs_status_d
+oes_not_assert_coverage_or_maturity_metrics) ... ok
+test_gtfs_status_elements_are_present (tests.test_site.IndexHtmlContractTest.test_gtfs_status_elements_are_present) ...
+ ok
+test_limitations_attribution_and_licenses_are_present (tests.test_site.IndexHtmlContractTest.test_limitations_attributi
+on_and_licenses_are_present) ... ok
+test_supply_comparison_failure_is_isolated (tests.test_site.IndexHtmlContractTest.test_supply_comparison_failure_is_iso
+lated) ... ok
+test_supply_comparison_reads_json_without_hardcoded_values (tests.test_site.IndexHtmlContractTest.test_supply_compariso
+n_reads_json_without_hardcoded_values) ... ok
+test_supply_comparison_responsive_contract (tests.test_site.IndexHtmlContractTest.test_supply_comparison_responsive_con
+tract) ... ok
+test_supply_comparison_structure_and_general_language (tests.test_site.IndexHtmlContractTest.test_supply_comparison_str
+ucture_and_general_language) ... ok
+test_supply_comparison_uses_safe_dom_api_and_fixed_status_words (tests.test_site.IndexHtmlContractTest.test_supply_comp
+arison_uses_safe_dom_api_and_fixed_status_words) ... ok
+test_user_outcome_and_controls_are_present (tests.test_site.IndexHtmlContractTest.test_user_outcome_and_controls_are_pr
+esent) ... ok
+test_each_municipality_has_no_duplicate_operator_and_breakdown_reconciles (tests.test_site.MunicipalSupplyDataTest.test
+_each_municipality_has_no_duplicate_operator_and_breakdown_reconciles) ... ok
+test_official_roster_has_all_19_in_source_order (tests.test_site.MunicipalSupplyDataTest.test_official_roster_has_all_1
+9_in_source_order) ... ok
+test_prefecture_unique_totals_are_not_municipal_sums (tests.test_site.MunicipalSupplyDataTest.test_prefecture_unique_to
+tals_are_not_municipal_sums) ... ok
+test_shimonoseki_and_yamaguchi_hardcoded_totals (tests.test_site.MunicipalSupplyDataTest.test_shimonoseki_and_yamaguchi
+_hardcoded_totals) ... ok
+test_zero_record_municipalities_are_exact (tests.test_site.MunicipalSupplyDataTest.test_zero_record_municipalities_are_
+exact) ... ok
+test_public_json_has_no_representative_schema (tests.test_site.PublishedSourceDataTest.test_public_json_has_no_represen
+tative_schema) ... ok
+test_published_source_json_is_byte_identical (tests.test_site.PublishedSourceDataTest.test_published_source_json_is_byt
+e_identical) ... ok
+test_current_state_spans_i1_to_i4_with_pdf_baseline (tests.test_site.ReadmeContractTest.test_current_state_spans_i1_to_
+i4_with_pdf_baseline) ... ok
+test_gtfs_summary_present_without_banned_rate_terms (tests.test_site.ReadmeContractTest.test_gtfs_summary_present_witho
+ut_banned_rate_terms) ... ok
+test_included_artifacts_and_screens_are_listed (tests.test_site.ReadmeContractTest.test_included_artifacts_and_screens_
+are_listed) ... ok
+test_repo_is_not_treated_as_submission_publication_or_award (tests.test_site.ReadmeContractTest.test_repo_is_not_treate
+d_as_submission_publication_or_award) ... ok
+test_role_description_covers_municipal_view_and_gtfs_status (tests.test_site.ReadmeContractTest.test_role_description_c
+overs_municipal_view_and_gtfs_status) ... ok
+test_stale_fixed_test_count_is_absent (tests.test_site.ReadmeContractTest.test_stale_fixed_test_count_is_absent) ... ok
+test_supply_view_is_described_with_scope_dates_and_test_count (tests.test_site.ReadmeContractTest.test_supply_view_is_d
+escribed_with_scope_dates_and_test_count) ... ok
+test_current_status_reflects_i1_to_i4_and_main_view_link_is_present (tests.test_site.StatusHtmlContractTest.test_curren
+t_status_reflects_i1_to_i4_and_main_view_link_is_present) ... ok
+test_gtfs_relationship_matches_built_data_without_banned_terms (tests.test_site.StatusHtmlContractTest.test_gtfs_relati
+onship_matches_built_data_without_banned_terms) ... ok
+test_i1_to_i4_accepted_outcomes_have_short_purpose_linked_descriptions (tests.test_site.StatusHtmlContractTest.test_i1_
+to_i4_accepted_outcomes_have_short_purpose_linked_descriptions) ... ok
+test_no_external_publication_or_award_claims (tests.test_site.StatusHtmlContractTest.test_no_external_publication_or_aw
+ard_claims) ... ok
+test_pdf_numbers_and_gtfs_numbers_are_not_conflated (tests.test_site.StatusHtmlContractTest.test_pdf_numbers_and_gtfs_n
+umbers_are_not_conflated) ... ok
+test_real_links_to_index_json_and_terms_are_present (tests.test_site.StatusHtmlContractTest.test_real_links_to_index_js
+on_and_terms_are_present) ... ok
+test_stale_progress_claims_are_absent (tests.test_site.StatusHtmlContractTest.test_stale_progress_claims_are_absent) ..
+. ok
+test_supply_view_current_state_and_real_json_link_are_present (tests.test_site.StatusHtmlContractTest.test_supply_view_
+current_state_and_real_json_link_are_present) ... ok
+test_t1_to_t3_and_t4_are_separated_and_marked_not_met (tests.test_site.StatusHtmlContractTest.test_t1_to_t3_and_t4_are_
+separated_and_marked_not_met) ... ok
+----------------------------------------------------------------------
+Ran 48 tests in 0.037s
+OK
+python.exe : test_gtfs_archive_safety_and_measurement (test_gtfs_inspection.GtfsArchiveInspectionTest.test_gtfs_archive
+_safety_and_measurement) ... ok
+At line:6 char:1
++ & 'C:\Users\user\dev\udc2026\.venv\Scripts\python.exe' -m unittest di ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_gtfs_archi...urement) ... ok:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+test_supply_metrics_calculation (test_gtfs_supply_metrics.GtfsSupplyMetricsTest.test_supply_metrics_calculation) ... ok
+test_access_status_is_limited_to_spec_enum (test_site.GtfsStatusDataTest.test_access_status_is_limited_to_spec_enum) ..
+. ok
+test_availability_status_counts (test_site.GtfsStatusDataTest.test_availability_status_counts) ... ok
+test_csv_and_json_match (test_site.GtfsStatusDataTest.test_csv_and_json_match) ... ok
+test_csv_files_use_lf_line_endings (test_site.GtfsStatusDataTest.test_csv_files_use_lf_line_endings) ... ok
+test_feeds_row_count_and_unique_ids (test_site.GtfsStatusDataTest.test_feeds_row_count_and_unique_ids) ... ok
+test_iwakuni_and_hikari_reference_dates_and_validity (test_site.GtfsStatusDataTest.test_iwakuni_and_hikari_reference_da
+tes_and_validity) ... ok
+test_municipality_row_count_official_order_and_unique_codes (test_site.GtfsStatusDataTest.test_municipality_row_count_o
+fficial_order_and_unique_codes) ... ok
+test_no_real_access_token_is_recorded (test_site.GtfsStatusDataTest.test_no_real_access_token_is_recorded) ... ok
+test_published_gtfs_json_is_byte_identical (test_site.GtfsStatusDataTest.test_published_gtfs_json_is_byte_identical) ..
+. ok
+test_sentetsu_validity_period_and_access_status (test_site.GtfsStatusDataTest.test_sentetsu_validity_period_and_access_
+status) ... ok
+test_source_evidence_files_exist (test_site.GtfsStatusDataTest.test_source_evidence_files_exist) ... ok
+test_three_feeds_map_to_five_municipalities_without_double_counting (test_site.GtfsStatusDataTest.test_three_feeds_map_
+to_five_municipalities_without_double_counting) ... ok
+test_supply_metrics_public_copy_is_byte_identical_and_accepted_hash (test_site.GtfsSupplyMetricsDataTest.test_supply_me
+trics_public_copy_is_byte_identical_and_accepted_hash) ... ok
+test_supply_metrics_status_value_and_reason_are_consistent (test_site.GtfsSupplyMetricsDataTest.test_supply_metrics_sta
+tus_value_and_reason_are_consistent) ... ok
+test_supply_metrics_two_feeds_and_all_twenty_values_are_fixed (test_site.GtfsSupplyMetricsDataTest.test_supply_metrics_
+two_feeds_and_all_twenty_values_are_fixed) ... ok
+test_supply_metrics_validator_rejects_mismatches_and_unknown_status (test_site.GtfsSupplyMetricsDataTest.test_supply_me
+trics_validator_rejects_mismatches_and_unknown_status) ... ok
+test_gtfs_status_does_not_assert_coverage_or_maturity_metrics (test_site.IndexHtmlContractTest.test_gtfs_status_does_no
+t_assert_coverage_or_maturity_metrics) ... ok
+test_gtfs_status_elements_are_present (test_site.IndexHtmlContractTest.test_gtfs_status_elements_are_present) ... ok
+test_limitations_attribution_and_licenses_are_present (test_site.IndexHtmlContractTest.test_limitations_attribution_and
+_licenses_are_present) ... ok
+test_supply_comparison_failure_is_isolated (test_site.IndexHtmlContractTest.test_supply_comparison_failure_is_isolated)
+ ... ok
+test_supply_comparison_reads_json_without_hardcoded_values (test_site.IndexHtmlContractTest.test_supply_comparison_read
+s_json_without_hardcoded_values) ... ok
+test_supply_comparison_responsive_contract (test_site.IndexHtmlContractTest.test_supply_comparison_responsive_contract)
+ ... ok
+test_supply_comparison_structure_and_general_language (test_site.IndexHtmlContractTest.test_supply_comparison_structure
+_and_general_language) ... ok
+test_supply_comparison_uses_safe_dom_api_and_fixed_status_words (test_site.IndexHtmlContractTest.test_supply_comparison
+_uses_safe_dom_api_and_fixed_status_words) ... ok
+test_user_outcome_and_controls_are_present (test_site.IndexHtmlContractTest.test_user_outcome_and_controls_are_present)
+ ... ok
+test_each_municipality_has_no_duplicate_operator_and_breakdown_reconciles (test_site.MunicipalSupplyDataTest.test_each_
+municipality_has_no_duplicate_operator_and_breakdown_reconciles) ... ok
+test_official_roster_has_all_19_in_source_order (test_site.MunicipalSupplyDataTest.test_official_roster_has_all_19_in_s
+ource_order) ... ok
+test_prefecture_unique_totals_are_not_municipal_sums (test_site.MunicipalSupplyDataTest.test_prefecture_unique_totals_a
+re_not_municipal_sums) ... ok
+test_shimonoseki_and_yamaguchi_hardcoded_totals (test_site.MunicipalSupplyDataTest.test_shimonoseki_and_yamaguchi_hardc
+oded_totals) ... ok
+test_zero_record_municipalities_are_exact (test_site.MunicipalSupplyDataTest.test_zero_record_municipalities_are_exact)
+ ... ok
+test_public_json_has_no_representative_schema (test_site.PublishedSourceDataTest.test_public_json_has_no_representative
+_schema) ... ok
+test_published_source_json_is_byte_identical (test_site.PublishedSourceDataTest.test_published_source_json_is_byte_iden
+tical) ... ok
+test_current_state_spans_i1_to_i4_with_pdf_baseline (test_site.ReadmeContractTest.test_current_state_spans_i1_to_i4_wit
+h_pdf_baseline) ... ok
+test_gtfs_summary_present_without_banned_rate_terms (test_site.ReadmeContractTest.test_gtfs_summary_present_without_ban
+ned_rate_terms) ... ok
+test_included_artifacts_and_screens_are_listed (test_site.ReadmeContractTest.test_included_artifacts_and_screens_are_li
+sted) ... ok
+test_repo_is_not_treated_as_submission_publication_or_award (test_site.ReadmeContractTest.test_repo_is_not_treated_as_s
+ubmission_publication_or_award) ... ok
+test_role_description_covers_municipal_view_and_gtfs_status (test_site.ReadmeContractTest.test_role_description_covers_
+municipal_view_and_gtfs_status) ... ok
+test_stale_fixed_test_count_is_absent (test_site.ReadmeContractTest.test_stale_fixed_test_count_is_absent) ... ok
+test_supply_view_is_described_with_scope_dates_and_test_count (test_site.ReadmeContractTest.test_supply_view_is_describ
+ed_with_scope_dates_and_test_count) ... ok
+test_current_status_reflects_i1_to_i4_and_main_view_link_is_present (test_site.StatusHtmlContractTest.test_current_stat
+us_reflects_i1_to_i4_and_main_view_link_is_present) ... ok
+test_gtfs_relationship_matches_built_data_without_banned_terms (test_site.StatusHtmlContractTest.test_gtfs_relationship
+_matches_built_data_without_banned_terms) ... ok
+test_i1_to_i4_accepted_outcomes_have_short_purpose_linked_descriptions (test_site.StatusHtmlContractTest.test_i1_to_i4_
+accepted_outcomes_have_short_purpose_linked_descriptions) ... ok
+test_no_external_publication_or_award_claims (test_site.StatusHtmlContractTest.test_no_external_publication_or_award_cl
+aims) ... ok
+test_pdf_numbers_and_gtfs_numbers_are_not_conflated (test_site.StatusHtmlContractTest.test_pdf_numbers_and_gtfs_numbers
+_are_not_conflated) ... ok
+test_real_links_to_index_json_and_terms_are_present (test_site.StatusHtmlContractTest.test_real_links_to_index_json_and
+_terms_are_present) ... ok
+test_stale_progress_claims_are_absent (test_site.StatusHtmlContractTest.test_stale_progress_claims_are_absent) ... ok
+test_supply_view_current_state_and_real_json_link_are_present (test_site.StatusHtmlContractTest.test_supply_view_curren
+t_state_and_real_json_link_are_present) ... ok
+test_t1_to_t3_and_t4_are_separated_and_marked_not_met (test_site.StatusHtmlContractTest.test_t1_to_t3_and_t4_are_separa
+ted_and_marked_not_met) ... ok
+test_composite_key_is_unique (test_verify.CompositeKeyTotalsTest.test_composite_key_is_unique) ... ok
+test_operator_counts_per_file_and_total (test_verify.CompositeKeyTotalsTest.test_operator_counts_per_file_and_total) ..
+. ok
+test_registration_no_alone_duplicates_only_for_dai3gou (test_verify.CompositeKeyTotalsTest.test_registration_no_alone_d
+uplicates_only_for_dai3gou)
+registration_noï¿½Pï¿½Æ‚Ìdï¿½ï¿½ï¿½Íï¿½ï¿½ï¿½Bï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½ï¿½3ï¿½ï¿½ï¿½ï¿½2ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(SPEC.md ï¿½ï¿½5-4)ï¿½B ... ok
+test_vehicle_row_and_grand_totals (test_verify.CompositeKeyTotalsTest.test_vehicle_row_and_grand_totals) ... ok
+test_operators_csv_and_json_match (test_verify.CsvJsonEquivalenceTest.test_operators_csv_and_json_match) ... ok
+test_vehicles_csv_and_json_match (test_verify.CsvJsonEquivalenceTest.test_vehicles_csv_and_json_match) ... ok
+test_record_pages_offices_rows_and_totals (test_verify.MunicipalTransportGapDetailTest.test_record_pages_offices_rows_a
+nd_totals) ... ok
+test_transport_gap_vehicle_mapping_and_totals (test_verify.MunicipalTransportGapDetailTest.test_transport_gap_vehicle_m
+apping_and_totals) ... ok
+test_transport_scope_and_appendix_exclusion (test_verify.MunicipalTransportGapDetailTest.test_transport_scope_and_appen
+dix_exclusion) ... ok
+test_all_ownership_is_empty (test_verify.NewPdfVehicleDetailTest.test_all_ownership_is_empty)
+ï¿½ï¿½ï¿½Lï¿½æ•ªï¿½Ì—ñ‚ª–ï¿½ï¿½ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½È‚Ì‚ï¿½ownershipï¿½Í‘Sï¿½sï¿½ï¿½(SPEC.md ï¿½ï¿½3.2)ï¿½B ... ok
+test_dai4gou_office_seq_1_to_4_with_kei_1_0_1_0 (test_verify.NewPdfVehicleDetailTest.test_dai4gou_office_seq_1_to_4_wit
+h_kei_1_0_1_0) ... ok
+test_operator_totals_and_pages (test_verify.NewPdfVehicleDetailTest.test_operator_totals_and_pages) ... ok
+test_row_count_is_12 (test_verify.NewPdfVehicleDetailTest.test_row_count_is_12) ... ok
+test_multiline_office_cells_match_top_table (test_verify.NpoTransportGapDetailTest.test_multiline_office_cells_match_to
+p_table) ... ok
+test_page4_missing_total_cell_is_coordinate_recovered (test_verify.NpoTransportGapDetailTest.test_page4_missing_total_c
+ell_is_coordinate_recovered) ... ok
+test_pages_dates_municipalities_and_totals (test_verify.NpoTransportGapDetailTest.test_pages_dates_municipalities_and_t
+otals) ... ok
+test_transport_scope_partner_flags_and_ownership_are_empty (test_verify.NpoTransportGapDetailTest.test_transport_scope_
+partner_flags_and_ownership_are_empty) ... ok
+test_two_vehicle_rows_per_registration_and_source_labels (test_verify.NpoTransportGapDetailTest.test_two_vehicle_rows_p
+er_registration_and_source_labels) ... ok
+test_000359215_office_level_differences_are_exact (test_verify.OfficeFlagsTest.test_000359215_office_level_differences_
+are_exact) ... ok
+test_dai4gou_office_name_location_element_counts_and_seq (test_verify.OfficeFlagsTest.test_dai4gou_office_name_location
+_element_counts_and_seq)
+ï¿½ï¿½ï¿½Rï¿½sï¿½ï¿½ï¿½ï¿½4ï¿½ï¿½ï¿½ï¿½4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½/ï¿½Ê’uï¿½Ì—vï¿½fï¿½ï¿½ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½A ... ok
+test_office_flags_match_composite_key_expected_values (test_verify.OfficeFlagsTest.test_office_flags_match_composite_ke
+y_expected_values) ... ok
+test_extract_registration_block_matches_expected (test_verify.RegistrationBlockRealPdfTest.test_extract_registration_bl
+ock_matches_expected) ... ok
+test_authority_code_is_uniform_nakayama (test_verify.RegistrationConsistencyTest.test_authority_code_is_uniform_nakayam
+a) ... ok
+test_operator_type_by_file (test_verify.RegistrationConsistencyTest.test_operator_type_by_file) ... ok
+test_service_type_code_matches_file (test_verify.RegistrationConsistencyTest.test_service_type_code_matches_file) ... o
+k
+test_no_representative_column_in_schema (test_verify.RepresentativeNameNotOutputTest.test_no_representative_column_in_s
+chema) ... ok
+test_raw_text_files_have_redaction_marker (test_verify.RepresentativeNameNotOutputTest.test_raw_text_files_have_redacti
+on_marker)
+ï¿½eraw/textï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½oï¿½ï¿½]ï¿½ï¿½1ï¿½ï¿½ï¿½Èã‚ ï¿½é‚±ï¿½ï¿½(SPEC.md ï¿½ï¿½4.4)ï¿½B ... ok
+test_representative_name_absent_from_derived_text (test_verify.RepresentativeNameNotOutputTest.test_representative_name
+_absent_from_derived_text)
+discover_name_scan_targets() ï¿½Ì‘Sï¿½ÎÛ‚ÉAï¿½ï¿½\ï¿½Ò‚ÌŽï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½ ... ok
+test_count_kei_le_count (test_verify.VehicleTotalsTest.test_count_kei_le_count)
+count_kei ï¿½ï¿½ï¿½ó•¶Žï¿½ï¿½ï¿½Ìsï¿½ÍAï¿½ï¿½ï¿½ÌŽÔŽï¿½ï¿½ï¿½(ï¿½y)ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½Iï¿½É–ï¿½ï¿½ï¿½(ï¿½oï¿½Xï¿½ï¿½Ì‚ï¿½)ï¿½ï¿½ï¿½ß‘ÎÛŠOï¿½B ... ok
+test_count_sum_matches_vehicles_total (test_verify.VehicleTotalsTest.test_count_sum_matches_vehicles_total) ... ok
+----------------------------------------------------------------------
+Ran 80 tests in 5.721s
+OK

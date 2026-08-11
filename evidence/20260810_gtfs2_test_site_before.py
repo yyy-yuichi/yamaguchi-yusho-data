@@ -2,8 +2,6 @@
 from __future__ import annotations
 
 import csv
-import copy
-import hashlib
 import json
 import re
 import sys
@@ -24,7 +22,7 @@ DOCS_DATA_DIR = DOCS_DIR / "data"
 # I-5完了時点の実測テスト件数（tests/test_site.py + tests/test_verify.py）。
 # `python -m unittest discover -s tests -v` の実測値と一致させる
 # （README.md・docs/status.html・verification.mdでも同じ値を使う。SPEC.md §13.6.6）。
-TOTAL_TEST_COUNT = 80
+TOTAL_TEST_COUNT = 67
 
 
 def setUpModule():
@@ -282,81 +280,6 @@ class GtfsStatusDataTest(unittest.TestCase):
             self.assertNotIn(b"\r", raw, f"{filename} にCRが含まれる")
 
 
-class GtfsSupplyMetricsDataTest(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        cls.source_path = DATA_DIR / "gtfs_supply_metrics.json"
-        cls.public_path = DOCS_DATA_DIR / "gtfs_supply_metrics.json"
-        cls.records = read_json(cls.source_path)
-
-    def test_supply_metrics_public_copy_is_byte_identical_and_accepted_hash(self):
-        source = self.source_path.read_bytes()
-        published = self.public_path.read_bytes()
-        self.assertEqual(source, published)
-        self.assertEqual(
-            hashlib.sha256(source).hexdigest(),
-            "26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b",
-        )
-
-    def test_supply_metrics_two_feeds_and_all_twenty_values_are_fixed(self):
-        self.assertEqual([record["feed_id"] for record in self.records], ["iwakuni-gtfsjp", "hikari-gtfs"])
-        self.assertEqual({record["metric_version"] for record in self.records}, {"SUPPLY-METRIC-1"})
-        self.assertEqual(
-            {(record["comparison_week_start"], record["comparison_week_end"]) for record in self.records},
-            {("2026-04-06", "2026-04-12")},
-        )
-        expected = {
-            "iwakuni-gtfsjp": ([1, 46, 800], [185, 186, 183, 161, 188, 146, 39]),
-            "hikari-gtfs": ([1, 7, 172], [55, 55, 55, 55, 55, 41, 41]),
-        }
-        metric_ids = list(build_site_data.SUPPLY_METRIC_KEYS)
-        for record in self.records:
-            structure = [record["metrics"][metric_id]["value"] for metric_id in metric_ids]
-            daily = [metric["value"] for metric in record["scheduled_trip_count_by_date"].values()]
-            self.assertEqual((structure, daily), expected[record["feed_id"]])
-            self.assertEqual(len(structure) + len(daily), 10)
-
-    def test_supply_metrics_status_value_and_reason_are_consistent(self):
-        metrics = []
-        for record in self.records:
-            metrics.extend(record["metrics"].values())
-            metrics.extend(record["scheduled_trip_count_by_date"].values())
-        self.assertEqual(len(metrics), 20)
-        for metric in metrics:
-            self.assertEqual(metric["metric_status"], "measured")
-            self.assertIsInstance(metric["value"], int)
-            self.assertGreaterEqual(metric["value"], 0)
-            self.assertIsNone(metric["reason"])
-
-    def test_supply_metrics_validator_rejects_mismatches_and_unknown_status(self):
-        cases = []
-
-        wrong_order = copy.deepcopy(self.records)
-        wrong_order.reverse()
-        cases.append(("feed order", wrong_order))
-
-        wrong_version = copy.deepcopy(self.records)
-        wrong_version[1]["metric_version"] = "DIFFERENT"
-        cases.append(("metric version", wrong_version))
-
-        wrong_dates = copy.deepcopy(self.records)
-        wrong_dates[1]["scheduled_trip_count_by_date"].pop("2026-04-12")
-        cases.append(("date keys", wrong_dates))
-
-        unknown_status = copy.deepcopy(self.records)
-        unknown_status[0]["metrics"]["gtfs_route_id_count"]["metric_status"] = "unknown"
-        cases.append(("status", unknown_status))
-
-        nonmeasured_value = copy.deepcopy(self.records)
-        metric = nonmeasured_value[0]["metrics"]["gtfs_route_id_count"]
-        metric.update(metric_status="not_calculable", value=46, reason="算出不能")
-        cases.append(("non-measured value", nonmeasured_value))
-
-        for label, records in cases:
-            with self.subTest(label=label), self.assertRaises(ValueError):
-                build_site_data.validate_supply_metrics(records)
-
-
 class IndexHtmlContractTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -418,71 +341,6 @@ class IndexHtmlContractTest(unittest.TestCase):
         for marker in required:
             self.assertIn(marker, self.html)
 
-    def test_supply_comparison_structure_and_general_language(self):
-        required = (
-            'id="supply-comparison"',
-            "岩国市・光市のGTFS供給を同じ日付で確認",
-            "フィードに収録された情報の件数",
-            "GTFS収録の交通ブランド情報",
-            "GTFS収録の路線情報ID",
-            "GTFS収録の乗降場所ID",
-            "この日にGTFSで予定された運行便",
-            'id="supply-structure-body"',
-            'id="supply-daily-body"',
-            'id="supply-evidence-list"',
-            "data/gtfs_supply_metrics.json",
-            '<caption>岩国市関連・光市関連フィードの構造指標</caption>',
-            '<caption>同じ7実日付にGTFSで予定された運行便</caption>',
-            'scope="col"',
-            'heading.scope = "row"',
-        )
-        for marker in required:
-            self.assertIn(marker, self.html)
-        for filename in ("gtfs_supply_metrics.json", "gtfs_feeds.json"):
-            self.assertTrue((DOCS_DATA_DIR / filename).is_file(), f"リンク先が実在しない: {filename}")
-
-    def test_supply_comparison_reads_json_without_hardcoded_values(self):
-        self.assertIn('const supplyMetricsUrl = "data/gtfs_supply_metrics.json"', self.html)
-        self.assertIn("renderSupplyComparison(records, feeds)", self.html)
-        self.assertIn("record.metrics[metricId]", self.html)
-        self.assertIn("record.scheduled_trip_count_by_date[dateKey]", self.html)
-        self.assertNotIn("2026-04-06", self.html)
-        self.assertNotIn("2026-04-12", self.html)
-        self.assertNotIn("185/186/183/161/188/146/39", self.html)
-        self.assertNotIn("55/55/55/55/55/41/41", self.html)
-
-    def test_supply_comparison_failure_is_isolated(self):
-        existing_chain = "Promise.all([fetchJson(dataUrl), fetchJson(gtfsFeedsUrl), fetchJson(municipalityGtfsUrl)])"
-        supply_chain = "Promise.all([fetchJson(supplyMetricsUrl), fetchJson(gtfsFeedsUrl)])"
-        self.assertIn(existing_chain, self.html)
-        self.assertIn(supply_chain, self.html)
-        self.assertLess(self.html.index(existing_chain), self.html.index(supply_chain))
-        self.assertIn("municipal supply data load failed", self.html)
-        self.assertIn("GTFS supply comparison data load failed", self.html)
-        self.assertIn("既存の市町別登録供給とGTFS確認状況は引き続き利用できます", self.html)
-
-    def test_supply_comparison_uses_safe_dom_api_and_fixed_status_words(self):
-        self.assertNotIn("innerHTML", self.html)
-        self.assertIn("textContent", self.html)
-        self.assertIn("appendSafeExternalLink", self.html)
-        for label in (
-            "測定済み", "今回未確認", "算出不能", "入力異常", "範囲が異なり比較対象外",
-            "正確な発車回数を固定できない", "共通の比較週なし",
-        ):
-            self.assertIn(label, self.html)
-
-    def test_supply_comparison_responsive_contract(self):
-        required = (
-            ".comparison-table",
-            "min-width: 0",
-            "table-layout: fixed",
-            "overflow-wrap: anywhere",
-            "word-break: break-all",
-            "@media (max-width: 470px)",
-        )
-        for marker in required:
-            self.assertIn(marker, self.html)
-
 
 class StatusHtmlContractTest(unittest.TestCase):
     @classmethod
@@ -525,8 +383,8 @@ class StatusHtmlContractTest(unittest.TestCase):
             "T2",
             "T3",
             "T4",
-            'href="index.html?v=20260811"',
-            "SUPPLY-VIEW-1はCodex受入済みで停止",
+            'href="index.html?v=20260810"',
+            "I-5はここまでで止める",
             "PDL1.0",
             "CC BY 4.0",
         )
@@ -600,7 +458,7 @@ class StatusHtmlContractTest(unittest.TestCase):
         # SPEC.md §13.5.7: docs/index.html、公開JSON、出典・利用条件へ
         # 実在するリンクで到達できる。リンク先は実ファイルとして存在する。
         required_hrefs = (
-            'href="index.html?v=20260811"',
+            'href="index.html?v=20260810"',
             'href="data/gtfs_feeds.json"',
             'href="data/municipality_gtfs.json"',
             'href="data/operators.json"',
@@ -618,20 +476,6 @@ class StatusHtmlContractTest(unittest.TestCase):
         banned = ("公開済み", "応募済み", "受賞済み", "GitHub Pagesで公開中", "外部公開済み")
         for phrase in banned:
             self.assertNotIn(phrase, self.html)
-
-    def test_supply_view_current_state_and_real_json_link_are_present(self):
-        for marker in (
-            "SUPPLY-VIEW-1",
-            "Codex受入済み",
-            "岩国市・光市",
-            "2026-04-06〜2026-04-12",
-            f"{TOTAL_TEST_COUNT}テスト",
-            'href="index.html?v=20260811#supply-comparison"',
-            'href="data/gtfs_supply_metrics.json"',
-            "commit・push・公開・外部提出は行わない",
-        ):
-            self.assertIn(marker, self.html)
-        self.assertTrue((DOCS_DATA_DIR / "gtfs_supply_metrics.json").is_file())
 
 
 class ReadmeContractTest(unittest.TestCase):
@@ -715,19 +559,6 @@ class ReadmeContractTest(unittest.TestCase):
         banned = ("応募済み", "公開済み", "受賞済み", "受賞しました")
         for phrase in banned:
             self.assertNotIn(phrase, self.text)
-
-    def test_supply_view_is_described_with_scope_dates_and_test_count(self):
-        for marker in (
-            "SUPPLY-VIEW-1",
-            "岩国市・光市",
-            "構造3指標",
-            "2026-04-06〜2026-04-12",
-            "data/gtfs_supply_metrics.json",
-            "docs/data/gtfs_supply_metrics.json",
-            f"{TOTAL_TEST_COUNT}件成功",
-            "市内だけの値",
-        ):
-            self.assertIn(marker, self.text)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,27 @@
+取得日時: 2026-08-11 JST
+取得元  : 最終文書・証拠同期後のローカル作業ツリー
+取得方法: git diff --check / git diff --cached --name-only / git status --short（SUPPLY-VIEW-1対象抽出）
+
+git_diff_check_exit=0
+staged_count=0
+status_entries=55
+ M PROGRESS.md
+ M README.md
+ M docs/index.html
+ M docs/status.html
+ M src/build_site_data.py
+ M tests/test_site.py
+ M verification.md
+?? docs/data/gtfs_supply_metrics.json
+?? evidence/20260810_supply_view1_before_scope_raw.txt
+?? evidence/20260810_supply_view1_browser_unavailable_raw.txt
+?? evidence/20260810_supply_view1_build_raw.txt
+?? evidence/20260810_supply_view1_final_checks_raw.txt
+?? evidence/20260810_supply_view1_focused_test_raw.txt
+?? evidence/20260810_supply_view1_index_before.html
+?? evidence/20260810_supply_view1_postsync_checks_raw.txt
+?? evidence/20260810_supply_view1_readme_before.md
+?? evidence/20260810_supply_view1_spec_coverage_raw.txt
+?? evidence/20260810_supply_view1_static_check_raw.txt
+?? evidence/20260810_supply_view1_status_before.html
+?? evidence/20260810_supply_view1_unittest_full_raw.txt

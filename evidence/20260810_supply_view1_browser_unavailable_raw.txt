@@ -1,0 +1,17 @@
+取得日時: 2026-08-11 JST
+取得元  : ローカルHTTPサーバ / Browser runtime
+取得方法: Python http.server、context-mode fetch、Browser runtime getForUrl/list
+
+ローカルHTTP確認:
+STATUS=200 LENGTH=42287
+
+Browser runtime 初回接続:
+No browser is available
+
+bootstrap-troubleshooting の指示に従った利用可能ブラウザ一覧:
+[]
+
+判定:
+このwriter環境ではブラウザ実操作を実行できない。
+したがって1440px幅・390×844相当の画面目視、ページ横スクロール0、
+ブラウザコンソールエラー0は未確認であり、成功とは記録しない。

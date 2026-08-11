@@ -1,0 +1,53 @@
+取得日時: 2026-08-11 04:38 JST
+取得元  : ローカル作業ツリー C:\Users\user\dev\udc2026\yamaguchi-yusho-data
+取得方法: Get-FileHash -Algorithm SHA256（許可対象5ファイル） / git status --short --branch
+
+d789e88b8a0994682e8fad15079220cc2f045faca96f8835043f8d74102386ca  src/build_site_data.py
+74e5f90afeefd6ff7b2b16aca10a2c7c49e1ee73c880f3efebf0d137fb23daf9  docs/index.html
+881a3d1f6bdfaddb57a87fbbce93a29c22130571dcdeed8ed23f87271845a075  tests/test_site.py
+7701faa7804c1089e34af66941185ed0e6a404aab8f4e4c3929c1c11ea9c9c07  README.md
+fc6b7a29e2d9f00c4d5b5d69d65a9a6e7141766bc1855b6e6bfd72f949d21bbd  docs/status.html
+
+--- git status --short --branch ---
+## main...origin/main [ahead 26]
+ M PROGRESS.md
+ M README.md
+ M SPEC.md
+ M docs/status.html
+ M run_record.md
+ M tests/test_site.py
+ M verification.md
+?? data/gtfs_supply_metrics.json
+?? evidence/20260810_gtfs2_content_probe.txt
+?? evidence/20260810_gtfs2_encoding_probe.txt
+?? evidence/20260810_gtfs2_fetch_hikari.txt
+?? evidence/20260810_gtfs2_fetch_iwakuni.txt
+?? evidence/20260810_gtfs2_git_diff_check.txt
+?? evidence/20260810_gtfs2_inspection_run_raw.txt
+?? evidence/20260810_gtfs2_member_explore_raw.txt
+?? evidence/20260810_gtfs2_progress_before.md
+?? evidence/20260810_gtfs2_readme_before.md
+?? evidence/20260810_gtfs2_spec_coverage_progress.txt
+?? evidence/20260810_gtfs2_spec_coverage_readme.txt
+?? evidence/20260810_gtfs2_spec_coverage_status.txt
+?? evidence/20260810_gtfs2_spec_coverage_test_site.txt
+?? evidence/20260810_gtfs2_spec_coverage_verification.txt
+?? evidence/20260810_gtfs2_status_before.html
+?? evidence/20260810_gtfs2_test_site_before.py
+?? evidence/20260810_gtfs2_unittest_full_raw.txt
+?? evidence/20260810_gtfs2_verification_before.md
+?? evidence/20260810_supply_metric2_calculation_run_raw.txt
+?? evidence/20260810_supply_metric2_corr1_fix_verification_raw.txt
+?? evidence/20260810_supply_metric2_corr1_git_diff_check.txt
+?? evidence/20260810_supply_metric2_crosscheck_raw.txt
+?? evidence/20260810_supply_metric2_focused_test_raw.txt
+?? evidence/20260810_supply_metric2_git_diff_check.txt
+?? evidence/20260810_supply_metric2_manual_crosscheck_raw.txt
+?? evidence/20260810_supply_metric2_script_run_raw.txt
+?? evidence/20260810_supply_metric2_unittest_full_raw.txt
+?? evidence/20260810_supply_view1_write_probe.txt
+?? raw/gtfs/
+?? src/calculate_gtfs_supply_metrics.py
+?? src/inspect_gtfs_archives.py
+?? tests/test_gtfs_inspection.py
+?? tests/test_gtfs_supply_metrics.py
