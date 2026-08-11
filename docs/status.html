@@ -1176,6 +1176,32 @@
       <p class="source-note">根拠: run_record.md §4、SPEC.md §16・§17・§18、verification.md</p>
     </section>
 
+    <section aria-labelledby="freshness-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">WORK1-FRESHNESS-1 / 継続確認</p>
+          <h2 id="freshness-title">受入済み6原本の差異を、公開値を変えずに検知</h2>
+          <p>4登録簿PDFと2 GTFS ZIPを受入済みbytes・SHA256と公式配布の双方へ照合します。差異や取得不能を検出しても、原本・派生データ・公開値は<strong>自動更新しません</strong>。</p>
+        </div>
+      </div>
+
+      <ul class="next-list">
+        <li>
+          <strong>状態語彙を固定</strong>
+          <p><code>unchanged</code>（一致）、<code>changed</code>（差異あり）、<code>unavailable</code>（取得不能）、<code>oversize</code>（安全上限超過）、<code>invalid_baseline</code>（ローカル基準異常）を区別します。</p>
+        </li>
+        <li>
+          <strong>固定確認日: 2026-08-12</strong>
+          <p>初回ローカル実測（2026-08-11T22:47:51Z）は、4 PDFが<code>unchanged</code>、2 GTFS ZIPがTLS接続不能のため<code>unavailable</code>、他3状態は0、終了コード2でした。この固定記録は「現在も不変」という断定ではありません。WORK1-FRESHNESS-1の集中16件を追加し、全102件のunittestが成功しました。</p>
+        </li>
+        <li>
+          <strong>最新状態はActions履歴で確認</strong>
+          <p><a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/workflows/source-freshness.yml">Source freshness Actions履歴</a>に、週次・手動検査の結果artifactを残します。権限は<code>contents: read</code>だけで、commit・issue作成・Pages更新は行いません。</p>
+        </li>
+      </ul>
+      <p class="source-note">根拠: SPEC.md §19、data/source_freshness_manifest.json、verification.md。公式ページの掲載日、GTFS内部有効期間、検査実行日時は別々に保持します。</p>
+    </section>
+
     <section class="sources" aria-labelledby="source-title">
       <h2 id="source-title">このページの根拠</h2>
       <ul>

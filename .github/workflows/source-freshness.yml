@@ -1,0 +1,38 @@
+name: Source freshness
+
+on:
+  schedule:
+    - cron: "17 20 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compare-accepted-sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out accepted baseline
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compare official downloads with accepted baselines
+        run: >-
+          python -B src/check_source_freshness.py
+          --output "${{ runner.temp }}/source-freshness-result.json"
+
+      - name: Upload result without source bodies
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-freshness-result-${{ github.run_id }}
+          path: ${{ runner.temp }}/source-freshness-result.json
+          if-no-files-found: error
+          retention-days: 90

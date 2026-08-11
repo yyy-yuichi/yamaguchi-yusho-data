@@ -1,13 +1,13 @@
-# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ
+# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知
 
-**rev.5.6 / 2026-08-11**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20。消した記述はそこに全部書いてある）
+**rev.5.7 / 2026-08-11**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21。消した記述はそこに全部書いてある）
 
 UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下に `SPEC.md` として置き、Claude Code に読ませる。**
 
 §0〜§11は受け入れ済みI-1、§12は受け入れ済みI-4、§13は受け入れ済みI-5、
 §14は受け入れ済みGTFS-2、§15は受け入れ済みSUPPLY-METRIC-1の仕様として保持し、
 §16は受け入れ済みSUPPLY-VIEW-1、§17は受け入れ済みRELEASE-1、
-§18はENTRY-PAGE-1の実行仕様である。
+§18は受け入れ済みENTRY-PAGE-1、§19はWORK1-FRESHNESS-1の実行仕様である。
 プロジェクトのゴール、終了条件、確定方針は`run_record.md` §0.5 を正とし、
 このファイルがそれを上書きしてはならない。
 
@@ -1046,6 +1046,19 @@ RELEASE-1で公開したデモは数値と根拠を確認できるが、初見�
 | 3 | RELEASE-1公開で工程06まで完了 | ENTRY-PAGE-1の公開受入でロードマップ07を完了とし、工程08の外部提出だけをG6に残す | 「公開物一式」を永久に準備中と表示しないため |
 | 4 | Chat一覧から作業経緯を参照 | `run_record.md` §4にHEAD、今回の一作業、再開手順を固定する | Chat表示が一時的に消えてもリポジトリだけで安全に再開するため |
 
+### 10.21 rev.5.6 → rev.5.7
+
+ENTRY-PAGE-1で作品概要エントリーへ進める公開地盤はできたが、概要エントリーは受賞までの途中工程である。
+早期公開の利点を、原本更新の観測期間と継続運用の証拠へ変えるため、受入済み原本を自動更新せずに
+外部原本との差異だけを検出するWORK1-FRESHNESS-1を追加する。
+
+| # | rev.5.6 | rev.5.7 | 根拠 |
+|---|---|---|---|
+| 1 | ロードマップ07完了後は工程08の外部提出だけ | 作品①を受賞に向けて段階制Goal-to-doneで継続し、最初の強化段階をWORK1-FRESHNESS-1とする | 概要エントリー可能は全体ゴールの完了ではなく、早期開始の観測期間を活用できるため |
+| 2 | 原本の取得日・SHA256を固定表示 | 外部原本を再取得して`unchanged`・`changed`・`unavailable`等を区別する検査を追加 | 固定した検証日だけでは、公開後の原本更新を利用者が判別できないため |
+| 3 | 原本差異の検査は手動証拠だけ | 定期CIと手動実行の両方で検査し、結果を上書き更新に使わない | 継続性を証拠化しつつ、未検証の新原本で受入済み値を変えないため |
+| 4 | 次機能は未定義 | WORK1-FRESHNESS-1受入後に次の受賞寄与段階を一つだけ定義する | 全体を一つの終わらないGoalにせず、段階ごとに完了判定するため |
+
 ---
 
 ## 11. この仕様書を改訂するときの手順
@@ -1976,3 +1989,123 @@ ENTRY-PAGE-1では、県・市町の公共交通担当者、交通事業者、UD
 8. README、状況ページ、PROGRESS、verification、run_recordを「応募用公開物一式は作品①について受入済み」へ同期する
 9. UDC概要フォーム、作品本応募、BODIK APPsへの外部提出を行っていない
 10. Chat一覧が利用できなくても、`run_record.md` §4の再開点から現在地と次の承認ゲートを復元できる
+
+---
+
+## 19. WORK1-FRESHNESS-1 実行仕様 — 受入済み原本の変更検知と継続確認
+
+### 19.1 段階ゴールと利用者成果
+
+作品①の公開値は、2026年8月に取得・検証した4登録簿PDFと2 GTFS ZIPを基準にしている。
+公開後に公式原本が更新されても、現在の画面だけでは、受入済み値が引き続き同じ原本に基づくのか、
+再検証が必要になったのかを継続的に判別できない。
+
+WORK1-FRESHNESS-1では、公開中の値を自動更新せず、受入済み原本と現在の公式配布ファイルを比較して、
+不変・変更・到達不能を区別する。県・市町の交通担当者、交通事業者、UDC審査員が、固定した取得日だけで
+なく、原本変更を継続確認する仕組みと検査履歴へ到達できる状態までを、この段階の成果とする。
+
+### 19.2 監視対象
+
+認証不要で取得済みの次の6原本だけを必須対象とする。
+
+| 種別 | ローカル原本 | 公式配布URL | 基準SHA256 |
+|---|---|---|---|
+| 登録簿PDF | `raw/000230003.pdf` | `https://wwwtb.mlit.go.jp/chugoku/content/000230003.pdf` | `d215cada64ce8d174ec22cb521379734da185b7616f29b27166dfccf701af1ab` |
+| 登録簿PDF | `raw/000268896.pdf` | `https://wwwtb.mlit.go.jp/chugoku/content/000268896.pdf` | `ece80864a99fc392dec0c279fe92f3609a43c11ce32178ced0cd60839c9b6177` |
+| 登録簿PDF | `raw/000271730.pdf` | `https://wwwtb.mlit.go.jp/chugoku/content/000271730.pdf` | `86b3e32f3d3017cba613d644102f262a0a0cb2761925718ce9eea12e71a9add1` |
+| 登録簿PDF | `raw/000359215.pdf` | `https://wwwtb.mlit.go.jp/chugoku/content/000359215.pdf` | `3107e8555aefe86527d482422977c050b4514cb06b0f077187cdec4f38a2c66b` |
+| GTFS ZIP | `raw/gtfs/iwakuni_gtfsjp_20260401.zip` | `https://yamaguchi-opendata.jp/ckan/dataset/2dbaeb43-5134-4880-90a3-62870504f1d3/resource/bac76226-a946-466f-a94c-d61dcb6ab0dc/download/gtfs-jp2026-03-27_1458_.zip` | `d236a58ff4a0edb4812a8bed543d4897670441164a1019e88d5e35ded5052de2` |
+| GTFS ZIP | `raw/gtfs/hikari_gtfs_20260401.zip` | `https://yamaguchi-opendata.jp/ckan/dataset/db885818-b1bd-4848-986f-45119e8acb31/resource/c804039c-7d37-4e45-9288-f09fc1bbd249/download/hikari_gtfs_20260401_.zip` | `f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7` |
+
+船木鉄道は認証が必要で原本未取得のため対象外とする。未確認14市町を不存在へ変換しない。
+公式ページの掲載日、GTFS内部有効期間、検査実行日時は別項目のまま保持し、単一の鮮度点数へ統合しない。
+
+### 19.3 変更可能ファイルと書き手
+
+チャット側だけが変更するもの:
+
+- `SPEC.md`
+- `run_record.md`
+
+実装側が変更できるもの:
+
+- `data/source_freshness_manifest.json`
+- `src/check_source_freshness.py`
+- `tests/test_source_freshness.py`
+- `.github/workflows/source-freshness.yml`
+- `docs/status.html`
+- `README.md`
+- `PROGRESS.md`
+- `verification.md`
+- `evidence/20260811_work1_freshness_*`
+
+受入済み`raw/`、`data/operators.*`、`data/vehicles.*`、`data/gtfs_supply_metrics.json`、
+`docs/data/`、GTFS計算・検査コード、公開トップ・応募説明ページは変更しない。
+
+### 19.4 マニフェストと判定契約
+
+`data/source_freshness_manifest.json`は1原本1要素とし、少なくとも次を持つ。
+
+- `source_id`、`source_type`
+- `official_url`、`local_path`
+- `baseline_sha256`、`baseline_bytes`、`baseline_acquired_at`
+- `max_download_bytes`
+
+検査はHTTPSの許可済みホストだけへGETし、応答を一時メモリまたは一時ファイルでストリーム処理する。
+`raw/`と受入済みデータへ書き込まない。認証情報、Cookie、個人情報を使用・保存しない。
+
+原本単位の状態は次に限定する。
+
+- `unchanged`: 取得成功かつSHA256が基準値と一致
+- `changed`: 取得成功かつSHA256が基準値と不一致
+- `unavailable`: DNS・TLS・タイムアウト・HTTPエラー等で取得不能
+- `oversize`: 宣言上限を超え、安全に取得を継続できない
+- `invalid_baseline`: マニフェストまたはローカル基準原本が契約に不一致
+
+全件`unchanged`だけを終了コード0とする。`changed`を1、外部取得問題を2、基準異常を3として区別する。
+変更時は新原本を採用せず、別段階で安全検査・構造検査・再計算・表示差分を受け入れるまで現行値を保持する。
+
+### 19.5 継続実行と公開表示
+
+GitHub Actionsは週1回と手動実行を提供し、権限を`contents: read`に限定する。結果JSONを実行artifactへ
+保存し、原本変更・取得不能・基準異常ではworkflowを失敗させる。commit、issue作成、Pages更新、
+原本・派生データの自動更新は行わない。
+
+`docs/status.html`とREADMEは、検査の目的、対象6原本、状態語彙、最終受入時の実測結果、Actions履歴への
+導線を示す。固定HTMLを「現在も不変」と断定せず、最新状態はActions履歴で確認するよう明記する。
+
+### 19.6 自動テストと証拠
+
+ネットワークを使わないテストで、少なくとも次を検証する。
+
+1. マニフェスト6件がローカル6原本とファイルサイズ・SHA256まで一致する
+2. URLがHTTPSかつ許可ホストで、パストラバーサルと重複IDがない
+3. モック応答で`unchanged`、`changed`、`unavailable`、`oversize`を区別する
+4. 変更・取得不能時も`raw/`と受入済みデータを変更しない
+5. 終了コード0・1・2・3の優先順位が判定契約と一致する
+6. workflowが週1回・手動実行・`contents: read`だけで、自動commit・issue・Pages更新を含まない
+7. 状況ページとREADMEが固定確認日と最新Actions状態を混同しない
+
+実ネットワーク検査の生JSON、要約、6原本の作業前後SHA256、全検証出力を
+`evidence/20260811_work1_freshness_*`へ保存する。レスポンス本文と認証情報は証拠へ保存しない。
+
+### 19.7 段階完了条件
+
+1. §19.2の6原本を、受入済み値の自動更新なしで再検査できる
+2. 初回実ネットワーク検査で6件の個別状態と終了コードを証拠化する
+3. 定期・手動workflowが最小権限で実在し、実行履歴へ公開状況ページから到達できる
+4. 追加テストを含む全unittest、旧版網羅、`git diff --check`、秘密情報検査が合格する
+5. 受入済み6原本・公開JSON・既存計算値のSHA256が作業前後で不変である
+6. 1440×1600・390×844の実ブラウザで既存表示と新しい継続確認説明を読み取れ、横overflowと4種のエラーが0である
+7. Codexが実ファイル、全差分、検査結果、workflow、公開表示を独立に読み戻す
+8. commit・push・GitHub上のworkflow初回実行・Pages反映は、適用前に対象と影響を示した承認ゲートを通す
+9. UDC概要フォーム、本応募、BODIK APPs登録、作品②、次の作品強化段階へ進んでいない
+10. 受入後に次の受賞寄与段階を一つだけ定義して停止する
+
+### 19.8 停止条件
+
+- 公式配布に認証、利用条件交渉、課金、アクセス回避が必要になった
+- 6原本のいずれかが`changed`または`invalid_baseline`となり、現在の公開値の根拠が変わった
+- 取得先が許可ホスト外またはHTTPS以外へ遷移した
+- 実装が原本・派生値を自動更新しようとした
+- 既存の公開値、日付の区別、非断定注記に退行が生じた

@@ -2269,3 +2269,37 @@ UDC概要フォーム、本応募、BODIK APPs登録は行っていない。
 ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公開物一式」は作品①について完了した。
 次の一作業は未定義である。工程08のUDC概要フォーム送信またはBODIK APPs登録はG6の本人承認前に
 開始しない。本応募、受賞、作品②は未達である。
+
+## 2026-08-12 WORK1-FRESHNESS-1 ローカル実装・検証
+
+### 実装したもの
+
+- `data/source_freshness_manifest.json`に、受入済み4登録簿PDF・2 GTFS ZIPの公式URL、
+  ローカルパス、bytes、SHA256、取得日、安全上限を固定した。
+- `src/check_source_freshness.py`はローカル基準を先に検証し、HTTPSかつ許可2ホストだけを
+  ストリーム取得する。本文を保存せず、`unchanged`・`changed`・`unavailable`・`oversize`・
+  `invalid_baseline`を区別する。原本・派生データ・公開値への出力は拒否する。
+- `.github/workflows/source-freshness.yml`は週1回と手動実行、`contents: read`だけとし、
+  結果JSONをartifactへ保存する。自動commit、issue作成、Pages更新は含めていない。
+- READMEと`docs/status.html`は固定確認日と最新Actions状態を分離し、固定HTMLを
+  「現在も不変」という断定に使わない説明へ同期した。
+
+### 初回実測と自動テスト
+
+- 2026-08-11T22:47:51Zの実ネットワーク照合は、4 PDFが`unchanged`、2 GTFS ZIPが
+  TLS接続不能で`unavailable`、他3状態は0、終了コード2。応答本文は証拠へ保存していない。
+- WORK1集中16件と全102件のunittestが成功。旧SPEC 703トークンは欠落0。
+- 秘密情報検査は変更・新規テキスト全件で一致0。`git diff --check`は終了コード0、staged 0件。
+- 6原本、既存データ、公開JSON、供給指標、`docs/index.html`、`docs/entry.html`の計23ファイルは、
+  現行SHA256とGit clean-filter後のHEAD blobを照合し23/23不変だった。
+
+### 実ブラウザと現在地
+
+- 新しい状況節はCodex in-app browserの1440×1600・390×844で必須語彙、固定確認日、
+  102件、Actions導線を読戻し、両幅overflow 0、error log 0。2 PNGを目視した。
+- 既存アプリのEdge/CDP退行検証は28/28。両幅overflow 0、console error、
+  `Runtime.exceptionThrown`、Log error、`Network.loadingFailed`は全て0。
+- F3・F4とF5のローカル独立読戻しは完了した。commit・push・GitHub上のworkflow初回実行・
+  Pages反映は行っておらず、WORK1-FRESHNESS-1は公開適用承認ゲートで停止している。
+- UDC概要フォーム、本応募、BODIK APPs登録、作品②、次の強化段階へは進んでいない。
+  次段階はWORK1-FRESHNESS-1の公開受入後に一つだけ定義する。

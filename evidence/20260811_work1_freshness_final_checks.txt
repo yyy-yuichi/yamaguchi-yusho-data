@@ -1,0 +1,57 @@
+WORK1-FRESHNESS-1 final local checks
+recorded: 2026-08-12 JST
+baseline HEAD: 8dfe393f49e7d994c94db22535cb672c708aa18e
+origin/main at restart: 8dfe393f49e7d994c94db22535cb672c708aa18e
+
+[source comparison]
+command: python -B src/check_source_freshness.py --timeout-seconds 30 --output evidence/20260811_work1_freshness_live_result.json
+checked_at: 2026-08-11T22:47:51Z
+result: unchanged=4, changed=0, unavailable=2, oversize=0, invalid_baseline=0, exit_code=2
+detail: four registry PDFs matched bytes and SHA256; both GTFS ZIP downloads were classified tls_error
+response bodies saved: no
+accepted source or derived value updated: no
+
+[tests]
+focused: python -B -m unittest tests.test_source_freshness -v
+result: Ran 16 tests, OK
+full: python -B -m unittest discover -s tests -v
+result: Ran 102 tests, OK
+raw output: evidence/20260811_work1_freshness_unittest_full_raw.txt
+
+[spec coverage]
+comparison: HEAD:SPEC.md -> worktree SPEC.md
+result: OLD_SPEC_TOKENS=703, EXPLAINED_MISSING=0, UNEXPLAINED_MISSING=0, PASS
+categories: headings 120/120; identifiers 376/376; first table column 156/156; code block lines 51/51
+
+[protected content]
+result: FILES=23, UNCHANGED=23, CHANGED=0
+coverage: six raw sources; accepted CSV/JSON; public JSON; supply metrics; docs/index.html; docs/entry.html
+evidence: evidence/20260811_work1_freshness_protected_sha256.txt
+
+[browser]
+new status section: in-app browser PASS at 1440x1600 and 390x844; overflow=0; required text=true; error logs=0
+existing app regression: Edge/CDP 28/28 PASS at both widths; console=0; Runtime.exceptionThrown=0; Log error=0; Network.loadingFailed=0
+owned localhost server and Edge process stopped: yes
+temporary CDP profile remains: no
+evidence: evidence/20260811_work1_freshness_status_browser_raw.json; evidence/20260811_work1_freshness_regression_browser_raw.json
+
+[workflow safety]
+triggers: weekly schedule and workflow_dispatch
+permissions: contents: read
+artifact: source-freshness result JSON, even when the comparison step fails
+absent: contents: write; issue creation; git commit; git push; Pages deployment
+GitHub workflow run performed: no (approval gate)
+Pages update performed: no (approval gate)
+
+[scope and hygiene]
+secret-like values: 0
+git diff --check: PASS
+staged paths: 0
+Claude Code launched: no
+commit: not performed
+push: not performed
+UDC form / main entry / BODIK registration: not performed
+work 2: not started
+next enhancement stage: not defined before WORK1 public acceptance
+
+local verdict: GO to the explicit commit/push/workflow/Pages approval gate; WORK1-FRESHNESS-1 is not finally accepted or published yet.

@@ -57,6 +57,25 @@ UDC2026応募全体の終了条件（作品概要エントリー・本応募・�
 - **ENTRY-PAGE-1**: 作品名、81字概要、対象者、課題、3段階の使い方、使用データ、
   実用度・完成度・挑戦度、限界を初見の人向けに結ぶ応募説明ページ。Pages run
   `31462820456`と公開実Edge 30/30をCodex受入済み
+- **WORK1-FRESHNESS-1（継続確認）**: 受入済み4登録簿PDF・2 GTFS ZIPを公式配布と
+  継続照合し、原本を採用し直さずに状態だけを区別する。GitHub Actionsの週次・手動検査と
+  Pagesからの履歴導線を運用する
+
+## 原本変更の継続確認（WORK1-FRESHNESS-1）
+
+公開値の根拠にした6原本を、`data/source_freshness_manifest.json`の受入済みbytes・SHA256と
+公式配布ファイルの双方へ照合します。状態語彙は`unchanged`（一致）、`changed`（差異あり）、
+`unavailable`（取得不能）、`oversize`（安全上限超過）、`invalid_baseline`（ローカル基準異常）です。
+差異や取得不能を検出しても、原本・派生データ・公開値は**自動更新しません**。
+
+- 固定確認日: 2026-08-12（初回ローカル実測、2026-08-11T22:47:51Z）
+- 固定実測: 4 PDFは`unchanged`、2 GTFS ZIPはTLS接続不能のため`unavailable`、
+  `changed`・`oversize`・`invalid_baseline`は0、終了コード2
+- WORK1-FRESHNESS-1の集中16件を追加し、全102件のunittestが成功
+- この固定記録は「現在も不変」という断定ではない。**最新状態**は
+  [Source freshness Actions履歴](https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/workflows/source-freshness.yml)で確認する
+- workflowは週1回と手動実行に限定し、権限は`contents: read`だけ。結果JSONをartifactへ保存し、
+  commit・issue作成・Pages更新は行わない
 
 ## 処理状況
 

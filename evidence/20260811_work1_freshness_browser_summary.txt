@@ -1,0 +1,17 @@
+WORK1-FRESHNESS-1 browser verification
+overall: PASS
+
+New status explanation (Codex in-app browser):
+- desktop: 1440x1600, document overflow=0, section width=1180, required markers=true, error logs=0
+- mobile: 390x844, document overflow=0, section width=355, required markers=true, error logs=0
+- fixed timestamp 2026-08-11T22:47:51Z, full 102-test count, and Actions URL were read back at both widths
+- screenshots were visually inspected; the desktop section is readable as one grouped block and the mobile section wraps vertically without horizontal clipping
+
+Existing app regression (headless Edge / Chrome DevTools Protocol):
+- 28/28 assertions passed
+- desktop 1440x1600: overflow=0, console error=0, Runtime.exceptionThrown=0, Log error=0, Network.loadingFailed=0
+- mobile 390x844: overflow=0, console error=0, Runtime.exceptionThrown=0, Log error=0, Network.loadingFailed=0
+- exact raw evidence: evidence/20260811_work1_freshness_regression_browser_raw.json
+- the owned localhost server and Edge process were stopped; the temporary profile does not remain
+
+No public URL, Pages deployment, workflow run, form submission, or external registration was performed.

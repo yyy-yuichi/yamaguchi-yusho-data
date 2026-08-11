@@ -1,0 +1,66 @@
+{
+  "schema_version": "WORK1-FRESHNESS-1",
+  "expected_source_count": 6,
+  "sources": [
+    {
+      "source_id": "mlit-registry-000230003",
+      "source_type": "registry_pdf",
+      "official_url": "https://wwwtb.mlit.go.jp/chugoku/content/000230003.pdf",
+      "local_path": "raw/000230003.pdf",
+      "baseline_sha256": "d215cada64ce8d174ec22cb521379734da185b7616f29b27166dfccf701af1ab",
+      "baseline_bytes": 19003,
+      "baseline_acquired_at": "2026-08-09",
+      "max_download_bytes": 5242880
+    },
+    {
+      "source_id": "mlit-registry-000268896",
+      "source_type": "registry_pdf",
+      "official_url": "https://wwwtb.mlit.go.jp/chugoku/content/000268896.pdf",
+      "local_path": "raw/000268896.pdf",
+      "baseline_sha256": "ece80864a99fc392dec0c279fe92f3609a43c11ce32178ced0cd60839c9b6177",
+      "baseline_bytes": 149313,
+      "baseline_acquired_at": "2026-08-09",
+      "max_download_bytes": 5242880
+    },
+    {
+      "source_id": "mlit-registry-000271730",
+      "source_type": "registry_pdf",
+      "official_url": "https://wwwtb.mlit.go.jp/chugoku/content/000271730.pdf",
+      "local_path": "raw/000271730.pdf",
+      "baseline_sha256": "86b3e32f3d3017cba613d644102f262a0a0cb2761925718ce9eea12e71a9add1",
+      "baseline_bytes": 136476,
+      "baseline_acquired_at": "2026-08-07",
+      "max_download_bytes": 5242880
+    },
+    {
+      "source_id": "mlit-registry-000359215",
+      "source_type": "registry_pdf",
+      "official_url": "https://wwwtb.mlit.go.jp/chugoku/content/000359215.pdf",
+      "local_path": "raw/000359215.pdf",
+      "baseline_sha256": "3107e8555aefe86527d482422977c050b4514cb06b0f077187cdec4f38a2c66b",
+      "baseline_bytes": 393922,
+      "baseline_acquired_at": "2026-08-09",
+      "max_download_bytes": 5242880
+    },
+    {
+      "source_id": "iwakuni-gtfsjp",
+      "source_type": "gtfs_zip",
+      "official_url": "https://yamaguchi-opendata.jp/ckan/dataset/2dbaeb43-5134-4880-90a3-62870504f1d3/resource/bac76226-a946-466f-a94c-d61dcb6ab0dc/download/gtfs-jp2026-03-27_1458_.zip",
+      "local_path": "raw/gtfs/iwakuni_gtfsjp_20260401.zip",
+      "baseline_sha256": "d236a58ff4a0edb4812a8bed543d4897670441164a1019e88d5e35ded5052de2",
+      "baseline_bytes": 719723,
+      "baseline_acquired_at": "2026-08-10",
+      "max_download_bytes": 10485760
+    },
+    {
+      "source_id": "hikari-gtfs",
+      "source_type": "gtfs_zip",
+      "official_url": "https://yamaguchi-opendata.jp/ckan/dataset/db885818-b1bd-4848-986f-45119e8acb31/resource/c804039c-7d37-4e45-9288-f09fc1bbd249/download/hikari_gtfs_20260401_.zip",
+      "local_path": "raw/gtfs/hikari_gtfs_20260401.zip",
+      "baseline_sha256": "f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7",
+      "baseline_bytes": 86273,
+      "baseline_acquired_at": "2026-08-10",
+      "max_download_bytes": 10485760
+    }
+  ]
+}

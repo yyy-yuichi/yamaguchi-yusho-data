@@ -1,0 +1,53 @@
+{
+  "schema_version": "WORK1-FRESHNESS-1-status-browser-v1",
+  "recorded_at": "2026-08-12T07:57:52+09:00",
+  "url": "http://127.0.0.1:8765/status.html#freshness-title",
+  "browser": "Codex in-app browser",
+  "checks": [
+    {
+      "label": "desktop-1440",
+      "viewport": {"width": 1440, "height": 1600},
+      "document_width": 1425,
+      "section_width": 1180,
+      "horizontal_overflow": 0,
+      "required_markers_present": true,
+      "final_timestamp_present": true,
+      "full_test_count_present": true,
+      "actions_link": "https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/workflows/source-freshness.yml",
+      "browser_error_log_count": 0,
+      "screenshot": "evidence/20260811_work1_freshness_screenshot_1440.png",
+      "screenshot_bytes": 183079,
+      "screenshot_sha256": "1bc0f58bd6460727fe85280c5a1ce5c91433d33d80e587a0e29d3a5b861dfc45"
+    },
+    {
+      "label": "mobile-390x844",
+      "viewport": {"width": 390, "height": 844},
+      "document_width": 375,
+      "section_width": 355,
+      "horizontal_overflow": 0,
+      "required_markers_present": true,
+      "final_timestamp_present": true,
+      "full_test_count_present": true,
+      "actions_link": "https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/workflows/source-freshness.yml",
+      "browser_error_log_count": 0,
+      "screenshot": "evidence/20260811_work1_freshness_screenshot_390x844.png",
+      "screenshot_bytes": 49528,
+      "screenshot_sha256": "7e9ff26746d505cebeb61fb800cf5b6823a00a69cc929fc3b657231be23d0e0e"
+    }
+  ],
+  "required_markers": [
+    "unchanged",
+    "changed",
+    "unavailable",
+    "oversize",
+    "invalid_baseline",
+    "固定確認日",
+    "最新状態",
+    "自動更新しません"
+  ],
+  "visual_readback": {
+    "desktop": "継続確認節、3状態説明、固定結果、Actions導線、根拠が一画面内で読める",
+    "mobile": "横スクロールなしで見出し、5状態、固定結果、Actions導線が縦方向に読める"
+  },
+  "existing_app_regression_evidence": "evidence/20260811_work1_freshness_regression_browser_raw.json"
+}

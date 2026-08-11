@@ -1,0 +1,11 @@
+WORK1-FRESHNESS-1 existing app regression
+overall: PASS
+site: http://localhost:54273
+owned server PID: 7792
+owned Edge PID: 29348
+assertions: 28/28 passed
+failed assertions: 0
+desktop-1440: PASS; viewport=1440x1600; document overflow=0; screenshot=1425x5619; console error=0; Runtime.exceptionThrown=0; Log error=0; Network.loadingFailed=0
+mobile-390x844: PASS; viewport=390x844; document overflow=0; screenshot=390x8326; console error=0; Runtime.exceptionThrown=0; Log error=0; Network.loadingFailed=0
+Expected values were read from http://localhost:54273/data/gtfs_supply_metrics.json and compared with rendered DOM; no expected value is duplicated in this driver.
+This raw result is evidence for subsequent Codex acceptance.

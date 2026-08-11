@@ -527,36 +527,47 @@ I-3の停止位置を明記した。版付きリンクを実際にクリック�
 
 ### 現在の実行フロンティア（2026-08-11）
 
-**今回の一作業は`ENTRY-PAGE-1`だけであり、2026-08-11にCodex受入済みとなった。**
+**現在の一作業は`WORK1-FRESHNESS-1`だけである。`SPEC.md` rev.5.7 §19を正とする。**
 
-行う理由は、RELEASE-1でデモの数値と根拠へ到達できるようになっても、初見の審査員や交通担当者に、
-「誰のどんな困りごとを、どう解決し、どこまで検証済みか」が一ページで伝わらないためである。
-既存成果を応募説明ページで結び、ロードマップ07「応募用の公開物一式」を作品①について公開受入まで
-完了させる。地図等の次機能を増やす作業ではない。
+作品概要エントリーへ進める公開地盤は`ENTRY-PAGE-1`で完成し、独立監査もGOとなった。ただし概要
+エントリーは受賞までの途中工程であり、作品①Chatを外部提出待ちで止めない。作品②は別Chat・別
+リポジトリで進め、作品①は受賞寄与が検証できる段階を一つずつGoal-to-doneで完遂する。
 
-1. 作品名、81字概要、アプリケーション／道路・交通、対象者、課題、3段階の使い方、使用データ、
-   実用度・完成度・挑戦度、限界、公開成果へのリンクを`docs/entry.html`へ掲載した。
-2. 公開トップ・状況ページ・READMEから応募説明ページへ導線を設けた。
-3. 集中54件・全86件、旧SPEC 693トークン欠落0、差分・秘密情報・入力不変を確認した。
-4. implementation commit `e63a7b8745aa494df9263d1e2f07ca289d28fbb8`を`main`へpushし、
-   Pages run `31462820456`のbuild・deploy成功を読み戻した。
-5. 公開`entry.html`はHTTP 200・ローカルとバイト一致・SHA256
-   `3b3d9f6591cbc1fbf1c888a49e029e4ad830885671136984b43abe3a352c8d72`である。
-6. 公開URLの1440×1600・390×844実Edgeは30/30。両幅overflow 0、console error、
-   Runtime例外、Log error、Network.loadingFailedは全て0で、Codexが2 PNGも目視した。
-7. UDC概要フォーム、本応募、BODIK APPs登録はG6の外部提出であり、今回は行っていない。
-8. ロードマップ07は作品①について完了した。次の一作業は未定義とし、工程08の外部提出は
-   G6の本人承認前に開始しない。
+最初の強化段階では、早期公開の時間的利点を継続確認の履歴へ変える。受入済み4登録簿PDFと2 GTFS ZIPを
+公式配布ファイルへ定期照合し、`unchanged`・`changed`・`unavailable`等を区別する。原本・派生値は
+自動更新せず、差異があれば新しい安全検査・構造検査・再計算を別段階で受け入れるまで現行値を保持する。
+
+1. チャット側は`SPEC.md` rev.5.7 §19とこの再開点だけを書く。
+2. 実装側は§19.3の範囲だけを変更し、監視マニフェスト、検査コード、テスト、最小権限workflow、
+   状況ページ・README、証拠、進捗、検証記録を同期する。
+3. 6原本、公開JSON、既存計算値、公開トップ、応募説明ページは変更しない。
+4. 初回実ネットワーク検査、全テスト、旧版網羅、秘密情報、実ブラウザをCodexが読み戻す。
+5. commit・push・workflow初回実行・Pages反映は、対象と影響を示した適用承認後だけ行う。
+6. UDC概要フォーム、本応募、BODIK APPs登録、作品②、次の強化段階は同時に進めない。
+7. WORK1-FRESHNESS-1受入後は待機せず、次の受賞寄与段階を一つだけ定義して区切る。
+
+#### 2026-08-12 ローカル実装・検証の到達点
+
+- マニフェスト、検査器、集中16件、週次・手動のread-only workflow、README・状況ページ、
+  証拠を§19.3の範囲で実装した。
+- 初回実照合は4 PDFが`unchanged`、2 GTFS ZIPがTLS接続不能で`unavailable`、終了コード2。
+  `changed`・`oversize`・`invalid_baseline`は0で、原本・公開値を更新していない。
+- 全102件、旧SPEC 703トークン欠落0、保護23ファイル不変、秘密情報0、実ブラウザと
+  Edge/CDP 28/28をCodexが独立に読戻した。F3・F4とF5のローカル側はGO。
+- commit・push・GitHub上のworkflow初回実行・Pages反映は未実施。現在地は公開適用承認ゲートである。
+- WORK1-FRESHNESS-1は公開URLとworkflow履歴の読戻しまで最終受入にせず、次の強化段階もまだ定義しない。
 
 #### Chat継続用の再開点
 
 - リポジトリ: `C:\Users\user\dev\udc2026\yamaguchi-yusho-data`
-- 開始HEAD: `49d2b0481fdac9870e00a345e2383565d80ed960`（`origin/main`と一致、clean）
-- 受入済み本体commit: `e63a7b8745aa494df9263d1e2f07ca289d28fbb8`
-- 完了した一作業: `ENTRY-PAGE-1`（`SPEC.md` rev.5.6 §18）
-- 再開手順: `git status --short --branch`とHEADを読み、`SPEC.md` §18、`run_record.md` §0.5・§4、
-  `PROGRESS.md`末尾、`verification.md`末尾を読み戻す。差分があれば§18の変更範囲だけか確認して続行する。
-- 次の承認ゲート: UDC概要フォーム送信またはBODIK APPs登録。自動では進めない。
+- 開始HEAD: `8dfe393f49e7d994c94db22535cb672c708aa18e`（`origin/main`と一致、clean）
+- 受入済み基準版: `8dfe393f49e7d994c94db22535cb672c708aa18e`
+- 完了した前工程: `ENTRY-PAGE-1`（`SPEC.md` rev.5.6 §18、独立監査GO）
+- 現在の一作業: `WORK1-FRESHNESS-1`（`SPEC.md` rev.5.7 §19）
+- 再開手順: `git status --short --branch`とHEADを読み、`SPEC.md` §19、`run_record.md` §0.5・§4、
+  `PROGRESS.md`末尾、`verification.md`末尾を読み戻す。差分があれば§19.3の範囲だけか確認して続行する。
+- 次の承認ゲート: 実装側を直接起動する場合の個別承認、その後のcommit・push・workflow・Pages適用承認。
+  UDC概要フォーム送信とBODIK APPs登録は引き続きG6で止める。
 
 ### 前工程RELEASE-1（受入済み）
 

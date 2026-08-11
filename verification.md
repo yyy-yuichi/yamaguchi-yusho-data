@@ -1932,3 +1932,69 @@ UDC概要フォーム、本応募、BODIK APPs登録は行っていない。
 SPEC.md §18.5の完了条件を満たすため、ENTRY-PAGE-1をCodex受入済みとする。
 これは作品①の応募用公開物一式とロードマップ07の完了であり、UDC概要フォーム、本応募、
 BODIK APPs登録、受賞の達成ではない。工程08はG6の本人承認前に開始しない。
+
+## 2026-08-12 WORK1-FRESHNESS-1 ローカル検証・Codex独立読戻し
+
+### 原本照合契約
+
+`data/source_freshness_manifest.json`は6件で、各ローカル原本のbytes・SHA256と一致する。
+検査器は`wwwtb.mlit.go.jp`と`yamaguchi-opendata.jp`のHTTPSだけを許可し、redirect先も同じ
+契約で再検査する。サイズ宣言とストリーム実測の両方に上限を設け、本文、Cookie、認証情報を
+保存しない。出力先が`raw/`、`data/`、`docs/`の場合は拒否する。
+
+初回実測`evidence/20260811_work1_freshness_live_result.json`は次のとおり。
+
+| 状態 | 件数 | 内訳 |
+|---|---:|---|
+| `unchanged` | 4 | 4登録簿PDF。取得bytes・SHA256とも受入済み値と一致 |
+| `changed` | 0 | なし |
+| `unavailable` | 2 | 岩国市・光市GTFS ZIP。TLS接続不能として分類 |
+| `oversize` | 0 | なし |
+| `invalid_baseline` | 0 | なし |
+
+終了コードは2。新原本の採用、原本・派生値・公開値の更新は行っていない。
+
+### 自動検証
+
+| 検証 | 結果 |
+|---|---|
+| `python -B -m unittest tests.test_source_freshness -v` | 16件成功 |
+| `python -B -m unittest discover -s tests -v` | 102件成功 |
+| SPEC旧版網羅 | 703トークン、説明済み欠落0、未説明欠落0 |
+| 保護対象 | 6原本・データ・公開JSON・供給指標・公開トップ・応募説明の23/23不変 |
+| 秘密情報 | 変更・新規テキスト全件で秘密情報らしき値0件 |
+| 差分 | `git diff --check`成功、staged 0件、§19.3の許可範囲だけ |
+
+全unittestの生ログは`evidence/20260811_work1_freshness_unittest_full_raw.txt`、不変SHA256は
+`evidence/20260811_work1_freshness_protected_sha256.txt`に保持する。
+
+### PC・スマートフォンと退行
+
+- 新しい継続確認節: 1440×1600と390×844で5状態、固定確認日、固定実測、最新Actions導線、
+  自動更新しない説明を読戻し。両幅overflow 0、browser error log 0。
+- 既存アプリ: Edge/CDP 28/28。両幅overflow 0、console / Runtime / Log / Network各0。
+- Codexが新節2 PNGと既存アプリ退行2 PNGを目視した。一時server・Edge・profileは残っていない。
+
+新節の生JSON・要約は`evidence/20260811_work1_freshness_status_browser_raw.json`・
+`evidence/20260811_work1_freshness_browser_summary.txt`、既存アプリ退行の生JSON・要約は
+`evidence/20260811_work1_freshness_regression_browser_raw.json`・
+`evidence/20260811_work1_freshness_regression_browser_summary.txt`に保持する。
+
+### SPEC.md §19.7 ローカル判定
+
+| # | 完了条件 | ローカル判定 |
+|---|---|---|
+| 1 | 6原本を自動更新なしで再検査 | 満たす |
+| 2 | 初回実検査の6状態・終了コードを証拠化 | 満たす |
+| 3 | 最小権限workflowと公開状況ページからの導線 | ローカル実装済み。公開適用・履歴読戻しは承認待ち |
+| 4 | 全テスト・旧版網羅・差分・秘密情報 | 満たす |
+| 5 | 6原本・公開JSON・計算値不変 | 満たす |
+| 6 | PC・スマホ、overflow・4種エラー0 | 満たす |
+| 7 | Codex独立読戻し | ローカル範囲で満たす |
+| 8 | commit・push・workflow・Pagesの事前承認 | 承認ゲートで停止中 |
+| 9 | 外部提出・作品②・次段階へ進まない | 満たす |
+| 10 | 受入後に次段階を一つだけ定義 | 公開受入後に実施。現時点では未定義 |
+
+判定は**公開適用へ進めるローカルGO**。WORK1-FRESHNESS-1の最終受入ではない。
+commit・push・GitHub上のworkflow初回実行・Pages反映と公開URL読戻しは、対象と影響を示した
+本人承認後だけ行う。UDC概要フォーム、本応募、BODIK APPs登録は引き続き行わない。
