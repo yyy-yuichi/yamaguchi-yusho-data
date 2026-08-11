@@ -14,12 +14,12 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Check out accepted baseline
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
@@ -30,7 +30,7 @@ jobs:
 
       - name: Upload result without source bodies
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: source-freshness-result-${{ github.run_id }}
           path: ${{ runner.temp }}/source-freshness-result.json
