@@ -1961,51 +1961,6 @@ docstring「実装上の判断」節にも同じ内容を書いた。
 - SUPPLY-METRIC-2の対象外（比較週の一般選定アルゴリズム、他17市町への汎用化、追加指標、
   地図・経路検索、船木鉄道取得、commit・push・公開）はいずれも指示があるまで着手しない
 
-## 2026-08-11 RELEASE-1 GitHub Pages公開・公開URL受入
-
-### なぜこの作業をしたか
-
-- SUPPLY-VIEW-1がローカルで受入済みでも、公開トップが旧「準備中」のままでは、県・市町の
-  交通担当者や事業者が2市の比較へ到達できず、Goal-to-doneの利用者成果を満たさないため。
-- UDC本応募とは分離し、既に公開中のGitHub Pagesを受入済み現行デモへ更新する一作業とした。
-
-### 公開前確認とrelease commit
-
-- 生成成功、全unittest 80件成功、旧版網羅README 43 / status 0 / index 18 /
-  run_record 236トークン・欠落0、差分検査、秘密情報0、JSON・2 ZIPのSHA256不変を再確認した。
-- 未追跡証拠をstageして初めて見えた末尾空白7指摘は、数値・文言を変えず空白だけ正規化した。
-- 66パスをcommit `18170b2a207940a889d527e29ef77f702c066b30`
-  （`Publish GTFS inspection and supply comparison`）へまとめ、`origin/main`へpushした。
-
-### GitHub Pagesと公開URLの確認
-
-- GitHub Pages run `31449761225`はbuild・deployとも成功した。
-- <https://yyy-yuichi.github.io/yamaguchi-yusho-data/> はHTTP 200、旧「準備中」を含まず、
-  受入済みの登録供給、GTFS確認状況、岩国市・光市の供給比較を表示した。
-- 公開`data/gtfs_supply_metrics.json`を入力として実Edge/CDP検証を再実行し、28/28条件が合格した。
-  - desktop: 1440×1600、document横overflow 0
-  - mobile: 390×844、document横overflow 0
-  - 両幅とも20値・7実日付が公開JSONと一致、2市列を同時表示
-  - console error、`Runtime.exceptionThrown`、Log error、`Network.loadingFailed`は全て0
-- Codexが公開スクリーンショットを目視し、目的、2市比較、同じ7日、原本・日付・範囲の限界を
-  PC・スマホで読めることを確認した。
-
-公開証拠は`evidence/20260811_release1_browser_raw.json`、
-`evidence/20260811_release1_browser_summary.txt`、
-`evidence/20260811_release1_screenshot_1440.png`、
-`evidence/20260811_release1_screenshot_390x844.png`。
-
-### 現在地
-
-- 公開状態の文書同期後、集中48件・全80件、旧版網羅7組、差分、秘密情報、公開JSON一致、
-  Pages成功、公開ブラウザ28/28を再確認した。全結果は
-  `evidence/20260811_release1_final_checks_raw.txt`に保持する。
-- 状態同期を最終commitとして`main`へpushし、ローカルHEADと`origin/main`の一致を読み戻して
-  RELEASE-1をCodex受入済みとする。
-- 現行デモの公開はT1〜T4、UDC概要エントリー・本応募、外部提出、受賞の達成を意味しない。
-- 次工程はロードマップ07「応募用の公開物一式」。地図、経路検索、船木鉄道取得、次機能は
-  RELEASE-1へ含めていない。
-
 ## 2026-08-11 SUPPLY-VIEW-1 V4 実ブラウザ確認
 
 ### この確認を行った理由
@@ -2053,14 +2008,12 @@ docstring「実装上の判断」節にも同じ内容を書いた。
 - `spec_coverage.py`: README 43トークン、status 0トークン、index 18トークン、欠落0で全合格。
 - 実装担当の自己検証合格後、Codexが実ファイル・差分・証拠・スクリーンショットを独立に
   読み戻し、`run_record.md` rev.36でSUPPLY-VIEW-1を受入済みとした。
-- V4受入時点ではcommit、push、GitHub Pages更新、公開、地図、経路検索、船木鉄道取得、
-  次機能へ進まなかった。この公開前状態は後掲の履歴であり、RELEASE-1でPages更新まで解消した。
+- commit、push、GitHub Pages更新、公開、地図、経路検索、船木鉄道取得、次機能には進まない。
 
 ### 受入結果と停止位置
 
 - Codexはinline faviconの最小差分、CDP driver、生JSON、2枚のスクリーンショット、補正履歴、
-  48/80テストと最終確認証拠を読み戻して受入済み。V4受入時点では次の一作業を未定義としたが、
-  その後RELEASE-1を実行した。
+  48/80テストと最終確認証拠を読み戻して受入済み。次の一作業は未定義である。
 
 ## 2026-08-11 SUPPLY-VIEW-1 岩国市・光市のGTFS供給比較画面（V3時点の実装担当自己検証・履歴）
 
@@ -2115,10 +2068,8 @@ docstring「実装上の判断」節にも同じ内容を書いた。
 ### V4での解消と現在地
 
 - Edge/CDPで1440×1600・390×844、横overflow 0、エラー4系統0、20値一致を確認し、Codexの
-  独立読戻しまで完了した。SUPPLY-VIEW-1に未解消条件はない。V4受入時点では次作業を未定義とし、
-  その後RELEASE-1を実行した。
-- V4受入時点ではcommit、push、GitHub Pages更新、公開、地図、経路検索、船木鉄道取得、次機能へ
-  進まなかった。現在の公開状態は前掲RELEASE-1節を正とする。
+  独立読戻しまで完了した。SUPPLY-VIEW-1に未解消条件はない。次作業は未定義である。
+- commit、push、GitHub Pages更新、公開、地図、経路検索、船木鉄道取得、次機能には進まない。
 
 ## 2026-08-10 SUPPLY-METRIC-2-CORR-1 exact_times割り切れ要件とroute_id/service_id参照整合性の訂正
 

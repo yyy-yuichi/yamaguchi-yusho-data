@@ -526,7 +526,7 @@ class StatusHtmlContractTest(unittest.TestCase):
             "T3",
             "T4",
             'href="index.html?v=20260811"',
-            "公開検証済み、次は応募用の公開物一式",
+            "SUPPLY-VIEW-1はCodex受入済みで停止",
             "PDL1.0",
             "CC BY 4.0",
         )
@@ -613,15 +613,9 @@ class StatusHtmlContractTest(unittest.TestCase):
             self.assertTrue((DOCS_DATA_DIR / filename).is_file(), f"リンク先が実在しない: {filename}")
         self.assertTrue((DOCS_DIR / "index.html").is_file())
 
-    def test_publication_is_verifiable_without_application_or_award_claims(self):
-        # SPEC.md §17.3: 公開URLと検証可能な状態を示し、応募・受賞とは分離する。
-        for marker in (
-            "GitHub Pagesで公開中",
-            "https://yyy-yuichi.github.io/yamaguchi-yusho-data/",
-            "18170b2",
-        ):
-            self.assertIn(marker, self.html)
-        banned = ("応募済み", "外部提出済み", "受賞済み", "受賞しました")
+    def test_no_external_publication_or_award_claims(self):
+        # SPEC.md §13.5.8: 外部公開済み、応募済み、受賞済みとは表示しない。
+        banned = ("公開済み", "応募済み", "受賞済み", "GitHub Pagesで公開中", "外部公開済み")
         for phrase in banned:
             self.assertNotIn(phrase, self.html)
 
@@ -634,7 +628,7 @@ class StatusHtmlContractTest(unittest.TestCase):
             f"{TOTAL_TEST_COUNT}テスト",
             'href="index.html?v=20260811#supply-comparison"',
             'href="data/gtfs_supply_metrics.json"',
-            "外部提出は行っていません",
+            "commit・push・公開・外部提出は行わない",
         ):
             self.assertIn(marker, self.html)
         self.assertTrue((DOCS_DATA_DIR / "gtfs_supply_metrics.json").is_file())
@@ -714,12 +708,11 @@ class ReadmeContractTest(unittest.TestCase):
         ):
             self.assertIn(marker, self.text)
 
-    def test_public_demo_is_not_treated_as_application_or_award(self):
-        # SPEC.md §17.3: 現行デモの公開をUDC応募・受賞の完了と扱わない。
-        self.assertIn("UDC応募・受賞の完了", self.text)
-        self.assertIn("https://yyy-yuichi.github.io/yamaguchi-yusho-data/", self.text)
-        self.assertIn("18170b2", self.text)
-        banned = ("応募済み", "外部提出済み", "受賞済み", "受賞しました")
+    def test_repo_is_not_treated_as_submission_publication_or_award(self):
+        # SPEC.md §13.4.7: このリポジトリやローカル実装をUDC応募・公開・
+        # 受賞の完了と扱わない。
+        self.assertIn("UDC応募・公開・受賞の完了", self.text)
+        banned = ("応募済み", "公開済み", "受賞済み", "受賞しました")
         for phrase in banned:
             self.assertNotIn(phrase, self.text)
 

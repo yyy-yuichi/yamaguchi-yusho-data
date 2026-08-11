@@ -1,5 +1,5 @@
-// SUPPLY-VIEW-1 V4 actual-browser verification over raw Chrome DevTools Protocol.
-// This script owns and stops only the localhost server and headless Edge it starts.
+// SUPPLY-VIEW-1 actual-browser verification over raw Chrome DevTools Protocol.
+// This script owns and stops only the optional localhost server and headless Edge it starts.
 import fs from "node:fs";
 import net from "node:net";
 import path from "node:path";
@@ -8,12 +8,15 @@ import { spawn } from "node:child_process";
 const REPO = "C:/Users/user/dev/udc2026/yamaguchi-yusho-data";
 const DOCS = `${REPO}/docs`;
 const OUT = `${REPO}/evidence`;
-const PROFILE = `${OUT}/20260810_supply_view1_cdp_profile`;
+const EVIDENCE_PREFIX = process.env.VERIFY_EVIDENCE_PREFIX || "20260810_supply_view1";
+const PUBLIC_SITE_BASE = process.env.VERIFY_SITE_BASE || null;
+const TASK_LABEL = process.env.VERIFY_TASK_LABEL || "SUPPLY-VIEW-1 V4 actual-browser verification";
+const PROFILE = `${OUT}/${EVIDENCE_PREFIX}_cdp_profile`;
 const EDGE = "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe";
-const RAW_PATH = `${OUT}/20260810_supply_view1_browser_raw.json`;
-const SUMMARY_PATH = `${OUT}/20260810_supply_view1_browser_summary.txt`;
-const DESKTOP_SHOT = `${OUT}/20260810_supply_view1_screenshot_1440.png`;
-const MOBILE_SHOT = `${OUT}/20260810_supply_view1_screenshot_390x844.png`;
+const RAW_PATH = `${OUT}/${EVIDENCE_PREFIX}_browser_raw.json`;
+const SUMMARY_PATH = `${OUT}/${EVIDENCE_PREFIX}_browser_summary.txt`;
+const DESKTOP_SHOT = `${OUT}/${EVIDENCE_PREFIX}_screenshot_1440.png`;
+const MOBILE_SHOT = `${OUT}/${EVIDENCE_PREFIX}_screenshot_390x844.png`;
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -104,21 +107,21 @@ async function main() {
   if (fs.existsSync(RAW_PATH)) {
     const prior = JSON.parse(fs.readFileSync(RAW_PATH, "utf8"));
     if (prior.overallPass === false) {
-      fs.copyFileSync(RAW_PATH, `${OUT}/20260810_supply_view1_browser_initial_fail_raw.json`);
+      fs.copyFileSync(RAW_PATH, `${OUT}/${EVIDENCE_PREFIX}_browser_initial_fail_raw.json`);
       if (fs.existsSync(SUMMARY_PATH)) {
-        fs.copyFileSync(SUMMARY_PATH, `${OUT}/20260810_supply_view1_browser_initial_fail_summary.txt`);
+        fs.copyFileSync(SUMMARY_PATH, `${OUT}/${EVIDENCE_PREFIX}_browser_initial_fail_summary.txt`);
       }
     }
   }
   const safeProfile = path.resolve(PROFILE).replaceAll("\\", "/");
-  const safePrefix = path.resolve(OUT, "20260810_supply_view1_").replaceAll("\\", "/");
+  const safePrefix = path.resolve(OUT, `${EVIDENCE_PREFIX}_`).replaceAll("\\", "/");
   if (!safeProfile.startsWith(safePrefix)) throw new Error(`unsafe profile path: ${safeProfile}`);
   fs.rmSync(PROFILE, { recursive: true, force: true });
   fs.mkdirSync(PROFILE, { recursive: true });
 
-  const sitePort = await freePort();
+  const sitePort = PUBLIC_SITE_BASE ? null : await freePort();
   const cdpPort = await freePort();
-  const siteBase = `http://localhost:${sitePort}`;
+  const siteBase = PUBLIC_SITE_BASE || `http://localhost:${sitePort}`;
   const cdpBase = `http://127.0.0.1:${cdpPort}`;
   let server = null;
   let edge = null;
@@ -126,25 +129,29 @@ async function main() {
   let targetId = null;
 
   const result = {
-    task: "SUPPLY-VIEW-1 V4 actual-browser verification",
+    task: TASK_LABEL,
     generatedAt: new Date().toISOString(),
     siteBase,
     cdpPort,
     ownedProcesses: {},
-    expectedSource: "docs/data/gtfs_supply_metrics.json",
+    expectedSource: `${siteBase}/data/gtfs_supply_metrics.json`,
     viewports: [],
     assertions: [],
     overallPass: false,
   };
 
   try {
-    server = spawn("python", ["-B", "-m", "http.server", String(sitePort), "--bind", "127.0.0.1", "--directory", DOCS], {
-      cwd: REPO,
-      windowsHide: true,
-      stdio: "ignore",
-    });
-    result.ownedProcesses.serverPid = server.pid;
-    await waitFor(`${siteBase}/index.html`, "docs HTTP server");
+    if (PUBLIC_SITE_BASE) {
+      await waitFor(`${siteBase}/`, "public site");
+    } else {
+      server = spawn("python", ["-B", "-m", "http.server", String(sitePort), "--bind", "127.0.0.1", "--directory", DOCS], {
+        cwd: REPO,
+        windowsHide: true,
+        stdio: "ignore",
+      });
+      result.ownedProcesses.serverPid = server.pid;
+      await waitFor(`${siteBase}/index.html`, "docs HTTP server");
+    }
 
     edge = spawn(EDGE, [
       "--headless=new",
@@ -233,7 +240,7 @@ async function main() {
         width, height, screenWidth: width, screenHeight: height,
         deviceScaleFactor: 1, mobile: width < 500,
       });
-      await send(ws, "Page.navigate", { url: `${siteBase}/index.html` });
+      await send(ws, "Page.navigate", { url: `${siteBase}/index.html?verify=${Date.now()}` });
       const ready = await waitForPageReady();
       await sleep(250);
 
@@ -365,16 +372,16 @@ async function main() {
     result.failedAssertions = result.assertions.filter(item => !item.pass);
 
     const summaryLines = [
-      "SUPPLY-VIEW-1 V4 actual-browser verification",
+      TASK_LABEL,
       `overall: ${result.overallPass ? "PASS" : "FAIL"}`,
-      `localhost: ${siteBase}`,
+      `site: ${siteBase}`,
       `owned server PID: ${result.ownedProcesses.serverPid}`,
       `owned Edge PID: ${result.ownedProcesses.edgePid}`,
       `assertions: ${result.assertions.length - result.failedAssertions.length}/${result.assertions.length} passed`,
       `failed assertions: ${result.failedAssertions.length}`,
       ...result.viewports.map(viewport => `${viewport.label}: ${viewport.pass ? "PASS" : "FAIL"}; viewport=${viewport.dom.viewport.innerWidth}x${viewport.dom.viewport.innerHeight}; document overflow=${viewport.dom.documentWidth.difference}; screenshot=${viewport.screenshotPixels.width}x${viewport.screenshotPixels.height}; console error=${viewport.consoleMessages.filter(item => item.type === "error").length}; Runtime.exceptionThrown=${viewport.runtimeExceptions.length}; Log error=${viewport.logEntries.filter(item => item.level === "error").length}; Network.loadingFailed=${viewport.loadingFailed.length}`),
-      "Expected values were read from the served docs/data/gtfs_supply_metrics.json and compared with rendered DOM; no expected value is duplicated in this driver.",
-      "This is implementation-side self-verification, not Codex acceptance.",
+      `Expected values were read from ${siteBase}/data/gtfs_supply_metrics.json and compared with rendered DOM; no expected value is duplicated in this driver.`,
+      "This raw result is evidence for subsequent Codex acceptance.",
     ];
     if (result.failedAssertions.length) {
       summaryLines.push("Failures:");

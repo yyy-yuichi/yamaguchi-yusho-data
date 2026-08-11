@@ -1338,60 +1338,6 @@ JWT形式（`eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+`）と、
 Codexが実ZIP・ハッシュ・検査コード・テスト・実測証拠を読み戻して受け入れるまでGTFS-2は
 未完了として扱う。commit・push・GitHub Pages公開・外部提出は行っていない。
 
-## 2026-08-11 RELEASE-1 公開検証結果
-
-### 公開境界
-
-- 本人の個別承認範囲: 受入済み成果のcommit、`main`へのpush、GitHub Pages更新、公開後検証。
-- 対象外: UDC概要エントリー・本応募、外部提出、受賞表明、地図、経路検索、船木鉄道取得、次機能。
-- 公開本体commit: `18170b2a207940a889d527e29ef77f702c066b30`、66パス。
-- 公開URL: <https://yyy-yuichi.github.io/yamaguchi-yusho-data/>。
-
-### 配備の読み戻し
-
-| 検証 | 結果 |
-|---|---|
-| `git push origin main` | `b281540..18170b2 main -> main` |
-| GitHub Pages run | `31449761225` |
-| build / deploy | success / success |
-| 公開トップ | HTTP 200、47,971 bytes、旧「準備中」なし |
-| 公開`gtfs_supply_metrics.json` | HTTP 200、表示入力として読込成功 |
-
-### 公開URLの実Edge/CDP検証
-
-| 条件 | desktop 1440×1600 | mobile 390×844 |
-|---|---:|---:|
-| document横overflow | 0 | 0 |
-| 構造指標のJSON一致 | 6/6 | 6/6 |
-| 日付の一致 | 7/7 | 7/7 |
-| 日別便数のJSON一致 | 14/14 | 14/14 |
-| 2市列の同時表示 | 合格 | 合格 |
-| 公開供給JSON / GTFS確認JSON | HTTP 200 / 200 | HTTP 200 / 200 |
-| console error | 0 | 0 |
-| `Runtime.exceptionThrown` | 0 | 0 |
-| Log error | 0 | 0 |
-| `Network.loadingFailed` | 0 | 0 |
-
-全28条件が合格。Codexが2幅の全ページスクリーンショットを読み、2市、同じ7実日付、
-測定状態、公式基準日・GTFS内部日・確認日・計算日、原本ZIP・完全SHA256、フィード全体値で
-市内だけ・市内の全公共交通ではない限界へ到達できることを確認した。
-
-### 公開証拠
-
-- `evidence/20260811_release1_browser_raw.json`
-- `evidence/20260811_release1_browser_summary.txt`
-- `evidence/20260811_release1_screenshot_1440.png`
-- `evidence/20260811_release1_screenshot_390x844.png`
-- 公開URL対応driver: `evidence/20260810_supply_view1_cdp_driver.mjs`
-
-### 判定
-
-公開本体のPages反映とブラウザ利用者成果は合格。SPEC rev.5.5 §17と状態文書の同期後も、
-集中48件・全80件、旧版網羅7組、差分、秘密情報、公開JSON一致、Pages成功、公開ブラウザ28/28が
-合格した（`evidence/20260811_release1_final_checks_raw.txt`）。状態同期の最終commitをpushし、
-ローカルHEADと`origin/main`一致を読み戻して、`run_record.md` rev.37でRELEASE-1を受入済みとした。
-現行デモ公開はUDC応募・外部提出・受賞の達成を意味しない。
-
 ## 2026-08-11 SUPPLY-VIEW-1 V4 実ブラウザ検証結果
 
 本節は、直前のSUPPLY-VIEW-1節に残したブラウザ未確認を、Microsoft Edge
@@ -1447,8 +1393,8 @@ Codexが実ZIP・ハッシュ・検査コード・テスト・実測証拠を読
 - 最終のdiff check、staged 0、秘密情報らしき値0、変更範囲は
   `evidence/20260810_supply_view1_v4_final_checks_raw.txt`に記録する。
 - 実装担当の自己検証合格後、Codexが実ファイル・差分・証拠・スクリーンショットを独立に
-  読み戻し、`run_record.md` rev.36でSUPPLY-VIEW-1を受入済みとした。V4受入時点では
-  commit・push・公開を行っておらず、その後のRELEASE-1で公開した。
+  読み戻し、`run_record.md` rev.36でSUPPLY-VIEW-1を受入済みとした。commit・push・公開は
+  行っていない。
 
 ## 2026-08-11 SUPPLY-VIEW-1 岩国市・光市のGTFS供給比較 検証結果（V3時点の実装担当自己検証・履歴）
 
@@ -1496,8 +1442,8 @@ troubleshooting手順後の一覧は`[]`だった。別のブラウザ手段へ�
 
 このV3時点の残件は、前掲V4節のEdge/CDP実測28/28で解消した。Codexも実ファイル・表示値・
 差分・証拠を独立に読み戻し、`run_record.md` rev.36でSUPPLY-VIEW-1を受入済みとした。
-SUPPLY-VIEW-1に未解消の検証・受入条件はなく、V4受入時点ではcommit・push・GitHub Pages更新・
-外部提出を行っていなかった。GitHub Pages更新はその後のRELEASE-1で行い、外部提出は行っていない。
+現在、SUPPLY-VIEW-1に未解消の検証・受入条件はない。commit・push・GitHub Pages更新・
+外部提出は行っていない。
 
 ## 2026-08-10 SUPPLY-METRIC-2 岩国市・光市の輸送供給指標計算 実行結果
 

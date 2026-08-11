@@ -828,7 +828,7 @@
         <div class="metric complete">
           <span class="label">受入段階</span>
           <strong class="metric-number">6 / 8</strong>
-          <span class="metric-caption">RELEASE-1公開検証まで受入済み</span>
+          <span class="metric-caption">SUPPLY-VIEW-1までCodex受入済み</span>
         </div>
         <div class="metric complete">
           <span class="label">PDF</span>
@@ -852,13 +852,13 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">作品の現在地</p>
-          <h2 id="progress-title">公開URLで利用可能・応募用一式は次工程</h2>
-          <p>SUPPLY-VIEW-1をRELEASE-1でGitHub Pagesへ反映し、公開本体commit <code>18170b2</code>のbuild・deploy成功と、公開URLに対するEdge/CDP実ブラウザ確認28/28をCodexが読み戻しました。現在のデモはGitHub Pagesで公開中です。次工程は応募用の公開物一式ですが、外部提出は行っていません。この現在地はUDC2026応募全体の終了条件T1〜T4（後述）の達成を意味しません。</p>
+          <h2 id="progress-title">受入済み成果と次作業未定義</h2>
+          <p>I-1〜I-4の登録簿・公式GTFS確認状況に加え、SUPPLY-VIEW-1のローカル比較画面もEdge/CDPによる実ブラウザ確認28/28とCodexの独立読戻しを終え、run_record.md rev.36で受入済みです。次の一作業はまだ定義していません。この現在地はUDC2026応募全体の終了条件T1〜T4（後述）の達成を意味しません。</p>
         </div>
-        <strong class="progress-summary">RELEASE-1 Codex受入済み</strong>
+        <strong class="progress-summary">SUPPLY-VIEW-1 Codex受入済み</strong>
       </div>
 
-      <div class="overall-bar" role="progressbar" aria-label="8工程中6工程を受入済み、次は応募用の公開物一式" aria-valuemin="0" aria-valuemax="8" aria-valuenow="6">
+      <div class="overall-bar" role="progressbar" aria-label="8工程中6工程を受入済み、次作業未定義" aria-valuemin="0" aria-valuemax="8" aria-valuenow="6">
         <span class="done" title="6工程を受入済み"></span>
       </div>
 
@@ -891,7 +891,7 @@
         <li class="done">
           <span class="step-no">06</span>
           <span class="step-title">SUPPLY-VIEW-1: 岩国市・光市のGTFS供給比較</span>
-          <span class="step-state">公開・実ブラウザ確認・Codex受入済み</span>
+          <span class="step-state">実ブラウザ確認・Codex受入済み</span>
         </li>
         <li class="todo">
           <span class="step-no">07</span>
@@ -930,12 +930,12 @@
         </li>
         <li>
           <span class="check-mark" aria-hidden="true">✓</span>
-          <div><strong>SUPPLY-VIEW-1 / RELEASE-1: 岩国市・光市のGTFS供給比較</strong><p>同じ7実日付の供給量、値の状態、対象範囲、4種の日付、原本を公開URLからスマホでも混同せず読めることを実ブラウザで確認し、Codexが受入。</p></div>
+          <div><strong>SUPPLY-VIEW-1: 岩国市・光市のGTFS供給比較</strong><p>同じ7実日付の供給量、値の状態、対象範囲、4種の日付、原本をスマホでも混同せず読めることを実ブラウザで確認し、Codexが受入。</p></div>
         </li>
       </ol>
       <div class="note"><strong>SUPPLY-VIEW-1で利用できる画面:</strong> 岩国市関連・光市関連フィードについて、GTFS収録の交通ブランド情報、路線情報ID、乗降場所IDと、2026-04-06〜2026-04-12の予定運行便を切替操作なしで確認できます。値は各フィード全体の収録値で、市内だけの値や市内の全公共交通、実運行、利用者数、便利さ、順位、良否を示すものではありません。</div>
       <p class="lead">自動テストは80テストすべて成功しています（python -m unittest discover -s tests -v）。</p>
-      <p class="source-note">根拠: run_record.md §0.5・§4、SPEC.md §5・§12・§13・§16・§17、verification.md</p>
+      <p class="source-note">根拠: run_record.md §0.5・§4、SPEC.md §5・§12・§13・§16、verification.md</p>
     </section>
 
     <section aria-labelledby="pdf-title">
@@ -1150,26 +1150,26 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">この作業の区切り</p>
-          <h2 id="next-title">公開検証済み、次は応募用の公開物一式</h2>
-          <p><a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">公開デモ</a>で、岩国市・光市関連フィードの検証済み供給を、根拠と日付を混同せず同じ画面で確認できます。RELEASE-1の公開と再検証は完了しました。次工程は応募用の公開物一式であり、地図、経路検索、船木鉄道取得、外部提出は今回行っていません。</p>
+          <h2 id="next-title">SUPPLY-VIEW-1はCodex受入済みで停止</h2>
+          <p>岩国市・光市関連フィードの検証済み供給を、根拠と日付を混同せず同じ画面で確認できる状態まで受入済みです。次の一作業は未定義であり、地図、経路検索、船木鉄道取得、公開更新へは広げません。</p>
         </div>
       </div>
 
       <ol class="next-list">
         <li>
-          <strong>公開URLと公開データを確認</strong>
-          <p>GitHub Pagesのbuild・deploy成功後、公開トップから「準備中」が消え、gtfs_supply_metrics.jsonをHTTP 200で取得できることを確認しました。</p>
+          <strong>検証済みJSONを画面へ同期</strong>
+          <p>data/gtfs_supply_metrics.jsonと静的サイト用JSONをバイト一致させ、20値をHTMLへ二重転記せず表示する。</p>
         </li>
         <li>
-          <strong>デスクトップとモバイルで公開画面を確認</strong>
-          <p>1440×1600・390×844の公開URL実測28/28で、横方向のはみ出し・コンソールエラー・例外・通信失敗0件を確認しました。</p>
+          <strong>デスクトップとモバイルで確認</strong>
+          <p>docs/index.htmlと公開JSONへのリンク操作、1440px・390×844相当の読みやすさ、横方向のはみ出し・コンソールエラー0件を確認する。</p>
         </li>
         <li>
-          <strong>公開状態をCodexが独立に受け入れ</strong>
-          <p>実ファイル、公開値、配備結果、スクリーンショット、テスト、証拠を読み戻しました。外部提出は行っていません。</p>
+          <strong>Codexが独立に受け入れる</strong>
+          <p>実ファイル・表示値・テスト・証拠を読み戻す。commit・push・公開・外部提出は行わない。</p>
         </li>
       </ol>
-      <p class="source-note">根拠: run_record.md §4、SPEC.md §16・§17、verification.md</p>
+      <p class="source-note">根拠: run_record.md §4、SPEC.md §16</p>
     </section>
 
     <section class="sources" aria-labelledby="source-title">

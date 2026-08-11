@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-11 (rev.37) / 状態: RELEASE-1 Codex受入済み・公開デモ稼働中
+最終更新: 2026-08-11 (rev.36) / 状態: SUPPLY-VIEW-1 Codex受入済み・次作業未定義
 
 ## 0. このファイルについて
 
@@ -527,29 +527,39 @@ I-3の停止位置を明記した。版付きリンクを実際にクリック�
 
 ### 現在の実行フロンティア（2026-08-11）
 
-`RELEASE-1`を行う理由は、SUPPLY-VIEW-1をローカルで受け入れても、公開トップが旧「準備中」の
-ままでは、交通担当者や事業者が成果へ到達できず、本来の利用者成果を満たさないためである。
+`SUPPLY-VIEW-1`を行う理由は、検証済みJSONを作っただけでは、交通担当者やGTFSを初めて見る人が
+岩国市関連・光市関連の供給を実際の画面で確認できないためである。実装工程を増やすことではなく、
+同じ7実日付の20値、値の範囲、原本、確認日、算出状態を、切替操作なしでスマホから読める状態を
+今回の利用者成果とする。
 
-1. 本人は、受入済み成果のcommit、`main`へのpush、GitHub Pages更新、公開後検証を個別承認した。
-2. 公開前に生成、全80テスト、旧版網羅README 43 / status 0 / index 18 / run_record 236、
-   `git diff --check`、秘密情報0、JSON・2 ZIPのSHA256不変を再確認した。
-3. 未追跡証拠の末尾空白7指摘を数値・文言を変えずに正規化し、66パスをrelease commit
-   `18170b2a207940a889d527e29ef77f702c066b30`（`Publish GTFS inspection and supply comparison`）へまとめた。
-4. `origin/main`へpushし、GitHub Pages run `31449761225`のbuild・deploy成功をAPIで読み戻した。
-5. 公開トップ`https://yyy-yuichi.github.io/yamaguchi-yusho-data/`はHTTP 200、旧「準備中」を含まず、
-   公開`data/gtfs_supply_metrics.json`もHTTP 200である。
-6. 公開URLを実Edge/CDPで1440×1600・390×844の2幅から測定し、28/28条件が合格した。
-   両幅とも横overflow 0、20値と7実日付が公開JSONと一致し、console error、
-   `Runtime.exceptionThrown`、Log error、`Network.loadingFailed`は全て0件だった。
-7. Codexは公開スクリーンショットも読み、2市比較、7実日付、原本・日付・範囲の限界がPC・スマホで
-   読めることを確認した。生証拠は`evidence/20260811_release1_*`に保持する。
-8. SPEC rev.5.5 §17、README、状況ページ、テスト、進捗、検証記録を公開状態へ同期する。
-9. RELEASE-1は公開デモの到達性を完了条件とする。T1〜T4、UDC概要エントリー・本応募、外部提出、
-   受賞は未達のままで、地図、経路検索、船木鉄道取得、次機能は行っていない。
-10. 次工程はロードマップ07「応募用の公開物一式」。その具体的な一作業はRELEASE-1受入後に定義する。
-11. 状態同期後も集中48件・全80件、旧版網羅7組、差分、秘密情報、公開JSON一致、Pages成功、
-    公開ブラウザ28/28が合格した。最終同期commitをpushし、ローカルHEADと`origin/main`の一致を
-    読み戻してRELEASE-1をCodex受入済みとした。
+1. 前提となる`OPS-CONTROL-1`、`GTFS-2`、`SUPPLY-METRIC-1`、`SUPPLY-METRIC-2`はCodex受入済みである。
+2. `SUPPLY-VIEW-1`は2026-08-11に、ローカル比較画面の実装、実ブラウザ検証、Codex独立読戻しまで完了し、
+   `SPEC.md` rev.5.4 §16の一作業としてCodex受入済みとした。
+3. 表示値の唯一の数値入力は、SHA256
+   `26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b`の
+   `data/gtfs_supply_metrics.json`である。1フィード10値、2フィード合計20値を変更しない。
+4. 既存のGTFS確認状況の直後、市町選択の直前へ、岩国市関連・光市関連を列にした構造3値の表と、
+   2026-04-06〜2026-04-12を行にした日別便数表を置く。市町切替を繰り返さず比較できる構造にする。
+5. 「路線数」「停留所数」「市町の便数」と断定せず、路線情報ID、乗降場所ID、フィード全体の
+   予定運行便数と表示する。`measured`以外を0へ変えず、状態と理由を固定語彙で示す。
+6. 原本ZIP名・完全なSHA256、公式基準日、確認日、計算日、GTFS内部日付、`scope_note`、出典、
+   利用条件をフィード別の根拠欄から追跡できるようにする。平均、順位、良否、単一スコアを作らない。
+7. 実装側の変更範囲は`src/build_site_data.py`、新規の静的サイト用JSON、`docs/index.html`、
+   `tests/test_site.py`、README、状況ページ、進捗・検証記録、`evidence/20260810_supply_view1_*`だけである。
+   受入済みJSON、計算コード、原本ZIP、既存証拠は読み取り専用とする。
+8. Codex独立再検証では、静的サイト用JSONが入力5904 bytes・SHA256
+   `26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b`とバイト一致し、
+   集中48件・全80件、旧版網羅README 43 / status 0 / index 18トークン、欠落0、
+   `git diff --check`、staged 0件、秘密情報らしき値0件を確認した。
+9. Edge/CDP実測では、1440×1600と390×844の両幅で、構造6値・日別14値がJSONと一致し、
+   岩国市関連・光市関連を切替なしで表示した。ページ横方向はみ出し0、供給JSON・GTFSフィードJSONはHTTP 200、
+   console error、`Runtime.exceptionThrown`、Log error、`Network.loadingFailed`はいずれも0件だった。
+   初回は自動要求された`favicon.ico`の404だけで27/28だったため、通信不要のinline faviconを追加し、
+   新規プロファイル・新規ポートで28/28へ補正確認した。補正前後の生証拠と2幅のPNGを分離して保持した。
+10. Codexは2幅のスクリーンショットも読み戻し、比較区画が市町選択より前にあり、2市の値、同じ7実日付、
+    フィード全体の値で市内だけの値ではない限界、原本ZIP・完全SHA256・4種の日付へ到達できることを確認した。
+11. 現在は次の一作業を定義せず停止する。地図、経路検索、船木鉄道取得、次機能、commit、push、Pages更新、
+    外部提出へは進まない。外部GitHubの`main`は`b281540`、公開トップは旧「準備中」で、ローカル受入結果は未公開である。
 
 この下のI-2〜I-5等の記述は、受入済み成果を再検証するために残す履歴であり、
 現在の次作業を示すものではない。
@@ -687,11 +697,19 @@ G5/G6も今回のローカル実装・検証を止めない。外部提出はG6�
 ### 環境の状態
 
 掃除・ガード設置・実機検証は完了（§3.4 / §3.5）。
-ブランチは`main`。GTFS-2、SUPPLY-METRIC-2、SUPPLY-VIEW-1までの受入済み66パスは
-release commit `18170b2a207940a889d527e29ef77f702c066b30`へまとめて`origin/main`へpush済みである。
-GitHub Pages run `31449761225`はbuild・deploy成功で、公開トップは旧「準備中」から
-SUPPLY-VIEW-1を含む現行デモへ更新された。RELEASE-1の公開ブラウザ証拠と状態同期も同じ一作業として
-commit・pushし、最終的にローカルHEADと`origin/main`を一致させる。
+ブランチは`main`。HEADは`0a7ac36`、`origin/main`は`b281540`、ローカルが26コミット先行している。
+pushは実施しない。I-1〜I-5、GTFS-1〜I-4、訂正・監査証拠は`74423df`までにコミット済みで、
+これには`evidence/20260809_gtfs_*`と`evidence/20260809_i4_*`も含む。
+GTFS-2実行仕様は`0a7ac36`に固定済みである。
+GTFS-2の取得・実装・受入済み差分は未コミットであり、`PROGRESS.md`、`README.md`、`docs/status.html`、
+`tests/test_site.py`、`verification.md`と、`evidence/20260810_gtfs2_*`、`raw/gtfs/`、
+`src/inspect_gtfs_archives.py`、`tests/test_gtfs_inspection.py`に存在する。
+SUPPLY-METRIC-2の受入済み差分も未コミットであり、`src/calculate_gtfs_supply_metrics.py`、
+`tests/test_gtfs_supply_metrics.py`、`data/gtfs_supply_metrics.json`、
+`evidence/20260810_supply_metric2_*`、`PROGRESS.md`、`verification.md`に存在する。
+`SPEC.md` rev.5.4 §16のSUPPLY-VIEW-1は、画面実装、静的サイト用JSON、80テスト、
+Edge/CDPによる2幅の実画面検証、Codex独立読戻しまで完了し、rev.36で受入済みである。
+外部`origin/main`は`b281540`で、GitHubリポジトリとPagesは公開中だが、Pagesはローカル最新と不一致の旧版である。
 Claude Codeを本人が起動する場合は必ずリポジトリに`cd`し、起動直後に`pwd`で確認する。
 違う場所なら`/exit`（決定25）。Codexからの直接起動は規約6の個別承認がない限り行わない。
 GTFS-2記録・証拠同期に限り、本人がモデル`Claude Sonnet 5`、目的、変更範囲、想定時間を確認して
@@ -701,9 +719,9 @@ GTFS-2記録・証拠同期に限り、本人がモデル`Claude Sonnet 5`、目
 
 SPEC.md §9のU2・U3・U7は引き続き未確認である。
 岩国市・光市ZIPの内部構成、列、件数、日付候補はGTFS-2で実測・受入済みである。
-岩国市・光市の供給指標20値と比較表示はSUPPLY-VIEW-1で、公開到達性はRELEASE-1で検証・受入済みである。
-ロードマップ上の次工程は07「応募用の公開物一式」。具体的な次の一作業はRELEASE-1完了後に一つだけ定義する。
-現行デモ公開はT1〜T4、外部提出、受賞の達成を意味しない。
+岩国市・光市の供給指標20値とローカル比較表示はSUPPLY-VIEW-1で実装・検証・受入済みである。
+次の一作業は未定義であり、利用者成果と誤解防止条件を定義するまで次機能へ進まない。
+既に公開中の旧Pagesをいつ、どの承認で更新するかも未決定であり、ローカル表示作業と公開作業を混ぜない。
 
 ### 改訂点（rev.31）
 
@@ -746,18 +764,3 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - 初回favicon 404の27/28を合格扱いせず、inline favicon補正後の28/28と補正前後の分離証拠を記録した。
 - 利用者が2市の供給量、同じ7実日付、根拠・日付・対象範囲の限界をスマホでも読めることを、数値検査とスクリーンショットの両方で確認した。
 - commit、push、Pages更新、外部提出を行わず、次の一作業を未定義として停止した。
-
-### 改訂点（rev.37）
-
-- Goal-to-doneの終了条件をローカル受入だけで閉じず、想定利用者が公開URLへ到達できることまで追うRELEASE-1を記録した。
-- 受入済み66パスのcommit `18170b2`、`main`へのpush、Pages run `31449761225`の成功を記録した。
-- 公開URLのEdge/CDP実測28/28、PC・スマホのスクリーンショット読戻し、エラー4系統0を記録した。
-- 現行デモ公開とT1〜T4・外部提出・受賞を分離し、次工程を応募用の公開物一式とした。
-- 旧現在地から外したHEAD `0a7ac36`、入力SHA256
-  `26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b`、`favicon.ico`、
-  `measured`、`scope_note`は、受入済み履歴とrelease commitに保持されているため削除ではなく現在地からの移動とした。
-- 同じ理由で`evidence/20260809_gtfs_*`、`evidence/20260809_i4_*`、`evidence/20260810_gtfs2_*`、
-  `evidence/20260810_supply_metric2_*`、`evidence/20260810_supply_view1_*`、`raw/gtfs/`、
-  `src/build_site_data.py`、`src/calculate_gtfs_supply_metrics.py`、`src/inspect_gtfs_archives.py`、
-  `tests/test_site.py`、`tests/test_gtfs_inspection.py`、`tests/test_gtfs_supply_metrics.py`は、
-  未コミット一覧から公開済み成果へ状態が変わったため現在地の列挙から外した。
