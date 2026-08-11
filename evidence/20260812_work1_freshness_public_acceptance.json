@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-FRESHNESS-1",
+  "accepted_at": "2026-08-12",
+  "repository": "yyy-yuichi/yamaguchi-yusho-data",
+  "implementation_commit": "1c11e61458440a6a495a9cf6b55d1ff58753c851",
+  "workflow_runtime_commit": "4f681aafd2076537c48d2ecf4f18632b452657fb",
+  "source_freshness_run": {
+    "id": 31547441902,
+    "url": "https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/31547441902",
+    "head_sha": "4f681aafd2076537c48d2ecf4f18632b452657fb",
+    "checked_at": "2026-08-11T23:41:44Z",
+    "github_conclusion": "failure",
+    "semantic_outcome": "unavailable_detected",
+    "exit_code": 2,
+    "summary": {
+      "unchanged": 4,
+      "changed": 0,
+      "unavailable": 2,
+      "oversize": 0,
+      "invalid_baseline": 0
+    },
+    "unavailable_sources": [
+      {
+        "source_id": "iwakuni-gtfsjp",
+        "error_category": "tls_error"
+      },
+      {
+        "source_id": "hikari-gtfs",
+        "error_category": "tls_error"
+      }
+    ],
+    "artifact_id": 9122991566,
+    "artifact_name": "source-freshness-result-31547441902",
+    "artifact_file": "evidence/20260812_work1_freshness_github_result_run31547441902.json",
+    "artifact_sha256": "9f98f9751283fefe236f010ee83eb6828d13b4627fcecde9bc02bfe0a7d001ec",
+    "artifact_upload_succeeded": true,
+    "node20_deprecation_warning": false
+  },
+  "pages": {
+    "implementation_run_id": 31546971782,
+    "implementation_run_url": "https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/31546971782",
+    "implementation_run_conclusion": "success",
+    "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/status.html",
+    "http_status": 200,
+    "published_blob": "e66f8983590164f887345d0c185c6a2a811a0574",
+    "implementation_commit_blob": "e66f8983590164f887345d0c185c6a2a811a0574",
+    "byte_match": true
+  },
+  "browser": {
+    "desktop": {
+      "viewport": "1440x1600",
+      "overflow_x": 0,
+      "console_error_count": 0,
+      "required_markers_present": true,
+      "screenshot": "evidence/20260812_work1_freshness_public_screenshot_1440.png",
+      "screenshot_sha256": "72a70db33c83ac903c1a3ffab6aa0987ea8252aa9b6f02a31268b7bb398abfa3"
+    },
+    "mobile": {
+      "viewport": "390x844",
+      "overflow_x": 0,
+      "console_error_count": 0,
+      "required_markers_present": true,
+      "screenshot": "evidence/20260812_work1_freshness_public_screenshot_390x844.png",
+      "screenshot_sha256": "af4c40c1239130c54547b35e3934084f3ace3485451f5c6a98755455f9e83211"
+    },
+    "stale_preapproval_text_present": false,
+    "actions_history_link_present": true
+  },
+  "protected_outputs_changed": false,
+  "automatic_source_adoption": false,
+  "udc_submission_performed": false
+}

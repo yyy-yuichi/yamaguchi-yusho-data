@@ -2303,3 +2303,24 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   Pages反映は行っておらず、WORK1-FRESHNESS-1は公開適用承認ゲートで停止している。
 - UDC概要フォーム、本応募、BODIK APPs登録、作品②、次の強化段階へは進んでいない。
   次段階はWORK1-FRESHNESS-1の公開受入後に一つだけ定義する。
+
+## 2026-08-12 WORK1-FRESHNESS-1 GitHub公開・最終受入
+
+- 本人がcommit、`main`へのpush、GitHub Actions適用、GitHub Pages更新、公開後検証を明示承認した。
+- 実装22件を`1c11e61458440a6a495a9cf6b55d1ff58753c851`、公式actionsのv7更新を
+  `4f681aafd2076537c48d2ecf4f18632b452657fb`としてcommit・pushした。
+- 最終手動run `31547441902`は、4 PDFを`unchanged`、岩国・光GTFSを`tls_error`による
+  `unavailable`、他3状態を0と判定し、終了コード2となった。step 5の結果artifact保存は成功した。
+  これは取得不能を通知する仕様どおりの`failure`で、検査器故障ではない。
+- `actions/checkout`、`actions/setup-python`、`actions/upload-artifact`をGitHub公式の現行v7へ更新し、
+  2回目のrunでNode.js 20非推奨警告が消えたことを確認した。
+- Pages build run `31546971782`は成功。公開`status.html`はHTTP 200、公開blobとimplementation
+  commitのblob `e66f8983590164f887345d0c185c6a2a811a0574`が一致した。
+- 公開URLを1440×1600・390×844で再測定し、必須文言とActions導線あり、古い承認待ち文言なし、
+  両幅overflow 0、console error 0。公開スクリーンショット2件を目視した。
+- 全102件成功、保護対象不変、原本・派生データ・公開値の自動更新なしを維持した。
+  `evidence/20260812_work1_freshness_public_acceptance.json`を公開後受入の正本とする。
+- 以上によりWORK1-FRESHNESS-1を最終受入済みとする。UDC概要フォーム、本応募、BODIK APPs登録、
+  作品②の変更は行っていない。
+- 次段階は`WORK1-AWARD-COMPARISON-1`だけを定義する。作品①の公開成果をUDC2026公式審査観点と
+  証拠へ対応づけ、作品②でも共用できる尺度の比較用スコアカードにする。実装はまだ開始しない。

@@ -76,6 +76,11 @@ UDC2026応募全体の終了条件（作品概要エントリー・本応募・�
   [Source freshness Actions履歴](https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/workflows/source-freshness.yml)で確認する
 - workflowは週1回と手動実行に限定し、権限は`contents: read`だけ。結果JSONをartifactへ保存し、
   commit・issue作成・Pages更新は行わない
+- GitHub初回受入は[run 31547441902](https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/31547441902)。
+  4 PDFが`unchanged`、2 GTFS ZIPが配布元のTLSエラーで`unavailable`、他3状態は0だった。
+  GitHub上の`failure`表示は取得不能を通知する終了コード2であり、結果artifactの保存は成功している
+- GitHub Pagesは[build run 31546971782](https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/31546971782)が成功。
+  公開HTMLのcommit一致、1440×1600・390×844の表示、横方向overflow 0、console error 0を受入済み
 
 ## 処理状況
 

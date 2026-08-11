@@ -1198,6 +1198,10 @@
           <strong>最新状態はActions履歴で確認</strong>
           <p><a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/workflows/source-freshness.yml">Source freshness Actions履歴</a>に、週次・手動検査の結果artifactを残します。権限は<code>contents: read</code>だけで、commit・issue作成・Pages更新は行いません。</p>
         </li>
+        <li>
+          <strong>GitHub初回実行を受入済み</strong>
+          <p><a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/31547441902">run 31547441902</a>は、4 PDFを<code>unchanged</code>、2 GTFS ZIPを配布元のTLSエラーによる<code>unavailable</code>と判定し、他3状態は0でした。Actionsの<code>failure</code>表示は取得不能を通知する終了コード2によるもので、結果artifactの保存は成功しています。</p>
+        </li>
       </ul>
       <p class="source-note">根拠: SPEC.md §19、data/source_freshness_manifest.json、verification.md。公式ページの掲載日、GTFS内部有効期間、検査実行日時は別々に保持します。</p>
     </section>

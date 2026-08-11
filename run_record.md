@@ -569,6 +569,20 @@ I-3の停止位置を明記した。版付きリンクを実際にクリック�
 - 次の承認ゲート: 実装側を直接起動する場合の個別承認、その後のcommit・push・workflow・Pages適用承認。
   UDC概要フォーム送信とBODIK APPs登録は引き続きG6で止める。
 
+### 現在の実行フロンティア（2026-08-12 公開受入後）
+
+- `WORK1-FRESHNESS-1`は最終受入済み。implementation commitは`1c11e61`、公式actions v7更新は
+  `4f681aa`、最終Source freshness runは`31547441902`、implementation Pages runは`31546971782`。
+- 最終runは4 PDF `unchanged`、2 GTFS ZIP `unavailable/tls_error`、他3状態0、終了コード2。
+  artifact保存成功を読み戻し、取得不能を通知する仕様どおりの`failure`と判定した。
+- 公開`status.html`はHTTP 200・implementation commitとblob一致、PC・スマホoverflow 0、
+  console error 0。原本・公開JSON・計算値は変更せず、自動採用も行っていない。
+- 次の一作業は`WORK1-AWARD-COMPARISON-1`だけとする。作品①の公開成果をUDC2026公式審査観点と
+  証拠へ1対1対応させ、作品②でも共用できる尺度の比較用スコアカードを作る。
+- 完了条件は、公式審査観点の一次資料確認、主張ごとの公開証拠リンク、弱点と改善効果上位3件、
+  作品②と比較できる同一尺度、Codex独立読戻し。作品②の変更、応募送信、機能追加は対象外。
+- この次段階は定義だけで未着手。開始時に新しいSPEC節とGoal-to-done DAGを作る。
+
 ### 前工程RELEASE-1（受入済み）
 
 `RELEASE-1`を行った理由は、SUPPLY-VIEW-1をローカルで受け入れても、公開トップが旧「準備中」の
@@ -820,3 +834,11 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   公開Edge 30/30、2 PNG目視を読み戻し、ENTRY-PAGE-1をCodex受入済みとした。
 - ロードマップ07を作品①について完了し、「準備中」「受入待ち」を現在地から除いた。
 - 工程08の外部提出、T1〜T4、本応募、BODIK APPs登録、受賞は未達のまま分離した。
+
+### 改訂点（rev.40）
+
+- WORK1-FRESHNESS-1の本人公開承認、2 commitのmain反映、Source freshness最終run、Pages build、
+  公開HTMLのblob一致、PC・スマホ表示をCodexが読み戻し、最終GOとした。
+- GitHub Actionsの`failure`を終了コード2の取得不能通知と、artifact upload成功を根拠に分類した。
+- 公式actionsを現行v7へ更新し、Node.js 20非推奨警告を解消した。
+- 次の一作業を`WORK1-AWARD-COMPARISON-1`と定義したが、実装は開始していない。

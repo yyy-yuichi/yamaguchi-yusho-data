@@ -1998,3 +1998,49 @@ BODIK APPs登録、受賞の達成ではない。工程08はG6の本人承認前
 判定は**公開適用へ進めるローカルGO**。WORK1-FRESHNESS-1の最終受入ではない。
 commit・push・GitHub上のworkflow初回実行・Pages反映と公開URL読戻しは、対象と影響を示した
 本人承認後だけ行う。UDC概要フォーム、本応募、BODIK APPs登録は引き続き行わない。
+
+## 2026-08-12 WORK1-FRESHNESS-1 公開後最終検証
+
+### GitHub Actions読戻し
+
+- implementation commit: `1c11e61458440a6a495a9cf6b55d1ff58753c851`
+- 公式actions v7更新commit: `4f681aafd2076537c48d2ecf4f18632b452657fb`
+- 最終手動run: `31547441902`、head SHA `4f681aafd2076537c48d2ecf4f18632b452657fb`
+- 結果: `unchanged=4`、`changed=0`、`unavailable=2`、`oversize=0`、
+  `invalid_baseline=0`、終了コード2
+- `unavailable`は岩国・光GTFSの`tls_error`。4登録簿PDFの取得bytes・SHA256は基準と一致した。
+- compare stepは終了コード2で`failure`、`if: always()`のartifact upload stepは`success`。
+  したがって赤いrun表示は取得不能を通知する契約どおりで、workflowの実行不能ではない。
+- GitHub公式actionsを現行v7へ更新後、初回に出たNode.js 20非推奨警告は再現しなかった。
+
+### GitHub Pages・実ブラウザ読戻し
+
+- implementation Pages build run `31546971782`は`success`。
+- `https://yyy-yuichi.github.io/yamaguchi-yusho-data/status.html`はHTTP 200。
+- 公開ファイルのblobは`e66f8983590164f887345d0c185c6a2a811a0574`で、implementation commitの
+  `docs/status.html` blobと一致した。
+- Codex in-app browserの1440×1600・390×844で新節、Actions履歴リンク、自動更新しない旨を確認。
+  古い承認待ち文言は0、両幅overflow 0、console error 0。2 PNGを目視した。
+
+### §19.7 最終判定
+
+| # | 完了条件 | 公開後判定 |
+|---|---|---|
+| 1 | 6原本を自動更新なしで再検査 | 満たす |
+| 2 | 初回実検査の6状態・終了コードを証拠化 | 満たす |
+| 3 | 最小権限workflowと公開状況ページからの導線 | 満たす |
+| 4 | 全テスト・旧版網羅・差分・秘密情報 | 満たす |
+| 5 | 6原本・公開JSON・計算値不変 | 満たす |
+| 6 | PC・スマホ、overflow・エラー0 | 満たす |
+| 7 | Codex独立読戻し | 満たす |
+| 8 | commit・push・workflow・Pagesの事前承認 | 本人明示承認後に実施 |
+| 9 | 外部提出・作品②へ進まない | 満たす |
+| 10 | 受入後に次段階を一つだけ定義 | `WORK1-AWARD-COMPARISON-1`を定義、未着手 |
+
+判定は**WORK1-FRESHNESS-1 最終GO**。固定HTMLは最新の照合成功を保証せず、運用上の最新状態は
+Actions履歴を正とする。`changed`または`invalid_baseline`を検出した場合も原本・公開値は自動採用しない。
+
+正本証拠は`evidence/20260812_work1_freshness_public_acceptance.json`、GitHub上の最終結果は
+`evidence/20260812_work1_freshness_github_result_run31547441902.json`、公開画面は
+`evidence/20260812_work1_freshness_public_screenshot_1440.png`と
+`evidence/20260812_work1_freshness_public_screenshot_390x844.png`に保持する。
