@@ -38,14 +38,15 @@ GTFS供給比較を表示する静的ビュー**までを担う。
 
 対象は山口県分 4 ファイル（上記2区分 × 市町村営・NPO等）。
 
-## 現在地（SUPPLY-VIEW-1・RELEASE-1 Codex受入済み、2026-08-11時点）
+## 現在地（ENTRY-PAGE-1実装済み・Codex受入待ち、2026-08-11時点）
 
 このリポジトリはI-1〜I-4までの市町別ビューに、受入済みGTFS検査・供給指標を使う
 SUPPLY-VIEW-1の比較画面を追加し、RELEASE-1でGitHub Pagesへ公開した。公開URLに対する
 Edge/CDPの1440×1600・390×844実確認28/28とCodexの独立読戻しを終え、`run_record.md` rev.37で
 受入済みである。この公開範囲は、
 UDC2026応募全体の終了条件（作品概要エントリー・本応募・第三者検証公開・受賞）の達成を
-意味しない。詳細な工程・残作業・終了条件ごとの状況は `docs/status.html` に表示している。
+意味しない。作品の課題・使い方・評価根拠は `docs/entry.html`、詳細な工程・残作業・終了条件は
+`docs/status.html` に表示している。
 
 - **I-1**: 登録簿4PDFの機械可読化（23団体、`data/vehicles.csv` 90行、実車両136台、軽20台）
 - **I-2**: 山口県公式順19市町から選べる市町別の登録供給ビュー（登録あり15/19市町）
@@ -53,6 +54,8 @@ UDC2026応募全体の終了条件（作品概要エントリー・本応募・�
 - **I-4**: 公式GTFS/GTFS-JPの確認状況（公式フィード3件、対象市町名を確認できた5/19市町）
 - **SUPPLY-VIEW-1 / RELEASE-1**: 岩国市関連・光市関連フィードの構造3指標と
   2026-04-06〜2026-04-12の予定運行便を、切替操作なしで根拠・状態とともに確認できる公開比較画面
+- **ENTRY-PAGE-1**: 作品名、81字概要、対象者、課題、3段階の使い方、使用データ、
+  実用度・完成度・挑戦度、限界を初見の人向けに結ぶ応募説明ページ（Codex受入待ち）
 
 ## 処理状況
 
@@ -66,7 +69,7 @@ UDC2026応募全体の終了条件（作品概要エントリー・本応募・�
 - `data/operators.csv`: 23団体（4団体＋3団体＋12団体＋4団体）
 - `data/vehicles.csv`: 90行、実車両合計136台（うち軽20台）
   - `vehicle_type=合計` の行は明細との照合用であり、実車両合計へ二重加算していない
-- 自動テスト: SUPPLY-VIEW-1実装時点で80件成功（`python -m unittest discover -s tests -v`。
+- 自動テスト: ENTRY-PAGE-1実装時点で86件成功（`python -m unittest discover -s tests -v`。
   内訳は `verification.md` を参照）
 
 ## 公式GTFS/GTFS-JPの確認状況（2026-08-09確認、I-4）
@@ -156,7 +159,8 @@ pip install -r requirements.txt
 `18170b2a207940a889d527e29ef77f702c066b30`で、Pagesのbuild・deploy成功後に公開URLを
 PC・スマホ幅で再検証した。**この現行デモの公開をUDC応募・受賞の完了として扱わない。**
 外部提出は行っておらず、UDC2026応募全体の終了条件（T1〜T4）はいずれも未達である。
-進捗の詳細は `docs/status.html` を参照。
+応募説明ページは `docs/entry.html`（公開反映後:
+<https://yyy-yuichi.github.io/yamaguchi-yusho-data/entry.html>）、進捗の詳細は `docs/status.html` を参照。
 
 ---
 

@@ -1,0 +1,43 @@
+ENTRY-PAGE-1 prepublication checks
+focused: PASS
+full: PASS
+coverage: PASS
+diffCheck: PASS
+stagedZero: PASS
+scope: PASS
+secrets: PASS
+trailingWhitespace: PASS
+hashes: PASS
+changed paths: 21
+  PROGRESS.md
+  README.md
+  SPEC.md
+  docs/index.html
+  docs/status.html
+  run_record.md
+  tests/test_site.py
+  verification.md
+  docs/entry.html
+  evidence/20260811_entry_page1_cdp_driver.mjs
+  evidence/20260811_entry_page1_local_browser_raw.json
+  evidence/20260811_entry_page1_local_browser_summary.txt
+  evidence/20260811_entry_page1_local_pass_browser_raw.json
+  evidence/20260811_entry_page1_local_pass_browser_summary.txt
+  evidence/20260811_entry_page1_local_pass_screenshot_1440.png
+  evidence/20260811_entry_page1_local_pass_screenshot_390x844.png
+  evidence/20260811_entry_page1_local_screenshot_1440.png
+  evidence/20260811_entry_page1_local_screenshot_390x844.png
+  evidence/20260811_entry_page1_spec_coverage_raw.txt
+  evidence/20260811_entry_page1_unittest_focused_raw.txt
+  evidence/20260811_entry_page1_unittest_full_raw.txt
+unexpected paths: []
+secret hits: []
+trailing whitespace hits: []
+data/gtfs_supply_metrics.json sha256=26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b expected=26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b PASS
+docs/data/gtfs_supply_metrics.json sha256=26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b expected=26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b PASS
+raw/gtfs/iwakuni_gtfsjp_20260401.zip sha256=d236a58ff4a0edb4812a8bed543d4897670441164a1019e88d5e35ded5052de2 expected=d236a58ff4a0edb4812a8bed543d4897670441164a1019e88d5e35ded5052de2 PASS
+raw/gtfs/hikari_gtfs_20260401.zip sha256=f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7 expected=f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7 PASS
+focused summary: Ran 54 tests in 0.026s |  | OK
+full summary: Ran 86 tests in 6.469s |  | OK
+coverage summary: 検査トークン数        : 693 | 欠落・改訂点に記載あり: 0 | 欠落・説明なし        : 0 | 判定: 合格。旧版のトークンはすべて新版に残っているか、改訂点に理由がある。
+overall: PASS

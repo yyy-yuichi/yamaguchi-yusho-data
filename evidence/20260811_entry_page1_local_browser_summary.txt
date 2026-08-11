@@ -1,0 +1,4 @@
+DRIVER_ERROR: Error: EPERM, Permission denied: \\?\C:\Users\user\dev\udc2026\yamaguchi-yusho-data\evidence\20260811_entry_page1_local_cdp_profile '\\?\C:\Users\user\dev\udc2026\yamaguchi-yusho-data\evidence\20260811_entry_page1_local_cdp_profile'
+    at Object.rmSync (node:fs:1220:18)
+    at main (file:///C:/Users/user/dev/udc2026/yamaguchi-yusho-data/evidence/20260811_entry_page1_cdp_driver.mjs:263:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)

@@ -24,7 +24,12 @@ DOCS_DATA_DIR = DOCS_DIR / "data"
 # I-5完了時点の実測テスト件数（tests/test_site.py + tests/test_verify.py）。
 # `python -m unittest discover -s tests -v` の実測値と一致させる
 # （README.md・docs/status.html・verification.mdでも同じ値を使う。SPEC.md §13.6.6）。
-TOTAL_TEST_COUNT = 80
+TOTAL_TEST_COUNT = 86
+
+ENTRY_SUMMARY = (
+    "山口県の公共交通担当者・事業者向けに、分散した登録簿と公式GTFSを市町別に整理し、"
+    "輸送供給・日付・根拠・データの限界を同じ画面で確認できる静的Webアプリです。"
+)
 
 
 def setUpModule():
@@ -526,7 +531,7 @@ class StatusHtmlContractTest(unittest.TestCase):
             "T3",
             "T4",
             'href="index.html?v=20260811"',
-            "公開検証済み、次は応募用の公開物一式",
+            "ENTRY-PAGE-1実装済み・Codex受入待ち",
             "PDL1.0",
             "CC BY 4.0",
         )
@@ -638,6 +643,91 @@ class StatusHtmlContractTest(unittest.TestCase):
         ):
             self.assertIn(marker, self.html)
         self.assertTrue((DOCS_DATA_DIR / "gtfs_supply_metrics.json").is_file())
+
+
+class EntryHtmlContractTest(unittest.TestCase):
+    """ENTRY-PAGE-1: 初見の読者向け応募説明ページ（SPEC.md §18）。"""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.path = DOCS_DIR / "entry.html"
+        cls.html = cls.path.read_text(encoding="utf-8")
+
+    def test_fixed_application_metadata_and_summary_are_present(self):
+        self.assertTrue(self.path.is_file())
+        for marker in (
+            "山口県 市町別の登録供給ビュー",
+            "作品タイプ: アプリケーション",
+            "作品テーマ: 道路・交通",
+            ENTRY_SUMMARY,
+            "作品概要（81字）",
+        ):
+            self.assertIn(marker, self.html)
+        self.assertEqual(len(ENTRY_SUMMARY), 81)
+        self.assertLessEqual(len(ENTRY_SUMMARY), 100)
+
+    def test_problem_users_usage_data_criteria_and_limits_are_explicit(self):
+        for marker in (
+            "解決したい問題",
+            "誰が、何のために使うか",
+            "3段階の使い方",
+            "使用データと、現在確認できる範囲",
+            "実用度・完成度・挑戦度の根拠",
+            "分かること／分からないこと",
+            "登録簿とGTFSは公開場所も数え方も違い",
+        ):
+            self.assertIn(marker, self.html)
+
+    def test_demo_repository_status_and_public_json_links_exist(self):
+        for href in (
+            'href="index.html"',
+            'href="index.html#supply-comparison"',
+            'href="status.html"',
+            'href="https://github.com/yyy-yuichi/yamaguchi-yusho-data"',
+            'href="data/municipal_supply.json"',
+            'href="data/gtfs_feeds.json"',
+            'href="data/municipality_gtfs.json"',
+            'href="data/gtfs_supply_metrics.json"',
+        ):
+            self.assertIn(href, self.html)
+        for filename in (
+            "municipal_supply.json", "gtfs_feeds.json",
+            "municipality_gtfs.json", "gtfs_supply_metrics.json",
+        ):
+            self.assertTrue((DOCS_DATA_DIR / filename).is_file(), filename)
+
+    def test_limits_are_not_replaced_by_completion_or_coverage_claims(self):
+        for marker in (
+            "実際に運行した便",
+            "市内だけに限定したGTFSの供給量",
+            "県内すべての交通事業者・移動サービスの網羅",
+            "GTFSが存在しないかどうか",
+            "交通の充足度や市町の優劣を判定するものではありません",
+        ):
+            self.assertIn(marker, self.html)
+        for phrase in ("応募済み", "外部提出済み", "受賞済み", "受賞しました", "GTFSなし"):
+            self.assertNotIn(phrase, self.html)
+
+    def test_static_responsive_contract_is_present(self):
+        self.assertNotIn("<script", self.html.lower())
+        for marker in (
+            'name="viewport"',
+            "overflow-wrap: anywhere",
+            "grid-template-columns: repeat(3, minmax(0, 1fr))",
+            "@media (max-width: 760px)",
+            ".grid-2, .grid-3 { grid-template-columns: 1fr; }",
+            'rel="icon"',
+        ):
+            self.assertIn(marker, self.html)
+
+    def test_existing_pages_and_readme_link_to_entry_page(self):
+        index_html = (DOCS_DIR / "index.html").read_text(encoding="utf-8")
+        status_html = (DOCS_DIR / "status.html").read_text(encoding="utf-8")
+        readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertIn('href="entry.html"', index_html)
+        self.assertIn('href="entry.html"', status_html)
+        self.assertIn("docs/entry.html", readme)
+        self.assertIn("https://yyy-yuichi.github.io/yamaguchi-yusho-data/entry.html", readme)
 
 
 class ReadmeContractTest(unittest.TestCase):

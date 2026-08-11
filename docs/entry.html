@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="UDC2026作品①『山口県 市町別の登録供給ビュー』の課題、使い方、使用データ、検証根拠を初めて見る人向けに説明します。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle fill='%23176b55' cx='8' cy='8' r='8'/%3E%3C/svg%3E">
+  <title>作品概要と評価根拠｜山口県 市町別の登録供給ビュー</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #18322b;
+      --muted: #526c64;
+      --paper: #f6f1e7;
+      --surface: #fffdf8;
+      --surface-soft: #edf5f0;
+      --line: #cddbd4;
+      --green: #176b55;
+      --green-dark: #0f4e3d;
+      --amber: #a35f13;
+      --shadow: 0 18px 45px rgba(24, 50, 43, 0.1);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-width: 0;
+      background:
+        radial-gradient(circle at 92% 2%, rgba(23, 107, 85, 0.15), transparent 28rem),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", system-ui, sans-serif;
+      line-height: 1.75;
+      overflow-wrap: anywhere;
+    }
+
+    a { color: var(--green-dark); }
+    a:hover { text-decoration-thickness: 2px; }
+
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: -80px;
+      z-index: 10;
+      padding: 10px 14px;
+      background: var(--ink);
+      color: white;
+    }
+
+    .skip-link:focus { top: 12px; }
+
+    .shell {
+      width: min(1120px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .hero { padding: 56px 0 30px; }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 { line-height: 1.3; }
+    h1 { margin: 0; font-size: clamp(2rem, 6vw, 4.4rem); letter-spacing: -0.04em; }
+    h2 { margin: 0 0 14px; font-size: clamp(1.45rem, 3vw, 2.25rem); }
+    h3 { margin: 0 0 8px; font-size: 1.08rem; }
+    p { margin: 0 0 1em; }
+
+    .lead {
+      max-width: 50rem;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: clamp(1.04rem, 2vw, 1.3rem);
+    }
+
+    .meta-row, .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 12px;
+      background: rgba(255, 253, 248, 0.78);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      border: 1px solid var(--green);
+      border-radius: 999px;
+      padding: 9px 18px;
+      background: var(--green);
+      color: white;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .button.secondary { background: transparent; color: var(--green-dark); }
+
+    main { padding-bottom: 64px; }
+
+    section {
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(22px, 4vw, 42px);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .summary {
+      border-left: 6px solid var(--green);
+      background: var(--surface-soft);
+      font-size: 1.08rem;
+    }
+
+    .summary strong { display: block; margin-bottom: 8px; }
+
+    .grid-2, .grid-3 {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+      background: #fff;
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    .plain-list, .steps { margin: 0; padding-left: 1.4em; }
+    .plain-list li, .steps li { margin: 0.7em 0; padding-left: 0.25em; }
+
+    .steps { counter-reset: item; list-style: none; padding: 0; }
+    .steps li {
+      position: relative;
+      min-height: 50px;
+      margin: 14px 0;
+      padding: 4px 0 4px 58px;
+    }
+
+    .steps li::before {
+      content: counter(item);
+      counter-increment: item;
+      position: absolute;
+      inset: 0 auto auto 0;
+      display: grid;
+      width: 40px;
+      height: 40px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      font-weight: 800;
+    }
+
+    .fact {
+      margin-top: 14px;
+      border-left: 4px solid var(--amber);
+      padding: 12px 16px;
+      background: #fff6e8;
+    }
+
+    .fact p:last-child { margin-bottom: 0; }
+
+    dl { margin: 0; }
+    dt { margin-top: 14px; font-weight: 800; }
+    dd { margin: 2px 0 0; color: var(--muted); }
+
+    .links { display: grid; gap: 10px; }
+    .links a { display: block; width: fit-content; max-width: 100%; }
+
+    footer {
+      padding: 0 0 42px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 24px, 1120px); }
+      .hero { padding-top: 34px; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      section { border-radius: 16px; }
+      .button { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <header class="hero shell">
+    <p class="eyebrow">UDC2026 作品① / 応募説明</p>
+    <h1>山口県<br>市町別の登録供給ビュー</h1>
+    <p class="lead">公共交通の計画を考える前に、「地域にどんな移動サービスが登録され、どのくらいの予定運行がデータに入っているか」を、根拠と日付を分けて確かめるための静的Webアプリです。</p>
+    <div class="meta-row" aria-label="応募区分">
+      <span class="tag">作品タイプ: アプリケーション</span>
+      <span class="tag">作品テーマ: 道路・交通</span>
+      <span class="tag">対象地域: 山口県</span>
+    </div>
+    <nav class="actions" aria-label="主要リンク">
+      <a class="button" href="index.html">公開デモを使う</a>
+      <a class="button secondary" href="index.html#supply-comparison">岩国市・光市の比較を見る</a>
+      <a class="button secondary" href="status.html">検証状況を見る</a>
+    </nav>
+  </header>
+
+  <main id="main" class="shell">
+    <section class="summary" aria-labelledby="summary-title">
+      <strong id="summary-title">作品概要（81字）</strong>
+      <p id="entry-summary">山口県の公共交通担当者・事業者向けに、分散した登録簿と公式GTFSを市町別に整理し、輸送供給・日付・根拠・データの限界を同じ画面で確認できる静的Webアプリです。</p>
+    </section>
+
+    <section aria-labelledby="problem-title">
+      <p class="eyebrow">Problem</p>
+      <h2 id="problem-title">解決したい問題</h2>
+      <p>県や市町が地域の移動手段を考えるとき、最初に必要なのは「今、どんなサービスと予定運行が確認できるか」という土台です。しかし、その情報は一か所にはありません。</p>
+      <div class="grid-2">
+        <article class="card">
+          <h3>登録簿で分かること</h3>
+          <p>自治体やNPOなどが行う自家用有償旅客運送について、登録団体、運送区域、登録車両を確認できます。</p>
+        </article>
+        <article class="card">
+          <h3>GTFSで分かること</h3>
+          <p>バスなどの予定時刻や乗降場所を、共通形式のデータとして確認できます。ここで扱うのは実績ではなく予定です。</p>
+        </article>
+      </div>
+      <div class="fact">
+        <h3>なぜ、そのままでは比べにくいのか</h3>
+        <p>登録簿とGTFSは公開場所も数え方も違い、ページに書かれた日付、ファイル内部の日付、検証した日も別です。資料を行き来すると、どの日付と範囲の数字かを取り違えやすくなります。</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="user-title">
+      <p class="eyebrow">Users and value</p>
+      <h2 id="user-title">誰が、何のために使うか</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>県・市町の公共交通担当者</h3>
+          <p>計画や事業者との協議の前に、公開資料で確認できる供給側の情報と、その根拠・不足を整理するために使います。</p>
+        </article>
+        <article class="card">
+          <h3>交通事業者・地域の関係者</h3>
+          <p>自治体単位の登録情報と、確認できたGTFSの予定運行を同じ入口から追い、次に確認すべき資料や論点を共有するために使います。</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="usage-title">
+      <p class="eyebrow">How to use</p>
+      <h2 id="usage-title">3段階の使い方</h2>
+      <ol class="steps">
+        <li><strong>市町を選ぶ。</strong> 山口県19市町から選び、登録簿上でその市町を運送区域に含む団体と登録車両を確認します。</li>
+        <li><strong>確認できたGTFSを見る。</strong> 公式資料で市町名との関係を確認できたフィード、公開主体、データ基準日、アクセス条件を確認します。</li>
+        <li><strong>同じ実日付で比べる。</strong> 岩国市関連・光市関連の2フィードについて、2026-04-06〜2026-04-12の予定運行便を切替なしで比較し、原本・日付・限界まで読みます。</li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="data-title">
+      <p class="eyebrow">Verified data</p>
+      <h2 id="data-title">使用データと、現在確認できる範囲</h2>
+      <dl>
+        <dt>山口県公表の自家用有償旅客運送登録簿</dt>
+        <dd>山口県分4PDFを処理。23団体、実車両136台（軽20台は内数）を原本へ追跡できる形で整理しました。</dd>
+        <dt>山口県オープンデータカタログ等の公式GTFS / GTFS-JP</dt>
+        <dd>公式一次資料で3フィードを確認し、公式資料が対象市町名を明記した5市町との関係を整理しました。岩国市・光市の2 ZIPは内部構成と予定運行を実測済みです。</dd>
+        <dt>山口県の公式19市町一覧</dt>
+        <dd>市町選択の順序と対象を一次資料に合わせています。</dd>
+      </dl>
+      <p class="fact">主要な公開データ: <a href="data/municipal_supply.json">municipal_supply.json</a> / <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a> / <a href="data/gtfs_supply_metrics.json">gtfs_supply_metrics.json</a></p>
+    </section>
+
+    <section aria-labelledby="criteria-title">
+      <p class="eyebrow">UDC2026 criteria</p>
+      <h2 id="criteria-title">実用度・完成度・挑戦度の根拠</h2>
+      <div class="grid-3">
+        <article class="card">
+          <h3>実用度</h3>
+          <p>行政・事業者が協議前に行う「公開情報の所在、日付、範囲の確認」を、市町単位の一つの入口で短縮します。分からないことも明示し、追加調査の出発点にできます。</p>
+        </article>
+        <article class="card">
+          <h3>完成度</h3>
+          <p>登録簿4PDFの機械可読化、19市町ビュー、公式GTFS状況、2フィードの実測比較を公開済みです。データ・コード・検証状況を第三者が同じURLから追跡できます。</p>
+        </article>
+        <article class="card">
+          <h3>挑戦度</h3>
+          <p>制度上の登録供給とGTFSの予定運行という単位の異なる資料を、日付の意味と限界を消さずに接続しました。単一の点数や順位へ丸めず、根拠を残しています。</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="limits-title">
+      <p class="eyebrow">Scope and limits</p>
+      <h2 id="limits-title">分かること／分からないこと</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>この作品で確認できること</h3>
+          <ul class="plain-list">
+            <li>公表登録簿上の団体・登録車両と原本</li>
+            <li>今回確認した公式資料におけるGTFSの公開状況</li>
+            <li>岩国市関連・光市関連フィード全体の構造と、同じ7実日付の予定運行便</li>
+            <li>表示値の基準日、内部有効期間、検証日、対象範囲</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>この作品だけでは分からないこと</h3>
+          <ul class="plain-list">
+            <li>実際に運行した便、利用者数、定時性、便利さ</li>
+            <li>市内だけに限定したGTFSの供給量</li>
+            <li>県内すべての交通事業者・移動サービスの網羅</li>
+            <li>公式資料で未確認だった地域にGTFSが存在しないかどうか</li>
+          </ul>
+        </article>
+      </div>
+      <p class="fact">この画面は交通の充足度や市町の優劣を判定するものではありません。予定運行便は実運行や利用者数を表しません。</p>
+    </section>
+
+    <section aria-labelledby="verify-title">
+      <p class="eyebrow">Open and verifiable</p>
+      <h2 id="verify-title">デモ・コード・検証記録</h2>
+      <div class="links">
+        <a href="index.html">公開デモ: 山口県 市町別の登録供給ビュー</a>
+        <a href="index.html#supply-comparison">公開デモ: 岩国市・光市のGTFS供給比較</a>
+        <a href="status.html">工程・完了条件・未達条件を確認する</a>
+        <a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data" target="_blank" rel="noopener">GitHubリポジトリでコードとデータを見る</a>
+      </div>
+      <p class="fact">このページとデモは公開されていますが、UDC2026の概要エントリー、本応募、BODIK APPs登録はまだ行っていません。公開と外部提出、受賞は別の状態として管理します。</p>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <p>UDC2026 作品① / 最終表示確認日: 2026-08-11。詳細な根拠と更新履歴は状況ページとGitHubリポジトリで確認できます。</p>
+  </footer>
+</body>
+</html>

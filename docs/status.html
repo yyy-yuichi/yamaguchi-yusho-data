@@ -852,13 +852,13 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">作品の現在地</p>
-          <h2 id="progress-title">公開URLで利用可能・応募用一式は次工程</h2>
-          <p>SUPPLY-VIEW-1をRELEASE-1でGitHub Pagesへ反映し、公開本体commit <code>18170b2</code>のbuild・deploy成功と、公開URLに対するEdge/CDP実ブラウザ確認28/28をCodexが読み戻しました。現在のデモはGitHub Pagesで公開中です。次工程は応募用の公開物一式ですが、外部提出は行っていません。この現在地はUDC2026応募全体の終了条件T1〜T4（後述）の達成を意味しません。</p>
+          <h2 id="progress-title">ENTRY-PAGE-1実装済み・Codex受入待ち</h2>
+          <p>公開本体commit <code>18170b2</code>の既存デモは<a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>です。そのデモに、初見の審査員・交通担当者が課題、使い方、使用データ、実用度・完成度・挑戦度の根拠を一ページで確認できる<a href="entry.html">応募説明ページ</a>を追加しました。現在はローカル実装済みで、Codexによるテスト・実ブラウザ・公開URLの受入前です。UDC概要フォーム、本応募、BODIK APPs登録は行っていません。</p>
         </div>
-        <strong class="progress-summary">RELEASE-1 Codex受入済み</strong>
+        <strong class="progress-summary">ENTRY-PAGE-1 Codex受入待ち</strong>
       </div>
 
-      <div class="overall-bar" role="progressbar" aria-label="8工程中6工程を受入済み、次は応募用の公開物一式" aria-valuemin="0" aria-valuemax="8" aria-valuenow="6">
+      <div class="overall-bar" role="progressbar" aria-label="8工程中6工程を受入済み、工程07を検証中" aria-valuemin="0" aria-valuemax="8" aria-valuenow="6">
         <span class="done" title="6工程を受入済み"></span>
       </div>
 
@@ -893,10 +893,10 @@
           <span class="step-title">SUPPLY-VIEW-1: 岩国市・光市のGTFS供給比較</span>
           <span class="step-state">公開・実ブラウザ確認・Codex受入済み</span>
         </li>
-        <li class="todo">
+        <li class="current">
           <span class="step-no">07</span>
-          <span class="step-title">応募用の公開物一式</span>
-          <span class="step-state">未着手</span>
+          <span class="step-title">ENTRY-PAGE-1: 作品①の応募説明ページ</span>
+          <span class="step-state">実装済み・Codex受入待ち</span>
         </li>
         <li class="todo">
           <span class="step-no">08</span>
@@ -934,7 +934,7 @@
         </li>
       </ol>
       <div class="note"><strong>SUPPLY-VIEW-1で利用できる画面:</strong> 岩国市関連・光市関連フィードについて、GTFS収録の交通ブランド情報、路線情報ID、乗降場所IDと、2026-04-06〜2026-04-12の予定運行便を切替操作なしで確認できます。値は各フィード全体の収録値で、市内だけの値や市内の全公共交通、実運行、利用者数、便利さ、順位、良否を示すものではありません。</div>
-      <p class="lead">自動テストは80テストすべて成功しています（python -m unittest discover -s tests -v）。</p>
+      <p class="lead">自動テストはENTRY-PAGE-1の追加分を含む86テストすべて成功しました（python -m unittest discover -s tests -v）。</p>
       <p class="source-note">根拠: run_record.md §0.5・§4、SPEC.md §5・§12・§13・§16・§17、verification.md</p>
     </section>
 
@@ -1150,12 +1150,16 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">この作業の区切り</p>
-          <h2 id="next-title">公開検証済み、次は応募用の公開物一式</h2>
-          <p><a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">公開デモ</a>で、岩国市・光市関連フィードの検証済み供給を、根拠と日付を混同せず同じ画面で確認できます。RELEASE-1の公開と再検証は完了しました。次工程は応募用の公開物一式であり、地図、経路検索、船木鉄道取得、外部提出は今回行っていません。</p>
+          <h2 id="next-title">応募説明ページを検証中</h2>
+          <p><a href="entry.html">応募説明ページ</a>は、公開済みのデモ・コード・データを、作品の課題と価値からたどれる一枚にまとめたものです。ENTRY-PAGE-1は公開URLのPC・スマホ検証まで終えた場合だけ受入済みとします。地図、経路検索、船木鉄道取得、外部提出は今回行いません。</p>
         </div>
       </div>
 
       <ol class="next-list">
+        <li>
+          <strong>初見の人が作品の目的から成果へ到達</strong>
+          <p>作品名、81字概要、対象者、課題、3段階の使い方、使用データ、審査3観点、分かること・分からないことを一ページにまとめました。</p>
+        </li>
         <li>
           <strong>公開URLと公開データを確認</strong>
           <p>GitHub Pagesのbuild・deploy成功後、公開トップから「準備中」が消え、gtfs_supply_metrics.jsonをHTTP 200で取得できることを確認しました。</p>
@@ -1169,12 +1173,13 @@
           <p>実ファイル、公開値、配備結果、スクリーンショット、テスト、証拠を読み戻しました。外部提出は行っていません。</p>
         </li>
       </ol>
-      <p class="source-note">根拠: run_record.md §4、SPEC.md §16・§17、verification.md</p>
+      <p class="source-note">根拠: run_record.md §4、SPEC.md §16・§17・§18、verification.md</p>
     </section>
 
     <section class="sources" aria-labelledby="source-title">
       <h2 id="source-title">このページの根拠</h2>
       <ul>
+        <li>応募説明（docs/entry.html）: <a href="entry.html">作品の課題・使い方・評価根拠</a></li>
         <li>公開用アプリ（docs/index.html）: <a href="index.html?v=20260811">市町別の登録供給ビュー</a>（<a href="index.html?v=20260811#supply-comparison">岩国市・光市のGTFS供給比較</a>、<a href="index.html?v=20260811#limits-title">データの限界</a>、<a href="index.html?v=20260811#sources-title">出典と利用条件</a>）</li>
         <li>公開JSON: <a href="data/operators.json">operators.json</a> / <a href="data/vehicles.json">vehicles.json</a> / <a href="data/municipal_supply.json">municipal_supply.json</a> / <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a> / <a href="data/gtfs_supply_metrics.json">gtfs_supply_metrics.json</a></li>
         <li>リポジトリ内: run_record.md、SPEC.md、verification.md、data/operators.csv、data/vehicles.csv、data/gtfs_feeds.csv、data/municipality_gtfs.csv、data/gtfs_supply_metrics.json</li>

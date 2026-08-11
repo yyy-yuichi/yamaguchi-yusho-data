@@ -1,0 +1,1340 @@
+{
+  "task": "ENTRY-PAGE-1 actual-browser verification",
+  "mode": "local",
+  "pageUrl": "http://127.0.0.1:63247/entry.html",
+  "generatedAt": "2026-08-11T05:41:02.770Z",
+  "viewports": [
+    {
+      "label": "desktop-1440",
+      "pass": true,
+      "dom": {
+        "title": "作品概要と評価根拠｜山口県 市町別の登録供給ビュー",
+        "summary": "山口県の公共交通担当者・事業者向けに、分散した登録簿と公式GTFSを市町別に整理し、輸送供給・日付・根拠・データの限界を同じ画面で確認できる静的Webアプリです。",
+        "viewport": {
+          "innerWidth": 1440,
+          "innerHeight": 1600
+        },
+        "documentWidth": {
+          "maximum": 1425,
+          "rawDifference": -15,
+          "overflow": 0
+        },
+        "headings": [
+          "解決したい問題",
+          "誰が、何のために使うか",
+          "3段階の使い方",
+          "使用データと、現在確認できる範囲",
+          "実用度・完成度・挑戦度の根拠",
+          "分かること／分からないこと",
+          "デモ・コード・検証記録"
+        ],
+        "links": [
+          {
+            "text": "本文へ移動",
+            "href": "#main"
+          },
+          {
+            "text": "公開デモを使う",
+            "href": "index.html"
+          },
+          {
+            "text": "岩国市・光市の比較を見る",
+            "href": "index.html#supply-comparison"
+          },
+          {
+            "text": "検証状況を見る",
+            "href": "status.html"
+          },
+          {
+            "text": "municipal_supply.json",
+            "href": "data/municipal_supply.json"
+          },
+          {
+            "text": "gtfs_feeds.json",
+            "href": "data/gtfs_feeds.json"
+          },
+          {
+            "text": "municipality_gtfs.json",
+            "href": "data/municipality_gtfs.json"
+          },
+          {
+            "text": "gtfs_supply_metrics.json",
+            "href": "data/gtfs_supply_metrics.json"
+          },
+          {
+            "text": "公開デモ: 山口県 市町別の登録供給ビュー",
+            "href": "index.html"
+          },
+          {
+            "text": "公開デモ: 岩国市・光市のGTFS供給比較",
+            "href": "index.html#supply-comparison"
+          },
+          {
+            "text": "工程・完了条件・未達条件を確認する",
+            "href": "status.html"
+          },
+          {
+            "text": "GitHubリポジトリでコードとデータを見る",
+            "href": "https://github.com/yyy-yuichi/yamaguchi-yusho-data"
+          }
+        ],
+        "bodyText": "本文へ移動\n\nUDC2026 作品① / 応募説明\n\n山口県\n市町別の登録供給ビュー\n\n公共交通の計画を考える前に、「地域にどんな移動サービスが登録され、どのくらいの予定運行がデータに入っているか」を、根拠と日付を分けて確かめるための静的Webアプリです。\n\n作品タイプ: アプリケーション\n作品テーマ: 道路・交通\n対象地域: 山口県\n公開デモを使う\n岩国市・光市の比較を見る\n検証状況を見る\n作品概要（81字）\n\n山口県の公共交通担当者・事業者向けに、分散した登録簿と公式GTFSを市町別に整理し、輸送供給・日付・根拠・データの限界を同じ画面で確認できる静的Webアプリです。\n\nPROBLEM\n\n解決したい問題\n\n県や市町が地域の移動手段を考えるとき、最初に必要なのは「今、どんなサービスと予定運行が確認できるか」という土台です。しかし、その情報は一か所にはありません。\n\n登録簿で分かること\n\n自治体やNPOなどが行う自家用有償旅客運送について、登録団体、運送区域、登録車両を確認できます。\n\nGTFSで分かること\n\nバスなどの予定時刻や乗降場所を、共通形式のデータとして確認できます。ここで扱うのは実績ではなく予定です。\n\nなぜ、そのままでは比べにくいのか\n\n登録簿とGTFSは公開場所も数え方も違い、ページに書かれた日付、ファイル内部の日付、検証した日も別です。資料を行き来すると、どの日付と範囲の数字かを取り違えやすくなります。\n\nUSERS AND VALUE\n\n誰が、何のために使うか\n県・市町の公共交通担当者\n\n計画や事業者との協議の前に、公開資料で確認できる供給側の情報と、その根拠・不足を整理するために使います。\n\n交通事業者・地域の関係者\n\n自治体単位の登録情報と、確認できたGTFSの予定運行を同じ入口から追い、次に確認すべき資料や論点を共有するために使います。\n\nHOW TO USE\n\n3段階の使い方\n市町を選ぶ。 山口県19市町から選び、登録簿上でその市町を運送区域に含む団体と登録車両を確認します。\n確認できたGTFSを見る。 公式資料で市町名との関係を確認できたフィード、公開主体、データ基準日、アクセス条件を確認します。\n同じ実日付で比べる。 岩国市関連・光市関連の2フィードについて、2026-04-06〜2026-04-12の予定運行便を切替なしで比較し、原本・日付・限界まで読みます。\n\nVERIFIED DATA\n\n使用データと、現在確認できる範囲\n山口県公表の自家用有償旅客運送登録簿\n山口県分4PDFを処理。23団体、実車両136台（軽20台は内数）を原本へ追跡できる形で整理しました。\n山口県オープンデータカタログ等の公式GTFS / GTFS-JP\n公式一次資料で3フィードを確認し、公式資料が対象市町名を明記した5市町との関係を整理しました。岩国市・光市の2 ZIPは内部構成と予定運行を実測済みです。\n山口県の公式19市町一覧\n市町選択の順序と対象を一次資料に合わせています。\n\n主要な公開データ: municipal_supply.json / gtfs_feeds.json / municipality_gtfs.json / gtfs_supply_metrics.json\n\nUDC2026 CRITERIA\n\n実用度・完成度・挑戦度の根拠\n実用度\n\n行政・事業者が協議前に行う「公開情報の所在、日付、範囲の確認」を、市町単位の一つの入口で短縮します。分からないことも明示し、追加調査の出発点にできます。\n\n完成度\n\n登録簿4PDFの機械可読化、19市町ビュー、公式GTFS状況、2フィードの実測比較を公開済みです。データ・コード・検証状況を第三者が同じURLから追跡できます。\n\n挑戦度\n\n制度上の登録供給とGTFSの予定運行という単位の異なる資料を、日付の意味と限界を消さずに接続しました。単一の点数や順位へ丸めず、根拠を残しています。\n\nSCOPE AND LIMITS\n\n分かること／分からないこと\nこの作品で確認できること\n公表登録簿上の団体・登録車両と原本\n今回確認した公式資料におけるGTFSの公開状況\n岩国市関連・光市関連フィード全体の構造と、同じ7実日付の予定運行便\n表示値の基準日、内部有効期間、検証日、対象範囲\nこの作品だけでは分からないこと\n実際に運行した便、利用者数、定時性、便利さ\n市内だけに限定したGTFSの供給量\n県内すべての交通事業者・移動サービスの網羅\n公式資料で未確認だった地域にGTFSが存在しないかどうか\n\nこの画面は交通の充足度や市町の優劣を判定するものではありません。予定運行便は実運行や利用者数を表しません。\n\nOPEN AND VERIFIABLE\n\nデモ・コード・検証記録\n公開デモ: 山口県 市町別の登録供給ビュー\n公開デモ: 岩国市・光市のGTFS供給比較\n工程・完了条件・未達条件を確認する\nGitHubリポジトリでコードとデータを見る\n\nこのページとデモは公開されていますが、UDC2026の概要エントリー、本応募、BODIK APPs登録はまだ行っていません。公開と外部提出、受賞は別の状態として管理します。\n\nUDC2026 作品① / 最終表示確認日: 2026-08-11。詳細な根拠と更新履歴は状況ページとGitHubリポジトリで確認できます。"
+      },
+      "errors": {
+        "console": [],
+        "runtime": [],
+        "log": [],
+        "loadingFailed": []
+      },
+      "screenshotPath": "C:/Users/user/dev/udc2026/yamaguchi-yusho-data/evidence/20260811_entry_page1_local_pass_screenshot_1440.png",
+      "assertions": [
+        {
+          "name": "desktop-1440: ready",
+          "pass": true,
+          "actual": true
+        },
+        {
+          "name": "desktop-1440: viewport",
+          "pass": true,
+          "actual": {
+            "innerWidth": 1440,
+            "innerHeight": 1600
+          }
+        },
+        {
+          "name": "desktop-1440: document overflow",
+          "pass": true,
+          "actual": {
+            "maximum": 1425,
+            "rawDifference": -15,
+            "overflow": 0
+          }
+        },
+        {
+          "name": "desktop-1440: HTTP 200",
+          "pass": true,
+          "actual": {
+            "url": "http://127.0.0.1:63247/entry.html?v=1786426863416",
+            "status": 200
+          }
+        },
+        {
+          "name": "desktop-1440: summary exact",
+          "pass": true,
+          "actual": "山口県の公共交通担当者・事業者向けに、分散した登録簿と公式GTFSを市町別に整理し、輸送供給・日付・根拠・データの限界を同じ画面で確認できる静的Webアプリです。"
+        },
+        {
+          "name": "desktop-1440: six required headings",
+          "pass": true,
+          "actual": [
+            "解決したい問題",
+            "誰が、何のために使うか",
+            "3段階の使い方",
+            "使用データと、現在確認できる範囲",
+            "実用度・完成度・挑戦度の根拠",
+            "分かること／分からないこと",
+            "デモ・コード・検証記録"
+          ]
+        },
+        {
+          "name": "desktop-1440: demo link",
+          "pass": true,
+          "actual": [
+            {
+              "text": "本文へ移動",
+              "href": "#main"
+            },
+            {
+              "text": "公開デモを使う",
+              "href": "index.html"
+            },
+            {
+              "text": "岩国市・光市の比較を見る",
+              "href": "index.html#supply-comparison"
+            },
+            {
+              "text": "検証状況を見る",
+              "href": "status.html"
+            },
+            {
+              "text": "municipal_supply.json",
+              "href": "data/municipal_supply.json"
+            },
+            {
+              "text": "gtfs_feeds.json",
+              "href": "data/gtfs_feeds.json"
+            },
+            {
+              "text": "municipality_gtfs.json",
+              "href": "data/municipality_gtfs.json"
+            },
+            {
+              "text": "gtfs_supply_metrics.json",
+              "href": "data/gtfs_supply_metrics.json"
+            },
+            {
+              "text": "公開デモ: 山口県 市町別の登録供給ビュー",
+              "href": "index.html"
+            },
+            {
+              "text": "公開デモ: 岩国市・光市のGTFS供給比較",
+              "href": "index.html#supply-comparison"
+            },
+            {
+              "text": "工程・完了条件・未達条件を確認する",
+              "href": "status.html"
+            },
+            {
+              "text": "GitHubリポジトリでコードとデータを見る",
+              "href": "https://github.com/yyy-yuichi/yamaguchi-yusho-data"
+            }
+          ]
+        },
+        {
+          "name": "desktop-1440: comparison link",
+          "pass": true,
+          "actual": [
+            {
+              "text": "本文へ移動",
+              "href": "#main"
+            },
+            {
+              "text": "公開デモを使う",
+              "href": "index.html"
+            },
+            {
+              "text": "岩国市・光市の比較を見る",
+              "href": "index.html#supply-comparison"
+            },
+            {
+              "text": "検証状況を見る",
+              "href": "status.html"
+            },
+            {
+              "text": "municipal_supply.json",
+              "href": "data/municipal_supply.json"
+            },
+            {
+              "text": "gtfs_feeds.json",
+              "href": "data/gtfs_feeds.json"
+            },
+            {
+              "text": "municipality_gtfs.json",
+              "href": "data/municipality_gtfs.json"
+            },
+            {
+              "text": "gtfs_supply_metrics.json",
+              "href": "data/gtfs_supply_metrics.json"
+            },
+            {
+              "text": "公開デモ: 山口県 市町別の登録供給ビュー",
+              "href": "index.html"
+            },
+            {
+              "text": "公開デモ: 岩国市・光市のGTFS供給比較",
+              "href": "index.html#supply-comparison"
+            },
+            {
+              "text": "工程・完了条件・未達条件を確認する",
+              "href": "status.html"
+            },
+            {
+              "text": "GitHubリポジトリでコードとデータを見る",
+              "href": "https://github.com/yyy-yuichi/yamaguchi-yusho-data"
+            }
+          ]
+        },
+        {
+          "name": "desktop-1440: status link",
+          "pass": true,
+          "actual": [
+            {
+              "text": "本文へ移動",
+              "href": "#main"
+            },
+            {
+              "text": "公開デモを使う",
+              "href": "index.html"
+            },
+            {
+              "text": "岩国市・光市の比較を見る",
+              "href": "index.html#supply-comparison"
+            },
+            {
+              "text": "検証状況を見る",
+              "href": "status.html"
+            },
+            {
+              "text": "municipal_supply.json",
+              "href": "data/municipal_supply.json"
+            },
+            {
+              "text": "gtfs_feeds.json",
+              "href": "data/gtfs_feeds.json"
+            },
+            {
+              "text": "municipality_gtfs.json",
+              "href": "data/municipality_gtfs.json"
+            },
+            {
+              "text": "gtfs_supply_metrics.json",
+              "href": "data/gtfs_supply_metrics.json"
+            },
+            {
+              "text": "公開デモ: 山口県 市町別の登録供給ビュー",
+              "href": "index.html"
+            },
+            {
+              "text": "公開デモ: 岩国市・光市のGTFS供給比較",
+              "href": "index.html#supply-comparison"
+            },
+            {
+              "text": "工程・完了条件・未達条件を確認する",
+              "href": "status.html"
+            },
+            {
+              "text": "GitHubリポジトリでコードとデータを見る",
+              "href": "https://github.com/yyy-yuichi/yamaguchi-yusho-data"
+            }
+          ]
+        },
+        {
+          "name": "desktop-1440: repository link",
+          "pass": true,
+          "actual": [
+            {
+              "text": "本文へ移動",
+              "href": "#main"
+            },
+            {
+              "text": "公開デモを使う",
+              "href": "index.html"
+            },
+            {
+              "text": "岩国市・光市の比較を見る",
+              "href": "index.html#supply-comparison"
+            },
+            {
+              "text": "検証状況を見る",
+              "href": "status.html"
+            },
+            {
+              "text": "municipal_supply.json",
+              "href": "data/municipal_supply.json"
+            },
+            {
+              "text": "gtfs_feeds.json",
+              "href": "data/gtfs_feeds.json"
+            },
+            {
+              "text": "municipality_gtfs.json",
+              "href": "data/municipality_gtfs.json"
+            },
+            {
+              "text": "gtfs_supply_metrics.json",
+              "href": "data/gtfs_supply_metrics.json"
+            },
+            {
+              "text": "公開デモ: 山口県 市町別の登録供給ビュー",
+              "href": "index.html"
+            },
+            {
+              "text": "公開デモ: 岩国市・光市のGTFS供給比較",
+              "href": "index.html#supply-comparison"
+            },
+            {
+              "text": "工程・完了条件・未達条件を確認する",
+              "href": "status.html"
+            },
+            {
+              "text": "GitHubリポジトリでコードとデータを見る",
+              "href": "https://github.com/yyy-yuichi/yamaguchi-yusho-data"
+            }
+          ]
+        },
+        {
+          "name": "desktop-1440: no application completion claim",
+          "pass": true,
+          "actual": null
+        },
+        {
+          "name": "desktop-1440: console error 0",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "desktop-1440: runtime exception 0",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "desktop-1440: log error 0",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "desktop-1440: network loadingFailed 0",
+          "pass": true,
+          "actual": []
+        }
+      ]
+    },
+    {
+      "label": "mobile-390x844",
+      "pass": true,
+      "dom": {
+        "title": "作品概要と評価根拠｜山口県 市町別の登録供給ビュー",
+        "summary": "山口県の公共交通担当者・事業者向けに、分散した登録簿と公式GTFSを市町別に整理し、輸送供給・日付・根拠・データの限界を同じ画面で確認できる静的Webアプリです。",
+        "viewport": {
+          "innerWidth": 390,
+          "innerHeight": 844
+        },
+        "documentWidth": {
+          "maximum": 390,
+          "rawDifference": 0,
+          "overflow": 0
+        },
+        "headings": [
+          "解決したい問題",
+          "誰が、何のために使うか",
+          "3段階の使い方",
+          "使用データと、現在確認できる範囲",
+          "実用度・完成度・挑戦度の根拠",
+          "分かること／分からないこと",
+          "デモ・コード・検証記録"
+        ],
+        "links": [
+          {
+            "text": "本文へ移動",
+            "href": "#main"
+          },
+          {
+            "text": "公開デモを使う",
+            "href": "index.html"
+          },
+          {
+            "text": "岩国市・光市の比較を見る",
+            "href": "index.html#supply-comparison"
+          },
+          {
+            "text": "検証状況を見る",
+            "href": "status.html"
+          },
+          {
+            "text": "municipal_supply.json",
+            "href": "data/municipal_supply.json"
+          },
+          {
+            "text": "gtfs_feeds.json",
+            "href": "data/gtfs_feeds.json"
+          },
+          {
+            "text": "municipality_gtfs.json",
+            "href": "data/municipality_gtfs.json"
+          },
+          {
+            "text": "gtfs_supply_metrics.json",
+            "href": "data/gtfs_supply_metrics.json"
+          },
+          {
+            "text": "公開デモ: 山口県 市町別の登録供給ビュー",
+            "href": "index.html"
+          },
+          {
+            "text": "公開デモ: 岩国市・光市のGTFS供給比較",
+            "href": "index.html#supply-comparison"
+          },
+          {
+            "text": "工程・完了条件・未達条件を確認する",
+            "href": "status.html"
+          },
+          {
+            "text": "GitHubリポジトリでコードとデータを見る",
+            "href": "https://github.com/yyy-yuichi/yamaguchi-yusho-data"
+          }
+        ],
+        "bodyText": "本文へ移動\n\nUDC2026 作品① / 応募説明\n\n山口県\n市町別の登録供給ビュー\n\n公共交通の計画を考える前に、「地域にどんな移動サービスが登録され、どのくらいの予定運行がデータに入っているか」を、根拠と日付を分けて確かめるための静的Webアプリです。\n\n作品タイプ: アプリケーション\n作品テーマ: 道路・交通\n対象地域: 山口県\n公開デモを使う\n岩国市・光市の比較を見る\n検証状況を見る\n作品概要（81字）\n\n山口県の公共交通担当者・事業者向けに、分散した登録簿と公式GTFSを市町別に整理し、輸送供給・日付・根拠・データの限界を同じ画面で確認できる静的Webアプリです。\n\nPROBLEM\n\n解決したい問題\n\n県や市町が地域の移動手段を考えるとき、最初に必要なのは「今、どんなサービスと予定運行が確認できるか」という土台です。しかし、その情報は一か所にはありません。\n\n登録簿で分かること\n\n自治体やNPOなどが行う自家用有償旅客運送について、登録団体、運送区域、登録車両を確認できます。\n\nGTFSで分かること\n\nバスなどの予定時刻や乗降場所を、共通形式のデータとして確認できます。ここで扱うのは実績ではなく予定です。\n\nなぜ、そのままでは比べにくいのか\n\n登録簿とGTFSは公開場所も数え方も違い、ページに書かれた日付、ファイル内部の日付、検証した日も別です。資料を行き来すると、どの日付と範囲の数字かを取り違えやすくなります。\n\nUSERS AND VALUE\n\n誰が、何のために使うか\n県・市町の公共交通担当者\n\n計画や事業者との協議の前に、公開資料で確認できる供給側の情報と、その根拠・不足を整理するために使います。\n\n交通事業者・地域の関係者\n\n自治体単位の登録情報と、確認できたGTFSの予定運行を同じ入口から追い、次に確認すべき資料や論点を共有するために使います。\n\nHOW TO USE\n\n3段階の使い方\n市町を選ぶ。 山口県19市町から選び、登録簿上でその市町を運送区域に含む団体と登録車両を確認します。\n確認できたGTFSを見る。 公式資料で市町名との関係を確認できたフィード、公開主体、データ基準日、アクセス条件を確認します。\n同じ実日付で比べる。 岩国市関連・光市関連の2フィードについて、2026-04-06〜2026-04-12の予定運行便を切替なしで比較し、原本・日付・限界まで読みます。\n\nVERIFIED DATA\n\n使用データと、現在確認できる範囲\n山口県公表の自家用有償旅客運送登録簿\n山口県分4PDFを処理。23団体、実車両136台（軽20台は内数）を原本へ追跡できる形で整理しました。\n山口県オープンデータカタログ等の公式GTFS / GTFS-JP\n公式一次資料で3フィードを確認し、公式資料が対象市町名を明記した5市町との関係を整理しました。岩国市・光市の2 ZIPは内部構成と予定運行を実測済みです。\n山口県の公式19市町一覧\n市町選択の順序と対象を一次資料に合わせています。\n\n主要な公開データ: municipal_supply.json / gtfs_feeds.json / municipality_gtfs.json / gtfs_supply_metrics.json\n\nUDC2026 CRITERIA\n\n実用度・完成度・挑戦度の根拠\n実用度\n\n行政・事業者が協議前に行う「公開情報の所在、日付、範囲の確認」を、市町単位の一つの入口で短縮します。分からないことも明示し、追加調査の出発点にできます。\n\n完成度\n\n登録簿4PDFの機械可読化、19市町ビュー、公式GTFS状況、2フィードの実測比較を公開済みです。データ・コード・検証状況を第三者が同じURLから追跡できます。\n\n挑戦度\n\n制度上の登録供給とGTFSの予定運行という単位の異なる資料を、日付の意味と限界を消さずに接続しました。単一の点数や順位へ丸めず、根拠を残しています。\n\nSCOPE AND LIMITS\n\n分かること／分からないこと\nこの作品で確認できること\n公表登録簿上の団体・登録車両と原本\n今回確認した公式資料におけるGTFSの公開状況\n岩国市関連・光市関連フィード全体の構造と、同じ7実日付の予定運行便\n表示値の基準日、内部有効期間、検証日、対象範囲\nこの作品だけでは分からないこと\n実際に運行した便、利用者数、定時性、便利さ\n市内だけに限定したGTFSの供給量\n県内すべての交通事業者・移動サービスの網羅\n公式資料で未確認だった地域にGTFSが存在しないかどうか\n\nこの画面は交通の充足度や市町の優劣を判定するものではありません。予定運行便は実運行や利用者数を表しません。\n\nOPEN AND VERIFIABLE\n\nデモ・コード・検証記録\n公開デモ: 山口県 市町別の登録供給ビュー\n公開デモ: 岩国市・光市のGTFS供給比較\n工程・完了条件・未達条件を確認する\nGitHubリポジトリでコードとデータを見る\n\nこのページとデモは公開されていますが、UDC2026の概要エントリー、本応募、BODIK APPs登録はまだ行っていません。公開と外部提出、受賞は別の状態として管理します。\n\nUDC2026 作品① / 最終表示確認日: 2026-08-11。詳細な根拠と更新履歴は状況ページとGitHubリポジトリで確認できます。"
+      },
+      "errors": {
+        "console": [],
+        "runtime": [],
+        "log": [],
+        "loadingFailed": []
+      },
+      "screenshotPath": "C:/Users/user/dev/udc2026/yamaguchi-yusho-data/evidence/20260811_entry_page1_local_pass_screenshot_390x844.png",
+      "assertions": [
+        {
+          "name": "mobile-390x844: ready",
+          "pass": true,
+          "actual": true
+        },
+        {
+          "name": "mobile-390x844: viewport",
+          "pass": true,
+          "actual": {
+            "innerWidth": 390,
+            "innerHeight": 844
+          }
+        },
+        {
+          "name": "mobile-390x844: document overflow",
+          "pass": true,
+          "actual": {
+            "maximum": 390,
+            "rawDifference": 0,
+            "overflow": 0
+          }
+        },
+        {
+          "name": "mobile-390x844: HTTP 200",
+          "pass": true,
+          "actual": {
+            "url": "http://127.0.0.1:63247/entry.html?v=1786426864192",
+            "status": 200
+          }
+        },
+        {
+          "name": "mobile-390x844: summary exact",
+          "pass": true,
+          "actual": "山口県の公共交通担当者・事業者向けに、分散した登録簿と公式GTFSを市町別に整理し、輸送供給・日付・根拠・データの限界を同じ画面で確認できる静的Webアプリです。"
+        },
+        {
+          "name": "mobile-390x844: six required headings",
+          "pass": true,
+          "actual": [
+            "解決したい問題",
+            "誰が、何のために使うか",
+            "3段階の使い方",
+            "使用データと、現在確認できる範囲",
+            "実用度・完成度・挑戦度の根拠",
+            "分かること／分からないこと",
+            "デモ・コード・検証記録"
+          ]
+        },
+        {
+          "name": "mobile-390x844: demo link",
+          "pass": true,
+          "actual": [
+            {
+              "text": "本文へ移動",
+              "href": "#main"
+            },
+            {
+              "text": "公開デモを使う",
+              "href": "index.html"
+            },
+            {
+              "text": "岩国市・光市の比較を見る",
+              "href": "index.html#supply-comparison"
+            },
+            {
+              "text": "検証状況を見る",
+              "href": "status.html"
+            },
+            {
+              "text": "municipal_supply.json",
+              "href": "data/municipal_supply.json"
+            },
+            {
+              "text": "gtfs_feeds.json",
+              "href": "data/gtfs_feeds.json"
+            },
+            {
+              "text": "municipality_gtfs.json",
+              "href": "data/municipality_gtfs.json"
+            },
+            {
+              "text": "gtfs_supply_metrics.json",
+              "href": "data/gtfs_supply_metrics.json"
+            },
+            {
+              "text": "公開デモ: 山口県 市町別の登録供給ビュー",
+              "href": "index.html"
+            },
+            {
+              "text": "公開デモ: 岩国市・光市のGTFS供給比較",
+              "href": "index.html#supply-comparison"
+            },
+            {
+              "text": "工程・完了条件・未達条件を確認する",
+              "href": "status.html"
+            },
+            {
+              "text": "GitHubリポジトリでコードとデータを見る",
+              "href": "https://github.com/yyy-yuichi/yamaguchi-yusho-data"
+            }
+          ]
+        },
+        {
+          "name": "mobile-390x844: comparison link",
+          "pass": true,
+          "actual": [
+            {
+              "text": "本文へ移動",
+              "href": "#main"
+            },
+            {
+              "text": "公開デモを使う",
+              "href": "index.html"
+            },
+            {
+              "text": "岩国市・光市の比較を見る",
+              "href": "index.html#supply-comparison"
+            },
+            {
+              "text": "検証状況を見る",
+              "href": "status.html"
+            },
+            {
+              "text": "municipal_supply.json",
+              "href": "data/municipal_supply.json"
+            },
+            {
+              "text": "gtfs_feeds.json",
+              "href": "data/gtfs_feeds.json"
+            },
+            {
+              "text": "municipality_gtfs.json",
+              "href": "data/municipality_gtfs.json"
+            },
+            {
+              "text": "gtfs_supply_metrics.json",
+              "href": "data/gtfs_supply_metrics.json"
+            },
+            {
+              "text": "公開デモ: 山口県 市町別の登録供給ビュー",
+              "href": "index.html"
+            },
+            {
+              "text": "公開デモ: 岩国市・光市のGTFS供給比較",
+              "href": "index.html#supply-comparison"
+            },
+            {
+              "text": "工程・完了条件・未達条件を確認する",
+              "href": "status.html"
+            },
+            {
+              "text": "GitHubリポジトリでコードとデータを見る",
+              "href": "https://github.com/yyy-yuichi/yamaguchi-yusho-data"
+            }
+          ]
+        },
+        {
+          "name": "mobile-390x844: status link",
+          "pass": true,
+          "actual": [
+            {
+              "text": "本文へ移動",
+              "href": "#main"
+            },
+            {
+              "text": "公開デモを使う",
+              "href": "index.html"
+            },
+            {
+              "text": "岩国市・光市の比較を見る",
+              "href": "index.html#supply-comparison"
+            },
+            {
+              "text": "検証状況を見る",
+              "href": "status.html"
+            },
+            {
+              "text": "municipal_supply.json",
+              "href": "data/municipal_supply.json"
+            },
+            {
+              "text": "gtfs_feeds.json",
+              "href": "data/gtfs_feeds.json"
+            },
+            {
+              "text": "municipality_gtfs.json",
+              "href": "data/municipality_gtfs.json"
+            },
+            {
+              "text": "gtfs_supply_metrics.json",
+              "href": "data/gtfs_supply_metrics.json"
+            },
+            {
+              "text": "公開デモ: 山口県 市町別の登録供給ビュー",
+              "href": "index.html"
+            },
+            {
+              "text": "公開デモ: 岩国市・光市のGTFS供給比較",
+              "href": "index.html#supply-comparison"
+            },
+            {
+              "text": "工程・完了条件・未達条件を確認する",
+              "href": "status.html"
+            },
+            {
+              "text": "GitHubリポジトリでコードとデータを見る",
+              "href": "https://github.com/yyy-yuichi/yamaguchi-yusho-data"
+            }
+          ]
+        },
+        {
+          "name": "mobile-390x844: repository link",
+          "pass": true,
+          "actual": [
+            {
+              "text": "本文へ移動",
+              "href": "#main"
+            },
+            {
+              "text": "公開デモを使う",
+              "href": "index.html"
+            },
+            {
+              "text": "岩国市・光市の比較を見る",
+              "href": "index.html#supply-comparison"
+            },
+            {
+              "text": "検証状況を見る",
+              "href": "status.html"
+            },
+            {
+              "text": "municipal_supply.json",
+              "href": "data/municipal_supply.json"
+            },
+            {
+              "text": "gtfs_feeds.json",
+              "href": "data/gtfs_feeds.json"
+            },
+            {
+              "text": "municipality_gtfs.json",
+              "href": "data/municipality_gtfs.json"
+            },
+            {
+              "text": "gtfs_supply_metrics.json",
+              "href": "data/gtfs_supply_metrics.json"
+            },
+            {
+              "text": "公開デモ: 山口県 市町別の登録供給ビュー",
+              "href": "index.html"
+            },
+            {
+              "text": "公開デモ: 岩国市・光市のGTFS供給比較",
+              "href": "index.html#supply-comparison"
+            },
+            {
+              "text": "工程・完了条件・未達条件を確認する",
+              "href": "status.html"
+            },
+            {
+              "text": "GitHubリポジトリでコードとデータを見る",
+              "href": "https://github.com/yyy-yuichi/yamaguchi-yusho-data"
+            }
+          ]
+        },
+        {
+          "name": "mobile-390x844: no application completion claim",
+          "pass": true,
+          "actual": null
+        },
+        {
+          "name": "mobile-390x844: console error 0",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "mobile-390x844: runtime exception 0",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "mobile-390x844: log error 0",
+          "pass": true,
+          "actual": []
+        },
+        {
+          "name": "mobile-390x844: network loadingFailed 0",
+          "pass": true,
+          "actual": []
+        }
+      ]
+    }
+  ],
+  "assertions": [
+    {
+      "name": "desktop-1440: ready",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "desktop-1440: viewport",
+      "pass": true,
+      "actual": {
+        "innerWidth": 1440,
+        "innerHeight": 1600
+      }
+    },
+    {
+      "name": "desktop-1440: document overflow",
+      "pass": true,
+      "actual": {
+        "maximum": 1425,
+        "rawDifference": -15,
+        "overflow": 0
+      }
+    },
+    {
+      "name": "desktop-1440: HTTP 200",
+      "pass": true,
+      "actual": {
+        "url": "http://127.0.0.1:63247/entry.html?v=1786426863416",
+        "status": 200
+      }
+    },
+    {
+      "name": "desktop-1440: summary exact",
+      "pass": true,
+      "actual": "山口県の公共交通担当者・事業者向けに、分散した登録簿と公式GTFSを市町別に整理し、輸送供給・日付・根拠・データの限界を同じ画面で確認できる静的Webアプリです。"
+    },
+    {
+      "name": "desktop-1440: six required headings",
+      "pass": true,
+      "actual": [
+        "解決したい問題",
+        "誰が、何のために使うか",
+        "3段階の使い方",
+        "使用データと、現在確認できる範囲",
+        "実用度・完成度・挑戦度の根拠",
+        "分かること／分からないこと",
+        "デモ・コード・検証記録"
+      ]
+    },
+    {
+      "name": "desktop-1440: demo link",
+      "pass": true,
+      "actual": [
+        {
+          "text": "本文へ移動",
+          "href": "#main"
+        },
+        {
+          "text": "公開デモを使う",
+          "href": "index.html"
+        },
+        {
+          "text": "岩国市・光市の比較を見る",
+          "href": "index.html#supply-comparison"
+        },
+        {
+          "text": "検証状況を見る",
+          "href": "status.html"
+        },
+        {
+          "text": "municipal_supply.json",
+          "href": "data/municipal_supply.json"
+        },
+        {
+          "text": "gtfs_feeds.json",
+          "href": "data/gtfs_feeds.json"
+        },
+        {
+          "text": "municipality_gtfs.json",
+          "href": "data/municipality_gtfs.json"
+        },
+        {
+          "text": "gtfs_supply_metrics.json",
+          "href": "data/gtfs_supply_metrics.json"
+        },
+        {
+          "text": "公開デモ: 山口県 市町別の登録供給ビュー",
+          "href": "index.html"
+        },
+        {
+          "text": "公開デモ: 岩国市・光市のGTFS供給比較",
+          "href": "index.html#supply-comparison"
+        },
+        {
+          "text": "工程・完了条件・未達条件を確認する",
+          "href": "status.html"
+        },
+        {
+          "text": "GitHubリポジトリでコードとデータを見る",
+          "href": "https://github.com/yyy-yuichi/yamaguchi-yusho-data"
+        }
+      ]
+    },
+    {
+      "name": "desktop-1440: comparison link",
+      "pass": true,
+      "actual": [
+        {
+          "text": "本文へ移動",
+          "href": "#main"
+        },
+        {
+          "text": "公開デモを使う",
+          "href": "index.html"
+        },
+        {
+          "text": "岩国市・光市の比較を見る",
+          "href": "index.html#supply-comparison"
+        },
+        {
+          "text": "検証状況を見る",
+          "href": "status.html"
+        },
+        {
+          "text": "municipal_supply.json",
+          "href": "data/municipal_supply.json"
+        },
+        {
+          "text": "gtfs_feeds.json",
+          "href": "data/gtfs_feeds.json"
+        },
+        {
+          "text": "municipality_gtfs.json",
+          "href": "data/municipality_gtfs.json"
+        },
+        {
+          "text": "gtfs_supply_metrics.json",
+          "href": "data/gtfs_supply_metrics.json"
+        },
+        {
+          "text": "公開デモ: 山口県 市町別の登録供給ビュー",
+          "href": "index.html"
+        },
+        {
+          "text": "公開デモ: 岩国市・光市のGTFS供給比較",
+          "href": "index.html#supply-comparison"
+        },
+        {
+          "text": "工程・完了条件・未達条件を確認する",
+          "href": "status.html"
+        },
+        {
+          "text": "GitHubリポジトリでコードとデータを見る",
+          "href": "https://github.com/yyy-yuichi/yamaguchi-yusho-data"
+        }
+      ]
+    },
+    {
+      "name": "desktop-1440: status link",
+      "pass": true,
+      "actual": [
+        {
+          "text": "本文へ移動",
+          "href": "#main"
+        },
+        {
+          "text": "公開デモを使う",
+          "href": "index.html"
+        },
+        {
+          "text": "岩国市・光市の比較を見る",
+          "href": "index.html#supply-comparison"
+        },
+        {
+          "text": "検証状況を見る",
+          "href": "status.html"
+        },
+        {
+          "text": "municipal_supply.json",
+          "href": "data/municipal_supply.json"
+        },
+        {
+          "text": "gtfs_feeds.json",
+          "href": "data/gtfs_feeds.json"
+        },
+        {
+          "text": "municipality_gtfs.json",
+          "href": "data/municipality_gtfs.json"
+        },
+        {
+          "text": "gtfs_supply_metrics.json",
+          "href": "data/gtfs_supply_metrics.json"
+        },
+        {
+          "text": "公開デモ: 山口県 市町別の登録供給ビュー",
+          "href": "index.html"
+        },
+        {
+          "text": "公開デモ: 岩国市・光市のGTFS供給比較",
+          "href": "index.html#supply-comparison"
+        },
+        {
+          "text": "工程・完了条件・未達条件を確認する",
+          "href": "status.html"
+        },
+        {
+          "text": "GitHubリポジトリでコードとデータを見る",
+          "href": "https://github.com/yyy-yuichi/yamaguchi-yusho-data"
+        }
+      ]
+    },
+    {
+      "name": "desktop-1440: repository link",
+      "pass": true,
+      "actual": [
+        {
+          "text": "本文へ移動",
+          "href": "#main"
+        },
+        {
+          "text": "公開デモを使う",
+          "href": "index.html"
+        },
+        {
+          "text": "岩国市・光市の比較を見る",
+          "href": "index.html#supply-comparison"
+        },
+        {
+          "text": "検証状況を見る",
+          "href": "status.html"
+        },
+        {
+          "text": "municipal_supply.json",
+          "href": "data/municipal_supply.json"
+        },
+        {
+          "text": "gtfs_feeds.json",
+          "href": "data/gtfs_feeds.json"
+        },
+        {
+          "text": "municipality_gtfs.json",
+          "href": "data/municipality_gtfs.json"
+        },
+        {
+          "text": "gtfs_supply_metrics.json",
+          "href": "data/gtfs_supply_metrics.json"
+        },
+        {
+          "text": "公開デモ: 山口県 市町別の登録供給ビュー",
+          "href": "index.html"
+        },
+        {
+          "text": "公開デモ: 岩国市・光市のGTFS供給比較",
+          "href": "index.html#supply-comparison"
+        },
+        {
+          "text": "工程・完了条件・未達条件を確認する",
+          "href": "status.html"
+        },
+        {
+          "text": "GitHubリポジトリでコードとデータを見る",
+          "href": "https://github.com/yyy-yuichi/yamaguchi-yusho-data"
+        }
+      ]
+    },
+    {
+      "name": "desktop-1440: no application completion claim",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "desktop-1440: console error 0",
+      "pass": true,
+      "actual": []
+    },
+    {
+      "name": "desktop-1440: runtime exception 0",
+      "pass": true,
+      "actual": []
+    },
+    {
+      "name": "desktop-1440: log error 0",
+      "pass": true,
+      "actual": []
+    },
+    {
+      "name": "desktop-1440: network loadingFailed 0",
+      "pass": true,
+      "actual": []
+    },
+    {
+      "name": "mobile-390x844: ready",
+      "pass": true,
+      "actual": true
+    },
+    {
+      "name": "mobile-390x844: viewport",
+      "pass": true,
+      "actual": {
+        "innerWidth": 390,
+        "innerHeight": 844
+      }
+    },
+    {
+      "name": "mobile-390x844: document overflow",
+      "pass": true,
+      "actual": {
+        "maximum": 390,
+        "rawDifference": 0,
+        "overflow": 0
+      }
+    },
+    {
+      "name": "mobile-390x844: HTTP 200",
+      "pass": true,
+      "actual": {
+        "url": "http://127.0.0.1:63247/entry.html?v=1786426864192",
+        "status": 200
+      }
+    },
+    {
+      "name": "mobile-390x844: summary exact",
+      "pass": true,
+      "actual": "山口県の公共交通担当者・事業者向けに、分散した登録簿と公式GTFSを市町別に整理し、輸送供給・日付・根拠・データの限界を同じ画面で確認できる静的Webアプリです。"
+    },
+    {
+      "name": "mobile-390x844: six required headings",
+      "pass": true,
+      "actual": [
+        "解決したい問題",
+        "誰が、何のために使うか",
+        "3段階の使い方",
+        "使用データと、現在確認できる範囲",
+        "実用度・完成度・挑戦度の根拠",
+        "分かること／分からないこと",
+        "デモ・コード・検証記録"
+      ]
+    },
+    {
+      "name": "mobile-390x844: demo link",
+      "pass": true,
+      "actual": [
+        {
+          "text": "本文へ移動",
+          "href": "#main"
+        },
+        {
+          "text": "公開デモを使う",
+          "href": "index.html"
+        },
+        {
+          "text": "岩国市・光市の比較を見る",
+          "href": "index.html#supply-comparison"
+        },
+        {
+          "text": "検証状況を見る",
+          "href": "status.html"
+        },
+        {
+          "text": "municipal_supply.json",
+          "href": "data/municipal_supply.json"
+        },
+        {
+          "text": "gtfs_feeds.json",
+          "href": "data/gtfs_feeds.json"
+        },
+        {
+          "text": "municipality_gtfs.json",
+          "href": "data/municipality_gtfs.json"
+        },
+        {
+          "text": "gtfs_supply_metrics.json",
+          "href": "data/gtfs_supply_metrics.json"
+        },
+        {
+          "text": "公開デモ: 山口県 市町別の登録供給ビュー",
+          "href": "index.html"
+        },
+        {
+          "text": "公開デモ: 岩国市・光市のGTFS供給比較",
+          "href": "index.html#supply-comparison"
+        },
+        {
+          "text": "工程・完了条件・未達条件を確認する",
+          "href": "status.html"
+        },
+        {
+          "text": "GitHubリポジトリでコードとデータを見る",
+          "href": "https://github.com/yyy-yuichi/yamaguchi-yusho-data"
+        }
+      ]
+    },
+    {
+      "name": "mobile-390x844: comparison link",
+      "pass": true,
+      "actual": [
+        {
+          "text": "本文へ移動",
+          "href": "#main"
+        },
+        {
+          "text": "公開デモを使う",
+          "href": "index.html"
+        },
+        {
+          "text": "岩国市・光市の比較を見る",
+          "href": "index.html#supply-comparison"
+        },
+        {
+          "text": "検証状況を見る",
+          "href": "status.html"
+        },
+        {
+          "text": "municipal_supply.json",
+          "href": "data/municipal_supply.json"
+        },
+        {
+          "text": "gtfs_feeds.json",
+          "href": "data/gtfs_feeds.json"
+        },
+        {
+          "text": "municipality_gtfs.json",
+          "href": "data/municipality_gtfs.json"
+        },
+        {
+          "text": "gtfs_supply_metrics.json",
+          "href": "data/gtfs_supply_metrics.json"
+        },
+        {
+          "text": "公開デモ: 山口県 市町別の登録供給ビュー",
+          "href": "index.html"
+        },
+        {
+          "text": "公開デモ: 岩国市・光市のGTFS供給比較",
+          "href": "index.html#supply-comparison"
+        },
+        {
+          "text": "工程・完了条件・未達条件を確認する",
+          "href": "status.html"
+        },
+        {
+          "text": "GitHubリポジトリでコードとデータを見る",
+          "href": "https://github.com/yyy-yuichi/yamaguchi-yusho-data"
+        }
+      ]
+    },
+    {
+      "name": "mobile-390x844: status link",
+      "pass": true,
+      "actual": [
+        {
+          "text": "本文へ移動",
+          "href": "#main"
+        },
+        {
+          "text": "公開デモを使う",
+          "href": "index.html"
+        },
+        {
+          "text": "岩国市・光市の比較を見る",
+          "href": "index.html#supply-comparison"
+        },
+        {
+          "text": "検証状況を見る",
+          "href": "status.html"
+        },
+        {
+          "text": "municipal_supply.json",
+          "href": "data/municipal_supply.json"
+        },
+        {
+          "text": "gtfs_feeds.json",
+          "href": "data/gtfs_feeds.json"
+        },
+        {
+          "text": "municipality_gtfs.json",
+          "href": "data/municipality_gtfs.json"
+        },
+        {
+          "text": "gtfs_supply_metrics.json",
+          "href": "data/gtfs_supply_metrics.json"
+        },
+        {
+          "text": "公開デモ: 山口県 市町別の登録供給ビュー",
+          "href": "index.html"
+        },
+        {
+          "text": "公開デモ: 岩国市・光市のGTFS供給比較",
+          "href": "index.html#supply-comparison"
+        },
+        {
+          "text": "工程・完了条件・未達条件を確認する",
+          "href": "status.html"
+        },
+        {
+          "text": "GitHubリポジトリでコードとデータを見る",
+          "href": "https://github.com/yyy-yuichi/yamaguchi-yusho-data"
+        }
+      ]
+    },
+    {
+      "name": "mobile-390x844: repository link",
+      "pass": true,
+      "actual": [
+        {
+          "text": "本文へ移動",
+          "href": "#main"
+        },
+        {
+          "text": "公開デモを使う",
+          "href": "index.html"
+        },
+        {
+          "text": "岩国市・光市の比較を見る",
+          "href": "index.html#supply-comparison"
+        },
+        {
+          "text": "検証状況を見る",
+          "href": "status.html"
+        },
+        {
+          "text": "municipal_supply.json",
+          "href": "data/municipal_supply.json"
+        },
+        {
+          "text": "gtfs_feeds.json",
+          "href": "data/gtfs_feeds.json"
+        },
+        {
+          "text": "municipality_gtfs.json",
+          "href": "data/municipality_gtfs.json"
+        },
+        {
+          "text": "gtfs_supply_metrics.json",
+          "href": "data/gtfs_supply_metrics.json"
+        },
+        {
+          "text": "公開デモ: 山口県 市町別の登録供給ビュー",
+          "href": "index.html"
+        },
+        {
+          "text": "公開デモ: 岩国市・光市のGTFS供給比較",
+          "href": "index.html#supply-comparison"
+        },
+        {
+          "text": "工程・完了条件・未達条件を確認する",
+          "href": "status.html"
+        },
+        {
+          "text": "GitHubリポジトリでコードとデータを見る",
+          "href": "https://github.com/yyy-yuichi/yamaguchi-yusho-data"
+        }
+      ]
+    },
+    {
+      "name": "mobile-390x844: no application completion claim",
+      "pass": true,
+      "actual": null
+    },
+    {
+      "name": "mobile-390x844: console error 0",
+      "pass": true,
+      "actual": []
+    },
+    {
+      "name": "mobile-390x844: runtime exception 0",
+      "pass": true,
+      "actual": []
+    },
+    {
+      "name": "mobile-390x844: log error 0",
+      "pass": true,
+      "actual": []
+    },
+    {
+      "name": "mobile-390x844: network loadingFailed 0",
+      "pass": true,
+      "actual": []
+    }
+  ],
+  "failedAssertions": [],
+  "overallPass": true
+}

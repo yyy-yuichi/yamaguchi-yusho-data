@@ -1338,6 +1338,49 @@ JWT形式（`eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+`）と、
 Codexが実ZIP・ハッシュ・検査コード・テスト・実測証拠を読み戻して受け入れるまでGTFS-2は
 未完了として扱う。commit・push・GitHub Pages公開・外部提出は行っていない。
 
+## 2026-08-11 ENTRY-PAGE-1 ローカル検証結果
+
+### 対象と責任分界
+
+- 仕様: `SPEC.md` rev.5.6 §18
+- 実装: `docs/entry.html`、既存2 HTMLとREADMEの導線、`tests/test_site.py`
+- 対象外: UDC概要フォーム送信、本応募、BODIK APPs登録、地図、経路検索、船木鉄道取得、作品②
+- Claude Sonnet 5の直接実装は`ConnectionRefused`で変更0件。Codexが継続実装したため、
+  実装者自己申告ではなく実ファイル・テスト・Edge/CDP・PNGの一致を受入根拠にする。
+
+### 検証結果
+
+| # | 条件 | 結果 |
+|---|---|---|
+| 1 | 作品名、アプリケーション、道路・交通、固定81字概要 | 満たす。81字、100字以内 |
+| 2 | 対象者、問題、3段階の使い方、使用データ、審査3観点、限界 | 満たす |
+| 3 | デモ、比較、状況、GitHub、主要4 JSONへの実在リンク | 満たす |
+| 4 | JavaScript不要、390pxレスポンシブ、inline favicon | 満たす |
+| 5 | 応募・外部提出・受賞・GTFS不存在・交通充足の断定なし | 満たす |
+| 6 | 既存トップ・状況ページ・READMEからentry.htmlへの導線 | 満たす |
+| 7 | `python -B -m unittest tests.test_site -v` | 54件成功、失敗0 |
+| 8 | `python -B -m unittest discover -s tests -v` | 86件成功、失敗0 |
+| 9 | `tools/spec_coverage.py` rev.5.5→rev.5.6 | 693トークン、欠落0、合格 |
+| 10 | ローカルEdge/CDP 1440×1600・390×844 | 補正後30/30成功、両幅overflow 0、エラー4系統0 |
+| 11 | Codexによる2 PNGの目視 | 可読性・折返し・主要導線を確認 |
+| 12 | 外部提出 | 実施していない |
+
+### ブラウザ証拠
+
+- 初回29/30: `evidence/20260811_entry_page1_local_browser_raw.json`、
+  `evidence/20260811_entry_page1_local_browser_summary.txt`
+- 検査補正後30/30: `evidence/20260811_entry_page1_local_pass_browser_raw.json`、
+  `evidence/20260811_entry_page1_local_pass_browser_summary.txt`
+- PNG: `evidence/20260811_entry_page1_local_pass_screenshot_1440.png`、
+  `evidence/20260811_entry_page1_local_pass_screenshot_390x844.png`
+- 実測ドライバー: `evidence/20260811_entry_page1_cdp_driver.mjs`
+
+### 停止位置
+
+ローカル受入だけではENTRY-PAGE-1を完了扱いしない。公開前最終検査、commit・push、Pages成功、
+公開`entry.html`のHTTP・バイト一致・PC／スマホ再測定を読み戻した後にCodexが最終受入する。
+UDC概要フォーム、本応募、BODIK APPs登録はG6の別ゲートであり、自動では進めない。
+
 ## 2026-08-11 RELEASE-1 公開検証結果
 
 ### 公開境界
@@ -1858,3 +1901,10 @@ subTestが29件→39件に増えたが、外側のテストメソッド数とし
 `src/calculate_gtfs_supply_metrics.py`の実装・`tests/test_gtfs_supply_metrics.py`・
 `evidence/20260810_supply_metric2_corr1_*`を読み戻して受け入れるまでSUPPLY-METRIC-2は
 未完了として扱う。commit・push・GitHub Pages公開・外部提出は行っていない。
+
+## 2026-08-11 ENTRY-PAGE-1 現在地（末尾正本）
+
+詳細な12条件と証拠は上掲「ENTRY-PAGE-1 ローカル検証結果」を参照。集中54/54、全86/86、
+SPEC旧版693トークン欠落0、ローカル実Edge/CDP補正後30/30、両幅overflow 0・エラー4系統0、
+2 PNG目視までCodexが確認した。公開前最終検査と公開URL再検証が終わるまで最終受入とはしない。
+UDC概要フォーム、本応募、BODIK APPs登録は行っていない。
