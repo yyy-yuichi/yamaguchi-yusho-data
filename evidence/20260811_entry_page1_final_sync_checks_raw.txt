@@ -1,0 +1,55 @@
+ENTRY-PAGE-1 final synchronization checks
+date: 2026-08-11 JST
+
+command: python -B -m unittest tests.test_site -v
+exit: 0
+summary: Ran 54 tests in 0.027s | OK
+
+command: python -B -m unittest discover -s tests -v
+exit: 0
+summary: Ran 86 tests in 6.470s | OK
+
+command: python tools/spec_coverage.py C:/Users/user/Documents/ChatGPT/UDC2026/.tmp_SPEC_rev5.5.md SPEC.md
+exit: 0
+tokens: 693
+missing_with_revision_note: 0
+missing_without_explanation: 0
+result: PASS
+
+command: git diff --check
+exit: 0
+output: empty
+
+staged paths before final staging: 0
+changed paths before this evidence file: 11
+unexpected paths: 0
+missing expected paths: 0
+secret pattern hits: 0
+
+accepted-state checks:
+- docs/status.html: ENTRY-PAGE-1 public verification accepted; 7 / 8; GitHub Pages public; no current Codex acceptance pending marker
+- run_record.md: rev.39; implementation commit e63a7b8745aa494df9263d1e2f07ca289d28fbb8 recorded
+- PROGRESS.md: ENTRY-PAGE-1 public acceptance is the authoritative tail
+- verification.md: ENTRY-PAGE-1 public verification and Codex acceptance is the authoritative tail
+- README.md: public and Codex-accepted state recorded
+
+public HTTP readback:
+- entry.html: status=200; bytes=14892; byte_identical=true
+- entry.html sha256: 3b3d9f6591cbc1fbf1c888a49e029e4ad830885671136984b43abe3a352c8d72
+- index.html: status=200; byte_identical=true
+- status.html: status=200; byte_identical=true at implementation-publication readback
+- data/gtfs_supply_metrics.json: status=200; byte_identical=true
+
+public Edge/CDP:
+- overall: PASS
+- assertions: 30/30 passed
+- desktop 1440x1600: overflow=0; console=0; runtime=0; log=0; loadingFailed=0
+- mobile 390x844: overflow=0; console=0; runtime=0; log=0; loadingFailed=0
+
+protected input hashes:
+- data/gtfs_supply_metrics.json: 26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b PASS
+- docs/data/gtfs_supply_metrics.json: 26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b PASS
+- raw/gtfs/iwakuni_gtfsjp_20260401.zip: d236a58ff4a0edb4812a8bed543d4897670441164a1019e88d5e35ded5052de2 PASS
+- raw/gtfs/hikari_gtfs_20260401.zip: f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7 PASS
+
+overall: PASS

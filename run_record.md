@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-11 (rev.38) / 状態: ENTRY-PAGE-1実行中・公開前
+最終更新: 2026-08-11 (rev.39) / 状態: ENTRY-PAGE-1 Codex受入済み・応募説明ページ公開中
 
 ## 0. このファイルについて
 
@@ -527,7 +527,7 @@ I-3の停止位置を明記した。版付きリンクを実際にクリック�
 
 ### 現在の実行フロンティア（2026-08-11）
 
-**今回の一作業は`ENTRY-PAGE-1`だけである。**
+**今回の一作業は`ENTRY-PAGE-1`だけであり、2026-08-11にCodex受入済みとなった。**
 
 行う理由は、RELEASE-1でデモの数値と根拠へ到達できるようになっても、初見の審査員や交通担当者に、
 「誰のどんな困りごとを、どう解決し、どこまで検証済みか」が一ページで伝わらないためである。
@@ -535,20 +535,28 @@ I-3の停止位置を明記した。版付きリンクを実際にクリック�
 完了させる。地図等の次機能を増やす作業ではない。
 
 1. 作品名、81字概要、アプリケーション／道路・交通、対象者、課題、3段階の使い方、使用データ、
-   実用度・完成度・挑戦度、限界、公開成果へのリンクを`docs/entry.html`へ掲載する。
-2. 公開トップ・状況ページ・READMEから応募説明ページへ導線を設ける。
-3. 契約テスト、旧版網羅、差分・秘密情報・入力不変、PC・スマホ実ブラウザを検証する。
-4. 本人の承認に基づきcommit、`main`へのpush、Pages配備、公開`entry.html`の読み戻しまで行う。
-5. UDC概要フォーム、本応募、BODIK APPs登録はG6の外部提出であり、今回は行わない。
+   実用度・完成度・挑戦度、限界、公開成果へのリンクを`docs/entry.html`へ掲載した。
+2. 公開トップ・状況ページ・READMEから応募説明ページへ導線を設けた。
+3. 集中54件・全86件、旧SPEC 693トークン欠落0、差分・秘密情報・入力不変を確認した。
+4. implementation commit `e63a7b8745aa494df9263d1e2f07ca289d28fbb8`を`main`へpushし、
+   Pages run `31462820456`のbuild・deploy成功を読み戻した。
+5. 公開`entry.html`はHTTP 200・ローカルとバイト一致・SHA256
+   `3b3d9f6591cbc1fbf1c888a49e029e4ad830885671136984b43abe3a352c8d72`である。
+6. 公開URLの1440×1600・390×844実Edgeは30/30。両幅overflow 0、console error、
+   Runtime例外、Log error、Network.loadingFailedは全て0で、Codexが2 PNGも目視した。
+7. UDC概要フォーム、本応募、BODIK APPs登録はG6の外部提出であり、今回は行っていない。
+8. ロードマップ07は作品①について完了した。次の一作業は未定義とし、工程08の外部提出は
+   G6の本人承認前に開始しない。
 
 #### Chat継続用の再開点
 
 - リポジトリ: `C:\Users\user\dev\udc2026\yamaguchi-yusho-data`
 - 開始HEAD: `49d2b0481fdac9870e00a345e2383565d80ed960`（`origin/main`と一致、clean）
-- 現在の一作業: `ENTRY-PAGE-1`（`SPEC.md` rev.5.6 §18）
+- 受入済み本体commit: `e63a7b8745aa494df9263d1e2f07ca289d28fbb8`
+- 完了した一作業: `ENTRY-PAGE-1`（`SPEC.md` rev.5.6 §18）
 - 再開手順: `git status --short --branch`とHEADを読み、`SPEC.md` §18、`run_record.md` §0.5・§4、
   `PROGRESS.md`末尾、`verification.md`末尾を読み戻す。差分があれば§18の変更範囲だけか確認して続行する。
-- 次の承認ゲート: ENTRY-PAGE-1受入後のUDC概要フォーム送信またはBODIK APPs登録。自動では進めない。
+- 次の承認ゲート: UDC概要フォーム送信またはBODIK APPs登録。自動では進めない。
 
 ### 前工程RELEASE-1（受入済み）
 
@@ -786,3 +794,18 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   `src/build_site_data.py`、`src/calculate_gtfs_supply_metrics.py`、`src/inspect_gtfs_archives.py`、
   `tests/test_site.py`、`tests/test_gtfs_inspection.py`、`tests/test_gtfs_supply_metrics.py`は、
   未コミット一覧から公開済み成果へ状態が変わったため現在地の列挙から外した。
+
+### 改訂点（rev.38）
+
+- 次工程の作業名だけで止めず、初見の審査員・交通担当者が課題から公開成果へ到達する
+  `ENTRY-PAGE-1`を一作業として定義した。
+- `SPEC.md` rev.5.6 §18、作品名、81字概要、表示内容、リンク、公開・ブラウザ完了条件を固定した。
+- Chat一覧の一時消失に備え、§4へリポジトリ、開始HEAD、一作業、再開手順、次ゲートを記録した。
+
+### 改訂点（rev.39）
+
+- `docs/entry.html`、既存導線、6契約テスト、ローカル・公開Edge/CDPの実装・検証結果を記録した。
+- implementation commit `e63a7b8`、Pages run `31462820456`、公開ファイルのバイト一致、
+  公開Edge 30/30、2 PNG目視を読み戻し、ENTRY-PAGE-1をCodex受入済みとした。
+- ロードマップ07を作品①について完了し、「準備中」「受入待ち」を現在地から除いた。
+- 工程08の外部提出、T1〜T4、本応募、BODIK APPs登録、受賞は未達のまま分離した。

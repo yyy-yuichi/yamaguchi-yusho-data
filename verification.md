@@ -1908,3 +1908,27 @@ subTestが29件→39件に増えたが、外側のテストメソッド数とし
 SPEC旧版693トークン欠落0、ローカル実Edge/CDP補正後30/30、両幅overflow 0・エラー4系統0、
 2 PNG目視までCodexが確認した。公開前最終検査と公開URL再検証が終わるまで最終受入とはしない。
 UDC概要フォーム、本応募、BODIK APPs登録は行っていない。
+
+## 2026-08-11 ENTRY-PAGE-1 公開検証・Codex受入
+
+| 検証 | 結果 |
+|---|---|
+| 実装commit | `e63a7b8745aa494df9263d1e2f07ca289d28fbb8` |
+| `git push origin main` | `49d2b04..e63a7b8 main -> main` |
+| Pages run | `31462820456`、build / deployともsuccess |
+| 公開`entry.html` | HTTP 200、14,892 bytes、ローカルとバイト一致 |
+| 公開`entry.html` SHA256 | `3b3d9f6591cbc1fbf1c888a49e029e4ad830885671136984b43abe3a352c8d72` |
+| 公開トップ・状況ページ・供給指標JSON | HTTP 200、各ローカルとバイト一致 |
+| 公開Edge/CDP | 1440×1600・390×844とも15/15、合計30/30 |
+| 公開ブラウザエラー | 両幅ともconsole / Runtime / Log / Network各0 |
+| 公開PNG目視 | 階層、折返し、81字概要、問題、使い方、3審査観点、限界、導線を確認 |
+
+公開証拠は`evidence/20260811_entry_page1_public_http_raw.txt`、
+`evidence/20260811_entry_page1_public_browser_raw.json`、
+`evidence/20260811_entry_page1_public_browser_summary.txt`、
+`evidence/20260811_entry_page1_public_screenshot_1440.png`、
+`evidence/20260811_entry_page1_public_screenshot_390x844.png`に保持する。
+
+SPEC.md §18.5の完了条件を満たすため、ENTRY-PAGE-1をCodex受入済みとする。
+これは作品①の応募用公開物一式とロードマップ07の完了であり、UDC概要フォーム、本応募、
+BODIK APPs登録、受賞の達成ではない。工程08はG6の本人承認前に開始しない。

@@ -1,0 +1,10 @@
+ENTRY-PAGE-1 public HTTP readback
+base: https://yyy-yuichi.github.io/yamaguchi-yusho-data
+entry.html: status=200 bytes=14892 local_bytes=14892 byte_identical=true sha256=3b3d9f6591cbc1fbf1c888a49e029e4ad830885671136984b43abe3a352c8d72 local_sha256=3b3d9f6591cbc1fbf1c888a49e029e4ad830885671136984b43abe3a352c8d72
+index.html: status=200 bytes=48113 local_bytes=48113 byte_identical=true sha256=45d47b54bd9efb6b4dd5db63198da80fb55c273c764b495b594baf3c70c8fbe2 local_sha256=45d47b54bd9efb6b4dd5db63198da80fb55c273c764b495b594baf3c70c8fbe2
+status.html: status=200 bytes=39917 local_bytes=39917 byte_identical=true sha256=a9aa5cb20a7c23cb321c247d9228fbd7bf55af5129dde4845de4dc7b1ed9b9af local_sha256=a9aa5cb20a7c23cb321c247d9228fbd7bf55af5129dde4845de4dc7b1ed9b9af
+data/gtfs_supply_metrics.json: status=200 bytes=5904 local_bytes=5904 byte_identical=true sha256=26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b local_sha256=26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b
+marker 作品概要（81字）: true
+marker 解決したい問題: true
+marker 実用度・完成度・挑戦度の根拠: true
+marker 分かること／分からないこと: true

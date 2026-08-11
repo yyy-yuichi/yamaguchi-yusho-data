@@ -2252,3 +2252,20 @@ Codexの受入監査で、直前2件のSUPPLY-METRIC-2記録（本ファイル�
 SPEC旧版693トークン欠落0、ローカルEdge/CDP補正後30/30、2 PNG目視まで完了した。
 残件は公開前最終検査、commit・push・Pages配備、公開`entry.html`の再測定である。
 UDC概要フォーム、本応募、BODIK APPs登録は行っていない。
+
+## 2026-08-11 ENTRY-PAGE-1 公開受入（末尾正本）
+
+- 公開前最終検査は、集中54/54、全86/86、SPEC旧版693トークン欠落0、diff check、
+  staged 0、秘密情報0、末尾空白0、変更範囲、JSON・2 ZIP不変の全項目が合格した。
+- implementation commit `e63a7b8745aa494df9263d1e2f07ca289d28fbb8`を`origin/main`へpushした。
+- GitHub Pages run `31462820456`はbuild・deployともsuccess。
+- 公開`entry.html`はHTTP 200、14,892 bytes、ローカルとバイト一致、SHA256
+  `3b3d9f6591cbc1fbf1c888a49e029e4ad830885671136984b43abe3a352c8d72`。
+- 公開トップ、状況ページ、供給指標JSONもHTTP 200・ローカルとバイト一致。
+- 公開URLの実Edge/CDPは1440×1600・390×844の両幅で30/30。overflow 0、
+  console error、Runtime例外、Log error、Network.loadingFailedは全て0。
+- Codexが公開2 PNGを読み、初見向けの問題説明、81字概要、使い方、審査3観点、限界、導線を確認した。
+
+ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公開物一式」は作品①について完了した。
+次の一作業は未定義である。工程08のUDC概要フォーム送信またはBODIK APPs登録はG6の本人承認前に
+開始しない。本応募、受賞、作品②は未達である。

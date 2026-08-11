@@ -531,7 +531,7 @@ class StatusHtmlContractTest(unittest.TestCase):
             "T3",
             "T4",
             'href="index.html?v=20260811"',
-            "ENTRY-PAGE-1実装済み・Codex受入待ち",
+            "ENTRY-PAGE-1公開・Codex受入済み",
             "PDL1.0",
             "CC BY 4.0",
         )

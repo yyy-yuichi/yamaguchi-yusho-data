@@ -38,7 +38,7 @@ GTFS供給比較を表示する静的ビュー**までを担う。
 
 対象は山口県分 4 ファイル（上記2区分 × 市町村営・NPO等）。
 
-## 現在地（ENTRY-PAGE-1実装済み・Codex受入待ち、2026-08-11時点）
+## 現在地（ENTRY-PAGE-1公開・Codex受入済み、2026-08-11時点）
 
 このリポジトリはI-1〜I-4までの市町別ビューに、受入済みGTFS検査・供給指標を使う
 SUPPLY-VIEW-1の比較画面を追加し、RELEASE-1でGitHub Pagesへ公開した。公開URLに対する
@@ -55,7 +55,8 @@ UDC2026応募全体の終了条件（作品概要エントリー・本応募・�
 - **SUPPLY-VIEW-1 / RELEASE-1**: 岩国市関連・光市関連フィードの構造3指標と
   2026-04-06〜2026-04-12の予定運行便を、切替操作なしで根拠・状態とともに確認できる公開比較画面
 - **ENTRY-PAGE-1**: 作品名、81字概要、対象者、課題、3段階の使い方、使用データ、
-  実用度・完成度・挑戦度、限界を初見の人向けに結ぶ応募説明ページ（Codex受入待ち）
+  実用度・完成度・挑戦度、限界を初見の人向けに結ぶ応募説明ページ。Pages run
+  `31462820456`と公開実Edge 30/30をCodex受入済み
 
 ## 処理状況
 
@@ -159,8 +160,9 @@ pip install -r requirements.txt
 `18170b2a207940a889d527e29ef77f702c066b30`で、Pagesのbuild・deploy成功後に公開URLを
 PC・スマホ幅で再検証した。**この現行デモの公開をUDC応募・受賞の完了として扱わない。**
 外部提出は行っておらず、UDC2026応募全体の終了条件（T1〜T4）はいずれも未達である。
-応募説明ページは `docs/entry.html`（公開反映後:
-<https://yyy-yuichi.github.io/yamaguchi-yusho-data/entry.html>）、進捗の詳細は `docs/status.html` を参照。
+応募説明ページは `docs/entry.html`（公開URL:
+<https://yyy-yuichi.github.io/yamaguchi-yusho-data/entry.html>）。公開ファイルのバイト一致と
+PC・スマホの実Edge 30/30を確認済みである。進捗の詳細は `docs/status.html` を参照。
 
 ---
 
