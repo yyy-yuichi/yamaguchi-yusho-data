@@ -829,7 +829,7 @@
         <div class="metric complete">
           <span class="label">受入段階</span>
           <strong class="metric-number">7 / 8</strong>
-          <span class="metric-caption">ENTRY-PAGE-1公開検証まで受入済み</span>
+          <span class="metric-caption">受賞準備スコアカード公開検証まで受入済み</span>
         </div>
         <div class="metric complete">
           <span class="label">PDF</span>
@@ -853,10 +853,10 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">作品の現在地</p>
-          <h2 id="progress-title">ENTRY-PAGE-1公開・Codex受入済み</h2>
-          <p>作品①は<a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>です（初回RELEASE-1 commit <code>18170b2</code>）。<a href="entry.html">応募説明ページ</a>では、初見の審査員・交通担当者が、課題、使い方、使用データ、実用度・完成度・挑戦度の根拠、分かること・分からないことを一ページで確認できます。Pages run <code>31462820456</code>のbuild・deploy成功、公開ファイルのバイト一致、公開URLの実Edge 30/30をCodexが読み戻しました。UDC概要フォーム、本応募、BODIK APPs登録は行っていません。</p>
+          <h2 id="progress-title">WORK1-AWARD-COMPARISON-1公開・Codex受入済み</h2>
+          <p>作品①は<a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>です（初回公開 commit <code>18170b2</code>）。前段のENTRY-PAGE-1公開・Codex受入済みを保持し、<a href="entry.html">応募説明ページ</a>に加え、<a href="award-comparison.html">受賞準備スコアカード</a>で公式3観点、公開証拠、不足証拠、特別賞条件、改善上位3件を確認できます。implementation commit <code>a96aa04</code>、scope lock run <code>31551751898</code>、Pages run <code>31551751667</code>の成功、公開5ファイルのSHA-256一致、公開ブラウザのエラー0をCodexが読み戻しました。UDC概要フォーム、本応募、BODIK APPs登録は行っていません。</p>
         </div>
-        <strong class="progress-summary">ENTRY-PAGE-1 Codex受入済み</strong>
+        <strong class="progress-summary">受賞比較準備 Codex受入済み</strong>
       </div>
 
       <div class="overall-bar" role="progressbar" aria-label="8工程中7工程を受入済み、残る工程08は外部提出" aria-valuemin="0" aria-valuemax="8" aria-valuenow="7">
@@ -1236,7 +1236,7 @@
     <section aria-labelledby="award-comparison-title">
       <div class="section-head">
         <div>
-          <p class="eyebrow">WORK1-AWARD-COMPARISON-1 / 比較準備</p>
+          <p class="eyebrow">WORK1-AWARD-COMPARISON-1 / 公開・最終受入済み</p>
           <h2 id="award-comparison-title">公式3観点と公開証拠を一対一で確認</h2>
           <p><a href="award-comparison.html">受賞準備スコアカード</a>は、実用度・完成度・挑戦度を0〜5点の共通内部尺度で診断し、確信度、公開証拠、不足証拠、改善上位3件を同時に示します。</p>
         </div>
@@ -1254,6 +1254,14 @@
         <li>
           <strong>他作品からの入力は0件</strong>
           <p>作品①の公開URL・公開データ・コード・検証状況と公式要項だけを根拠にしました。比較と注力判断は人が行います。</p>
+        </li>
+        <li>
+          <strong>GitHub Pages公開を受入済み</strong>
+          <p>commit <code>a96aa04</code>のscope lock run <code>31551751898</code>とPages run <code>31551751667</code>は成功。公開HTML・2 JSON・応募説明・検証状況はcommit済みbytesと一致し、公開ブラウザで横overflow・runtime error・dev errorが0でした。</p>
+        </li>
+        <li>
+          <strong>次は独立監査だけ</strong>
+          <p><code>WORK1-AWARD-AUDIT-1</code>で固定HEAD、採点計算、証拠リンク、公開bytes、作品②入力0件をread-onlyで監査します。機能追加、注力判断、応募は同時に行いません。</p>
         </li>
       </ul>
       <p class="source-note">機械可読正本: <a href="data/work1_award_scorecard.json">work1_award_scorecard.json</a> / 共通形式: <a href="data/award_scorecard_schema.json">award_scorecard_schema.json</a> / 根拠: SPEC.md §20</p>

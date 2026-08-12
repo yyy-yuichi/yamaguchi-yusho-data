@@ -2155,3 +2155,22 @@ Actions履歴を正とする。`changed`または`invalid_baseline`を検出し�
 
 判定は**GitHub適用へ進めるローカルGO**。commit・push・Pages反映と公開URL読戻し後に比較準備版を
 固定する。独立監査、注力判断、UDC応募、BODIK APPs登録、機能追加はこの段階では行わない。
+
+### GitHub・公開後最終判定
+
+| 検証 | 結果 |
+|---|---|
+| implementation commit | `a96aa04c971049e06251bd5b8e4998e731c47ea7` |
+| Work 1 scope lock | run `31551751898`、head SHA一致、`success` |
+| GitHub Pages | run `31551751667`、head SHA一致、`success` |
+| 公開5ファイル | HTTP 200、ローカルcommit済みbytesとSHA-256が5/5一致 |
+| 公開ブラウザ 1280×720 | 70.0、3.5 / 4.0 / 3.0、免責、他作品入力0件、overflow 0 |
+| 公開ページ内エラー | runtime error 0、Browser dev error 0 |
+| ローカルPC・スマホ | 1440×1600・390×844、overflow 0、同一公開bytes |
+
+判定は**WORK1-AWARD-COMPARISON-1 最終GO**。0〜5点と70.0 / 100は比較可能な内部診断値で、
+公式点、順位、受賞確率ではない。作品②の内容は入力0件で、作品①と公式要項だけを根拠とする。
+
+正本証拠は`evidence/20260812_work1_award_comparison_public_acceptance.json`。次段階は
+`WORK1-AWARD-AUDIT-1`だけとし、固定HEAD、採点計算、証拠リンク、公開bytes、作品②入力0件を
+read-onlyで独立監査する。注力判断、UDC応募、BODIK APPs登録、機能追加は監査と同時に行わない。

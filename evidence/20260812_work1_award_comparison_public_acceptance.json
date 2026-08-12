@@ -1,0 +1,120 @@
+{
+  "stage": "WORK1-AWARD-COMPARISON-1",
+  "decision": "GO",
+  "accepted_at": "2026-08-12T10:00:43.5076267+09:00",
+  "implementation_commit": "a96aa04c971049e06251bd5b8e4998e731c47ea7",
+  "github": {
+    "branch": "main",
+    "origin": "https://github.com/yyy-yuichi/yamaguchi-yusho-data.git",
+    "scope_lock_run": {
+      "id": 31551751898,
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha_matches": true
+    },
+    "pages_run": {
+      "id": 31551751667,
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha_matches": true
+    }
+  },
+  "public_base_url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/",
+  "public_file_verification": [
+    {
+      "path": "award-comparison.html",
+      "http_status": 200,
+      "sha256": "c1ed7a937e15c2e79440c1ed54a27463aa26dcb532455203518cd6fa1f7883bd",
+      "matches_committed_file": true
+    },
+    {
+      "path": "data/award_scorecard_schema.json",
+      "http_status": 200,
+      "sha256": "5a9be868d93de7b8c889eb2a0c9ea54a2af3c59dad031a5469aafd6e1c8c9cb1",
+      "matches_committed_file": true
+    },
+    {
+      "path": "data/work1_award_scorecard.json",
+      "http_status": 200,
+      "sha256": "b60ac816adc0f1f680c70b25ea3e0baa285c3bc2b33c4f5bb65aeb221860b4d8",
+      "matches_committed_file": true
+    },
+    {
+      "path": "entry.html",
+      "http_status": 200,
+      "sha256": "3bc11c34c2e3871b99104fa8a3d2a0ada703b67c9ad8e10cb8aeaa827399bd84",
+      "matches_committed_file": true
+    },
+    {
+      "path": "status.html",
+      "http_status": 200,
+      "sha256": "751fb62b2a215a97dfaa5c9ab16450f062bfb7a0c2cc582f9b2870268c74e705",
+      "matches_committed_file": true
+    }
+  ],
+  "browser": {
+    "public_direct": {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "overall_index": 70.0,
+      "criterion_scores": {
+        "utility": 3.5,
+        "completeness": 4.0,
+        "challenge": 3.0
+      },
+      "official_score_disclaimer_present": true,
+      "other_work_input_count": 0,
+      "horizontal_overflow_px": 0,
+      "runtime_errors": [],
+      "browser_dev_errors": []
+    },
+    "local_exact_viewports_already_accepted": [
+      {
+        "width": 1440,
+        "height": 1600,
+        "horizontal_overflow_px": 0,
+        "runtime_errors": []
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "horizontal_overflow_px": 0,
+        "runtime_errors": []
+      }
+    ],
+    "public_bytes_match_local_exact_viewports": true
+  },
+  "scorecard": {
+    "overall_index": 70.0,
+    "utility": 3.5,
+    "completeness": 4.0,
+    "challenge": 3.0,
+    "official_score": false,
+    "rank_prediction": false,
+    "award_probability": false
+  },
+  "scope": {
+    "work1_only": true,
+    "other_work_input_count": 0,
+    "protected_files_unchanged_count": 22,
+    "protected_files_total": 22,
+    "raw_sources_changed": false,
+    "existing_public_values_changed": false
+  },
+  "not_performed": [
+    "WORK1-AWARD-AUDIT-1",
+    "focus decision",
+    "UDC summary entry",
+    "UDC final submission",
+    "BODIK APPs registration",
+    "work 2 access or modification"
+  ],
+  "next_stage": {
+    "id": "WORK1-AWARD-AUDIT-1",
+    "status": "not_started",
+    "mode": "read_only_independent_audit",
+    "decision_output": "GO_or_NO_GO"
+  }
+}

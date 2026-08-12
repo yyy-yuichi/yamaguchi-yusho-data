@@ -24,7 +24,8 @@ flowchart TD
     W2["作品②レーン<br/>別Chat・別repo<br/>本Chatからは不可視"]
     F["WORK1-FRESHNESS-1<br/>完了"]
     L["WORK1-SCOPE-LOCK-1<br/>境界を固定"]
-    C1["WORK1-AWARD-COMPARISON-1<br/>作品①の比較用出力<br/>実行中"]
+    C1["WORK1-AWARD-COMPARISON-1<br/>作品①の比較用出力<br/>公開・最終受入済み"]
+    A1["WORK1-AWARD-AUDIT-1<br/>固定HEADの独立監査<br/>未着手"]
     C2["作品②の比較用出力<br/>作品②Chatが所有"]
     D{"比較・注力判断<br/>人が決定"}
     S["選んだ作品を応募品質まで強化"]
@@ -32,7 +33,7 @@ flowchart TD
 
     G --> W1
     G --> W2
-    W1 --> F --> L --> C1 --> D
+    W1 --> F --> L --> C1 --> A1 --> D
     W2 --> C2 --> D
     D --> S --> A
 ```
@@ -43,7 +44,9 @@ flowchart TD
 
 - `WORK1-FRESHNESS-1`: 公開・最終受入済み。
 - `WORK1-SCOPE-LOCK-1`: 公開・最終受入済み。作品①の操作境界を固定した。
-- `WORK1-AWARD-COMPARISON-1`: 実行中。UDC2026公式審査観点、公開証拠、弱点と改善効果を
-  他作品でも独立に使える同一形式のスコアカードへまとめる。作品②の中身は入力にしない。
+- `WORK1-AWARD-COMPARISON-1`: 公開・最終受入済み。作品①の公開証拠だけで、実用度3.5、
+  完成度4.0、挑戦度3.0、内部比較指数70.0 / 100を同一形式のスコアカードへ固定した。
+- `WORK1-AWARD-AUDIT-1`: 次の一作業として定義済み、未着手。固定HEAD、公開配信、採点計算、
+  証拠リンク、作品②入力0件をread-onlyで独立監査し、GO / NO-GOを判定する。
 - 作品①の公開出力: [受賞準備スコアカード](https://yyy-yuichi.github.io/yamaguchi-yusho-data/award-comparison.html)
 - 応募送信、本応募、BODIK登録、作品②の変更は別の人間承認・別Chatの責任範囲である。

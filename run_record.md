@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-12 (rev.43) / 状態: WORK1-AWARD-COMPARISON-1 実行中
+最終更新: 2026-08-12 (rev.44) / 状態: WORK1-AWARD-COMPARISON-1 最終受入済み / 次: WORK1-AWARD-AUDIT-1 未着手
 
 ## 0. このファイルについて
 
@@ -597,6 +597,21 @@ I-3の停止位置を明記した。版付きリンクを実際にクリック�
 - この段階では注力作品の決定、機能追加、UDC応募、BODIK APPs登録を行わない。
 - スコアカードをcommit・push・Pages公開し、固定HEADと再開条件を記録した後、独立監査開始直前で停止する。
 
+### 現在の実行フロンティア（2026-08-12 WORK1-AWARD-COMPARISON-1最終受入後）
+
+- `WORK1-AWARD-COMPARISON-1`は最終受入済み。implementation commitは
+  `a96aa04c971049e06251bd5b8e4998e731c47ea7`、Work 1 scope lock runは`31551751898`、
+  Pages runは`31551751667`で、いずれもhead SHA一致・`success`を読み戻した。
+- 公開HTML、schema JSON、scorecard JSON、応募説明、検証状況の5件はHTTP 200で、公開bytesの
+  SHA-256がimplementation commitのファイルと全件一致した。
+- 公開ページを新規ブラウザタブの1280×720で読み戻し、70.0、3観点3.5 / 4.0 / 3.0、
+  免責、他作品入力0件、横overflow 0、ページ内runtime error 0、dev error 0を確認した。
+- ローカルでは1440×1600・390×844も受入済みで、公開bytes一致により同一HTML・JSONの配信を確認した。
+- 原本6件、既存データ・公開値は変更せず、作品②の探索・参照・採点・変更も行っていない。
+- 次の一作業は`WORK1-AWARD-AUDIT-1`だけとする。固定HEAD、採点計算、証拠リンク、公開bytes、
+  作品②入力0件をread-onlyで独立監査し、GO / NO-GOを判定する。機能追加は同時に行わない。
+- 注力判断、UDC概要フォーム、本応募、BODIK APPs登録はこの停止点より先の別ゲートである。
+
 ### 前工程RELEASE-1（受入済み）
 
 `RELEASE-1`を行った理由は、SUPPLY-VIEW-1をローカルで受け入れても、公開トップが旧「準備中」の
@@ -882,3 +897,10 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - 「道路・交通」は2026年度重点分野。GTFS賞は使用条件に該当、BODIK賞は本年度登録未実施、
   DATAKIDS賞は該当を主張せず、JACIC賞は2026年要項に非掲載として分離した。
 - 作品②のパス、URL、ファイル、Git履歴、公開物、得点を入力にせず、作品①だけを公開証拠で採点する。
+
+### 改訂点（rev.44）
+
+- implementation commit `a96aa04`、scope lock run `31551751898`、Pages run `31551751667`を
+  読み戻し、公開5ファイルのSHA-256一致と公開ブラウザの表示・エラー0を確認した。
+- WORK1-AWARD-COMPARISON-1を最終受入済みとし、作品②入力0件を維持した。
+- 次の一作業を`WORK1-AWARD-AUDIT-1`だけに固定し、独立監査開始直前で停止する。

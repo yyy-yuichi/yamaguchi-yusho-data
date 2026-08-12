@@ -2378,3 +2378,20 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
 - 原本6件、既存データ・公開JSON、`docs/index.html`の保護22件は22/22不変。
 - ローカル判定はGitHub適用へ進めるGO。commit・push・Pages反映・公開URL読戻しは未実施で、
   独立監査、注力判断、外部提出も行っていない。
+
+## 2026-08-12 WORK1-AWARD-COMPARISON-1 GitHub公開・最終受入
+
+- 実装20件を`a96aa04c971049e06251bd5b8e4998e731c47ea7`として`main`へcommit・pushした。
+- Work 1 scope lock run `31551751898`とPages run `31551751667`は、head SHA一致で`success`。
+- 公開HTML、schema JSON、scorecard JSON、応募説明、検証状況の5件はHTTP 200。公開bytesの
+  SHA-256はcommit済みファイルと5/5一致した。
+- 公開スコアカードを新規ブラウザタブの1280×720で確認し、内部比較指数70.0、実用度3.5、
+  完成度4.0、挑戦度3.0、公式点ではない旨、他作品入力0件を読み戻した。横overflow、ページ内
+  runtime error、Browser dev errorはいずれも0。
+- ローカル1440×1600・390×844の受入と公開bytes一致を合わせ、PC・スマートフォンへ同一成果物が
+  配信されたことを固定した。正本は
+  `evidence/20260812_work1_award_comparison_public_acceptance.json`。
+- 原本6件、既存公開JSON・計算値、公開トップの値は変更していない。作品②、UDC応募、
+  BODIK APPs登録、注力判断、独立監査は実施していない。
+- WORK1-AWARD-COMPARISON-1を最終受入済みとする。次段階はread-onlyの
+  `WORK1-AWARD-AUDIT-1`だけを定義し、開始直前で停止する。
