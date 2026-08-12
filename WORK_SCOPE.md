@@ -30,7 +30,7 @@ flowchart TD
     A2["WORK1-TASK-MEMO-AUDIT-1<br/>固定HEADの独立監査<br/>GO"]
     V1["WORK1-GTFS-COVERAGE-2<br/>公式範囲再確認<br/>公開・最終受入済み"]
     V2["WORK1-GTFS-COVERAGE-AUDIT-1<br/>固定HEADの独立監査<br/>GO"]
-    C3["WORK1-AWARD-COMPARISON-2<br/>現行公開証拠の再評価<br/>ローカルGO・公開適用待ち"]
+    C3["WORK1-AWARD-COMPARISON-2<br/>現行公開証拠の再評価<br/>公開・最終受入済み"]
     C4["WORK1-AWARD-COMPARISON-AUDIT-2<br/>次のread-only監査・未着手"]
     C2["作品②の比較用出力<br/>作品②Chatが所有"]
     D{"比較・注力判断<br/>人が決定"}
@@ -64,7 +64,7 @@ flowchart TD
   P2 1件でGO。P2は有限な工程数と外部提出を終端にした状況表示である。
 - `WORK1-AWARD-COMPARISON-2`: 受け入れ済み確認メモ、GTFS関連範囲、監査GOを作品①の現行公開証拠へ
   反映した。方法の妥当性だけを4.5へ更新し、3基準と総合70.0は据え置く。P2表示を継続改善へ
-  訂正してローカルGO。公開適用と読戻しは未完了。
+  訂正し、Actions、Pages、公開PC・スマホ読戻しまで最終受入済み。
 - `WORK1-AWARD-COMPARISON-AUDIT-2`: COMPARISON-2公開受入後に行う次の一作業。固定HEAD、計算、
   公開配信、継続改善表示、作品②入力0件をread-onlyで監査する。現在は未着手。
 - 作品①の公開出力: [受賞準備スコアカード](https://yyy-yuichi.github.io/yamaguchi-yusho-data/award-comparison.html)

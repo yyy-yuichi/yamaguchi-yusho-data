@@ -1,0 +1,66 @@
+{
+  "stage": "WORK1-AWARD-COMPARISON-2",
+  "result": "FINAL_GO",
+  "checked_at": "2026-08-12T20:35:16+09:00",
+  "implementation_commit": "a963cee4bc7146c525af888f9dcd9c8f60de3a24",
+  "github": {
+    "branch": "main",
+    "origin_main_at_check": "a963cee4bc7146c525af888f9dcd9c8f60de3a24",
+    "scope_lock": {
+      "run_id": 31592318490,
+      "head_sha": "a963cee4bc7146c525af888f9dcd9c8f60de3a24",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/31592318490"
+    },
+    "pages": {
+      "run_id": 31592317621,
+      "head_sha": "a963cee4bc7146c525af888f9dcd9c8f60de3a24",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/31592317621",
+      "jobs": ["build", "report-build-status", "deploy"],
+      "non_blocking_annotation": "GitHub管理のPages actionsにNode.js 20非推奨注記。全jobと全stepはsuccess。"
+    }
+  },
+  "public_assets": [
+    {
+      "path": "award-comparison.html",
+      "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/award-comparison.html",
+      "http_status": 200,
+      "bytes": 20517,
+      "sha256": "a4c7df1be47731ede212c787744042bf03e597883af60bdfbcdbb2a94aa9fd0e",
+      "commit_bytes_equal": true
+    },
+    {
+      "path": "status.html",
+      "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/status.html",
+      "http_status": 200,
+      "bytes": 52866,
+      "sha256": "3243b9965dc04ae90dc3f473a1900e6d11cca74b9d2fa402b8c03f01ff0575f4",
+      "commit_bytes_equal": true
+    },
+    {
+      "path": "data/work1_award_scorecard.json",
+      "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/data/work1_award_scorecard.json",
+      "http_status": 200,
+      "bytes": 23699,
+      "sha256": "0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021",
+      "commit_bytes_equal": true
+    }
+  ],
+  "browser_checks": [
+    {"page": "award-comparison.html", "viewport": "1440x1600", "horizontal_overflow_px": 0, "runtime_errors": 0, "dev_errors_or_warnings": 0, "confirmed": ["comparison_index_70.0", "method_fit_4.5", "one_human_gate", "two_self_executable"]},
+    {"page": "award-comparison.html", "viewport": "390x844", "horizontal_overflow_px": 0, "runtime_errors": 0, "dev_errors_or_warnings": 0, "confirmed": ["comparison_index_70.0", "summary_visible"]},
+    {"page": "status.html", "viewport": "1440x1600", "horizontal_overflow_px": 0, "runtime_errors": 0, "dev_errors_or_warnings": 0, "confirmed": ["continuous_improvement", "audit2_next", "external_submission_independent_gate", "finite_9_of_10_absent"]},
+    {"page": "status.html", "viewport": "390x844", "horizontal_overflow_px": 0, "runtime_errors": 0, "dev_errors_or_warnings": 0, "confirmed": ["continuous_improvement", "audit2_next", "external_submission_independent_gate"]}
+  ],
+  "boundaries": {
+    "other_work_input_count": 0,
+    "participant_contact_count": 0,
+    "udc_submission_count": 0,
+    "bodik_registration_count": 0
+  },
+  "next_stage": "WORK1-AWARD-COMPARISON-AUDIT-2",
+  "next_stage_started": false
+}

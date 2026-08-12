@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-12 (rev.51) / 状態: WORK1-AWARD-COMPARISON-2 ローカルGO / 次: commit・push・Actions・Pages・公開読戻し
+最終更新: 2026-08-12 (rev.51) / 状態: WORK1-AWARD-COMPARISON-2 最終受入済み / 次: WORK1-AWARD-COMPARISON-AUDIT-2 未着手
 
 ## 0. このファイルについて
 
@@ -1014,3 +1014,10 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   1440×1600・390×844で横overflow、runtime error、Browser dev error / warningは0件。
 - 原本、受入済みZIP、既存実測値、公開トップ、応募説明は不変。ローカルGOとし、commit、
   `main` push、scope lock、Pages、公開URL読戻しを同段階内で続ける。
+- 実装commit `a963cee4bc7146c525af888f9dcd9c8f60de3a24`を`main`へpushした。
+  Work 1 scope lock run `31592318490`とPages run `31592317621`は同じhead SHAで`success`。
+- 公開比較・状況HTMLとスコアカードJSONはHTTP 200でcommit bytesと3/3一致。公開PC・390pxで
+  70.0、方法適合性4.5、人間承認1件、自力候補2件、継続改善、次の監査を読み戻し、overflow、
+  runtime error、Browser dev error / warningは0件だった。
+- WORK1-AWARD-COMPARISON-2を最終受入済みとする。次の一作業は固定HEADと公開配信をread-onlyで
+  確認する`WORK1-AWARD-COMPARISON-AUDIT-2`だけとし、開始直前で停止する。

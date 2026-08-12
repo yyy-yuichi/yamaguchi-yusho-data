@@ -2470,3 +2470,14 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
 - 正本は`evidence/20260812_work1_award_comparison2_official_recheck.json`と
   `evidence/20260812_work1_award_comparison2_local_acceptance.json`。作品②入力、外部連絡、
   UDC応募、BODIK登録は0件。次は同段階のcommit・push・Actions・Pages・公開読戻しである。
+
+### GitHub公開・最終受入
+
+- 実装commit `a963cee4bc7146c525af888f9dcd9c8f60de3a24`を`main`へpushした。
+- Work 1 scope lock run `31592318490`とPages run `31592317621`は同じhead SHAで`success`。
+- 公開比較HTML、状況HTML、スコアカードJSONはHTTP 200でcommit bytesと3/3一致した。
+- 公開1440×1600・390×844で比較値70.0、方法適合性4.5、人間承認1件、自力候補2件、
+  継続改善、次の独立監査を読み戻した。横overflow、runtime error、Browser dev error / warningは0。
+- 正本は`evidence/20260812_work1_award_comparison2_public_acceptance.json`。
+  WORK1-AWARD-COMPARISON-2を最終受入済みとし、次はread-onlyの
+  `WORK1-AWARD-COMPARISON-AUDIT-2`だけを定義して未着手で停止する。

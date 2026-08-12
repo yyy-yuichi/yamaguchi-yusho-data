@@ -2299,3 +2299,22 @@ UDC応募、BODIK登録、公式点・順位・受賞確率の主張は0件。
 正本は`evidence/20260812_work1_award_comparison2_official_recheck.json`と
 `evidence/20260812_work1_award_comparison2_local_acceptance.json`。次はcommit、`main` push、
 scope lock、Pages、公開URL読戻しであり、独立再監査はまだ開始しない。
+
+### GitHub・公開後の最終受入
+
+| 検証 | 結果 |
+|---|---|
+| 実装commit | `a963cee4bc7146c525af888f9dcd9c8f60de3a24` |
+| Work 1 scope lock | run `31592318490`、head SHA一致、`success` |
+| GitHub Pages | run `31592317621`、head SHA一致、build・report・deploy `success` |
+| 公開資産3件 | HTTP 200、比較HTML・状況HTML・スコアカードJSONがcommit bytesと3/3一致 |
+| 公開比較PC | 1440×1600、70.0・方法適合性4.5・承認1・自力2、overflow 0、error 0 |
+| 公開比較スマホ | 390×844、70.0・スナップショット表示、overflow 0、error 0 |
+| 公開状況PC・スマホ | 継続改善・次の監査・独立承認ゲート、有限9/10なし、overflow 0、error 0 |
+
+判定は**WORK1-AWARD-COMPARISON-2 最終GO**。GitHub管理のPages actionsにNode.js 20非推奨の
+注記はあるが、全job・全stepは成功しており、公開成果のbytesと実画面に失敗はない。
+作品②入力、参加者連絡、UDC応募、BODIK登録は0件。次段階は固定HEAD、計算、公開配信、
+継続改善表示をread-onlyで確認する`WORK1-AWARD-COMPARISON-AUDIT-2`だけで、未着手である。
+
+正本は`evidence/20260812_work1_award_comparison2_public_acceptance.json`。

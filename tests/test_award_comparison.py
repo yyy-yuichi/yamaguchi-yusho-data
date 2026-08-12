@@ -218,6 +218,7 @@ class AwardComparisonContractTest(unittest.TestCase):
         for marker in (
             "公開基盤を保持して受賞品質を継続改善",
             "WORK1-AWARD-COMPARISON-2",
+            "WORK1-AWARD-COMPARISON-2 公開・最終受入済み",
             "WORK1-AWARD-COMPARISON-AUDIT-2",
             "独立した人間承認ゲート",
         ):
@@ -227,6 +228,7 @@ class AwardComparisonContractTest(unittest.TestCase):
             "9 / 10完了",
             "10工程中9工程",
             "残る工程08は外部提出",
+            "公開適用待ち",
         ):
             self.assertNotIn(stale, self.status_html)
 
