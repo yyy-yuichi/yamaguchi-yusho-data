@@ -2256,3 +2256,21 @@ read-onlyで独立監査する。注力判断、UDC応募、BODIK APPs登録、�
 `evidence/20260812_work1_gtfs_coverage_live_checks.json`、
 `evidence/20260812_work1_gtfs_coverage_local_acceptance.json`。作品②入力、外部参加者への連絡、
 UDC応募、BODIK登録は0件。公開適用と公開URL読戻しは未完了である。
+
+### GitHub・公開後の最終受入
+
+| 検証 | 結果 |
+|---|---|
+| 実装commit | `99f255113496d1c3b540a577e37f79da52d4aec1` |
+| Work 1 scope lock | run `31586538279`、head SHA一致、`success` |
+| GitHub Pages | run `31586537631`、head SHA一致、`success` |
+| 公開資産5件 | HTTP 200、HTML 2件・指標JSONはbytes一致、JSON 2件は改行正規化後一致 |
+| 公開PC | 1440×1600、周南市、光市フィード全体値、overflow 0、error 0 |
+| 公開スマートフォン | 390×844、周南市と下関市、未確認時に指標推計なし、overflow 0、error 0 |
+| 公開状況ページ | PC・390px、工程09と6 / 19・13 / 19を表示、overflow 0、error 0 |
+
+判定は**WORK1-GTFS-COVERAGE-2 最終GO**。作品②入力、外部参加者への連絡、UDC応募、
+BODIK登録は0件。次段階は固定HEADと公開配信をread-onlyで確認する
+`WORK1-GTFS-COVERAGE-AUDIT-1`だけとし、未着手で停止する。
+
+正本は`evidence/20260812_work1_gtfs_coverage_public_acceptance.json`。

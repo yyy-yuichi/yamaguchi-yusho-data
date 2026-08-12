@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-12 (rev.49) / 状態: WORK1-GTFS-COVERAGE-2 ローカルGO / 次: 同段階のGitHub公開受入
+最終更新: 2026-08-12 (rev.50) / 状態: WORK1-GTFS-COVERAGE-2 最終受入済み / 次: WORK1-GTFS-COVERAGE-AUDIT-1 未着手
 
 ## 0. このファイルについて
 
@@ -984,3 +984,14 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   印刷保持、横overflow 0、runtime/dev error 0を受け入れ、ローカルGOとした。
 - 正本は`evidence/20260812_work1_gtfs_coverage_*.json`。作品②入力、外部参加者への連絡、
   UDC応募、BODIK登録は0件。commit・push・Actions・Pages・公開URL読戻しはこの段階内で続行する。
+
+### 改訂点（rev.50）
+
+- 実装commit `99f255113496d1c3b540a577e37f79da52d4aec1`を`main`へpushした。
+  Work 1 scope lock run `31586538279`とPages run `31586537631`は同じhead SHAで`success`。
+- 公開HTML 2件と指標JSONはcommit bytesと一致し、GTFS確認JSON 2件はPagesのCRLF→LF正規化後に
+  内容一致した。5件すべてHTTP 200である。
+- 公開PC 1440×1600の周南市、公開390×844の周南市・下関市、状況ページのPC・390pxを
+  読み戻し、関連フィード表示、未確認時の非推計、横overflow 0、runtime/dev error 0を受け入れた。
+- WORK1-GTFS-COVERAGE-2を最終受入済みとする。次の一作業は固定HEADと公開配信をread-onlyで
+  独立確認する`WORK1-GTFS-COVERAGE-AUDIT-1`だけとし、開始直前で停止する。

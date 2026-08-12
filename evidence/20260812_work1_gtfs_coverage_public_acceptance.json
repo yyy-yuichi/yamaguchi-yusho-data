@@ -1,0 +1,60 @@
+{
+  "evidence_version": "WORK1-GTFS-COVERAGE-2",
+  "checked_at": "2026-08-12T19:18:13+09:00",
+  "implementation_commit": "99f255113496d1c3b540a577e37f79da52d4aec1",
+  "github_actions": [
+    {
+      "workflow": "Work 1 scope lock",
+      "run_id": 31586538279,
+      "head_sha": "99f255113496d1c3b540a577e37f79da52d4aec1",
+      "conclusion": "success"
+    },
+    {
+      "workflow": "pages-build-deployment",
+      "run_id": 31586537631,
+      "head_sha": "99f255113496d1c3b540a577e37f79da52d4aec1",
+      "conclusion": "success"
+    }
+  ],
+  "public_asset_checks": [
+    {"path": "municipality-memo.html", "http_status": 200, "bytes": 31528, "sha256": "5857ba6412eeaa0abd86c2c44331fc75c156a559fa9f2348eea02ac5f4f729be", "commit_bytes_match": true},
+    {"path": "status.html", "http_status": 200, "bytes": 52138, "sha256": "47676f130ad84b473573cea0480b64a9f9f3a6e39f067a92b1956531e555df14", "commit_bytes_match": true},
+    {"path": "data/gtfs_feeds.json", "http_status": 200, "bytes": 4770, "sha256": "3189a75f81005cf0fd68b6bc7b71e50b278fb4a0d8a5cb92c57342adbb2e56cc", "commit_bytes_match": false, "normalized_content_match": true, "difference": "pages_crlf_to_lf"},
+    {"path": "data/municipality_gtfs.json", "http_status": 200, "bytes": 13542, "sha256": "4f71538f8c2a8839990fbfc130ee75a9d5dadc2757f2b41c4903dc2d7caae1b9", "commit_bytes_match": false, "normalized_content_match": true, "difference": "pages_crlf_to_lf"},
+    {"path": "data/gtfs_supply_metrics.json", "http_status": 200, "bytes": 6246, "sha256": "c277e1050086da6ad5cc703051deb672458f7bf2829e1aca92fd0b17b4d20930", "commit_bytes_match": true}
+  ],
+  "public_browser_checks": {
+    "desktop_memo": {
+      "viewport": "1440x1600",
+      "municipality": "周南市",
+      "availability_status": "confirmed",
+      "associated_feed_id": "hikari-gtfs",
+      "feed_wide_metrics_visible": true,
+      "horizontal_overflow_px": 0,
+      "runtime_errors": 0,
+      "developer_console_errors": 0
+    },
+    "mobile_memo": {
+      "viewport": "390x844",
+      "confirmed_branch": "周南市",
+      "not_confirmed_branch": "下関市",
+      "unconfirmed_metrics_estimated": false,
+      "horizontal_overflow_px": 0,
+      "runtime_errors": 0,
+      "developer_console_errors": 0
+    },
+    "status_page": {
+      "desktop_viewport": "1440x1600",
+      "mobile_viewport": "390x844",
+      "stage_visible": "WORK1-GTFS-COVERAGE-2",
+      "coverage_section_visible": true,
+      "mobile_roadmap_single_column": true,
+      "horizontal_overflow_px": 0,
+      "runtime_errors": 0,
+      "developer_console_errors": 0
+    }
+  },
+  "decision": "FINAL_GO",
+  "external_submission_performed": false,
+  "work2_input_count": 0
+}

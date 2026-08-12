@@ -2438,3 +2438,15 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   横overflow、runtime error、Browser dev errorはいずれも0。ローカル判定はGO。
 - 証拠は`evidence/20260812_work1_gtfs_coverage_*.json`。作品②、外部参加者への連絡、UDC応募、
   BODIK登録は0件。次は同段階のcommit・push・Actions・Pages・公開読戻しである。
+
+### GitHub公開・最終受入
+
+- 実装26ファイルを`99f255113496d1c3b540a577e37f79da52d4aec1`として`main`へcommit・pushした。
+- Work 1 scope lock run `31586538279`とPages run `31586537631`は同じhead SHAで`success`。
+- 公開メモ・状況ページ・JSON 3件はHTTP 200。HTML 2件と指標JSONはcommit bytes一致、残る
+  JSON 2件もPagesのCRLF→LF正規化後に内容一致した。
+- 公開PC 1440×1600の周南市、公開390×844の周南市・下関市、状況ページのPC・390pxを確認し、
+  関連フィード全体値、未確認時の非推計、横overflow 0、runtime/dev error 0を受け入れた。
+- 正本は`evidence/20260812_work1_gtfs_coverage_public_acceptance.json`。
+  WORK1-GTFS-COVERAGE-2を最終受入済みとし、次はread-onlyの
+  `WORK1-GTFS-COVERAGE-AUDIT-1`だけを定義して未着手で停止する。

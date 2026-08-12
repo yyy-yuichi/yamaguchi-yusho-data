@@ -28,8 +28,8 @@ flowchart TD
     A1["WORK1-AWARD-AUDIT-1<br/>固定HEADの独立監査<br/>GO"]
     M1["WORK1-TASK-MEMO-1<br/>市町別の協議前確認メモ<br/>公開・最終受入済み"]
     A2["WORK1-TASK-MEMO-AUDIT-1<br/>固定HEADの独立監査<br/>GO"]
-    V1["WORK1-GTFS-COVERAGE-2<br/>公式範囲再確認<br/>実行中"]
-    V2["WORK1-GTFS-COVERAGE-AUDIT-1<br/>次のread-only監査"]
+    V1["WORK1-GTFS-COVERAGE-2<br/>公式範囲再確認<br/>公開・最終受入済み"]
+    V2["WORK1-GTFS-COVERAGE-AUDIT-1<br/>次のread-only監査・未着手"]
     C2["作品②の比較用出力<br/>作品②Chatが所有"]
     D{"比較・注力判断<br/>人が決定"}
     S["選んだ作品を応募品質まで強化"]
