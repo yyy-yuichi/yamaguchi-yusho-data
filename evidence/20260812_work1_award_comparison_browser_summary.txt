@@ -1,0 +1,36 @@
+WORK1-AWARD-COMPARISON-1 local browser acceptance
+date: 2026-08-12
+target: docs/award-comparison.html
+method: same-origin viewport iframe plus direct-page readback
+
+desktop
+- requested / measured inner viewport: 1440 x 1600 / 1440 x 1600
+- document horizontal overflow: 0 px
+- overall text: 70.0
+- criterion / award / improvement cards: 3 / 4 / 3
+- mandatory warning, evidence boundary, GTFS and BODIK text: present
+- page runtime errors: 0
+
+mobile
+- requested / measured inner viewport: 390 x 844 / 390 x 844
+- document horizontal overflow: 0 px
+- overall text: 70.0
+- criterion / award / improvement cards: 3 / 4 / 3
+- mandatory warning, evidence boundary, GTFS and BODIK text: present
+- page runtime errors: 0
+
+direct page
+- viewport: 1280 x 720
+- document horizontal overflow: 0 px
+- page runtime errors: 0
+- browser dev error logs: 0
+
+instrumentation note
+The outer iframe harness causes one Browser-client MutationObserver error while the harness is observed.
+The same award page opened directly has zero dev errors, and both child pages record zero page error,
+unhandled rejection, or data-load error. Therefore the instrumentation message is not attributed to the page.
+
+visual readback
+- desktop frame view: evidence/20260812_work1_award_comparison_desktop_frame_view.png
+- mobile frame view: evidence/20260812_work1_award_comparison_mobile_frame_view.png
+- full-page tiled capture was discarded before commit because the Browser renderer duplicated tiles.

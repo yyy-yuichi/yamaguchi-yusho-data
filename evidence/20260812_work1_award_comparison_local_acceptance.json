@@ -1,0 +1,100 @@
+{
+  "stage": "WORK1-AWARD-COMPARISON-1",
+  "status": "local_go",
+  "recorded_at": "2026-08-12",
+  "head_before": "06129d990d255102ed3a58f961eb3cd7161aaf8f",
+  "official_source": {
+    "url": "https://urbandata-challenge.jp/udc2026_entry",
+    "page_updated_at": "2026-06-20",
+    "verified_at": "2026-08-12",
+    "criteria": ["実用度", "完成度", "挑戦度"],
+    "numeric_weights_published": false,
+    "priority_fields_verified_from_rendered_red_text": ["道路・交通", "教育・政治"]
+  },
+  "scorecard": {
+    "work_id": "WORK1",
+    "other_work_input_count": 0,
+    "utility": 3.5,
+    "completeness": 4.0,
+    "challenge": 3.0,
+    "comparison_index": 70.0,
+    "is_official_score": false,
+    "special_awards": {
+      "gtfs": "eligible",
+      "bodik": "condition_unmet",
+      "datakids": "not_claimed",
+      "jacic": "not_listed_2026"
+    }
+  },
+  "tests": {
+    "focused_command": "python -B -m unittest tests.test_award_comparison -v",
+    "focused_count": 12,
+    "focused_result": "pass",
+    "full_command": "python -B -m unittest discover -s tests",
+    "full_count": 125,
+    "full_result": "pass"
+  },
+  "spec_coverage": {
+    "old_revision": "5.7",
+    "new_revision": "5.8",
+    "tokens": 748,
+    "explained_missing": 0,
+    "unexplained_missing": 0,
+    "result": "pass"
+  },
+  "browser": {
+    "method": "same-origin iframe viewport harness plus direct-page readback",
+    "desktop": {
+      "requested_viewport": [1440, 1600],
+      "measured_inner_viewport": [1440, 1600],
+      "horizontal_overflow_px": 0,
+      "page_runtime_errors": 0,
+      "overall": "70.0",
+      "criterion_cards": 3,
+      "award_cards": 4,
+      "improvement_cards": 3,
+      "required_text": true
+    },
+    "mobile": {
+      "requested_viewport": [390, 844],
+      "measured_inner_viewport": [390, 844],
+      "horizontal_overflow_px": 0,
+      "page_runtime_errors": 0,
+      "overall": "70.0",
+      "criterion_cards": 3,
+      "award_cards": 4,
+      "improvement_cards": 3,
+      "required_text": true
+    },
+    "direct_page": {
+      "measured_inner_viewport": [1280, 720],
+      "horizontal_overflow_px": 0,
+      "page_runtime_errors": 0,
+      "browser_dev_errors": 0
+    },
+    "instrumentation_note": "外側のiframeハーネスをBrowserが観測するとBrowserクライアント自身のMutationObserverエラーが1件出る。公開ページを直接開いた同一内容ではdev error 0、子ページ内のerror/unhandledrejection/data-load記録は両寸法0のため、作品ページ由来ではないと切り分けた。",
+    "screenshots": [
+      "evidence/20260812_work1_award_comparison_desktop_frame_view.png",
+      "evidence/20260812_work1_award_comparison_mobile_frame_view.png"
+    ],
+    "harness": "evidence/20260812_work1_award_comparison_viewport_harness.html"
+  },
+  "protected_files": {
+    "count": 22,
+    "unchanged": 22,
+    "changed": 0,
+    "includes": "6 raw originals, accepted pre-existing data and public JSON, docs/index.html"
+  },
+  "scope": {
+    "guard": "allowed",
+    "repository_id": "yyy-yuichi/yamaguchi-yusho-data",
+    "origin": "https://github.com/yyy-yuichi/yamaguchi-yusho-data.git",
+    "other_work_input_count": 0
+  },
+  "external_actions": {
+    "udc_entry": false,
+    "bodik_registration": false,
+    "focus_decision": false,
+    "independent_audit": false
+  }
+}

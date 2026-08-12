@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WORK1-AWARD-COMPARISON-1 viewport acceptance harness</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 20px; background: #d8ddd9; color: #173129; font-family: system-ui, sans-serif; }
+    section { margin-bottom: 28px; }
+    h1, h2 { line-height: 1.3; }
+    iframe { display: block; border: 0; outline: 2px solid #173129; background: white; }
+    #desktop-frame { width: 1440px; height: 1600px; }
+    #mobile-frame { width: 390px; height: 844px; }
+  </style>
+</head>
+<body>
+  <h1>WORK1-AWARD-COMPARISON-1 viewport acceptance harness</h1>
+  <p>同一オリジンの公開候補ページを指定viewportのiframeで表示し、子文書内の幅、JSON描画、overflow、必須文言を測定する。</p>
+  <section>
+    <h2>Desktop 1440×1600</h2>
+    <iframe id="desktop-frame" title="Desktop 1440 by 1600" src="../docs/award-comparison.html"></iframe>
+  </section>
+  <section>
+    <h2>Mobile 390×844</h2>
+    <iframe id="mobile-frame" title="Mobile 390 by 844" src="../docs/award-comparison.html"></iframe>
+  </section>
+</body>
+</html>

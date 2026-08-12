@@ -24,7 +24,7 @@ flowchart TD
     W2["作品②レーン<br/>別Chat・別repo<br/>本Chatからは不可視"]
     F["WORK1-FRESHNESS-1<br/>完了"]
     L["WORK1-SCOPE-LOCK-1<br/>境界を固定"]
-    C1["WORK1-AWARD-COMPARISON-1<br/>作品①の比較用出力"]
+    C1["WORK1-AWARD-COMPARISON-1<br/>作品①の比較用出力<br/>実行中"]
     C2["作品②の比較用出力<br/>作品②Chatが所有"]
     D{"比較・注力判断<br/>人が決定"}
     S["選んだ作品を応募品質まで強化"]
@@ -42,7 +42,8 @@ flowchart TD
 ## 現在地と次段階
 
 - `WORK1-FRESHNESS-1`: 公開・最終受入済み。
-- `WORK1-SCOPE-LOCK-1`: 作品①の操作境界を固定する段階。
-- `WORK1-AWARD-COMPARISON-1`: 次段階。UDC2026公式審査観点、公開証拠、弱点と改善効果を
-  作品②でも使える同一形式のスコアカードへまとめる。作品②の中身は入力にしない。
+- `WORK1-SCOPE-LOCK-1`: 公開・最終受入済み。作品①の操作境界を固定した。
+- `WORK1-AWARD-COMPARISON-1`: 実行中。UDC2026公式審査観点、公開証拠、弱点と改善効果を
+  他作品でも独立に使える同一形式のスコアカードへまとめる。作品②の中身は入力にしない。
+- 作品①の公開出力: [受賞準備スコアカード](https://yyy-yuichi.github.io/yamaguchi-yusho-data/award-comparison.html)
 - 応募送信、本応募、BODIK登録、作品②の変更は別の人間承認・別Chatの責任範囲である。

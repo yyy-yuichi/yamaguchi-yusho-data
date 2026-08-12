@@ -823,6 +823,7 @@
       <h1>山口県 市町別の<br>登録供給ビュー</h1>
       <p class="lead">福祉有償運送と交通空白地有償運送の公表登録簿を市町から確認し、公式GTFS/GTFS-JPの確認状況に加えて、岩国市・光市関連フィードの構造指標と同じ7実日付の予定運行便を根拠付きで比較できる静的アプリです。</p>
       <a class="app-link" href="index.html?v=20260811#supply-comparison">GTFS供給比較を開く</a>
+      <a class="app-link" href="award-comparison.html">受賞準備スコアカードを開く</a>
 
       <div class="metrics" aria-label="主要な進捗数値">
         <div class="metric complete">
@@ -1232,12 +1233,39 @@
       <p class="source-note">根拠: SPEC.md §19、data/source_freshness_manifest.json、verification.md。公式ページの掲載日、GTFS内部有効期間、検査実行日時は別々に保持します。</p>
     </section>
 
+    <section aria-labelledby="award-comparison-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">WORK1-AWARD-COMPARISON-1 / 比較準備</p>
+          <h2 id="award-comparison-title">公式3観点と公開証拠を一対一で確認</h2>
+          <p><a href="award-comparison.html">受賞準備スコアカード</a>は、実用度・完成度・挑戦度を0〜5点の共通内部尺度で診断し、確信度、公開証拠、不足証拠、改善上位3件を同時に示します。</p>
+        </div>
+      </div>
+
+      <ul class="next-list">
+        <li>
+          <strong>公式点と内部診断を分離</strong>
+          <p>UDC2026公式要項は数値配点を公開していません。総合比較指数70.0 / 100は公式点、順位、受賞確率ではありません。</p>
+        </li>
+        <li>
+          <strong>2026年の賞条件だけを照合</strong>
+          <p>道路・交通は重点分野です。GTFS賞は条件該当、BODIK賞は本年度登録未実施、DATAKIDS賞は該当を主張せず、JACIC賞は2026年公式要項に掲載なしと区別します。</p>
+        </li>
+        <li>
+          <strong>他作品からの入力は0件</strong>
+          <p>作品①の公開URL・公開データ・コード・検証状況と公式要項だけを根拠にしました。比較と注力判断は人が行います。</p>
+        </li>
+      </ul>
+      <p class="source-note">機械可読正本: <a href="data/work1_award_scorecard.json">work1_award_scorecard.json</a> / 共通形式: <a href="data/award_scorecard_schema.json">award_scorecard_schema.json</a> / 根拠: SPEC.md §20</p>
+    </section>
+
     <section class="sources" aria-labelledby="source-title">
       <h2 id="source-title">このページの根拠</h2>
       <ul>
         <li>応募説明（docs/entry.html）: <a href="entry.html">作品の課題・使い方・評価根拠</a></li>
+        <li>受賞比較準備（docs/award-comparison.html）: <a href="award-comparison.html">公式3観点・特別賞条件・公開証拠・改善上位3件</a></li>
         <li>公開用アプリ（docs/index.html）: <a href="index.html?v=20260811">市町別の登録供給ビュー</a>（<a href="index.html?v=20260811#supply-comparison">岩国市・光市のGTFS供給比較</a>、<a href="index.html?v=20260811#limits-title">データの限界</a>、<a href="index.html?v=20260811#sources-title">出典と利用条件</a>）</li>
-        <li>公開JSON: <a href="data/operators.json">operators.json</a> / <a href="data/vehicles.json">vehicles.json</a> / <a href="data/municipal_supply.json">municipal_supply.json</a> / <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a> / <a href="data/gtfs_supply_metrics.json">gtfs_supply_metrics.json</a></li>
+        <li>公開JSON: <a href="data/operators.json">operators.json</a> / <a href="data/vehicles.json">vehicles.json</a> / <a href="data/municipal_supply.json">municipal_supply.json</a> / <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a> / <a href="data/gtfs_supply_metrics.json">gtfs_supply_metrics.json</a> / <a href="data/work1_award_scorecard.json">work1_award_scorecard.json</a></li>
         <li>リポジトリ内: run_record.md、SPEC.md、verification.md、data/operators.csv、data/vehicles.csv、data/gtfs_feeds.csv、data/municipality_gtfs.csv、data/gtfs_supply_metrics.json</li>
         <li>括弧付き台数の扱い: 国自旅第317号「<a href="https://www.mlit.go.jp/jidosha/content/001766049.pdf">福祉有償運送の登録に関する処理方針について</a>」2.(2)⑦</li>
         <li>交通空白地の車種区分: 国自旅第316号「<a href="https://www.mlit.go.jp/jidosha/content/001766048.pdf">交通空白地有償運送の登録に関する処理方針について</a>」2.(2)⑦</li>

@@ -2097,3 +2097,61 @@ Actions履歴を正とする。`changed`または`invalid_baseline`を検出し�
 判定は**WORK1-SCOPE-LOCK-1 最終GO**。作品②の識別子・パス・ファイルは入力0件で、作品①と
 作品②が直接接続しないDAGを正とする。OSレベルの物理ACL分離は実施していないが、このChat・repo・CIは
 作品①以外をfail-closedで拒否する。
+
+## 2026-08-12 WORK1-AWARD-COMPARISON-1 ローカル検証
+
+### 公式根拠と採点契約
+
+- 公式一次資料: `https://urbandata-challenge.jp/udc2026_entry`（ページ更新2026-06-20、
+  読戻し2026-08-12）
+- 一次審査基準: 実用度、完成度、挑戦度。公式の数値配点は非公開
+- 分類: アプリケーション / 道路・交通 / 2026年度重点分野
+- 内部尺度: 0〜5点、0.5刻み、3観点同率。公式点・順位・受賞確率ではない
+- 証拠境界: 作品①の公式要項・公開成果だけ。他作品入力0件、比較判断者は人
+
+### スコアと不足証拠
+
+| 観点 | 点 | 確信度 | 主な強み | 主な不足 |
+|---|---:|---|---|---|
+| 実用度 | 3.5 | 中 | 課題・対象者・方法が具体的で公開アプリへ直結 | 利用者本人のタスク結果、時間短縮、意思決定事例なし |
+| 完成度 | 4.0 | 高 | 公開デモ、JSON、コード、検証、原本継続照合まで稼働 | GTFS確認5/19市町、実測2フィードの範囲制限 |
+| 挑戦度 | 3.0 | 中 | 異なる制度資料とGTFSを日付・限界を保持して接続 | 類似比較、GTFS網羅性、関係アクター多様性が弱い |
+
+総合比較指数は70.0 / 100。下位10項目の平均を各観点0.5点へ丸め、3観点平均を100点換算した。
+
+### 特別賞と改善上位3件
+
+- GTFS賞: `eligible`。公式GTFS / GTFS-JPを使用した公開成果がある
+- BODIK賞: `condition_unmet`。2026年度BODIK APPs登録と応募文での明記を未実施
+- DATAKIDS賞: `not_claimed`。子どものデータ利活用・学習を主目的とする証拠なし
+- JACIC賞: `not_listed_2026`。2026年公式作品募集要領に掲載なし
+- 改善上位3件: オンライン利用者検証、GTFS確認・実測範囲拡張、具体タスク向け確認メモ出力
+
+### 自動検証
+
+| 検証 | 結果 |
+|---|---|
+| `python -B -m unittest tests.test_award_comparison -v` | 12件成功 |
+| `python -B -m unittest discover -s tests` | 125件成功 |
+| SPEC rev.5.7→rev.5.8旧版網羅 | 748トークン、欠落0 |
+| JSON正本と公開用コピー | schema・scorecardともバイト一致 |
+| 保護対象 | 6原本・既存データ・公開JSON・公開アプリ22/22不変 |
+| スコープ | guard allowed、作品①origin一致、他作品入力0件 |
+
+### PC・スマートフォン
+
+- 同一オリジンviewportハーネスで、子ページの実viewportを1440×1600・390×844に固定した。
+- 両寸法でJSON描画完了、内部比較指数70.0、3観点、4賞、改善3件、必須警告・証拠境界あり。
+- 両寸法とも子文書の横overflow 0、ページ内`error`・`unhandledrejection`・データ読込エラー0。
+- 公開候補ページを直接開いた1280×720でも横overflow 0、Browser dev error 0。
+- 外側のiframe観測時だけBrowserクライアント由来のMutationObserverエラー1件が出た。直接ページと
+  子ページ内の記録は0で、作品ページ由来ではないと切り分けた。
+- 画面は`evidence/20260812_work1_award_comparison_desktop_frame_view.png`と
+  `evidence/20260812_work1_award_comparison_mobile_frame_view.png`を目視した。
+
+正本証拠は`evidence/20260812_work1_award_comparison_local_acceptance.json`、ブラウザ要約は
+`evidence/20260812_work1_award_comparison_browser_summary.txt`、保護SHA256は
+`evidence/20260812_work1_award_comparison_protected_sha256.txt`。
+
+判定は**GitHub適用へ進めるローカルGO**。commit・push・Pages反映と公開URL読戻し後に比較準備版を
+固定する。独立監査、注力判断、UDC応募、BODIK APPs登録、機能追加はこの段階では行わない。

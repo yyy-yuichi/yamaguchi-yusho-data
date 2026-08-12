@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="UDC2026作品①を公式の実用度・完成度・挑戦度へ公開証拠付きで対応づけた、比較準備用スコアカードです。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle fill='%23176b55' cx='8' cy='8' r='8'/%3E%3C/svg%3E">
+  <title>受賞準備スコアカード｜山口県 市町別の登録供給ビュー</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #173129;
+      --muted: #526b63;
+      --paper: #f4efe5;
+      --surface: #fffdf8;
+      --surface-soft: #eaf4ee;
+      --line: #c9d8d1;
+      --green: #176b55;
+      --green-dark: #0c4c3a;
+      --amber: #a45f12;
+      --red: #9e3d32;
+      --shadow: 0 18px 48px rgba(23, 49, 41, 0.1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 0;
+      background:
+        radial-gradient(circle at 90% 2%, rgba(23, 107, 85, 0.16), transparent 30rem),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", system-ui, sans-serif;
+      line-height: 1.7;
+      overflow-wrap: anywhere;
+    }
+
+    a { color: var(--green-dark); }
+    a:hover { text-decoration-thickness: 2px; }
+    h1, h2, h3 { line-height: 1.3; }
+    h1 { margin: 0; font-size: clamp(2rem, 6vw, 4.2rem); letter-spacing: -0.04em; }
+    h2 { margin: 0 0 14px; font-size: clamp(1.45rem, 3vw, 2.2rem); }
+    h3 { margin: 0; font-size: 1.1rem; }
+    p { margin: 0 0 1em; }
+
+    .skip-link {
+      position: absolute;
+      top: -80px;
+      left: 12px;
+      z-index: 10;
+      padding: 10px 14px;
+      background: var(--ink);
+      color: white;
+    }
+    .skip-link:focus { top: 12px; }
+
+    .shell { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+    .hero { padding: 56px 0 28px; }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .lead { max-width: 55rem; margin-top: 18px; color: var(--muted); font-size: clamp(1.03rem, 2vw, 1.28rem); }
+    .actions, .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      border: 1px solid var(--green);
+      border-radius: 999px;
+      padding: 8px 16px;
+      background: var(--green);
+      color: white;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .button.secondary { background: transparent; color: var(--green-dark); }
+    .tag, .confidence {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 11px;
+      background: rgba(255, 253, 248, 0.86);
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    main { padding-bottom: 64px; }
+    section {
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: clamp(22px, 4vw, 40px);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .warning { border-left: 6px solid var(--amber); background: #fff8ea; }
+    .boundary { border-left: 6px solid var(--green); background: var(--surface-soft); }
+    .summary-grid, .criteria-grid, .award-grid, .improvement-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .summary-grid { grid-template-columns: minmax(210px, 0.8fr) minmax(0, 2fr); }
+    .card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      padding: 20px;
+      background: white;
+    }
+    .card > :last-child { margin-bottom: 0; }
+    .score-card { display: grid; align-content: center; min-height: 220px; text-align: center; background: var(--green-dark); color: white; }
+    .score-card .score { display: block; font-size: clamp(3rem, 10vw, 6rem); font-weight: 900; line-height: 1; }
+    .score-card .score-label { margin-top: 10px; font-weight: 800; }
+    .criterion-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .criterion-score { color: var(--green-dark); font-size: 2rem; font-weight: 900; white-space: nowrap; }
+    .meter { height: 10px; margin: 14px 0 18px; border-radius: 999px; background: #dce8e2; overflow: hidden; }
+    .meter > span { display: block; width: var(--meter-width, 0%); height: 100%; background: var(--green); }
+    .official-definition { color: var(--muted); font-size: 0.92rem; }
+    .plain-list { margin: 0; padding-left: 1.3em; }
+    .plain-list li { margin: 0.55em 0; }
+    .evidence-list a { display: inline; }
+    .subcriterion { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
+    .subcriterion summary { cursor: pointer; font-weight: 800; }
+    .sub-score { float: right; margin-left: 12px; color: var(--green-dark); }
+    .meta { color: var(--muted); font-size: 0.9rem; }
+    .award-status {
+      display: inline-block;
+      margin: 10px 0;
+      border-radius: 999px;
+      padding: 5px 10px;
+      background: #e5eee9;
+      font-size: 0.84rem;
+      font-weight: 900;
+    }
+    .award-status.condition-unmet { background: #fff0d6; color: #7d4409; }
+    .award-status.not-claimed, .award-status.not-listed-2026 { background: #f0efec; color: #5b5a56; }
+    .priority {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 12px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      font-weight: 900;
+    }
+    .error { border-color: var(--red); color: var(--red); }
+    .loading { color: var(--muted); }
+    footer { padding: 0 0 42px; color: var(--muted); font-size: 0.92rem; }
+
+    @media (max-width: 900px) {
+      .criteria-grid, .award-grid, .improvement-grid { grid-template-columns: 1fr; }
+      .summary-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 680px) {
+      .shell { width: min(100% - 24px, 1160px); }
+      .hero { padding-top: 34px; }
+      section { border-radius: 16px; }
+      .button { width: 100%; }
+      .criterion-head { align-items: flex-start; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="hero shell">
+    <p class="eyebrow">WORK1-AWARD-COMPARISON-1</p>
+    <h1>受賞準備<br>スコアカード</h1>
+    <p class="lead">UDC2026の公式3観点に、作品①の公開証拠と不足証拠を対応づけます。点数より先に、根拠と改善余地を確認するための比較準備ページです。</p>
+    <nav class="actions" aria-label="主要リンク">
+      <a class="button" href="index.html">公開デモを使う</a>
+      <a class="button secondary" href="entry.html">応募説明を読む</a>
+      <a class="button secondary" href="status.html">検証状況を見る</a>
+    </nav>
+  </header>
+
+  <main id="main" class="shell">
+    <section class="warning" aria-labelledby="warning-title">
+      <p class="eyebrow">Important</p>
+      <h2 id="warning-title">公式点・順位・受賞確率ではありません</h2>
+      <p>UDC2026公式要項は、実用度・完成度・挑戦度の数値配点を公開していません。このページの0〜5点と総合比較指数は、同じ形式で不足証拠を見つけるための内部診断値です。</p>
+      <p><a href="https://urbandata-challenge.jp/udc2026_entry">UDC2026公式作品募集要領</a>（2026-06-20更新、2026-08-12確認）</p>
+    </section>
+
+    <section class="boundary" aria-labelledby="boundary-title">
+      <p class="eyebrow">Evidence boundary</p>
+      <h2 id="boundary-title">作品①の公開証拠だけで採点</h2>
+      <p>他作品のパス、URL、ファイル、Git履歴、公開物、得点は入力していません。各作品が同じ形式を独立に出力し、比較と注力判断は人が行います。</p>
+      <p><a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/blob/main/WORK_SCOPE.md">全体DAGと作品境界を見る</a></p>
+    </section>
+
+    <div id="load-state" class="card loading" role="status">スコアカードJSONを読み込んでいます。</div>
+
+    <section id="summary-section" aria-labelledby="summary-title" hidden>
+      <p class="eyebrow">Evidence-based snapshot</p>
+      <h2 id="summary-title">作品①の比較準備スナップショット</h2>
+      <div class="tags" id="classification-tags" aria-label="応募分類"></div>
+      <div class="summary-grid">
+        <div class="card score-card">
+          <strong class="score" id="overall-score"></strong>
+          <span class="score-label">内部比較指数 / 100</span>
+          <span id="overall-confidence"></span>
+        </div>
+        <div class="card">
+          <h3>読み方</h3>
+          <p id="overall-interpretation"></p>
+          <p class="meta" id="evaluation-date"></p>
+          <p class="meta" id="boundary-count"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="criteria-section" aria-labelledby="criteria-title" hidden>
+      <p class="eyebrow">Official criteria</p>
+      <h2 id="criteria-title">実用度・完成度・挑戦度</h2>
+      <div class="criteria-grid" id="criteria-grid"></div>
+    </section>
+
+    <section id="awards-section" aria-labelledby="awards-title" hidden>
+      <p class="eyebrow">Special awards</p>
+      <h2 id="awards-title">2026年特別賞の条件照合</h2>
+      <p>特別賞の状態は3観点の点数へ加算しません。応募資格の充足と作品品質を分けて管理します。</p>
+      <div class="award-grid" id="award-grid"></div>
+    </section>
+
+    <section id="improvements-section" aria-labelledby="improvements-title" hidden>
+      <p class="eyebrow">Next best evidence</p>
+      <h2 id="improvements-title">受賞寄与が大きい改善上位3件</h2>
+      <p>期待改善幅は、現在の内部採点規則に改善後の想定下位点を当てた診断レンジです。実施効果や受賞を保証しません。</p>
+      <div class="improvement-grid" id="improvement-grid"></div>
+    </section>
+
+    <section aria-labelledby="data-title">
+      <p class="eyebrow">Machine readable</p>
+      <h2 id="data-title">同じ形式を再利用する</h2>
+      <ul class="plain-list">
+        <li><a href="data/work1_award_scorecard.json">作品①スコアカードJSON</a></li>
+        <li><a href="data/award_scorecard_schema.json">共通JSON Schema</a></li>
+        <li><a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data">コード・データ・テスト</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <p>UDC2026 作品① / 評価基準日: 2026-08-12。独立監査、注力判断、応募、BODIK APPs登録はこの段階に含みません。</p>
+  </footer>
+
+  <script>
+    "use strict";
+
+    const runtimeErrors = [];
+    window.__awardRuntimeErrors = runtimeErrors;
+    window.addEventListener("error", event => runtimeErrors.push(`error:${event.message}`));
+    window.addEventListener("unhandledrejection", event => runtimeErrors.push(`rejection:${String(event.reason)}`));
+
+    const scorecardUrl = "data/work1_award_scorecard.json";
+    const confidenceLabels = { high: "確信度: 高", medium: "確信度: 中", low: "確信度: 低" };
+    const statusLabels = {
+      eligible: "条件該当",
+      condition_unmet: "条件未充足",
+      not_claimed: "該当を主張しない",
+      not_listed_2026: "2026年要項に非掲載"
+    };
+    const effortLabels = { small: "小", medium: "中", large: "大" };
+
+    function addText(parent, tagName, value, className) {
+      const node = document.createElement(tagName);
+      if (className) node.className = className;
+      node.textContent = value;
+      parent.appendChild(node);
+      return node;
+    }
+
+    function addSafeLink(parent, label, href) {
+      const url = new URL(href, document.baseURI);
+      if (url.protocol !== "https:") throw new Error("HTTPSではない証拠URLを拒否しました");
+      const link = document.createElement("a");
+      link.href = url.href;
+      link.textContent = label;
+      if (url.origin !== window.location.origin) {
+        link.target = "_blank";
+        link.rel = "noopener";
+      }
+      parent.appendChild(link);
+      return link;
+    }
+
+    function renderList(parent, items, className) {
+      const list = document.createElement("ul");
+      list.className = className || "plain-list";
+      for (const item of items) addText(list, "li", item);
+      parent.appendChild(list);
+      return list;
+    }
+
+    function renderEvidence(parent, evidence) {
+      const list = document.createElement("ul");
+      list.className = "plain-list evidence-list";
+      for (const item of evidence) {
+        const row = document.createElement("li");
+        addSafeLink(row, item.claim, item.url);
+        addText(row, "span", `（${item.as_of}確認）`, "meta");
+        list.appendChild(row);
+      }
+      parent.appendChild(list);
+    }
+
+    function renderSubcriterion(parent, item) {
+      const details = document.createElement("details");
+      details.className = "subcriterion";
+      const summary = document.createElement("summary");
+      summary.textContent = item.label;
+      addText(summary, "span", `${item.score.toFixed(1)} / 5`, "sub-score");
+      details.appendChild(summary);
+      addText(details, "p", item.rationale);
+      addText(details, "p", confidenceLabels[item.confidence], "meta");
+      addText(details, "h3", "公開証拠");
+      renderEvidence(details, item.evidence);
+      addText(details, "h3", "不足証拠");
+      renderList(details, item.missing_evidence);
+      parent.appendChild(details);
+    }
+
+    function renderCriterion(item) {
+      const card = document.createElement("article");
+      card.className = "card";
+      const head = document.createElement("div");
+      head.className = "criterion-head";
+      addText(head, "h3", item.label);
+      addText(head, "span", `${item.score.toFixed(1)} / 5`, "criterion-score");
+      card.appendChild(head);
+      const meter = document.createElement("div");
+      meter.className = "meter";
+      meter.setAttribute("aria-label", `${item.label} ${item.score.toFixed(1)}点、5点満点`);
+      const fill = document.createElement("span");
+      fill.style.setProperty("--meter-width", `${item.score / 5 * 100}%`);
+      meter.appendChild(fill);
+      card.appendChild(meter);
+      addText(card, "p", item.official_definition, "official-definition");
+      addText(card, "p", item.rationale);
+      addText(card, "span", confidenceLabels[item.confidence], "confidence");
+      addText(card, "h3", "観点全体の公開証拠");
+      renderEvidence(card, item.evidence);
+      addText(card, "h3", "観点全体の不足証拠");
+      renderList(card, item.missing_evidence);
+      for (const subcriterion of item.subcriteria) renderSubcriterion(card, subcriterion);
+      return card;
+    }
+
+    function renderAward(item) {
+      const card = document.createElement("article");
+      card.className = "card";
+      addText(card, "h3", item.label);
+      const status = addText(card, "span", statusLabels[item.status], "award-status");
+      status.classList.add(item.status.replaceAll("_", "-"));
+      addText(card, "p", item.condition, "official-definition");
+      addText(card, "p", item.rationale);
+      addText(card, "h3", "根拠");
+      renderEvidence(card, item.evidence);
+      addText(card, "h3", "次のゲート");
+      addText(card, "p", item.next_gate);
+      return card;
+    }
+
+    function renderImprovement(item) {
+      const card = document.createElement("article");
+      card.className = "card";
+      addText(card, "span", String(item.priority), "priority");
+      addText(card, "h3", item.title);
+      addText(card, "p", item.why);
+      addText(card, "p", `診断上の期待改善幅: +${item.expected_index_gain_range[0].toFixed(1)}〜+${item.expected_index_gain_range[1].toFixed(1)}点`, "meta");
+      addText(card, "p", `労力: ${effortLabels[item.effort]} / 外部依存: ${item.external_dependency ? "あり" : "なし"}`, "meta");
+      addText(card, "h3", "完了を示す証拠");
+      renderList(card, item.acceptance_evidence);
+      return card;
+    }
+
+    function renderScorecard(data) {
+      document.getElementById("load-state").hidden = true;
+      document.getElementById("summary-section").hidden = false;
+      document.getElementById("criteria-section").hidden = false;
+      document.getElementById("awards-section").hidden = false;
+      document.getElementById("improvements-section").hidden = false;
+
+      const tags = document.getElementById("classification-tags");
+      addText(tags, "span", `作品タイプ: ${data.classification.work_type}`, "tag");
+      addText(tags, "span", `作品テーマ: ${data.classification.theme}`, "tag");
+      addText(tags, "span", data.classification.priority_field ? "2026年度重点分野" : "重点分野ではない", "tag");
+      document.getElementById("overall-score").textContent = data.overall.comparison_index.toFixed(1);
+      document.getElementById("overall-confidence").textContent = confidenceLabels[data.overall.confidence];
+      document.getElementById("overall-interpretation").textContent = data.overall.interpretation;
+      document.getElementById("evaluation-date").textContent = `評価基準日: ${data.evaluation_as_of}`;
+      document.getElementById("boundary-count").textContent = `他作品からの入力: ${data.evidence_boundary.other_work_input_count}件 / 比較判断者: 人`;
+
+      const criteriaGrid = document.getElementById("criteria-grid");
+      for (const criterion of data.criteria) criteriaGrid.appendChild(renderCriterion(criterion));
+      const awardGrid = document.getElementById("award-grid");
+      for (const award of data.special_awards) awardGrid.appendChild(renderAward(award));
+      const improvementGrid = document.getElementById("improvement-grid");
+      for (const improvement of data.top_improvements) improvementGrid.appendChild(renderImprovement(improvement));
+    }
+
+    fetch(scorecardUrl, { cache: "no-store" })
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then(renderScorecard)
+      .catch(cause => {
+        runtimeErrors.push(`data:${cause.message}`);
+        const state = document.getElementById("load-state");
+        state.classList.remove("loading");
+        state.classList.add("error");
+        state.textContent = `スコアカードを読み込めませんでした。JSONを直接確認してください（${cause.message}）。`;
+        addSafeLink(state, " work1_award_scorecard.json", "https://yyy-yuichi.github.io/yamaguchi-yusho-data/data/work1_award_scorecard.json");
+        console.error("award comparison data load failed", cause);
+      });
+  </script>
+</body>
+</html>

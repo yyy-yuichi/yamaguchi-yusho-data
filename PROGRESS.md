@@ -2355,3 +2355,26 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   両幅overflow 0、console error 0、既存freshness節あり。
 - HEAD＝origin/main、cleanを読み戻し、WORK1-SCOPE-LOCK-1を最終受入済みとする。
   次段階は定義済みの`WORK1-AWARD-COMPARISON-1`だけで、まだ開始していない。
+
+## 2026-08-12 WORK1-AWARD-COMPARISON-1 ローカル実装・検証
+
+- UDC2026公式作品募集要領を一次情報で読み戻した。一次審査基準は実用度・完成度・挑戦度、
+  数値配点は非公開。「道路・交通」と「教育・政治」は赤字の2026年度重点分野で、重点分野作品には
+  作品審査の優遇措置がある。
+- `SPEC.md` rev.5.8 §20へ、0〜5点・0.5刻み、3観点同率、公開証拠・確信度・不足証拠必須の
+  共通採点規則を固定した。内部比較値を公式点、順位、受賞確率へ読み替えない。
+- 作品①の公開証拠だけで、実用度3.5、完成度4.0、挑戦度3.0、内部比較指数70.0 / 100とした。
+  作品②を探索・参照・採点・変更せず、他作品からの入力は0件。
+- 2026年特別賞は、GTFS賞`eligible`、BODIK賞`condition_unmet`、DATAKIDS賞`not_claimed`、
+  JACIC賞`not_listed_2026`と分離した。BODIK登録・UDC応募は行っていない。
+- `data/award_scorecard_schema.json`と`data/work1_award_scorecard.json`を正本とし、
+  `docs/data/`の公開用JSONとバイト一致させた。`docs/award-comparison.html`は点数を直書きせず、
+  JSONから3観点、4賞、改善上位3件を安全なDOM APIで描画する。
+- 改善上位3件は、オンライン利用者検証、GTFS確認・実測範囲の拡張、具体タスクに沿う確認メモ出力。
+  この段階では改善機能を実装せず、比較可能な停止点を作る。
+- 集中12件、全125件のunittestが成功。SPEC旧版748トークンは欠落0、`git diff --check`成功。
+- 1440×1600・390×844の同一オリジンiframe実測は、両幅overflow 0、ページ内runtime error 0、
+  3観点・4賞・改善3件・70.0を確認。公開ページを直接開いたdev errorも0だった。
+- 原本6件、既存データ・公開JSON、`docs/index.html`の保護22件は22/22不変。
+- ローカル判定はGitHub適用へ進めるGO。commit・push・Pages反映・公開URL読戻しは未実施で、
+  独立監査、注力判断、外部提出も行っていない。

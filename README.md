@@ -13,6 +13,27 @@ GTFS-JP の整備状況・鮮度、交通空白、福祉輸送（UD タクシー
   データ整備に反映している点
 - **狙う賞**: GTFS 賞、BODIK 賞
 
+## UDC2026受賞準備スコアカード
+
+[公開スコアカード](https://yyy-yuichi.github.io/yamaguchi-yusho-data/award-comparison.html)は、
+UDC2026公式の一次審査基準（実用度・完成度・挑戦度）に、作品①の公開証拠、確信度、
+不足証拠、改善上位3件を対応づける。0〜5点と総合比較指数は、公式配点・順位・受賞確率ではなく、
+配点非公開の3観点を同率にした内部診断値である。
+
+- 評価基準日: 2026-08-12
+- 内部比較指数: 70.0 / 100（実用度3.5、完成度4.0、挑戦度3.0）
+- 作品タイプ: アプリケーション
+- 作品テーマ: 道路・交通（2026年度重点分野）
+- GTFS賞: 公式GTFS / GTFS-JPを使用しているため条件該当
+- BODIK賞: 本年度のBODIK APPs登録を未実施のため条件未充足
+- DATAKIDS賞: 現作品では該当を主張しない
+- JACIC賞: 2026年公式作品募集要領に掲載なし
+- 他作品からの入力: 0件。各作品は同じ形式を独立に出力し、比較・注力判断は人が行う
+
+機械可読な正本は`data/work1_award_scorecard.json`、共通形式は
+`data/award_scorecard_schema.json`。公開用の`docs/data/`配下とそれぞれバイト一致する。
+公式根拠は[UDC2026作品募集要領](https://urbandata-challenge.jp/udc2026_entry)である。
+
 ## このリポジトリの役割
 
 このリポジトリは作品①のうち、**「自家用有償旅客運送者の登録簿」の機械可読化**と、
@@ -154,6 +175,8 @@ GTFS収録の交通ブランド情報、路線情報ID、乗降場所IDと、202
 - `docs/data/gtfs_supply_metrics.json` — 上記入力とバイト一致する静的サイト用JSON
 - `docs/index.html` — 市町別の登録供給、公式GTFS確認状況、岩国市・光市の供給比較を確認できるHTML
 - `docs/status.html` — このリポジトリの現況説明（受入済み成果・残作業・終了条件の状況）
+- `docs/award-comparison.html` — UDC2026公式3観点、特別賞条件、公開証拠、改善上位3件の比較準備ページ
+- `data/work1_award_scorecard.json` / `data/award_scorecard_schema.json` — 比較準備の正本JSONと共通形式
 
 **代表者の氏名は抽出も出力もしていない。**
 
