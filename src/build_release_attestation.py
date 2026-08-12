@@ -244,6 +244,7 @@ def build_attestation(
     target_sha: str,
     pages_run_id: int,
     pages_run_url: str,
+    pages_reported_head_sha: str,
     attestation_run_id: int,
     attestation_run_attempt: int,
     attestation_run_url: str,
@@ -259,6 +260,8 @@ def build_attestation(
 ) -> dict[str, Any]:
     if not SHA256_RE.fullmatch(target_sha):
         raise ValueError("target_sha_must_be_40_lowercase_hex")
+    if not SHA256_RE.fullmatch(pages_reported_head_sha):
+        raise ValueError("pages_reported_head_sha_must_be_40_lowercase_hex")
     if min(pages_run_id, attestation_run_id, attestation_run_attempt, tests_discovered, attempts) < 1:
         raise ValueError("positive_values_required")
 
@@ -307,8 +310,9 @@ def build_attestation(
             "run_id": pages_run_id,
             "run_url": pages_run_url,
             "conclusion": "success",
-            "head_sha": target_sha,
-            "head_sha_match": True,
+            "reported_head_sha": pages_reported_head_sha,
+            "reported_head_sha_matches_subject": pages_reported_head_sha == target_sha,
+            "subject_linkage": "public_assets_match_subject_checkout_bytes",
         },
         "verification": {
             "scope_guard": {"passed": scope_guard_passed},
@@ -369,6 +373,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--target-sha", required=True)
     parser.add_argument("--pages-run-id", type=int, required=True)
     parser.add_argument("--pages-run-url", required=True)
+    parser.add_argument("--pages-reported-head-sha", required=True)
     parser.add_argument("--attestation-run-id", type=int, required=True)
     parser.add_argument("--attestation-run-attempt", type=int, required=True)
     parser.add_argument("--attestation-run-url", required=True)
@@ -389,6 +394,7 @@ def main(argv: list[str] | None = None) -> int:
         target_sha=args.target_sha,
         pages_run_id=args.pages_run_id,
         pages_run_url=args.pages_run_url,
+        pages_reported_head_sha=args.pages_reported_head_sha,
         attestation_run_id=args.attestation_run_id,
         attestation_run_attempt=args.attestation_run_attempt,
         attestation_run_url=args.attestation_run_url,

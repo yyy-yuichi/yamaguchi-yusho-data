@@ -2676,7 +2676,8 @@ GitHub Actions artifactを、対象最終HEAD自身の機械可読な外部証�
 artifactは次を同じJSONに保持し、一つでも不一致なら`NO_GO`で失敗する。
 
 1. `main`の対象40桁SHA、checkout SHA一致、attestation run ID・attempt・URL。
-2. 先行する`pages-build-deployment`のrun ID・URL・success・同一head SHA。
+2. 先行する`pages-build-deployment`のrun ID・URL・success・event報告SHA。GitHub生成Pages workflowの
+   event報告SHAが実配信より古い場合も隠さず記録し、対象checkoutと公開3資産のbytes一致を実配信の証拠とする。
 3. 全unittestの発見件数、全件成功、作品①scope guard成功。
 4. 公開`status.html`、`award-comparison.html`、`data/work1_award_scorecard.json`のHTTP 200、
    bytes、SHA256、対象checkoutとのbytes一致。
@@ -2689,7 +2690,8 @@ artifactは次を同じJSONに保持し、一つでも不一致なら`NO_GO`で�
 
 - `src/build_release_attestation.py`は原本を読み取り専用でhashし、公開3資産だけを取得する。
 - `.github/workflows/release-attestation.yml`は`pages-build-deployment`のsuccess・`main`だけを受け、
-  対象SHAを明示checkoutし、全テスト後に90日保存artifactを生成する。
+  作品①の`main`を明示checkoutしてSHAを取得する。既存テストの実行環境に合わせたWindows runnerで
+  `requirements.txt`を導入し、全テスト後に90日保存artifactを生成する。
 - artifact名は`work1-release-attestation-<40桁SHA>`とし、`attestation.json`と要約Markdownを含む。
 - `docs/status.html`とREADMEは最新artifactへのActions導線、自己参照を避ける理由、保存期間を説明する。
 - 最終artifactのrun IDはそのartifact自身に記録する。run IDをリポジトリへ書き戻して新しいHEADを

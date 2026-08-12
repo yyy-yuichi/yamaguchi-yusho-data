@@ -15,21 +15,21 @@ jobs:
     if: >-
       github.event.workflow_run.conclusion == 'success' &&
       github.event.workflow_run.head_branch == 'main'
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
+    runs-on: windows-latest
+    timeout-minutes: 20
     env:
-      TARGET_SHA: ${{ github.event.workflow_run.head_sha }}
       PAGES_RUN_ID: ${{ github.event.workflow_run.id }}
       PAGES_RUN_URL: ${{ github.event.workflow_run.html_url }}
+      PAGES_REPORTED_HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
       ATTESTATION_RUN_ID: ${{ github.run_id }}
       ATTESTATION_RUN_ATTEMPT: ${{ github.run_attempt }}
       ATTESTATION_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
     steps:
-      - name: Check out the exact Pages commit
+      - name: Check out current Work 1 main
         uses: actions/checkout@v7
         with:
-          ref: ${{ env.TARGET_SHA }}
+          ref: refs/heads/main
           persist-credentials: false
 
       - name: Set up Python
@@ -37,19 +37,23 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Verify exact commit and Work 1 boundary
-        shell: bash
+      - name: Install the recorded test dependency
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+
+      - name: Capture exact commit and verify Work 1 boundary
+        shell: pwsh
         run: |
-          test "$(git rev-parse HEAD)" = "$TARGET_SHA"
+          $targetSha = (git rev-parse HEAD).Trim()
+          "TARGET_SHA=$targetSha" >> $env:GITHUB_ENV
           python -B src/check_work_scope.py --repo . --json
 
       - name: Run the complete test suite
         id: tests
-        shell: bash
+        shell: pwsh
         run: |
-          test_count="$(python -c 'import unittest; print(unittest.defaultTestLoader.discover("tests").countTestCases())')"
+          $testCount = python -c 'import unittest; print(unittest.defaultTestLoader.discover("tests").countTestCases())'
           python -B -m unittest discover -s tests -v
-          echo "count=$test_count" >> "$GITHUB_OUTPUT"
+          "count=$testCount" >> $env:GITHUB_OUTPUT
 
       - name: Build exact-release attestation
         shell: bash
@@ -59,6 +63,7 @@ jobs:
           --target-sha "$TARGET_SHA"
           --pages-run-id "$PAGES_RUN_ID"
           --pages-run-url "$PAGES_RUN_URL"
+          --pages-reported-head-sha "$PAGES_REPORTED_HEAD_SHA"
           --attestation-run-id "$ATTESTATION_RUN_ID"
           --attestation-run-attempt "$ATTESTATION_RUN_ATTEMPT"
           --attestation-run-url "$ATTESTATION_RUN_URL"
@@ -70,8 +75,8 @@ jobs:
           --output "${{ runner.temp }}/work1-release-attestation/attestation.json"
 
       - name: Publish attestation in the run summary
-        shell: bash
-        run: cat "${{ runner.temp }}/work1-release-attestation/attestation.md" >> "$GITHUB_STEP_SUMMARY"
+        shell: pwsh
+        run: Get-Content "${{ runner.temp }}/work1-release-attestation/attestation.md" | Add-Content -Path $env:GITHUB_STEP_SUMMARY -Encoding utf8
 
       - name: Upload exact-release artifact
         uses: actions/upload-artifact@v7

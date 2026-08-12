@@ -1071,3 +1071,10 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - 専用1件、比較との集中15件、全151件のunittest、旧SPEC 879トークン欠落0、`git diff --check`、
   秘密情報0、許可外変更0、6原本一致を確認しローカルGO。正本は
   `evidence/20260813_work1_release_attestation_local_acceptance.json`。
+- 実装commit `0c13efe408d9fa60baff4d75e9546edb9444d5bb`をpushし、scope lock run
+  `31645486165`はsuccess。Pages run `31645485860`も公開内容を同commit bytesへ更新してsuccessしたが、
+  event報告SHAは直前の`a0fd712`だった。初回attestation run `31645546295`はその古いSHAをcheckoutし、
+  Linux runnerで`pdfplumber`未導入とWindows前提ZIPパス検査を検出してfail closedした。
+- 修正は、作品①`main`を明示checkoutして対象SHAを取得し、Pagesのevent報告SHAは別項目へ原値のまま
+  記録する。全151テストはWindows runnerで`requirements.txt`導入後に実行する。公開3資産が
+  対象checkout bytesと一致することを、Pages実配信と対象SHAの結合条件にする。

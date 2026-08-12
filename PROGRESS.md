@@ -2519,3 +2519,7 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   UDC応募、BODIK登録は0件。commit、push、Pages、初回・最終artifactの読戻しまで同段階で続ける。
 - 専用1件、集中15件、全151件、旧SPEC 879トークン欠落0、scope guard、6原本一致を受け入れた。
   ローカル正本は`evidence/20260813_work1_release_attestation_local_acceptance.json`。
+- 実装commit `0c13efe`のscope lockとPagesはsuccessし、公開statusは同commit bytesへ更新された。
+  初回attestation run `31645546295`はPages eventの旧SHA報告とLinux依存差を隠さず失敗した。
+- workflowをWindows runner・`requirements.txt`導入・`main`明示checkoutへ修正する。Pages報告SHAは
+  artifactへ別記し、対象SHAとの実配信結合は公開3資産のbytes一致でfail closed検証する。

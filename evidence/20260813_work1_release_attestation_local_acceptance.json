@@ -12,21 +12,23 @@
   "implementation": {
     "workflow": {
       "path": ".github/workflows/release-attestation.yml",
-      "bytes": 2763,
-      "sha256": "cf8c4dd4358d7f58a57837a69a9772362b3a0b509c3fb4d9c3cefed99066cc48",
+      "bytes": 3058,
+      "sha256": "fad23dd4d0b282893a6f256e00f521603b2b811e061c8ec9d3876511c446df57",
       "trigger": "pages-build-deployment completed success on main",
       "permissions": "contents: read",
+      "runner": "windows-latest",
+      "dependencies": "requirements.txt",
       "retention_days": 90
     },
     "builder": {
       "path": "src/build_release_attestation.py",
-      "bytes": 16028,
-      "sha256": "57804168fd489d564a4f9960e0615c00e62949bb6dfe1144484e41288514c797"
+      "bytes": 16477,
+      "sha256": "ed545b508e38243c40e81c73137de406c1da6d3d176d7e2395980e32b634e9c7"
     },
     "contract_test": {
       "path": "tests/test_release_attestation.py",
-      "bytes": 4218,
-      "sha256": "f8c55ddcef4224df4f66496605b874de99b640652ebec858795ba875ccabee1c",
+      "bytes": 4703,
+      "sha256": "bd401b48d3f704a78c01640b7e1433a8d977ac8db5b560af93b159dab167b1f0",
       "focused_passed": 1,
       "focused_discovered": 1,
       "public_mismatch_fails_closed": true
@@ -58,6 +60,33 @@
     "scorecard_sha256": "0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021",
     "criteria_scores": {"実用度": 3.5, "完成度": 4.0, "挑戦度": 3.0},
     "overall_comparison_index": 70.0
+  },
+  "first_ci_attempt": {
+    "implementation_commit": "0c13efe408d9fa60baff4d75e9546edb9444d5bb",
+    "scope_lock_run": {"id": 31645486165, "conclusion": "success"},
+    "pages_run": {
+      "id": 31645485860,
+      "conclusion": "success",
+      "reported_head_sha": "a0fd712e5a00865430be9bdb2827aecd4fa8b54a",
+      "public_status_commit_bytes_match": true
+    },
+    "attestation_run": {
+      "id": 31645546295,
+      "conclusion": "failure",
+      "artifact_created": false,
+      "fail_closed": true,
+      "causes": [
+        "generated Pages event reported the preceding commit SHA",
+        "Linux runner did not install pdfplumber",
+        "an existing ZIP path contract is Windows-specific"
+      ]
+    },
+    "correction": [
+      "checkout refs/heads/main and capture the subject SHA",
+      "record the Pages-reported SHA separately",
+      "link deployment to the subject with public commit-byte matches",
+      "run tests on windows-latest after installing requirements.txt"
+    ]
   },
   "scope": {
     "work2_inputs": 0,

@@ -30,6 +30,7 @@ class ReleaseAttestationContractTest(unittest.TestCase):
             target_sha=target_sha,
             pages_run_id=101,
             pages_run_url="https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/101",
+            pages_reported_head_sha="b" * 40,
             attestation_run_id=202,
             attestation_run_attempt=1,
             attestation_run_url="https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/202",
@@ -44,6 +45,11 @@ class ReleaseAttestationContractTest(unittest.TestCase):
         self.assertEqual(target_sha, record["subject"]["commit_sha"])
         self.assertEqual(202, record["workflow"]["run_id"])
         self.assertEqual(101, record["upstream_pages"]["run_id"])
+        self.assertFalse(record["upstream_pages"]["reported_head_sha_matches_subject"])
+        self.assertEqual(
+            "public_assets_match_subject_checkout_bytes",
+            record["upstream_pages"]["subject_linkage"],
+        )
         self.assertEqual(151, record["verification"]["tests"]["passed"])
         self.assertEqual(6, record["verification"]["accepted_source_count"])
         self.assertTrue(
@@ -71,6 +77,7 @@ class ReleaseAttestationContractTest(unittest.TestCase):
                 target_sha=target_sha,
                 pages_run_id=101,
                 pages_run_url="https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/101",
+                pages_reported_head_sha="b" * 40,
                 attestation_run_id=202,
                 attestation_run_attempt=1,
                 attestation_run_url="https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/202",
@@ -90,6 +97,9 @@ class ReleaseAttestationContractTest(unittest.TestCase):
             "workflow_run:",
             "pages-build-deployment",
             "github.event.workflow_run.head_sha",
+            "runs-on: windows-latest",
+            "pip install --disable-pip-version-check -r requirements.txt",
+            "ref: refs/heads/main",
             "python -B -m unittest discover -s tests -v",
             "--scope-guard-passed",
             "actions/upload-artifact@v7",

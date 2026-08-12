@@ -2387,3 +2387,16 @@ P2はrepo内の最終受入記録が実装commit `7fdf04a`とそのrun IDを記�
 外部正本としてダウンロード検証するまで段階は未完了である。
 
 ローカル正本は`evidence/20260813_work1_release_attestation_local_acceptance.json`。
+
+### 初回CIのfail-closed結果と修正
+
+| 検証 | 結果 |
+|---|---|
+| 実装commit | `0c13efe408d9fa60baff4d75e9546edb9444d5bb` |
+| scope lock | run `31645486165`、success、対象SHA一致 |
+| Pages | run `31645485860`、success、公開statusは対象commit bytes一致、event報告SHAは直前HEAD |
+| 初回attestation | run `31645546295`、failure。古い報告SHAのcheckout、Linuxで`pdfplumber`未導入・ZIPパス差を検出 |
+| 修正 | `main`明示checkout、Windows runner、`requirements.txt`導入、報告SHA別記、公開bytesを結合条件化 |
+
+失敗runは削除せず、artifact未生成を正しいfail-closed証拠として保持する。修正後の成功artifactだけを
+受入対象にする。
