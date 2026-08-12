@@ -2174,3 +2174,40 @@ Actions履歴を正とする。`changed`または`invalid_baseline`を検出し�
 正本証拠は`evidence/20260812_work1_award_comparison_public_acceptance.json`。次段階は
 `WORK1-AWARD-AUDIT-1`だけとし、固定HEAD、採点計算、証拠リンク、公開bytes、作品②入力0件を
 read-onlyで独立監査する。注力判断、UDC応募、BODIK APPs登録、機能追加は監査と同時に行わない。
+
+## 2026-08-12 WORK1-TASK-MEMO-1 ローカル受入
+
+### 成果と入力境界
+
+- `docs/municipality-memo.html`は、受入済み公開4 JSONだけを同一オリジンから読み込む。
+- 19市町の完全一致クエリだけを採用し、未知値はJSON先頭市町へ戻す。市町名・公開値をHTMLへ
+  直書きせず、`textContent`、`createElement`、`replaceChildren`で描画する。
+- 公開トップの選択市町をメモへ渡し、メモから同じ市町の詳細へ戻る。共有URLのコピーと
+  readonly欄の手動フォールバック、印刷・PDF保存ボタン、印刷CSSを持つ。
+- 原本、`data/`、`docs/data/`、処理・計算コード、既存テスト、scope lock、比較JSONは不変。
+
+### 自動検証
+
+| 検証 | 結果 |
+|---|---|
+| `python -m unittest tests.test_task_memo -v` | 14件成功 |
+| `python -m unittest discover -s tests -v` | 139件成功 |
+| SPEC rev.5.8→rev.5.9旧版網羅 | 809トークン、欠落0 |
+| `git diff --check` | 成功 |
+| 秘密情報らしき値 | 変更・新規テキストで0件 |
+| 禁止範囲 | `raw/`、`data/`、`docs/data/`、処理コード、比較JSONの変更0 |
+| 作品境界 | `WORK1_SCOPE_ALLOWED`、作品②入力0件 |
+
+### 代表3分岐・PC・スマートフォン・印刷
+
+- 下関市: 登録5団体・49台・軽13台、GTFSは確認範囲で未確認、不存在を否定、指標補完なし。
+- 宇部市: 登録0団体、0件が制度・サービス・移動手段の不存在を意味しない旨、GTFS確認済み、
+  フィードカード1件、指標補完なし。
+- 岩国市: 登録1団体・33台、GTFS確認済み、構造3指標、7実日付、比較週とフィード全体の限界あり。
+- 1440×1600と390×844で横overflow 0、ページ内runtime error 0、Browser dev error 0。
+- URLコピー操作は成功表示まで確認し、readonly URLによる手動コピーを保持した。別タブへの貼付け読戻しは
+  BrowserのURL安全ポリシーにより実施せず、成功表示以上の独立クリップボード読戻しは主張しない。
+- 印刷操作はruntime error 0。CSSOMで印刷媒体1規則、操作部非表示、メモ節・出典リンク保持を確認した。
+
+正本は`evidence/20260812_work1_task_memo_local_acceptance.json`。ローカル判定は
+**GitHub適用へ進めるGO**。commit、push、scope lock、Pages、公開URL読戻し後に段階を固定する。

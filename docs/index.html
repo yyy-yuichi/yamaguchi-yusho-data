@@ -224,6 +224,23 @@
       font-weight: 800;
     }
 
+    .memo-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      margin: .25rem 0 1rem;
+      padding: .65rem 1rem;
+      border: 1px solid var(--green-dark);
+      border-radius: 10px;
+      background: var(--green-dark);
+      color: #fff;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .memo-link:hover { background: var(--green); }
+
     .metric-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -545,6 +562,7 @@
         <span id="record-badge" class="record-badge">登録簿データ</span>
       </div>
       <p id="result-description" class="section-copy"></p>
+      <a id="memo-link" class="memo-link" href="municipality-memo.html">この市町の交通協議前確認メモを作る</a>
 
       <div class="metric-grid" aria-label="選択市町の集計">
         <div class="metric">
@@ -1087,6 +1105,10 @@
         document.title = `${item.municipality}｜山口県 市町別の登録供給ビュー`;
 
         renderGtfsStatus(item.municipality);
+
+        const memoUrl = new URL("municipality-memo.html", window.location.href);
+        memoUrl.searchParams.set("municipality", item.municipality);
+        document.getElementById("memo-link").href = memoUrl;
 
         const url = new URL(window.location.href);
         url.searchParams.set("municipality", item.municipality);

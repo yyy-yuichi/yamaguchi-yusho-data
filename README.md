@@ -38,7 +38,7 @@ UDC2026公式の一次審査基準（実用度・完成度・挑戦度）に、�
 
 このリポジトリは作品①のうち、**「自家用有償旅客運送者の登録簿」の機械可読化**と、
 **市町別の登録供給ビュー**、**公式GTFS/GTFS-JP確認状況**、**岩国市・光市関連フィードの
-GTFS供給比較を表示する静的ビュー**までを担う。
+GTFS供給比較**、**市町別の交通協議前確認メモ**までを担う。
 中国運輸局が PDF でのみ公表している登録簿を構造化し、山口県の市町別に供給量
 （団体数・車種別の車両台数）を機械可読なデータとして取り出したうえで、山口県公式19市町
 から1市町を選んで団体・車両・原本を追跡できる画面（`docs/index.html`）を公開用HTMLとして
@@ -47,6 +47,20 @@ GTFS供給比較を表示する静的ビュー**までを担う。
 登録簿PDFの処理やCSV作成、市町別ビューの実装は作品を成立させるための手段であり、
 このリポジトリ単体を UDC2026 への提出作品の完成とは扱わない。提出物の中心は、
 利用者が市町別の供給状況と公開データ上の空白を確認できる静的アプリ／サービスである。
+
+## 市町別 交通協議前確認メモ（WORK1-TASK-MEMO-1）
+
+[`docs/municipality-memo.html`](docs/municipality-memo.html)は、既存の公開JSONだけから、選択した
+市町について「いま確認できる範囲」「登録簿上の供給」「GTFSの公開確認状況」「測定済み指標」
+「協議前に次に確認すること」を一枚に構成する。市町をURLに保持でき、共有URLのコピーと
+印刷・PDF保存に対応する。登録0件やGTFS未確認をサービスの不存在とせず、指標のない市町へ
+値を補完しない。
+
+- GitHub Pages反映後URL: <https://yyy-yuichi.github.io/yamaguchi-yusho-data/municipality-memo.html>
+- 入力: `docs/data/municipal_supply.json`、`docs/data/municipality_gtfs.json`、
+  `docs/data/gtfs_feeds.json`、`docs/data/gtfs_supply_metrics.json`
+- 原本・既存公開JSON・計算値はこの画面から更新しない
+- 作品②からの入力は0件
 
 ## 制度区分
 
@@ -84,6 +98,8 @@ UDC2026応募全体の終了条件（作品概要エントリー・本応募・�
 - **WORK1-FRESHNESS-1（継続確認）**: 受入済み4登録簿PDF・2 GTFS ZIPを公式配布と
   継続照合し、原本を採用し直さずに状態だけを区別する。GitHub Actionsの週次・手動検査と
   Pagesからの履歴導線を運用する
+- **WORK1-TASK-MEMO-1**: 既存の作品①公開データを、市町別の交通協議前確認メモとして
+  共有・印刷できる実務向け出力へ変換する
 
 ## 原本変更の継続確認（WORK1-FRESHNESS-1）
 
@@ -174,6 +190,7 @@ GTFS収録の交通ブランド情報、路線情報ID、乗降場所IDと、202
 - `data/gtfs_supply_metrics.json` — 岩国市・光市関連フィードの構造指標・同一週の日別予定便・根拠
 - `docs/data/gtfs_supply_metrics.json` — 上記入力とバイト一致する静的サイト用JSON
 - `docs/index.html` — 市町別の登録供給、公式GTFS確認状況、岩国市・光市の供給比較を確認できるHTML
+- `docs/municipality-memo.html` — 市町別の根拠・限界・次の確認事項を共有・印刷できる協議前確認メモ
 - `docs/status.html` — このリポジトリの現況説明（受入済み成果・残作業・終了条件の状況）
 - `docs/award-comparison.html` — UDC2026公式3観点、特別賞条件、公開証拠、改善上位3件の比較準備ページ
 - `data/work1_award_scorecard.json` / `data/award_scorecard_schema.json` — 比較準備の正本JSONと共通形式

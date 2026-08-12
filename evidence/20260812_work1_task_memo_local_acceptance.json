@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "stage": "WORK1-TASK-MEMO-1",
+  "acceptance_scope": "local_pre_publication",
+  "checked_at": "2026-08-12T11:28:34.5138078+09:00",
+  "repository": "https://github.com/yyy-yuichi/yamaguchi-yusho-data",
+  "branch": "main",
+  "base_head": "f7bd958708abe100174c55bd3028e6e5979ad7ee",
+  "work_scope": {
+    "guard_result": "WORK1_SCOPE_ALLOWED",
+    "work2_inputs": 0,
+    "external_user_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0
+  },
+  "inputs": {
+    "docs/data/municipal_supply.json": "d61948840687b2ecf2d85d65de5af695884ae8478e06748c8ffa2f15b1d7b0a0",
+    "docs/data/municipality_gtfs.json": "2202ccaeaee3889c2e18ebe0be686a826fb010623302328d8a9a22c176677dcb",
+    "docs/data/gtfs_feeds.json": "0992264986ae44c5c7f11230b2d04f3ee10292995342343806fa31cb77bb30ac",
+    "docs/data/gtfs_supply_metrics.json": "26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b"
+  },
+  "implementation": {
+    "docs/municipality-memo.html": "dcd448b4d747bdb9f593a7c757f1b0a2b29750e38ec6211de0be83f450c8555f",
+    "docs/index.html": "502eb93199d3df71593dc7d220d575159a9167a2692bdec2bb8b5b4b7d7c4b49"
+  },
+  "automated_tests": {
+    "focused": {
+      "command": "python -m unittest tests.test_task_memo -v",
+      "count": 14,
+      "result": "pass"
+    },
+    "full": {
+      "command": "python -m unittest discover -s tests -v",
+      "count": 139,
+      "result": "pass"
+    },
+    "git_diff_check": "pass",
+    "secret_scan_hits": 0,
+    "prohibited_changed_paths": 0,
+    "spec_coverage": {
+      "old_revision": "5.8",
+      "new_revision": "5.9",
+      "tokens": 809,
+      "missing": 0
+    }
+  },
+  "browser_acceptance": {
+    "desktop": {
+      "viewport": "1440x1600",
+      "horizontal_overflow_px": 0,
+      "runtime_errors": 0,
+      "dev_errors": 0
+    },
+    "mobile": {
+      "viewport": "390x844",
+      "horizontal_overflow_px": 0,
+      "runtime_errors": 0,
+      "responsive_media_match": true
+    },
+    "representative_branches": {
+      "registry_present_gtfs_unconfirmed": "pass",
+      "registry_zero_gtfs_confirmed_metrics_absent": "pass",
+      "registry_present_gtfs_confirmed_metrics_present": "pass"
+    },
+    "municipality_round_trip": "pass",
+    "copy_action_success_status": "pass",
+    "copy_manual_fallback_visible": true,
+    "print_action_no_runtime_error": true,
+    "print_media_contract": {
+      "rule_count": 1,
+      "controls_hidden": true,
+      "memo_sections_retained": true,
+      "links_retained": true
+    }
+  },
+  "protected_assets": {
+    "raw_changed": false,
+    "data_changed": false,
+    "docs_data_changed": false,
+    "processing_code_changed": false,
+    "award_scorecard_changed": false
+  },
+  "decision": "GO_TO_GITHUB_APPLICATION",
+  "publication": {
+    "commit": null,
+    "push": "not_started",
+    "pages": "not_verified",
+    "public_url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/municipality-memo.html"
+  }
+}

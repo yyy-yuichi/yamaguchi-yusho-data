@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="山口県内の市町別登録供給とGTFS確認状況を、交通協議前の確認メモにまとめます。">
+  <title>市町別 交通協議前確認メモ｜山口県 市町別の登録供給ビュー</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172228;
+      --muted: #536269;
+      --paper: #fff;
+      --canvas: #f2f5f2;
+      --line: #cbd5cf;
+      --green: #0f6b4f;
+      --green-dark: #084c39;
+      --green-soft: #e6f3ed;
+      --blue: #155b8a;
+      --blue-soft: #e9f3fa;
+      --amber: #8a5a00;
+      --amber-soft: #fff3d4;
+      --red: #9a2f2f;
+      --shadow: 0 12px 30px rgba(23, 34, 40, .1);
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--canvas); color: var(--ink); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.7; }
+    body { margin: 0; }
+    a { color: var(--blue); }
+    a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible { outline: 3px solid #f0a400; outline-offset: 3px; }
+    .skip-link { position: absolute; left: 1rem; top: -5rem; z-index: 10; padding: .65rem .9rem; background: var(--ink); color: #fff; }
+    .skip-link:focus { top: 1rem; }
+    .shell { width: min(1120px, calc(100% - 2rem)); margin-inline: auto; }
+    .topbar { background: var(--ink); color: #fff; }
+    .topbar .shell { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .7rem; }
+    .brand { color: #fff; font-weight: 800; text-decoration: none; }
+    nav { display: flex; flex-wrap: wrap; gap: .8rem; }
+    nav a { color: #fff; font-size: .9rem; }
+    .hero { padding: 3.2rem 0 2rem; background: linear-gradient(135deg, #e6f3ed 0%, #f7f2df 100%); border-bottom: 1px solid var(--line); }
+    .eyebrow { margin: 0 0 .5rem; color: var(--green-dark); font-weight: 800; letter-spacing: .06em; }
+    h1, h2, h3 { line-height: 1.3; }
+    h1 { max-width: 18em; margin: 0; font-size: clamp(2rem, 6vw, 3.7rem); }
+    .lead { max-width: 62em; margin: 1rem 0 0; color: var(--muted); }
+    main { padding: 1.5rem 0 4rem; }
+    .controls, .memo-section, .notice { margin-top: 1rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); box-shadow: var(--shadow); }
+    .controls { display: grid; grid-template-columns: minmax(220px, 1fr) auto; gap: 1rem; align-items: end; padding: 1rem; }
+    label { display: block; margin-bottom: .35rem; font-weight: 800; }
+    select, input, button, .button-link { min-height: 44px; border-radius: 10px; font: inherit; }
+    select, input { width: 100%; border: 1px solid #84928b; background: #fff; padding: .6rem .7rem; color: var(--ink); }
+    .actions { display: flex; flex-wrap: wrap; gap: .55rem; }
+    button, .button-link { display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--green-dark); padding: .55rem .9rem; background: var(--green-dark); color: #fff; cursor: pointer; font-weight: 800; text-decoration: none; }
+    button.secondary, .button-link.secondary { background: #fff; color: var(--green-dark); }
+    button:disabled { cursor: wait; opacity: .6; }
+    .share-row { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .55rem; align-items: end; }
+    .status-text { grid-column: 1 / -1; min-height: 1.7em; margin: 0; color: var(--muted); }
+    .status-text[data-kind="error"] { color: var(--red); font-weight: 700; }
+    .notice { padding: 1rem 1.2rem; background: var(--amber-soft); border-color: #e1c06f; }
+    .notice p { margin: .25rem 0; }
+    .fallback-links { display: flex; flex-wrap: wrap; gap: .8rem; }
+    .memo-header { margin-top: 1.5rem; padding: 1.2rem 1.35rem; color: #fff; background: var(--green-dark); border-radius: var(--radius); }
+    .memo-header h2 { margin: 0; font-size: clamp(1.6rem, 4vw, 2.3rem); }
+    .memo-header p { margin: .35rem 0 0; }
+    .memo-section { padding: 1.2rem 1.35rem; }
+    .memo-section h3 { margin-top: 0; }
+    .summary-grid, .metric-grid, .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: .8rem; }
+    .summary-card, .metric, .data-card { min-width: 0; padding: .9rem; border: 1px solid var(--line); border-radius: 12px; background: #fbfcfb; }
+    .summary-card dt, .metric dt { color: var(--muted); font-size: .88rem; font-weight: 700; }
+    .summary-card dd, .metric dd { margin: .2rem 0 0; font-size: 1.25rem; font-weight: 850; }
+    .pill { display: inline-block; padding: .18rem .55rem; border-radius: 999px; font-size: .82rem; font-weight: 800; }
+    .pill.confirmed { background: var(--green-soft); color: var(--green-dark); }
+    .pill.unconfirmed { background: var(--amber-soft); color: var(--amber); }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: .65rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { background: #edf2ef; }
+    .compact-list { margin: .4rem 0 0; padding-left: 1.2rem; }
+    .compact-list li + li { margin-top: .45rem; }
+    .data-card h4 { margin: 0 0 .4rem; }
+    .data-card p { margin: .25rem 0; overflow-wrap: anywhere; }
+    .muted { color: var(--muted); }
+    .source-list { padding-left: 1.2rem; }
+    .source-list li + li { margin-top: .65rem; }
+    [hidden] { display: none !important; }
+    footer { padding: 2rem 0; border-top: 1px solid var(--line); background: #fff; color: var(--muted); }
+    @media (max-width: 640px) {
+      .shell { width: min(100% - 1rem, 1120px); }
+      .topbar .shell, .controls { display: block; }
+      nav { margin-top: .4rem; }
+      .actions { margin-top: .8rem; }
+      .share-row { display: block; }
+      .share-row button { margin-top: .55rem; width: 100%; }
+      .memo-section { padding: 1rem; }
+      th, td { padding: .5rem; font-size: .9rem; }
+    }
+    @media print {
+      @page { margin: 12mm; }
+      html, body { background: #fff; color: #000; font-size: 10.5pt; }
+      .no-print, .skip-link, footer { display: none !important; }
+      .shell { width: 100%; }
+      main { padding: 0; }
+      .memo-header { margin-top: 0; color: #000; background: #fff; border: 2px solid #000; break-after: avoid; }
+      .memo-section, .summary-card, .metric, .data-card { box-shadow: none; background: #fff; border-color: #777; }
+      .memo-section { break-inside: avoid; }
+      a { color: #000; text-decoration: underline; overflow-wrap: anywhere; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#memo">確認メモへ移動</a>
+  <div class="topbar no-print">
+    <div class="shell">
+      <a class="brand" href="index.html">山口県 市町別の登録供給ビュー</a>
+      <nav aria-label="関連ページ">
+        <a href="index.html">データを見る</a>
+        <a href="entry.html">作品説明</a>
+        <a href="status.html">検証状況</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="hero no-print">
+    <div class="shell">
+      <p class="eyebrow">UDC2026 作品① / 実務向け出力</p>
+      <h1>市町別 交通協議前確認メモ</h1>
+      <p class="lead">登録簿とGTFSの公開確認結果を、最初の打合せで「何が分かり、次に何を確かめるか」を共有できる一枚にまとめます。行政判断や交通の充足度を断定する資料ではありません。</p>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="controls no-print" aria-labelledby="control-title">
+      <div>
+        <h2 id="control-title">市町を選ぶ</h2>
+        <label for="municipality-select">市町名</label>
+        <select id="municipality-select" disabled>
+          <option>データを読み込み中…</option>
+        </select>
+      </div>
+      <div class="actions">
+        <a id="detail-link" class="button-link secondary" href="index.html">元の詳細を見る</a>
+        <button id="print-button" type="button" disabled>印刷・PDF保存</button>
+      </div>
+      <div class="share-row">
+        <div>
+          <label for="share-url">共有URL</label>
+          <input id="share-url" type="text" readonly value="">
+        </div>
+        <button id="copy-button" class="secondary" type="button" disabled>URLをコピー</button>
+      </div>
+      <p id="action-status" class="status-text" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="loading" class="notice" role="status">
+      <p><strong>公開データを読み込んでいます。</strong></p>
+    </section>
+
+    <section id="load-error" class="notice" role="alert" hidden>
+      <p><strong>確認メモを生成できませんでした。</strong></p>
+      <p id="load-error-detail">通信環境を確認して再読み込みしてください。元データは次のリンクから個別に確認できます。</p>
+      <div class="fallback-links">
+        <a href="data/municipal_supply.json">登録供給JSON</a>
+        <a href="data/municipality_gtfs.json">市町別GTFS確認JSON</a>
+        <a href="data/gtfs_feeds.json">GTFSフィードJSON</a>
+        <a href="data/gtfs_supply_metrics.json">GTFS指標JSON</a>
+      </div>
+    </section>
+
+    <article id="memo" hidden>
+      <header class="memo-header">
+        <h2 id="memo-title">交通協議前確認メモ</h2>
+        <p id="memo-subtitle"></p>
+      </header>
+
+      <section class="memo-section" aria-labelledby="summary-title">
+        <h3 id="summary-title">1. いま確認できる範囲</h3>
+        <dl id="summary-grid" class="summary-grid"></dl>
+      </section>
+
+      <section class="memo-section" aria-labelledby="registry-title">
+        <h3 id="registry-title">2. 福祉有償運送・交通空白地有償運送の登録供給</h3>
+        <p id="registry-note" class="muted"></p>
+        <dl id="registry-metrics" class="metric-grid"></dl>
+        <div id="breakdown-block">
+          <h4>運送種別の内訳</h4>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>運送種別</th><th>団体数</th><th>登録車両</th><th>うち軽</th></tr></thead>
+              <tbody id="breakdown-body"></tbody>
+            </table>
+          </div>
+        </div>
+        <div id="operator-block">
+          <h4>関係する登録団体</h4>
+          <div id="operator-cards" class="card-grid"></div>
+        </div>
+        <p id="registry-empty" class="notice" hidden></p>
+      </section>
+
+      <section class="memo-section" aria-labelledby="gtfs-title">
+        <h3 id="gtfs-title">3. GTFSの公開確認状況</h3>
+        <p id="gtfs-summary"></p>
+        <div id="feed-cards" class="card-grid"></div>
+      </section>
+
+      <section class="memo-section" aria-labelledby="metrics-title">
+        <h3 id="metrics-title">4. 測定済みのGTFS指標</h3>
+        <div id="measured-metrics"></div>
+        <p id="metrics-empty" class="notice" hidden></p>
+      </section>
+
+      <section class="memo-section" aria-labelledby="checklist-title">
+        <h3 id="checklist-title">5. 協議前に確認すること</h3>
+        <ol id="checklist" class="compact-list"></ol>
+      </section>
+
+      <section class="memo-section" aria-labelledby="limits-title">
+        <h3 id="limits-title">6. 読み方・限界・根拠</h3>
+        <ul id="limits" class="compact-list"></ul>
+        <h4>このメモが参照した公開データ</h4>
+        <ul id="source-links" class="source-list"></ul>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <div class="shell">このメモは公開情報の初期確認を助けるものです。最終判断は各原本と関係機関への確認に基づいてください。</div>
+  </footer>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const sourceUrls = {
+        supply: "data/municipal_supply.json",
+        municipalityGtfs: "data/municipality_gtfs.json",
+        feeds: "data/gtfs_feeds.json",
+        metrics: "data/gtfs_supply_metrics.json"
+      };
+      const sourceLabels = {
+        supply: "市町別の登録供給（登録簿4PDFの集計）",
+        municipalityGtfs: "市町別GTFS公開確認状況",
+        feeds: "確認対象GTFSフィード",
+        metrics: "GTFS供給指標"
+      };
+      const state = { supply: null, municipalityGtfs: [], feeds: [], metrics: [] };
+      window.__taskMemoRuntimeErrors = [];
+      window.addEventListener("error", event => {
+        window.__taskMemoRuntimeErrors.push(String(event.message || "unknown error"));
+      });
+      window.addEventListener("unhandledrejection", event => {
+        window.__taskMemoRuntimeErrors.push(String(event.reason || "unhandled rejection"));
+      });
+
+      const select = document.getElementById("municipality-select");
+      const memo = document.getElementById("memo");
+      const loading = document.getElementById("loading");
+      const loadError = document.getElementById("load-error");
+      const actionStatus = document.getElementById("action-status");
+      const printButton = document.getElementById("print-button");
+      const copyButton = document.getElementById("copy-button");
+      const shareUrl = document.getElementById("share-url");
+
+      function text(id, value) {
+        document.getElementById(id).textContent = value == null ? "—" : String(value);
+      }
+
+      function clear(node) {
+        node.replaceChildren();
+      }
+
+      function addListItem(list, value) {
+        const item = document.createElement("li");
+        item.textContent = value;
+        list.appendChild(item);
+      }
+
+      function addDefinition(list, label, value) {
+        const card = document.createElement("div");
+        card.className = "summary-card";
+        const term = document.createElement("dt");
+        term.textContent = label;
+        const description = document.createElement("dd");
+        description.textContent = value;
+        card.append(term, description);
+        list.appendChild(card);
+      }
+
+      function addExternalLink(parent, label, url) {
+        if (typeof url !== "string" || !url.startsWith("https://")) return;
+        const link = document.createElement("a");
+        link.href = url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = label;
+        parent.appendChild(link);
+      }
+
+      function feedIds(row) {
+        return String(row && row.feed_ids || "").split(";").map(value => value.trim()).filter(Boolean);
+      }
+
+      function measuredValue(metric) {
+        return metric && metric.metric_status === "measured" ? metric.value : "—";
+      }
+
+      function renderSummary(item, gtfsRow) {
+        const grid = document.getElementById("summary-grid");
+        clear(grid);
+        addDefinition(grid, "対象市町", item.municipality);
+        addDefinition(grid, "登録簿の基準日", state.supply.meta.data_as_of || "要原本確認");
+        addDefinition(grid, "登録簿上の関係団体", `${item.operator_count}団体`);
+        addDefinition(grid, "GTFSの確認日", gtfsRow.checked_at || "要再確認");
+
+        const card = document.createElement("div");
+        card.className = "summary-card";
+        const term = document.createElement("dt");
+        term.textContent = "GTFS公開確認";
+        const description = document.createElement("dd");
+        const pill = document.createElement("span");
+        const confirmed = gtfsRow.availability_status === "confirmed";
+        pill.className = `pill ${confirmed ? "confirmed" : "unconfirmed"}`;
+        pill.textContent = confirmed ? "確認済み" : "確認範囲では未確認";
+        description.appendChild(pill);
+        card.append(term, description);
+        grid.appendChild(card);
+      }
+
+      function renderRegistry(item) {
+        text("registry-note", `${state.supply.meta.data_as_of || "記載日不明"}時点の公表登録簿で、運送区域にこの市町を含む記載を集計しています。`);
+        const metrics = document.getElementById("registry-metrics");
+        clear(metrics);
+        addDefinition(metrics, "団体数", `${item.operator_count}団体`);
+        addDefinition(metrics, "登録車両", `${item.vehicles_total}台`);
+        addDefinition(metrics, "うち軽自動車", `${item.vehicles_total_kei}台`);
+
+        const body = document.getElementById("breakdown-body");
+        clear(body);
+        for (const row of item.by_transport_type || []) {
+          const tr = document.createElement("tr");
+          for (const value of [row.transport_type, row.operator_count, row.vehicles_total, row.vehicles_total_kei]) {
+            const cell = document.createElement("td");
+            cell.textContent = String(value);
+            tr.appendChild(cell);
+          }
+          body.appendChild(tr);
+        }
+
+        const cards = document.getElementById("operator-cards");
+        clear(cards);
+        for (const operator of item.operators || []) {
+          const card = document.createElement("article");
+          card.className = "data-card";
+          const title = document.createElement("h4");
+          title.textContent = operator.org_name;
+          card.appendChild(title);
+          const values = [
+            `登録番号: ${operator.registration_no || "要原本確認"}`,
+            `運送種別: ${operator.transport_type || "要原本確認"}`,
+            `登録車両: ${operator.vehicles_total}台（うち軽 ${operator.vehicles_total_kei}台）`,
+            `有効期間: ${operator.valid_to || "要原本確認"}`
+          ];
+          for (const value of values) {
+            const paragraph = document.createElement("p");
+            paragraph.textContent = value;
+            card.appendChild(paragraph);
+          }
+          const source = document.createElement("p");
+          const sourceUrl = typeof operator.source_url === "string"
+            ? `${operator.source_url}#page=${operator.source_page}`
+            : operator.source_url;
+          addExternalLink(source, `登録簿原本 p.${operator.source_page}`, sourceUrl);
+          card.appendChild(source);
+          cards.appendChild(card);
+        }
+
+        const empty = item.operator_count === 0;
+        document.getElementById("breakdown-block").hidden = empty;
+        document.getElementById("operator-block").hidden = empty;
+        const emptyMessage = document.getElementById("registry-empty");
+        emptyMessage.hidden = !empty;
+        emptyMessage.textContent = "今回確認した4登録簿では、この市町を運送区域に含む記載を集計できませんでした。制度・サービス・移動手段の不存在を意味しません。別制度、更新版、区域表記、関係機関の情報を追加確認してください。";
+      }
+
+      function renderGtfs(gtfsRow) {
+        const confirmed = gtfsRow.availability_status === "confirmed";
+        text("gtfs-summary", confirmed
+          ? `確認対象の公式配布先でGTFSを確認しました。確認日: ${gtfsRow.checked_at}。`
+          : `確認対象の公式配布先ではGTFSを確認できませんでした。確認日: ${gtfsRow.checked_at}。これはGTFSや交通サービスの不存在を示しません。`);
+        const cards = document.getElementById("feed-cards");
+        clear(cards);
+        const feeds = feedIds(gtfsRow).map(id => state.feeds.find(feed => feed.feed_id === id)).filter(Boolean);
+        for (const feed of feeds) {
+          const card = document.createElement("article");
+          card.className = "data-card";
+          const title = document.createElement("h4");
+          title.textContent = feed.dataset_name || feed.publisher || feed.feed_id;
+          card.appendChild(title);
+          for (const value of [
+            `公開者: ${feed.publisher || "要確認"}`,
+            `取得状態: ${feed.access_status || "要確認"}`,
+            `公式基準日: ${feed.official_reference_date || "記載なし"}`,
+            `有効期間: ${feed.official_valid_from || "記載なし"} 〜 ${feed.official_valid_to || "記載なし"}`,
+            `範囲: ${feed.scope_note || "要確認"}`
+          ]) {
+            const paragraph = document.createElement("p");
+            paragraph.textContent = value;
+            card.appendChild(paragraph);
+          }
+          const source = document.createElement("p");
+          addExternalLink(source, "公式配布ページ", feed.official_page_url);
+          card.appendChild(source);
+          cards.appendChild(card);
+        }
+        if (!feeds.length) {
+          const note = document.createElement("p");
+          note.className = "notice";
+          note.textContent = gtfsRow.scope_note || "確認範囲と公式配布先を再確認してください。";
+          cards.appendChild(note);
+        }
+      }
+
+      function renderMeasuredMetrics(item) {
+        const root = document.getElementById("measured-metrics");
+        const empty = document.getElementById("metrics-empty");
+        clear(root);
+        const rows = state.metrics.filter(row => row.municipality === item.municipality);
+        empty.hidden = rows.length > 0;
+        empty.textContent = "この市町について、取得・安全確認済みGTFSから算出した指標はありません。値を推定せず、公式配布条件、取得可否、対象範囲を確認してから扱ってください。";
+        for (const row of rows) {
+          const heading = document.createElement("h4");
+          heading.textContent = `フィード: ${row.feed_id}`;
+          root.appendChild(heading);
+          const note = document.createElement("p");
+          note.className = "muted";
+          note.textContent = `${row.comparison_week_start}〜${row.comparison_week_end}の比較週。市町境界内の供給量ではなく、フィード全体の測定値です。`;
+          root.appendChild(note);
+          const grid = document.createElement("dl");
+          grid.className = "metric-grid";
+          addDefinition(grid, "agency.txt行数", measuredValue(row.metrics.gtfs_agency_record_count));
+          addDefinition(grid, "route_id数", measuredValue(row.metrics.gtfs_route_id_count));
+          addDefinition(grid, "乗降地点ID数", measuredValue(row.metrics.gtfs_boarding_location_id_count));
+          root.appendChild(grid);
+          const tableWrap = document.createElement("div");
+          tableWrap.className = "table-wrap";
+          const table = document.createElement("table");
+          const thead = document.createElement("thead");
+          const headRow = document.createElement("tr");
+          for (const label of ["運行日", "予定便数"]) {
+            const th = document.createElement("th");
+            th.textContent = label;
+            headRow.appendChild(th);
+          }
+          thead.appendChild(headRow);
+          const tbody = document.createElement("tbody");
+          for (const [date, metric] of Object.entries(row.scheduled_trip_count_by_date || {})) {
+            const tr = document.createElement("tr");
+            const dateCell = document.createElement("td");
+            const valueCell = document.createElement("td");
+            dateCell.textContent = date;
+            valueCell.textContent = String(measuredValue(metric));
+            tr.append(dateCell, valueCell);
+            tbody.appendChild(tr);
+          }
+          table.append(thead, tbody);
+          tableWrap.appendChild(table);
+          root.appendChild(tableWrap);
+        }
+      }
+
+      function renderChecklist(item, gtfsRow) {
+        const list = document.getElementById("checklist");
+        clear(list);
+        addListItem(list, "登録簿原本で登録番号、有効期間、運送区域、車両数を確認する。");
+        if (item.operator_count === 0) {
+          addListItem(list, "今回の4登録簿以外の制度、更新版、区域表記、関係機関の情報を確認する。0件をサービス不存在と解釈しない。");
+        } else {
+          addListItem(list, "有効期限と市町をまたぐ同一団体の重複を確認する。市町値を足して県計にしない。");
+        }
+        if (gtfsRow.availability_status === "confirmed") {
+          addListItem(list, "公式配布ページで最新版、ライセンス、有効期間、対象事業者・路線の範囲を再確認する。");
+        } else {
+          addListItem(list, "公式オープンデータカタログと交通事業者の案内を再確認する。未確認を不存在と表現しない。");
+        }
+        const hasMetrics = state.metrics.some(row => row.municipality === item.municipality);
+        if (hasMetrics) {
+          addListItem(list, "指標の比較週、基準日、フィード全体という集計単位を確認してから協議資料に引用する。");
+        } else {
+          addListItem(list, "GTFS指標を補完・推定しない。取得許可、配布条件、安全確認を終えてから算出する。");
+        }
+        addListItem(list, "交通空白、利便性、需要充足の判断には、路線・時刻・予約条件・利用実績・人口等の追加情報を組み合わせる。");
+      }
+
+      function renderLimits(gtfsRow) {
+        const list = document.getElementById("limits");
+        clear(list);
+        for (const value of [
+          "登録供給は公表登録簿4PDFの記載を市町名で集計したもので、実際の運行、予約可能性、利用実績、地理的な到達範囲を示しません。",
+          "同一団体が複数市町を運送区域に含むため、市町別の団体数・車両数を合計して県全体値にはできません。",
+          "GTFSの確認済み・未確認は記載した確認日と確認範囲に限られ、交通サービスの有無や網羅性を断定しません。",
+          "GTFS指標がある場合もフィード全体の構造・予定便を測定した値であり、市町内の供給量や利便性の順位ではありません。",
+          `市町別GTFS確認の範囲注記: ${gtfsRow.scope_note || "要確認"}`
+        ]) addListItem(list, value);
+
+        const sources = document.getElementById("source-links");
+        clear(sources);
+        for (const [key, url] of Object.entries(sourceUrls)) {
+          const item = document.createElement("li");
+          const link = document.createElement("a");
+          link.href = url;
+          link.textContent = sourceLabels[key];
+          item.appendChild(link);
+          sources.appendChild(item);
+        }
+        if (typeof state.supply.meta.source_index_url === "string") {
+          const item = document.createElement("li");
+          addExternalLink(item, "登録簿の公式掲載ページ", state.supply.meta.source_index_url);
+          sources.appendChild(item);
+        }
+      }
+
+      function render(municipalityName) {
+        const item = state.supply.municipalities.find(row => row.municipality === municipalityName);
+        const gtfsRow = state.municipalityGtfs.find(row => row.municipality === municipalityName);
+        if (!item || !gtfsRow) return;
+        select.value = municipalityName;
+        text("memo-title", `${item.municipality} 交通協議前確認メモ`);
+        text("memo-subtitle", `生成日 ${new Intl.DateTimeFormat("ja-JP", { dateStyle: "long" }).format(new Date())} / 公開データから自動構成`);
+        renderSummary(item, gtfsRow);
+        renderRegistry(item);
+        renderGtfs(gtfsRow);
+        renderMeasuredMetrics(item);
+        renderChecklist(item, gtfsRow);
+        renderLimits(gtfsRow);
+
+        const url = new URL(window.location.href);
+        url.searchParams.set("municipality", item.municipality);
+        window.history.replaceState({}, "", url);
+        shareUrl.value = url.href;
+        const detail = new URL("index.html", window.location.href);
+        detail.searchParams.set("municipality", item.municipality);
+        document.getElementById("detail-link").href = detail.href;
+        document.title = `${item.municipality} 交通協議前確認メモ｜山口県 市町別の登録供給ビュー`;
+        memo.hidden = false;
+        actionStatus.textContent = "";
+      }
+
+      async function loadJson(url) {
+        const response = await fetch(url, { cache: "no-store" });
+        if (!response.ok) throw new Error(`${url}: HTTP ${response.status}`);
+        return response.json();
+      }
+
+      function validateData() {
+        if (!state.supply || !Array.isArray(state.supply.municipalities) || !state.supply.municipalities.length) throw new Error("登録供給データの形式が不正です");
+        if (!Array.isArray(state.municipalityGtfs)) throw new Error("市町別GTFSデータの形式が不正です");
+        const supplyNames = state.supply.municipalities.map(row => row.municipality);
+        const gtfsNames = state.municipalityGtfs.map(row => row.municipality);
+        if (supplyNames.length !== gtfsNames.length || supplyNames.some(name => !gtfsNames.includes(name))) throw new Error("市町一覧が一致しません");
+      }
+
+      async function initialize() {
+        try {
+          const [supply, municipalityGtfs, feeds, metrics] = await Promise.all(Object.values(sourceUrls).map(loadJson));
+          Object.assign(state, { supply, municipalityGtfs, feeds, metrics });
+          validateData();
+          clear(select);
+          for (const item of state.supply.municipalities) {
+            const option = document.createElement("option");
+            option.value = item.municipality;
+            option.textContent = item.municipality;
+            select.appendChild(option);
+          }
+          const requested = new URL(window.location.href).searchParams.get("municipality");
+          const initial = state.supply.municipalities.some(row => row.municipality === requested)
+            ? requested
+            : state.supply.municipalities[0].municipality;
+          select.disabled = false;
+          printButton.disabled = false;
+          copyButton.disabled = false;
+          loading.hidden = true;
+          render(initial);
+        } catch (error) {
+          loading.hidden = true;
+          loadError.hidden = false;
+          text("load-error-detail", `通信環境を確認して再読み込みしてください。詳細: ${error.message || error}`);
+          window.__taskMemoRuntimeErrors.push(String(error.message || error));
+        }
+      }
+
+      select.addEventListener("change", () => render(select.value));
+      printButton.addEventListener("click", () => window.print());
+      copyButton.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(shareUrl.value);
+          actionStatus.dataset.kind = "success";
+          actionStatus.textContent = "共有URLをコピーしました。";
+        } catch (error) {
+          actionStatus.dataset.kind = "error";
+          actionStatus.textContent = "自動コピーできませんでした。上の共有URLを選択してコピーしてください。";
+        }
+      });
+
+      initialize();
+    })();
+  </script>
+</body>
+</html>

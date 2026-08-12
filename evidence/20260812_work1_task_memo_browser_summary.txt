@@ -1,0 +1,40 @@
+WORK1-TASK-MEMO-1 local browser acceptance
+Checked: 2026-08-12 JST
+
+Inputs and page
+- Local URL: http://127.0.0.1:8011/municipality-memo.html
+- Inputs: existing public municipal_supply.json, municipality_gtfs.json,
+  gtfs_feeds.json, gtfs_supply_metrics.json only
+- Page runtime error recorder: 0 errors in all accepted branches
+- Browser developer error log: 0 errors
+
+Representative branches
+1. Shimonoseki: registry 5 organizations / 49 vehicles / 13 light vehicles;
+   GTFS not confirmed in checked sources; absence disclaimer visible; no metrics
+   are imputed.
+2. Ube: registry 0 organizations; zero-state explicitly says that this does not
+   mean the absence of a制度, service, or means of transportation; GTFS confirmed;
+   one feed card; no measured metric is imputed.
+3. Iwakuni: registry 1 organization / 33 vehicles; GTFS confirmed; three measured
+   structure metrics and seven dated scheduled-trip rows; 2026-04-06 through
+   2026-04-12 and feed-wide limitation visible.
+
+Responsive acceptance
+- Desktop: exact viewport 1440 x 1600, horizontal overflow 0, runtime errors 0.
+- Mobile: exact viewport 390 x 844, mobile media query matched, controls changed
+  to block layout, horizontal overflow 0, runtime errors 0.
+- Screenshots were inspected in the browser session. The title, controls, memo
+  header, summary cards, and first registry section were legible at both widths.
+
+Interaction and print acceptance
+- Selecting a municipality updated the municipality query and the detail-page link.
+- The public top's memo link preserved the selected municipality in both directions.
+- Copy button resolved successfully and displayed "共有URLをコピーしました。".
+- A readonly visible URL remains available as a manual copy fallback.
+- Browser policy did not allow a separate data-URL paste harness, so no independent
+  cross-tab clipboard readback is claimed.
+- The print button returned without a runtime error. The browser CSSOM contained one
+  print media rule that hides .no-print controls, keeps memo sections, converts the
+  document to print colors, and retains underlined source links.
+
+Result: local GO for commit, push, GitHub Pages deployment, and public readback.

@@ -2395,3 +2395,21 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   BODIK APPs登録、注力判断、独立監査は実施していない。
 - WORK1-AWARD-COMPARISON-1を最終受入済みとする。次段階はread-onlyの
   `WORK1-AWARD-AUDIT-1`だけを定義し、開始直前で停止する。
+
+## 2026-08-12 WORK1-TASK-MEMO-1 ローカル実装・検証
+
+- `WORK1-AWARD-AUDIT-1`は固定HEAD・公開bytes・採点計算・証拠リンク・作品②入力0件を
+  read-onlyで監査し、P0・P1なしのGOだった。比較可能は完成ではないという本人方針に従い、
+  作品①単独の改善を再開した。
+- `docs/municipality-memo.html`を追加し、既存公開4 JSONだけから19市町の登録供給、GTFS確認状態、
+  測定済み指標、限界、次の確認事項を一枚に構成した。市町付きURL、トップとの往復、URLコピー、
+  印刷・PDF保存に対応する。
+- 登録0件とGTFS未確認を不存在へ読み替えず、測定値のない市町へ値を補完しない。原本、`data/`、
+  `docs/data/`、処理・計算コード、スコアカードJSONは変更していない。作品②入力は0件。
+- 集中14件、全139件のunittestが成功。SPEC rev.5.8→rev.5.9は809トークン欠落0、
+  `git diff --check`成功、秘密情報らしき値0、禁止範囲の変更0。
+- 実ブラウザで下関市、宇部市、岩国市の3分岐を確認。1440×1600・390×844とも横overflow 0、
+  runtime error 0。印刷操作と印刷CSSの操作部非表示・メモ本文・リンク保持を確認した。
+- 正本は`evidence/20260812_work1_task_memo_local_acceptance.json`、ブラウザ要約は
+  `evidence/20260812_work1_task_memo_browser_summary.txt`。判定はGitHub適用へ進めるローカルGO。
+  commit・push・Pages・公開URL読戻しは未完了で、独立監査はまだ開始しない。
