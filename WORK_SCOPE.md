@@ -34,8 +34,8 @@ flowchart TD
     C4["WORK1-AWARD-COMPARISON-AUDIT-2<br/>read-only監査<br/>GO・P2 2件"]
     T1["WORK1-AWARD-COMPARISON-TRACEABILITY-1<br/>公式用語・根拠追跡<br/>公開・最終受入済み"]
     T2["WORK1-AWARD-COMPARISON-TRACEABILITY-AUDIT-1<br/>read-only監査<br/>GO・P2 1件"]
-    R1["WORK1-RELEASE-ATTESTATION-1<br/>最終公開HEADの外部証明<br/>実装・稼働確認中"]
-    R2["WORK1-RELEASE-ATTESTATION-AUDIT-1<br/>次のread-only監査"]
+    R1["WORK1-RELEASE-ATTESTATION-1<br/>最終公開HEADの外部証明<br/>公開・初回GO・最終受入済み"]
+    R2["WORK1-RELEASE-ATTESTATION-AUDIT-1<br/>次のread-only監査・未着手"]
     C2["作品②の比較用出力<br/>作品②Chatが所有"]
     D{"比較・注力判断<br/>人が決定"}
     S["選んだ作品を応募品質まで強化"]
@@ -77,7 +77,8 @@ flowchart TD
   全テスト、6原本、作品②入力0件をread-onlyで監査し、P0 0件、P1 0件、P2 1件でGO。
   P2は最終commit自身と後続run IDをrepo内へ機械記録できない自己参照である。
 - `WORK1-RELEASE-ATTESTATION-1`: Pages成功後の外部artifactへ対象SHA、自身とPagesのrun ID、
-  全テスト、公開3資産、6原本、作品①境界を固定し、最終HEAD自身を証明する。実装・稼働確認中。
+  全テスト、公開3資産、6原本、作品①境界を固定する。初回artifactはcommit `3dd7693`、
+  run `31646234472`でGO。最終HEAD自身も同じ自動処理で外部証明し、run IDをrepoへ書き戻さない。
 - `WORK1-RELEASE-ATTESTATION-AUDIT-1`: RELEASE-ATTESTATION-1最終受入後の次の一作業。
   最終artifactと公開配信をread-onlyで監査する。現在は未着手。
 - 作品①の公開出力: [受賞準備スコアカード](https://yyy-yuichi.github.io/yamaguchi-yusho-data/award-comparison.html)

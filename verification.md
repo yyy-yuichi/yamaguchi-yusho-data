@@ -2409,3 +2409,18 @@ P2はrepo内の最終受入記録が実装commit `7fdf04a`とそのrun IDを記�
 | 追加修正 | checkout前`core.autocrlf=false`、`PYTHONUTF8=1`、`PYTHONIOENCODING=utf-8` |
 
 固定bytesを緩和せず、runnerのcheckout・標準出力だけをローカル受入条件へ合わせる。
+
+### 初回成功artifactの独立読戻し
+
+| 検証 | 結果 |
+|---|---|
+| subject | `3dd769397316176d5e043f96a70d2208d9d2af66`、checkout・Pages報告SHA一致 |
+| scope lock / Pages / attestation | `31646185332` / `31646184526` / `31646234472`、全success |
+| artifact | ID `9160820965`、archive digest `cfe6988d…b855d5`、期限2026-11-10 |
+| JSON | 7,446 bytes、SHA256 `3f4497ad224895fe09e8aa975cd54c9782b7ce77f427fb819e8dcbb9d2cf9a7f` |
+| decision / errors | `GO` / 0 |
+| tests / public / sources / protected | 151 / 151、3 / 3、6 / 6、3 / 3 |
+| boundary | 作品②入力、参加者連絡、UDC応募、BODIK登録 0 / 0 / 0 / 0 |
+
+正本は`evidence/20260813_work1_release_attestation_public_acceptance.json`。この受入を記録した
+最終commitのrun IDは、そのcommitに対する次の外部artifact自身を正本とし、repoへ書き戻さない。

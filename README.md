@@ -82,7 +82,7 @@ GTFS供給比較**、**市町別の交通協議前確認メモ**までを担う�
 
 対象は山口県分 4 ファイル（上記2区分 × 市町村営・NPO等）。
 
-## 現在地（WORK1-RELEASE-ATTESTATION-1 実装・外部artifact稼働確認中、2026-08-13時点）
+## 現在地（WORK1-RELEASE-ATTESTATION-1 公開・外部artifact運用・Codex最終受入済み、2026-08-13時点）
 
 このリポジトリはI-1〜I-4までの市町別ビューに、受入済みGTFS検査・供給指標を使う
 SUPPLY-VIEW-1の比較画面を追加し、RELEASE-1でGitHub Pagesへ公開した。公開URLに対する
@@ -127,7 +127,8 @@ UDC2026応募全体の終了条件（作品概要エントリー・本応募・�
 - **WORK1-RELEASE-ATTESTATION-1**: Pages成功後に、対象SHA、自身とPagesのrun ID、全テスト、
   公開3資産、6原本、作品①境界を機械可読JSONへ固定する。最新の90日保存artifactは
   [Work 1 release attestation Actions](https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/workflows/release-attestation.yml)
-  から対象SHA名で確認する。artifactのrun IDはartifact自身を正本とし、repoへ書き戻さない
+  から対象SHA名で確認する。初回GOはcommit `3dd7693`・run `31646234472`、151 / 151テスト、
+  公開3 / 3、原本6 / 6、境界0件。artifactのrun IDはartifact自身を正本とし、repoへ書き戻さない
 
 ## 原本変更の継続確認（WORK1-FRESHNESS-1）
 

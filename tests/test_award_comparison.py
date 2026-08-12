@@ -227,6 +227,8 @@ class AwardComparisonContractTest(unittest.TestCase):
             "read-only監査GO・P2 2件",
             "read-only監査GO・P2 1件",
             "90日保存の外部artifact",
+            "初回GO artifact",
+            "全151 / 151テスト",
             "根拠: SPEC.md §20・§23",
             "独立した人間承認ゲート",
         ):

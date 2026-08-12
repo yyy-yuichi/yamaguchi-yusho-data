@@ -2526,3 +2526,12 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
 - 修正commit `3cdccf6`のscope lock・Pagesはsuccess。attestation run `31645964105`は
   Windows checkoutのCRLF変換と非UTF-8標準出力を検出して停止した。checkout前にLF・Python UTF-8を
   固定し、既存JSON・CSV bytesと日本語テスト出力をローカル受入条件へ一致させる。
+
+### 初回外部artifact GO
+
+- commit `3dd769397316176d5e043f96a70d2208d9d2af66`のscope lock `31646185332`、Pages
+  `31646184526`、release attestation `31646234472`は同一SHA・success。
+- artifact `9160820965`をダウンロードし、decision GO、151 / 151テスト、公開3 / 3、原本6 / 6、
+  保護対象3 / 3、errors 0、作品②入力・参加者連絡・応募・BODIK各0件を確認した。
+- 正本は`evidence/20260813_work1_release_attestation_public_acceptance.json`。初回結果を最終commitへ
+  反映し、その最終HEAD自身の新しいartifactを外部正本として再確認する。

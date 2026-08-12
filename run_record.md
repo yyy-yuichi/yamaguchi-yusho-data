@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-13 (rev.53) / 状態: WORK1-RELEASE-ATTESTATION-1 実装・外部artifact稼働確認中 / 次: 同段階のcommit・Actions・Pages・artifact受入
+最終更新: 2026-08-13 (rev.53) / 状態: WORK1-RELEASE-ATTESTATION-1 公開・外部artifact運用・最終受入済み / 次: WORK1-RELEASE-ATTESTATION-AUDIT-1 未着手
 
 ## 0. このファイルについて
 
@@ -1082,3 +1082,11 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   Pages run `31645916575`は同一SHAでsuccess。attestation run `31645964105`は依存導入まで成功し、
   checkout時のCRLF変換による固定JSON SHA・再生成bytes不一致とWindows標準出力の非UTF-8を検出して
   fail closedした。checkout前に`core.autocrlf=false`、PythonにUTF-8環境を固定して再実行する。
+- byte固定commit `3dd769397316176d5e043f96a70d2208d9d2af66`のscope lock run `31646185332`、
+  Pages run `31646184526`、release attestation run `31646234472`は同一SHAでsuccess。
+- artifact `9160820965`をダウンロードし、JSON 7,446 bytes・SHA256
+  `3f4497ad224895fe09e8aa975cd54c9782b7ce77f427fb819e8dcbb9d2cf9a7f`を読戻した。
+  decision GO、151 / 151テスト、公開3 / 3、原本6 / 6、保護対象3 / 3、errors 0、境界各0件。
+  正本は`evidence/20260813_work1_release_attestation_public_acceptance.json`。
+- この初回GOを受入記録と公開状況へ反映した最終commitをpushする。その最終HEAD自身のartifactを
+  ダウンロード検証した時点で同段階を最終受入とし、run IDはrepoへ再書込みしない。

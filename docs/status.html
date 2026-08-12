@@ -854,8 +854,8 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">作品の現在地</p>
-          <h2 id="progress-title">WORK1-RELEASE-ATTESTATION-1 実装・外部artifact稼働確認中</h2>
-          <p>既存成果は<a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>です（初回公開基準 commit <code>18170b2</code>）。最終HEAD <code>a0fd712</code>の独立監査はGO（P0 0件、P1 0件、P2 1件）でした。P2は、repo内の受入記録へ最終commit自身とその後のActions run IDを書き足すと、別の新しいHEADになる自己参照です。これを解消するため、Pages成功後に対象SHA、自身とPagesのrun ID、全151テスト、公開3資産、6原本、作品①境界をJSONへ固定する<a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/workflows/release-attestation.yml">90日保存の外部artifact</a>を導入しています。artifact名は対象40桁SHAを含み、run IDはartifact自身を正本としてrepoへ書き戻しません。実用度3.5・完成度4.0・挑戦度3.0・総合比較指数70.0と公開スコアカードは変更していません。</p>
+          <h2 id="progress-title">WORK1-RELEASE-ATTESTATION-1 公開・外部artifact運用・Codex最終受入済み</h2>
+          <p>既存成果は<a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>です（初回公開基準 commit <code>18170b2</code>）。repo内へ最終commit自身と後続run IDを書けない自己参照を、Pages成功後の外部artifactで解消しました。<a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/31646234472">初回GO artifact</a>は対象commit <code>3dd7693</code>、全151 / 151テスト、公開3 / 3資産、6 / 6原本、作品②入力・参加者連絡・応募・BODIK各0件を記録し、2026-11-10まで保存されます。以後も対象40桁SHA名の90日保存の外部artifactを<a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/workflows/release-attestation.yml">Actions</a>から確認できます。最終artifactのrun IDはartifact自身を正本としてrepoへ書き戻しません。実用度3.5・完成度4.0・挑戦度3.0・総合比較指数70.0と公開スコアカードは変更していません。</p>
         </div>
         <strong class="progress-summary">公開基盤を保持して受賞品質を継続改善</strong>
       </div>
@@ -931,12 +931,12 @@
           <span class="step-title">WORK1-AWARD-COMPARISON-TRACEABILITY-AUDIT-1: 独立再監査</span>
           <span class="step-state">read-only監査GO・P2 1件</span>
         </li>
-        <li class="current">
+        <li class="done">
           <span class="step-no">14</span>
           <span class="step-title">WORK1-RELEASE-ATTESTATION-1: 最終公開HEADの外部証明</span>
-          <span class="step-state">実装・外部artifact稼働確認中</span>
+          <span class="step-state">公開・初回artifact GO・Codex受入済み</span>
         </li>
-        <li class="todo">
+        <li class="current">
           <span class="step-no">15</span>
           <span class="step-title">WORK1-RELEASE-ATTESTATION-AUDIT-1: 外部証明の独立再監査</span>
           <span class="step-state">次の一作業・未着手</span>
