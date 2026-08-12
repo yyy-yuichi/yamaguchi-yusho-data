@@ -82,7 +82,7 @@ GTFS供給比較**、**市町別の交通協議前確認メモ**までを担う�
 
 対象は山口県分 4 ファイル（上記2区分 × 市町村営・NPO等）。
 
-## 現在地（WORK1-RELEASE-EVIDENCE-HARDENING-1 ローカル実装・公開受入待ち、2026-08-13時点）
+## 現在地（WORK1-RELEASE-EVIDENCE-HARDENING-1 公開・最終受入済み、2026-08-13時点）
 
 このリポジトリはI-1〜I-4までの市町別ビューに、受入済みGTFS検査・供給指標を使う
 SUPPLY-VIEW-1の比較画面を追加し、RELEASE-1でGitHub Pagesへ公開した。公開URLに対する
@@ -136,6 +136,11 @@ UDC2026応募全体の終了条件（作品概要エントリー・本応募・�
   [Base64正本](docs/data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json.b64)を
   Git履歴・Pagesへ保存する。Pages報告SHA不一致をNO_GOとし、観測GETと運用宣言を分離する。
   新しいattestationの公開照合対象は6資産。スコアカードと評価値は変更しない
+- 初回強化commit `7b4527a8737166acebead845afc3a0549cc40227`はscope lock
+  `31650244128`、Pages `31650243548`、attestation `31650293402`がsuccess。
+  artifactはGO、151 / 151、公開6 / 6、原本6 / 6、保護3 / 3、Pages報告SHA一致、errors 0です。
+  [初回公開受入記録](evidence/20260813_work1_release_evidence_hardening_public_acceptance.json)を
+  反映した最終HEAD自身も同じworkflow artifactで外部証明し、run IDはartifactを正本とします。
 
 ## 原本変更の継続確認（WORK1-FRESHNESS-1）
 

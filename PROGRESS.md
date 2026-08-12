@@ -2548,3 +2548,20 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   欠落0件。ローカル正本は
   `evidence/20260813_work1_release_evidence_hardening_local_acceptance.json`。
   push、Actions artifact、公開ブラウザ受入は続行する。
+
+### 初回強化artifact GO
+
+- commit `7b4527a8737166acebead845afc3a0549cc40227`のscope lock `31650244128`、
+  Pages `31650243548`、release attestation `31650293402`は同一SHA・success。
+- artifact `9162307877`をダウンロードし、GO、151 / 151、公開6 / 6、原本6 / 6、保護3 / 3、
+  Pages報告SHA一致、観測GET 6件、境界各0、errors 0を確認した。
+- 公開6資産はHTTP 200かつローカルbytesと一致。正本は
+  `evidence/20260813_work1_release_evidence_hardening_public_acceptance.json`。
+  この記録を反映した最終HEAD自身を次のartifactで再確認する。
+
+### 最終受入の外部正本
+
+- 初回GO記録を含む最終HEAD自身もscope lock、Pages、release attestationで再確認する。
+- 最終run ID、artifact digest、公開ブラウザ結果は外部正本として読み戻し、自己参照を避けるため
+  repoへ再書込みしない。次段階はread-onlyの
+  `WORK1-RELEASE-EVIDENCE-HARDENING-AUDIT-1`だけとする。

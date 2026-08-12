@@ -2441,3 +2441,26 @@ P2はrepo内の最終受入記録が実装commit `7fdf04a`とそのrun IDを記�
 | 旧SPEC網羅 | 904トークン、欠落0 |
 | ローカル正本 | `evidence/20260813_work1_release_evidence_hardening_local_acceptance.json` |
 | 残り | push、Actions artifact、PC・スマートフォン公開受入 |
+
+### 初回強化artifactの独立読戻し
+
+| 検証 | 結果 |
+|---|---|
+| subject | `7b4527a8737166acebead845afc3a0549cc40227`、checkout・Pages報告SHA一致 |
+| scope lock / Pages / attestation | `31650244128` / `31650243548` / `31650293402`、全success |
+| artifact | ID `9162307877`、2,731 bytes、archive SHA256 `a8779472…18a383d1` |
+| artifact JSON | 10,370 bytes、SHA256 `4190a4bef9202dfa387303f313068baeca79313802a8d14b8322196f5d9b73b9` |
+| decision / errors | `GO` / 0 |
+| tests / public / sources / protected | 151 / 151、6 / 6、6 / 6、3 / 3 |
+| Pages linkage | `pages_reported_sha_and_public_assets_match_subject` |
+| scope | 観測GET 6件、外部計測でない境界宣言 0 / 0 / 0 / 0 |
+| 公開bytes | 6 / 6がHTTP 200、ローカルと完全一致 |
+
+正本は`evidence/20260813_work1_release_evidence_hardening_public_acceptance.json`。
+この記録commit自身のrun IDは、次の外部artifactを正本としてrepoへ再書込みしない。
+
+### 最終HEADの外部受入契約
+
+最終HEADはscope lock、Pages、release attestationのsuccess、対象・checkout・Pages報告SHA一致、
+151 / 151、公開6 / 6、原本6 / 6、保護3 / 3、errors 0、PC・スマートフォンの公開表示を
+外部正本として読み戻す。run IDとartifact digestは自己参照を避けてrepoへ再書込みしない。

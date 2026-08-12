@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-13 (rev.54) / 状態: WORK1-RELEASE-EVIDENCE-HARDENING-1 ローカル実装済み・公開受入待ち / 次: 同段階のActions・公開受入
+最終更新: 2026-08-13 (rev.56) / 状態: WORK1-RELEASE-EVIDENCE-HARDENING-1 公開・外部artifact運用・最終受入済み / 次: WORK1-RELEASE-EVIDENCE-HARDENING-AUDIT-1 未着手
 
 ## 0. このファイルについて
 
@@ -1106,3 +1106,24 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - 専用1 / 1、全151 / 151テスト、旧SPEC 904トークン欠落0、`git diff --check`、秘密情報の
   定型検査0件、6原本・公開値・公開トップ・応募説明の不変を確認した。ローカル正本は
   `evidence/20260813_work1_release_evidence_hardening_local_acceptance.json`。
+
+### 改訂点（rev.55）
+
+- 実装commit `7b4527a8737166acebead845afc3a0549cc40227`を`main`へpushした。scope lock
+  `31650244128`とPages `31650243548`は同一SHAでsuccess。
+- release attestation run `31650293402`のartifact `9162307877`は2,731 bytes、archive SHA256
+  `a87794725057d5c86ca1a2f3240b8fe7aeb7d1a3c338d7698eb9897b18a383d1`、期限
+  2026-11-10T23:16:47Z。内包JSONは10,370 bytes、SHA256
+  `4190a4bef9202dfa387303f313068baeca79313802a8d14b8322196f5d9b73b9`。
+- 対象・checkout・Pages報告SHA一致、decision GO、151 / 151、公開6 / 6、原本6 / 6、
+  保護3 / 3、観測GET 6件、宣言境界各0、errors 0を独立読戻しした。
+- Pagesの公開6資産は全てHTTP 200で、同commitのローカルbytesと一致した。初回公開正本は
+  `evidence/20260813_work1_release_evidence_hardening_public_acceptance.json`。
+- この受入記録を最終commitへ反映し、その最終HEAD自身のartifactを外部正本として再確認する。
+
+### 改訂点（rev.56）
+
+- 初回GOの受入記録を最終commitへ固定する。最終HEAD自身のscope lock、Pages、release attestation、
+  公開6資産、PC・スマートフォンの結果は後続の外部正本として読み戻し、run IDをrepoへ再書込みしない。
+- 同段階の完了後に開始可能な次の一作業は、read-onlyの
+  `WORK1-RELEASE-EVIDENCE-HARDENING-AUDIT-1`だけとする。作品②、参加者連絡、応募・登録は開始しない。

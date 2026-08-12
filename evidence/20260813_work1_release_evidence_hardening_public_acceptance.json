@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "work_id": "WORK1-RELEASE-EVIDENCE-HARDENING-1",
+  "acceptance_phase": "first_public_artifact_before_final_record_commit",
+  "date": "2026-08-13",
+  "subject": {
+    "branch": "main",
+    "commit_sha": "7b4527a8737166acebead845afc3a0549cc40227",
+    "checked_out_head": "7b4527a8737166acebead845afc3a0549cc40227",
+    "pages_reported_head_sha": "7b4527a8737166acebead845afc3a0549cc40227",
+    "pages_reported_head_sha_matches_subject": true
+  },
+  "actions": {
+    "scope_lock": {
+      "run_id": 31650244128,
+      "conclusion": "success"
+    },
+    "pages": {
+      "run_id": 31650243548,
+      "conclusion": "success"
+    },
+    "release_attestation": {
+      "run_id": 31650293402,
+      "conclusion": "success"
+    }
+  },
+  "artifact": {
+    "id": 9162307877,
+    "name": "work1-release-attestation-7b4527a8737166acebead845afc3a0549cc40227",
+    "archive_bytes": 2731,
+    "archive_sha256": "a87794725057d5c86ca1a2f3240b8fe7aeb7d1a3c338d7698eb9897b18a383d1",
+    "expires_at": "2026-11-10T23:16:47Z",
+    "attestation_json": {
+      "bytes": 10370,
+      "sha256": "4190a4bef9202dfa387303f313068baeca79313802a8d14b8322196f5d9b73b9"
+    }
+  },
+  "attestation": {
+    "decision": "GO",
+    "errors": [],
+    "tests": {
+      "discovered": 151,
+      "passed": 151,
+      "failed": 0
+    },
+    "public_assets": {
+      "matched": 6,
+      "total": 6
+    },
+    "accepted_sources": {
+      "matched": 6,
+      "total": 6
+    },
+    "protected_assets": {
+      "matched": 3,
+      "total": 3
+    },
+    "subject_linkage": "pages_reported_sha_and_public_assets_match_subject",
+    "workflow_observations": {
+      "public_get_targets": 6
+    },
+    "declared_boundaries": {
+      "evidence_type": "stage_execution_declaration_not_external_measurement",
+      "other_work_inputs": 0,
+      "participant_contacts": 0,
+      "udc_submissions": 0,
+      "bodik_registrations": 0
+    }
+  },
+  "public_readback": {
+    "base_url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/",
+    "http_200": 6,
+    "byte_identical_to_subject_checkout": 6,
+    "total": 6,
+    "assets": [
+      {
+        "path": "status.html",
+        "bytes": 55194,
+        "sha256": "53ec11c806e71a8efc56dc5d11dd93d893e543610cb6238c980712e941c348ad"
+      },
+      {
+        "path": "award-comparison.html",
+        "bytes": 20517,
+        "sha256": "a4c7df1be47731ede212c787744042bf03e597883af60bdfbcdbb2a94aa9fd0e"
+      },
+      {
+        "path": "data/work1_award_scorecard.json",
+        "bytes": 23699,
+        "sha256": "0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021"
+      },
+      {
+        "path": "data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json",
+        "bytes": 7257,
+        "sha256": "c430b4d5b8721cd84e20339c27a1fc31d3cb6597bc47d2f6a78b438039e62eb2"
+      },
+      {
+        "path": "data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json.b64",
+        "bytes": 9929,
+        "sha256": "efcff5021f84cc112df41861842012b734868d7f1b6f83caa419d5005ec5398a"
+      },
+      {
+        "path": "data/work1_release_attestation_audit.json",
+        "bytes": 4121,
+        "sha256": "dd9dfe73a7c8ec33ccb97de33eb892d22cda59fa9442c663b4701f4e2a92e895"
+      }
+    ]
+  },
+  "boundary": {
+    "raw_source_changes": 0,
+    "score_changes": 0,
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0
+  },
+  "decision": "GO",
+  "remaining_for_stage_done": [
+    "push final acceptance-record commit",
+    "verify final HEAD scope lock, Pages, and attestation artifact",
+    "perform PC and smartphone public browser acceptance"
+  ]
+}
