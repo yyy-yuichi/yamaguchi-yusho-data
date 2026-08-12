@@ -98,6 +98,8 @@ class ReleaseAttestationContractTest(unittest.TestCase):
             "pages-build-deployment",
             "github.event.workflow_run.head_sha",
             "runs-on: windows-latest",
+            "PYTHONUTF8: \"1\"",
+            "core.autocrlf false",
             "pip install --disable-pip-version-check -r requirements.txt",
             "ref: refs/heads/main",
             "python -B -m unittest discover -s tests -v",

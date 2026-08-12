@@ -2523,3 +2523,6 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   初回attestation run `31645546295`はPages eventの旧SHA報告とLinux依存差を隠さず失敗した。
 - workflowをWindows runner・`requirements.txt`導入・`main`明示checkoutへ修正する。Pages報告SHAは
   artifactへ別記し、対象SHAとの実配信結合は公開3資産のbytes一致でfail closed検証する。
+- 修正commit `3cdccf6`のscope lock・Pagesはsuccess。attestation run `31645964105`は
+  Windows checkoutのCRLF変換と非UTF-8標準出力を検出して停止した。checkout前にLF・Python UTF-8を
+  固定し、既存JSON・CSV bytesと日本語テスト出力をローカル受入条件へ一致させる。

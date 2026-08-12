@@ -1078,3 +1078,7 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - 修正は、作品①`main`を明示checkoutして対象SHAを取得し、Pagesのevent報告SHAは別項目へ原値のまま
   記録する。全151テストはWindows runnerで`requirements.txt`導入後に実行する。公開3資産が
   対象checkout bytesと一致することを、Pages実配信と対象SHAの結合条件にする。
+- 修正commit `3cdccf620546325fd9afcdc38f75a7e3bfa12d02`のscope lock run `31645917028`と
+  Pages run `31645916575`は同一SHAでsuccess。attestation run `31645964105`は依存導入まで成功し、
+  checkout時のCRLF変換による固定JSON SHA・再生成bytes不一致とWindows標準出力の非UTF-8を検出して
+  fail closedした。checkout前に`core.autocrlf=false`、PythonにUTF-8環境を固定して再実行する。

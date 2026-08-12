@@ -18,6 +18,8 @@ jobs:
     runs-on: windows-latest
     timeout-minutes: 20
     env:
+      PYTHONUTF8: "1"
+      PYTHONIOENCODING: utf-8
       PAGES_RUN_ID: ${{ github.event.workflow_run.id }}
       PAGES_RUN_URL: ${{ github.event.workflow_run.html_url }}
       PAGES_REPORTED_HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
@@ -26,6 +28,10 @@ jobs:
       ATTESTATION_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
     steps:
+      - name: Configure byte-stable LF checkout
+        shell: pwsh
+        run: git config --global core.autocrlf false
+
       - name: Check out current Work 1 main
         uses: actions/checkout@v7
         with:

@@ -2400,3 +2400,12 @@ P2はrepo内の最終受入記録が実装commit `7fdf04a`とそのrun IDを記�
 
 失敗runは削除せず、artifact未生成を正しいfail-closed証拠として保持する。修正後の成功artifactだけを
 受入対象にする。
+
+| 再検証 | 結果 |
+|---|---|
+| 修正commit | `3cdccf620546325fd9afcdc38f75a7e3bfa12d02` |
+| scope lock / Pages | `31645917028` / `31645916575`、同一SHA・success |
+| attestation | `31645964105`、依存導入成功後、CRLF変換と非UTF-8標準出力を検出してfailure |
+| 追加修正 | checkout前`core.autocrlf=false`、`PYTHONUTF8=1`、`PYTHONIOENCODING=utf-8` |
+
+固定bytesを緩和せず、runnerのcheckout・標準出力だけをローカル受入条件へ合わせる。

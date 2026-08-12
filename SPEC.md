@@ -2691,7 +2691,8 @@ artifactは次を同じJSONに保持し、一つでも不一致なら`NO_GO`で�
 - `src/build_release_attestation.py`は原本を読み取り専用でhashし、公開3資産だけを取得する。
 - `.github/workflows/release-attestation.yml`は`pages-build-deployment`のsuccess・`main`だけを受け、
   作品①の`main`を明示checkoutしてSHAを取得する。既存テストの実行環境に合わせたWindows runnerで
-  `requirements.txt`を導入し、全テスト後に90日保存artifactを生成する。
+  `core.autocrlf=false`とPython UTF-8をcheckout前に固定し、`requirements.txt`を導入する。
+  これによりJSON・CSVのcommit bytesと日本語出力を保ち、全テスト後に90日保存artifactを生成する。
 - artifact名は`work1-release-attestation-<40桁SHA>`とし、`attestation.json`と要約Markdownを含む。
 - `docs/status.html`とREADMEは最新artifactへのActions導線、自己参照を避ける理由、保存期間を説明する。
 - 最終artifactのrun IDはそのartifact自身に記録する。run IDをリポジトリへ書き戻して新しいHEADを

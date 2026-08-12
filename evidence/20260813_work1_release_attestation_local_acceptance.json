@@ -12,8 +12,8 @@
   "implementation": {
     "workflow": {
       "path": ".github/workflows/release-attestation.yml",
-      "bytes": 3058,
-      "sha256": "fad23dd4d0b282893a6f256e00f521603b2b811e061c8ec9d3876511c446df57",
+      "bytes": 3232,
+      "sha256": "56dac14599b80838814398b471224fb61a42834fedf45b5b26db03e0322b2013",
       "trigger": "pages-build-deployment completed success on main",
       "permissions": "contents: read",
       "runner": "windows-latest",
@@ -27,8 +27,8 @@
     },
     "contract_test": {
       "path": "tests/test_release_attestation.py",
-      "bytes": 4703,
-      "sha256": "bd401b48d3f704a78c01640b7e1433a8d977ac8db5b560af93b159dab167b1f0",
+      "bytes": 4771,
+      "sha256": "6459a9dd0ee325f984044928c98ffaa367700a80d4e5e72621f229df386af38b",
       "focused_passed": 1,
       "focused_discovered": 1,
       "public_mismatch_fails_closed": true
@@ -86,6 +86,25 @@
       "record the Pages-reported SHA separately",
       "link deployment to the subject with public commit-byte matches",
       "run tests on windows-latest after installing requirements.txt"
+    ]
+  },
+  "second_ci_attempt": {
+    "correction_commit": "3cdccf620546325fd9afcdc38f75a7e3bfa12d02",
+    "scope_lock_run": {"id": 31645917028, "conclusion": "success"},
+    "pages_run": {"id": 31645916575, "conclusion": "success", "head_sha_match": true},
+    "attestation_run": {
+      "id": 31645964105,
+      "conclusion": "failure",
+      "artifact_created": false,
+      "fail_closed": true,
+      "causes": [
+        "Windows checkout converted fixed LF text to CRLF",
+        "Windows default Python stdout encoding could not emit Japanese"
+      ]
+    },
+    "correction": [
+      "set global core.autocrlf=false before checkout",
+      "set PYTHONUTF8=1 and PYTHONIOENCODING=utf-8"
     ]
   },
   "scope": {
