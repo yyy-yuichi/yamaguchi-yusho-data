@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-RELEASE-ATTESTATION-1",
+  "checked_at": "2026-08-13",
+  "decision": "LOCAL_GO",
+  "baseline": {
+    "branch": "main",
+    "head": "a0fd712e5a00865430be9bdb2827aecd4fa8b54a",
+    "origin_main_match": true,
+    "worktree_was_clean_before_stage": true
+  },
+  "implementation": {
+    "workflow": {
+      "path": ".github/workflows/release-attestation.yml",
+      "bytes": 2763,
+      "sha256": "cf8c4dd4358d7f58a57837a69a9772362b3a0b509c3fb4d9c3cefed99066cc48",
+      "trigger": "pages-build-deployment completed success on main",
+      "permissions": "contents: read",
+      "retention_days": 90
+    },
+    "builder": {
+      "path": "src/build_release_attestation.py",
+      "bytes": 16028,
+      "sha256": "57804168fd489d564a4f9960e0615c00e62949bb6dfe1144484e41288514c797"
+    },
+    "contract_test": {
+      "path": "tests/test_release_attestation.py",
+      "bytes": 4218,
+      "sha256": "f8c55ddcef4224df4f66496605b874de99b640652ebec858795ba875ccabee1c",
+      "focused_passed": 1,
+      "focused_discovered": 1,
+      "public_mismatch_fails_closed": true
+    }
+  },
+  "verification": {
+    "all_tests": {"passed": 151, "discovered": 151, "exit_code": 0},
+    "award_and_attestation_focused": {"passed": 15, "discovered": 15},
+    "spec_coverage": {"old_tokens": 879, "missing_explained": 0, "missing_unexplained": 0},
+    "git_diff_check": "success",
+    "scope_guard": {"status": "allowed", "checked_path_count": 11},
+    "secret_patterns_found": 0,
+    "accepted_sources": {"baseline_match": 6, "expected": 6},
+    "protected_changed": {
+      "raw": false,
+      "accepted_gtfs_zip": false,
+      "data": false,
+      "scorecard": false,
+      "public_top": false,
+      "entry_page": false
+    },
+    "status_html": {
+      "bytes": 54225,
+      "sha256": "19f81459ef2be933d5f5460b076a9ca1fcd64817d4f55c12d153baf3b2971065"
+    }
+  },
+  "unchanged": {
+    "scorecard_bytes": 23699,
+    "scorecard_sha256": "0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021",
+    "criteria_scores": {"実用度": 3.5, "完成度": 4.0, "挑戦度": 3.0},
+    "overall_comparison_index": 70.0
+  },
+  "scope": {
+    "work2_inputs": 0,
+    "participant_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0
+  },
+  "remaining_in_stage": [
+    "commit and push implementation",
+    "verify scope lock, Pages, and first exact-release artifact",
+    "record first artifact acceptance in final commit",
+    "verify the final HEAD exact-release artifact and public browser"
+  ],
+  "next_stage": "WORK1-RELEASE-ATTESTATION-AUDIT-1",
+  "next_stage_started": false
+}

@@ -1,0 +1,82 @@
+name: Work 1 release attestation
+
+on:
+  workflow_run:
+    workflows:
+      - pages-build-deployment
+    types:
+      - completed
+
+permissions:
+  contents: read
+
+jobs:
+  attest-published-work1:
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.head_branch == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      TARGET_SHA: ${{ github.event.workflow_run.head_sha }}
+      PAGES_RUN_ID: ${{ github.event.workflow_run.id }}
+      PAGES_RUN_URL: ${{ github.event.workflow_run.html_url }}
+      ATTESTATION_RUN_ID: ${{ github.run_id }}
+      ATTESTATION_RUN_ATTEMPT: ${{ github.run_attempt }}
+      ATTESTATION_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+    steps:
+      - name: Check out the exact Pages commit
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ env.TARGET_SHA }}
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Verify exact commit and Work 1 boundary
+        shell: bash
+        run: |
+          test "$(git rev-parse HEAD)" = "$TARGET_SHA"
+          python -B src/check_work_scope.py --repo . --json
+
+      - name: Run the complete test suite
+        id: tests
+        shell: bash
+        run: |
+          test_count="$(python -c 'import unittest; print(unittest.defaultTestLoader.discover("tests").countTestCases())')"
+          python -B -m unittest discover -s tests -v
+          echo "count=$test_count" >> "$GITHUB_OUTPUT"
+
+      - name: Build exact-release attestation
+        shell: bash
+        run: >-
+          python -B src/build_release_attestation.py
+          --repo .
+          --target-sha "$TARGET_SHA"
+          --pages-run-id "$PAGES_RUN_ID"
+          --pages-run-url "$PAGES_RUN_URL"
+          --attestation-run-id "$ATTESTATION_RUN_ID"
+          --attestation-run-attempt "$ATTESTATION_RUN_ATTEMPT"
+          --attestation-run-url "$ATTESTATION_RUN_URL"
+          --tests-discovered "${{ steps.tests.outputs.count }}"
+          --tests-passed
+          --scope-guard-passed
+          --attempts 12
+          --retry-delay 10
+          --output "${{ runner.temp }}/work1-release-attestation/attestation.json"
+
+      - name: Publish attestation in the run summary
+        shell: bash
+        run: cat "${{ runner.temp }}/work1-release-attestation/attestation.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload exact-release artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: work1-release-attestation-${{ env.TARGET_SHA }}
+          path: ${{ runner.temp }}/work1-release-attestation/
+          if-no-files-found: error
+          retention-days: 90

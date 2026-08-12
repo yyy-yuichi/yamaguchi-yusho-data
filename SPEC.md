@@ -1,6 +1,6 @@
-# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡
+# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明
 
-**rev.5.12 / 2026-08-12**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26。消した記述はそこに全部書いてある）
+**rev.5.13 / 2026-08-13**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27。消した記述はそこに全部書いてある）
 
 UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下に `SPEC.md` として置き、Claude Code に読ませる。**
 
@@ -1112,6 +1112,14 @@ WORK1-AWARD-COMPARISON-2を追加した。P2の有限工程表示は継続改善
 WORK1-AWARD-COMPARISON-AUDIT-2のGOとP2 2件を受け、現行記録の審査基準名を公式表記
 「実用度・完成度・挑戦度」へ統一し、状況ページの根拠を§20・§23へ接続する
 WORK1-AWARD-COMPARISON-TRACEABILITY-1を追加した。採点値、スコアカードbytes、原本、公開値は変えない。
+
+### 10.27 rev.5.12 → rev.5.13
+
+固定HEAD `a0fd712e5a00865430be9bdb2827aecd4fa8b54a`のread-only監査はGO（P0 0件、P1 0件、
+P2 1件）だった。P2は、リポジトリ内の受入記録が自分自身のcommit SHAとその後のActions run IDを
+機械記録できない自己参照である。Pages成功後の別workflowが、対象SHA、自身とPagesのrun ID、
+全テスト、公開bytes、6原本、作品①境界を外部artifactへ固定する
+WORK1-RELEASE-ATTESTATION-1を追加する。採点値、スコアカード、原本、公開トップ、応募説明は変えない。
 
 ---
 
@@ -2653,3 +2661,72 @@ PC 1440×1600とスマートフォン390×844で、必須情報、横overflow 0�
 - 比較スコア、スコアカードJSON、原本、ZIP、既存公開値を変更する必要が生じた
 - 作品②、外部参加者への連絡、応募・登録を入力または操作にする必要が生じた
 - 公式未公表の配点、順位、受賞確率を主張する必要が生じた
+
+## 25. WORK1-RELEASE-ATTESTATION-1 実行仕様 — 最終公開HEADの外部証明
+
+### 25.1 段階ゴール
+
+`a0fd712e5a00865430be9bdb2827aecd4fa8b54a`に対する
+`WORK1-AWARD-COMPARISON-TRACEABILITY-AUDIT-1`のGO（P0 0件、P1 0件、P2 1件）を受ける。
+commit後に受入記録を書き足すとHEADが変わる循環を避け、GitHub Pages成功後に起動する
+GitHub Actions artifactを、対象最終HEAD自身の機械可読な外部証拠とする。
+
+### 25.2 証明対象
+
+artifactは次を同じJSONに保持し、一つでも不一致なら`NO_GO`で失敗する。
+
+1. `main`の対象40桁SHA、checkout SHA一致、attestation run ID・attempt・URL。
+2. 先行する`pages-build-deployment`のrun ID・URL・success・同一head SHA。
+3. 全unittestの発見件数、全件成功、作品①scope guard成功。
+4. 公開`status.html`、`award-comparison.html`、`data/work1_award_scorecard.json`のHTTP 200、
+   bytes、SHA256、対象checkoutとのbytes一致。
+5. 4登録簿PDFと2 GTFS ZIPのmanifest基準bytes・SHA256一致、公開トップ・応募説明・
+   スコアカードの固定SHA256一致。
+6. 実用度3.5、完成度4.0、挑戦度3.0、総合70.0、作品②入力0件。
+7. 外部参加者連絡、UDC応募、BODIK登録がこのworkflowの処理に含まれず0件であること。
+
+### 25.3 実装と公開表示
+
+- `src/build_release_attestation.py`は原本を読み取り専用でhashし、公開3資産だけを取得する。
+- `.github/workflows/release-attestation.yml`は`pages-build-deployment`のsuccess・`main`だけを受け、
+  対象SHAを明示checkoutし、全テスト後に90日保存artifactを生成する。
+- artifact名は`work1-release-attestation-<40桁SHA>`とし、`attestation.json`と要約Markdownを含む。
+- `docs/status.html`とREADMEは最新artifactへのActions導線、自己参照を避ける理由、保存期間を説明する。
+- 最終artifactのrun IDはそのartifact自身に記録する。run IDをリポジトリへ書き戻して新しいHEADを
+  作らない。
+
+### 25.4 不変条件
+
+- 4登録簿PDF、2 GTFS ZIP、既存公開JSON・計算値、スコアカード2 JSON、公開トップ、
+  応募説明ページを変更しない。
+- 作品②のパス・URL・ファイル・履歴・公開物を参照しない。
+- 参加者連絡、同意取得、UDC応募、BODIK登録は独立した人間承認ゲートのまま実行しない。
+- GitHub Actions artifactは原本の自動採用、公開値の自動更新、応募提出を行わない。
+
+### 25.5 許可する変更
+
+- `.github/workflows/release-attestation.yml`
+- `src/build_release_attestation.py`、`tests/test_release_attestation.py`、`tests/test_award_comparison.py`
+- `docs/status.html`、`README.md`、`WORK_SCOPE.md`
+- `SPEC.md`、`run_record.md`、`PROGRESS.md`、`verification.md`
+- `evidence/20260813_work1_release_attestation_*`
+
+### 25.6 検証と段階完了条件
+
+1. 専用テストと全151テスト、`git diff --check`、scope guard、旧SPEC網羅が成功する。
+2. 6原本、スコアカード、公開トップ、応募説明の固定bytesまたはSHA256が一致する。
+3. 実装commitを`main`へpushし、scope lock、Pages、初回attestation artifactがsuccessになる。
+4. 初回artifactをダウンロードし、対象SHA、run ID、全151テスト、公開3/3、原本6/6、境界0件を読み戻す。
+5. 初回結果を受入記録へ反映した最終commitをpushし、その最終HEAD自身について新しいPagesと
+   attestation artifactがsuccessになる。
+6. 最終artifactをダウンロードし、commit SHAが最終`HEAD`・`origin/main`と一致し、decisionが`GO`である。
+7. 公開状況ページをPC 1440×1600・スマートフォン390×844で確認し、横overflow、runtime/dev error、
+   壊れた画像が0件で、外部artifactの意味と独立承認ゲートを読める。
+8. 次の一作業をread-onlyの`WORK1-RELEASE-ATTESTATION-AUDIT-1`だけに定義し、開始しない。
+
+### 25.7 停止条件
+
+- artifactが対象SHAと異なる、Pagesまたはscope lockが失敗する、公開bytesが一致しない
+- 原本、ZIP、スコアカード、公開トップ、応募説明を変更する必要が生じた
+- 作品②、外部参加者連絡、応募・登録を入力または操作にする必要が生じた
+- Actionsへ書込み権限、secret、外部サービス連携を追加する必要が生じた

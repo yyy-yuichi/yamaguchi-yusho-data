@@ -2357,3 +2357,33 @@ scope lock、Pages、公開URL読戻しであり、独立再監査はまだ開�
 確認する`WORK1-AWARD-COMPARISON-TRACEABILITY-AUDIT-1`だけで、未着手である。
 
 正本は`evidence/20260812_work1_award_comparison_traceability_public_acceptance.json`。
+
+## WORK1-AWARD-COMPARISON-TRACEABILITY-AUDIT-1 read-only監査（2026-08-13）
+
+| 検証 | 結果 |
+|---|---|
+| 固定HEAD | `a0fd712e5a00865430be9bdb2827aecd4fa8b54a`、`origin/main`一致、clean |
+| 公式基準・再計算 | 実用度3.5、完成度4.0、挑戦度3.0、総合70.0 |
+| Actions | scope lock `31600302455`、Pages `31600300972`、同一head SHA・success |
+| 公開3資産 | HTTP 200、commit bytes 3 / 3一致 |
+| 原本・境界 | manifest 6 / 6一致、作品②入力・参加者連絡・応募・BODIK 0件 |
+| 判定 | GO、P0 0件、P1 0件、P2 1件 |
+
+P2はrepo内の最終受入記録が実装commit `7fdf04a`とそのrun IDを記録した時点で新しいcommit
+`a0fd712`になり、その最終commit自身と後続run IDを同じrepo commitへ書けない自己参照である。
+
+## WORK1-RELEASE-ATTESTATION-1 ローカル実装検証（2026-08-13）
+
+| 検証 | 結果 |
+|---|---|
+| 生成器 | 対象SHA、attestation / Pages run、全テスト、公開3資産、6原本、保護対象、境界を一つのJSONへ記録 |
+| fail closed | 公開bytes不一致、HEAD不一致、原本・保護対象不一致、テスト・scope guard失敗は`NO_GO` |
+| workflow | `pages-build-deployment` success・`main`限定、`contents: read`、対象SHA明示checkout、90日保存 |
+| 専用テスト | `tests.test_release_attestation` 1 / 1成功 |
+| 不変条件 | スコアカード23,699 bytes・固定SHA256、公開トップ、応募説明、4 PDF・2 ZIPを変更しない |
+
+ローカル全151テスト、旧SPEC網羅、scope guard、差分・保護対象検証後に実装commitをpushする。
+初回artifactを受け入れてrepoへ記録した後、最終commit自身について生成された新しいartifactを
+外部正本としてダウンロード検証するまで段階は未完了である。
+
+ローカル正本は`evidence/20260813_work1_release_attestation_local_acceptance.json`。

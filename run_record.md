@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-12 (rev.52) / 状態: WORK1-AWARD-COMPARISON-TRACEABILITY-1 最終受入済み / 次: WORK1-AWARD-COMPARISON-TRACEABILITY-AUDIT-1 未着手
+最終更新: 2026-08-13 (rev.53) / 状態: WORK1-RELEASE-ATTESTATION-1 実装・外部artifact稼働確認中 / 次: 同段階のcommit・Actions・Pages・artifact受入
 
 ## 0. このファイルについて
 
@@ -1048,3 +1048,26 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - 正本は`evidence/20260812_work1_award_comparison_traceability_public_acceptance.json`。
   WORK1-AWARD-COMPARISON-TRACEABILITY-1を最終受入済みとする。次の一作業は固定HEADと公開配信を
   read-onlyで確認する`WORK1-AWARD-COMPARISON-TRACEABILITY-AUDIT-1`だけとし、未着手で停止する。
+
+### 改訂点（rev.53）
+
+- 固定HEAD `a0fd712e5a00865430be9bdb2827aecd4fa8b54a`と同一の`origin/main`をread-onlyで監査した。
+  公式3基準、再計算3.5 / 4.0 / 3.0・総合70.0、全150テスト記録、公開3資産、6原本、
+  scope lock run `31600302455`、Pages run `31600300972`は一致し、P0 0件、P1 0件でGO。
+- P2 1件は、リポジトリ内の最終受入記録が実装commit `7fdf04a`とrun `31599775095`・
+  `31599774202`までしか機械記録せず、その記録を追加した最終commit `a0fd712`とrun
+  `31600302455`・`31600300972`を記録できない自己参照である。
+- `SPEC.md` rev.5.13 §25へ`WORK1-RELEASE-ATTESTATION-1`を固定した。Pages成功後の別workflowが
+  対象SHA、自身とPagesのrun ID、全151テスト、公開3資産、6原本、保護対象、作品①境界を
+  90日保存の外部artifactへ記録する。artifact run IDをrepoへ書き戻さず、最終HEAD自身を証明する。
+- `.github/workflows/release-attestation.yml`、`src/build_release_attestation.py`、
+  `tests/test_release_attestation.py`を追加する。workflowは`contents: read`だけを持ち、原本の採用、
+  公開値更新、外部連絡、応募・登録を実行しない。
+- 実用度3.5、完成度4.0、挑戦度3.0、総合70.0、スコアカード23,699 bytes・SHA256、
+  4 PDF・2 ZIP、公開トップ、応募説明は不変とする。作品②入力、参加者連絡、UDC応募、
+  BODIK登録は0件のまま進める。
+- 現在は実装とローカル検証段階。実装commitのpush後に初回artifactを受け入れ、そのrunを記録した
+  最終commitをpushする。最終HEAD自身の新しいartifactを外部正本として読戻すまで段階を完了しない。
+- 専用1件、比較との集中15件、全151件のunittest、旧SPEC 879トークン欠落0、`git diff --check`、
+  秘密情報0、許可外変更0、6原本一致を確認しローカルGO。正本は
+  `evidence/20260813_work1_release_attestation_local_acceptance.json`。

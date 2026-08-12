@@ -2505,3 +2505,17 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
 - 正本は`evidence/20260812_work1_award_comparison_traceability_public_acceptance.json`。
   WORK1-AWARD-COMPARISON-TRACEABILITY-1を最終受入済みとし、次はread-onlyの
   `WORK1-AWARD-COMPARISON-TRACEABILITY-AUDIT-1`だけを定義して未着手で停止する。
+
+## 2026-08-13 WORK1-RELEASE-ATTESTATION-1 実装・稼働確認開始
+
+- 固定HEAD `a0fd712e5a00865430be9bdb2827aecd4fa8b54a`のread-only監査はGO、P0 0件、P1 0件、
+  P2 1件。P2はrepo内の受入記録が最終commit自身と後続Actions run IDを記録できない自己参照。
+- `SPEC.md` rev.5.13 §25に、Pages成功後の外部artifactで最終公開HEADを証明する段階を固定した。
+- `.github/workflows/release-attestation.yml`は対象SHAを明示checkoutし、scope guardと全151テスト後、
+  `src/build_release_attestation.py`で90日保存のJSON・Markdown artifactを生成する。
+- JSONはattestation run、Pages run、対象SHA、公開3資産のcommit bytes、6原本、保護対象、
+  実用度3.5・完成度4.0・挑戦度3.0・総合70.0、作品①境界を一括検証し、不一致時は`NO_GO`。
+- 原本、ZIP、既存公開値、スコアカード、公開トップ、応募説明は不変。作品②入力、参加者連絡、
+  UDC応募、BODIK登録は0件。commit、push、Pages、初回・最終artifactの読戻しまで同段階で続ける。
+- 専用1件、集中15件、全151件、旧SPEC 879トークン欠落0、scope guard、6原本一致を受け入れた。
+  ローカル正本は`evidence/20260813_work1_release_attestation_local_acceptance.json`。

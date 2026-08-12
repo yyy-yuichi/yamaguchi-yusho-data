@@ -222,7 +222,11 @@ class AwardComparisonContractTest(unittest.TestCase):
             "WORK1-AWARD-COMPARISON-AUDIT-2",
             "WORK1-AWARD-COMPARISON-TRACEABILITY-1",
             "WORK1-AWARD-COMPARISON-TRACEABILITY-AUDIT-1",
+            "WORK1-RELEASE-ATTESTATION-1",
+            "WORK1-RELEASE-ATTESTATION-AUDIT-1",
             "read-only監査GO・P2 2件",
+            "read-only監査GO・P2 1件",
+            "90日保存の外部artifact",
             "根拠: SPEC.md §20・§23",
             "独立した人間承認ゲート",
         ):
