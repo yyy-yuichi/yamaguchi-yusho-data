@@ -31,6 +31,18 @@ PUBLIC_ASSETS = (
     ("status.html", "docs/status.html"),
     ("award-comparison.html", "docs/award-comparison.html"),
     ("data/work1_award_scorecard.json", "docs/data/work1_award_scorecard.json"),
+    (
+        "data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json",
+        "docs/data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json",
+    ),
+    (
+        "data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json.b64",
+        "docs/data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json.b64",
+    ),
+    (
+        "data/work1_release_attestation_audit.json",
+        "docs/data/work1_release_attestation_audit.json",
+    ),
 )
 FIXED_PROTECTED_SHA256 = {
     "docs/index.html": "502eb93199d3df71593dc7d220d575159a9167a2692bdec2bb8b5b4b7d7c4b49",
@@ -269,6 +281,9 @@ def build_attestation(
     checked_out_head = actual_head or git_head(repo_root)
     if checked_out_head != target_sha:
         errors.append("checked_out_head_mismatch")
+    pages_sha_match = pages_reported_head_sha == target_sha
+    if not pages_sha_match:
+        errors.append("pages_reported_head_sha_mismatch")
     if not tests_passed:
         errors.append("tests_failed")
     if not scope_guard_passed:
@@ -311,8 +326,8 @@ def build_attestation(
             "run_url": pages_run_url,
             "conclusion": "success",
             "reported_head_sha": pages_reported_head_sha,
-            "reported_head_sha_matches_subject": pages_reported_head_sha == target_sha,
-            "subject_linkage": "public_assets_match_subject_checkout_bytes",
+            "reported_head_sha_matches_subject": pages_sha_match,
+            "subject_linkage": "pages_reported_sha_and_public_assets_match_subject",
         },
         "verification": {
             "scope_guard": {"passed": scope_guard_passed},
@@ -329,11 +344,24 @@ def build_attestation(
             "public_assets": public_results,
         },
         "scope": {
-            "other_work_inputs": 0,
-            "participant_contacts": 0,
-            "udc_submissions": 0,
-            "bodik_registrations": 0,
-            "external_requests": [item["url"] for item in public_results],
+            "workflow_observations": {
+                "requested_public_assets": [
+                    {
+                        "method": "GET",
+                        "url": item["url"],
+                        "attempts": item["attempts"],
+                        "http": item["http"],
+                    }
+                    for item in public_results
+                ],
+            },
+            "declared_boundaries": {
+                "evidence_type": "stage_execution_declaration_not_external_measurement",
+                "other_work_inputs": 0,
+                "participant_contacts": 0,
+                "udc_submissions": 0,
+                "bodik_registrations": 0,
+            },
         },
         "errors": errors,
     }
@@ -350,6 +378,8 @@ def render_summary(record: dict[str, Any]) -> str:
     sources_ok = sum(
         item["baseline_match"] for item in record["verification"]["accepted_sources"]
     )
+    observations = record["scope"]["workflow_observations"]
+    declarations = record["scope"]["declared_boundaries"]
     return "\n".join(
         (
             "# Work 1 release attestation",
@@ -361,7 +391,12 @@ def render_summary(record: dict[str, Any]) -> str:
             f"- Tests: {tests['passed']} / {tests['discovered']}",
             f"- Public commit-byte matches: {public_ok} / {len(PUBLIC_ASSETS)}",
             f"- Accepted source baseline matches: {sources_ok} / 6",
-            "- Work 2 inputs / participant contacts / UDC submissions / BODIK registrations: 0 / 0 / 0 / 0",
+            f"- Observed public GET targets: {len(observations['requested_public_assets'])}",
+            "- Declared boundaries (not externally measured): "
+            f"{declarations['other_work_inputs']} / "
+            f"{declarations['participant_contacts']} / "
+            f"{declarations['udc_submissions']} / "
+            f"{declarations['bodik_registrations']}",
             "",
         )
     )

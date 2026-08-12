@@ -1,6 +1,9 @@
 """Contract test for the external exact-release attestation."""
 from __future__ import annotations
 
+import base64
+import hashlib
+import json
 import sys
 import unittest
 import urllib.parse
@@ -30,7 +33,7 @@ class ReleaseAttestationContractTest(unittest.TestCase):
             target_sha=target_sha,
             pages_run_id=101,
             pages_run_url="https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/101",
-            pages_reported_head_sha="b" * 40,
+            pages_reported_head_sha=target_sha,
             attestation_run_id=202,
             attestation_run_attempt=1,
             attestation_run_url="https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/202",
@@ -45,9 +48,9 @@ class ReleaseAttestationContractTest(unittest.TestCase):
         self.assertEqual(target_sha, record["subject"]["commit_sha"])
         self.assertEqual(202, record["workflow"]["run_id"])
         self.assertEqual(101, record["upstream_pages"]["run_id"])
-        self.assertFalse(record["upstream_pages"]["reported_head_sha_matches_subject"])
+        self.assertTrue(record["upstream_pages"]["reported_head_sha_matches_subject"])
         self.assertEqual(
-            "public_assets_match_subject_checkout_bytes",
+            "pages_reported_sha_and_public_assets_match_subject",
             record["upstream_pages"]["subject_linkage"],
         )
         self.assertEqual(151, record["verification"]["tests"]["passed"])
@@ -58,12 +61,69 @@ class ReleaseAttestationContractTest(unittest.TestCase):
         self.assertTrue(
             all(item["commit_bytes_match"] for item in record["verification"]["public_assets"])
         )
+        self.assertEqual(6, len(record["verification"]["public_assets"]))
         self.assertEqual(
             {"実用度": 3.5, "完成度": 4.0, "挑戦度": 3.0},
             record["verification"]["scorecard"]["scores"],
         )
         self.assertEqual(70.0, record["verification"]["scorecard"]["overall_comparison_index"])
-        self.assertEqual(0, record["scope"]["other_work_inputs"])
+        observations = record["scope"]["workflow_observations"]
+        declarations = record["scope"]["declared_boundaries"]
+        self.assertEqual(6, len(observations["requested_public_assets"]))
+        self.assertTrue(all(item["method"] == "GET" for item in observations["requested_public_assets"]))
+        self.assertEqual(
+            "stage_execution_declaration_not_external_measurement",
+            declarations["evidence_type"],
+        )
+        self.assertEqual(0, declarations["other_work_inputs"])
+
+        snapshot_path = (
+            REPO_ROOT
+            / "docs"
+            / "data"
+            / "release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json"
+        )
+        exact_b64_path = Path(str(snapshot_path) + ".b64")
+        snapshot = snapshot_path.read_bytes()
+        exact_source = base64.b64decode(exact_b64_path.read_text(encoding="ascii").strip())
+        audit = json.loads(
+            (REPO_ROOT / "docs" / "data" / "work1_release_attestation_audit.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        self.assertEqual(7257, len(snapshot))
+        self.assertEqual(
+            "c430b4d5b8721cd84e20339c27a1fc31d3cb6597bc47d2f6a78b438039e62eb2",
+            hashlib.sha256(snapshot).hexdigest(),
+        )
+        self.assertEqual(7446, len(exact_source))
+        self.assertEqual(
+            "6b47326a3066e7cf08231e901f2470d91086d34a7a2025baf47f00f09abf85ab",
+            hashlib.sha256(exact_source).hexdigest(),
+        )
+        self.assertEqual(json.loads(snapshot), json.loads(exact_source))
+        self.assertEqual("GO", audit["decision"])
+        self.assertEqual(3, audit["severity"]["P2"])
+        self.assertTrue(audit["hardening_resolution"]["durable_snapshot"])
+
+        with self.subTest("Pages-reported SHA mismatch fails closed"):
+            stale_pages = attestation.build_attestation(
+                repo_root=REPO_ROOT,
+                target_sha=target_sha,
+                pages_run_id=101,
+                pages_run_url="https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/101",
+                pages_reported_head_sha="b" * 40,
+                attestation_run_id=202,
+                attestation_run_attempt=1,
+                attestation_run_url="https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/202",
+                tests_discovered=151,
+                tests_passed=True,
+                scope_guard_passed=True,
+                fetcher=local_pages_fetcher,
+                actual_head=target_sha,
+            )
+            self.assertEqual("NO_GO", stale_pages["decision"])
+            self.assertIn("pages_reported_head_sha_mismatch", stale_pages["errors"])
 
         with self.subTest("public mismatch fails closed"):
             def changed_fetcher(url: str):
@@ -77,7 +137,7 @@ class ReleaseAttestationContractTest(unittest.TestCase):
                 target_sha=target_sha,
                 pages_run_id=101,
                 pages_run_url="https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/101",
-                pages_reported_head_sha="b" * 40,
+                pages_reported_head_sha=target_sha,
                 attestation_run_id=202,
                 attestation_run_attempt=1,
                 attestation_run_url="https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/202",

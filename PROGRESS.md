@@ -2535,3 +2535,16 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   保護対象3 / 3、errors 0、作品②入力・参加者連絡・応募・BODIK各0件を確認した。
 - 正本は`evidence/20260813_work1_release_attestation_public_acceptance.json`。初回結果を最終commitへ
   反映し、その最終HEAD自身の新しいartifactを外部正本として再確認する。
+
+## 2026-08-13 WORK1-RELEASE-EVIDENCE-HARDENING-1 ローカル実装
+
+- 監査対象HEAD `ed1f0b4`はGO（P0 0件、P1 0件、P2 3件）。P2三点をこの段階の入力にした。
+- 最終attestation JSONの可読LF版と完全再現用Base64正本、監査結果JSONを`docs/data/`へ固定した。
+  Base64復号後は7,446 bytes、SHA256
+  `6b47326a3066e7cf08231e901f2470d91086d34a7a2025baf47f00f09abf85ab`。
+- attestationの公開bytes照合を3資産から6資産へ拡張し、Pages報告SHA不一致をNO_GO条件へ追加した。
+- workflowが観測したHTTP GETと、作業者が宣言する作品①の境界を別オブジェクトへ分離した。
+- 専用テスト1 / 1、全151 / 151テスト、`git diff --check`が成功した。旧SPECの検査対象904トークンは
+  欠落0件。ローカル正本は
+  `evidence/20260813_work1_release_evidence_hardening_local_acceptance.json`。
+  push、Actions artifact、公開ブラウザ受入は続行する。

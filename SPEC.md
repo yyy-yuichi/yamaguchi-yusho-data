@@ -1,6 +1,6 @@
-# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明
+# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化
 
-**rev.5.13 / 2026-08-13**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27。消した記述はそこに全部書いてある）
+**rev.5.14 / 2026-08-13**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28。消した記述はそこに全部書いてある）
 
 UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下に `SPEC.md` として置き、Claude Code に読ませる。**
 
@@ -1120,6 +1120,14 @@ P2 1件）だった。P2は、リポジトリ内の受入記録が自分自身�
 機械記録できない自己参照である。Pages成功後の別workflowが、対象SHA、自身とPagesのrun ID、
 全テスト、公開bytes、6原本、作品①境界を外部artifactへ固定する
 WORK1-RELEASE-ATTESTATION-1を追加する。採点値、スコアカード、原本、公開トップ、応募説明は変えない。
+
+### 10.28 rev.5.13 → rev.5.14
+
+固定HEAD `ed1f0b4997acd19016da45e21c88821ef57bb365`のread-only監査はGO（P0 0件、P1 0件、
+P2 3件）だった。P2は、artifactの有効期限が応募期限より約112.6時間早いこと、Pages報告SHAの
+不一致がNO_GO条件でないこと、workflow観測値と作業者宣言が同じscopeに混在することだった。
+WORK1-RELEASE-EVIDENCE-HARDENING-1で証拠をリポジトリ内にも永続化し、SHA不一致をfail closedにし、
+観測値と宣言を分離する。採点値、原本、公開トップ、応募説明は変えない。
 
 ---
 
@@ -2730,6 +2738,62 @@ artifactは次を同じJSONに保持し、一つでも不一致なら`NO_GO`で�
 ### 25.7 停止条件
 
 - artifactが対象SHAと異なる、Pagesまたはscope lockが失敗する、公開bytesが一致しない
+- 原本、ZIP、スコアカード、公開トップ、応募説明を変更する必要が生じた
+- 作品②、外部参加者連絡、応募・登録を入力または操作にする必要が生じた
+- Actionsへ書込み権限、secret、外部サービス連携を追加する必要が生じた
+
+---
+
+## 26. WORK1-RELEASE-EVIDENCE-HARDENING-1
+
+### 26.1 段階ゴール
+
+WORK1-RELEASE-ATTESTATION-AUDIT-1のGO（P0 0件、P1 0件、P2 3件）を受け、最終公開HEAD証明を
+応募期限後もリポジトリから検証可能にし、Pages報告SHA不一致をNO_GOへ倒し、workflow観測事実と
+作業者の境界宣言を分離する。
+
+### 26.2 永続証拠
+
+- 監査対象runは`31646637352`、artifact IDは`9160977456`、archiveは2,373 bytes、
+  SHA256は`a0c737c6a58a5f2aea475c62cde2a2e52c30bdbe1538df54cb8561c55bb6a643`。
+- `docs/data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json`を可読なLF版、
+  同`.json.b64`をartifact内7,446 bytesの完全なBase64正本として公開する。
+- Base64復号後SHA256は
+  `6b47326a3066e7cf08231e901f2470d91086d34a7a2025baf47f00f09abf85ab`でなければならない。
+- `docs/data/work1_release_attestation_audit.json`に監査判定、P2三点、元runとartifact、
+  永続証拠のbytes・SHA256を機械可読で固定する。
+- attestationが照合する公開資産は、既存3資産と上記3証拠の計6資産とする。
+
+### 26.3 fail-closedと意味分離
+
+- `pages_reported_head_sha`が対象SHAと一致しなければ
+  `pages_reported_head_sha_mismatch`をerrorsへ追加し、decisionを`NO_GO`にする。
+- workflowがHTTP GETで実測した値は`scope.workflow_observations`へ置く。
+- 作品②入力、参加者連絡、UDC応募、BODIK登録を行わなかったという段階実行上の宣言は
+  `scope.declared_boundaries`へ置き、外部計測値ではないことを明記する。
+
+### 26.4 不変境界
+
+採点値、スコアカード、登録簿PDF、GTFS ZIP、公開トップ、応募説明ページを変更しない。
+作品②、参加者連絡、UDC概要フォーム・本応募、BODIK登録へ進まない。
+
+### 26.5 完了条件
+
+1. 専用テストと全151テストが成功し、`git diff --check`が成功する。
+2. Base64正本を復号したbytesと監査対象artifact内JSONのbytes・SHA256が一致する。
+3. 実装commitを`main`へpushし、scope lock、Pages、初回attestation artifactがsuccessになる。
+4. 初回artifactを読み戻し、対象SHA、全151テスト、公開6 / 6、原本6 / 6、保護対象3 / 3、
+   errors 0、分離後scope、decision `GO`を確認する。
+5. 初回結果を受入記録へ反映した最終commitをpushし、その最終HEAD自身について同じ条件を満たす
+   新しいartifactを外部正本として読み戻す。
+6. 公開状況ページをPCとスマートフォンで確認し、横overflow、runtime/dev error、壊れた画像が0件で、
+   監査証拠JSON、可読版、Base64正本、6資産照合の意味を読める。
+7. 次段階をread-onlyの`WORK1-RELEASE-EVIDENCE-HARDENING-AUDIT-1`だけに定義し、開始しない。
+
+### 26.6 停止条件
+
+- Base64復号bytes、対象SHA、Pages報告SHA、公開6資産のいずれかが一致しない
+- scope lock、Pages、attestationが失敗する
 - 原本、ZIP、スコアカード、公開トップ、応募説明を変更する必要が生じた
 - 作品②、外部参加者連絡、応募・登録を入力または操作にする必要が生じた
 - Actionsへ書込み権限、secret、外部サービス連携を追加する必要が生じた

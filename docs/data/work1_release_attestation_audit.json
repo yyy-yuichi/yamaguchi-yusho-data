@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-RELEASE-ATTESTATION-AUDIT-1",
+  "checked_at": "2026-08-13",
+  "decision": "GO",
+  "severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 3
+  },
+  "audit_target": {
+    "work_id": "WORK1",
+    "repository_id": "yyy-yuichi/yamaguchi-yusho-data",
+    "branch": "main",
+    "commit_sha": "ed1f0b4997acd19016da45e21c88821ef57bb365"
+  },
+  "actions": {
+    "scope_lock": {
+      "run_id": 31646587640,
+      "conclusion": "success",
+      "head_sha_match": true
+    },
+    "pages": {
+      "run_id": 31646584864,
+      "conclusion": "success",
+      "head_sha_match": true
+    },
+    "release_attestation": {
+      "run_id": 31646637352,
+      "conclusion": "success",
+      "head_sha_match": true
+    }
+  },
+  "artifact": {
+    "artifact_id": 9160977456,
+    "name": "work1-release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365",
+    "archive_bytes": 2373,
+    "archive_sha256": "a0c737c6a58a5f2aea475c62cde2a2e52c30bdbe1538df54cb8561c55bb6a643",
+    "api_digest_match": true,
+    "created_at": "2026-08-12T22:22:35Z",
+    "expires_at": "2026-11-10T22:21:58Z",
+    "expires_before_entry_deadline_hours": 112.6
+  },
+  "durable_snapshot": {
+    "readable_json": {
+      "path": "data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json",
+      "public_url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json",
+      "representation": "canonical LF text with the same parsed JSON content",
+      "bytes": 7257,
+      "sha256": "c430b4d5b8721cd84e20339c27a1fc31d3cb6597bc47d2f6a78b438039e62eb2"
+    },
+    "exact_source_base64": {
+      "path": "data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json.b64",
+      "public_url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json.b64",
+      "decoded_bytes": 7446,
+      "decoded_sha256": "6b47326a3066e7cf08231e901f2470d91086d34a7a2025baf47f00f09abf85ab",
+      "exact_source_bytes": true
+    },
+    "source_file": "attestation.json",
+    "retention": "Git history and GitHub Pages; independent of Actions artifact expiry"
+  },
+  "verified_facts": {
+    "tests": {
+      "passed": 151,
+      "discovered": 151
+    },
+    "public_assets": {
+      "matched": 3,
+      "expected": 3
+    },
+    "accepted_sources": {
+      "baseline_matched": 6,
+      "expected": 6
+    },
+    "protected_assets": {
+      "matched": 3,
+      "expected": 3
+    },
+    "scorecard": {
+      "scores": {
+        "実用度": 3.5,
+        "完成度": 4,
+        "挑戦度": 3
+      },
+      "overall_comparison_index": 70
+    },
+    "browser": {
+      "desktop_width_px": 1440,
+      "mobile_viewport": "390x844",
+      "horizontal_overflow": 0,
+      "broken_images": 0,
+      "warning_or_error_logs": 0
+    }
+  },
+  "findings": [
+    {
+      "id": "P2-1",
+      "severity": "P2",
+      "summary": "Actions artifact expires before the entry deadline and the final run is hard to discover.",
+      "resolution": "Publish the exact artifact JSON and audit metadata in Git history and GitHub Pages."
+    },
+    {
+      "id": "P2-2",
+      "severity": "P2",
+      "summary": "A Pages-reported SHA mismatch was recorded but did not force NO_GO.",
+      "resolution": "Treat pages_reported_head_sha mismatch as a fail-closed error and test it."
+    },
+    {
+      "id": "P2-3",
+      "severity": "P2",
+      "summary": "Workflow observations and operator boundary declarations shared one undifferentiated object.",
+      "resolution": "Separate observed HTTP GET targets from declared non-workflow boundaries."
+    }
+  ],
+  "hardening_resolution": {
+    "stage": "WORK1-RELEASE-EVIDENCE-HARDENING-1",
+    "durable_snapshot": true,
+    "pages_sha_mismatch_fail_closed": true,
+    "observations_and_declarations_separated": true
+  },
+  "boundary": {
+    "other_work_accessed": false,
+    "participant_contacts_performed": false,
+    "udc_submission_performed": false,
+    "bodik_registration_performed": false,
+    "evidence_type": "stage execution declaration; not external measurement"
+  }
+}

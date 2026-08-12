@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "work_id": "WORK1-RELEASE-EVIDENCE-HARDENING-1",
+  "acceptance_phase": "local_before_first_push",
+  "date": "2026-08-13",
+  "baseline": {
+    "branch": "main",
+    "head": "ed1f0b4997acd19016da45e21c88821ef57bb365",
+    "origin_main": "ed1f0b4997acd19016da45e21c88821ef57bb365",
+    "audit_decision": "GO",
+    "audit_severity_counts": {
+      "P0": 0,
+      "P1": 0,
+      "P2": 3
+    }
+  },
+  "implementation": {
+    "durable_evidence": {
+      "readable_json": {
+        "path": "docs/data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json",
+        "bytes": 7257,
+        "sha256": "c430b4d5b8721cd84e20339c27a1fc31d3cb6597bc47d2f6a78b438039e62eb2"
+      },
+      "exact_source_base64": {
+        "path": "docs/data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json.b64",
+        "file_bytes": 9929,
+        "decoded_bytes": 7446,
+        "decoded_sha256": "6b47326a3066e7cf08231e901f2470d91086d34a7a2025baf47f00f09abf85ab"
+      },
+      "audit_json": {
+        "path": "docs/data/work1_release_attestation_audit.json",
+        "bytes": 4121,
+        "sha256": "dd9dfe73a7c8ec33ccb97de33eb892d22cda59fa9442c663b4701f4e2a92e895"
+      }
+    },
+    "public_asset_contract": {
+      "previous_total": 3,
+      "new_total": 6
+    },
+    "pages_reported_sha_mismatch": {
+      "error_code": "pages_reported_head_sha_mismatch",
+      "decision": "NO_GO"
+    },
+    "scope_semantics": {
+      "observed": "scope.workflow_observations",
+      "declared": "scope.declared_boundaries",
+      "declaration_is_external_measurement": false
+    }
+  },
+  "verification": {
+    "dedicated_tests": {
+      "ran": 1,
+      "passed": 1
+    },
+    "site_tests": {
+      "ran": 54,
+      "passed": 54
+    },
+    "full_tests": {
+      "ran": 151,
+      "passed": 151
+    },
+    "spec_coverage": {
+      "old_tokens": 904,
+      "unexplained_missing": 0
+    },
+    "git_diff_check": "success",
+    "secret_pattern_hits": 0,
+    "raw_sources": {
+      "count": 6,
+      "changed_from_baseline": 0
+    },
+    "protected_public_values": {
+      "data/gtfs_supply_metrics.json": "unchanged",
+      "docs/data/gtfs_supply_metrics.json": "unchanged",
+      "docs/index.html": "unchanged",
+      "docs/entry.html": "unchanged"
+    }
+  },
+  "boundaries": {
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0,
+    "raw_source_changes": 0,
+    "score_changes": 0
+  },
+  "decision": "LOCAL_GO",
+  "remaining_for_stage_done": [
+    "push implementation commit",
+    "verify scope lock, Pages, and first hardened attestation artifact",
+    "record first public acceptance and push final record commit",
+    "verify final HEAD artifact and public browser views"
+  ]
+}

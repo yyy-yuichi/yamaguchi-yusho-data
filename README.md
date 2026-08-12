@@ -82,7 +82,7 @@ GTFS供給比較**、**市町別の交通協議前確認メモ**までを担う�
 
 対象は山口県分 4 ファイル（上記2区分 × 市町村営・NPO等）。
 
-## 現在地（WORK1-RELEASE-ATTESTATION-1 公開・外部artifact運用・Codex最終受入済み、2026-08-13時点）
+## 現在地（WORK1-RELEASE-EVIDENCE-HARDENING-1 ローカル実装・公開受入待ち、2026-08-13時点）
 
 このリポジトリはI-1〜I-4までの市町別ビューに、受入済みGTFS検査・供給指標を使う
 SUPPLY-VIEW-1の比較画面を追加し、RELEASE-1でGitHub Pagesへ公開した。公開URLに対する
@@ -129,6 +129,13 @@ UDC2026応募全体の終了条件（作品概要エントリー・本応募・�
   [Work 1 release attestation Actions](https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/workflows/release-attestation.yml)
   から対象SHA名で確認する。初回GOはcommit `3dd7693`・run `31646234472`、151 / 151テスト、
   公開3 / 3、原本6 / 6、境界0件。artifactのrun IDはartifact自身を正本とし、repoへ書き戻さない
+- **WORK1-RELEASE-ATTESTATION-AUDIT-1**: 固定HEAD `ed1f0b4`をread-only監査し、P0 0件・
+  P1 0件・P2 3件でGO。P2はartifact期限・発見性、Pages報告SHA不一致の非停止、観測と宣言の混在
+- **WORK1-RELEASE-EVIDENCE-HARDENING-1**: [監査証拠JSON](docs/data/work1_release_attestation_audit.json)、
+  [可読snapshot](docs/data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json)、
+  [Base64正本](docs/data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json.b64)を
+  Git履歴・Pagesへ保存する。Pages報告SHA不一致をNO_GOとし、観測GETと運用宣言を分離する。
+  新しいattestationの公開照合対象は6資産。スコアカードと評価値は変更しない
 
 ## 原本変更の継続確認（WORK1-FRESHNESS-1）
 

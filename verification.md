@@ -2424,3 +2424,20 @@ P2はrepo内の最終受入記録が実装commit `7fdf04a`とそのrun IDを記�
 
 正本は`evidence/20260813_work1_release_attestation_public_acceptance.json`。この受入を記録した
 最終commitのrun IDは、そのcommitに対する次の外部artifact自身を正本とし、repoへ書き戻さない。
+
+## WORK1-RELEASE-EVIDENCE-HARDENING-1 ローカル検証（2026-08-13）
+
+| 検証 | 結果 |
+|---|---|
+| 監査入力 | `ed1f0b4997acd19016da45e21c88821ef57bb365`、GO、P0 0 / P1 0 / P2 3 |
+| durable readable JSON | 7,257 bytes、SHA256 `c430b4d5b8721cd84e20339c27a1fc31d3cb6597bc47d2f6a78b438039e62eb2` |
+| durable Base64 | ファイル9,929 bytes、復号7,446 bytes、SHA256 `6b47326a3066e7cf08231e901f2470d91086d34a7a2025baf47f00f09abf85ab` |
+| audit JSON | 4,121 bytes、SHA256 `dd9dfe73a7c8ec33ccb97de33eb892d22cda59fa9442c663b4701f4e2a92e895` |
+| 専用テスト | `tests.test_release_attestation` 1 / 1 success |
+| SHA mismatch試験 | `pages_reported_head_sha_mismatch`、decision `NO_GO` |
+| scope意味分離 | `workflow_observations`と`declared_boundaries`を別記 |
+| 不変境界 | 採点値・原本・GTFS ZIP・公開トップ・応募説明・作品②・参加者連絡・応募登録は未変更 |
+| 全回帰 | 151 / 151 success |
+| 旧SPEC網羅 | 904トークン、欠落0 |
+| ローカル正本 | `evidence/20260813_work1_release_evidence_hardening_local_acceptance.json` |
+| 残り | push、Actions artifact、PC・スマートフォン公開受入 |

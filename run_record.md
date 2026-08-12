@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-13 (rev.53) / 状態: WORK1-RELEASE-ATTESTATION-1 公開・外部artifact運用・最終受入済み / 次: WORK1-RELEASE-ATTESTATION-AUDIT-1 未着手
+最終更新: 2026-08-13 (rev.54) / 状態: WORK1-RELEASE-EVIDENCE-HARDENING-1 ローカル実装済み・公開受入待ち / 次: 同段階のActions・公開受入
 
 ## 0. このファイルについて
 
@@ -1090,3 +1090,19 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   正本は`evidence/20260813_work1_release_attestation_public_acceptance.json`。
 - この初回GOを受入記録と公開状況へ反映した最終commitをpushする。その最終HEAD自身のartifactを
   ダウンロード検証した時点で同段階を最終受入とし、run IDはrepoへ再書込みしない。
+
+### 改訂点（rev.54）
+
+- WORK1-RELEASE-ATTESTATION-AUDIT-1は固定HEAD
+  `ed1f0b4997acd19016da45e21c88821ef57bb365`についてGO、P0 0件、P1 0件、P2 3件。
+- P2は、artifactの有効期限が応募期限より約112.6時間早いこと、Pages報告SHA不一致が
+  NO_GO条件でないこと、workflow観測値と作業者宣言のscope混在だった。
+- `SPEC.md` rev.5.14 §26にWORK1-RELEASE-EVIDENCE-HARDENING-1を定義した。
+- artifact JSONは可読なLF版と、元7,446 bytesを完全再現できるBase64正本の二層で
+  `docs/data/`へ固定した。監査結果も機械可読JSONへ固定し、公開照合を3資産から6資産へ拡張する。
+- Pages報告SHA不一致を`pages_reported_head_sha_mismatch`でfail closedにし、HTTP GET実測は
+  `workflow_observations`、作品①の作業境界宣言は`declared_boundaries`へ分離した。
+- 採点値、原本、GTFS ZIP、公開トップ、応募説明、作品②入力、参加者連絡、応募・BODIKは変更しない。
+- 専用1 / 1、全151 / 151テスト、旧SPEC 904トークン欠落0、`git diff --check`、秘密情報の
+  定型検査0件、6原本・公開値・公開トップ・応募説明の不変を確認した。ローカル正本は
+  `evidence/20260813_work1_release_evidence_hardening_local_acceptance.json`。

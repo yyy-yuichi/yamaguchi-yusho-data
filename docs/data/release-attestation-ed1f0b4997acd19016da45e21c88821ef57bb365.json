@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-RELEASE-ATTESTATION-1",
+  "checked_at": "2026-08-12T22:22:33.344073+00:00",
+  "decision": "GO",
+  "subject": {
+    "work_id": "WORK1",
+    "repository_id": "yyy-yuichi/yamaguchi-yusho-data",
+    "branch": "main",
+    "commit_sha": "ed1f0b4997acd19016da45e21c88821ef57bb365",
+    "checked_out_head": "ed1f0b4997acd19016da45e21c88821ef57bb365",
+    "head_sha_match": true
+  },
+  "workflow": {
+    "name": "Work 1 release attestation",
+    "run_id": 31646637352,
+    "run_attempt": 1,
+    "run_url": "https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/31646637352",
+    "artifact_name": "work1-release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365",
+    "retention_days": 90
+  },
+  "upstream_pages": {
+    "workflow_name": "pages-build-deployment",
+    "run_id": 31646584864,
+    "run_url": "https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/31646584864",
+    "conclusion": "success",
+    "reported_head_sha": "ed1f0b4997acd19016da45e21c88821ef57bb365",
+    "reported_head_sha_matches_subject": true,
+    "subject_linkage": "public_assets_match_subject_checkout_bytes"
+  },
+  "verification": {
+    "scope_guard": {
+      "passed": true
+    },
+    "tests": {
+      "discovered": 151,
+      "passed": 151,
+      "failed": 0,
+      "success": true
+    },
+    "accepted_sources": [
+      {
+        "source_id": "mlit-registry-000230003",
+        "source_type": "registry_pdf",
+        "local_path": "raw/000230003.pdf",
+        "expected_bytes": 19003,
+        "actual_bytes": 19003,
+        "expected_sha256": "d215cada64ce8d174ec22cb521379734da185b7616f29b27166dfccf701af1ab",
+        "actual_sha256": "d215cada64ce8d174ec22cb521379734da185b7616f29b27166dfccf701af1ab",
+        "baseline_match": true
+      },
+      {
+        "source_id": "mlit-registry-000268896",
+        "source_type": "registry_pdf",
+        "local_path": "raw/000268896.pdf",
+        "expected_bytes": 149313,
+        "actual_bytes": 149313,
+        "expected_sha256": "ece80864a99fc392dec0c279fe92f3609a43c11ce32178ced0cd60839c9b6177",
+        "actual_sha256": "ece80864a99fc392dec0c279fe92f3609a43c11ce32178ced0cd60839c9b6177",
+        "baseline_match": true
+      },
+      {
+        "source_id": "mlit-registry-000271730",
+        "source_type": "registry_pdf",
+        "local_path": "raw/000271730.pdf",
+        "expected_bytes": 136476,
+        "actual_bytes": 136476,
+        "expected_sha256": "86b3e32f3d3017cba613d644102f262a0a0cb2761925718ce9eea12e71a9add1",
+        "actual_sha256": "86b3e32f3d3017cba613d644102f262a0a0cb2761925718ce9eea12e71a9add1",
+        "baseline_match": true
+      },
+      {
+        "source_id": "mlit-registry-000359215",
+        "source_type": "registry_pdf",
+        "local_path": "raw/000359215.pdf",
+        "expected_bytes": 393922,
+        "actual_bytes": 393922,
+        "expected_sha256": "3107e8555aefe86527d482422977c050b4514cb06b0f077187cdec4f38a2c66b",
+        "actual_sha256": "3107e8555aefe86527d482422977c050b4514cb06b0f077187cdec4f38a2c66b",
+        "baseline_match": true
+      },
+      {
+        "source_id": "iwakuni-gtfsjp",
+        "source_type": "gtfs_zip",
+        "local_path": "raw/gtfs/iwakuni_gtfsjp_20260401.zip",
+        "expected_bytes": 719723,
+        "actual_bytes": 719723,
+        "expected_sha256": "d236a58ff4a0edb4812a8bed543d4897670441164a1019e88d5e35ded5052de2",
+        "actual_sha256": "d236a58ff4a0edb4812a8bed543d4897670441164a1019e88d5e35ded5052de2",
+        "baseline_match": true
+      },
+      {
+        "source_id": "hikari-gtfs",
+        "source_type": "gtfs_zip",
+        "local_path": "raw/gtfs/hikari_gtfs_20260401.zip",
+        "expected_bytes": 86273,
+        "actual_bytes": 86273,
+        "expected_sha256": "f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7",
+        "actual_sha256": "f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7",
+        "baseline_match": true
+      }
+    ],
+    "accepted_source_count": 6,
+    "protected_assets": [
+      {
+        "path": "docs/index.html",
+        "bytes": 48875,
+        "expected_sha256": "502eb93199d3df71593dc7d220d575159a9167a2692bdec2bb8b5b4b7d7c4b49",
+        "actual_sha256": "502eb93199d3df71593dc7d220d575159a9167a2692bdec2bb8b5b4b7d7c4b49",
+        "fixed_baseline_match": true
+      },
+      {
+        "path": "docs/entry.html",
+        "bytes": 15889,
+        "expected_sha256": "c89d25f9e491da49b391578929369d8c1d0b98cc18b669f0c3dfb77b9c52a95c",
+        "actual_sha256": "c89d25f9e491da49b391578929369d8c1d0b98cc18b669f0c3dfb77b9c52a95c",
+        "fixed_baseline_match": true
+      },
+      {
+        "path": "data/work1_award_scorecard.json",
+        "bytes": 23699,
+        "expected_sha256": "0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021",
+        "actual_sha256": "0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021",
+        "fixed_baseline_match": true
+      }
+    ],
+    "scorecard": {
+      "bytes": 23699,
+      "sha256": "0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021",
+      "public_copy_match": true,
+      "work_id": "WORK1",
+      "repository_id": "yyy-yuichi/yamaguchi-yusho-data",
+      "other_work_input_count": 0,
+      "scores": {
+        "実用度": 3.5,
+        "完成度": 4.0,
+        "挑戦度": 3.0
+      },
+      "overall_comparison_index": 70.0
+    },
+    "public_assets": [
+      {
+        "path": "status.html",
+        "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/status.html",
+        "expected_bytes": 54298,
+        "expected_sha256": "074434032460091cd8d48694bd1f392a819f997228ce37e571aafe68385259f3",
+        "http": 200,
+        "actual_bytes": 54298,
+        "actual_sha256": "074434032460091cd8d48694bd1f392a819f997228ce37e571aafe68385259f3",
+        "commit_bytes_match": true,
+        "attempts": 1
+      },
+      {
+        "path": "award-comparison.html",
+        "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/award-comparison.html",
+        "expected_bytes": 20517,
+        "expected_sha256": "a4c7df1be47731ede212c787744042bf03e597883af60bdfbcdbb2a94aa9fd0e",
+        "http": 200,
+        "actual_bytes": 20517,
+        "actual_sha256": "a4c7df1be47731ede212c787744042bf03e597883af60bdfbcdbb2a94aa9fd0e",
+        "commit_bytes_match": true,
+        "attempts": 1
+      },
+      {
+        "path": "data/work1_award_scorecard.json",
+        "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/data/work1_award_scorecard.json",
+        "expected_bytes": 23699,
+        "expected_sha256": "0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021",
+        "http": 200,
+        "actual_bytes": 23699,
+        "actual_sha256": "0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021",
+        "commit_bytes_match": true,
+        "attempts": 1
+      }
+    ]
+  },
+  "scope": {
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0,
+    "external_requests": [
+      "https://yyy-yuichi.github.io/yamaguchi-yusho-data/status.html",
+      "https://yyy-yuichi.github.io/yamaguchi-yusho-data/award-comparison.html",
+      "https://yyy-yuichi.github.io/yamaguchi-yusho-data/data/work1_award_scorecard.json"
+    ]
+  },
+  "errors": []
+}

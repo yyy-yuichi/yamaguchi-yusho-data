@@ -535,6 +535,11 @@ class StatusHtmlContractTest(unittest.TestCase):
             "ENTRY-PAGE-1公開・Codex受入済み",
             "PDL1.0",
             "CC BY 4.0",
+            "WORK1-RELEASE-EVIDENCE-HARDENING-1",
+            "監査証拠JSON",
+            "Base64正本",
+            "公開照合は6資産",
+            'href="data/work1_release_attestation_audit.json"',
         )
         for marker in required:
             self.assertIn(marker, self.html)
