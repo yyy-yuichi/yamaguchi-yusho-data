@@ -2082,3 +2082,18 @@ Actions履歴を正とする。`changed`または`invalid_baseline`を検出し�
 正本証拠は`evidence/20260812_work1_scope_lock_local.json`、画面は
 `evidence/20260812_work1_scope_lock_screenshot_1440.png`と
 `evidence/20260812_work1_scope_lock_screenshot_390x844.png`に保持する。
+
+### GitHub・公開後最終判定
+
+- implementation commit: `ae86f0a3018c4187feefa80afcb26f382e043f69`
+- Work 1 scope lock run: `31549042703`、head SHA一致、jobと全step `success`
+- Pages run: `31549042228`、head SHA一致、`success`
+- 公開`status.html`: HTTP 200、公開blob＝commit blob
+  `f9299d00bb1628177034819b91832c35536ca5ee`
+- 公開PC・スマホ: 作品①／作品②の独立レーン、人の比較ゲート、DAGリンクあり、overflow 0、
+  console error 0、既存freshness節あり
+- Git: HEAD＝origin/main、clean
+
+判定は**WORK1-SCOPE-LOCK-1 最終GO**。作品②の識別子・パス・ファイルは入力0件で、作品①と
+作品②が直接接続しないDAGを正とする。OSレベルの物理ACL分離は実施していないが、このChat・repo・CIは
+作品①以外をfail-closedで拒否する。

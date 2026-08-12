@@ -2343,3 +2343,15 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   必要だが、このChat・repo・CIの操作契約は作品①だけにfail-closedした。
 - 正本は`evidence/20260812_work1_scope_lock_local.json`。公開後受入までは
   `WORK1-AWARD-COMPARISON-1`を開始しない。
+
+### GitHub公開・最終受入
+
+- implementation commit `ae86f0a3018c4187feefa80afcb26f382e043f69`を`main`へpushした。
+- Work 1 scope lock run `31549042703`は、作品①checkout、origin allowlist、外部パス拒否テストを含む
+  全stepが`success`。Pages run `31549042228`も`success`だった。
+- 公開`status.html`はHTTP 200、公開blobとcommit blobは
+  `f9299d00bb1628177034819b91832c35536ca5ee`で一致した。
+- 公開1440×1600・390×844で作品①レーン、不可視の作品②レーン、人の比較ゲート、DAG導線を確認。
+  両幅overflow 0、console error 0、既存freshness節あり。
+- HEAD＝origin/main、cleanを読み戻し、WORK1-SCOPE-LOCK-1を最終受入済みとする。
+  次段階は定義済みの`WORK1-AWARD-COMPARISON-1`だけで、まだ開始していない。

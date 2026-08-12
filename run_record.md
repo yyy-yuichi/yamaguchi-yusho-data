@@ -851,3 +851,10 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - `WORK_SCOPE.md`と公開状況ページへ、作品①と作品②が交差せず、人の比較判断だけで合流するDAGを追加した。
 - ローカル全113件、PC・スマホoverflow 0・console error 0まで受入。GitHub runと公開URL読戻し前のため、
   WORK1-SCOPE-LOCK-1の最終受入と次段階開始はまだ行わない。
+
+### 改訂点（rev.42）
+
+- implementation commit `ae86f0a`、Work 1 scope lock run `31549042703`、Pages run `31549042228`を
+  読み戻し、全step success、公開HTML blob一致、公開PC・スマホoverflow 0・console error 0を確認した。
+- WORK1-SCOPE-LOCK-1を最終受入済みとし、作品②の入力0件、作品①だけのdeny-by-default境界を固定した。
+- 次の一作業は`WORK1-AWARD-COMPARISON-1`のまま。作品②の中身を参照せず、共通形式だけを定義する。

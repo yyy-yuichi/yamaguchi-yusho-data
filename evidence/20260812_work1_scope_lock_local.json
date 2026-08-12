@@ -46,6 +46,30 @@
       "screenshot_sha256": "5e8372c8fd9bcb1858dcadc35efd84addcaf23f00fd1c8476fc9db200041290f"
     }
   },
+  "github": {
+    "implementation_commit": "ae86f0a3018c4187feefa80afcb26f382e043f69",
+    "scope_lock_run": {
+      "id": 31549042703,
+      "url": "https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/31549042703",
+      "conclusion": "success",
+      "all_steps_succeeded": true
+    },
+    "pages_run": {
+      "id": 31549042228,
+      "url": "https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/31549042228",
+      "conclusion": "success"
+    },
+    "public_status": {
+      "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/status.html",
+      "http_status": 200,
+      "published_blob": "f9299d00bb1628177034819b91832c35536ca5ee",
+      "commit_blob": "f9299d00bb1628177034819b91832c35536ca5ee",
+      "byte_match": true,
+      "desktop_overflow_x": 0,
+      "mobile_overflow_x": 0,
+      "console_error_count": 0
+    }
+  },
   "other_work_paths_consumed": 0,
   "other_work_files_consumed": 0,
   "protected_outputs_changed": false,
