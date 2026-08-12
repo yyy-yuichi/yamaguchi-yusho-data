@@ -2424,3 +2424,17 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   error 0、Browser dev error 0を確認。公開トップから岩国市付きメモへ往復できた。
 - 正本は`evidence/20260812_work1_task_memo_public_acceptance.json`。WORK1-TASK-MEMO-1を
   最終受入済みとする。次段階はread-onlyの`WORK1-TASK-MEMO-AUDIT-1`だけで、まだ開始しない。
+
+## 2026-08-12 WORK1-GTFS-COVERAGE-2 ローカルGO
+
+- 未確認14市町の公式資料を再探索し、新規採用可能GTFS ZIPは0件と記録した。受入済み岩国市・
+  光市ZIPは公式配布バイトとサイズ・SHA-256が一致し、原本や公開値の自動採用は行っていない。
+- 光市GTFS「広域生活交通」の94乗降停留所IDを確認し、光市63・周南市31を特定した。周南市内
+  31 ID・17停留所名を根拠に、周南市を光市フィードの関連市町へ訂正した。
+- 公開メモは市町に関連するfeed IDで実測を参照するようにし、周南市では光市フィード全体値と
+  明示した。周南市内だけの値は分割・推計せず、未確認市町にも値を補完しない。
+- GTFS関連確認6 / 19市町、未確認13 / 19市町、実測2フィード。全148 unittest成功。
+- PC 1440×1600、スマートフォン390×844、光市・周南市・下関市の代表分岐、印刷を確認し、
+  横overflow、runtime error、Browser dev errorはいずれも0。ローカル判定はGO。
+- 証拠は`evidence/20260812_work1_gtfs_coverage_*.json`。作品②、外部参加者への連絡、UDC応募、
+  BODIK登録は0件。次は同段階のcommit・push・Actions・Pages・公開読戻しである。

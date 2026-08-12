@@ -25,7 +25,11 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = REPO_ROOT / "data"
 DOCS_DATA_DIR = REPO_ROOT / "docs" / "data"
 
-CHECKED_AT = "2026-08-09"
+CHECKED_AT = "2026-08-12"
+
+_COVERAGE_DISCOVERY_EVIDENCE = "evidence/20260812_work1_gtfs_coverage_discovery.json"
+_COVERAGE_ROUTE7_EVIDENCE = "evidence/20260812_work1_gtfs_coverage_hikari_route7.json"
+_COVERAGE_LIVE_CHECKS_EVIDENCE = "evidence/20260812_work1_gtfs_coverage_live_checks.json"
 
 FEEDS_COLUMNS = [
     "feed_id", "publisher", "dataset_name", "official_page_url",
@@ -69,7 +73,8 @@ FEEDS = [
         "source_evidence": (
             "evidence/20260809_gtfs_source_ydata_ds_352080-gtfsjp.txt;"
             "evidence/20260809_gtfs_source_ydata_res_iwakuni_gtfs.txt;"
-            "evidence/20260809_gtfs_source_zip_head_check.txt"
+            "evidence/20260809_gtfs_source_zip_head_check.txt;"
+            + _COVERAGE_LIVE_CHECKS_EVIDENCE
         ),
     },
     {
@@ -94,12 +99,16 @@ FEEDS = [
         "license_url": "http://www.opendefinition.org/licenses/cc-by",
         "scope_note": (
             "対象は公式データセット名称にある広域生活交通、ひかりぐるりんバス、光市営バス（光市）。"
-            "市域全体・全路線を網羅するとは公式記載からは確認していない。"
+            "受入済みGTFSの広域生活交通には、国土地理院逆ジオコードで周南市コード35215となる"
+            "乗降停留所IDを31件確認した。光市・周南市の市域全体・全事業者・全路線を網羅するとは"
+            "確認していない。"
         ),
         "source_evidence": (
             "evidence/20260809_gtfs_source_ydata_ds_352101_kotsu001.txt;"
             "evidence/20260809_gtfs_source_ydata_res_hikari_gtfs.txt;"
-            "evidence/20260809_gtfs_source_zip_head_check.txt"
+            "evidence/20260809_gtfs_source_zip_head_check.txt;"
+            + _COVERAGE_LIVE_CHECKS_EVIDENCE + ";"
+            + _COVERAGE_ROUTE7_EVIDENCE
         ),
     },
     {
@@ -129,7 +138,8 @@ FEEDS = [
         ),
         "source_evidence": (
             "evidence/20260809_gtfs_source_odpt_sentetsu.txt;"
-            "evidence/20260809_gtfs_source_odpt_sentetsu_res_latest.txt"
+            "evidence/20260809_gtfs_source_odpt_sentetsu_res_latest.txt;"
+            + _COVERAGE_DISCOVERY_EVIDENCE
         ),
     },
 ]
@@ -239,11 +249,13 @@ MUNICIPALITY_STATUS = {
         "feed_ids": ("hikari-gtfs",),
         "scope_note": (
             "公式データセット名称にある広域生活交通、ひかりぐるりんバス、光市営バスが対象。"
-            "市域全体・全路線を網羅するとは公式記載からは確認していない。"
+            "広域生活交通は周南市内停留所も含む。光市の市域全体・全事業者・全路線を網羅するとは"
+            "確認していない。"
         ),
         "source_evidence": (
             "evidence/20260809_gtfs_source_ydata_ds_352101_kotsu001.txt;"
-            "evidence/20260809_gtfs_source_ydata_res_hikari_gtfs.txt"
+            "evidence/20260809_gtfs_source_ydata_res_hikari_gtfs.txt;"
+            + _COVERAGE_ROUTE7_EVIDENCE
         ),
     },
     "長門市": {
@@ -276,15 +288,17 @@ MUNICIPALITY_STATUS = {
         ),
     },
     "周南市": {
-        "availability_status": "not_confirmed_in_checked_sources",
-        "feed_ids": (),
+        "availability_status": "confirmed",
+        "feed_ids": ("hikari-gtfs",),
         "scope_note": (
-            "「標準的なバス情報フォーマット」は周南市公式ページへのリンクのみでGTFSの記載は無い。"
-            "「公共交通マップ」（下松市との合同作成）にもGTFSの記載は無い。"
+            "周南市自身の公式カタログではGTFS配布を確認できなかったが、光市が公式配布するGTFSの"
+            "広域生活交通に、国土地理院逆ジオコードで周南市コード35215となる乗降停留所IDを31件"
+            "（17停留所名）確認した。周南市内の全事業者・全路線を網羅するとは確認していない。"
         ),
         "source_evidence": (
             "evidence/20260809_gtfs_source_official_shunan.txt;"
-            "evidence/20260809_gtfs_source_ydata_ds_352152_public_transport.txt"
+            "evidence/20260809_gtfs_source_ydata_ds_352152_public_transport.txt;"
+            + _COVERAGE_ROUTE7_EVIDENCE
         ),
     },
     "山陽小野田市": {
@@ -378,7 +392,10 @@ def build_municipality_rows():
             "feed_ids": ";".join(status["feed_ids"]),
             "scope_note": status["scope_note"],
             "checked_at": CHECKED_AT,
-            "source_evidence": status["source_evidence"] + ";" + _CODE_SOURCE_EVIDENCE,
+            "source_evidence": (
+                status["source_evidence"] + ";" + _CODE_SOURCE_EVIDENCE + ";"
+                + _COVERAGE_DISCOVERY_EVIDENCE
+            ),
         })
     return rows
 

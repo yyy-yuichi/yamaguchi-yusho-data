@@ -2230,3 +2230,29 @@ read-onlyで独立監査する。注力判断、UDC応募、BODIK APPs登録、�
 次段階は`WORK1-TASK-MEMO-AUDIT-1`だけとし、独立監査開始直前で停止する。
 
 正本は`evidence/20260812_work1_task_memo_public_acceptance.json`。
+
+## 2026-08-12 WORK1-GTFS-COVERAGE-2 ローカル受入
+
+| 検証 | 結果 |
+|---|---|
+| 公式資料再探索 | 未確認14市町を再確認、新規採用可能GTFS ZIP 0件 |
+| 受入済みZIP再照合 | 岩国市・光市ともHTTP 200、size・SHA-256一致、`unchanged` |
+| 光市GTFS路線7 | 94乗降停留所ID、光市63・周南市31 |
+| 周南市関連範囲 | 31乗降停留所ID・17停留所名を根拠に`confirmed`、`hikari-gtfs`関連 |
+| 集計 | 関連確認6 / 19、未確認13 / 19、実測2フィード |
+| 自動テスト | `python -m unittest discover -s tests -q`、148件成功 |
+| 公開メモPC | 1440×1600、周南市・光市・下関市の代表分岐、overflow 0、error 0 |
+| 公開メモスマートフォン | 390×844、周南市、overflow 0、error 0 |
+| 印刷契約 | 操作部を非表示、メモ本文・根拠・限界を保持 |
+| 状況ページ | PC・390pxとも工程09と再確認結果を表示、overflow 0、error 0 |
+| 禁止変更 | raw PDF、受入済みZIP、既存実測値、比較スコア、scope lockは不変 |
+
+判定は**LOCAL GO**。周南市で表示する指標は`hikari-gtfs`全体の実測であり、周南市内だけの
+値や市内公共交通の網羅値ではない。6 / 19は公式資料または受入済みGTFS本体から関連を確認した
+市町数で、整備達成度、交通到達範囲、順位、良否を意味しない。
+
+正本は`evidence/20260812_work1_gtfs_coverage_discovery.json`、
+`evidence/20260812_work1_gtfs_coverage_hikari_route7.json`、
+`evidence/20260812_work1_gtfs_coverage_live_checks.json`、
+`evidence/20260812_work1_gtfs_coverage_local_acceptance.json`。作品②入力、外部参加者への連絡、
+UDC応募、BODIK登録は0件。公開適用と公開URL読戻しは未完了である。

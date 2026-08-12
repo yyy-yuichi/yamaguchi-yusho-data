@@ -1,0 +1,54 @@
+{
+  "evidence_version": "WORK1-GTFS-COVERAGE-2",
+  "checked_at": "2026-08-12T18:50:30+09:00",
+  "source_zip": {
+    "path": "raw/gtfs/hikari_gtfs_20260401.zip",
+    "size_bytes": 86273,
+    "sha256": "f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7",
+    "official_url": "https://yamaguchi-opendata.jp/ckan/dataset/db885818-b1bd-4848-986f-45119e8acb31/resource/c804039c-7d37-4e45-9288-f09fc1bbd249/download/hikari_gtfs_20260401_.zip"
+  },
+  "method": {
+    "route_selection": "routes.txtのroute_id=7",
+    "trip_selection": "trips.txtのroute_id=7に属するtrip_id",
+    "stop_selection": "選択trip_idを参照するstop_times.txtの一意stop_id",
+    "municipality_lookup": "stops.txtのstop_lon/stop_latを国土地理院逆ジオコーダーへ照会",
+    "gsi_api_url": "https://mreversegeocoder.gsi.go.jp/reverse-geocoder/LonLatToAddress",
+    "normal_unittest_network_access": false
+  },
+  "route": {
+    "route_id": "7",
+    "route_long_name": "広域生活交通",
+    "trip_count": 29,
+    "boarding_stop_id_count": 94
+  },
+  "municipality_summary": [
+    {
+      "municipality_code": "35210",
+      "municipality": "光市",
+      "stop_id_count": 63,
+      "unique_stop_name_count": 32,
+      "unique_stop_names": ["三井七丁目", "三井五丁目", "三井小学校前", "三島コミュニティセンター前", "下大田", "下小周防", "光市役所前", "光市民ホール西", "光総合病院", "光製鉄前", "光駅北口", "八幡所", "土井", "小周防", "小周防Ｂ", "岩狩一丁目", "岩狩二丁目", "島田中前", "島田駅", "島田駅前", "慶周寺", "支所前", "新町", "木ノ下橋上", "木園", "林", "植松", "浅江中学校前", "石田（広域生活交通）", "立野", "花園", "領家"]
+    },
+    {
+      "municipality_code": "35215",
+      "municipality": "周南市",
+      "stop_id_count": 31,
+      "unique_stop_name_count": 17,
+      "unique_stop_names": ["ゆめプラザ熊毛", "三丘温泉", "下和田", "中村", "兼清", "十楽", "和田", "安田", "宮河内", "小深", "熊毛中前", "筏場", "荒瀬", "迫", "集会所前", "高水駅", "鶴見台団地下"]
+    }
+  ],
+  "representative_gsi_results": [
+    {"stop_id": "96_01", "stop_name": "高水駅", "stop_lat": "34.055297", "stop_lon": "131.973272", "municipality_code": "35215"},
+    {"stop_id": "94_01", "stop_name": "ゆめプラザ熊毛", "stop_lat": "34.049818", "stop_lon": "131.969131", "municipality_code": "35215"},
+    {"stop_id": "93_01", "stop_name": "熊毛中前", "stop_lat": "34.048527", "stop_lon": "131.968777", "municipality_code": "35215"},
+    {"stop_id": "80_01", "stop_name": "三丘温泉", "stop_lat": "34.033803", "stop_lon": "131.991163", "municipality_code": "35215"},
+    {"stop_id": "7_03", "stop_name": "光駅北口", "stop_lat": "33.974709", "stop_lon": "131.91678", "municipality_code": "35210"}
+  ],
+  "decision": {
+    "municipality": "周南市",
+    "availability_status": "confirmed",
+    "feed_ids": ["hikari-gtfs"],
+    "metric_semantics": "光市GTFSのフィード全体値を関連表示する。周南市内だけの値へ分割・推計しない",
+    "non_claims": ["周南市がGTFS公開主体", "周南市内の全事業者・全路線を網羅", "交通カバー率"]
+  }
+}

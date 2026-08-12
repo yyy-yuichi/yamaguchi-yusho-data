@@ -83,6 +83,12 @@ class TaskMemoPageTest(unittest.TestCase):
         ):
             self.assertIn(required, self.html)
 
+    def test_related_feed_metrics_are_selected_by_feed_id(self):
+        self.assertIn("function renderMeasuredMetrics(item, gtfsRow)", self.html)
+        self.assertIn("const associatedFeedIds = new Set(feedIds(gtfsRow));", self.html)
+        self.assertIn("associatedFeedIds.has(row.feed_id)", self.html)
+        self.assertNotIn("state.metrics.filter(row => row.municipality === item.municipality)", self.html)
+
     def test_all_external_links_are_restricted_to_https(self):
         self.assertIn('url.startsWith("https://")', self.html)
         self.assertIn('link.rel = "noopener noreferrer"', self.html)
@@ -138,6 +144,12 @@ class TaskMemoDataContractTest(unittest.TestCase):
         self.assertGreater(supply_by_name["岩国市"]["operator_count"], 0)
         self.assertEqual(gtfs_by_name["岩国市"]["availability_status"], "confirmed")
         self.assertIn("岩国市", metric_names)
+
+        shunan = gtfs_by_name["周南市"]
+        self.assertEqual(shunan["availability_status"], "confirmed")
+        self.assertEqual(shunan["feed_ids"], "hikari-gtfs")
+        self.assertNotIn("周南市", metric_names, "実測レコードを市町別に複製してはいけない")
+        self.assertIn("hikari-gtfs", {row["feed_id"] for row in self.metrics})
 
 
 class TaskMemoEntryPointTest(unittest.TestCase):

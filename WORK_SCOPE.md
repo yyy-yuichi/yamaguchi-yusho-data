@@ -27,7 +27,9 @@ flowchart TD
     C1["WORK1-AWARD-COMPARISON-1<br/>作品①の比較用出力<br/>公開・最終受入済み"]
     A1["WORK1-AWARD-AUDIT-1<br/>固定HEADの独立監査<br/>GO"]
     M1["WORK1-TASK-MEMO-1<br/>市町別の協議前確認メモ<br/>公開・最終受入済み"]
-    A2["WORK1-TASK-MEMO-AUDIT-1<br/>固定HEADの独立監査<br/>次段階"]
+    A2["WORK1-TASK-MEMO-AUDIT-1<br/>固定HEADの独立監査<br/>GO"]
+    V1["WORK1-GTFS-COVERAGE-2<br/>公式範囲再確認<br/>実行中"]
+    V2["WORK1-GTFS-COVERAGE-AUDIT-1<br/>次のread-only監査"]
     C2["作品②の比較用出力<br/>作品②Chatが所有"]
     D{"比較・注力判断<br/>人が決定"}
     S["選んだ作品を応募品質まで強化"]
@@ -35,7 +37,7 @@ flowchart TD
 
     G --> W1
     G --> W2
-    W1 --> F --> L --> C1 --> A1 --> M1 --> A2 --> D
+    W1 --> F --> L --> C1 --> A1 --> M1 --> A2 --> V1 --> V2 --> D
     W2 --> C2 --> D
     D --> S --> A
 ```
@@ -52,8 +54,12 @@ flowchart TD
   read-onlyで独立監査し、GO判定済み。
 - `WORK1-TASK-MEMO-1`: 既存の作品①公開データだけから、市町別に根拠・日付・限界・
   次の確認事項を一枚へ構成し、共有・印刷できる実務向け出力を公開・最終受入済み。
-- `WORK1-TASK-MEMO-AUDIT-1`: TASK-MEMO-1公開受入後の一作業。固定HEAD、公開配信、
-  代表3分岐、PC・390px・印刷、作品②入力0件をread-onlyで監査する。
+- `WORK1-TASK-MEMO-AUDIT-1`: 固定HEAD、公開配信、代表3分岐、PC・390px・印刷、
+  作品②入力0件をread-onlyで独立監査し、GO判定済み。
+- `WORK1-GTFS-COVERAGE-2`: 未確認14市町の公式資料を再探索し、受入済み光市GTFSに収録された
+  周南市内停留所を証拠・市町表・確認メモへ反映する現在工程。原本と実測値は増やさない。
+- `WORK1-GTFS-COVERAGE-AUDIT-1`: COVERAGE-2公開受入後に行う次の一作業。固定HEADと公開配信を
+  read-onlyで監査する。現在は未着手。
 - 作品①の公開出力: [受賞準備スコアカード](https://yyy-yuichi.github.io/yamaguchi-yusho-data/award-comparison.html)
 - 作品①の実務出力: [市町別 交通協議前確認メモ](https://yyy-yuichi.github.io/yamaguchi-yusho-data/municipality-memo.html)
 - 応募送信、本応募、BODIK登録、作品②の変更は別の人間承認・別Chatの責任範囲である。

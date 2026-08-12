@@ -173,14 +173,14 @@ class GtfsStatusDataTest(unittest.TestCase):
         counts = {}
         for row in self.municipalities:
             counts[row["availability_status"]] = counts.get(row["availability_status"], 0) + 1
-        self.assertEqual(counts, {"confirmed": 5, "not_confirmed_in_checked_sources": 14})
+        self.assertEqual(counts, {"confirmed": 6, "not_confirmed_in_checked_sources": 13})
         self.assertNotIn("unassessed", counts, "unassessed は0件のはずで、キー自体が現れてはいけない")
 
-    def test_three_feeds_map_to_five_municipalities_without_double_counting(self):
+    def test_three_feeds_map_to_six_municipalities_without_double_counting(self):
         confirmed = [row for row in self.municipalities if row["availability_status"] == "confirmed"]
         self.assertEqual(
             {row["municipality"] for row in confirmed},
-            {"岩国市", "光市", "宇部市", "美祢市", "山陽小野田市"},
+            {"岩国市", "光市", "周南市", "宇部市", "美祢市", "山陽小野田市"},
         )
         for row in confirmed:
             # Each confirmed municipality maps to exactly one feed_id; a
@@ -197,7 +197,8 @@ class GtfsStatusDataTest(unittest.TestCase):
             {row["municipality"] for row in confirmed if row["feed_ids"] == "iwakuni-gtfsjp"}, {"岩国市"}
         )
         self.assertEqual(
-            {row["municipality"] for row in confirmed if row["feed_ids"] == "hikari-gtfs"}, {"光市"}
+            {row["municipality"] for row in confirmed if row["feed_ids"] == "hikari-gtfs"},
+            {"光市", "周南市"},
         )
 
     def test_iwakuni_and_hikari_reference_dates_and_validity(self):
@@ -300,7 +301,7 @@ class GtfsSupplyMetricsDataTest(unittest.TestCase):
         self.assertEqual(source, published)
         self.assertEqual(
             hashlib.sha256(source).hexdigest(),
-            "26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b",
+            "c277e1050086da6ad5cc703051deb672458f7bf2829e1aca92fd0b17b4d20930",
         )
 
     def test_supply_metrics_two_feeds_and_all_twenty_values_are_fixed(self):
@@ -782,8 +783,8 @@ class ReadmeContractTest(unittest.TestCase):
         required = (
             "公式フィード",
             "3件",
-            "5 / 19",
-            "14 / 19",
+            "6 / 19",
+            "13 / 19",
             "今回確認した公式資料の範囲",
         )
         for marker in required:

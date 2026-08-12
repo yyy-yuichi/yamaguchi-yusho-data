@@ -183,18 +183,18 @@
     }
 
     .overall-bar .done {
-      width: 88.8889%;
+      width: 80%;
       background: var(--green);
     }
 
     .overall-bar .current {
-      width: 11.1111%;
+      width: 10%;
       background: var(--blue);
     }
 
     .roadmap {
       display: grid;
-      grid-template-columns: repeat(8, minmax(108px, 1fr));
+      grid-template-columns: repeat(5, minmax(108px, 1fr));
       gap: 10px;
       margin: 16px 0 0;
       padding: 0;
@@ -829,8 +829,8 @@
       <div class="metrics" aria-label="主要な進捗数値">
         <div class="metric complete">
           <span class="label">受入段階</span>
-          <strong class="metric-number">8 / 9</strong>
-          <span class="metric-caption">協議前確認メモの公開検証まで受入済み</span>
+          <strong class="metric-number">8 / 10</strong>
+          <span class="metric-caption">工程09のGTFS公式範囲再確認を検証中</span>
         </div>
         <div class="metric complete">
           <span class="label">PDF</span>
@@ -854,14 +854,14 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">作品の現在地</p>
-          <h2 id="progress-title">WORK1-TASK-MEMO-1公開・Codex受入済み</h2>
-          <p>作品①は<a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>です（初回公開 commit <code>18170b2</code>）。ENTRY-PAGE-1公開・Codex受入済みを保持し、<a href="municipality-memo.html">市町別 交通協議前確認メモ</a>をcommit <code>8bf5a1f</code>で公開しました。scope lock run <code>31557300073</code>とPages run <code>31557299397</code>の成功、公開ファイル、PC・スマートフォンをCodexが読み戻しました。登録簿とGTFSの既存公開データだけから、分かること、未確認事項、次の確認事項を一枚に構成し、市町付きURLの共有と印刷・PDF保存ができます。原本や公開値は更新せず、作品②からの入力は0件です。UDC概要フォーム、本応募、BODIK APPs登録は行っていません。</p>
+          <h2 id="progress-title">WORK1-GTFS-COVERAGE-2 ローカルGO・公開適用待ち</h2>
+          <p>既存成果は<a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>です（初回公開基準 commit <code>18170b2</code>）。受入済みの公開成果を保持したまま、2026-08-12に未確認14市町の公式資料と受入済み2 GTFS ZIPを再確認しました。新規採用可能ZIPは0件、2 ZIPは公式配布バイトと一致しました。光市公式GTFSの広域生活交通に周南市内31乗降停留所ID・17停留所名を確認したため、確認メモの関連範囲を訂正しています。原本の置換、周南市内だけの実測値の推計、作品②からの入力、UDC概要フォーム、本応募、BODIK APPs登録は行っていません。</p>
         </div>
-        <strong class="progress-summary">実務向け確認メモ Codex受入済み</strong>
+        <strong class="progress-summary">公式範囲再確認 8 / 10完了・工程09公開待ち</strong>
       </div>
 
-      <div class="overall-bar" role="progressbar" aria-label="9工程中8工程を受入済み、残る工程09は外部提出" aria-valuemin="0" aria-valuemax="9" aria-valuenow="8">
-        <span class="done" title="8工程を受入済み"></span>
+      <div class="overall-bar" role="progressbar" aria-label="10工程中8工程を受入済み、工程09を検証中、工程10の外部提出は未着手" aria-valuemin="0" aria-valuemax="10" aria-valuenow="8">
+        <span class="done" title="8工程を受入済み"></span><span class="current" title="工程09を検証中"></span>
       </div>
 
       <ol class="roadmap">
@@ -905,8 +905,13 @@
           <span class="step-title">WORK1-TASK-MEMO-1: 市町別の交通協議前確認メモ</span>
           <span class="step-state">公開・実ブラウザ確認・Codex受入済み</span>
         </li>
-        <li class="todo">
+        <li class="current">
           <span class="step-no">09</span>
+          <span class="step-title">WORK1-GTFS-COVERAGE-2: 公式範囲の再確認</span>
+          <span class="step-state">ローカルGO・公開適用待ち</span>
+        </li>
+        <li class="todo">
+          <span class="step-no">10</span>
           <span class="step-title">外部提出</span>
           <span class="step-state">G6の本人承認前は実施しない</span>
         </li>
@@ -933,7 +938,7 @@
         </li>
         <li>
           <span class="check-mark" aria-hidden="true">✓</span>
-          <div><strong>I-4: GTFS/GTFS-JP公式確認状況</strong><p>公式一次資料で確認できたフィード3件、対象市町名を確認できた5/19市町を、同じ市町別ビューで登録供給と比較できるよう表示。</p></div>
+          <div><strong>I-4: GTFS/GTFS-JP公式確認状況</strong><p>WORK1-GTFS-COVERAGE-2で再確認し、公式フィード3件、関連を確認できた6 / 19市町、未確認13 / 19市町を、同じ市町別ビューで登録供給と比較できるよう表示。この数は整備の達成度や交通の到達範囲を表しません。</p></div>
         </li>
         <li>
           <span class="check-mark" aria-hidden="true">✓</span>
@@ -941,7 +946,7 @@
         </li>
       </ol>
       <div class="note"><strong>SUPPLY-VIEW-1で利用できる画面:</strong> 岩国市関連・光市関連フィードについて、GTFS収録の交通ブランド情報、路線情報ID、乗降場所IDと、2026-04-06〜2026-04-12の予定運行便を切替操作なしで確認できます。値は各フィード全体の収録値で、市内だけの値や市内の全公共交通、実運行、利用者数、便利さ、順位、良否を示すものではありません。</div>
-      <p class="lead">自動テストはENTRY-PAGE-1の追加分を含む86テストすべて成功しました（python -m unittest discover -s tests -v）。</p>
+      <p class="lead">ENTRY-PAGE-1公開・Codex受入済み時点の86テストに加え、WORK1-GTFS-COVERAGE-2を含む全148テストが成功しました（python -m unittest discover -s tests -q）。</p>
       <p class="source-note">根拠: run_record.md §0.5・§4、SPEC.md §5・§12・§13・§16・§17、verification.md</p>
     </section>
 
@@ -1286,9 +1291,26 @@
         <li><strong>共有・印刷できる</strong><p>選択市町をクエリに保持し、共有URLをコピーできます。印刷・PDF保存では操作部を隠し、根拠・限界・確認事項を残します。</p></li>
         <li><strong>断定と自動補完をしない</strong><p>登録0件やGTFS未確認を不存在とせず、測定値のない市町に値を補完しません。原本・既存公開JSON・計算値は変更しません。</p></li>
         <li><strong>作品①だけで完結</strong><p>入力は作品①の公開済み4 JSONだけです。作品②のパス、ファイル、Git履歴、公開物は参照していません。</p></li>
-        <li><strong>次は独立監査だけ</strong><p><code>WORK1-TASK-MEMO-AUDIT-1</code>で固定成果、公開配信、代表3分岐、PC・390px・印刷、作品②入力0件をread-onlyで監査します。機能追加、外部連絡、応募は同時に行いません。</p></li>
+        <li><strong>独立監査はGO</strong><p><code>WORK1-TASK-MEMO-AUDIT-1</code>で固定成果、公開配信、代表3分岐、PC・390px・印刷、作品②入力0件をread-onlyで監査し、P0・P1なしでGOと判定しました。</p></li>
       </ul>
       <p class="source-note">入力: <a href="data/municipal_supply.json">municipal_supply.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a> / <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/gtfs_supply_metrics.json">gtfs_supply_metrics.json</a>。根拠: SPEC.md §21、verification.md。</p>
+    </section>
+
+    <section aria-labelledby="gtfs-coverage-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">WORK1-GTFS-COVERAGE-2 / ローカルGO・公開適用待ち</p>
+          <h2 id="gtfs-coverage-title">公式資料の再探索と、周南市への関連範囲訂正</h2>
+          <p>2026-08-12に未確認14市町の公式カタログ、ODPT、既知公式ページを再確認しました。新規採用可能なGTFS ZIPは0件でしたが、受入済み光市GTFSの「広域生活交通」に周南市内停留所が含まれることを確認しました。</p>
+        </div>
+      </div>
+      <ul class="next-list">
+        <li><strong>受入済みZIPは2件ともunchanged</strong><p>岩国市・光市の公式配布バイトを再取得し、サイズとSHA-256が受入済みZIPに一致しました。原本の置換・自動採用は行っていません。</p></li>
+        <li><strong>周南市内31乗降停留所ID・17停留所名</strong><p>光市GTFSの路線7は94乗降停留所IDを持ち、国土地理院逆ジオコードでは光市63、周南市31でした。周南市は公開主体ではなく、同フィードに関連する市町として記録します。</p></li>
+        <li><strong>確認6・未確認13</strong><p>6 / 19は公式資料または受入済みGTFS本体から関連を確認できた市町数です。整備の達成度、交通の到達範囲、順位を表す数ではありません。残る13 / 19市町は今回確認した公式資料の範囲では未確認です。</p></li>
+        <li><strong>実測は2フィードのまま</strong><p>周南市メモから光市フィード全体値を参照できますが、周南市内だけの値へ分割・推計せず、市内の全事業者・全路線を網羅するとも表示しません。</p></li>
+      </ul>
+      <p class="source-note">根拠: SPEC.md §22、data/municipality_gtfs.json、evidence/20260812_work1_gtfs_coverage_*.json、verification.md。</p>
     </section>
 
     <section class="sources" aria-labelledby="source-title">
@@ -1303,7 +1325,7 @@
         <li>括弧付き台数の扱い: 国自旅第317号「<a href="https://www.mlit.go.jp/jidosha/content/001766049.pdf">福祉有償運送の登録に関する処理方針について</a>」2.(2)⑦</li>
         <li>交通空白地の車種区分: 国自旅第316号「<a href="https://www.mlit.go.jp/jidosha/content/001766048.pdf">交通空白地有償運送の登録に関する処理方針について</a>」2.(2)⑦</li>
         <li>山口県の市町数: 出典: 山口県「市町｜関連リンク」 <a href="https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html">https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html</a></li>
-        <li>GTFS/GTFS-JP確認: <a href="https://yamaguchi-opendata.jp/">山口県オープンデータカタログサイト</a>、公共交通オープンデータセンター「<a href="https://ckan.odpt.org/organization/sentetsu_bus">船木鉄道株式会社</a>」（確認日2026-08-09）</li>
+        <li>GTFS/GTFS-JP確認: <a href="https://yamaguchi-opendata.jp/">山口県オープンデータカタログサイト</a>、公共交通オープンデータセンター「<a href="https://ckan.odpt.org/organization/sentetsu_bus">船木鉄道株式会社</a>」（再確認日2026-08-12）</li>
         <li>国土交通省公開物の利用条件: <a href="https://www.mlit.go.jp/link.html">国土交通省ウェブサイト利用ルール</a>（PDL1.0準拠）。加工内容は公開アプリ内に明記</li>
         <li>このリポジトリの派生データ: CC BY 4.0。国土交通省の原資料自体をこのライセンスへ変更するものではない</li>
       </ul>

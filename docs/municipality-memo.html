@@ -420,11 +420,12 @@
         }
       }
 
-      function renderMeasuredMetrics(item) {
+      function renderMeasuredMetrics(item, gtfsRow) {
         const root = document.getElementById("measured-metrics");
         const empty = document.getElementById("metrics-empty");
         clear(root);
-        const rows = state.metrics.filter(row => row.municipality === item.municipality);
+        const associatedFeedIds = new Set(feedIds(gtfsRow));
+        const rows = state.metrics.filter(row => associatedFeedIds.has(row.feed_id));
         empty.hidden = rows.length > 0;
         empty.textContent = "この市町について、取得・安全確認済みGTFSから算出した指標はありません。値を推定せず、公式配布条件、取得可否、対象範囲を確認してから扱ってください。";
         for (const row of rows) {
@@ -433,7 +434,7 @@
           root.appendChild(heading);
           const note = document.createElement("p");
           note.className = "muted";
-          note.textContent = `${row.comparison_week_start}〜${row.comparison_week_end}の比較週。市町境界内の供給量ではなく、フィード全体の測定値です。`;
+          note.textContent = `${row.comparison_week_start}〜${row.comparison_week_end}の比較週。市町境界内だけの供給量ではなく、複数市町に関連し得るフィード全体の測定値です。`;
           root.appendChild(note);
           const grid = document.createElement("dl");
           grid.className = "metric-grid";
@@ -482,7 +483,8 @@
         } else {
           addListItem(list, "公式オープンデータカタログと交通事業者の案内を再確認する。未確認を不存在と表現しない。");
         }
-        const hasMetrics = state.metrics.some(row => row.municipality === item.municipality);
+        const associatedFeedIds = new Set(feedIds(gtfsRow));
+        const hasMetrics = state.metrics.some(row => associatedFeedIds.has(row.feed_id));
         if (hasMetrics) {
           addListItem(list, "指標の比較週、基準日、フィード全体という集計単位を確認してから協議資料に引用する。");
         } else {
@@ -529,7 +531,7 @@
         renderSummary(item, gtfsRow);
         renderRegistry(item);
         renderGtfs(gtfsRow);
-        renderMeasuredMetrics(item);
+        renderMeasuredMetrics(item, gtfsRow);
         renderChecklist(item, gtfsRow);
         renderLimits(gtfsRow);
 

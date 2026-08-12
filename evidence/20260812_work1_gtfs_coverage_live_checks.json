@@ -1,0 +1,39 @@
+{
+  "evidence_version": "WORK1-GTFS-COVERAGE-2",
+  "checked_at": "2026-08-12T18:50:30+09:00",
+  "accepted_zip_live_checks": [
+    {
+      "feed_id": "iwakuni-gtfsjp",
+      "official_url": "https://yamaguchi-opendata.jp/ckan/dataset/2dbaeb43-5134-4880-90a3-62870504f1d3/resource/bac76226-a946-466f-a94c-d61dcb6ab0dc/download/gtfs-jp2026-03-27_1458_.zip",
+      "http_status": 200,
+      "response_size_bytes": 719723,
+      "response_sha256": "d236a58ff4a0edb4812a8bed543d4897670441164a1019e88d5e35ded5052de2",
+      "accepted_size_bytes": 719723,
+      "accepted_sha256": "d236a58ff4a0edb4812a8bed543d4897670441164a1019e88d5e35ded5052de2",
+      "decision": "unchanged"
+    },
+    {
+      "feed_id": "hikari-gtfs",
+      "official_url": "https://yamaguchi-opendata.jp/ckan/dataset/db885818-b1bd-4848-986f-45119e8acb31/resource/c804039c-7d37-4e45-9288-f09fc1bbd249/download/hikari_gtfs_20260401_.zip",
+      "http_status": 200,
+      "response_size_bytes": 86273,
+      "response_sha256": "f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7",
+      "accepted_size_bytes": 86273,
+      "accepted_sha256": "f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7",
+      "decision": "unchanged"
+    }
+  ],
+  "freshness_checker_cross_check": {
+    "command": "python src/check_source_freshness.py --timeout-seconds 30",
+    "exit_code": 2,
+    "counts": {"unchanged": 4, "changed": 0, "unavailable": 2, "oversize": 0, "invalid_baseline": 0},
+    "gtfs_unavailable_reason": "tls_error",
+    "interpretation": "標準Python経路での取得不能であり、独立した現在バイト取得は2件ともHTTP 200・SHA-256一致。変更とは判定しない"
+  },
+  "mutation": {
+    "raw_pdf_changed": false,
+    "accepted_gtfs_zip_changed": false,
+    "automatic_adoption": false,
+    "new_zip_added": false
+  }
+}

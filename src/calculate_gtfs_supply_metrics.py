@@ -17,7 +17,7 @@ ZIPは読み取り専用。`zipfile.ZipFile.read()` でメモリ上に読むだ�
 ## 実装上の判断（SPEC.mdの記載を推測で埋めた箇所。仕様そのものは変更していない）
 
 - **`checked_at`** は SPEC.md §15.4.1 の表が指す元データ（`data/gtfs_feeds.csv`）の値
-  （2026-08-09、公式ページ側の確認日）をそのまま使う。今回の指標計算そのものを実行した日は
+  （現在は2026-08-12、公式ページ側の再確認日）をそのまま使う。今回の指標計算そのものを実行した日は
   別に `metric_computed_at` フィールドとして追加した（§15.8は「最低限」の一覧であり、
   追加フィールドはこの一覧を上書きしない）。
 - **`location_type` 列が丸ごと無い場合**、GTFS Schedule Reference の既定値（省略時は
@@ -638,8 +638,9 @@ def build_dataset() -> List[dict]:
         zip_path = REPO_ROOT.joinpath(*rel_path.split("/"))
         scope_note = (
             f"{feed_row['scope_note']} {municipality_row['scope_note']} "
-            "この値は当該市町に関連付けて確認したフィード全体の収録値であり、"
-            "市町内だけの値・市町の全公共交通の値ではない（SPEC.md §15.3）。"
+            "この値は市町別GTFS確認表で当該フィードに関連付けた市町から参照する"
+            "フィード全体の収録値であり、各市町内だけの値・各市町の全公共交通の値ではない"
+            "（SPEC.md §15.3、§22.3）。"
         )
         result = compute_feed_metrics(
             str(zip_path),

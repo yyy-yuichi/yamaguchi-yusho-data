@@ -1,0 +1,70 @@
+{
+  "evidence_version": "WORK1-GTFS-COVERAGE-2",
+  "checked_at": "2026-08-12T18:50:30+09:00",
+  "purpose": "未確認14市町について公式一次資料を再探索し、新規採用候補と既存フィードの関連範囲を判定する",
+  "official_catalog": {
+    "name": "山口県オープンデータカタログサイト CKAN API",
+    "api_base_url": "https://yamaguchi-opendata.jp/ckan/api/3/action/",
+    "package_count_scanned": 770,
+    "keyword_searches": [
+      {
+        "query": "GTFS",
+        "result_count": 4,
+        "decision": "岩国市、光市の既知GTFS、未公開を明記する美祢市・平生町の情報であり、新規ZIPは0件"
+      },
+      {
+        "query": "標準的なバス情報フォーマット",
+        "result_count": 9,
+        "decision": "新規GTFS ZIPは0件"
+      },
+      {
+        "query": "バス",
+        "result_count": 19,
+        "decision": "新規GTFS ZIPは0件"
+      }
+    ]
+  },
+  "municipality_recheck": [
+    {"municipality": "下関市", "transit_related_package_count": 0, "resource_summary": "該当パッケージなし", "decision": "not_confirmed_in_checked_sources"},
+    {"municipality": "山口市", "transit_related_package_count": 1, "resource_summary": "標準的なバス情報の案内、配布リソースなし", "decision": "not_confirmed_in_checked_sources"},
+    {"municipality": "萩市", "transit_related_package_count": 3, "resource_summary": "公式HTML案内、GTFS ZIPなし", "decision": "not_confirmed_in_checked_sources"},
+    {"municipality": "防府市", "transit_related_package_count": 1, "resource_summary": "データなし", "decision": "not_confirmed_in_checked_sources"},
+    {"municipality": "下松市", "transit_related_package_count": 2, "resource_summary": "交通マップ・案内。ZIPは地図パッケージでGTFSではない", "decision": "not_confirmed_in_checked_sources"},
+    {"municipality": "長門市", "transit_related_package_count": 1, "resource_summary": "PDF時刻表", "decision": "not_confirmed_in_checked_sources"},
+    {"municipality": "柳井市", "transit_related_package_count": 1, "resource_summary": "GTFS該当データを保有していない旨の案内", "decision": "not_confirmed_in_checked_sources"},
+    {"municipality": "周南市", "transit_related_package_count": 2, "resource_summary": "交通マップ・標準的なバス情報の案内、GTFS ZIPなし", "decision": "confirmed_by_related_hikari_feed", "decision_evidence": "evidence/20260812_work1_gtfs_coverage_hikari_route7.json"},
+    {"municipality": "周防大島町", "transit_related_package_count": 1, "resource_summary": "HTML時刻表案内", "decision": "not_confirmed_in_checked_sources"},
+    {"municipality": "和木町", "transit_related_package_count": 0, "resource_summary": "該当パッケージなし", "decision": "not_confirmed_in_checked_sources"},
+    {"municipality": "上関町", "transit_related_package_count": 2, "resource_summary": "PDF資料", "decision": "not_confirmed_in_checked_sources"},
+    {"municipality": "田布施町", "transit_related_package_count": 1, "resource_summary": "データなし", "decision": "not_confirmed_in_checked_sources"},
+    {"municipality": "平生町", "transit_related_package_count": 1, "resource_summary": "GTFS該当データを保有していない旨の案内", "decision": "not_confirmed_in_checked_sources"},
+    {"municipality": "阿武町", "transit_related_package_count": 1, "resource_summary": "HTML時刻表案内", "decision": "not_confirmed_in_checked_sources"}
+  ],
+  "odpt_recheck": {
+    "search_url": "https://ckan.odpt.org/dataset/?q=山口",
+    "result_count": 2,
+    "datasets": ["船木鉄道株式会社 GTFS/GTFS-JP", "船木鉄道株式会社 リアルタイム情報"],
+    "new_static_gtfs_candidate_count": 0
+  },
+  "known_official_pages": [
+    {"subject": "サンデン交通 バス情報", "http_status": 200, "gtfs_distribution_link": false},
+    {"subject": "萩市 旧公式ページ1659", "http_status": 404, "gtfs_distribution_link": false},
+    {"subject": "下松市 公共交通案内", "http_status": 200, "gtfs_distribution_link": false},
+    {"subject": "周南市 旧公式URL", "http_status": 200, "note": "別ページへ転送", "gtfs_distribution_link": false},
+    {"subject": "周防大島町 旧公式ページ1629", "http_status": 404, "gtfs_distribution_link": false},
+    {"subject": "阿武町 交通案内", "http_status": 200, "gtfs_distribution_link": false}
+  ],
+  "state_counts": {
+    "new_gtfs_zip_candidate": 0,
+    "unchanged_accepted_zip": 2,
+    "changed_accepted_zip": 0,
+    "unavailable_legacy_html_page": 2,
+    "confirmed_municipalities_after_decision": 6,
+    "not_confirmed_municipalities_after_decision": 13
+  },
+  "decision_notes": [
+    "HTML 404、検索結果0件、not_confirmed_in_checked_sourcesはGTFS不存在を意味しない",
+    "周南市は公開主体ではなく、光市公式GTFSに関連する市町として記録する",
+    "原本の自動採用・置換、推計値の生成、作品②の参照は行っていない"
+  ]
+}

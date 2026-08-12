@@ -27,7 +27,7 @@ SOURCE_ACQUIRED_DATES = {
     "000268896.pdf": "2026-08-09",
 }
 SUPPLY_METRICS_FILENAME = "gtfs_supply_metrics.json"
-SUPPLY_METRICS_SHA256 = "26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b"
+SUPPLY_METRICS_SHA256 = "c277e1050086da6ad5cc703051deb672458f7bf2829e1aca92fd0b17b4d20930"
 SUPPLY_FEED_ORDER = ("iwakuni-gtfsjp", "hikari-gtfs")
 SUPPLY_METRIC_KEYS = (
     "gtfs_agency_record_count",

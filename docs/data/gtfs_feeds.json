@@ -13,11 +13,11 @@
     "official_valid_from": "",
     "official_valid_to": "",
     "validity_status_at_check": "not_confirmed",
-    "checked_at": "2026-08-09",
+    "checked_at": "2026-08-12",
     "license_name": "クリエイティブ・コモンズ 表示（CC BY）",
     "license_url": "http://www.opendefinition.org/licenses/cc-by",
     "scope_note": "対象は公式データセット名称にある生活交通バス・由宇地区バス（岩国市）。市域全体・全路線を網羅するとは公式記載からは確認していない。",
-    "source_evidence": "evidence/20260809_gtfs_source_ydata_ds_352080-gtfsjp.txt;evidence/20260809_gtfs_source_ydata_res_iwakuni_gtfs.txt;evidence/20260809_gtfs_source_zip_head_check.txt"
+    "source_evidence": "evidence/20260809_gtfs_source_ydata_ds_352080-gtfsjp.txt;evidence/20260809_gtfs_source_ydata_res_iwakuni_gtfs.txt;evidence/20260809_gtfs_source_zip_head_check.txt;evidence/20260812_work1_gtfs_coverage_live_checks.json"
   },
   {
     "feed_id": "hikari-gtfs",
@@ -33,11 +33,11 @@
     "official_valid_from": "",
     "official_valid_to": "",
     "validity_status_at_check": "not_confirmed",
-    "checked_at": "2026-08-09",
+    "checked_at": "2026-08-12",
     "license_name": "クリエイティブ・コモンズ 表示（CC BY）",
     "license_url": "http://www.opendefinition.org/licenses/cc-by",
-    "scope_note": "対象は公式データセット名称にある広域生活交通、ひかりぐるりんバス、光市営バス（光市）。市域全体・全路線を網羅するとは公式記載からは確認していない。",
-    "source_evidence": "evidence/20260809_gtfs_source_ydata_ds_352101_kotsu001.txt;evidence/20260809_gtfs_source_ydata_res_hikari_gtfs.txt;evidence/20260809_gtfs_source_zip_head_check.txt"
+    "scope_note": "対象は公式データセット名称にある広域生活交通、ひかりぐるりんバス、光市営バス（光市）。受入済みGTFSの広域生活交通には、国土地理院逆ジオコードで周南市コード35215となる乗降停留所IDを31件確認した。光市・周南市の市域全体・全事業者・全路線を網羅するとは確認していない。",
+    "source_evidence": "evidence/20260809_gtfs_source_ydata_ds_352101_kotsu001.txt;evidence/20260809_gtfs_source_ydata_res_hikari_gtfs.txt;evidence/20260809_gtfs_source_zip_head_check.txt;evidence/20260812_work1_gtfs_coverage_live_checks.json;evidence/20260812_work1_gtfs_coverage_hikari_route7.json"
   },
   {
     "feed_id": "sentetsu-odpt-gtfsjp",
@@ -53,10 +53,10 @@
     "official_valid_from": "2025-11-17",
     "official_valid_to": "2026-11-16",
     "validity_status_at_check": "within_official_period",
-    "checked_at": "2026-08-09",
+    "checked_at": "2026-08-12",
     "license_name": "公共交通オープンデータ基本ライセンス（ODPT基本ライセンス）",
     "license_url": "https://developer.odpt.org/terms",
     "scope_note": "公式記載は「山口県宇部市・山陽小野田市・美祢市を運行するバス事業者のGTFSデータです」。市域全体・全路線を網羅するとは公式記載からは確認していない。認証キーを含むURL雛形は確認済みだが、認証済みファイル本体は未取得。",
-    "source_evidence": "evidence/20260809_gtfs_source_odpt_sentetsu.txt;evidence/20260809_gtfs_source_odpt_sentetsu_res_latest.txt"
+    "source_evidence": "evidence/20260809_gtfs_source_odpt_sentetsu.txt;evidence/20260809_gtfs_source_odpt_sentetsu_res_latest.txt;evidence/20260812_work1_gtfs_coverage_discovery.json"
   }
 ]

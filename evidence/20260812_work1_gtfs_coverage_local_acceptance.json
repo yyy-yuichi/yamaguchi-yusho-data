@@ -1,0 +1,69 @@
+{
+  "evidence_version": "WORK1-GTFS-COVERAGE-2",
+  "checked_at": "2026-08-12T19:09:57+09:00",
+  "test_result": {
+    "command": "python -m unittest discover -s tests -q",
+    "tests_run": 148,
+    "failures": 0,
+    "errors": 0
+  },
+  "memo_browser_checks": {
+    "desktop": {
+      "viewport": "1440x1600",
+      "municipality": "周南市",
+      "status": "confirmed",
+      "associated_feed_id": "hikari-gtfs",
+      "associated_stop_ids": 31,
+      "associated_stop_names": 17,
+      "feed_wide_metrics_visible": true,
+      "horizontal_overflow_px": 0,
+      "runtime_errors": 0,
+      "developer_console_errors": 0
+    },
+    "mobile": {
+      "viewport": "390x844",
+      "municipality": "周南市",
+      "horizontal_overflow_px": 0,
+      "runtime_errors": 0,
+      "developer_console_errors": 0
+    },
+    "branch_checks": [
+      {
+        "municipality": "光市",
+        "expected": "confirmed_with_hikari_feed_metrics",
+        "result": "pass"
+      },
+      {
+        "municipality": "下関市",
+        "expected": "not_confirmed_without_metrics_or_estimate",
+        "result": "pass"
+      }
+    ],
+    "print_contract": {
+      "controls_hidden": true,
+      "sources_retained": true,
+      "limitations_retained": true
+    }
+  },
+  "status_browser_checks": {
+    "desktop": {
+      "viewport": "1440x1600",
+      "current_stage": "WORK1-GTFS-COVERAGE-2",
+      "coverage_section_visible": true,
+      "horizontal_overflow_px": 0,
+      "runtime_errors": 0,
+      "developer_console_errors": 0
+    },
+    "mobile": {
+      "viewport": "390x844",
+      "coverage_section_visible": true,
+      "roadmap_single_column": true,
+      "horizontal_overflow_px": 0,
+      "runtime_errors": 0,
+      "developer_console_errors": 0
+    }
+  },
+  "decision": "LOCAL_GO",
+  "external_submission_performed": false,
+  "work2_input_count": 0
+}
