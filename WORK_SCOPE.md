@@ -26,7 +26,7 @@ flowchart TD
     L["WORK1-SCOPE-LOCK-1<br/>境界を固定"]
     C1["WORK1-AWARD-COMPARISON-1<br/>作品①の比較用出力<br/>公開・最終受入済み"]
     A1["WORK1-AWARD-AUDIT-1<br/>固定HEADの独立監査<br/>GO"]
-    M1["WORK1-TASK-MEMO-1<br/>市町別の協議前確認メモ<br/>ローカルGO・公開反映待ち"]
+    M1["WORK1-TASK-MEMO-1<br/>市町別の協議前確認メモ<br/>公開・最終受入済み"]
     A2["WORK1-TASK-MEMO-AUDIT-1<br/>固定HEADの独立監査<br/>次段階"]
     C2["作品②の比較用出力<br/>作品②Chatが所有"]
     D{"比較・注力判断<br/>人が決定"}
@@ -51,7 +51,7 @@ flowchart TD
 - `WORK1-AWARD-AUDIT-1`: 固定HEAD、公開配信、採点計算、証拠リンク、作品②入力0件を
   read-onlyで独立監査し、GO判定済み。
 - `WORK1-TASK-MEMO-1`: 既存の作品①公開データだけから、市町別に根拠・日付・限界・
-  次の確認事項を一枚へ構成し、共有・印刷できる実務向け出力をローカル受入済み。公開反映待ち。
+  次の確認事項を一枚へ構成し、共有・印刷できる実務向け出力を公開・最終受入済み。
 - `WORK1-TASK-MEMO-AUDIT-1`: TASK-MEMO-1公開受入後の一作業。固定HEAD、公開配信、
   代表3分岐、PC・390px・印刷、作品②入力0件をread-onlyで監査する。
 - 作品①の公開出力: [受賞準備スコアカード](https://yyy-yuichi.github.io/yamaguchi-yusho-data/award-comparison.html)

@@ -56,7 +56,7 @@ GTFS供給比較**、**市町別の交通協議前確認メモ**までを担う�
 印刷・PDF保存に対応する。登録0件やGTFS未確認をサービスの不存在とせず、指標のない市町へ
 値を補完しない。
 
-- GitHub Pages反映後URL: <https://yyy-yuichi.github.io/yamaguchi-yusho-data/municipality-memo.html>
+- 公開画面: <https://yyy-yuichi.github.io/yamaguchi-yusho-data/municipality-memo.html>
 - 入力: `docs/data/municipal_supply.json`、`docs/data/municipality_gtfs.json`、
   `docs/data/gtfs_feeds.json`、`docs/data/gtfs_supply_metrics.json`
 - 原本・既存公開JSON・計算値はこの画面から更新しない

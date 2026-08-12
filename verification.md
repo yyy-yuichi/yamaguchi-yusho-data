@@ -2211,3 +2211,22 @@ read-onlyで独立監査する。注力判断、UDC応募、BODIK APPs登録、�
 
 正本は`evidence/20260812_work1_task_memo_local_acceptance.json`。ローカル判定は
 **GitHub適用へ進めるGO**。commit、push、scope lock、Pages、公開URL読戻し後に段階を固定する。
+
+### GitHub・公開後最終判定
+
+| 検証 | 結果 |
+|---|---|
+| 固定実装commit | `8bf5a1f32c3744918d2db8d35acd8d100d6b98d1` |
+| Work 1 scope lock | run `31557300073`、head SHA一致、`success` |
+| GitHub Pages | run `31557299397`、head SHA一致、`success` |
+| 公開HTML 4件 | HTTP 200、commit済みbytesと4/4一致 |
+| 公開入力JSON 4件 | 1件bytes一致、3件はPagesのCRLF→LFだけで正規化後bytes・JSON内容一致 |
+| 公開PC | 1440×1600、岩国市、3指標・7実日付、overflow 0、error 0 |
+| 公開スマートフォン | 390×844、宇部市、0件免責・GTFS確認・指標補完なし、overflow 0、error 0 |
+| 公開トップ往復 | 岩国市を保持したメモURLへ到達、dev error 0 |
+
+判定は**WORK1-TASK-MEMO-1 最終GO**。公開ページはローカル印刷受入済みのメモbytesと一致する。
+作品②入力、外部利用者への連絡、UDC応募、BODIK登録、再採点はいずれも0件。
+次段階は`WORK1-TASK-MEMO-AUDIT-1`だけとし、独立監査開始直前で停止する。
+
+正本は`evidence/20260812_work1_task_memo_public_acceptance.json`。

@@ -2413,3 +2413,14 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
 - 正本は`evidence/20260812_work1_task_memo_local_acceptance.json`、ブラウザ要約は
   `evidence/20260812_work1_task_memo_browser_summary.txt`。判定はGitHub適用へ進めるローカルGO。
   commit・push・Pages・公開URL読戻しは未完了で、独立監査はまだ開始しない。
+
+### GitHub公開・最終受入
+
+- 実装14件を`8bf5a1f32c3744918d2db8d35acd8d100d6b98d1`として`main`へcommit・pushした。
+- Work 1 scope lock run `31557300073`とPages run `31557299397`はhead SHA一致で`success`。
+- 公開メモ、トップ、応募説明、状況ページはHTTP 200でcommit bytesと4/4一致。既存3 JSONの差異は
+  PagesのCRLF→LF正規化だけで、改行正規化後bytesとJSON内容が一致した。指標JSONはbytes一致。
+- 公開1440×1600の岩国市と390×844の宇部市を実測し、代表分岐、横overflow 0、ページ内runtime
+  error 0、Browser dev error 0を確認。公開トップから岩国市付きメモへ往復できた。
+- 正本は`evidence/20260812_work1_task_memo_public_acceptance.json`。WORK1-TASK-MEMO-1を
+  最終受入済みとする。次段階はread-onlyの`WORK1-TASK-MEMO-AUDIT-1`だけで、まだ開始しない。

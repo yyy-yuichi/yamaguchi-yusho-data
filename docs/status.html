@@ -183,7 +183,7 @@
     }
 
     .overall-bar .done {
-      width: 77.7778%;
+      width: 88.8889%;
       background: var(--green);
     }
 
@@ -829,8 +829,8 @@
       <div class="metrics" aria-label="主要な進捗数値">
         <div class="metric complete">
           <span class="label">受入段階</span>
-          <strong class="metric-number">7 / 9</strong>
-          <span class="metric-caption">協議前確認メモはローカル受入済み・公開反映待ち</span>
+          <strong class="metric-number">8 / 9</strong>
+          <span class="metric-caption">協議前確認メモの公開検証まで受入済み</span>
         </div>
         <div class="metric complete">
           <span class="label">PDF</span>
@@ -854,15 +854,14 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">作品の現在地</p>
-          <h2 id="progress-title">WORK1-TASK-MEMO-1ローカル受入済み・公開反映待ち</h2>
-          <p>作品①の既存成果は<a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>です（初回公開 commit <code>18170b2</code>）。ENTRY-PAGE-1公開・Codex受入済みと、比較準備・独立監査のGO判定を出発点に、公開候補の<a href="municipality-memo.html">市町別 交通協議前確認メモ</a>を追加しました。登録簿とGTFSの既存公開データだけから、分かること、未確認事項、次の確認事項を一枚に構成し、市町付きURLの共有と印刷・PDF保存ができます。原本や公開値は更新せず、作品②からの入力は0件です。新しいメモのcommit・push・Pages読戻しはまだ完了していません。UDC概要フォーム、本応募、BODIK APPs登録は行っていません。</p>
+          <h2 id="progress-title">WORK1-TASK-MEMO-1公開・Codex受入済み</h2>
+          <p>作品①は<a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>です（初回公開 commit <code>18170b2</code>）。ENTRY-PAGE-1公開・Codex受入済みを保持し、<a href="municipality-memo.html">市町別 交通協議前確認メモ</a>をcommit <code>8bf5a1f</code>で公開しました。scope lock run <code>31557300073</code>とPages run <code>31557299397</code>の成功、公開ファイル、PC・スマートフォンをCodexが読み戻しました。登録簿とGTFSの既存公開データだけから、分かること、未確認事項、次の確認事項を一枚に構成し、市町付きURLの共有と印刷・PDF保存ができます。原本や公開値は更新せず、作品②からの入力は0件です。UDC概要フォーム、本応募、BODIK APPs登録は行っていません。</p>
         </div>
-        <strong class="progress-summary">実務向け確認メモ ローカルGO</strong>
+        <strong class="progress-summary">実務向け確認メモ Codex受入済み</strong>
       </div>
 
-      <div class="overall-bar" role="progressbar" aria-label="9工程中7工程を受入済み、工程08を公開検証中" aria-valuemin="0" aria-valuemax="9" aria-valuenow="7">
-        <span class="done" title="7工程を受入済み"></span>
-        <span class="current" title="工程08を公開検証中"></span>
+      <div class="overall-bar" role="progressbar" aria-label="9工程中8工程を受入済み、残る工程09は外部提出" aria-valuemin="0" aria-valuemax="9" aria-valuenow="8">
+        <span class="done" title="8工程を受入済み"></span>
       </div>
 
       <ol class="roadmap">
@@ -901,10 +900,10 @@
           <span class="step-title">ENTRY-PAGE-1: 作品①の応募説明ページ</span>
           <span class="step-state">公開・実ブラウザ確認・Codex受入済み</span>
         </li>
-        <li class="current">
+        <li class="done">
           <span class="step-no">08</span>
           <span class="step-title">WORK1-TASK-MEMO-1: 市町別の交通協議前確認メモ</span>
-          <span class="step-state">ローカル実ブラウザ確認済み・公開反映待ち</span>
+          <span class="step-state">公開・実ブラウザ確認・Codex受入済み</span>
         </li>
         <li class="todo">
           <span class="step-no">09</span>
@@ -1277,7 +1276,7 @@
     <section aria-labelledby="task-memo-title">
       <div class="section-head">
         <div>
-          <p class="eyebrow">WORK1-TASK-MEMO-1 / 公開候補・ローカル受入済み</p>
+          <p class="eyebrow">WORK1-TASK-MEMO-1 / 公開・最終受入済み</p>
           <h2 id="task-memo-title">公開データを、交通協議前の一枚に変換</h2>
           <p><a href="municipality-memo.html">市町別 交通協議前確認メモ</a>は、対象市町の登録供給、GTFS公開確認状況、測定済み指標、限界、次の確認事項を同じページへ構成します。</p>
         </div>
@@ -1287,6 +1286,7 @@
         <li><strong>共有・印刷できる</strong><p>選択市町をクエリに保持し、共有URLをコピーできます。印刷・PDF保存では操作部を隠し、根拠・限界・確認事項を残します。</p></li>
         <li><strong>断定と自動補完をしない</strong><p>登録0件やGTFS未確認を不存在とせず、測定値のない市町に値を補完しません。原本・既存公開JSON・計算値は変更しません。</p></li>
         <li><strong>作品①だけで完結</strong><p>入力は作品①の公開済み4 JSONだけです。作品②のパス、ファイル、Git履歴、公開物は参照していません。</p></li>
+        <li><strong>次は独立監査だけ</strong><p><code>WORK1-TASK-MEMO-AUDIT-1</code>で固定成果、公開配信、代表3分岐、PC・390px・印刷、作品②入力0件をread-onlyで監査します。機能追加、外部連絡、応募は同時に行いません。</p></li>
       </ul>
       <p class="source-note">入力: <a href="data/municipal_supply.json">municipal_supply.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a> / <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/gtfs_supply_metrics.json">gtfs_supply_metrics.json</a>。根拠: SPEC.md §21、verification.md。</p>
     </section>

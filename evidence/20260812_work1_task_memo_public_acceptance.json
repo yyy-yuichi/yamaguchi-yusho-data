@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "stage": "WORK1-TASK-MEMO-1",
+  "acceptance_scope": "implementation_public_acceptance",
+  "checked_at": "2026-08-12T11:38:20.0246933+09:00",
+  "repository": "https://github.com/yyy-yuichi/yamaguchi-yusho-data",
+  "branch": "main",
+  "fixed_content_commit": "8bf5a1f32c3744918d2db8d35acd8d100d6b98d1",
+  "github_actions": {
+    "scope_lock": {
+      "run_id": 31557300073,
+      "head_sha": "8bf5a1f32c3744918d2db8d35acd8d100d6b98d1",
+      "conclusion": "success",
+      "url": "https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/31557300073"
+    },
+    "pages": {
+      "run_id": 31557299397,
+      "head_sha": "8bf5a1f32c3744918d2db8d35acd8d100d6b98d1",
+      "conclusion": "success",
+      "url": "https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/31557299397"
+    }
+  },
+  "public_base_url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/",
+  "public_files": [
+    {
+      "path": "municipality-memo.html",
+      "status": 200,
+      "sha256": "dcd448b4d747bdb9f593a7c757f1b0a2b29750e38ec6211de0be83f450c8555f",
+      "commit_bytes_match": true
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "502eb93199d3df71593dc7d220d575159a9167a2692bdec2bb8b5b4b7d7c4b49",
+      "commit_bytes_match": true
+    },
+    {
+      "path": "entry.html",
+      "status": 200,
+      "sha256": "c89d25f9e491da49b391578929369d8c1d0b98cc18b669f0c3dfb77b9c52a95c",
+      "commit_bytes_match": true
+    },
+    {
+      "path": "status.html",
+      "status": 200,
+      "sha256": "343b899ec663c9bc2f392759460d007d32953e4f9911c7dd276b7c99902363ff",
+      "commit_bytes_match": true
+    },
+    {
+      "path": "data/municipal_supply.json",
+      "status": 200,
+      "commit_bytes_match": false,
+      "newline_normalized_bytes_match": true,
+      "json_semantic_match": true
+    },
+    {
+      "path": "data/municipality_gtfs.json",
+      "status": 200,
+      "commit_bytes_match": false,
+      "newline_normalized_bytes_match": true,
+      "json_semantic_match": true
+    },
+    {
+      "path": "data/gtfs_feeds.json",
+      "status": 200,
+      "commit_bytes_match": false,
+      "newline_normalized_bytes_match": true,
+      "json_semantic_match": true
+    },
+    {
+      "path": "data/gtfs_supply_metrics.json",
+      "status": 200,
+      "sha256": "26167df77efce48e6dbcacde757a08ff40f7229fe99b9928f25b541f3766db9b",
+      "commit_bytes_match": true
+    }
+  ],
+  "browser_acceptance": {
+    "desktop": {
+      "viewport": "1440x1600",
+      "municipality": "岩国市",
+      "metric_cards": 3,
+      "scheduled_date_rows": 7,
+      "horizontal_overflow_px": 0,
+      "runtime_errors": 0,
+      "dev_errors": 0
+    },
+    "mobile": {
+      "viewport": "390x844",
+      "municipality": "宇部市",
+      "zero_state_disclaimer": true,
+      "gtfs_confirmed": true,
+      "metrics_not_imputed": true,
+      "horizontal_overflow_px": 0,
+      "runtime_errors": 0,
+      "dev_errors": 0
+    },
+    "public_top_municipality_round_trip": true,
+    "print_contract_inherited_from_exact_memo_bytes": true
+  },
+  "work_scope": {
+    "guard_result": "WORK1_SCOPE_ALLOWED",
+    "work2_inputs": 0,
+    "external_user_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0,
+    "award_rescoring": 0
+  },
+  "decision": "FINAL_GO",
+  "next_stage": "WORK1-TASK-MEMO-AUDIT-1",
+  "next_stage_started": false
+}

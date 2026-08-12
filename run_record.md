@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-12 (rev.46) / 状態: WORK1-TASK-MEMO-1 ローカルGO・GitHub適用前
+最終更新: 2026-08-12 (rev.47) / 状態: WORK1-TASK-MEMO-1 最終受入済み / 次: WORK1-TASK-MEMO-AUDIT-1 未着手
 
 ## 0. このファイルについて
 
@@ -932,3 +932,12 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - 下関市・宇部市・岩国市、1440×1600・390×844、URLコピー、印刷媒体契約を実ブラウザで確認した。
 - 原本・既存公開JSON・計算値・比較スコアカードを変更せず、作品②入力、外部連絡、UDC応募、
   BODIK登録、再採点を0件に保った。GitHub適用と公開読戻しは次のフロンティアである。
+
+### 改訂点（rev.47）
+
+- 実装commit `8bf5a1f`を`main`へpushし、scope lock run `31557300073`とPages run
+  `31557299397`のhead SHA一致・successを読み戻した。
+- 公開HTML 4件のcommit bytes一致、既存4 JSONのbytesまたは改行正規化後内容一致、公開PC
+  1440×1600・スマートフォン390×844、代表分岐、トップ往復、エラー0を受け入れた。
+- WORK1-TASK-MEMO-1を最終受入済みとし、作品②・外部連絡・UDC応募・BODIK登録・再採点は
+  0件のまま保持した。次の一作業はread-onlyの`WORK1-TASK-MEMO-AUDIT-1`だけで、未着手である。
