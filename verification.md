@@ -2044,3 +2044,41 @@ Actions履歴を正とする。`changed`または`invalid_baseline`を検出し�
 `evidence/20260812_work1_freshness_github_result_run31547441902.json`、公開画面は
 `evidence/20260812_work1_freshness_public_screenshot_1440.png`と
 `evidence/20260812_work1_freshness_public_screenshot_390x844.png`に保持する。
+
+## 2026-08-12 WORK1-SCOPE-LOCK-1 ローカル検証
+
+### 境界契約
+
+- allowlistは作品①repo ID `yyy-yuichi/yamaguchi-yusho-data`、root名`yamaguchi-yusho-data`、
+  GitHub公式HTTPS origin表記2種だけである。
+- 作品②を禁止リストとして探索せず、作品①以外をすべて拒否する。作品②から受け取れるのは、
+  人が転記した短い比較スコアまたは要約だけで、パス・URL・ファイル・checkoutは受け取らない。
+- `Path.resolve`と`os.path.commonpath`で親移動・絶対外部パス・別driveを拒否する。
+  拒否メッセージは対象パスを出力せず、内容の読取りへ進まない。
+
+### テスト・表示
+
+- `python src/check_work_scope.py --repo . --json`: `WORK1_SCOPE_ALLOWED`相当、origin一致。
+- `python -m unittest tests.test_work_scope -v`: 11件成功。
+- `python -m unittest discover -s tests -v`: 113件成功。
+- 公開前ローカル表示は1440×1600・390×844で、作品①レーン、不可視の作品②レーン、人の比較ゲート、
+  `WORK_SCOPE.md`導線を確認。両幅overflow 0、console error 0、既存freshness節あり。
+
+### ローカル判定
+
+| 完了条件 | 判定 |
+|---|---|
+| エージェントが作品②を探索・読取り・変更しない規則 | 満たす |
+| repo・origin・候補パスの機械検査 | 満たす |
+| 外部パス・親移動・別repo引数の拒否テスト | 満たす |
+| read-only CI | ローカル実装済み。GitHub run読戻し待ち |
+| 全体DAGと公開位置づけ | ローカル実装・PC／スマホ受入済み |
+| 作品②の内容を入力にしない | 満たす。入力0件 |
+| 全113テスト・保護対象不変 | テスト成功。最終commit前照合待ち |
+
+判定は**GitHub適用へ進めるローカルGO**。repo内ガードはOSのアクセス制御そのものではないため、
+「このChat・repo・CIが作品②へ触れない」操作契約と機械検査を保証範囲とする。
+
+正本証拠は`evidence/20260812_work1_scope_lock_local.json`、画面は
+`evidence/20260812_work1_scope_lock_screenshot_1440.png`と
+`evidence/20260812_work1_scope_lock_screenshot_390x844.png`に保持する。

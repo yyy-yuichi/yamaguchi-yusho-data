@@ -2324,3 +2324,22 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   作品②の変更は行っていない。
 - 次段階は`WORK1-AWARD-COMPARISON-1`だけを定義する。作品①の公開成果をUDC2026公式審査観点と
   証拠へ対応づけ、作品②でも共用できる尺度の比較用スコアカードにする。実装はまだ開始しない。
+
+## 2026-08-12 WORK1-SCOPE-LOCK-1 ローカル実装・検証
+
+- 本人指示により、作品②を作品①Chatから絶対に操作対象へ入れない境界段階を追加した。
+  作品②の場所・repo名・ファイルは調べず、作品①だけをallowlistにするdeny-by-default方式とした。
+- `AGENTS.md`は、親・兄弟ディレクトリの探索、別作品の読取り・変更・実行、別repoへの`git -C`、
+  別作品を調べるエージェント委譲を禁止する。境界違反時は回避せず安全停止する。
+- `work_scope.json`と`src/check_work_scope.py`は、実行repo、Git root、作品①origin、候補パスを照合し、
+  repo外、親移動、別repo引数を内容を読まずに終了コード2で拒否する。
+- `.github/workflows/work1-scope-lock.yml`はpush・PR・手動実行でread-only検査を行う。
+  GitHub公式actions v7、`contents: read`だけで、commit・push・Pages更新処理を持たない。
+- 境界集中11件と全113件のunittestが成功。ガードへ実変更7件、公開表示2件、記録6件を渡し、
+  すべて作品①repo内として許可された。
+- `WORK_SCOPE.md`と公開`docs/status.html`へ、作品①・不可視の作品②・人の比較ゲートを分離した
+  全体DAGを追加した。ローカル1440×1600・390×844は両幅overflow 0、console error 0で目視済み。
+- OS全体のACLは変更していない。Windows権限による物理隔離が必要なら別workspaceまたは別アカウントが
+  必要だが、このChat・repo・CIの操作契約は作品①だけにfail-closedした。
+- 正本は`evidence/20260812_work1_scope_lock_local.json`。公開後受入までは
+  `WORK1-AWARD-COMPARISON-1`を開始しない。

@@ -842,3 +842,12 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - GitHub Actionsの`failure`を終了コード2の取得不能通知と、artifact upload成功を根拠に分類した。
 - 公式actionsを現行v7へ更新し、Node.js 20非推奨警告を解消した。
 - 次の一作業を`WORK1-AWARD-COMPARISON-1`と定義したが、実装は開始していない。
+
+### 改訂点（rev.41）
+
+- `WORK1-AWARD-COMPARISON-1`の前提として`WORK1-SCOPE-LOCK-1`を一段階だけ挿入した。
+- 作品②を探して禁止する方式ではなく、作品①repo・origin・内部パスだけをallowlistにする
+  deny-by-defaultの`AGENTS.md`、`work_scope.json`、検査器、11テスト、read-only workflowを追加した。
+- `WORK_SCOPE.md`と公開状況ページへ、作品①と作品②が交差せず、人の比較判断だけで合流するDAGを追加した。
+- ローカル全113件、PC・スマホoverflow 0・console error 0まで受入。GitHub runと公開URL読戻し前のため、
+  WORK1-SCOPE-LOCK-1の最終受入と次段階開始はまだ行わない。

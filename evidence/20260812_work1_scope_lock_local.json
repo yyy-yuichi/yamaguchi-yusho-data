@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-SCOPE-LOCK-1",
+  "checked_at": "2026-08-12",
+  "base_commit": "09e63a7fb8f87d73e3efbc35f0d01eeff56cf6e8",
+  "repository_id": "yyy-yuichi/yamaguchi-yusho-data",
+  "scope_result": {
+    "status": "allowed",
+    "work_id": "WORK1",
+    "origin": "https://github.com/yyy-yuichi/yamaguchi-yusho-data.git",
+    "deny_outside_repository": true,
+    "other_works_policy": "no_read_no_write_no_execute"
+  },
+  "guards": [
+    "AGENTS.md",
+    "work_scope.json",
+    "src/check_work_scope.py",
+    "tests/test_work_scope.py",
+    ".github/workflows/work1-scope-lock.yml"
+  ],
+  "tests": {
+    "scope_lock": {
+      "count": 11,
+      "result": "passed"
+    },
+    "full_unittest": {
+      "count": 113,
+      "result": "passed"
+    }
+  },
+  "browser": {
+    "desktop": {
+      "viewport": "1440x1600",
+      "overflow_x": 0,
+      "console_error_count": 0,
+      "required_markers_present": true,
+      "screenshot": "evidence/20260812_work1_scope_lock_screenshot_1440.png",
+      "screenshot_sha256": "c17253035608b1b70f78bccfd9f96a5e7afdd0ff47ee46e0bf14af1675621260"
+    },
+    "mobile": {
+      "viewport": "390x844",
+      "overflow_x": 0,
+      "console_error_count": 0,
+      "required_markers_present": true,
+      "screenshot": "evidence/20260812_work1_scope_lock_screenshot_390x844.png",
+      "screenshot_sha256": "5e8372c8fd9bcb1858dcadc35efd84addcaf23f00fd1c8476fc9db200041290f"
+    }
+  },
+  "other_work_paths_consumed": 0,
+  "other_work_files_consumed": 0,
+  "protected_outputs_changed": false,
+  "submission_performed": false
+}

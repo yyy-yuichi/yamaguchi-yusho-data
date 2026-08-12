@@ -1176,6 +1176,32 @@
       <p class="source-note">根拠: run_record.md §4、SPEC.md §16・§17・§18、verification.md</p>
     </section>
 
+    <section aria-labelledby="work-scope-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">WORK1-SCOPE-LOCK-1 / 作品分離</p>
+          <h2 id="work-scope-title">作品①と作品②を交差させず、人の比較判断だけで合流</h2>
+          <p>このChatとリポジトリは作品①だけを扱います。作品②は別Chat・別リポジトリが所有し、ここからパス、ファイル、Git履歴、公開物を調べません。</p>
+        </div>
+      </div>
+
+      <ul class="next-list">
+        <li>
+          <strong>作品①レーン</strong>
+          <p>公開・継続照合・受賞比較用スコアカードを、このリポジトリの証拠だけで進めます。</p>
+        </li>
+        <li>
+          <strong>作品②レーン</strong>
+          <p>別Chatが所有する不可視の独立レーンです。このページや作品①の自動処理は作品②へアクセスしません。</p>
+        </li>
+        <li>
+          <strong>比較・注力判断は人が行う</strong>
+          <p>両作品が同じ形式の評価結果だけを人へ渡し、人が注力作品を決めます。<a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/blob/main/WORK_SCOPE.md">全体DAGと境界規則</a>を確認できます。</p>
+        </li>
+      </ul>
+      <p class="source-note">境界検査: AGENTS.md、work_scope.json、src/check_work_scope.py、Work 1 scope lock Actions。</p>
+    </section>
+
     <section aria-labelledby="freshness-title">
       <div class="section-head">
         <div>

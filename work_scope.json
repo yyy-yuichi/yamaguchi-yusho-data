@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "work_id": "WORK1",
+  "repository_id": "yyy-yuichi/yamaguchi-yusho-data",
+  "expected_root_name": "yamaguchi-yusho-data",
+  "expected_origin_urls": [
+    "https://github.com/yyy-yuichi/yamaguchi-yusho-data.git",
+    "https://github.com/yyy-yuichi/yamaguchi-yusho-data"
+  ],
+  "deny_outside_repository": true,
+  "other_works_policy": "no_read_no_write_no_execute"
+}

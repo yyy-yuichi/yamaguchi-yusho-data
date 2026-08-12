@@ -1,0 +1,31 @@
+name: Work 1 scope lock
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-work1-boundary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Work 1 only
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Verify repository and origin allowlist
+        run: python src/check_work_scope.py --repo . --json
+
+      - name: Prove outside paths are rejected
+        run: python -m unittest tests.test_work_scope -v
