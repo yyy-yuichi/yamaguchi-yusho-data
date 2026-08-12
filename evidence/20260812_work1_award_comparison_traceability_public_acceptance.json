@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-AWARD-COMPARISON-TRACEABILITY-1",
+  "checked_at": "2026-08-12",
+  "decision": "FINAL_GO",
+  "implementation": {
+    "commit": "7fdf04aa0ba2ddd75347402e4717188fc1c31ec5",
+    "branch": "main",
+    "origin_main_match": true,
+    "scope_lock_run": {"id": 31599775095, "conclusion": "success", "head_sha_match": true},
+    "pages_run": {"id": 31599774202, "conclusion": "success", "head_sha_match": true}
+  },
+  "public_assets": [
+    {"path": "status.html", "http": 200, "bytes": 53365, "sha256": "b2270aea325b4452ce2b87c1ce1ae2101bd4c9ba36c9cdcb6300de9fe1a8f56b", "commit_bytes_match": true},
+    {"path": "award-comparison.html", "http": 200, "bytes": 20517, "sha256": "a4c7df1be47731ede212c787744042bf03e597883af60bdfbcdbb2a94aa9fd0e", "commit_bytes_match": true},
+    {"path": "data/work1_award_scorecard.json", "http": 200, "bytes": 23699, "sha256": "0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021", "commit_bytes_match": true}
+  ],
+  "public_browser": {
+    "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/status.html?v=7fdf04a",
+    "desktop": {"viewport": "1440x1600", "overflow_x": 0, "dev_logs": 0, "broken_images": 0},
+    "mobile": {"viewport": "390x844", "overflow_x": 0, "dev_logs": 0, "broken_images": 0, "roadmap_columns": 1},
+    "official_terms_visible": true,
+    "old_terms_visible": false,
+    "overall_70_visible": true,
+    "spec_20_23_visible": true,
+    "current_stage_visible": true,
+    "next_read_only_audit_visible": true
+  },
+  "unchanged": {
+    "criteria_scores": {"実用度": 3.5, "完成度": 4.0, "挑戦度": 3.0},
+    "overall_comparison_index": 70.0,
+    "accepted_sources": 6,
+    "scorecard_sha256": "0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021",
+    "raw_changed": false,
+    "accepted_gtfs_zip_changed": false,
+    "public_top_changed": false,
+    "entry_page_changed": false
+  },
+  "scope": {
+    "work2_inputs": 0,
+    "participant_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0
+  },
+  "next_stage": "WORK1-AWARD-COMPARISON-TRACEABILITY-AUDIT-1",
+  "next_stage_started": false
+}

@@ -32,7 +32,7 @@ flowchart TD
     V2["WORK1-GTFS-COVERAGE-AUDIT-1<br/>固定HEADの独立監査<br/>GO"]
     C3["WORK1-AWARD-COMPARISON-2<br/>現行公開証拠の再評価<br/>公開・最終受入済み"]
     C4["WORK1-AWARD-COMPARISON-AUDIT-2<br/>read-only監査<br/>GO・P2 2件"]
-    T1["WORK1-AWARD-COMPARISON-TRACEABILITY-1<br/>公式用語・根拠追跡<br/>ローカルGO・公開反映前"]
+    T1["WORK1-AWARD-COMPARISON-TRACEABILITY-1<br/>公式用語・根拠追跡<br/>公開・最終受入済み"]
     T2["WORK1-AWARD-COMPARISON-TRACEABILITY-AUDIT-1<br/>次のread-only監査・未着手"]
     C2["作品②の比較用出力<br/>作品②Chatが所有"]
     D{"比較・注力判断<br/>人が決定"}
@@ -70,7 +70,7 @@ flowchart TD
 - `WORK1-AWARD-COMPARISON-AUDIT-2`: 固定HEAD、計算、公開配信、継続改善表示、作品②入力0件を
   read-onlyで監査し、P0 0件、P1 0件、P2 2件でGO。P2は公式用語の揺れと根拠節の不足である。
 - `WORK1-AWARD-COMPARISON-TRACEABILITY-1`: P2 2件だけを訂正し、比較スコアとスコアカードbytesを
-  変えずに公式用語と根拠追跡を固定した。全テストとPC・スマホ検証はローカルGO、公開反映前。
+  変えずに公式用語と根拠追跡を固定した。全テスト、Actions、Pages、公開PC・スマホ読戻しまで最終受入済み。
 - `WORK1-AWARD-COMPARISON-TRACEABILITY-AUDIT-1`: TRACEABILITY-1公開受入後の次の一作業。
   固定HEADと公開配信をread-onlyで監査する。現在は未着手。
 - 作品①の公開出力: [受賞準備スコアカード](https://yyy-yuichi.github.io/yamaguchi-yusho-data/award-comparison.html)

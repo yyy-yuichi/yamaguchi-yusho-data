@@ -2494,3 +2494,14 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   SHA256 `0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021`、総合70.0を維持した。
 - ローカルPC 1440×1600・スマートフォン390×844で横overflow、Browser dev log、壊れた画像は0件。
   作品②入力、参加者連絡、UDC応募、BODIK登録は0件。次は同段階のcommit・push・Pages・公開読戻し。
+
+### GitHub公開・最終受入
+
+- 実装commit `7fdf04aa0ba2ddd75347402e4717188fc1c31ec5`を`main`へpushした。
+- Work 1 scope lock run `31599775095`とPages run `31599774202`は同じhead SHAで`success`。
+- 公開状況HTML・比較HTML・スコアカードJSONはHTTP 200でcommit bytesと3 / 3一致した。
+- 公開1440×1600・390×844で公式3基準、総合70.0、`SPEC.md §20・§23`、現在段階、
+  次のread-only監査を読み戻した。横overflow、Browser dev log、壊れた画像は0件。
+- 正本は`evidence/20260812_work1_award_comparison_traceability_public_acceptance.json`。
+  WORK1-AWARD-COMPARISON-TRACEABILITY-1を最終受入済みとし、次はread-onlyの
+  `WORK1-AWARD-COMPARISON-TRACEABILITY-AUDIT-1`だけを定義して未着手で停止する。

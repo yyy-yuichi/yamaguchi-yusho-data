@@ -2338,3 +2338,22 @@ scope lock、Pages、公開URL読戻しであり、独立再監査はまだ開�
 判定は**ローカルGO**。正本は
 `evidence/20260812_work1_award_comparison_traceability_local_acceptance.json`。
 次は同段階のcommit、`main` push、scope lock、Pages、公開URL読戻しである。
+
+### GitHub・公開後の最終受入
+
+| 検証 | 結果 |
+|---|---|
+| 実装commit | `7fdf04aa0ba2ddd75347402e4717188fc1c31ec5` |
+| Work 1 scope lock | run `31599775095`、head SHA一致、`success` |
+| GitHub Pages | run `31599774202`、head SHA一致、build・report・deploy `success` |
+| 公開資産3件 | HTTP 200、状況HTML・比較HTML・スコアカードJSONがcommit bytesと3 / 3一致 |
+| 公開PC | 1440×1600、公式3基準・70.0・§20/§23・現在段階・次の監査、overflow 0、log 0 |
+| 公開スマートフォン | 390×844、同一必須情報、roadmap 1列、overflow 0、log 0 |
+| 旧表記・壊れた画像 | PC・スマートフォンとも0件 |
+
+判定は**WORK1-AWARD-COMPARISON-TRACEABILITY-1 最終GO**。Pages ActionsにNode.js 20非推奨の
+注記はあるが、build・report・deployの全stepは成功し、公開成果のbytesと実画面に失敗はない。
+作品②入力、参加者連絡、UDC応募、BODIK登録は0件。次段階は固定HEADと公開配信をread-onlyで
+確認する`WORK1-AWARD-COMPARISON-TRACEABILITY-AUDIT-1`だけで、未着手である。
+
+正本は`evidence/20260812_work1_award_comparison_traceability_public_acceptance.json`。

@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-12 (rev.52) / 状態: WORK1-AWARD-COMPARISON-TRACEABILITY-1 ローカルGO / 次: commit・push・Pages
+最終更新: 2026-08-12 (rev.52) / 状態: WORK1-AWARD-COMPARISON-TRACEABILITY-1 最終受入済み / 次: WORK1-AWARD-COMPARISON-TRACEABILITY-AUDIT-1 未着手
 
 ## 0. このファイルについて
 
@@ -1040,3 +1040,11 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   Browser dev log、壊れた画像は0件。公式3基準、総合70.0、§20・§23、現在段階、次の監査を確認した。
 - 正本は`evidence/20260812_work1_award_comparison_traceability_local_acceptance.json`。
   ローカル判定はGOとし、同段階のcommit、`main` push、scope lock、Pages、公開読戻しへ進む。
+- 実装commit `7fdf04aa0ba2ddd75347402e4717188fc1c31ec5`を`main`へpushした。
+  Work 1 scope lock run `31599775095`とPages run `31599774202`は同じhead SHAで`success`。
+- 公開状況HTML、比較HTML、スコアカードJSONはHTTP 200でcommit bytesと3/3一致した。
+  公開PC 1440×1600・390×844で公式3基準、総合70.0、§20・§23、現在段階、次の監査を読み戻し、
+  横overflow、Browser dev log、壊れた画像は0件だった。
+- 正本は`evidence/20260812_work1_award_comparison_traceability_public_acceptance.json`。
+  WORK1-AWARD-COMPARISON-TRACEABILITY-1を最終受入済みとする。次の一作業は固定HEADと公開配信を
+  read-onlyで確認する`WORK1-AWARD-COMPARISON-TRACEABILITY-AUDIT-1`だけとし、未着手で停止する。

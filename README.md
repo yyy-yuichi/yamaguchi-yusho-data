@@ -82,7 +82,7 @@ GTFS供給比較**、**市町別の交通協議前確認メモ**までを担う�
 
 対象は山口県分 4 ファイル（上記2区分 × 市町村営・NPO等）。
 
-## 現在地（WORK1-AWARD-COMPARISON-TRACEABILITY-1ローカルGO・公開反映前、2026-08-12時点）
+## 現在地（WORK1-AWARD-COMPARISON-TRACEABILITY-1公開・Codex最終受入済み、2026-08-12時点）
 
 このリポジトリはI-1〜I-4までの市町別ビューに、受入済みGTFS検査・供給指標を使う
 SUPPLY-VIEW-1の比較画面を追加し、RELEASE-1でGitHub Pagesへ公開した。公開URLに対する
@@ -121,7 +121,7 @@ UDC2026応募全体の終了条件（作品概要エントリー・本応募・�
   P2 2件でGO。公式用語の揺れと比較第2版の根拠節不足を検出
 - **WORK1-AWARD-COMPARISON-TRACEABILITY-1**: 公式用語を「実用度・完成度・挑戦度」へ統一し、
   状況ページの根拠を`SPEC.md §20・§23`へ接続した。総合70.0とスコアカードbytesは変更せず、
-  全150テストとPC・スマホ実ブラウザ検証までローカルGO
+  全150テスト、Actions・Pages、公開PC・スマホ読戻しまで最終受入済み
 
 ## 原本変更の継続確認（WORK1-FRESHNESS-1）
 
