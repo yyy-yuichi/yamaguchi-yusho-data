@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-12 (rev.51) / 状態: WORK1-AWARD-COMPARISON-2 最終受入済み / 次: WORK1-AWARD-COMPARISON-AUDIT-2 未着手
+最終更新: 2026-08-12 (rev.52) / 状態: WORK1-AWARD-COMPARISON-TRACEABILITY-1 ローカルGO / 次: commit・push・Pages
 
 ## 0. このファイルについて
 
@@ -1001,11 +1001,11 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - 固定HEAD `15cfe4b4ef7418793346ef1040d3c3d6d0056f51`に対する
   `WORK1-GTFS-COVERAGE-AUDIT-1`はread-only監査GO。P0 0件、P1 0件、P2 1件で、
   P2は公開状況ページの「9 / 10・次は外部提出」が継続改善方針と一致しない表示である。
-- UDC2026公式要項を2026-08-12に再確認し、実用性、完成度、チャレンジ性、道路・交通の重点分野、
+- UDC2026公式要項を2026-08-12に再確認し、実用度、完成度、挑戦度、道路・交通の重点分野、
   GTFS賞条件に変更がなく、数値配点は公開されていないことを確認した。
 - `SPEC.md` rev.5.11 §23へ`WORK1-AWARD-COMPARISON-2`を固定した。受け入れ済み確認メモと
   GTFS範囲再確認を現行公開証拠として反映するが、外部利用者価値の実証や新規実測フィードではないため、
-  実用性3.5、完成度4.0、チャレンジ性3.0、総合70.0は据え置く。
+  実用度3.5、完成度4.0、挑戦度3.0、総合70.0は据え置く。
 - `method_fit`だけを4.0から4.5へ根拠付きで更新する。GTFS関連確認は6/19、未確認13/19、
   関連実測表示3市町、実測2フィードの単位を維持し、整備率・網羅率・交通の良否へ読み替えない。
 - 関連利用者評価は別の人間承認ゲートとして残し、自力実行候補に類似サービス比較と
@@ -1021,3 +1021,22 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   runtime error、Browser dev error / warningは0件だった。
 - WORK1-AWARD-COMPARISON-2を最終受入済みとする。次の一作業は固定HEADと公開配信をread-onlyで
   確認する`WORK1-AWARD-COMPARISON-AUDIT-2`だけとし、開始直前で停止する。
+
+### 改訂点（rev.52）
+
+- 固定HEAD `8452d6cc8892b1f55fa5f652eb5d82cf4a3fcd59`に対する
+  `WORK1-AWARD-COMPARISON-AUDIT-2`はread-only監査GO。P0 0件、P1 0件、P2 2件だった。
+- P2は、現行記録の一部に公式表記と異なる旧表記が残ることと、
+  `docs/status.html`の比較根拠が`SPEC.md §20`だけで第2版§23を示していないことである。
+- `WORK1-AWARD-COMPARISON-TRACEABILITY-1`で公式表記「実用度・完成度・挑戦度」と
+  `SPEC.md §20・§23`へ訂正する。実用度3.5、完成度4.0、挑戦度3.0、総合70.0と
+  スコアカードbytesは変更しない。
+- 作品②入力、外部参加者への連絡、UDC応募、BODIK登録は0件のまま進める。
+- 比較集中14件、全150件のunittest、`git diff --check`、変更許可リスト、秘密情報検査が成功した。
+  旧SPEC 865トークンの欠落は0件。4 PDF・2 GTFS ZIPはmanifestのbytes・SHA256と6/6一致した。
+- スコアカード2 JSONは23,699 bytes、SHA256
+  `0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021`で基準HEADと一致した。
+- 状況ページをPC 1440×1600とスマートフォン390×844で実ブラウザ確認した。両方で横overflow、
+  Browser dev log、壊れた画像は0件。公式3基準、総合70.0、§20・§23、現在段階、次の監査を確認した。
+- 正本は`evidence/20260812_work1_award_comparison_traceability_local_acceptance.json`。
+  ローカル判定はGOとし、同段階のcommit、`main` push、scope lock、Pages、公開読戻しへ進む。

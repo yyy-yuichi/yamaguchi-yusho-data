@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-AWARD-COMPARISON-TRACEABILITY-1",
+  "checked_at": "2026-08-12",
+  "baseline_head": "8452d6cc8892b1f55fa5f652eb5d82cf4a3fcd59",
+  "decision": "GO",
+  "audit_input": {
+    "stage": "WORK1-AWARD-COMPARISON-AUDIT-2",
+    "decision": "GO",
+    "p0": 0,
+    "p1": 0,
+    "p2": 2
+  },
+  "corrections": {
+    "official_criteria": ["実用度", "完成度", "挑戦度"],
+    "old_terms_in_current_records": 0,
+    "status_spec_reference": "SPEC.md §20・§23"
+  },
+  "tests": {
+    "award_comparison": {"run": 14, "passed": 14},
+    "full_unittest": {"run": 150, "passed": 150},
+    "git_diff_check": "passed",
+    "old_spec_tokens": 865,
+    "old_spec_missing": 0,
+    "secret_pattern_hits": 0,
+    "unexpected_changed_paths": 0
+  },
+  "immutability": {
+    "accepted_source_files": 6,
+    "accepted_source_manifest_matches": 6,
+    "scorecard_bytes": 23699,
+    "scorecard_sha256": "0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021",
+    "scorecard_head_bytes_match": true,
+    "criteria_scores": {"実用度": 3.5, "完成度": 4.0, "挑戦度": 3.0},
+    "overall_comparison_index": 70.0,
+    "raw_changed": false,
+    "accepted_gtfs_zip_changed": false,
+    "public_top_changed": false,
+    "entry_page_changed": false
+  },
+  "browser": {
+    "url": "http://127.0.0.1:8765/status.html",
+    "desktop": {"viewport": "1440x1600", "overflow_x": 0, "dev_logs": 0, "broken_images": 0},
+    "mobile": {"viewport": "390x844", "overflow_x": 0, "dev_logs": 0, "broken_images": 0, "roadmap_columns": 1},
+    "official_terms_visible": true,
+    "overall_70_visible": true,
+    "spec_20_23_visible": true,
+    "current_stage_visible": true,
+    "next_read_only_audit_visible": true
+  },
+  "scope": {
+    "work1_scope_guard": "allowed",
+    "work2_inputs": 0,
+    "participant_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0
+  },
+  "next_action": "commit, push main, verify scope lock and Pages, then public readback"
+}

@@ -2456,7 +2456,7 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
 - 固定HEAD `15cfe4b4ef7418793346ef1040d3c3d6d0056f51`のGTFS範囲独立監査は、
   P0 0件、P1 0件、P2 1件でGO。P2だった「9 / 10・次は外部提出」を、公開基盤の上で
   比較・独立監査・改善を反復する継続モデルへ訂正した。
-- 2026年公式要項の実用度、完成度、チャレンジ性、道路・交通の重点分野、GTFS賞条件を再確認。
+- 2026年公式要項の実用度、完成度、挑戦度、道路・交通の重点分野、GTFS賞条件を再確認。
   数値配点は非公開のままで、内部比較値を公式点・順位・受賞確率とは表示しない。
 - 市町別確認メモの公開を根拠に`method_fit`を4.0から4.5へ更新した。GTFS関連確認6 / 19、
   未確認13 / 19、関連実測表示3市町、実測2フィードを反映したが、新規採用フィードと外部利用者
@@ -2481,3 +2481,16 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
 - 正本は`evidence/20260812_work1_award_comparison2_public_acceptance.json`。
   WORK1-AWARD-COMPARISON-2を最終受入済みとし、次はread-onlyの
   `WORK1-AWARD-COMPARISON-AUDIT-2`だけを定義して未着手で停止する。
+
+## WORK1-AWARD-COMPARISON-TRACEABILITY-1（2026-08-12 ローカルGO）
+
+- 固定HEAD `8452d6cc8892b1f55fa5f652eb5d82cf4a3fcd59`の独立監査はP0 0件、P1 0件、
+  P2 2件でGO。公式用語の揺れと状況ページの比較第2版参照不足だけを修正した。
+- 現行比較記録は公式表記「実用度・完成度・挑戦度」に一致し、旧表記0件。
+  `docs/status.html`は`SPEC.md §20・§23`を表示し、回帰検査で固定した。
+- 比較集中14件・全150件のunittest、旧SPEC 865トークン欠落0、`git diff --check`、
+  秘密情報0、許可外変更0、作品①スコープ検査が成功した。
+- 4 PDF・2 GTFS ZIPはmanifestと6/6一致。スコアカード2 JSONは基準HEADとbytes一致し、
+  SHA256 `0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021`、総合70.0を維持した。
+- ローカルPC 1440×1600・スマートフォン390×844で横overflow、Browser dev log、壊れた画像は0件。
+  作品②入力、参加者連絡、UDC応募、BODIK登録は0件。次は同段階のcommit・push・Pages・公開読戻し。

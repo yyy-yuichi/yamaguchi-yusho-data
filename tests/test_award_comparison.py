@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from decimal import Decimal, ROUND_HALF_UP
+import hashlib
 import json
 from pathlib import Path
 import unittest
@@ -218,8 +219,11 @@ class AwardComparisonContractTest(unittest.TestCase):
         for marker in (
             "公開基盤を保持して受賞品質を継続改善",
             "WORK1-AWARD-COMPARISON-2",
-            "WORK1-AWARD-COMPARISON-2 公開・最終受入済み",
             "WORK1-AWARD-COMPARISON-AUDIT-2",
+            "WORK1-AWARD-COMPARISON-TRACEABILITY-1",
+            "WORK1-AWARD-COMPARISON-TRACEABILITY-AUDIT-1",
+            "read-only監査GO・P2 2件",
+            "根拠: SPEC.md §20・§23",
             "独立した人間承認ゲート",
         ):
             self.assertIn(marker, self.status_html)
@@ -231,6 +235,27 @@ class AwardComparisonContractTest(unittest.TestCase):
             "公開適用待ち",
         ):
             self.assertNotIn(stale, self.status_html)
+
+        official_recheck = read_json(
+            REPO_ROOT / "evidence" / "20260812_work1_award_comparison2_official_recheck.json"
+        )
+        self.assertEqual(
+            ["実用度", "完成度", "挑戦度"],
+            [item["label"] for item in official_recheck["confirmed"]["primary_criteria"]],
+        )
+        for path in (
+            REPO_ROOT / "SPEC.md",
+            REPO_ROOT / "run_record.md",
+            REPO_ROOT / "PROGRESS.md",
+            REPO_ROOT / "verification.md",
+        ):
+            current_record = path.read_text(encoding="utf-8")
+            self.assertNotIn("実用性", current_record, str(path))
+            self.assertNotIn("チャレンジ性", current_record, str(path))
+        self.assertEqual(
+            "0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021",
+            hashlib.sha256((DATA_DIR / "work1_award_scorecard.json").read_bytes()).hexdigest(),
+        )
 
     def test_navigation_links_are_present_on_public_entry_points(self):
         for path in (REPO_ROOT / "README.md", DOCS_DIR / "entry.html", DOCS_DIR / "status.html"):

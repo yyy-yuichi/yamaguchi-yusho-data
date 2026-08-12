@@ -10,7 +10,7 @@
     "primary_criteria": [
       {"id": "utility", "label": "実用度", "meaning": "設定課題・創出価値に対する方法の妥当性"},
       {"id": "completeness", "label": "完成度", "meaning": "目的を具現化する方法の具体実装・実施"},
-      {"id": "challenge", "label": "チャレンジ性", "meaning": "新規性、網羅性、継続性、関係アクターの多様性等"}
+      {"id": "challenge", "label": "挑戦度", "meaning": "新規性、網羅性、継続性、関係アクターの多様性等"}
     ],
     "numeric_weights_published": false,
     "priority_field": "道路・交通",

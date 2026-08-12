@@ -2279,7 +2279,7 @@ BODIK登録は0件。次段階は固定HEADと公開配信をread-onlyで確認�
 
 | 検証 | 結果 |
 |---|---|
-| 公式基準再確認 | 実用度・完成度・チャレンジ性、道路・交通重点分野、GTFS賞条件を一次情報で確認。数値配点は非公開 |
+| 公式基準再確認 | 実用度・完成度・挑戦度、道路・交通重点分野、GTFS賞条件を一次情報で確認。数値配点は非公開 |
 | 固定HEAD監査 | `15cfe4b4ef7418793346ef1040d3c3d6d0056f51`、P0 0、P1 0、P2 1、GO |
 | 支持された下位評価変更 | `method_fit` 4.0→4.5。19市町の共有・印刷可能な確認メモを根拠とする |
 | 据え置き | 実用度3.5、完成度4.0、挑戦度3.0、内部比較指数70.0 |
@@ -2318,3 +2318,23 @@ scope lock、Pages、公開URL読戻しであり、独立再監査はまだ開�
 継続改善表示をread-onlyで確認する`WORK1-AWARD-COMPARISON-AUDIT-2`だけで、未着手である。
 
 正本は`evidence/20260812_work1_award_comparison2_public_acceptance.json`。
+
+## WORK1-AWARD-COMPARISON-TRACEABILITY-1 ローカル受入（2026-08-12）
+
+| 検証 | 結果 |
+|---|---|
+| 監査入力 | 固定HEAD `8452d6cc8892b1f55fa5f652eb5d82cf4a3fcd59`、P0 0、P1 0、P2 2、GO |
+| 公式用語 | 現行記録は実用度・完成度・挑戦度。旧表記0件 |
+| 根拠追跡 | `docs/status.html`に`SPEC.md §20・§23`、回帰検査あり |
+| 集中・全テスト | 14 / 14、150 / 150成功 |
+| 仕様網羅 | 旧SPEC 865トークン、未説明欠落0 |
+| 原本 | 4 PDF・2 GTFS ZIPがmanifestのbytes・SHA256と6 / 6一致 |
+| スコアカード不変 | data/docs各23,699 bytes、SHA256 `0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021`、HEAD bytes一致 |
+| PC | 1440×1600、横overflow 0、Browser dev log 0、壊れた画像0 |
+| スマートフォン | 390×844、横overflow 0、Browser dev log 0、壊れた画像0、roadmap 1列 |
+| 保護範囲 | 原本・ZIP・既存公開値・公開トップ・応募説明不変、作品②入力0件 |
+| 停止ゲート | 参加者連絡、UDC応募、BODIK登録0件 |
+
+判定は**ローカルGO**。正本は
+`evidence/20260812_work1_award_comparison_traceability_local_acceptance.json`。
+次は同段階のcommit、`main` push、scope lock、Pages、公開URL読戻しである。
