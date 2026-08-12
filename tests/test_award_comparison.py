@@ -27,6 +27,7 @@ class AwardComparisonContractTest(unittest.TestCase):
         cls.schema = read_json(DATA_DIR / "award_scorecard_schema.json")
         cls.scorecard = read_json(DATA_DIR / "work1_award_scorecard.json")
         cls.html = (DOCS_DIR / "award-comparison.html").read_text(encoding="utf-8")
+        cls.status_html = (DOCS_DIR / "status.html").read_text(encoding="utf-8")
 
     def test_public_json_copies_are_byte_identical(self):
         for filename in ("award_scorecard_schema.json", "work1_award_scorecard.json"):
@@ -91,6 +92,35 @@ class AwardComparisonContractTest(unittest.TestCase):
         self.assertEqual(expected, self.scorecard["overall"]["comparison_index"])
         self.assertEqual(70.0, expected)
 
+    def test_comparison2_updates_only_supported_scores_and_scope_counts(self):
+        self.assertEqual(
+            "work1-award-comparison-2-2026-08-12",
+            self.scorecard["scorecard_id"],
+        )
+        criteria = {item["criterion_id"]: item for item in self.scorecard["criteria"]}
+        self.assertEqual(
+            {"utility": 3.5, "completeness": 4.0, "challenge": 3.0},
+            {key: value["score"] for key, value in criteria.items()},
+        )
+        utility = {
+            item["subcriterion_id"]: item
+            for item in criteria["utility"]["subcriteria"]
+        }
+        self.assertEqual(4.0, utility["problem_value_clarity"]["score"])
+        self.assertEqual(4.5, utility["method_fit"]["score"])
+        self.assertEqual(2.0, utility["user_value_evidence"]["score"])
+
+        encoded = json.dumps(self.scorecard, ensure_ascii=False)
+        for marker in (
+            "municipality-memo.html",
+            "関連確認6/19市町",
+            "未確認13/19市町",
+            "関連実測表示3市町",
+            "実測2フィード",
+            "総合比較値70.0は据え置く",
+        ):
+            self.assertIn(marker, encoded)
+
     def test_every_score_has_public_evidence_confidence_and_missing_evidence(self):
         scored_items = []
         for criterion in self.scorecard["criteria"]:
@@ -136,6 +166,18 @@ class AwardComparisonContractTest(unittest.TestCase):
     def test_top_three_improvements_are_ranked_and_verifiable(self):
         improvements = self.scorecard["top_improvements"]
         self.assertEqual([1, 2, 3], [item["priority"] for item in improvements])
+        self.assertEqual(
+            [
+                "remote_user_evaluation",
+                "similar_service_benchmark",
+                "independent_reproduction_drill",
+            ],
+            [item["improvement_id"] for item in improvements],
+        )
+        self.assertEqual(
+            [True, False, False],
+            [item["external_dependency"] for item in improvements],
+        )
         self.assertEqual(3, len({item["improvement_id"] for item in improvements}))
         for item in improvements:
             low, high = item["expected_index_gain_range"]
@@ -159,6 +201,11 @@ class AwardComparisonContractTest(unittest.TestCase):
             "textContent",
             "document.createElement",
             "window.__awardRuntimeErrors = runtimeErrors",
+            "WORK1-AWARD-COMPARISON-2",
+            "増えた証拠と、点数を据え置いた理由",
+            "総合比較指数70.0は据え置きます",
+            "人間承認ゲート",
+            "自力実行可能",
             "公式点・順位・受賞確率ではありません",
             "他作品のパス、URL、ファイル、Git履歴、公開物、得点は入力していません",
         ):
@@ -166,6 +213,22 @@ class AwardComparisonContractTest(unittest.TestCase):
         self.assertNotIn("innerHTML", self.html)
         self.assertNotIn(">70.0<", self.html)
         self.assertNotIn(">3.5 / 5<", self.html)
+
+    def test_status_uses_continuous_improvement_not_finite_submission_countdown(self):
+        for marker in (
+            "公開基盤を保持して受賞品質を継続改善",
+            "WORK1-AWARD-COMPARISON-2",
+            "WORK1-AWARD-COMPARISON-AUDIT-2",
+            "独立した人間承認ゲート",
+        ):
+            self.assertIn(marker, self.status_html)
+        for stale in (
+            "9 / 10",
+            "9 / 10完了",
+            "10工程中9工程",
+            "残る工程08は外部提出",
+        ):
+            self.assertNotIn(stale, self.status_html)
 
     def test_navigation_links_are_present_on_public_entry_points(self):
         for path in (REPO_ROOT / "README.md", DOCS_DIR / "entry.html", DOCS_DIR / "status.html"):

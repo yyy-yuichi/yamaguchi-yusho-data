@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="UDC2026作品①を公式の実用度・完成度・挑戦度へ公開証拠付きで対応づけた、比較準備用スコアカードです。">
+  <meta name="description" content="UDC2026作品①の現行公開証拠を公式の実用度・完成度・挑戦度へ対応づけ、据え置き理由と次の改善候補を示す比較スコアカード第2版です。">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle fill='%23176b55' cx='8' cy='8' r='8'/%3E%3C/svg%3E">
   <title>受賞準備スコアカード｜山口県 市町別の登録供給ビュー</title>
   <style>
@@ -173,9 +173,9 @@
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
   <header class="hero shell">
-    <p class="eyebrow">WORK1-AWARD-COMPARISON-1</p>
+    <p class="eyebrow">WORK1-AWARD-COMPARISON-2</p>
     <h1>受賞準備<br>スコアカード</h1>
-    <p class="lead">UDC2026の公式3観点に、作品①の公開証拠と不足証拠を対応づけます。点数より先に、根拠と改善余地を確認するための比較準備ページです。</p>
+    <p class="lead">受け入れ済みの市町別確認メモとGTFS公式範囲再確認を、UDC2026の公式3観点へ反映しました。増えた証拠だけを評価し、解消していない限界を理由なく加点しない比較第2版です。</p>
     <nav class="actions" aria-label="主要リンク">
       <a class="button" href="index.html">公開デモを使う</a>
       <a class="button secondary" href="entry.html">応募説明を読む</a>
@@ -198,11 +198,22 @@
       <p><a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/blob/main/WORK_SCOPE.md">全体DAGと作品境界を見る</a></p>
     </section>
 
+    <section class="boundary" aria-labelledby="delta-title">
+      <p class="eyebrow">Changes since comparison 1</p>
+      <h2 id="delta-title">増えた証拠と、点数を据え置いた理由</h2>
+      <ul class="plain-list">
+        <li><a href="municipality-memo.html">市町別の交通協議前確認メモ</a>を19市町へ公開し、方法の妥当性を4.0から4.5へ更新しました。</li>
+        <li>GTFS関連確認は5 / 19市町から6 / 19市町へ増え、未確認は13 / 19市町になりました。関連実測表示は3市町、実測値は受入済み2フィード全体のままです。</li>
+        <li>固定HEADと公開配信の独立監査はGOでした。一方、新規採用フィード、外部利用者による効果実証、共同アクターの公開証拠は増えていません。</li>
+        <li>そのため実用度3.5、完成度4.0、挑戦度3.0、総合比較指数70.0は据え置きます。</li>
+      </ul>
+    </section>
+
     <div id="load-state" class="card loading" role="status">スコアカードJSONを読み込んでいます。</div>
 
     <section id="summary-section" aria-labelledby="summary-title" hidden>
       <p class="eyebrow">Evidence-based snapshot</p>
-      <h2 id="summary-title">作品①の比較準備スナップショット</h2>
+      <h2 id="summary-title">作品①の現行証拠スナップショット</h2>
       <div class="tags" id="classification-tags" aria-label="応募分類"></div>
       <div class="summary-grid">
         <div class="card score-card">
@@ -235,7 +246,7 @@
     <section id="improvements-section" aria-labelledby="improvements-title" hidden>
       <p class="eyebrow">Next best evidence</p>
       <h2 id="improvements-title">受賞寄与が大きい改善上位3件</h2>
-      <p>期待改善幅は、現在の内部採点規則に改善後の想定下位点を当てた診断レンジです。実施効果や受賞を保証しません。</p>
+      <p>期待改善幅は、現在の内部採点規則に改善後の想定下位点を当てた診断レンジです。第1候補の利用者検証は参加者連絡前の人間承認ゲート、残る2候補は作品①だけで自力実行可能です。実施効果や受賞を保証しません。</p>
       <div class="improvement-grid" id="improvement-grid"></div>
     </section>
 
@@ -251,7 +262,7 @@
   </main>
 
   <footer class="shell">
-    <p>UDC2026 作品① / 評価基準日: 2026-08-12。独立監査、注力判断、応募、BODIK APPs登録はこの段階に含みません。</p>
+    <p>UDC2026 作品① / 比較第2版・評価基準日: 2026-08-12。参加者への連絡、注力判断、応募、BODIK APPs登録はこの段階に含みません。独立再監査は次段階です。</p>
   </footer>
 
   <script>
@@ -378,7 +389,7 @@
       addText(card, "h3", item.title);
       addText(card, "p", item.why);
       addText(card, "p", `診断上の期待改善幅: +${item.expected_index_gain_range[0].toFixed(1)}〜+${item.expected_index_gain_range[1].toFixed(1)}点`, "meta");
-      addText(card, "p", `労力: ${effortLabels[item.effort]} / 外部依存: ${item.external_dependency ? "あり" : "なし"}`, "meta");
+      addText(card, "p", `労力: ${effortLabels[item.effort]} / 実行区分: ${item.external_dependency ? "人間承認ゲート" : "自力実行可能"}`, "meta");
       addText(card, "h3", "完了を示す証拠");
       renderList(card, item.acceptance_evidence);
       return card;

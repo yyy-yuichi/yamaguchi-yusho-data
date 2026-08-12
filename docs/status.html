@@ -183,12 +183,12 @@
     }
 
     .overall-bar .done {
-      width: 90%;
+      width: 85%;
       background: var(--green);
     }
 
     .overall-bar .current {
-      width: 0;
+      width: 15%;
       background: var(--blue);
     }
 
@@ -828,9 +828,9 @@
 
       <div class="metrics" aria-label="主要な進捗数値">
         <div class="metric complete">
-          <span class="label">受入段階</span>
-          <strong class="metric-number">9 / 10</strong>
-          <span class="metric-caption">工程09まで公開・受入済み</span>
+          <span class="label">改善サイクル</span>
+          <strong class="metric-number">継続中</strong>
+          <span class="metric-caption">公開基盤9工程の上で比較・監査・改善</span>
         </div>
         <div class="metric complete">
           <span class="label">PDF</span>
@@ -854,14 +854,15 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">作品の現在地</p>
-          <h2 id="progress-title">WORK1-GTFS-COVERAGE-2 公開・最終受入済み</h2>
-          <p>既存成果は<a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>です（初回公開基準 commit <code>18170b2</code>）。受入済みの公開成果を保持したまま、2026-08-12に未確認14市町の公式資料と受入済み2 GTFS ZIPを再確認しました。新規採用可能ZIPは0件、2 ZIPは公式配布バイトと一致しました。光市公式GTFSの広域生活交通に周南市内31乗降停留所ID・17停留所名を確認したため、確認メモの関連範囲を訂正しています。原本の置換、周南市内だけの実測値の推計、作品②からの入力、UDC概要フォーム、本応募、BODIK APPs登録は行っていません。</p>
+          <h2 id="progress-title">WORK1-AWARD-COMPARISON-2 ローカルGO・公開適用待ち</h2>
+          <p>既存成果は<a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>です（初回公開基準 commit <code>18170b2</code>）。受け入れ済みの市町別確認メモ、GTFS関連確認6 / 19市町、未確認13 / 19市町、独立監査GOを現行比較へ反映しました。方法の妥当性は4.0から4.5へ更新しましたが、新規採用フィードと外部利用者証拠は増えていないため、実用度3.5・完成度4.0・挑戦度3.0・総合比較指数70.0は据え置きです。原本、受入済みZIP、既存実測値、公開トップ、応募説明、作品②は変更していません。</p>
         </div>
-        <strong class="progress-summary">公式範囲再確認 9 / 10完了</strong>
+        <strong class="progress-summary">公開基盤を保持して受賞品質を継続改善</strong>
       </div>
 
-      <div class="overall-bar" role="progressbar" aria-label="10工程中9工程を受入済み、工程10の外部提出は未着手" aria-valuemin="0" aria-valuemax="10" aria-valuenow="9">
-        <span class="done" title="9工程を受入済み"></span>
+      <div class="overall-bar" role="img" aria-label="受け入れ済み公開基盤の上で、独立監査と次の改善を反復中">
+        <span class="done" title="受け入れ済み公開基盤"></span>
+        <span class="current" title="比較・監査・改善の反復"></span>
       </div>
 
       <ol class="roadmap">
@@ -910,10 +911,20 @@
           <span class="step-title">WORK1-GTFS-COVERAGE-2: 公式範囲の再確認</span>
           <span class="step-state">公開・実ブラウザ確認・Codex受入済み</span>
         </li>
-        <li class="todo">
+        <li class="done">
           <span class="step-no">10</span>
-          <span class="step-title">外部提出</span>
-          <span class="step-state">G6の本人承認前は実施しない</span>
+          <span class="step-title">WORK1-AWARD-COMPARISON-2: 現行公開証拠の再評価</span>
+          <span class="step-state">ローカル検証・Codex受入済み、公開適用待ち</span>
+        </li>
+        <li class="current">
+          <span class="step-no">11</span>
+          <span class="step-title">WORK1-AWARD-COMPARISON-AUDIT-2: 独立再監査</span>
+          <span class="step-state">次の一作業・未着手</span>
+        </li>
+        <li class="todo">
+          <span class="step-no">G6</span>
+          <span class="step-title">外部提出・参加者連絡</span>
+          <span class="step-state">工程終端ではなく、独立した人間承認ゲート</span>
         </li>
       </ol>
 
@@ -1162,8 +1173,8 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">この作業の区切り</p>
-          <h2 id="next-title">応募用公開物一式は作品①について受入済み</h2>
-          <p><a href="entry.html">応募説明ページ</a>で、公開済みのデモ・コード・データを作品の課題と価値からたどれるようになりました。ENTRY-PAGE-1の公開URL・PC／スマホ・証拠をCodexが受け入れ、ロードマップ07を完了しました。残る工程08は外部提出であり、G6の本人承認なしには進みません。</p>
+          <h2 id="next-title">公開基盤は受入済み、受賞品質の改善は継続</h2>
+          <p><a href="entry.html">応募説明ページ</a>、公開デモ、コード、データ、確認メモ、原本照合、比較スコアカードは公開済みです。ここを完成の終点とはせず、比較、独立監査、自力実行可能な改善を一段階ずつ反復します。外部提出と参加者連絡は残り1工程ではなく、別途本人が判断する独立した人間承認ゲートです。</p>
         </div>
       </div>
 
@@ -1247,16 +1258,16 @@
     <section aria-labelledby="award-comparison-title">
       <div class="section-head">
         <div>
-          <p class="eyebrow">WORK1-AWARD-COMPARISON-1 / 公開・最終受入済み</p>
-          <h2 id="award-comparison-title">公式3観点と公開証拠を一対一で確認</h2>
-          <p><a href="award-comparison.html">受賞準備スコアカード</a>は、実用度・完成度・挑戦度を0〜5点の共通内部尺度で診断し、確信度、公開証拠、不足証拠、改善上位3件を同時に示します。</p>
+          <p class="eyebrow">WORK1-AWARD-COMPARISON-2 / ローカルGO・公開適用待ち</p>
+          <h2 id="award-comparison-title">増えた証拠と据え置き理由を同じ画面で確認</h2>
+          <p><a href="award-comparison.html">受賞準備スコアカード第2版</a>は、実用度・完成度・挑戦度を0〜5点の共通内部尺度で診断し、前回から増えた証拠、変わらない限界、外部承認ゲート、自力実行可能な改善を同時に示します。</p>
         </div>
       </div>
 
       <ul class="next-list">
         <li>
           <strong>公式点と内部診断を分離</strong>
-          <p>UDC2026公式要項は数値配点を公開していません。総合比較指数70.0 / 100は公式点、順位、受賞確率ではありません。</p>
+          <p>UDC2026公式要項は数値配点を公開していません。方法の妥当性は4.5へ更新しましたが、総合比較指数70.0 / 100は据え置きで、公式点、順位、受賞確率ではありません。</p>
         </li>
         <li>
           <strong>2026年の賞条件だけを照合</strong>
@@ -1272,7 +1283,7 @@
         </li>
         <li>
           <strong>独立監査はGO判定済み</strong>
-          <p><code>WORK1-AWARD-AUDIT-1</code>で固定HEAD、採点計算、証拠リンク、公開bytes、作品②入力0件をread-onlyで監査し、P0・P1なしでGOと判定しました。その結果を出発点に、機能改善を継続しています。</p>
+          <p><code>WORK1-GTFS-COVERAGE-AUDIT-1</code>で固定HEAD、公開範囲、公開bytes、作品②入力0件をread-onlyで監査し、P0・P1なしでGOと判定しました。P2だった有限工程表示を継続改善モデルへ直し、次は<code>WORK1-AWARD-COMPARISON-AUDIT-2</code>で再監査します。</p>
         </li>
       </ul>
       <p class="source-note">機械可読正本: <a href="data/work1_award_scorecard.json">work1_award_scorecard.json</a> / 共通形式: <a href="data/award_scorecard_schema.json">award_scorecard_schema.json</a> / 根拠: SPEC.md §20</p>
@@ -1317,7 +1328,7 @@
       <h2 id="source-title">このページの根拠</h2>
       <ul>
         <li>応募説明（docs/entry.html）: <a href="entry.html">作品の課題・使い方・評価根拠</a></li>
-        <li>受賞比較準備（docs/award-comparison.html）: <a href="award-comparison.html">公式3観点・特別賞条件・公開証拠・改善上位3件</a></li>
+        <li>受賞比較第2版（docs/award-comparison.html）: <a href="award-comparison.html">公式3観点・増えた証拠・据え置き理由・改善上位3件</a></li>
         <li>協議前確認メモ（docs/municipality-memo.html）: <a href="municipality-memo.html">市町別の根拠・限界・次の確認事項</a></li>
         <li>公開用アプリ（docs/index.html）: <a href="index.html?v=20260811">市町別の登録供給ビュー</a>（<a href="index.html?v=20260811#supply-comparison">岩国市・光市のGTFS供給比較</a>、<a href="index.html?v=20260811#limits-title">データの限界</a>、<a href="index.html?v=20260811#sources-title">出典と利用条件</a>）</li>
         <li>公開JSON: <a href="data/operators.json">operators.json</a> / <a href="data/vehicles.json">vehicles.json</a> / <a href="data/municipal_supply.json">municipal_supply.json</a> / <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a> / <a href="data/gtfs_supply_metrics.json">gtfs_supply_metrics.json</a> / <a href="data/work1_award_scorecard.json">work1_award_scorecard.json</a></li>

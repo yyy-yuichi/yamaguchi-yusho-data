@@ -2274,3 +2274,28 @@ BODIK登録は0件。次段階は固定HEADと公開配信をread-onlyで確認�
 `WORK1-GTFS-COVERAGE-AUDIT-1`だけとし、未着手で停止する。
 
 正本は`evidence/20260812_work1_gtfs_coverage_public_acceptance.json`。
+
+## 2026-08-12 WORK1-AWARD-COMPARISON-2 ローカル受入
+
+| 検証 | 結果 |
+|---|---|
+| 公式基準再確認 | 実用度・完成度・チャレンジ性、道路・交通重点分野、GTFS賞条件を一次情報で確認。数値配点は非公開 |
+| 固定HEAD監査 | `15cfe4b4ef7418793346ef1040d3c3d6d0056f51`、P0 0、P1 0、P2 1、GO |
+| 支持された下位評価変更 | `method_fit` 4.0→4.5。19市町の共有・印刷可能な確認メモを根拠とする |
+| 据え置き | 実用度3.5、完成度4.0、挑戦度3.0、内部比較指数70.0 |
+| GTFS範囲 | 関連確認6 / 19、未確認13 / 19、関連実測表示3市町、実測2フィード、新規採用0 |
+| 改善候補 | 利用者検証は人間承認ゲート1件、類似サービス比較・再生成訓練は自力実行可能2件 |
+| 集中テスト | `python -m unittest tests.test_award_comparison -v`、14件成功 |
+| 全テスト | `python -m unittest discover -s tests -v`、150件成功 |
+| 差分 | `git diff --check`成功、正本・公開JSON byte一致、禁止範囲変更0 |
+| 比較ページPC | 1440×1600、70.0・4.5・承認1・自力2、overflow 0、runtime/dev error 0 |
+| 比較ページスマホ | 390×844、同じ値と区分、overflow 0、runtime/dev error 0 |
+| 状況ページPC・スマホ | 継続改善・次の監査・独立承認ゲートを表示、有限9/10なし、overflow 0、error 0 |
+
+判定は**LOCAL GO**。点数上昇を目的にせず、増えた証拠と変わらない限界を同じ画面へ反映した。
+外部利用者評価0件、新規採用フィード0件のため総合70.0を据え置く。作品②入力、参加者連絡、
+UDC応募、BODIK登録、公式点・順位・受賞確率の主張は0件。
+
+正本は`evidence/20260812_work1_award_comparison2_official_recheck.json`と
+`evidence/20260812_work1_award_comparison2_local_acceptance.json`。次はcommit、`main` push、
+scope lock、Pages、公開URL読戻しであり、独立再監査はまだ開始しない。

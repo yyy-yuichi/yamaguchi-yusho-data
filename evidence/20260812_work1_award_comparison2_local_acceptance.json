@@ -1,0 +1,70 @@
+{
+  "stage": "WORK1-AWARD-COMPARISON-2",
+  "result": "LOCAL_GO",
+  "checked_at": "2026-08-12T20:27:55+09:00",
+  "baseline": {
+    "branch": "main",
+    "head": "15cfe4b4ef7418793346ef1040d3c3d6d0056f51",
+    "origin_main": "15cfe4b4ef7418793346ef1040d3c3d6d0056f51",
+    "coverage_audit": {
+      "result": "GO",
+      "p0": 0,
+      "p1": 0,
+      "p2": 1,
+      "p2_resolution": "有限な9/10表示と外部提出を終端にした表現を、比較・監査・改善を反復する継続モデルへ変更"
+    }
+  },
+  "comparison": {
+    "scorecard_id": "work1-award-comparison-2-2026-08-12",
+    "criterion_scores": {"utility": 3.5, "completeness": 4.0, "challenge": 3.0},
+    "changed_subcriterion": {
+      "id": "method_fit",
+      "before": 4.0,
+      "after": 4.5,
+      "evidence": "19市町の共有・印刷可能な交通協議前確認メモ"
+    },
+    "comparison_index": 70.0,
+    "comparison_index_changed": false,
+    "scope_counts": {
+      "gtfs_related_confirmed_municipalities": 6,
+      "not_confirmed_municipalities": 13,
+      "municipalities_with_related_measured_display": 3,
+      "measured_feeds": 2,
+      "newly_adopted_feeds": 0,
+      "external_user_evaluations": 0
+    },
+    "improvements": [
+      {"id": "remote_user_evaluation", "execution_class": "human_approval_gate"},
+      {"id": "similar_service_benchmark", "execution_class": "self_executable"},
+      {"id": "independent_reproduction_drill", "execution_class": "self_executable"}
+    ]
+  },
+  "automated_checks": {
+    "focused_tests": {"count": 14, "result": "pass"},
+    "all_unittests": {"count": 150, "result": "pass"},
+    "git_diff_check": "pass",
+    "scorecard_public_copy_byte_identical": true,
+    "protected_paths_changed": [],
+    "protected_paths_checked": [
+      "raw",
+      "data/gtfs_supply_metrics.json",
+      "data/gtfs_feeds.csv",
+      "docs/index.html",
+      "docs/entry.html"
+    ]
+  },
+  "browser_checks": [
+    {"page": "award-comparison.html", "viewport": "1440x1600", "horizontal_overflow_px": 0, "runtime_errors": 0, "dev_errors_or_warnings": 0, "confirmed": ["comparison_index_70.0", "method_fit_4.5", "one_human_gate", "two_self_executable"]},
+    {"page": "award-comparison.html", "viewport": "390x844", "horizontal_overflow_px": 0, "runtime_errors": 0, "dev_errors_or_warnings": 0, "confirmed": ["comparison_index_70.0", "one_human_gate", "two_self_executable"]},
+    {"page": "status.html", "viewport": "1440x1600", "horizontal_overflow_px": 0, "runtime_errors": 0, "dev_errors_or_warnings": 0, "confirmed": ["continuous_improvement", "audit2_next", "external_submission_independent_gate", "finite_9_of_10_absent"]},
+    {"page": "status.html", "viewport": "390x844", "horizontal_overflow_px": 0, "runtime_errors": 0, "dev_errors_or_warnings": 0, "confirmed": ["continuous_improvement", "audit2_next", "external_submission_independent_gate"]}
+  ],
+  "boundaries": {
+    "other_work_input_count": 0,
+    "participant_contact_count": 0,
+    "udc_submission_count": 0,
+    "bodik_registration_count": 0,
+    "official_score_rank_probability_claim_count": 0
+  },
+  "next_frontier": "commit, main push, scope lock, Pages, public URL readback"
+}

@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-12 (rev.50) / 状態: WORK1-GTFS-COVERAGE-2 最終受入済み / 次: WORK1-GTFS-COVERAGE-AUDIT-1 未着手
+最終更新: 2026-08-12 (rev.51) / 状態: WORK1-AWARD-COMPARISON-2 ローカルGO / 次: commit・push・Actions・Pages・公開読戻し
 
 ## 0. このファイルについて
 
@@ -995,3 +995,22 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   読み戻し、関連フィード表示、未確認時の非推計、横overflow 0、runtime/dev error 0を受け入れた。
 - WORK1-GTFS-COVERAGE-2を最終受入済みとする。次の一作業は固定HEADと公開配信をread-onlyで
   独立確認する`WORK1-GTFS-COVERAGE-AUDIT-1`だけとし、開始直前で停止する。
+
+### 改訂点（rev.51）
+
+- 固定HEAD `15cfe4b4ef7418793346ef1040d3c3d6d0056f51`に対する
+  `WORK1-GTFS-COVERAGE-AUDIT-1`はread-only監査GO。P0 0件、P1 0件、P2 1件で、
+  P2は公開状況ページの「9 / 10・次は外部提出」が継続改善方針と一致しない表示である。
+- UDC2026公式要項を2026-08-12に再確認し、実用性、完成度、チャレンジ性、道路・交通の重点分野、
+  GTFS賞条件に変更がなく、数値配点は公開されていないことを確認した。
+- `SPEC.md` rev.5.11 §23へ`WORK1-AWARD-COMPARISON-2`を固定した。受け入れ済み確認メモと
+  GTFS範囲再確認を現行公開証拠として反映するが、外部利用者価値の実証や新規実測フィードではないため、
+  実用性3.5、完成度4.0、チャレンジ性3.0、総合70.0は据え置く。
+- `method_fit`だけを4.0から4.5へ根拠付きで更新する。GTFS関連確認は6/19、未確認13/19、
+  関連実測表示3市町、実測2フィードの単位を維持し、整備率・網羅率・交通の良否へ読み替えない。
+- 関連利用者評価は別の人間承認ゲートとして残し、自力実行候補に類似サービス比較と
+  再生成・復旧訓練を置く。作品②、外部連絡、UDC応募、BODIK登録は対象外のまま進める。
+- 集中14件、全150件のunittest、`git diff --check`が成功。比較ページと状況ページの
+  1440×1600・390×844で横overflow、runtime error、Browser dev error / warningは0件。
+- 原本、受入済みZIP、既存実測値、公開トップ、応募説明は不変。ローカルGOとし、commit、
+  `main` push、scope lock、Pages、公開URL読戻しを同段階内で続ける。

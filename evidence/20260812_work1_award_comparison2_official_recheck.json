@@ -1,0 +1,22 @@
+{
+  "stage": "WORK1-AWARD-COMPARISON-2",
+  "checked_at": "2026-08-12T20:27:55+09:00",
+  "source": {
+    "title": "アーバンデータチャレンジ2026 作品募集要領",
+    "url": "https://urbandata-challenge.jp/udc2026_entry",
+    "page_updated_at": "2026-06-20"
+  },
+  "confirmed": {
+    "primary_criteria": [
+      {"id": "utility", "label": "実用度", "meaning": "設定課題・創出価値に対する方法の妥当性"},
+      {"id": "completeness", "label": "完成度", "meaning": "目的を具現化する方法の具体実装・実施"},
+      {"id": "challenge", "label": "チャレンジ性", "meaning": "新規性、網羅性、継続性、関係アクターの多様性等"}
+    ],
+    "numeric_weights_published": false,
+    "priority_field": "道路・交通",
+    "gtfs_award_condition_present": true,
+    "bodik_current_year_registration_condition_present": true
+  },
+  "interpretation_boundary": "0〜5点と0〜100の指数は作品間の差分を見つける内部診断値で、公式点、順位、受賞確率ではない。",
+  "other_work_input_count": 0
+}

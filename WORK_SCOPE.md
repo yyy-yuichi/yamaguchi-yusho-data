@@ -29,7 +29,9 @@ flowchart TD
     M1["WORK1-TASK-MEMO-1<br/>市町別の協議前確認メモ<br/>公開・最終受入済み"]
     A2["WORK1-TASK-MEMO-AUDIT-1<br/>固定HEADの独立監査<br/>GO"]
     V1["WORK1-GTFS-COVERAGE-2<br/>公式範囲再確認<br/>公開・最終受入済み"]
-    V2["WORK1-GTFS-COVERAGE-AUDIT-1<br/>次のread-only監査・未着手"]
+    V2["WORK1-GTFS-COVERAGE-AUDIT-1<br/>固定HEADの独立監査<br/>GO"]
+    C3["WORK1-AWARD-COMPARISON-2<br/>現行公開証拠の再評価<br/>ローカルGO・公開適用待ち"]
+    C4["WORK1-AWARD-COMPARISON-AUDIT-2<br/>次のread-only監査・未着手"]
     C2["作品②の比較用出力<br/>作品②Chatが所有"]
     D{"比較・注力判断<br/>人が決定"}
     S["選んだ作品を応募品質まで強化"]
@@ -37,7 +39,7 @@ flowchart TD
 
     G --> W1
     G --> W2
-    W1 --> F --> L --> C1 --> A1 --> M1 --> A2 --> V1 --> V2 --> D
+    W1 --> F --> L --> C1 --> A1 --> M1 --> A2 --> V1 --> V2 --> C3 --> C4 --> D
     W2 --> C2 --> D
     D --> S --> A
 ```
@@ -56,10 +58,15 @@ flowchart TD
   次の確認事項を一枚へ構成し、共有・印刷できる実務向け出力を公開・最終受入済み。
 - `WORK1-TASK-MEMO-AUDIT-1`: 固定HEAD、公開配信、代表3分岐、PC・390px・印刷、
   作品②入力0件をread-onlyで独立監査し、GO判定済み。
-- `WORK1-GTFS-COVERAGE-2`: 未確認14市町の公式資料を再探索し、受入済み光市GTFSに収録された
-  周南市内停留所を証拠・市町表・確認メモへ反映する現在工程。原本と実測値は増やさない。
-- `WORK1-GTFS-COVERAGE-AUDIT-1`: COVERAGE-2公開受入後に行う次の一作業。固定HEADと公開配信を
-  read-onlyで監査する。現在は未着手。
+- `WORK1-GTFS-COVERAGE-2`: 未確認14市町の公式資料を再探索し、新規採用0件、関連確認6/19市町、
+  未確認13/19市町を公開・最終受入済み。原本と実測値は増やしていない。
+- `WORK1-GTFS-COVERAGE-AUDIT-1`: 固定HEADと公開配信をread-onlyで監査し、P0 0件、P1 0件、
+  P2 1件でGO。P2は有限な工程数と外部提出を終端にした状況表示である。
+- `WORK1-AWARD-COMPARISON-2`: 受け入れ済み確認メモ、GTFS関連範囲、監査GOを作品①の現行公開証拠へ
+  反映した。方法の妥当性だけを4.5へ更新し、3基準と総合70.0は据え置く。P2表示を継続改善へ
+  訂正してローカルGO。公開適用と読戻しは未完了。
+- `WORK1-AWARD-COMPARISON-AUDIT-2`: COMPARISON-2公開受入後に行う次の一作業。固定HEAD、計算、
+  公開配信、継続改善表示、作品②入力0件をread-onlyで監査する。現在は未着手。
 - 作品①の公開出力: [受賞準備スコアカード](https://yyy-yuichi.github.io/yamaguchi-yusho-data/award-comparison.html)
 - 作品①の実務出力: [市町別 交通協議前確認メモ](https://yyy-yuichi.github.io/yamaguchi-yusho-data/municipality-memo.html)
 - 応募送信、本応募、BODIK登録、作品②の変更は別の人間承認・別Chatの責任範囲である。

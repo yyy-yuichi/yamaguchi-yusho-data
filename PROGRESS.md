@@ -2450,3 +2450,23 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
 - 正本は`evidence/20260812_work1_gtfs_coverage_public_acceptance.json`。
   WORK1-GTFS-COVERAGE-2を最終受入済みとし、次はread-onlyの
   `WORK1-GTFS-COVERAGE-AUDIT-1`だけを定義して未着手で停止する。
+
+## 2026-08-12 WORK1-AWARD-COMPARISON-2 ローカルGO
+
+- 固定HEAD `15cfe4b4ef7418793346ef1040d3c3d6d0056f51`のGTFS範囲独立監査は、
+  P0 0件、P1 0件、P2 1件でGO。P2だった「9 / 10・次は外部提出」を、公開基盤の上で
+  比較・独立監査・改善を反復する継続モデルへ訂正した。
+- 2026年公式要項の実用度、完成度、チャレンジ性、道路・交通の重点分野、GTFS賞条件を再確認。
+  数値配点は非公開のままで、内部比較値を公式点・順位・受賞確率とは表示しない。
+- 市町別確認メモの公開を根拠に`method_fit`を4.0から4.5へ更新した。GTFS関連確認6 / 19、
+  未確認13 / 19、関連実測表示3市町、実測2フィードを反映したが、新規採用フィードと外部利用者
+  証拠は増えていないため、実用度3.5、完成度4.0、挑戦度3.0、総合70.0は据え置いた。
+- 改善上位3件を、別の人間承認ゲートであるオンライン利用者検証と、自力実行可能な
+  類似サービス比較・再生成復旧訓練へ分離した。参加者への連絡は行っていない。
+- 集中14件、全150件のunittest、`git diff --check`が成功。正本と公開スコアカードJSONは
+  byte一致し、raw、受入済みZIP、既存実測値、公開トップ、応募説明の変更は0件。
+- 比較ページ・状況ページを1440×1600と390×844で実ブラウザ確認し、横overflow、ページ内
+  runtime error、Browser dev error / warningはいずれも0。ローカル判定はGitHub適用へ進めるGO。
+- 正本は`evidence/20260812_work1_award_comparison2_official_recheck.json`と
+  `evidence/20260812_work1_award_comparison2_local_acceptance.json`。作品②入力、外部連絡、
+  UDC応募、BODIK登録は0件。次は同段階のcommit・push・Actions・Pages・公開読戻しである。
