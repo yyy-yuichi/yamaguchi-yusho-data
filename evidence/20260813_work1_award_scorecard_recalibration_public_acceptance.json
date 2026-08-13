@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-AWARD-SCORECARD-RECALIBRATION-1",
+  "evidence_type": "public_acceptance",
+  "checked_at": "2026-08-13",
+  "decision": "GO",
+  "subject": {
+    "branch": "main",
+    "commit_sha": "87521caef7c25e1f43361bae683cb1d049bd7fed",
+    "origin_main_sha": "87521caef7c25e1f43361bae683cb1d049bd7fed"
+  },
+  "workflows": {
+    "scope_lock": {"run_id": 31681446757, "conclusion": "success", "head_sha_match": true},
+    "pages": {"run_id": 31681446291, "conclusion": "success", "reported_head_sha_match": true},
+    "release_attestation": {"run_id": 31681506825, "conclusion": "success", "decision": "GO"}
+  },
+  "attestation_artifact": {
+    "artifact_id": 9173662821,
+    "name": "work1-release-attestation-87521caef7c25e1f43361bae683cb1d049bd7fed",
+    "archive_bytes": 2634,
+    "archive_digest": "sha256:05dac5fdd612db8ddcb8f19dc27e934deb26a0b60493f4e7b7fd0ec2b6b43674",
+    "expires_at": "2026-11-11T08:18:54Z",
+    "json_bytes": 8974,
+    "json_sha256": "ecf3893718a378d576ee0a16a4373688ab9132695f260659391414c5f98c184d",
+    "errors": []
+  },
+  "attestation_verification": {
+    "tests_discovered": 169,
+    "tests_passed": 169,
+    "public_assets_matched": 4,
+    "accepted_sources_matched": 6,
+    "protected_assets_matched": 3,
+    "scorecard_bytes": 25203,
+    "scorecard_sha256": "b1f03e1f09d4a39fbe8c8afdf4253c837bfea9c09bf7f3be02bb51449c12215d",
+    "pages_copy_absent": true,
+    "criterion_scores": {"utility": 3.5, "completeness": 4.0, "challenge": 3.0},
+    "overall_comparison_index": 70.0
+  },
+  "public_core_pages": [
+    {"path": "index.html", "http": 200, "bytes": 48875, "sha256": "502eb93199d3df71593dc7d220d575159a9167a2692bdec2bb8b5b4b7d7c4b49", "commit_bytes_match": true},
+    {"path": "entry.html", "http": 200, "bytes": 19049, "sha256": "da71ea2775547d68af0f2b51da0faf7e852ef3b7d5e2cbce4ad187d79442d431", "commit_bytes_match": true},
+    {"path": "status.html", "http": 200, "bytes": 59361, "sha256": "ad062a244d71324bf67cbf06f7e92af918d7d421256949c789cc8f5dcdcc9b11", "commit_bytes_match": true},
+    {"path": "municipality-memo.html", "http": 200, "bytes": 38414, "sha256": "fac3e8b11eced6b2418f11814cfbf5fb19f8f872356d0d85ea81092388663f02", "commit_bytes_match": true}
+  ],
+  "public_internal_separation": {
+    "award_comparison_html_http": 404,
+    "scorecard_json_http": 404,
+    "scorecard_schema_http": 404,
+    "public_scorecard_json_markers": 0,
+    "public_numeric_score_markers": 0
+  },
+  "boundaries": {
+    "raw_source_changes": 0,
+    "gtfs_zip_changes": 0,
+    "existing_public_json_changes": 0,
+    "public_html_changes": 0,
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0
+  },
+  "next_stage": "WORK1-AWARD-SCORECARD-RECALIBRATION-AUDIT-1",
+  "next_stage_started": false,
+  "errors": []
+}

@@ -2619,6 +2619,17 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
 - ローカル正本は`evidence/20260813_work1_award_scorecard_recalibration_local_acceptance.json`。
   次はcommit・main push、同一SHAのscope lock・Pages・attestation、公開非露出の読戻し。
 
+### 公開受入GO
+
+- 実装commit `87521caef7c25e1f43361bae683cb1d049bd7fed`のscope lock `31681446757`、Pages
+  `31681446291`、release attestation `31681506825`は同一SHAで全success。
+- artifact `9173662821`はGO、169 / 169、公開4 / 4、原本6 / 6、保護3 / 3、errors 0。
+  内部正本のbytes・SHA、Pages copy不在、作品①境界も一致した。
+- 公開4 URLはHTTP 200かつcommit bytes一致。内部診断3 URLは404を維持し、公開HTMLの点数・
+  内部JSON導線は0件。公開正本は
+  `evidence/20260813_work1_award_scorecard_recalibration_public_acceptance.json`。
+- この記録を含む最終HEAD自身を同じ3 workflowで再確認する。次段階はread-only監査だけ。
+
 ## 2026-08-13 WORK1-PRECONSULTATION-HANDOFF-1
 
 ### 仕様・実装・ローカル受入

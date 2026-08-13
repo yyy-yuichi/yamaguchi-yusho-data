@@ -2584,6 +2584,22 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 | 正本 | `evidence/20260813_work1_award_scorecard_recalibration_local_acceptance.json` |
 | 判定 | `LOCAL_GO`。実装commitをmainへpushし、CI・Pages・公開非露出を受け入れる |
 
+### 公開受入
+
+| 検証 | 結果 |
+|---|---|
+| subject | `87521caef7c25e1f43361bae683cb1d049bd7fed` |
+| scope lock / Pages / attestation | `31681446757` / `31681446291` / `31681506825`、全success |
+| artifact | ID `9173662821`、digest `sha256:05dac5fdd612db8ddcb8f19dc27e934deb26a0b60493f4e7b7fd0ec2b6b43674` |
+| decision / errors | `GO` / 0 |
+| tests / public / sources / protected | 169 / 169、4 / 4、6 / 6、3 / 3 |
+| 内部正本 | 25,203 bytes、SHA256 `b1f03e1f09d4a39fbe8c8afdf4253c837bfea9c09bf7f3be02bb51449c12215d` |
+| 内部診断分離 | `pages_copy_absent=true`、削除3 URLは404 |
+| 公開中核4 URL | HTTP 200、同commit bytes一致 |
+| 公開HTML | 内部JSON導線、実用度3.5、完成度4.0、挑戦度3.0、総合70.0の文字列各0 |
+| 正本 | `evidence/20260813_work1_award_scorecard_recalibration_public_acceptance.json` |
+| 判定 | `GO`。最終記録commit自身のCIを外部正本として再確認する |
+
 ## 2026-08-13 WORK1-PRECONSULTATION-HANDOFF-1 ローカル検証
 
 | 検証 | 結果 |

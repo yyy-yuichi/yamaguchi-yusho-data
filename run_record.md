@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-13 (rev.64) / 状態: WORK1-AWARD-SCORECARD-RECALIBRATION-1 ローカル受入済み / 次: 公開受入
+最終更新: 2026-08-13 (rev.65) / 状態: WORK1-AWARD-SCORECARD-RECALIBRATION-1 公開受入済み / 次: read-only独立監査
 
 ## 0. このファイルについて
 
@@ -1252,3 +1252,16 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   全169 / 169、旧SPEC 984トークン欠落0、scope checker、`git diff --check`、秘密情報定型検査0件。
 - 原本6 / 6、公開4 HTML、既存公開値は基準HEADと一致し、Pages用内部診断3資産は不在。
   ローカル正本は`evidence/20260813_work1_award_scorecard_recalibration_local_acceptance.json`。
+
+### 改訂点（rev.65）
+
+- 実装commit `87521caef7c25e1f43361bae683cb1d049bd7fed`を`main`へpushした。scope lock
+  `31681446757`、Pages `31681446291`、release attestation `31681506825`は同一SHAで全success。
+- artifact `9173662821`を独立読戻しし、decision GO、169 / 169、公開4 / 4、原本6 / 6、保護3 / 3、
+  errors 0を確認した。内部正本は25,203 bytes、SHA256
+  `b1f03e1f09d4a39fbe8c8afdf4253c837bfea9c09bf7f3be02bb51449c12215d`で一致し、Pages copyは不在。
+- 公開4 URLはHTTP 200かつ同commit bytes一致。内部診断HTML・JSON・schemaの3 URLは404、公開HTMLの
+  内部JSON導線と3基準・総合値の文字列は0件だった。
+- 公開受入正本は`evidence/20260813_work1_award_scorecard_recalibration_public_acceptance.json`。
+  この記録を含む最終HEAD自身を同じ3 workflowで再確認し、後続run IDはrepoへ再書込みしない。
+- 次段階は変更を伴わない`WORK1-AWARD-SCORECARD-RECALIBRATION-AUDIT-1`だけとし、開始しない。
