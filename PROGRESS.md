@@ -2565,3 +2565,15 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
 - 最終run ID、artifact digest、公開ブラウザ結果は外部正本として読み戻し、自己参照を避けるため
   repoへ再書込みしない。次段階はread-onlyの
   `WORK1-RELEASE-EVIDENCE-HARDENING-AUDIT-1`だけとする。
+
+## 2026-08-13 WORK1-RELEASE-EVIDENCE-PERMALINK-1 開始
+
+- 固定HEAD `618d6367796b26a5b206aacea983b38834393e16`の強化後独立監査はGO、P0 0件、P1 0件、
+  P2 1件。P2は最終artifactの90日失効と公開物から最終runを恒久的に発見できない点である。
+- GitHub Release・tagは0件で衝突なし。`/releases/latest`と固定資産名を先にmainへ書き、
+  その最終commit自身のCI完了後、同じSHAのannotated tagとReleaseへ証拠を固定する。
+- 添付するのはartifact ZIP、attestation JSON・Markdown、来歴JSON、SHA256一覧の5資産。
+  Release公開後はmainを再変更せず、公開URL・bytes・SHA256を外部から読戻す。
+- Release/tagは検証証拠の公開でありUDC提出ではない。作品②、参加者連絡、応募・BODIK、
+  原本、公開値、スコアカード、公開トップ、応募説明、workflow権限は変更しない。
+- 次段階はread-onlyの`WORK1-RELEASE-EVIDENCE-PERMALINK-AUDIT-1`だけとし、まだ開始しない。

@@ -2464,3 +2464,22 @@ P2はrepo内の最終受入記録が実装commit `7fdf04a`とそのrun IDを記�
 最終HEADはscope lock、Pages、release attestationのsuccess、対象・checkout・Pages報告SHA一致、
 151 / 151、公開6 / 6、原本6 / 6、保護3 / 3、errors 0、PC・スマートフォンの公開表示を
 外部正本として読み戻す。run IDとartifact digestは自己参照を避けてrepoへ再書込みしない。
+
+## WORK1-RELEASE-EVIDENCE-PERMALINK-1 ローカル検証（2026-08-13）
+
+| 検証 | 結果 |
+|---|---|
+| 監査入力 | `618d6367796b26a5b206aacea983b38834393e16`、GO、P0 0 / P1 0 / P2 1 |
+| P2 | 最終artifactの90日失効と、公開物から最終runへの恒久的発見経路不足 |
+| 既存Release / tag | 0 / 0、衝突なし |
+| 自己参照回避 | `/releases/latest`と固定資産名を先にmainへ書き、Release公開後はmainを再変更しない |
+| 固定資産 | artifact ZIP、attestation JSON・Markdown、来歴JSON、SHA256一覧の5件 |
+| 状況ページ契約 | Release固定、固定資産名、UDC提出ではないこと、次のread-only監査を回帰検査へ追加 |
+| 全回帰 | 151件検出、151 / 151 success、終了コード0 |
+| 旧SPEC網羅 | 925トークン、説明なし欠落0 |
+| 差分 | `git diff --check` success、許可された作品①文書・状況ページ・検査・証拠だけ |
+| scope | 変更前ガード`WORK1_SCOPE_ALLOWED`、作品②入力0、参加者連絡・応募・BODIK各0 |
+| 判定 | `LOCAL_GO`。mainを一度だけcommit/pushし、同一SHAのCI・tag・Release・公開読戻しへ進む |
+
+ローカル正本は`evidence/20260813_work1_release_evidence_permalink_local_acceptance.json`。
+GitHub Release/tagは外部公開される検証証拠であり、UDC概要フォーム、本応募、BODIK登録ではない。

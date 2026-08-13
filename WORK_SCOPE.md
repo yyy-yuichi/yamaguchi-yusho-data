@@ -37,7 +37,9 @@ flowchart TD
     R1["WORK1-RELEASE-ATTESTATION-1<br/>最終公開HEADの外部証明<br/>公開・初回GO・最終受入済み"]
     R2["WORK1-RELEASE-ATTESTATION-AUDIT-1<br/>read-only監査<br/>GO・P2 3件"]
     H1["WORK1-RELEASE-EVIDENCE-HARDENING-1<br/>証拠永続化・厳格化<br/>公開・最終受入済み"]
-    H2["WORK1-RELEASE-EVIDENCE-HARDENING-AUDIT-1<br/>次のread-only監査・未着手"]
+    H2["WORK1-RELEASE-EVIDENCE-HARDENING-AUDIT-1<br/>read-only監査<br/>GO・P2 1件"]
+    P1["WORK1-RELEASE-EVIDENCE-PERMALINK-1<br/>最終HEAD証拠のRelease固定<br/>実装中"]
+    P2["WORK1-RELEASE-EVIDENCE-PERMALINK-AUDIT-1<br/>次のread-only監査・未着手"]
     C2["作品②の比較用出力<br/>作品②Chatが所有"]
     D{"比較・注力判断<br/>人が決定"}
     S["選んだ作品を応募品質まで強化"]
@@ -45,7 +47,7 @@ flowchart TD
 
     G --> W1
     G --> W2
-    W1 --> F --> L --> C1 --> A1 --> M1 --> A2 --> V1 --> V2 --> C3 --> C4 --> T1 --> T2 --> R1 --> R2 --> H1 --> H2 --> D
+    W1 --> F --> L --> C1 --> A1 --> M1 --> A2 --> V1 --> V2 --> C3 --> C4 --> T1 --> T2 --> R1 --> R2 --> H1 --> H2 --> P1 --> P2 --> D
     W2 --> C2 --> D
     D --> S --> A
 ```
@@ -87,8 +89,12 @@ flowchart TD
   Pages報告SHA不一致のfail-closed、workflow観測値と運用宣言の分離を実装した。commit
   `7b4527a`のscope lock、Pages、初回artifactはsuccess・GO。受入記録commit自身も同じ外部artifactを
   正本として検証することで最終受入とし、run IDはrepoへ再書込みしない。
-- `WORK1-RELEASE-EVIDENCE-HARDENING-AUDIT-1`: 強化後の固定HEAD・公開配信・artifactを
-  read-onlyで再監査する次段階。現在は未着手。
+- `WORK1-RELEASE-EVIDENCE-HARDENING-AUDIT-1`: 強化後の固定HEAD `618d636`、公開配信、artifactを
+  read-onlyで再監査し、P0 0件、P1 0件、P2 1件でGO。P2は90日失効と恒久的発見経路の不足である。
+- `WORK1-RELEASE-EVIDENCE-PERMALINK-1`: 最終HEAD自身のattestationを同じSHAのtagとGitHub Releaseへ
+  固定し、`/releases/latest`から永続的に発見可能にする現在段階。Release公開後はmainを再変更しない。
+- `WORK1-RELEASE-EVIDENCE-PERMALINK-AUDIT-1`: Release、tag、資産hash、公開導線をread-onlyで
+  再監査する次段階。現在は未着手。
 - 作品①の公開出力: [受賞準備スコアカード](https://yyy-yuichi.github.io/yamaguchi-yusho-data/award-comparison.html)
 - 作品①の実務出力: [市町別 交通協議前確認メモ](https://yyy-yuichi.github.io/yamaguchi-yusho-data/municipality-memo.html)
 - 応募送信、本応募、BODIK登録、作品②の変更は別の人間承認・別Chatの責任範囲である。

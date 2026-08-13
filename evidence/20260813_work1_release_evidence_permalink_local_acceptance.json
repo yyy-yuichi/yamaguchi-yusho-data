@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-RELEASE-EVIDENCE-PERMALINK-1",
+  "recorded_on": "2026-08-13",
+  "decision": "LOCAL_GO",
+  "audit_input": {
+    "head_sha": "618d6367796b26a5b206aacea983b38834393e16",
+    "decision": "GO",
+    "findings": {
+      "p0": 0,
+      "p1": 0,
+      "p2": 1
+    },
+    "p2": "The exact final attestation artifact expires after 90 days and the public project has no durable discovery path to that final run.",
+    "attestation_run_id": 31650973980,
+    "artifact_id": 9162550731,
+    "artifact_expires_at": "2026-11-10T23:27:45Z"
+  },
+  "release_contract": {
+    "repository": "yyy-yuichi/yamaguchi-yusho-data",
+    "latest_url": "https://github.com/yyy-yuichi/yamaguchi-yusho-data/releases/latest",
+    "tag_pattern": "work1-release-evidence-20260813-<subject_sha_first_12>",
+    "subject_rule": "annotated_tag_peeled_commit_equals_final_main_origin_main_and_attestation_subject",
+    "main_update_count_after_baseline": 1,
+    "main_mutation_after_release": false,
+    "assets": [
+      "work1-release-attestation.zip",
+      "attestation.json",
+      "attestation.md",
+      "release-provenance.json",
+      "SHA256SUMS.txt"
+    ],
+    "release_meaning": "public verification evidence, not a UDC entry, final submission, or BODIK registration"
+  },
+  "preflight": {
+    "existing_releases": 0,
+    "existing_remote_tags": 0,
+    "branch": "main",
+    "head_equals_origin_main": true,
+    "head_equals_remote_main": true,
+    "worktree_was_clean": true
+  },
+  "verification": {
+    "tests_discovered": 151,
+    "tests_passed": 151,
+    "tests_failed": 0,
+    "test_exit_code": 0,
+    "spec_coverage_tokens": 925,
+    "spec_unexplained_missing": 0,
+    "diff_check": "success",
+    "scope_guard_before_mutation": "WORK1_SCOPE_ALLOWED"
+  },
+  "protected_sha256": {
+    "docs/index.html": "502eb93199d3df71593dc7d220d575159a9167a2692bdec2bb8b5b4b7d7c4b49",
+    "docs/entry.html": "c89d25f9e491da49b391578929369d8c1d0b98cc18b669f0c3dfb77b9c52a95c",
+    "data/work1_award_scorecard.json": "0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021"
+  },
+  "declared_boundaries": {
+    "work2_inputs": 0,
+    "participant_contacts": 0,
+    "udc_overview_submissions": 0,
+    "udc_final_submissions": 0,
+    "bodik_registrations": 0,
+    "raw_source_changes": 0,
+    "score_changes": 0,
+    "public_top_changes": 0,
+    "entry_page_changes": 0,
+    "workflow_permission_changes": 0
+  },
+  "remaining": [
+    "commit and push main exactly once",
+    "accept scope lock, Pages, and attestation for that exact final SHA",
+    "create and publish exact-SHA tag and GitHub Release with five verified assets",
+    "read back releases/latest, asset bytes and hashes, and PC/mobile public status",
+    "define only WORK1-RELEASE-EVIDENCE-PERMALINK-AUDIT-1 as the next stage"
+  ]
+}

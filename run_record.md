@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-13 (rev.56) / 状態: WORK1-RELEASE-EVIDENCE-HARDENING-1 公開・外部artifact運用・最終受入済み / 次: WORK1-RELEASE-EVIDENCE-HARDENING-AUDIT-1 未着手
+最終更新: 2026-08-13 (rev.57) / 状態: WORK1-RELEASE-EVIDENCE-PERMALINK-1 実装中 / 次: 同一最終HEADのCI・Release固定・公開受入
 
 ## 0. このファイルについて
 
@@ -1127,3 +1127,18 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   公開6資産、PC・スマートフォンの結果は後続の外部正本として読み戻し、run IDをrepoへ再書込みしない。
 - 同段階の完了後に開始可能な次の一作業は、read-onlyの
   `WORK1-RELEASE-EVIDENCE-HARDENING-AUDIT-1`だけとする。作品②、参加者連絡、応募・登録は開始しない。
+
+### 改訂点（rev.57）
+
+- 固定HEAD `618d6367796b26a5b206aacea983b38834393e16`の強化後独立監査はGO、P0 0件、P1 0件、
+  P2 1件。P2は最終run `31650973980`のartifact `9162550731`が2026-11-10T23:27:45Zに
+  失効予定で、公開状況から最終runへ恒久的に到達できないことである。
+- `SPEC.md` rev.5.15 §27へ`WORK1-RELEASE-EVIDENCE-PERMALINK-1`を固定した。
+  リポジトリには自己参照しない`/releases/latest`と固定資産名を先に書き、mainの更新を一回にする。
+- その最終commit自身についてscope lock、Pages、release attestationを受け入れた後、同じSHAの
+  annotated tagとGitHub Releaseへartifact ZIP、JSON、Markdown、来歴JSON、SHA256一覧を固定する。
+- Release/tagは外部公開される検証証拠であり、UDC概要フォーム、本応募、BODIK登録ではない。
+  Release公開後はmainを書き換えず、`/releases/latest`と各資産を外部から読戻す。
+- 原本、GTFS ZIP、既存公開値、スコアカード、公開トップ、応募説明、作品②入力、参加者連絡、
+  応募・BODIKは変更しない。追加のworkflow権限・secret・外部連携も行わない。
+- 次段階はread-onlyの`WORK1-RELEASE-EVIDENCE-PERMALINK-AUDIT-1`だけとし、この段階では開始しない。

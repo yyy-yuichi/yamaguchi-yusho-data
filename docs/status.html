@@ -854,7 +854,8 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">作品の現在地</p>
-          <h2 id="progress-title">WORK1-RELEASE-EVIDENCE-HARDENING-1 公開・最終受入済み</h2>
+          <h2 id="progress-title">WORK1-RELEASE-EVIDENCE-PERMALINK-1 最終HEAD証拠のRelease固定</h2>
+          <p>強化後の最終HEAD <code>618d636</code>の独立監査はP0 0件・P1 0件・P2 1件でGOでした。P2は最終attestation artifactが90日で失効し、最終runへの恒久的な発見経路がないことです。この段階では、最終commit自身のCI成功後に同じSHAのtagを作り、<a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/releases/latest">最新の公開GitHub Release</a>へ<code>work1-release-attestation.zip</code>、<code>attestation.json</code>、<code>attestation.md</code>、<code>release-provenance.json</code>、<code>SHA256SUMS.txt</code>を固定します。Release/tagは検証証拠の公開であり、UDC概要フォーム、本応募、BODIK登録ではありません。自己参照を避けるため、Release公開後はこの段階のためにmainを書き換えません。</p>
           <p><a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>（初回公開commit <code>18170b2</code>）の基盤を保ったまま、固定HEAD <code>ed1f0b4</code>の独立監査はP0 0件・P1 0件・P2 3件でGOでした。<a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/31646637352">最終artifact run</a>の配布ZIP digest、全151 / 151テスト、公開3 / 3資産、6 / 6原本、保護対象3 / 3を再確認しています。前段階では初回GO artifactと最終artifactを読み戻しました。90日保存の外部artifactの失効後も検証できるよう、<a href="data/work1_release_attestation_audit.json">監査証拠JSON</a>、<a href="data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json">可読snapshot</a>、元7,446 bytesを復元する<a href="data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json.b64">Base64正本</a>をGit履歴とPagesへ固定します。以後はPages報告SHAが対象SHAと異なればNO_GOとし、workflowが観測した公開GETと、作品②入力・参加者連絡・応募・BODIK各0件という運用宣言を別構造で記録します。公開照合は6資産です。初回強化commit <code>7b4527a</code>はscope lock <code>31650244128</code>、Pages <code>31650243548</code>、attestation <a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/31650293402"><code>31650293402</code></a>がsuccessで、artifactを独立読戻ししてGO、公開6 / 6、Pages報告SHA一致、errors 0を確認しました。この受入記録を含む最終HEAD自身も同じworkflow artifactで証明し、run IDはartifactを正本としてrepoへ再書込みしません。実用度3.5・完成度4.0・挑戦度3.0・総合比較指数70.0と公開スコアカードは変更していません。</p>
         </div>
         <strong class="progress-summary">公開基盤を保持して受賞品質を継続改善</strong>
@@ -946,9 +947,19 @@
           <span class="step-title">WORK1-RELEASE-EVIDENCE-HARDENING-1: 証拠永続化・厳格化</span>
           <span class="step-state">公開・外部artifact運用・最終受入済み</span>
         </li>
-        <li class="current">
+        <li class="done">
           <span class="step-no">17</span>
           <span class="step-title">WORK1-RELEASE-EVIDENCE-HARDENING-AUDIT-1: 強化後の独立再監査</span>
+          <span class="step-state">read-only監査GO・P2 1件</span>
+        </li>
+        <li class="current">
+          <span class="step-no">18</span>
+          <span class="step-title">WORK1-RELEASE-EVIDENCE-PERMALINK-1: 最終HEAD証拠のRelease固定</span>
+          <span class="step-state">実装・同一HEADのCI・Release公開受入中</span>
+        </li>
+        <li class="todo">
+          <span class="step-no">19</span>
+          <span class="step-title">WORK1-RELEASE-EVIDENCE-PERMALINK-AUDIT-1: Release固定の独立再監査</span>
           <span class="step-state">次のread-only監査・未着手</span>
         </li>
         <li class="todo">

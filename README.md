@@ -82,7 +82,7 @@ GTFS供給比較**、**市町別の交通協議前確認メモ**までを担う�
 
 対象は山口県分 4 ファイル（上記2区分 × 市町村営・NPO等）。
 
-## 現在地（WORK1-RELEASE-EVIDENCE-HARDENING-1 公開・最終受入済み、2026-08-13時点）
+## 現在地（WORK1-RELEASE-EVIDENCE-PERMALINK-1 実装中、2026-08-13時点）
 
 このリポジトリはI-1〜I-4までの市町別ビューに、受入済みGTFS検査・供給指標を使う
 SUPPLY-VIEW-1の比較画面を追加し、RELEASE-1でGitHub Pagesへ公開した。公開URLに対する
@@ -141,6 +141,12 @@ UDC2026応募全体の終了条件（作品概要エントリー・本応募・�
   artifactはGO、151 / 151、公開6 / 6、原本6 / 6、保護3 / 3、Pages報告SHA一致、errors 0です。
   [初回公開受入記録](evidence/20260813_work1_release_evidence_hardening_public_acceptance.json)を
   反映した最終HEAD自身も同じworkflow artifactで外部証明し、run IDはartifactを正本とします。
+- **WORK1-RELEASE-EVIDENCE-HARDENING-AUDIT-1**: 最終HEAD `618d636`をread-only監査し、
+  P0 0件・P1 0件・P2 1件でGO。P2は最終artifactの90日失効と恒久的な発見経路の不足
+- **WORK1-RELEASE-EVIDENCE-PERMALINK-1**: [最新の公開Release](https://github.com/yyy-yuichi/yamaguchi-yusho-data/releases/latest)へ、
+  `work1-release-attestation.zip`、`attestation.json`、`attestation.md`、
+  `release-provenance.json`、`SHA256SUMS.txt`を固定する。Release/tagは検証証拠の公開であり、
+  UDC概要フォーム、本応募、BODIK登録ではない。最終commitのCI成功後に同じSHAへ添付し、mainは再変更しない
 
 ## 原本変更の継続確認（WORK1-FRESHNESS-1）
 

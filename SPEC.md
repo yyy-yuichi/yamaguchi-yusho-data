@@ -1,6 +1,6 @@
-# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化
+# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定
 
-**rev.5.14 / 2026-08-13**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28。消した記述はそこに全部書いてある）
+**rev.5.15 / 2026-08-13**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29。消した記述はそこに全部書いてある）
 
 UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下に `SPEC.md` として置き、Claude Code に読ませる。**
 
@@ -1128,6 +1128,14 @@ P2 3件）だった。P2は、artifactの有効期限が応募期限より約112
 不一致がNO_GO条件でないこと、workflow観測値と作業者宣言が同じscopeに混在することだった。
 WORK1-RELEASE-EVIDENCE-HARDENING-1で証拠をリポジトリ内にも永続化し、SHA不一致をfail closedにし、
 観測値と宣言を分離する。採点値、原本、公開トップ、応募説明は変えない。
+
+### 10.29 rev.5.14 → rev.5.15
+
+固定HEAD `618d6367796b26a5b206aacea983b38834393e16`の強化後監査はGO（P0 0件、P1 0件、
+P2 1件）だった。P2は、最終attestation artifactがActionsの保持期限で失効し、最終runへの
+恒久的な発見経路が公開物にないことである。WORK1-RELEASE-EVIDENCE-PERMALINK-1では、最終HEADを
+指すtagとGitHub Releaseへ同じartifact、可読JSON・Markdown、来歴JSON、SHA256一覧を固定し、
+`/releases/latest`から到達可能にする。採点値、原本、公開トップ、応募説明は変えない。
 
 ---
 
@@ -2743,6 +2751,7 @@ artifactは次を同じJSONに保持し、一つでも不一致なら`NO_GO`で�
 - Actionsへ書込み権限、secret、外部サービス連携を追加する必要が生じた
 
 ---
+---
 
 ## 26. WORK1-RELEASE-EVIDENCE-HARDENING-1
 
@@ -2797,3 +2806,53 @@ WORK1-RELEASE-ATTESTATION-AUDIT-1のGO（P0 0件、P1 0件、P2 3件）を受け
 - 原本、ZIP、スコアカード、公開トップ、応募説明を変更する必要が生じた
 - 作品②、外部参加者連絡、応募・登録を入力または操作にする必要が生じた
 - Actionsへ書込み権限、secret、外部サービス連携を追加する必要が生じた
+
+---
+
+## 27. WORK1-RELEASE-EVIDENCE-PERMALINK-1
+
+### 27.1 段階ゴール
+
+WORK1-RELEASE-EVIDENCE-HARDENING-AUDIT-1のGO（P0 0件、P1 0件、P2 1件）を受け、
+最終公開HEAD自身のattestationをGitHub Actionsの90日保持から独立させる。リポジトリには
+自己参照しない`https://github.com/yyy-yuichi/yamaguchi-yusho-data/releases/latest`だけを先に固定し、
+そのcommitのCI完了後、同じSHAのtagとGitHub Releaseへ証拠資産を添付する。
+
+### 27.2 Release契約
+
+- Releaseは公開証拠の配布場所であり、UDC概要フォーム、本応募、BODIK登録ではない。
+- tagは`work1-release-evidence-20260813-<対象SHA先頭12桁>`とし、annotated tagのpeeled commitが
+  最終`main`、`origin/main`、GitHubのdefault branch SHAと一致しなければならない。
+- GitHub Releaseはそのtagを対象にし、公開後は`/releases/latest`から到達できなければならない。
+- 固定資産名は`work1-release-attestation.zip`、`attestation.json`、`attestation.md`、
+  `release-provenance.json`、`SHA256SUMS.txt`とする。
+- `work1-release-attestation.zip`は対象SHAの成功したrelease-attestation runから取得したarchiveを
+  bytes変更せず添付する。JSON・Markdownはそのarchiveから抽出する。
+- `release-provenance.json`は対象SHA、scope lock・Pages・attestationのrun IDとURL、artifact ID、
+  全資産のbytes・SHA256、検査結果を保持する。`SHA256SUMS.txt`は自己自身を除く4資産を照合する。
+
+### 27.3 不変境界
+
+登録簿PDF、GTFS ZIP、既存公開JSON、計算値、スコアカード、公開トップ、応募説明を変更しない。
+作品②を参照せず、参加者連絡、UDC概要フォーム・本応募、BODIK登録へ進まない。workflow権限、
+secret、外部連携を追加しない。Release公開後は、この段階のために`main`を再変更しない。
+
+### 27.4 完了条件
+
+1. 専用・全151テスト、`git diff --check`、scope guard、旧SPEC網羅、保護対象不変が成功する。
+2. 永続URLと固定資産名を含む実装commitを`main`へ一度だけpushする。
+3. 同じ最終SHAのscope lock、Pages、release attestationがsuccessになり、artifactはdecision `GO`、
+   151 / 151、公開6 / 6、原本6 / 6、保護3 / 3、errors 0である。
+4. annotated tagが同じSHAを指し、draft Releaseへ5資産を揃えてhash確認後にlatestとして公開する。
+5. 未認証の公開GETで`/releases/latest`が対象Releaseへ到達し、5資産のbytesとSHA256を読戻せる。
+6. 公開状況ページをPC 1440×1600・スマートフォン390×844で確認し、横overflow、runtime/dev error、
+   壊れた画像が0件で、恒久証拠へのリンクとUDC提出ではない意味を読める。
+7. 次段階をread-onlyの`WORK1-RELEASE-EVIDENCE-PERMALINK-AUDIT-1`だけに定義し、開始しない。
+
+### 27.5 停止条件
+
+- 既存tag・Releaseとの衝突、tag peeled SHA・main・artifact対象SHAの不一致
+- Release資産のbytesまたはSHA256不一致、`/releases/latest`の別Releaseへの到達
+- scope lock、Pages、attestationの失敗、decision `NO_GO`
+- 追加権限、secret、外部連携、原本・公開値・公開トップ・応募説明の変更が必要
+- 作品②、参加者連絡、応募・登録を入力または操作にする必要が生じた
