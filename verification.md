@@ -2591,6 +2591,24 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 | 正本 | `evidence/20260813_work1_official_gtfs_coverage_extension_local_acceptance.json` |
 | 判定 | `LOCAL_GO`。実装commitをmainへpushし、CI・Pages・公開PC・スマホ受入へ進む |
 
+### 公開受入
+
+| 検証 | 結果 |
+|---|---|
+| subject | `bc10eb1596f42ddaa224e8e36786a2d3357450e9` |
+| scope lock / Pages / attestation | `31690749743` / `31690749021` / `31690803185`、全success |
+| artifact | ID `9177321319`、digest `sha256:7bb3293e11147225062700d0b640d349eb0a1d23d5c7db4cbf1d7ee7d4ab6b44` |
+| decision / errors | `GO` / 0 |
+| tests / sources / public / protected mismatches | 174 / 174、7 / 7、4 / 4、0 |
+| 公開commit bytes | HTML 4件・更新JSON 2件がHTTP 200、6 / 6でgit blob bytes一致 |
+| 公開PC | 1440×1600、4状態4ケース、状況ページ、横overflow 0、壊れた画像0 |
+| 公開smartphone | 390×844、4状態4ケース、行動カード1列、状況ページ横overflow 0、壊れた画像0 |
+| regression | 初回公開のstatus横overflow 170pxを検出し、最終HEADで0へ修正 |
+| browser error | console error 0 |
+| 境界 | 他作品入力0、他作品書込み0、参加者連絡・応募・BODIK・自動採用・非公開原本取得各0 |
+| 正本 | `evidence/20260813_work1_official_gtfs_coverage_extension_public_acceptance.json` |
+| 判定 | `GO`。次段階はread-onlyの`WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-AUDIT-1`だけ |
+
 ## WORK1-AWARD-SCORECARD-RECALIBRATION-1 ローカル検証（2026-08-13）
 
 | 検証 | 結果 |

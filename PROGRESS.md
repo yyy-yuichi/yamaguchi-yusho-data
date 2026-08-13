@@ -2621,6 +2621,17 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
 - 正本は`evidence/20260813_work1_official_gtfs_coverage_extension_local_acceptance.json`。
   次はcommit・push、同一SHAの3 workflow、公開PC・スマホ読戻し。監査はまだ開始しない。
 
+### 公開受入GO
+
+- 実装`3f4e508`後、公開読戻しで検証状況ページのスマホ横overflow 170pxを検出し、`bc10eb1`で修正。
+- 最終HEAD `bc10eb1596f42ddaa224e8e36786a2d3357450e9`のscope lock `31690749743`、Pages
+  `31690749021`、attestation `31690803185`は全success。
+- artifact `9177321319`はGO、174 / 174、原本7 / 7、公開4 / 4、保護不一致0、errors 0。
+- 公開HTML 4件・JSON 2件はHTTP 200かつcommit blob bytes一致。PC・スマホの4状態各4ケース、
+  状況ページ、横overflow 0、壊れた画像0、console error 0。スマホ行動カードは1列。
+- 正本は`evidence/20260813_work1_official_gtfs_coverage_extension_public_acceptance.json`。
+  次はread-only独立監査だけとし、まだ開始しない。
+
 ## 2026-08-13 WORK1-AWARD-SCORECARD-RECALIBRATION-1 ローカル受入
 
 - 類似サービス3件・一次資料6件と4状態別協議前ハンドオフを、公開しない内部診断へ再評価した。

@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-13 (rev.66) / 状態: WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 ローカル受入済み / 次: commit・公開受入
+最終更新: 2026-08-13 (rev.66) / 状態: WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公開受入GO / 次: read-only独立監査
 
 ## 0. このファイルについて
 
@@ -1288,3 +1288,10 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   コードと出典注記へ折返し規則を追加し、390×844のローカル再確認で横overflow 0へ修正した。
 - 公開受入後の次段階はread-onlyの`WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-AUDIT-1`だけとし、
   この段階では開始しない。作品②を入力にせず、書込み0、参加者連絡・応募・BODIK登録各0。
+- 修正後HEAD `bc10eb1596f42ddaa224e8e36786a2d3357450e9`のscope lock `31690749743`、Pages
+  `31690749021`、release attestation `31690803185`は全success。artifact `9177321319`を
+  読戻し、GO、174 / 174、原本7 / 7、公開4 / 4、保護不一致0、errors 0を確認した。
+- 公開HTML 4件・更新JSON 2件はHTTP 200かつcommit blob bytes一致。PC 1440×1600・スマホ
+  390×844で4状態各4ケース、検証状況、横overflow・壊れた画像・console error各0を再確認した。
+- 公開正本は`evidence/20260813_work1_official_gtfs_coverage_extension_public_acceptance.json`。
+  この正本を含む最終記録commit自身も同じ3 workflowで再確認し、後続run IDはrepoへ書き戻さない。
