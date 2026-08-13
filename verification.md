@@ -2564,6 +2564,32 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 この受入記録を含む最終HEAD自身をscope lock、Pages、release attestationで再確認し、後続run IDは
 外部正本としてrepoへ再書込みしない。
 
+## WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 ローカル検証（2026-08-13）
+
+| 検証 | 結果 |
+|---|---|
+| 基準HEAD | `a00d2351d41a5f3c9f2db96405effc6cdd3b79f6` |
+| 人間ゲート | JRバス中国ZIP 1件の手動受入と19市町4状態更新を明示承認済み |
+| JRバス中国ZIP | 1,863,715 bytes、SHA256 `9162224158a8a748d0365e850f2c0575c845a98063b7a469912c0a15b9201620` |
+| ZIP安全性 | 23エントリ、展開後10,776,609 bytes、危険パス0、暗号化0、CRC異常0 |
+| GTFS期間・関係路線 | 2026-08-13〜2027-02-13、山口県関係4路線IDを固定検証 |
+| 公式記録 | 8フィード、19市町すべてに根拠フィードIDあり |
+| 4状態 | 公開取得可能7、認証必要2、一般配布なし9、現在取得不能1 |
+| 実鮮度照合 | 7原本中`unchanged` 5、`unavailable/tls_error` 2、`changed` 0、終了コード2 |
+| 自動採用 | 原本・派生値・公開値の自動更新0。認証・非公開・取得不能原本の取得0 |
+| 供給指標 | 既存2フィードJSONを再生成し基準HEADとバイト一致。JRバス中国は混在させない |
+| 専用回帰 | 5 / 5 success |
+| 全回帰 | 174件検出、174 / 174 success、終了コード0 |
+| 旧SPEC網羅 | 1,000トークン、欠落0、説明なし0 |
+| 差分・scope | `git diff --check` success、`WORK1_SCOPE_ALLOWED`、JSON 7件構文合格 |
+| 不変対象 | 4 PDF、既存2 GTFS ZIP、供給指標、内部スコアカード、応募説明は基準HEADと一致 |
+| ローカルPC | 1440×1600、4状態4ケース一致、横overflow 0、壊れた画像0 |
+| ローカルsmartphone | 390×844、4状態4ケース一致、行動カード1列、横overflow 0、壊れた画像0 |
+| browser error | console error 0 |
+| 境界 | 作品②を入力にせず書込み0、参加者連絡・UDC応募・BODIK・非公開原本取得各0 |
+| 正本 | `evidence/20260813_work1_official_gtfs_coverage_extension_local_acceptance.json` |
+| 判定 | `LOCAL_GO`。実装commitをmainへpushし、CI・Pages・公開PC・スマホ受入へ進む |
+
 ## WORK1-AWARD-SCORECARD-RECALIBRATION-1 ローカル検証（2026-08-13）
 
 | 検証 | 結果 |

@@ -78,7 +78,7 @@ class TaskMemoPageTest(unittest.TestCase):
 
     def test_states_and_limits_do_not_claim_absence_or_rank(self):
         for required in (
-            "確認範囲では未確認", "不存在を意味しません", "0件をサービス不存在と解釈しない",
+            "一般向け配布先は確認できていません", "不存在を意味しません", "0件をサービス不存在と解釈しない",
             "市町値を足して県計にしない", "値を推定せず", "利便性の順位ではありません",
         ):
             self.assertIn(required, self.html)
@@ -137,17 +137,17 @@ class TaskMemoDataContractTest(unittest.TestCase):
         metric_names = {row["municipality"] for row in self.metrics}
 
         self.assertGreater(supply_by_name["下関市"]["operator_count"], 0)
-        self.assertEqual(gtfs_by_name["下関市"]["availability_status"], "not_confirmed_in_checked_sources")
+        self.assertEqual(gtfs_by_name["下関市"]["availability_status"], "not_publicly_distributed")
         self.assertEqual(supply_by_name["宇部市"]["operator_count"], 0)
-        self.assertEqual(gtfs_by_name["宇部市"]["availability_status"], "confirmed")
+        self.assertEqual(gtfs_by_name["宇部市"]["availability_status"], "authentication_required")
         self.assertNotIn("宇部市", metric_names)
         self.assertGreater(supply_by_name["岩国市"]["operator_count"], 0)
-        self.assertEqual(gtfs_by_name["岩国市"]["availability_status"], "confirmed")
+        self.assertEqual(gtfs_by_name["岩国市"]["availability_status"], "public_download_confirmed")
         self.assertIn("岩国市", metric_names)
 
         shunan = gtfs_by_name["周南市"]
-        self.assertEqual(shunan["availability_status"], "confirmed")
-        self.assertEqual(shunan["feed_ids"], "hikari-gtfs")
+        self.assertEqual(shunan["availability_status"], "public_download_confirmed")
+        self.assertEqual(shunan["feed_ids"].split(";")[0], "hikari-gtfs")
         self.assertNotIn("周南市", metric_names, "実測レコードを市町別に複製してはいけない")
         self.assertIn("hikari-gtfs", {row["feed_id"] for row in self.metrics})
 

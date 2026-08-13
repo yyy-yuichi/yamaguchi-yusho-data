@@ -853,13 +853,13 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">作品の現在地</p>
-          <h2 id="progress-title">WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ</h2>
-          <p>類似サービス比較の独立監査は固定HEAD <code>0aeff8f</code>についてGO（P0 0件・P1 0件・P2 3件）でした。比較で分けた「探す・可視化する・計画を分析する」工程へ、<a href="municipality-memo.html">市町別の確認結果</a>を安全に渡す条件を実装し、公開・最終受入を終えました。</p>
-          <p>選択市町を、登録簿記録あり/0件とGTFS確認済み/確認範囲では未確認の4状態に分け、共有する事実、次の確認、分析へ渡す条件を一枚に表示します。測定済み指標の有無も別に示します。</p>
-          <p><a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>の既存機能と数値は維持します。0件・未確認を不存在とせず、外部サービスへの自動送信・原本の自動採用は行いません。UDC概要フォーム、本応募、BODIK登録、参加者連絡はこの段階に含みません。</p>
+          <h2 id="progress-title">WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況の拡張</h2>
+          <p>未確認だった13市町を公式一次情報から再調査し、全19市町を「公開取得可能・認証が必要・存在確認済みで一般配布なし・公式記録ありで現在取得不能」の4状態に更新しました。</p>
+          <p>JRバス中国の公式GTFS ZIP 1件を人間承認後に手動受入し、SHA256・ZIP安全性・GTFS構造を検査しました。非公開・認証必要・404の原本は取得も推定もしていません。</p>
+          <p><a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>の市町別ビューと<a href="municipality-memo.html">協議前確認メモ</a>は、4状態ごとに次の確認を変えます。これは県内交通の完全収録や市町の優劣を示す評価ではありません。</p>
           <p>初回公開commit <code>18170b2</code>からの検証履歴と初回GO artifactは維持しています。全151 / 151テスト、90日保存の外部artifactを補う<a href="data/work1_release_attestation_audit.json">監査証拠JSON</a>、<a href="data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json">可読snapshot</a>、<a href="data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json.b64">Base64正本</a>と、<code>work1-release-attestation.zip</code>、<code>release-provenance.json</code>、<code>SHA256SUMS.txt</code>を固定した<a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/releases/latest">公開GitHub Release</a>から検証できます。Release/tagは検証証拠の公開であり、応募手続ではありません。自動の公開照合は4資産です。</p>
         </div>
-        <strong class="progress-summary">公開基盤を保持して受賞品質を継続改善</strong>
+        <strong class="progress-summary">19市町すべてのGTFSアクセス状態を根拠付きで区分</strong>
       </div>
 
       <div class="overall-bar" role="img" aria-label="受け入れ済み公開基盤の上で、独立監査と次の改善を反復中">
@@ -1107,35 +1107,45 @@
     <section aria-labelledby="gtfs-title">
       <div class="section-head">
         <div>
-          <p class="eyebrow">I-4 受入済み</p>
+          <p class="eyebrow">WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1</p>
           <h2 id="gtfs-title">公式GTFS/GTFS-JPの確認状況</h2>
-          <p>山口県オープンデータカタログサイトと公共交通オープンデータセンター（ODPT）など、公式一次資料を確認した結果です（確認日 2026-08-09）。登録簿の団体・車両数（上記I-1・I-2の集計）とは別の集計であり、混同していません。</p>
+          <p>自治体、交通事業者、公式配布ポータルの一次資料を再確認した結果です（確認日 2026-08-13）。登録簿の団体・車両数（上記I-1・I-2の集計）とは別の集計であり、混同していません。</p>
         </div>
       </div>
 
       <div class="metrics" aria-label="GTFS/GTFS-JP確認状況の主要数値">
         <div class="metric complete">
-          <span class="label">公式フィード</span>
-          <strong class="metric-number">3</strong>
-          <span class="metric-caption">件（岩国市・光市・船木鉄道株式会社）</span>
+          <span class="label">公式GTFS記録</span>
+          <strong class="metric-number">8件</strong>
+          <span class="metric-caption">公開・認証・非公開・利用不能を区別</span>
         </div>
         <div class="metric complete">
-          <span class="label">対象市町名を確認</span>
-          <strong class="metric-number">5 / 19</strong>
-          <span class="metric-caption">市町（岩国市・光市・宇部市・美祢市・山陽小野田市）</span>
+          <span class="label">公開取得可能</span>
+          <strong class="metric-number">7 / 19</strong>
+          <span class="metric-caption">市町</span>
         </div>
         <div class="metric">
-          <span class="label">今回確認した範囲では未確認</span>
-          <strong class="metric-number">14 / 19</strong>
+          <span class="label">認証が必要</span>
+          <strong class="metric-number">2 / 19</strong>
           <span class="metric-caption">市町</span>
+        </div>
+        <div class="metric">
+          <span class="label">一般配布なし</span>
+          <strong class="metric-number">9 / 19</strong>
+          <span class="metric-caption">存在確認済みの市町</span>
+        </div>
+        <div class="metric">
+          <span class="label">現在取得不能</span>
+          <strong class="metric-number">1 / 19</strong>
+          <span class="metric-caption">公式配布記録あり</span>
         </div>
       </div>
 
-      <p class="lead">「5 / 19」は、今回確認した公式資料に対象市町名の記載があった市町数です。交通の充足度や達成度を測る指標ではなく、市町どうしの優劣や順位を示すものでもありません。認証不要の岩国市・光市の公式2 ZIPは取得・検査済みですが、船木鉄道は認証が必要なため本体を取得していません。</p>
+      <p class="lead">受入済み原本は岩国市・光市・JRバス中国の公式3 ZIPです。JRバス中国は山口市・萩市・防府市・美祢市との関係を確認しましたが、フィード全18路線の数値を各市内の供給量としては表示しません。船木鉄道は認証が必要なため本体未取得です。</p>
 
-      <div class="note">残り14 / 19市町は「今回確認した公式資料の範囲では未確認」であり、これらの市町にGTFS/GTFS-JPが存在しないと断定するものではありません。全市町・全事業者のサイトを網羅的に確認したものでもありません。</div>
+      <div class="note">4状態はGTFSへのアクセス条件です。交通サービスの有無、利便性、整備達成度、県内全事業者・全路線の網羅を示しません。一般配布なし・認証必要・現在取得不能の原本を、存在する公開値のように補完していません。</div>
 
-      <p class="source-note">公開データ: <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a>。市町別の詳細は<a href="index.html?v=20260811">市町別の登録供給ビュー</a>で市町を選ぶと確認できます。根拠: SPEC.md §12・§14・§16、evidence/20260809_gtfs_*、verification.md</p>
+      <p class="source-note">公開データ: <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a>。市町別の詳細は<a href="index.html?v=20260813">市町別の登録供給ビュー</a>で確認できます。根拠: evidence/20260813_work1_official_gtfs_coverage_extension_research.json、SPEC.md、verification.md</p>
     </section>
 
     <section aria-labelledby="check-title">
@@ -1241,7 +1251,7 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">この作業の区切り</p>
-          <h2 id="next-title">公開基盤は受入済み、受賞品質の改善は継続</h2>
+          <h2 id="next-title">公開基盤を保持して受賞品質を継続改善</h2>
           <p><a href="entry.html">応募説明ページ</a>、公開デモ、コード、データ、確認メモ、原本照合、類似サービス比較は公開済みです。ここを完成の終点とはせず、比較、独立監査、自力実行可能な改善を一段階ずつ反復します。内部診断は公開リポジトリ内の開発資料として使い、外部提出と参加者連絡は別途本人が判断する独立した人間承認ゲートです。</p>
         </div>
       </div>
@@ -1297,8 +1307,8 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">WORK1-FRESHNESS-1 / 継続確認</p>
-          <h2 id="freshness-title">受入済み6原本の差異を、公開値を変えずに検知</h2>
-          <p>4登録簿PDFと2 GTFS ZIPを受入済みbytes・SHA256と公式配布の双方へ照合します。差異や取得不能を検出しても、原本・派生データ・公開値は<strong>自動更新しません</strong>。</p>
+          <h2 id="freshness-title">受入済み7原本の差異を、公開値を変えずに検知</h2>
+          <p>4登録簿PDFと3 GTFS ZIPを受入済みbytes・SHA256と公式配布の双方へ照合します。差異や取得不能を検出しても、原本・派生データ・公開値は<strong>自動更新しません</strong>。</p>
         </div>
       </div>
 
@@ -1408,18 +1418,19 @@
     <section aria-labelledby="gtfs-coverage-title">
       <div class="section-head">
         <div>
-          <p class="eyebrow">WORK1-GTFS-COVERAGE-2 / 公開・最終受入済み</p>
-          <h2 id="gtfs-coverage-title">公式資料の再探索と、周南市への関連範囲訂正</h2>
-          <p>2026-08-12に未確認14市町の公式カタログ、ODPT、既知公式ページを再確認しました。新規採用可能なGTFS ZIPは0件でしたが、受入済み光市GTFSの「広域生活交通」に周南市内停留所が含まれることを確認しました。</p>
+          <p class="eyebrow">WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1</p>
+          <h2 id="gtfs-coverage-title">未確認13市町を、公式根拠のあるアクセス状態へ更新</h2>
+          <p>公式カタログだけでなく、自治体計画、事業者の運行地域、公式配布ポータルを照合しました。発見した原本と公開値は、人間承認後にだけ採用しています。</p>
         </div>
       </div>
       <ul class="next-list">
-        <li><strong>受入済みZIPは2件ともunchanged</strong><p>岩国市・光市の公式配布バイトを再取得し、サイズとSHA-256が受入済みZIPに一致しました。原本の置換・自動採用は行っていません。</p></li>
-        <li><strong>周南市内31乗降停留所ID・17停留所名</strong><p>光市GTFSの路線7は94乗降停留所IDを持ち、国土地理院逆ジオコードでは光市63、周南市31でした。周南市は公開主体ではなく、同フィードに関連する市町として記録します。</p></li>
-        <li><strong>確認6・未確認13</strong><p>6 / 19は公式資料または受入済みGTFS本体から関連を確認できた市町数です。整備の達成度、交通の到達範囲、順位を表す数ではありません。残る13 / 19市町は今回確認した公式資料の範囲では未確認です。</p></li>
-        <li><strong>実測は2フィードのまま</strong><p>周南市メモから光市フィード全体値を参照できますが、周南市内だけの値へ分割・推計せず、市内の全事業者・全路線を網羅するとも表示しません。</p></li>
+        <li><strong>JRバス中国ZIPを手動受入</strong><p>1,863,715バイト、SHA256 <code>9162224158a8a748d0365e850f2c0575c845a98063b7a469912c0a15b9201620</code>。23ファイル、危険パス0、暗号化0、CRC異常0を確認しました。</p></li>
+        <li><strong>公開取得可能 7 / 19</strong><p>岩国市・光市・周南市・山口市・萩市・防府市・美祢市。公開原本との関係確認であり、市内全交通の網羅値ではありません。</p></li>
+        <li><strong>認証2・一般配布なし9・現在取得不能1</strong><p>本体を取得できない理由を区別しました。非公開値や過去原本は補完せず、次に誰へ何を確認するかを協議前メモへ表示します。</p></li>
+        <li><strong>供給比較は検証済み2フィードのまま</strong><p>JRバス中国は県外を含む全18路線のフィードなので、既存の岩国市・光市比較へ混在させて市町値と誤認させません。</p></li>
+        <li><strong>専用5 / 5・全174 / 174テスト成功</strong><p>JRバス中国ZIPの同一性・安全性、19市町の4状態、既存供給指標JSONのバイト一致、7原本の変更検知を回帰検証しています。</p></li>
       </ul>
-      <p class="source-note">根拠: SPEC.md §22、data/municipality_gtfs.json、evidence/20260812_work1_gtfs_coverage_*.json、verification.md。</p>
+      <p class="source-note">根拠: data/municipality_gtfs.json、data/gtfs_feeds.json、evidence/20260813_work1_official_gtfs_coverage_extension_research.json、verification.md。</p>
     </section>
 
     <section class="sources" aria-labelledby="source-title">
@@ -1433,7 +1444,7 @@
         <li>括弧付き台数の扱い: 国自旅第317号「<a href="https://www.mlit.go.jp/jidosha/content/001766049.pdf">福祉有償運送の登録に関する処理方針について</a>」2.(2)⑦</li>
         <li>交通空白地の車種区分: 国自旅第316号「<a href="https://www.mlit.go.jp/jidosha/content/001766048.pdf">交通空白地有償運送の登録に関する処理方針について</a>」2.(2)⑦</li>
         <li>山口県の市町数: 出典: 山口県「市町｜関連リンク」 <a href="https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html">https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html</a></li>
-        <li>GTFS/GTFS-JP確認: <a href="https://yamaguchi-opendata.jp/">山口県オープンデータカタログサイト</a>、公共交通オープンデータセンター「<a href="https://ckan.odpt.org/organization/sentetsu_bus">船木鉄道株式会社</a>」（再確認日2026-08-12）</li>
+        <li>GTFS/GTFS-JP確認: <a href="https://yamaguchi-opendata.jp/">山口県オープンデータカタログサイト</a>、<a href="https://www.bus-kyo.or.jp/gtfs-open-data">広島県バス協会GTFSオープンデータサイト</a>、<a href="https://www.city.yamaguchi.lg.jp/uploaded/attachment/116769.pdf">山口市公式資料</a>、<a href="https://www.bochobus.co.jp/pages/110/">防長交通事業所案内</a>（再確認日2026-08-13）</li>
         <li>国土交通省公開物の利用条件: <a href="https://www.mlit.go.jp/link.html">国土交通省ウェブサイト利用ルール</a>（PDL1.0準拠）。加工内容は公開アプリ内に明記</li>
         <li>このリポジトリの派生データ: CC BY 4.0。国土交通省の原資料自体をこのライセンスへ変更するものではない</li>
       </ul>

@@ -87,18 +87,22 @@ class MunicipalCoveragePublicationTest(unittest.TestCase):
         for name in ("gtfs_feeds.json", "municipality_gtfs.json", "gtfs_supply_metrics.json"):
             self.assertEqual((DATA_DIR / name).read_bytes(), (DOCS_DATA_DIR / name).read_bytes(), name)
 
-    def test_six_confirmed_thirteen_not_confirmed_and_shunan_relation(self):
+    def test_four_access_states_and_shunan_relation(self):
         rows = read_json(DATA_DIR / "municipality_gtfs.json")
         counts = {}
         for row in rows:
             counts[row["availability_status"]] = counts.get(row["availability_status"], 0) + 1
-        self.assertEqual(counts, {"confirmed": 6, "not_confirmed_in_checked_sources": 13})
+        self.assertEqual(counts, {
+            "public_download_confirmed": 7,
+            "authentication_required": 2,
+            "not_publicly_distributed": 9,
+            "official_resource_unavailable": 1,
+        })
         shunan = next(row for row in rows if row["municipality"] == "周南市")
         self.assertEqual(shunan["municipality_code"], "352152")
-        self.assertEqual(shunan["feed_ids"], "hikari-gtfs")
-        self.assertIn("31件", shunan["scope_note"])
-        self.assertIn("17停留所名", shunan["scope_note"])
-        self.assertIn("全事業者・全路線を網羅するとは確認していない", shunan["scope_note"])
+        self.assertEqual(shunan["feed_ids"].split(";")[0], "hikari-gtfs")
+        self.assertIn("路線7", shunan["scope_note"])
+        self.assertIn("一般配布なし", shunan["scope_note"])
 
     def test_metrics_remain_two_feed_records_not_municipality_duplicates(self):
         metrics = read_json(DATA_DIR / "gtfs_supply_metrics.json")

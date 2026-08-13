@@ -2603,6 +2603,22 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   現行4 URLは200、削除3 URLは404。公開HTMLに旧スコアリンクは0件。
 - この記録を含む最終HEAD自身を同じ3 workflowで外部再確認する。次段階はread-only監査だけ。
 
+## 2026-08-13 WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 ローカル受入
+
+- 固定HEAD `a00d2351d41a5f3c9f2db96405effc6cdd3b79f6`から、未確認13市町を公式一次資料で再調査した。
+- ユーザー承認後、JRバス中国公式ZIP 1件を手動受入した。1,863,715 bytes、SHA256
+  `9162224158a8a748d0365e850f2c0575c845a98063b7a469912c0a15b9201620`、ZIP安全性とCRCは合格。
+- 公式フィード記録8件、19市町のアクセス状態は公開7、認証2、一般配布なし9、現在取得不能1。
+  非公開・認証・取得不能の本体や値は補完していない。
+- 原本変更検知を4 PDF・3 GTFS ZIPの7件へ拡張。実照合は5件`unchanged`、岩国・光の2 ZIPが
+  `unavailable/tls_error`、`changed` 0。公開値の自動更新は0。
+- 既存2フィードの輸送供給指標はバイト一致。JRバス中国の広域18路線を市町別供給比較へ混ぜていない。
+- 専用5 / 5、全174 / 174、旧SPEC 1,000トークン欠落0、scope・差分・JSON検査はsuccess。
+- ローカルPC 1440×1600・スマートフォン390×844で山口・宇部・下関・和木の4状態を確認。
+  全ケースで状態一致、横overflow 0、壊れた画像0、console error 0。スマホの行動カードは1列。
+- 正本は`evidence/20260813_work1_official_gtfs_coverage_extension_local_acceptance.json`。
+  次はcommit・push、同一SHAの3 workflow、公開PC・スマホ読戻し。監査はまだ開始しない。
+
 ## 2026-08-13 WORK1-AWARD-SCORECARD-RECALIBRATION-1 ローカル受入
 
 - 類似サービス3件・一次資料6件と4状態別協議前ハンドオフを、公開しない内部診断へ再評価した。

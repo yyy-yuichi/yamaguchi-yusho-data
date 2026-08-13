@@ -54,7 +54,7 @@ class ReleaseAttestationContractTest(unittest.TestCase):
             record["upstream_pages"]["subject_linkage"],
         )
         self.assertEqual(151, record["verification"]["tests"]["passed"])
-        self.assertEqual(6, record["verification"]["accepted_source_count"])
+        self.assertEqual(7, record["verification"]["accepted_source_count"])
         self.assertTrue(
             all(item["baseline_match"] for item in record["verification"]["accepted_sources"])
         )

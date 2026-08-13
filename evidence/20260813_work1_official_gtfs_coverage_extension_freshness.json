@@ -1,6 +1,16 @@
 {
-  "schema_version": "WORK1-FRESHNESS-1",
-  "expected_source_count": 7,
+  "schema_version": "WORK1-FRESHNESS-1-result-v1",
+  "checked_at": "2026-08-13T10:04:34Z",
+  "baseline_mode": "read_only_no_automatic_adoption",
+  "source_count": 7,
+  "summary": {
+    "unchanged": 5,
+    "changed": 0,
+    "unavailable": 2,
+    "oversize": 0,
+    "invalid_baseline": 0
+  },
+  "exit_code": 2,
   "sources": [
     {
       "source_id": "mlit-registry-000230003",
@@ -9,8 +19,11 @@
       "local_path": "raw/000230003.pdf",
       "baseline_sha256": "d215cada64ce8d174ec22cb521379734da185b7616f29b27166dfccf701af1ab",
       "baseline_bytes": 19003,
-      "baseline_acquired_at": "2026-08-09",
-      "max_download_bytes": 5242880
+      "status": "unchanged",
+      "fetched_sha256": "d215cada64ce8d174ec22cb521379734da185b7616f29b27166dfccf701af1ab",
+      "fetched_bytes": 19003,
+      "error_category": null,
+      "http_status": null
     },
     {
       "source_id": "mlit-registry-000268896",
@@ -19,8 +32,11 @@
       "local_path": "raw/000268896.pdf",
       "baseline_sha256": "ece80864a99fc392dec0c279fe92f3609a43c11ce32178ced0cd60839c9b6177",
       "baseline_bytes": 149313,
-      "baseline_acquired_at": "2026-08-09",
-      "max_download_bytes": 5242880
+      "status": "unchanged",
+      "fetched_sha256": "ece80864a99fc392dec0c279fe92f3609a43c11ce32178ced0cd60839c9b6177",
+      "fetched_bytes": 149313,
+      "error_category": null,
+      "http_status": null
     },
     {
       "source_id": "mlit-registry-000271730",
@@ -29,8 +45,11 @@
       "local_path": "raw/000271730.pdf",
       "baseline_sha256": "86b3e32f3d3017cba613d644102f262a0a0cb2761925718ce9eea12e71a9add1",
       "baseline_bytes": 136476,
-      "baseline_acquired_at": "2026-08-07",
-      "max_download_bytes": 5242880
+      "status": "unchanged",
+      "fetched_sha256": "86b3e32f3d3017cba613d644102f262a0a0cb2761925718ce9eea12e71a9add1",
+      "fetched_bytes": 136476,
+      "error_category": null,
+      "http_status": null
     },
     {
       "source_id": "mlit-registry-000359215",
@@ -39,8 +58,11 @@
       "local_path": "raw/000359215.pdf",
       "baseline_sha256": "3107e8555aefe86527d482422977c050b4514cb06b0f077187cdec4f38a2c66b",
       "baseline_bytes": 393922,
-      "baseline_acquired_at": "2026-08-09",
-      "max_download_bytes": 5242880
+      "status": "unchanged",
+      "fetched_sha256": "3107e8555aefe86527d482422977c050b4514cb06b0f077187cdec4f38a2c66b",
+      "fetched_bytes": 393922,
+      "error_category": null,
+      "http_status": null
     },
     {
       "source_id": "iwakuni-gtfsjp",
@@ -49,8 +71,11 @@
       "local_path": "raw/gtfs/iwakuni_gtfsjp_20260401.zip",
       "baseline_sha256": "d236a58ff4a0edb4812a8bed543d4897670441164a1019e88d5e35ded5052de2",
       "baseline_bytes": 719723,
-      "baseline_acquired_at": "2026-08-10",
-      "max_download_bytes": 10485760
+      "status": "unavailable",
+      "fetched_sha256": null,
+      "fetched_bytes": null,
+      "error_category": "tls_error",
+      "http_status": null
     },
     {
       "source_id": "hikari-gtfs",
@@ -59,8 +84,11 @@
       "local_path": "raw/gtfs/hikari_gtfs_20260401.zip",
       "baseline_sha256": "f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7",
       "baseline_bytes": 86273,
-      "baseline_acquired_at": "2026-08-10",
-      "max_download_bytes": 10485760
+      "status": "unavailable",
+      "fetched_sha256": null,
+      "fetched_bytes": null,
+      "error_category": "tls_error",
+      "http_status": null
     },
     {
       "source_id": "jrbus-chugoku-gtfs",
@@ -69,8 +97,11 @@
       "local_path": "raw/gtfs/jrbus_chugoku_gtfs_20260813.zip",
       "baseline_sha256": "9162224158a8a748d0365e850f2c0575c845a98063b7a469912c0a15b9201620",
       "baseline_bytes": 1863715,
-      "baseline_acquired_at": "2026-08-13",
-      "max_download_bytes": 20971520
+      "status": "unchanged",
+      "fetched_sha256": "9162224158a8a748d0365e850f2c0575c845a98063b7a469912c0a15b9201620",
+      "fetched_bytes": 1863715,
+      "error_category": null,
+      "http_status": null
     }
   ]
 }

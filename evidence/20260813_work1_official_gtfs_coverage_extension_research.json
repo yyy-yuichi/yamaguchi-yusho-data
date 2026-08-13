@@ -1,0 +1,155 @@
+{
+  "stage_id": "WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1",
+  "research_completed_at": "2026-08-13T18:44:00+09:00",
+  "baseline_head": "a00d2351d41a5f3c9f2db96405effc6cdd3b79f6",
+  "authority": {
+    "adoption_approved_by_user": true,
+    "approved_change": "JRバス中国ZIP 1件の手動受入と、19市町を4状態へ更新",
+    "automatic_source_adoption": false
+  },
+  "classification_vocabulary": {
+    "public_download_confirmed": "公式配布元から認証なしで取得できる原本を確認",
+    "authentication_required": "公式配布はあるが認証が必要で原本未取得",
+    "not_publicly_distributed": "公式資料でGTFSの存在を確認したが一般向け配布先なし",
+    "official_resource_unavailable": "公式配布記録はあるが現在の原本URLは利用不能"
+  },
+  "official_source_checks": [
+    {
+      "source_id": "yamaguchi-city-gtfs-status",
+      "url": "https://www.city.yamaguchi.lg.jp/uploaded/attachment/116769.pdf",
+      "http_status": 200,
+      "finding": "2025年10月から防長交通の静的GTFS-JPが利用可能。JRバス中国は公開、防長交通は非公開。"
+    },
+    {
+      "source_id": "hiroshima-bus-association-gtfs",
+      "url": "https://www.bus-kyo.or.jp/gtfs-open-data",
+      "http_status": 200,
+      "finding": "JRバス中国の現在データZIPを公開し、提供条件をCC0としている。"
+    },
+    {
+      "source_id": "jrbus-current-data",
+      "url": "https://ajt-mobusta-gtfs.mcapps.jp/static/15/current_data.zip",
+      "http_status": 200,
+      "content_type": "application/zip",
+      "size_bytes": 1863715
+    },
+    {
+      "source_id": "bocho-operating-areas",
+      "url": "https://www.bochobus.co.jp/pages/110/",
+      "http_status": 200,
+      "finding": "公式営業所案内から柳井・平生・田布施・上関・周防大島、周南・下松・光、防府・山口、山口・美祢、萩・長門・阿武を対応付けた。"
+    },
+    {
+      "source_id": "shimonoseki-current-plan",
+      "url": "https://www.city.shimonoseki.lg.jp/uploaded/attachment/88084.pdf",
+      "http_status": 200,
+      "finding": "市公式計画がサンデン交通GTFS（R6.3時点）とブルーライン交通GTFS（R6.4時点）を資料として使用。"
+    },
+    {
+      "source_id": "shimonoseki-plan-sources",
+      "url": "https://www.city.shimonoseki.lg.jp/uploaded/attachment/88088.pdf",
+      "http_status": 200,
+      "finding": "市公式計画の出典表記で両事業者のGTFSを再確認。一般向け公式配布URLは確認できなかった。"
+    },
+    {
+      "source_id": "waki-historical-dataset",
+      "url": "https://hiroshima-opendata.dataeye.jp/datasets/1242",
+      "http_status": 200,
+      "finding": "和木町コミュニティバスGTFS-JPの公式データセット記録が残る。"
+    },
+    {
+      "source_id": "waki-historical-resource",
+      "url": "https://hiroshima-opendata.dataeye.jp/resources/9835",
+      "http_status": 200,
+      "finding": "GTFS.zipの公式リソース記録とPDL1.0表記が残る。"
+    },
+    {
+      "source_id": "waki-zip-current-check",
+      "url": "https://yamaguchi-opendata.jp/ckan/dataset/366cff59-5ba5-4a54-9d9f-5312172f1b83/resource/c2b5f413-de36-44bf-bcd8-e91848b35640/download/gtfs20210922.zip",
+      "http_status": 404,
+      "finding": "原本は採用していない。"
+    },
+    {
+      "source_id": "gtfs-data-jp-pref-35",
+      "url": "https://api.gtfs-data.jp/v2/feeds?pref=35",
+      "http_status": 200,
+      "response_bytes": 42,
+      "finding": "現在の都道府県35検索では公開フィードを追加発見できなかった。"
+    },
+    {
+      "source_id": "yamaguchi-open-data-catalog",
+      "url": "https://yamaguchi-opendata.jp/ckan/api/3/action/package_search?rows=1000",
+      "http_status": 200,
+      "package_count": 770,
+      "finding": "2026-08-13再走査。既存の岩国・光以外に現在取得可能なGTFS ZIPを追加発見できなかった。"
+    }
+  ],
+  "accepted_jrbus_zip": {
+    "local_path": "raw/gtfs/jrbus_chugoku_gtfs_20260813.zip",
+    "size_bytes": 1863715,
+    "sha256": "9162224158a8a748d0365e850f2c0575c845a98063b7a469912c0a15b9201620",
+    "zip_entry_count": 23,
+    "zip_uncompressed_bytes": 10776609,
+    "zip_crc_ok": true,
+    "unsafe_member_count": 0,
+    "encrypted_member_count": 0,
+    "core_counts": {
+      "agency.txt": 1,
+      "stops.txt": 891,
+      "routes.txt": 18,
+      "trips.txt": 1113,
+      "stop_times.txt": 35515
+    },
+    "feed_info": {
+      "feed_start_date": "20260813",
+      "feed_end_date": "20270213",
+      "feed_version": "20260813"
+    },
+    "yamaguchi_related_routes": [
+      {"route_id": "2229846746", "route_long_name": "防長線"},
+      {"route_id": "435934628", "route_long_name": "新山口駅～東萩駅線（スーパーはぎ号）"},
+      {"route_id": "2196404353", "route_long_name": "秋吉線"},
+      {"route_id": "3240589115", "route_long_name": "秋芳洞循環バス"}
+    ],
+    "municipality_reverse_geocode": {
+      "service": "国土地理院 位置参照情報API",
+      "endpoint": "https://mreversegeocoder.gsi.go.jp/reverse-geocoder/LonLatToAddress",
+      "unique_coordinate_queries": 264,
+      "successful_queries": 264,
+      "stop_record_total": 265,
+      "results": [
+        {"municipality_code": "35203", "municipality": "山口市", "stop_records": 127, "unique_stop_names": 60},
+        {"municipality_code": "35204", "municipality": "萩市", "stop_records": 75, "unique_stop_names": 34},
+        {"municipality_code": "35206", "municipality": "防府市", "stop_records": 20, "unique_stop_names": 10},
+        {"municipality_code": "35213", "municipality": "美祢市", "stop_records": 43, "unique_stop_names": 21}
+      ],
+      "limitation": "逆ジオコーダ結果は市町関係の確認にのみ使用し、市内供給量・完全性・優劣を表さない。"
+    }
+  },
+  "former_unconfirmed_municipality_outcomes": [
+    {"municipality": "下関市", "status": "not_publicly_distributed"},
+    {"municipality": "山口市", "status": "public_download_confirmed"},
+    {"municipality": "萩市", "status": "public_download_confirmed"},
+    {"municipality": "防府市", "status": "public_download_confirmed"},
+    {"municipality": "下松市", "status": "not_publicly_distributed"},
+    {"municipality": "長門市", "status": "not_publicly_distributed"},
+    {"municipality": "柳井市", "status": "not_publicly_distributed"},
+    {"municipality": "周防大島町", "status": "not_publicly_distributed"},
+    {"municipality": "和木町", "status": "official_resource_unavailable"},
+    {"municipality": "上関町", "status": "not_publicly_distributed"},
+    {"municipality": "田布施町", "status": "not_publicly_distributed"},
+    {"municipality": "平生町", "status": "not_publicly_distributed"},
+    {"municipality": "阿武町", "status": "not_publicly_distributed"}
+  ],
+  "all_municipality_state_counts": {
+    "public_download_confirmed": 7,
+    "authentication_required": 2,
+    "not_publicly_distributed": 9,
+    "official_resource_unavailable": 1
+  },
+  "limitations": [
+    "市町との関係確認であり、県内全事業者・全路線・全交通手段の網羅を示さない。",
+    "一般配布なしのフィード本体、認証が必要なフィード本体、404の過去原本は取得・推定していない。",
+    "新しいJRバス中国ZIPは構造検査と市町関係確認に採用し、既存2フィードの供給比較値へ混在させない。"
+  ]
+}

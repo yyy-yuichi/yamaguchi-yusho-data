@@ -1,6 +1,6 @@
-# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価
+# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価 / WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況拡張
 
-**rev.5.19 / 2026-08-13**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33。消した記述はそこに全部書いてある）
+**rev.5.20 / 2026-08-13**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34。消した記述はそこに全部書いてある）
 
 UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下に `SPEC.md` として置き、Claude Code に読ませる。**
 
@@ -11,7 +11,8 @@ UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下
 §20は受け入れ済みWORK1-AWARD-COMPARISON-1、§21は受け入れ済みWORK1-TASK-MEMO-1、
 §22はWORK1-GTFS-COVERAGE-2、§23〜§28は受入済みの比較・証拠・公開情報整理、
 §29は受け入れ済みWORK1-SIMILAR-SERVICE-BENCHMARK-1、§30は受け入れ済み
-WORK1-PRECONSULTATION-HANDOFF-1、§31はWORK1-AWARD-SCORECARD-RECALIBRATION-1の実行仕様である。
+WORK1-PRECONSULTATION-HANDOFF-1、§31はWORK1-AWARD-SCORECARD-RECALIBRATION-1、§32は
+WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1の実行仕様である。
 プロジェクトのゴール、終了条件、確定方針は`run_record.md` §0.5 を正とし、
 このファイルがそれを上書きしてはならない。
 
@@ -1171,6 +1172,15 @@ P1 0件、P2 2件）だった。類似比較と4状態ハンドオフが完成�
 2026-08-13時点へ再評価する。新規性小項目は限定比較の証拠により3.5から4.0へ更新するが、利用者実証、
 追加採用フィード、共同設計を達成扱いせず、3基準と総合70.0は据え置く。完了済み改善を候補から外し、
 人間承認が必要な利用者検証と、自走可能な独立再生成・範囲拡張を区別する。Pagesへ内部値を再公開しない。
+
+### 10.34 rev.5.19 → rev.5.20
+
+固定HEAD `a00d2351d41a5f3c9f2db96405effc6cdd3b79f6`の内部診断再評価はGO（P0 0件、
+P1 0件、P2 2件）だった。内部点数は現状把握の診断値として据え置き、改善候補のうち利用者連絡を
+必要としない「未確認13市町の公式GTFS供給状況確認」を先に行う。公式一次資料を用いて19市町を
+公開取得可能・認証が必要・一般配布なし・現在取得不能の4状態へ更新する。ユーザーが明示承認した
+JRバス中国の公式ZIP 1件だけを手動受入し、認証先・非公開原本・取得不能原本を推測または自動採用しない。
+既存の輸送供給指標は2フィードの同一条件比較なので、広域フィードであるJRバス中国を混ぜず維持する。
 
 ---
 
@@ -3170,3 +3180,87 @@ UDC概要フォーム、本応募、BODIK登録、外部サービスへのデー
 - 国内唯一、優位、受賞確率、公式点として内部値を使う必要が生じる
 - 公開HTML、原本、既存公開値、公式基準、scope境界の変更が必要になる
 - 作品②、参加者連絡、応募・登録、履歴書換え、Release削除が必要になる
+
+---
+
+## 32. WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1
+
+### 32.1 段階ゴール
+
+山口県19市町の公式GTFS供給状況を2026-08-13時点の一次資料へ継続照合し、従来の
+「公開取得を確認済み / 範囲内では未確認」という2状態から、公開取得可能・認証が必要・一般配布なし・
+現在取得不能の4状態へ更新する。JRバス中国の現行公式ZIPは人間承認を受けた1件だけを手動受入する。
+状態の確認と、各市町の全交通・全路線・GTFS完全性の証明を混同しない。
+
+### 32.2 公式入力と採用ゲート
+
+公式入力は広島県バス協会GTFSオープンデータサイト、山口市公式資料、防長交通の事業所案内、
+下関市地域公共交通計画、和木町GTFSの公式データセット・リソース、既存の山口県オープンデータ、
+既存認証付き公式配布先とする。調査日時、URL、HTTP結果、根拠文、判定を研究JSONへ固定する。
+
+新規原本の採用はユーザーの「JRバス中国ZIP 1件の手動受入」承認を唯一のゲート通過とする。
+認証が必要な船鉄バス、一般配布を確認できない防長交通・サンデン交通・ブルーライン交通、
+現在取得不能な和木町のZIPは取得・作成・推測しない。公開値はビルダーから決定的に再生成する。
+
+### 32.3 4状態と19市町の契約
+
+公開状態の列挙値と件数は次で固定する。
+
+- `public_download_confirmed`: 7市（山口、萩、防府、岩国、光、美祢、周南）
+- `authentication_required`: 2市（宇部、山陽小野田）
+- `not_publicly_distributed`: 9市町（下関、下松、長門、柳井、周防大島、上関、田布施、平生、阿武）
+- `official_resource_unavailable`: 1町（和木）
+
+8件の公式フィード記録は、既存3件と、JRバス中国、防長交通、サンデン交通、ブルーライン交通、
+和木町履歴資源で構成する。各市町は少なくとも1件の根拠フィードIDへ結び付ける。一般配布なしは
+GTFS不存在、交通不存在、永久非公開を意味せず、現在取得不能は履歴資源の恒久消滅を意味しない。
+
+### 32.4 JRバス中国ZIP受入契約
+
+受入原本は`raw/gtfs/jrbus_chugoku_gtfs_20260813.zip`、1,863,715 bytes、SHA-256
+`9162224158a8a748d0365e850f2c0575c845a98063b7a469912c0a15b9201620`とする。ZIPは23エントリ、
+展開後10,776,609 bytes、暗号化・危険パスなし、CRC成功でなければならない。`feed_info.txt`は
+開始2026-08-13、終了2027-02-13、版20260813とする。
+
+山口県関係として確認した路線IDは、防長線`2229846746`、スーパーはぎ号`435934628`、
+秋吉線`2196404353`、秋芳洞循環バス`3240589115`とする。停留所座標の国土地理院逆ジオコード結果は
+山口・萩・防府・美祢との関係確認だけに用い、市内全路線の網羅、サービス量、供給指標へ転用しない。
+
+### 32.5 変更範囲と非変更契約
+
+変更・追加できるのは次だけとする。
+
+- `SPEC.md`、`run_record.md`、`README.md`、`PROGRESS.md`、`verification.md`
+- `raw/gtfs/jrbus_chugoku_gtfs_20260813.zip`
+- `data/gtfs_feeds.*`、`data/municipality_gtfs.*`、`data/source_freshness_manifest.json`
+- `docs/data/gtfs_feeds.json`、`docs/data/municipality_gtfs.json`
+- `docs/index.html`、`docs/municipality-memo.html`、`docs/status.html`
+- `src/build_gtfs_status.py`、`src/check_source_freshness.py`、`src/calculate_gtfs_supply_metrics.py`、
+  `src/build_release_attestation.py`
+- 関連する既存テストと`tests/test_official_gtfs_coverage_extension.py`
+- `evidence/20260813_work1_official_gtfs_coverage_extension_*`
+
+登録簿PDF 4件、既存GTFS ZIP 2件、登録供給JSON・CSV、`gtfs_supply_metrics.json`、輸送供給比較値、
+公開応募説明、内部スコアカードは変更しない。JRバス中国は県外を含む広域フィードであり、既存2フィードの
+同一条件で算出した輸送供給指標へ混ぜない。作品②を読まず、検索せず、入力・比較対象にしない。
+
+### 32.6 完了条件
+
+1. 公式一次資料、確認日時、HTTP結果、状態根拠、未確認13市町の解決結果を研究JSONから追跡できる。
+2. JRバス中国ZIPのbytes、SHA-256、ZIP安全性、主要表、期間、山口県関係4路線を専用テストで再現できる。
+3. 8フィード記録と19市町が4状態へ決定的に生成され、件数が7 / 2 / 9 / 1になる。
+4. 公開ページと市町メモが4状態、根拠、次の確認行動、外部分析へ渡せる条件を誤解なく表示する。
+5. 原本変更検知が4 PDF・3 ZIP・計7件を保護し、JRバス中国の公式配布元を継続照合できる。
+6. 既存原本・公開値・供給指標・内部診断の非変更をハッシュまたは差分で確認できる。
+7. 専用テストと全unittest、scope checker、`git diff --check`、旧SPEC網羅検査が成功する。
+8. commit・main push後、scope lock、Pages、release attestationが同一HEADでsuccess・GOになる。
+9. 公開PC 1440×1600とスマートフォン390×844で4状態、根拠リンク、横overflow 0、
+   runtime/dev error 0、壊れた画像0を確認し、公開JSONがcommit bytesと一致する。
+10. 次段階をread-onlyの`WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-AUDIT-1`だけに定義し、開始しない。
+
+### 32.7 停止条件
+
+- 承認外の新規原本、認証付き原本、非公開原本を採用する必要が生じる
+- 一般配布なし・現在取得不能からGTFSや交通の不存在を断定する必要が生じる
+- 供給指標、登録簿原本・公開値、内部診断を根拠なく変更する必要が生じる
+- 作品②、参加者連絡、UDC応募・登録、履歴書換え、Release削除が必要になる

@@ -16,10 +16,10 @@ ZIPは読み取り専用。`zipfile.ZipFile.read()` でメモリ上に読むだ�
 
 ## 実装上の判断（SPEC.mdの記載を推測で埋めた箇所。仕様そのものは変更していない）
 
-- **`checked_at`** は SPEC.md §15.4.1 の表が指す元データ（`data/gtfs_feeds.csv`）の値
-  （現在は2026-08-12、公式ページ側の再確認日）をそのまま使う。今回の指標計算そのものを実行した日は
-  別に `metric_computed_at` フィールドとして追加した（§15.8は「最低限」の一覧であり、
-  追加フィールドはこの一覧を上書きしない）。
+- **`checked_at`と`scope_note`** は SUPPLY-METRIC-1受入時の入力説明を
+  `ACCEPTED_METRIC_METADATA`へ固定する。後続段階で市町別GTFSアクセス状態を更新しても、
+  比較対象2 ZIP・比較週・測定値の説明を暗黙に書き換えない。今回の指標計算そのものを実行した日は
+  別に `metric_computed_at` フィールドとして持つ。
 - **`location_type` 列が丸ごと無い場合**、GTFS Schedule Reference の既定値（省略時は
   停留所/プラットフォームを意味する）に従い、全行を「空欄」として扱う（乗降場所として数える）。
   岩国市・光市の実ZIPはどちらも列が存在し全行`0`のため、この分岐は実データの値には影響しない。
@@ -82,6 +82,42 @@ FEED_IDS_IN_SCOPE: Tuple[str, ...] = ("iwakuni-gtfsjp", "hikari-gtfs")
 FEED_ZIP_RELATIVE_PATHS: Dict[str, str] = {
     "iwakuni-gtfsjp": "raw/gtfs/iwakuni_gtfsjp_20260401.zip",
     "hikari-gtfs": "raw/gtfs/hikari_gtfs_20260401.zip",
+}
+
+# SUPPLY-METRIC-1受入時の2フィード専用メタデータ。市町別アクセス状況の後続更新から
+# 独立させ、既存公開指標JSONを同一バイトで再生成する。
+ACCEPTED_METRIC_METADATA: Dict[str, Dict[str, str]] = {
+    "iwakuni-gtfsjp": {
+        "municipality_code": "352080",
+        "municipality": "岩国市",
+        "official_reference_date": "2026-04-01",
+        "checked_at": "2026-08-12",
+        "scope_note": (
+            "対象は公式データセット名称にある生活交通バス・由宇地区バス（岩国市）。"
+            "市域全体・全路線を網羅するとは公式記載からは確認していない。 "
+            "公式データセット名称にある生活交通バス・由宇地区バスが対象。"
+            "市域全体・全路線を網羅するとは公式記載からは確認していない。 "
+            "この値は市町別GTFS確認表で当該フィードに関連付けた市町から参照する"
+            "フィード全体の収録値であり、各市町内だけの値・各市町の全公共交通の値ではない"
+            "（SPEC.md §15.3、§22.3）。"
+        ),
+    },
+    "hikari-gtfs": {
+        "municipality_code": "352101",
+        "municipality": "光市",
+        "official_reference_date": "2026-04-01",
+        "checked_at": "2026-08-12",
+        "scope_note": (
+            "対象は公式データセット名称にある広域生活交通、ひかりぐるりんバス、光市営バス（光市）。"
+            "受入済みGTFSの広域生活交通には、国土地理院逆ジオコードで周南市コード35215となる"
+            "乗降停留所IDを31件確認した。光市・周南市の市域全体・全事業者・全路線を網羅するとは"
+            "確認していない。 公式データセット名称にある広域生活交通、ひかりぐるりんバス、"
+            "光市営バスが対象。広域生活交通は周南市内停留所も含む。光市の市域全体・全事業者・"
+            "全路線を網羅するとは確認していない。 この値は市町別GTFS確認表で当該フィードに"
+            "関連付けた市町から参照するフィード全体の収録値であり、各市町内だけの値・各市町の"
+            "全公共交通の値ではない（SPEC.md §15.3、§22.3）。"
+        ),
+    },
 }
 
 _GTFS_TIME_RE = re.compile(r"^(\d{1,3}):([0-5]\d):([0-5]\d)$")
@@ -625,31 +661,19 @@ def _load_csv_rows(path: Path) -> List[Dict[str, str]]:
 
 def build_dataset() -> List[dict]:
     """SPEC.md §15.2 対象2フィード分のレコードを、`FEED_IDS_IN_SCOPE` の順に組み立てる。"""
-    feed_rows = {r["feed_id"]: r for r in _load_csv_rows(DATA_DIR / "gtfs_feeds.csv")}
-    municipality_rows = _load_csv_rows(DATA_DIR / "municipality_gtfs.csv")
-
     records: List[dict] = []
     for feed_id in FEED_IDS_IN_SCOPE:
-        feed_row = feed_rows[feed_id]
-        municipality_row = next(
-            r for r in municipality_rows if feed_id in r["feed_ids"].split(";")
-        )
+        metadata = ACCEPTED_METRIC_METADATA[feed_id]
         rel_path = FEED_ZIP_RELATIVE_PATHS[feed_id]
         zip_path = REPO_ROOT.joinpath(*rel_path.split("/"))
-        scope_note = (
-            f"{feed_row['scope_note']} {municipality_row['scope_note']} "
-            "この値は市町別GTFS確認表で当該フィードに関連付けた市町から参照する"
-            "フィード全体の収録値であり、各市町内だけの値・各市町の全公共交通の値ではない"
-            "（SPEC.md §15.3、§22.3）。"
-        )
         result = compute_feed_metrics(
             str(zip_path),
             feed_id=feed_id,
-            municipality_code=municipality_row["municipality_code"],
-            municipality=municipality_row["municipality"],
-            official_reference_date=feed_row["official_reference_date"],
-            checked_at=feed_row["checked_at"],
-            scope_note=scope_note,
+            municipality_code=metadata["municipality_code"],
+            municipality=metadata["municipality"],
+            official_reference_date=metadata["official_reference_date"],
+            checked_at=metadata["checked_at"],
+            scope_note=metadata["scope_note"],
         )
         # `compute_feed_metrics()` に渡した絶対パスではなく、環境非依存でリポジトリ相対の
         # POSIX形式パスをJSONへ記録する（バイト決定論的にするため）。

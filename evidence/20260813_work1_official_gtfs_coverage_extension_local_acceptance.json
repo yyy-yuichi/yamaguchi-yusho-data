@@ -1,0 +1,131 @@
+{
+  "schema_version": "WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1-local-acceptance-v1",
+  "stage": "WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1",
+  "checked_at": "2026-08-13T19:15:00+09:00",
+  "baseline_head": "a00d2351d41a5f3c9f2db96405effc6cdd3b79f6",
+  "decision": "LOCAL_GO",
+  "human_gate": {
+    "approved": true,
+    "approval": "JRバス中国ZIP 1件の手動受入と、19市町を4状態へ更新することを承認",
+    "automatic_source_adoption": false
+  },
+  "accepted_jrbus_zip": {
+    "path": "raw/gtfs/jrbus_chugoku_gtfs_20260813.zip",
+    "bytes": 1863715,
+    "sha256": "9162224158a8a748d0365e850f2c0575c845a98063b7a469912c0a15b9201620",
+    "zip_entries": 23,
+    "uncompressed_bytes": 10776609,
+    "unsafe_members": 0,
+    "encrypted_members": 0,
+    "crc_errors": 0,
+    "feed_start_date": "2026-08-13",
+    "feed_end_date": "2027-02-13",
+    "feed_version": "20260813",
+    "yamaguchi_related_route_ids": [
+      "2229846746",
+      "435934628",
+      "2196404353",
+      "3240589115"
+    ]
+  },
+  "municipality_access_states": {
+    "municipality_count": 19,
+    "feed_record_count": 8,
+    "counts": {
+      "public_download_confirmed": 7,
+      "authentication_required": 2,
+      "not_publicly_distributed": 9,
+      "official_resource_unavailable": 1
+    },
+    "all_municipalities_have_evidence_feed_ids": true,
+    "absence_or_completeness_inference": false
+  },
+  "source_freshness": {
+    "record": "evidence/20260813_work1_official_gtfs_coverage_extension_freshness.json",
+    "checked_at": "2026-08-13T10:04:34Z",
+    "source_count": 7,
+    "summary": {
+      "unchanged": 5,
+      "changed": 0,
+      "unavailable": 2,
+      "oversize": 0,
+      "invalid_baseline": 0
+    },
+    "expected_notification_exit_code": 2,
+    "unchanged_sources": [
+      "mlit-registry-000230003",
+      "mlit-registry-000268896",
+      "mlit-registry-000271730",
+      "mlit-registry-000359215",
+      "jrbus-chugoku-gtfs"
+    ],
+    "unavailable_sources": {
+      "iwakuni-gtfsjp": "tls_error",
+      "hikari-gtfs": "tls_error"
+    }
+  },
+  "regression": {
+    "dedicated_tests": {
+      "discovered": 5,
+      "passed": 5
+    },
+    "all_tests": {
+      "discovered": 174,
+      "passed": 174
+    },
+    "spec_coverage": {
+      "baseline_tokens": 1000,
+      "missing": 0,
+      "unexplained_missing": 0
+    },
+    "git_diff_check": "success",
+    "scope_guard": "WORK1_SCOPE_ALLOWED",
+    "json_documents_parsed": 7
+  },
+  "protected_invariants": {
+    "registry_pdfs_unchanged": 4,
+    "previously_accepted_gtfs_zips_unchanged": 2,
+    "gtfs_supply_metrics_byte_identical_after_regeneration": true,
+    "award_scorecard_unchanged": true,
+    "entry_page_unchanged": true,
+    "jrbus_merged_into_existing_two_feed_supply_metrics": false
+  },
+  "local_browser": {
+    "base_url": "http://127.0.0.1:8766/",
+    "pc": {
+      "viewport": "1440x1600",
+      "index_counts": "7/2/9/1",
+      "representative_municipalities": [
+        "山口市",
+        "宇部市",
+        "下関市",
+        "和木町"
+      ],
+      "states_matched": 4,
+      "horizontal_overflow": 0,
+      "broken_images": 0
+    },
+    "smartphone": {
+      "viewport": "390x844",
+      "index_counts": "7/2/9/1",
+      "representative_states_matched": 4,
+      "handoff_columns": 1,
+      "horizontal_overflow": 0,
+      "broken_images": 0
+    },
+    "console_errors": 0
+  },
+  "boundaries": {
+    "work2_used_as_input": false,
+    "work2_writes": 0,
+    "participant_contact": 0,
+    "udc_submission": 0,
+    "bodik_registration": 0,
+    "authenticated_or_nonpublic_feed_downloads": 0
+  },
+  "next": {
+    "after_public_acceptance": "WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-AUDIT-1",
+    "mode": "read_only",
+    "started": false
+  }
+}

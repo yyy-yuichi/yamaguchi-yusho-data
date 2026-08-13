@@ -68,8 +68,9 @@
     .summary-card dt, .metric dt { color: var(--muted); font-size: .88rem; font-weight: 700; }
     .summary-card dd, .metric dd { margin: .2rem 0 0; font-size: 1.25rem; font-weight: 850; }
     .pill { display: inline-block; padding: .18rem .55rem; border-radius: 999px; font-size: .82rem; font-weight: 800; }
-    .pill.confirmed { background: var(--green-soft); color: var(--green-dark); }
-    .pill.unconfirmed { background: var(--amber-soft); color: var(--amber); }
+    .pill.public-download { background: var(--green-soft); color: var(--green-dark); }
+    .pill.authentication, .pill.nonpublic { background: var(--amber-soft); color: var(--amber); }
+    .pill.unavailable { background: #f1f2f3; color: #4b5563; }
     .table-wrap { overflow-x: auto; }
     table { width: 100%; border-collapse: collapse; }
     th, td { padding: .65rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
@@ -270,6 +271,40 @@
         metrics: "GTFS供給指標"
       };
       const state = { supply: null, municipalityGtfs: [], feeds: [], metrics: [] };
+      const availabilityDetails = {
+        public_download_confirmed: {
+          label: "公式原本を公開取得可能",
+          className: "public-download",
+          summary: "公式配布元から認証なしで取得できるGTFS原本との関係を確認しています。",
+          nextTitle: "公式配布条件を再確認",
+          nextText: "公式配布ページで最新版、ライセンス、基準日、有効期間、対象事業者・路線を確認します。",
+          toolReady: true
+        },
+        authentication_required: {
+          label: "公式配布は認証が必要",
+          className: "authentication",
+          summary: "公式配布は確認できましたが認証が必要なため、本体は取得していません。",
+          nextTitle: "認証と利用条件を確認",
+          nextText: "利用目的、認証手続、ライセンス、取得権限を確認し、承認後にだけ原本を取得します。",
+          toolReady: false
+        },
+        not_publicly_distributed: {
+          label: "GTFS存在確認・一般配布なし",
+          className: "nonpublic",
+          summary: "公式資料でGTFSの存在を確認しましたが、一般向け配布先は確認できていません。",
+          nextTitle: "提供可否を関係者へ確認",
+          nextText: "事業者・自治体へ提供条件と利用可能範囲を確認します。公開原本があるようには扱いません。",
+          toolReady: false
+        },
+        official_resource_unavailable: {
+          label: "公式記録あり・現在取得不能",
+          className: "unavailable",
+          summary: "公式配布記録は確認できましたが、現在の原本URLは利用できません。",
+          nextTitle: "現行配布先または復旧を確認",
+          nextText: "公式ポータルと自治体へ現行版の所在または配布復旧を確認します。過去原本を推定採用しません。",
+          toolReady: false
+        }
+      };
       window.__taskMemoRuntimeErrors = [];
       window.addEventListener("error", event => {
         window.__taskMemoRuntimeErrors.push(String(event.message || "unknown error"));
@@ -359,9 +394,9 @@
         term.textContent = "GTFS公開確認";
         const description = document.createElement("dd");
         const pill = document.createElement("span");
-        const confirmed = gtfsRow.availability_status === "confirmed";
-        pill.className = `pill ${confirmed ? "confirmed" : "unconfirmed"}`;
-        pill.textContent = confirmed ? "確認済み" : "確認範囲では未確認";
+        const availability = availabilityDetails[gtfsRow.availability_status];
+        pill.className = `pill ${availability.className}`;
+        pill.textContent = availability.label;
         description.appendChild(pill);
         card.append(term, description);
         grid.appendChild(card);
@@ -424,10 +459,8 @@
       }
 
       function renderGtfs(gtfsRow) {
-        const confirmed = gtfsRow.availability_status === "confirmed";
-        text("gtfs-summary", confirmed
-          ? `確認対象の公式配布先でGTFSを確認しました。確認日: ${gtfsRow.checked_at}。`
-          : `確認対象の公式配布先ではGTFSを確認できませんでした。確認日: ${gtfsRow.checked_at}。これはGTFSや交通サービスの不存在を示しません。`);
+        const availability = availabilityDetails[gtfsRow.availability_status];
+        text("gtfs-summary", `${availability.summary} 確認日: ${gtfsRow.checked_at}。交通サービスの完全性や充足度を示す判定ではありません。`);
         const cards = document.getElementById("feed-cards");
         clear(cards);
         const feeds = feedIds(gtfsRow).map(id => state.feeds.find(feed => feed.feed_id === id)).filter(Boolean);
@@ -439,7 +472,7 @@
           card.appendChild(title);
           for (const value of [
             `公開者: ${feed.publisher || "要確認"}`,
-            `取得状態: ${feed.access_status || "要確認"}`,
+            `アクセス状態: ${availabilityDetails[feed.access_status]?.label || feed.access_status || "要確認"}`,
             `公式基準日: ${feed.official_reference_date || "記載なし"}`,
             `有効期間: ${feed.official_valid_from || "記載なし"} 〜 ${feed.official_valid_to || "記載なし"}`,
             `範囲: ${feed.scope_note || "要確認"}`
@@ -449,7 +482,7 @@
             card.appendChild(paragraph);
           }
           const source = document.createElement("p");
-          addExternalLink(source, "公式配布ページ", feed.official_page_url);
+          addExternalLink(source, "根拠となる公式資料", feed.official_page_url);
           card.appendChild(source);
           cards.appendChild(card);
         }
@@ -519,10 +552,15 @@
         } else {
           addListItem(list, "有効期限と市町をまたぐ同一団体の重複を確認する。市町値を足して県計にしない。");
         }
-        if (gtfsRow.availability_status === "confirmed") {
+        const availability = availabilityDetails[gtfsRow.availability_status];
+        if (availability.toolReady) {
           addListItem(list, "公式配布ページで最新版、ライセンス、有効期間、対象事業者・路線の範囲を再確認する。");
+        } else if (gtfsRow.availability_status === "authentication_required") {
+          addListItem(list, "認証手続と利用条件を確認し、人間承認前に本体を取得しない。");
+        } else if (gtfsRow.availability_status === "not_publicly_distributed") {
+          addListItem(list, "事業者・自治体へ提供可否を確認し、公開済みデータがあるようには扱わない。");
         } else {
-          addListItem(list, "公式オープンデータカタログと交通事業者の案内を再確認する。未確認を不存在と表現しない。");
+          addListItem(list, "現行の公式配布先または復旧状況を確認し、過去原本を推定採用しない。");
         }
         const associatedFeedIds = new Set(feedIds(gtfsRow));
         const hasMetrics = state.metrics.some(row => associatedFeedIds.has(row.feed_id));
@@ -544,27 +582,20 @@
         clear(tools);
 
         const hasRegistry = item.operator_count > 0;
-        const confirmed = gtfsRow.availability_status === "confirmed";
+        const availability = availabilityDetails[gtfsRow.availability_status];
         const associatedFeedIds = new Set(feedIds(gtfsRow));
         const hasMetrics = state.metrics.some(row => associatedFeedIds.has(row.feed_id));
-        const handoffState = `${hasRegistry ? "registered" : "no-registry"}-${confirmed ? "gtfs-confirmed" : "gtfs-unconfirmed"}`;
+        const handoffState = `${hasRegistry ? "registered" : "no-registry"}-${gtfsRow.availability_status}`;
         root.dataset.handoffState = handoffState;
         root.dataset.hasMetrics = String(hasMetrics);
 
-        const stateLabels = {
-          "registered-gtfs-confirmed": "登録簿記録あり・GTFS確認済み",
-          "no-registry-gtfs-confirmed": "登録簿上0件・GTFS確認済み",
-          "registered-gtfs-unconfirmed": "登録簿記録あり・GTFS確認範囲では未確認",
-          "no-registry-gtfs-unconfirmed": "登録簿上0件・GTFS確認範囲では未確認"
-        };
-        text("handoff-summary", `${item.municipality}は「${stateLabels[handoffState]}」です。0件や未確認を不存在とせず、この状態から次の確認へ進みます。`);
+        const stateLabel = `${hasRegistry ? "登録簿記録あり" : "登録簿上0件"}・${availability.label}`;
+        text("handoff-summary", `${item.municipality}は「${stateLabel}」です。0件や取得条件を交通不存在とせず、この状態から次の確認へ進みます。`);
 
         addHandoffItem(facts, "登録供給", hasRegistry
           ? `${state.supply.meta.data_as_of || "基準日要確認"}時点の4登録簿で${item.operator_count}団体・${item.vehicles_total}台を確認しています。実際の運行や予約可能性を示す値ではありません。`
           : `${state.supply.meta.data_as_of || "基準日要確認"}時点の4登録簿では該当記載0件です。交通手段、移動支援、別制度の不存在を意味しません。`);
-        addHandoffItem(facts, "GTFS公開確認", confirmed
-          ? `${gtfsRow.checked_at}の確認範囲で公式GTFSを確認しています。最新版、ライセンス、有効期間、対象範囲は利用前に再確認します。`
-          : `${gtfsRow.checked_at}の確認範囲では公式GTFSを確認できていません。GTFSや交通サービスが存在しないという意味ではありません。`);
+        addHandoffItem(facts, "GTFSアクセス状態", `${gtfsRow.checked_at}時点で「${availability.label}」です。${availability.summary}`);
         addHandoffItem(facts, "測定済み指標", hasMetrics
           ? "取得・安全確認済みフィードの構造と予定便の測定値があります。フィード全体の値で、市町内供給や利便性の評価ではありません。"
           : "この市町に関連付けられた測定済み指標はありません。値を補完・推定しません。");
@@ -572,12 +603,10 @@
         addHandoffItem(next, hasRegistry ? "登録内容を原本で確認" : "0件の外側を追加確認", hasRegistry
           ? "登録番号、有効期間、運送区域、連絡先、現在の運行・予約条件を原本と関係機関で確認します。"
           : "今回の4登録簿以外の制度、更新版、区域表記、自治体・交通事業者の案内を確認します。");
-        addHandoffItem(next, confirmed ? "公式配布条件を再確認" : "公開フィードを追加探索", confirmed
-          ? "公式配布ページで最新版、ライセンス、基準日、有効期間、対象事業者・路線を確認します。"
-          : "公式オープンデータカタログ、交通事業者の案内、GTFSデータリポジトリを確認します。未確認のまま分析用フィードとして扱いません。",
+        addHandoffItem(next, availability.nextTitle, availability.nextText,
           "GTFSデータリポジトリを確認", "https://gtfs-data.jp/");
 
-        addHandoffItem(tools, confirmed ? "GTFS-GOへ渡す候補" : "GTFS-GOへはまだ渡さない", confirmed
+        addHandoffItem(tools, availability.toolReady ? "GTFS-GOへ渡す候補" : "GTFS-GOへはまだ渡さない", availability.toolReady
           ? "公式配布条件と対象範囲を確認し、利用するGTFSを手動で選んだ後に、停留所・経路・運行頻度の可視化候補とします。"
           : "適切なGTFSと利用条件を確認するまで可視化工程へ渡しません。ツールの役割と必要入力だけを先に確認できます。",
           "GTFS-GOの説明を確認", "https://qgis.mierune.co.jp/posts/howto_plugin_gtfsgo");
@@ -591,7 +620,7 @@
         for (const value of [
           "登録供給は公表登録簿4PDFの記載を市町名で集計したもので、実際の運行、予約可能性、利用実績、地理的な到達範囲を示しません。",
           "同一団体が複数市町を運送区域に含むため、市町別の団体数・車両数を合計して県全体値にはできません。",
-          "GTFSの確認済み・未確認は記載した確認日と確認範囲に限られ、交通サービスの有無や網羅性を断定しません。",
+          "GTFSのアクセス状態は記載した確認日と確認範囲に限られ、交通サービスの有無や網羅性を断定しません。",
           "GTFS指標がある場合もフィード全体の構造・予定便を測定した値であり、市町内の供給量や利便性の順位ではありません。",
           `市町別GTFS確認の範囲注記: ${gtfsRow.scope_note || "要確認"}`
         ]) addListItem(list, value);

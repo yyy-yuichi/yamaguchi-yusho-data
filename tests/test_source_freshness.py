@@ -63,11 +63,11 @@ class SourceFreshnessTest(unittest.TestCase):
         manifest = {"schema_version": "WORK1-FRESHNESS-1", "expected_source_count": 1, "sources": [source]}
         return temporary, root, manifest, source
 
-    def test_manifest_has_six_unique_accepted_baselines(self):
+    def test_manifest_has_seven_unique_accepted_baselines(self):
         self.assertEqual(self.manifest["schema_version"], "WORK1-FRESHNESS-1")
-        self.assertEqual(self.manifest["expected_source_count"], 6)
-        self.assertEqual(len(self.manifest["sources"]), 6)
-        self.assertEqual(len({item["source_id"] for item in self.manifest["sources"]}), 6)
+        self.assertEqual(self.manifest["expected_source_count"], 7)
+        self.assertEqual(len(self.manifest["sources"]), 7)
+        self.assertEqual(len({item["source_id"] for item in self.manifest["sources"]}), 7)
         for item in self.manifest["sources"]:
             path = freshness.resolve_local_baseline(REPO_ROOT, item["local_path"])
             size, digest = freshness.sha256_file(path)
@@ -83,6 +83,10 @@ class SourceFreshnessTest(unittest.TestCase):
             freshness.validate_remote_url("http://wwwtb.mlit.go.jp/source.pdf")
         with self.assertRaises(freshness.RemotePolicyError):
             freshness.validate_remote_url("https://example.com/source.pdf")
+        self.assertEqual(
+            freshness.validate_remote_url("https://ajt-mobusta-gtfs.mcapps.jp/static/15/current_data.zip"),
+            "https://ajt-mobusta-gtfs.mcapps.jp/static/15/current_data.zip",
+        )
         with self.assertRaises(freshness.RemotePolicyError):
             freshness.validate_remote_url("https://wwwtb.mlit.go.jp/source.pdf?token=not-allowed")
         with self.assertRaises(freshness.RemotePolicyError):

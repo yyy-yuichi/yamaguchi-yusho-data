@@ -454,15 +454,22 @@
     <p class="eyebrow">Official GTFS / GTFS-JP coverage check</p>
     <h2 id="gtfs-overview-title">公式GTFS/GTFS-JPの確認状況（山口県全体）</h2>
     <p class="section-copy">
-      山口県オープンデータカタログサイトと公共交通オープンデータセンター（ODPT）を確認した結果、
-      公式フィードは <strong id="gtfs-feed-count">—</strong> 件。そのうち公式資料が対象市町名を
-      明記していた市町は <strong id="gtfs-municipality-count">—</strong> です（確認日 2026-08-09）。
+      自治体・事業者・公式配布ポータルを2026-08-13に再調査し、公式GTFS記録
+      <strong id="gtfs-feed-count">—</strong> 件を確認しました。19市町を、現在の取得条件が異なる
+      4状態に分けて表示します。公開取得できる市町は
+      <strong id="gtfs-municipality-count">—</strong> です。
     </p>
+    <div class="metric-grid" aria-label="市町別GTFSアクセス状態">
+      <div class="metric"><span class="metric-label">公開取得可能</span><strong id="gtfs-public-count">—</strong></div>
+      <div class="metric"><span class="metric-label">認証が必要</span><strong id="gtfs-auth-count">—</strong></div>
+      <div class="metric"><span class="metric-label">存在確認・一般配布なし</span><strong id="gtfs-nonpublic-count">—</strong></div>
+      <div class="metric"><span class="metric-label">公式記録あり・現在取得不能</span><strong id="gtfs-unavailable-count">—</strong></div>
+    </div>
     <div class="notice warning">
       <h3>この件数が意味しないこと</h3>
       <p>
-        この件数は、今回確認した公式資料に対象市町名の記載があった市町数を数えたものです。
-        交通の充足度や達成度を測る指標ではなく、市町どうしの優劣や順位を示すものでもありません。
+        これはGTFSへのアクセス状態です。県内交通の完全収録、交通の充足度、達成度、
+        市町どうしの優劣や順位を示すものではありません。
       </p>
     </div>
   </section>
@@ -737,14 +744,16 @@
 
       // SPEC.md §12.3 axis A: display text is fixed vocabulary, not inferred.
       const AVAILABILITY_BADGE_TEXT = {
-        confirmed: "公式フィードを確認",
-        not_confirmed_in_checked_sources: "今回確認した公式資料の範囲では未確認",
-        unassessed: "未調査",
+        public_download_confirmed: "公式原本を公開取得可能",
+        authentication_required: "公式配布は認証が必要",
+        not_publicly_distributed: "GTFS存在確認・一般配布なし",
+        official_resource_unavailable: "公式配布記録あり・現在取得不能",
       };
       const AVAILABILITY_BODY_TEXT = {
-        confirmed: "公式一次資料が、この市町を運行対象に含むGTFS/GTFS-JPフィードを明記しています。",
-        not_confirmed_in_checked_sources: "今回確認した公式資料の範囲ではGTFS/GTFS-JPを確認できませんでした。",
-        unassessed: "対象範囲の調査自体が、まだ完了していません。",
+        public_download_confirmed: "公式配布元から認証なしで取得できるGTFS原本との関係を確認しています。",
+        authentication_required: "公式配布は確認できましたが認証が必要なため、本体は取得していません。",
+        not_publicly_distributed: "公式資料でGTFSの存在を確認しましたが、一般向け配布先は確認できていません。",
+        official_resource_unavailable: "公式配布記録は確認できましたが、現在の原本URLは利用できません。",
       };
 
       let supplyData = null;
@@ -1021,21 +1030,30 @@
       }
 
       function validityText(feed) {
-        if (feed.validity_status_at_check === "within_official_period") {
+        if (["within_official_period", "valid_on_checked_date"].includes(feed.validity_status_at_check)) {
           return `公式有効期間: ${feed.official_valid_from} 〜 ${feed.official_valid_to}（確認日 ${feed.checked_at} 時点で期間内）`;
         }
         if (feed.validity_status_at_check === "outside_official_period") {
           return `公式有効期間: ${feed.official_valid_from} 〜 ${feed.official_valid_to}（確認日 ${feed.checked_at} 時点で期間外）`;
         }
+        if (feed.validity_status_at_check === "not_current_resource") {
+          return "過去の公式配布記録ですが、現在の原本は取得できません";
+        }
         return "公式有効期間は確認していません";
       }
 
       function accessStatusText(feed) {
-        if (feed.access_status === "public_head_confirmed") {
-          return "ファイル本体へのHTTP到達をHEADリクエストで確認済み（ダウンロードはしていません）";
+        if (feed.access_status === "public_download_confirmed") {
+          return "公式原本を認証なしで取得可能（受入対象はSHA256を固定して安全確認済み）";
         }
-        if (feed.access_status === "authentication_required_not_retrieved") {
+        if (feed.access_status === "authentication_required") {
           return "認証キーを含む公式ダウンロードURL雛形を確認済み。認証済みの本体取得は行っていません";
+        }
+        if (feed.access_status === "not_publicly_distributed") {
+          return "公式資料でGTFSの存在を確認済み。一般向け配布先は確認できていません";
+        }
+        if (feed.access_status === "official_resource_unavailable") {
+          return "公式配布記録はありますが、確認時点の原本URLは利用不能です";
         }
         return feed.access_status;
       }
@@ -1050,7 +1068,7 @@
         link.href = feed.official_page_url;
         link.target = "_blank";
         link.rel = "noopener";
-        link.textContent = "公式データセットページを開く";
+        link.textContent = "根拠となる公式資料を開く";
         card.appendChild(link);
 
         addText(card, "p", referenceDateText(feed), "section-copy");
@@ -1074,7 +1092,7 @@
         setText("gtfs-availability-badge", AVAILABILITY_BADGE_TEXT[status] || status);
         setText("gtfs-availability-body", AVAILABILITY_BODY_TEXT[status] || "");
         setText("gtfs-scope-note", row.scope_note);
-        gtfsCaveat.hidden = status !== "confirmed";
+        gtfsCaveat.hidden = false;
 
         const feedIds = row.feed_ids ? row.feed_ids.split(";") : [];
         for (const feedId of feedIds) {
@@ -1128,9 +1146,14 @@
         for (const feed of feeds) feedsById[feed.feed_id] = feed;
         gtfsByMunicipality = {};
         for (const row of municipalityGtfs) gtfsByMunicipality[row.municipality] = row;
-        const confirmedCount = municipalityGtfs.filter(row => row.availability_status === "confirmed").length;
+        const countStatus = status => municipalityGtfs.filter(row => row.availability_status === status).length;
+        const publicCount = countStatus("public_download_confirmed");
         setText("gtfs-feed-count", `${feeds.length}`);
-        setText("gtfs-municipality-count", `${confirmedCount} / ${municipalityGtfs.length}`);
+        setText("gtfs-municipality-count", `${publicCount} / ${municipalityGtfs.length}`);
+        setText("gtfs-public-count", `${publicCount} / ${municipalityGtfs.length}`);
+        setText("gtfs-auth-count", `${countStatus("authentication_required")} / ${municipalityGtfs.length}`);
+        setText("gtfs-nonpublic-count", `${countStatus("not_publicly_distributed")} / ${municipalityGtfs.length}`);
+        setText("gtfs-unavailable-count", `${countStatus("official_resource_unavailable")} / ${municipalityGtfs.length}`);
 
         select.replaceChildren();
         for (const item of data.municipalities) {

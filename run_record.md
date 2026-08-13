@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-13 (rev.65) / 状態: WORK1-AWARD-SCORECARD-RECALIBRATION-1 公開受入済み / 次: read-only独立監査
+最終更新: 2026-08-13 (rev.66) / 状態: WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 ローカル受入済み / 次: commit・公開受入
 
 ## 0. このファイルについて
 
@@ -1265,3 +1265,24 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - 公開受入正本は`evidence/20260813_work1_award_scorecard_recalibration_public_acceptance.json`。
   この記録を含む最終HEAD自身を同じ3 workflowで再確認し、後続run IDはrepoへ再書込みしない。
 - 次段階は変更を伴わない`WORK1-AWARD-SCORECARD-RECALIBRATION-AUDIT-1`だけとし、開始しない。
+
+### 改訂点（rev.66）
+
+- 固定HEAD `a00d2351d41a5f3c9f2db96405effc6cdd3b79f6`から、公式一次資料で未確認13市町を再調査した。
+  ユーザーの明示承認後、JRバス中国の公式ZIP 1件だけを手動受入した。
+- 新規ZIPは1,863,715 bytes、SHA256
+  `9162224158a8a748d0365e850f2c0575c845a98063b7a469912c0a15b9201620`。23エントリ、危険パス・
+  暗号化・CRC異常各0、期間2026-08-13〜2027-02-13、山口県関係4路線を確認した。
+- 公式フィード記録を8件へ拡張し、19市町を公開取得可能7、認証必要2、一般配布なし9、
+  現在取得不能1へ決定的に生成した。状態は交通・GTFS不存在や全路線網羅を意味しない。
+- 原本変更検知は7件へ拡張した。実照合は4 PDFとJRバス中国ZIPが`unchanged`、岩国・光ZIPが
+  `unavailable/tls_error`、`changed` 0。取得不能でも原本・公開値は自動更新していない。
+- JRバス中国は広域フィードなので既存2フィードの輸送供給比較へ混ぜない。
+  `gtfs_supply_metrics.json`は再生成して基準HEADとバイト一致、内部スコアカードと応募説明も不変。
+- 専用5 / 5、全174 / 174、旧SPEC 1,000トークン欠落0、scope checker、`git diff --check`、
+  JSON 7件の構文検査はsuccess。ローカルPC 1440×1600・スマートフォン390×844で4状態各4ケース、
+  横overflow・壊れた画像・console error各0を確認した。
+- ローカル正本は`evidence/20260813_work1_official_gtfs_coverage_extension_local_acceptance.json`。
+  commit・main push、同一SHAのscope lock・Pages・release attestation、公開PC・スマホ読戻しへ進む。
+- 公開受入後の次段階はread-onlyの`WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-AUDIT-1`だけとし、
+  この段階では開始しない。作品②を入力にせず、書込み0、参加者連絡・応募・BODIK登録各0。

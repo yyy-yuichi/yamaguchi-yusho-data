@@ -149,7 +149,7 @@ class MunicipalSupplyDataTest(unittest.TestCase):
 
 
 class GtfsStatusDataTest(unittest.TestCase):
-    """I-4: GTFS/GTFS-JP official-status data built from the accepted GTFS-1 inventory."""
+    """Accepted four-state official-GTFS access data for all municipalities."""
 
     @classmethod
     def setUpClass(cls):
@@ -158,8 +158,8 @@ class GtfsStatusDataTest(unittest.TestCase):
         cls.feeds_by_id = {row["feed_id"]: row for row in cls.feeds}
 
     def test_feeds_row_count_and_unique_ids(self):
-        self.assertEqual(len(self.feeds), 3)
-        self.assertEqual(len({row["feed_id"] for row in self.feeds}), 3)
+        self.assertEqual(len(self.feeds), 8)
+        self.assertEqual(len({row["feed_id"] for row in self.feeds}), 8)
 
     def test_municipality_row_count_official_order_and_unique_codes(self):
         self.assertEqual(len(self.municipalities), 19)
@@ -173,33 +173,35 @@ class GtfsStatusDataTest(unittest.TestCase):
         counts = {}
         for row in self.municipalities:
             counts[row["availability_status"]] = counts.get(row["availability_status"], 0) + 1
-        self.assertEqual(counts, {"confirmed": 6, "not_confirmed_in_checked_sources": 13})
-        self.assertNotIn("unassessed", counts, "unassessed は0件のはずで、キー自体が現れてはいけない")
+        self.assertEqual(counts, {
+            "public_download_confirmed": 7,
+            "authentication_required": 2,
+            "not_publicly_distributed": 9,
+            "official_resource_unavailable": 1,
+        })
+        self.assertNotIn("not_confirmed_in_checked_sources", counts)
 
-    def test_three_feeds_map_to_six_municipalities_without_double_counting(self):
-        confirmed = [row for row in self.municipalities if row["availability_status"] == "confirmed"]
+    def test_public_downloads_map_to_seven_municipalities_without_claiming_completeness(self):
+        confirmed = [
+            row for row in self.municipalities
+            if row["availability_status"] == "public_download_confirmed"
+        ]
         self.assertEqual(
             {row["municipality"] for row in confirmed},
-            {"岩国市", "光市", "周南市", "宇部市", "美祢市", "山陽小野田市"},
+            {"岩国市", "光市", "周南市", "山口市", "萩市", "防府市", "美祢市"},
         )
-        for row in confirmed:
-            # Each confirmed municipality maps to exactly one feed_id; a
-            # shared feed (Sentetsu) must never be recorded as though it
-            # were 3 separate feeds.
-            self.assertEqual(len(row["feed_ids"].split(";")), 1, row["municipality"])
         sentetsu_municipalities = {
             row["municipality"]
-            for row in confirmed
-            if row["feed_ids"] == "sentetsu-odpt-gtfsjp"
+            for row in self.municipalities
+            if "sentetsu-odpt-gtfsjp" in row["feed_ids"].split(";")
         }
         self.assertEqual(sentetsu_municipalities, {"宇部市", "美祢市", "山陽小野田市"})
-        self.assertEqual(
-            {row["municipality"] for row in confirmed if row["feed_ids"] == "iwakuni-gtfsjp"}, {"岩国市"}
-        )
-        self.assertEqual(
-            {row["municipality"] for row in confirmed if row["feed_ids"] == "hikari-gtfs"},
-            {"光市", "周南市"},
-        )
+        jrbus_municipalities = {
+            row["municipality"]
+            for row in self.municipalities
+            if "jrbus-chugoku-gtfs" in row["feed_ids"].split(";")
+        }
+        self.assertEqual(jrbus_municipalities, {"山口市", "萩市", "防府市", "美祢市"})
 
     def test_iwakuni_and_hikari_reference_dates_and_validity(self):
         for feed_id, catalog_updated_date in (
@@ -219,12 +221,17 @@ class GtfsStatusDataTest(unittest.TestCase):
         self.assertEqual(sentetsu["official_valid_from"], "2025-11-17")
         self.assertEqual(sentetsu["official_valid_to"], "2026-11-16")
         self.assertEqual(sentetsu["validity_status_at_check"], "within_official_period")
-        self.assertEqual(sentetsu["access_status"], "authentication_required_not_retrieved")
+        self.assertEqual(sentetsu["access_status"], "authentication_required")
         self.assertEqual(sentetsu["reference_date_status"], "not_stated")
         self.assertEqual(sentetsu["official_reference_date"], "")
 
     def test_access_status_is_limited_to_spec_enum(self):
-        allowed = {"public_head_confirmed", "authentication_required_not_retrieved"}
+        allowed = {
+            "public_download_confirmed",
+            "authentication_required",
+            "not_publicly_distributed",
+            "official_resource_unavailable",
+        }
         for row in self.feeds:
             self.assertIn(row["access_status"], allowed)
 
@@ -414,8 +421,8 @@ class IndexHtmlContractTest(unittest.TestCase):
             'id="gtfs-availability-badge"',
             'id="gtfs-availability-body"',
             'id="gtfs-caveat"',
-            "今回確認した公式資料の範囲ではGTFS/GTFS-JPを確認できませんでした。",
-            "2026-08-09",
+            "公式配布記録あり・現在取得不能",
+            "2026-08-13",
             "data/gtfs_feeds.json",
             "data/municipality_gtfs.json",
             "https://yamaguchi-opendata.jp/",
@@ -574,28 +581,26 @@ class StatusHtmlContractTest(unittest.TestCase):
         self.assertNotIn("136", gtfs_section)
 
     def test_gtfs_relationship_matches_built_data_without_banned_terms(self):
-        # SPEC.md §13.5.4, §13.6.4: 3フィード・5/19・14/19の関係を、
-        # ビルド済みデータの実測値と突き合わせて検査し、禁止表現による
-        # 不存在・率の断定を防ぐ。
+        # Four access states must match the generated public data without
+        # turning access conditions into coverage or maturity rates.
         feeds = read_json(DOCS_DATA_DIR / "gtfs_feeds.json")
         municipalities = read_json(DOCS_DATA_DIR / "municipality_gtfs.json")
-        confirmed = sum(1 for row in municipalities if row["availability_status"] == "confirmed")
-        not_confirmed = sum(
-            1 for row in municipalities if row["availability_status"] == "not_confirmed_in_checked_sources"
-        )
         total = len(municipalities)
 
         self.assertIn(str(len(feeds)), self.html)
-        self.assertIn(f"{confirmed} / {total}", self.html)
-        self.assertIn(f"{not_confirmed} / {total}", self.html)
+        for status in (
+            "public_download_confirmed", "authentication_required",
+            "not_publicly_distributed", "official_resource_unavailable",
+        ):
+            count = sum(1 for row in municipalities if row["availability_status"] == status)
+            self.assertIn(f"{count} / {total}", self.html)
 
         banned = ("整備率", "網羅率", "交通カバー率", "GTFSなし", "未整備")
         for phrase in banned:
             self.assertNotIn(phrase, self.html)
 
-        # 未確認をGTFS不存在と断定しない: 断定を否定する文言が必ずあること
-        self.assertIn("存在しないと断定するものではありません", self.html)
-        self.assertIn("今回確認した公式資料の範囲では未確認", self.html)
+        self.assertIn("県内全事業者・全路線の網羅を示しません", self.html)
+        self.assertIn("一般配布なし", self.html)
 
     def test_t1_to_t3_and_t4_are_separated_and_marked_not_met(self):
         # SPEC.md §13.5.5: T1〜T3は自力終了条件、T4は成果条件として分離し、
@@ -794,19 +799,19 @@ class ReadmeContractTest(unittest.TestCase):
 
     def test_gtfs_summary_present_without_banned_rate_terms(self):
         required = (
-            "公式フィード",
-            "3件",
-            "6 / 19",
-            "13 / 19",
-            "今回確認した公式資料の範囲",
+            "公式GTFS記録",
+            "8件",
+            "公開取得可能 7 / 19",
+            "認証が必要 2 / 19",
+            "一般配布なし 9 / 19",
+            "現在取得不能 1 / 19",
         )
         for marker in required:
             self.assertIn(marker, self.text)
         banned = ("整備率", "網羅率", "交通カバー率", "GTFSなし", "未整備")
         for phrase in banned:
             self.assertNotIn(phrase, self.text)
-        # 未確認をGTFS不存在と断定しない
-        self.assertIn("存在しないと断定するものではない", self.text)
+        self.assertIn("県内交通の完全収録を示すものではない", self.text)
 
     def test_included_artifacts_and_screens_are_listed(self):
         # SPEC.md §13.4.5: data/gtfs_feeds.*、data/municipality_gtfs.*、

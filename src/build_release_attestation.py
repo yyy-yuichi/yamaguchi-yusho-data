@@ -43,7 +43,7 @@ PUBLIC_ASSETS = (
     ),
 )
 FIXED_PROTECTED_SHA256 = {
-    "docs/index.html": "502eb93199d3df71593dc7d220d575159a9167a2692bdec2bb8b5b4b7d7c4b49",
+    "docs/index.html": "c0b5e9b2ee1d459c72f42b061a5731e0e768b33b6c1ea716bab415c8c6efe8e9",
     "docs/entry.html": "da71ea2775547d68af0f2b51da0faf7e852ef3b7d5e2cbce4ad187d79442d431",
     "data/work1_award_scorecard.json": "b1f03e1f09d4a39fbe8c8afdf4253c837bfea9c09bf7f3be02bb51449c12215d",
 }
@@ -113,8 +113,8 @@ def _source_checks(repo_root: Path) -> tuple[list[dict[str, Any]], list[str]]:
     errors: list[str] = []
     results: list[dict[str, Any]] = []
     sources = manifest.get("sources", [])
-    if manifest.get("expected_source_count") != 6 or len(sources) != 6:
-        errors.append("accepted_source_count_not_six")
+    if manifest.get("expected_source_count") != 7 or len(sources) != 7:
+        errors.append("accepted_source_count_not_seven")
     for item in sources:
         relative = item["local_path"]
         size, digest = file_fingerprint(repo_root / relative)

@@ -16,7 +16,7 @@ class PreconsultationHandoffTest(unittest.TestCase):
         cls.gtfs = json.loads((DOCS_DATA / "municipality_gtfs.json").read_text(encoding="utf-8"))
         cls.metrics = json.loads((DOCS_DATA / "gtfs_supply_metrics.json").read_text(encoding="utf-8"))
 
-    def test_all_19_municipalities_have_one_of_four_states(self):
+    def test_all_19_municipalities_have_registry_and_four_state_gtfs_combinations(self):
         supply_by_name = {row["municipality"]: row for row in self.supply["municipalities"]}
         gtfs_by_name = {row["municipality"]: row for row in self.gtfs}
         self.assertEqual(19, len(supply_by_name))
@@ -25,14 +25,16 @@ class PreconsultationHandoffTest(unittest.TestCase):
         for name, supply in supply_by_name.items():
             state = (
                 "registered" if supply["operator_count"] > 0 else "no-registry",
-                "gtfs-confirmed" if gtfs_by_name[name]["availability_status"] == "confirmed" else "gtfs-unconfirmed",
+                gtfs_by_name[name]["availability_status"],
             )
             counts[state] = counts.get(state, 0) + 1
         self.assertEqual({
-            ("registered", "gtfs-confirmed"): 4,
-            ("no-registry", "gtfs-confirmed"): 2,
-            ("registered", "gtfs-unconfirmed"): 11,
-            ("no-registry", "gtfs-unconfirmed"): 2,
+            ("registered", "public_download_confirmed"): 6,
+            ("no-registry", "public_download_confirmed"): 1,
+            ("no-registry", "authentication_required"): 2,
+            ("registered", "not_publicly_distributed"): 8,
+            ("no-registry", "not_publicly_distributed"): 1,
+            ("registered", "official_resource_unavailable"): 1,
         }, counts)
 
     def test_handoff_section_and_runtime_state_contract(self):
@@ -44,15 +46,15 @@ class PreconsultationHandoffTest(unittest.TestCase):
         for marker in (
             "6. この確認を次の行動へつなぐ", "このメモで共有する", "次に確認する",
             "分析へ渡す条件", "renderHandoff(item, gtfsRow)", "root.dataset.handoffState",
-            "root.dataset.hasMetrics", "registered-gtfs-confirmed", "no-registry-gtfs-confirmed",
-            "registered-gtfs-unconfirmed", "no-registry-gtfs-unconfirmed",
+            "root.dataset.hasMetrics", "public_download_confirmed", "authentication_required",
+            "not_publicly_distributed", "official_resource_unavailable",
         ):
             self.assertIn(marker, self.html)
 
     def test_nonclaims_and_manual_boundary_are_explicit(self):
         for marker in (
             "交通手段、移動支援、別制度の不存在を意味しません",
-            "GTFSや交通サービスが存在しないという意味ではありません",
+            "公開原本があるようには扱いません",
             "フィード全体の値で、市町内供給や利便性の評価ではありません",
             "この画面は外部サービスへデータを自動送信しません",
             "必要な場合だけ手動で次の工程へ渡します",

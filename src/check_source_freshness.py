@@ -25,7 +25,11 @@ from typing import Any, Callable
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_MANIFEST = REPO_ROOT / "data" / "source_freshness_manifest.json"
-ALLOWED_HOSTS = frozenset({"wwwtb.mlit.go.jp", "yamaguchi-opendata.jp"})
+ALLOWED_HOSTS = frozenset({
+    "wwwtb.mlit.go.jp",
+    "yamaguchi-opendata.jp",
+    "ajt-mobusta-gtfs.mcapps.jp",
+})
 ALLOWED_SOURCE_TYPES = frozenset({"registry_pdf", "gtfs_zip"})
 STATUSES = ("unchanged", "changed", "unavailable", "oversize", "invalid_baseline")
 EXIT_CODES = {
