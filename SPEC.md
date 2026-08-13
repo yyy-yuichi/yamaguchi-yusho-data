@@ -1,6 +1,6 @@
-# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理
+# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較
 
-**rev.5.16 / 2026-08-13**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30。消した記述はそこに全部書いてある）
+**rev.5.17 / 2026-08-13**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31。消した記述はそこに全部書いてある）
 
 UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下に `SPEC.md` として置き、Claude Code に読ませる。**
 
@@ -9,7 +9,8 @@ UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下
 §16は受け入れ済みSUPPLY-VIEW-1、§17は受け入れ済みRELEASE-1、
 §18は受け入れ済みENTRY-PAGE-1、§19は受け入れ済みWORK1-FRESHNESS-1、
 §20は受け入れ済みWORK1-AWARD-COMPARISON-1、§21は受け入れ済みWORK1-TASK-MEMO-1、
-§22はWORK1-GTFS-COVERAGE-2の実行仕様である。
+§22はWORK1-GTFS-COVERAGE-2、§23〜§28は受入済みの比較・証拠・公開情報整理、
+§29はWORK1-SIMILAR-SERVICE-BENCHMARK-1の実行仕様である。
 プロジェクトのゴール、終了条件、確定方針は`run_record.md` §0.5 を正とし、
 このファイルがそれを上書きしてはならない。
 
@@ -1144,6 +1145,14 @@ WORK1-RELEASE-EVIDENCE-PERMALINK-1は最終HEAD `1858190c47ad364a99fbf4fa32cfaf6
 改善用の数値自己診断を置く必然性を見直し、`docs/award-comparison.html`とPages用2 JSONを削除する。
 内部正本、計算、改善優先度は保持し、応募説明の公式観点見出しは利用価値・現在の実装・新しい取組の
 事実説明へ改める。これは診断の破棄や秘匿ではなく、公開成果物と開発資料の役割分離である。
+
+### 10.31 rev.5.16 → rev.5.17
+
+固定HEAD `c8dc19d6b2a9303018e4eccf3426aa7c3c11a262`の公開情報設計監査はGO（P0 0件、
+P1 0件、P2 1件）だった。P2は現HEADのCI artifactが2026-11-11に失効し、永続Releaseは
+直前HEADを対象にする証拠寿命の差である。証拠だけを再固定する循環を優先せず、内部診断の
+自力実行候補だった国内類似サービス比較を先に行う。比較は点数を上げる作業ではなく、一次資料で
+作品①の役割、共通点、差分、確認できない事項を明確にし、後続の製品改善と利用者検証を選びやすくする。
 
 ---
 
@@ -2915,3 +2924,82 @@ raw原本、GTFS ZIP、既存公開データ・計算値、公開トップ、作
 - 公開中核ページまたは検証証拠への到達性が失われる
 - scope lock、Pages、attestationが失敗またはNO_GOになる
 - 作品②、参加者連絡、応募・登録、履歴書換えを必要とする
+
+---
+
+## 29. WORK1-SIMILAR-SERVICE-BENCHMARK-1
+
+### 29.1 段階ゴール
+
+国内で公開されているGTFS関連サービス・ツール3件を一次資料の同一観点で比較し、作品①が
+「データを探す」「GTFSを詳細分析する」工程と競うのではなく、その前段で登録供給と公式GTFS確認状況を
+市町別・日付付きで揃え、協議前確認へ渡す役割を持つことを説明できる状態にする。世界初、唯一、優劣、
+網羅を主張せず、内部診断値は変更しない。
+
+### 29.2 比較対象と一次資料
+
+確認日は2026-08-13とし、国内の運営・開発主体自身または国土交通省が公開する次の3件を選ぶ。
+
+1. **GTFSデータリポジトリ**: GTFSの登録・公開とAPIによる取得を主役割として比較する。
+2. **GTFS-GO**: QGIS上で停留所・経路と運行頻度を可視化する役割として比較する。
+3. **LINKS Mobilys**: GTFS、乗降実績、OD等を用いた可視化・分析・シナリオ検討を主役割として比較する。
+
+各対象は、サービス本体または運営・開発主体の説明と、API文書・開発リポジトリ・国土交通省文書等の
+補助一次資料を1件以上持つ。第三者のランキング、検索結果要約、作品②の情報を根拠にしない。
+
+### 29.3 比較規則
+
+同じ観点で、対象利用者・目的、主な入力、一次資料で確認できる出力、利用環境、本作品との役割差を記録する。
+対象側の一次資料に書かれていない機能は「ない」と断定せず、「今回確認した説明では確認できない」とする。
+本作品についても、次を越えて主張しない。
+
+- 4登録簿PDFから23団体・136台の登録供給を山口県19市町へ対応付けている。
+- 公式一次資料で確認した3フィードと関係5市町を区別し、2 ZIPだけを実測している。
+- 出典、資料日付、内部日付、確認日、対象範囲、未確認、推計していない値を表示する。
+- 登録供給とGTFS確認状況を同じ市町入口で確認し、共有・印刷できる協議前確認メモへ渡す。
+- 需要、利用者数、到達圏、路線最適化、運行実績、リアルタイム運行、交通の良否は扱わない。
+
+比較は対象サービスの品質評価ではなく、役割と入力・出力の違いを示す。今回の3件で同じ組合せを
+確認できなかったことは記録できるが、国内全サービスを調査した、唯一である、代替できるとは言わない。
+
+### 29.4 公開情報契約
+
+`docs/entry.html`に「既存のGTFS関連ツールと比べた役割」を追加し、3件それぞれについて
+「一次資料で確認した主役割」「本作品との役割差」「公式・開発主体URL」を読めるようにする。
+同じ節に、優劣ランキングではないこと、対象側の未確認機能を不存在としないこと、本作品が高度分析を
+代替しないことを表示する。`docs/status.html`とREADMEから現在地と比較結果を追跡できるようにする。
+内部スコアカード、数値自己採点、受賞確率、公式点は公開しない。
+
+### 29.5 変更範囲と不変境界
+
+変更・追加できるのは次だけとする。
+
+- `SPEC.md`、`run_record.md`、`README.md`、`WORK_SCOPE.md`、`PROGRESS.md`、`verification.md`
+- `docs/entry.html`、`docs/status.html`
+- `src/build_release_attestation.py`
+- `tests/test_similar_service_benchmark.py`と、固定保護SHAを直接検証する既存テスト
+- `evidence/20260813_work1_similar_service_benchmark_*`
+
+`raw/`、GTFS ZIP、既存`data/`、既存`docs/data/`、`docs/index.html`、供給値・実測値、内部診断2件、
+scope境界ファイルは変更しない。作品②を入力にせず、参加者連絡、UDC概要フォーム、本応募、
+BODIK登録、履歴・Release・tagの削除、内部再採点を行わない。
+
+### 29.6 完了条件
+
+1. 3対象・6件以上の一次資料、確認日、選定理由、比較観点、主張・非主張を機械可読な証拠へ固定する。
+2. 公開応募説明に3対象の主役割、本作品との役割差、公式URL、比較の限界が表示される。
+3. 本作品の役割を「深い分析の前に、登録供給とGTFS確認状況を市町別・日付付きで揃える」と説明できる。
+4. 世界初・唯一・優劣・国内網羅、対象サービスの機能不存在、高度分析の代替を主張していない。
+5. 内部診断2件、原本6件、既存公開データ・計算値、公開トップのbytesが基準HEADと一致する。
+6. 専用テストと全unittest、scope checker、`git diff --check`、旧SPEC網羅検査が成功する。
+7. commit・main push後、scope lock、Pages、release attestationが同一HEADでsuccess・GOになる。
+8. 公開URLがcommit bytesと一致し、PC 1440×1600・スマートフォン390×844で主要説明、外部リンク、
+   横overflow 0、runtime/dev error 0、壊れた画像0を確認する。
+9. 次段階をread-onlyの`WORK1-SIMILAR-SERVICE-BENCHMARK-AUDIT-1`だけに定義し、開始しない。
+
+### 29.7 停止条件
+
+- 一次資料で対象の主役割またはURLを確認できない
+- 対象側にない機能、国内唯一、受賞寄与、内部点数上昇を断定する必要が生じる
+- 原本、既存公開値、公開トップ、内部診断、scope境界の変更が必要になる
+- 作品②、参加者連絡、応募・登録、履歴書換え、Release削除が必要になる

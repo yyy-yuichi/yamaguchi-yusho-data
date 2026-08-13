@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-SIMILAR-SERVICE-BENCHMARK-1",
+  "work_id": "WORK1",
+  "repository_id": "yyy-yuichi/yamaguchi-yusho-data",
+  "verified_at": "2026-08-13",
+  "selection_policy": {
+    "region": "Japan",
+    "required_source_owner": "service operator, developer, or Ministry of Land, Infrastructure, Transport and Tourism",
+    "required_relevance": [
+      "GTFS data discovery or distribution",
+      "GTFS route, stop, or frequency visualization",
+      "public transport planning analysis or scenario comparison"
+    ],
+    "selected_count": 3,
+    "other_work_input_count": 0,
+    "excluded_evidence": [
+      "third-party rankings",
+      "search-result summaries as final evidence",
+      "unpublished claims",
+      "other UDC work repositories or public artifacts"
+    ]
+  },
+  "comparison_axes": [
+    "target_users_and_purpose",
+    "primary_inputs",
+    "confirmed_outputs",
+    "usage_environment",
+    "role_difference_from_work1",
+    "unverified_or_non_claimed_features"
+  ],
+  "work1_baseline": {
+    "title": "山口県 市町別の登録供給ビュー",
+    "target_users_and_purpose": "山口県・市町の公共交通担当者や事業者が、協議前に公開資料の所在、日付、対象範囲、限界を確認する",
+    "primary_inputs": [
+      "中国運輸局が公表した4登録簿PDF",
+      "公式一次資料で確認した3 GTFS / GTFS-JPフィード",
+      "内部構成と予定運行を実測した2 GTFS ZIP"
+    ],
+    "confirmed_outputs": [
+      "23団体・136台の登録供給を山口県19市町へ対応付けた表示",
+      "公式GTFS確認状況と関係5市町の区別",
+      "出典、資料日付、内部日付、確認日、対象範囲、未確認、非推計の明示",
+      "共有・印刷可能な市町別の協議前確認メモ"
+    ],
+    "usage_environment": "static web application on GitHub Pages",
+    "public_sources": [
+      "https://yyy-yuichi.github.io/yamaguchi-yusho-data/",
+      "https://yyy-yuichi.github.io/yamaguchi-yusho-data/entry.html",
+      "https://yyy-yuichi.github.io/yamaguchi-yusho-data/status.html"
+    ],
+    "non_claims": [
+      "demand or ridership measurement",
+      "reachability or route optimization",
+      "actual or realtime operation",
+      "route search",
+      "transport quality or sufficiency",
+      "complete coverage of all transport operators or feeds"
+    ]
+  },
+  "comparators": [
+    {
+      "comparator_id": "gtfs_data_repository",
+      "title": "GTFSデータリポジトリ",
+      "operator": "一般社団法人社会基盤情報流通推進協議会（一般社団法人日本バス情報協会協力）",
+      "pipeline_role": "discover_and_obtain_gtfs",
+      "target_users_and_purpose": "GTFSデータを登録・公開し、WebまたはAPIから取得できるようにする",
+      "primary_inputs": [
+        "operators' registered GTFS feeds and metadata"
+      ],
+      "confirmed_outputs": [
+        "GTFS feed search and download",
+        "API search including a target date"
+      ],
+      "usage_environment": "web service and beta API",
+      "role_difference_from_work1": "フィードを探して取得する基盤であるのに対し、作品①は山口県の登録簿と公式GTFS確認状況を市町単位で並べ、確認日と限界を協議前メモへ渡す",
+      "unverified_or_non_claimed_features": [
+        "The reviewed official descriptions were not used to claim whether the service handles road-transport registration ledgers or municipality-level pre-consultation memos."
+      ],
+      "primary_sources": [
+        {
+          "source_id": "gtfs_repo_home",
+          "title": "GTFSデータリポジトリ",
+          "publisher": "GTFSデータリポジトリ",
+          "url": "https://gtfs-data.jp/",
+          "source_type": "operator_service_page",
+          "verified_at": "2026-08-13",
+          "supports": [
+            "service for registering and publishing GTFS data",
+            "operator and cooperating organization"
+          ]
+        },
+        {
+          "source_id": "gtfs_repo_api_v2",
+          "title": "GTFS Data Repository API (ベータ公開版)",
+          "publisher": "GTFSデータリポジトリ",
+          "url": "https://docs.gtfs-data.jp/api.v2.html",
+          "source_type": "operator_api_documentation",
+          "verified_at": "2026-08-13",
+          "supports": [
+            "API search by target date",
+            "current and historical feed retrieval fields"
+          ]
+        }
+      ]
+    },
+    {
+      "comparator_id": "gtfs_go",
+      "title": "GTFS-GO",
+      "operator": "株式会社MIERUNE",
+      "pipeline_role": "visualize_and_aggregate_gtfs",
+      "target_users_and_purpose": "公共交通・都市計画等の利用者がGTFSの停留所、経路、運行頻度を地図上で確認する",
+      "primary_inputs": [
+        "local GTFS ZIP",
+        "preset or GTFS Data Repository feed"
+      ],
+      "confirmed_outputs": [
+        "routes and stops rendered in QGIS",
+        "traffic frequency aggregation for a specified date"
+      ],
+      "usage_environment": "open-source QGIS plugin",
+      "role_difference_from_work1": "GTFS内部を地図・運行頻度として詳しく見るツールであるのに対し、作品①はGTFSが公式資料で確認できる市町範囲と登録供給を同じ入口で確認する",
+      "unverified_or_non_claimed_features": [
+        "The reviewed developer descriptions were not used to claim whether the plugin handles road-transport registration ledgers, source freshness ledgers, or printable municipality memos."
+      ],
+      "primary_sources": [
+        {
+          "source_id": "gtfs_go_developer_article",
+          "title": "公共交通機関のデータを可視化する『GTFS-GO』を使ってみよう！",
+          "publisher": "QGIS LAB by MIERUNE",
+          "url": "https://qgis.mierune.co.jp/posts/howto_plugin_gtfsgo",
+          "source_type": "developer_documentation",
+          "verified_at": "2026-08-13",
+          "supports": [
+            "QGIS plugin installation",
+            "stop and route plotting",
+            "frequency aggregation",
+            "GTFS Data Repository integration"
+          ]
+        },
+        {
+          "source_id": "gtfs_go_repository",
+          "title": "MIERUNE/GTFS-GO",
+          "publisher": "MIERUNE",
+          "url": "https://github.com/MIERUNE/GTFS-GO",
+          "source_type": "developer_source_repository",
+          "verified_at": "2026-08-13",
+          "supports": [
+            "open-source QGIS plugin",
+            "route and stop GeoJSON rendering",
+            "traffic frequency aggregation"
+          ]
+        }
+      ]
+    },
+    {
+      "comparator_id": "links_mobilys",
+      "title": "LINKS Mobilys",
+      "operator": "国土交通省 Project LINKS × 地域交通DX推進プロジェクト COMmmmONS",
+      "pipeline_role": "analyze_and_test_planning_scenarios",
+      "target_users_and_purpose": "自治体職員や交通事業者が地域公共交通計画の可視化、分析、シナリオ検討を行う",
+      "primary_inputs": [
+        "GTFS data",
+        "ridership records",
+        "origin-destination data",
+        "related facility data"
+      ],
+      "confirmed_outputs": [
+        "route, timetable, and service-frequency visualization",
+        "reachability and public transport coverage analysis",
+        "ridership and origin-destination analysis",
+        "scenario editing and comparison"
+      ],
+      "usage_environment": "open-source web-based planning support tool",
+      "role_difference_from_work1": "計画分析とシナリオ検討を担う高度なツールであるのに対し、作品①はその前に山口県の公開資料の所在、対象市町、日付、限界を短時間で揃える",
+      "unverified_or_non_claimed_features": [
+        "The reviewed ministry descriptions were not used to claim whether the tool handles the four Chinese District Transport Bureau registration ledgers used by Work 1.",
+        "Work 1 does not replace LINKS Mobilys analysis or scenario functions."
+      ],
+      "primary_sources": [
+        {
+          "source_id": "links_mobilys_mlit_page",
+          "title": "地域公共交通計画策定支援ツール『LINKS Mobilys』",
+          "publisher": "国土交通省 COMmmmONS",
+          "url": "https://www.mlit.go.jp/commmmons/document/008/",
+          "source_type": "ministry_product_page",
+          "verified_at": "2026-08-13",
+          "supports": [
+            "open-source planning support tool",
+            "GTFS, ridership, and origin-destination inputs",
+            "map, graph, and scenario functions",
+            "municipality and operator target users"
+          ]
+        },
+        {
+          "source_id": "links_mobilys_manual",
+          "title": "地域公共交通計画策定支援ツール『LINKS Mobilys』利用マニュアル",
+          "publisher": "国土交通省",
+          "url": "https://www.mlit.go.jp/commmmons/document/008/commmmons_doc_008_ver01.pdf",
+          "source_type": "ministry_user_manual",
+          "verified_at": "2026-08-13",
+          "supports": [
+            "tool identity and ministry development",
+            "open-source distribution",
+            "supported planning workflows"
+          ]
+        }
+      ]
+    }
+  ],
+  "synthesis": {
+    "pipeline": [
+      "GTFSデータリポジトリでフィードを探して取得する",
+      "作品①で山口県の登録供給、公式GTFS確認状況、日付、限界を市町別に揃える",
+      "GTFS-GOでGTFS内部の停留所、経路、運行頻度を可視化する",
+      "LINKS Mobilysで乗降実績やODを加え、計画分析とシナリオ検討を行う"
+    ],
+    "positioning": "Work 1 is an upstream evidence and handoff layer for municipality-level pre-consultation checks, not a replacement for GTFS repositories, GIS visualization, or planning analysis.",
+    "confirmed_distinction": "Across the six reviewed primary sources, the same combination of four registration ledgers, official GTFS confirmation status, municipality entry points, date/provenance boundaries, and printable pre-consultation memo was not confirmed.",
+    "limits": [
+      "Only three selected domestic services and six primary sources were reviewed.",
+      "Absence from reviewed descriptions is not evidence that a comparator lacks a feature.",
+      "No claim of uniqueness, superiority, national completeness, or award impact is made.",
+      "The internal award scorecard is unchanged."
+    ],
+    "next_product_questions": [
+      "Can the handoff from Work 1 to deeper GTFS analysis be made clearer without duplicating those tools?",
+      "Which pre-consultation task should later be tested with relevant users?"
+    ]
+  }
+}

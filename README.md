@@ -65,14 +65,14 @@ GTFS供給比較**、**市町別の交通協議前確認メモ**までを担う�
 
 対象は山口県分 4 ファイル（上記2区分 × 市町村営・NPO等）。
 
-## 現在地（WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 最終受入済み、2026-08-13時点）
+## 現在地（WORK1-SIMILAR-SERVICE-BENCHMARK-1 最終受入済み、2026-08-13時点）
 
 このリポジトリはI-1〜I-4までの市町別ビューに、受入済みGTFS検査・供給指標を使う
 SUPPLY-VIEW-1の比較画面を追加し、RELEASE-1でGitHub Pagesへ公開した。公開URLに対する
 Edge/CDPの1440×1600・390×844実確認28/28とCodexの独立読戻しを終え、`run_record.md` rev.37で
 受入済みである。この公開範囲は、
 UDC2026応募全体の終了条件（作品概要エントリー・本応募・第三者検証公開・受賞）の達成を
-意味しない。作品の課題・使い方・評価根拠は `docs/entry.html`、詳細な工程・残作業・終了条件は
+意味しない。作品の課題・使い方・利用価値・類似サービスとの役割差は `docs/entry.html`、詳細な工程・残作業・終了条件は
 `docs/status.html` に表示している。
 
 作品①と別作品の作業境界、deny-by-defaultの検査方法、全体DAGは[`WORK_SCOPE.md`](WORK_SCOPE.md)を
@@ -86,7 +86,7 @@ UDC2026応募全体の終了条件（作品概要エントリー・本応募・�
 - **SUPPLY-VIEW-1 / RELEASE-1**: 岩国市関連・光市関連フィードの構造3指標と
   2026-04-06〜2026-04-12の予定運行便を、切替操作なしで根拠・状態とともに確認できる公開比較画面
 - **ENTRY-PAGE-1**: 作品名、81字概要、対象者、課題、3段階の使い方、使用データ、
-  実用度・完成度・挑戦度、限界を初見の人向けに結ぶ応募説明ページ。Pages run
+  利用価値、現在の到達点、限界を初見の人向けに結ぶ応募説明ページ。Pages run
   `31462820456`と公開実Edge 30/30をCodex受入済み
 - **WORK1-FRESHNESS-1（継続確認）**: 受入済み4登録簿PDF・2 GTFS ZIPを公式配布と
   継続照合し、原本を採用し直さずに状態だけを区別する。GitHub Actionsの週次・手動検査と
@@ -135,6 +135,12 @@ UDC2026応募全体の終了条件（作品概要エントリー・本応募・�
   commit `48f5f90`のscope lock `31669272686`、Pages `31669272478`、attestation
   `31669319617`はsuccess・GOで、151 / 151、公開4 / 4、原本6 / 6、保護3 / 3、errors 0。
   公開PC・スマートフォン、現行4 URLの200、旧3 URLの404まで受入済み
+- **WORK1-PUBLIC-INFORMATION-ARCHITECTURE-AUDIT-1**: 固定HEAD `c8dc19d`をread-only監査し、
+  P0 0件・P1 0件・P2 1件でGO。P2は現HEADのCI artifactと永続Releaseの証拠寿命の差
+- **WORK1-SIMILAR-SERVICE-BENCHMARK-1**: GTFSデータリポジトリ、GTFS-GO、LINKS Mobilysを
+  運営・開発主体と国土交通省の一次資料6件で比較した。作品①を、データ取得や高度分析の代替ではなく、
+  登録供給・公式GTFS確認状況・日付・限界を市町別に揃える協議前確認の層として位置付けた。
+  唯一・優劣・機能不存在は主張せず、内部診断値は変更していない
 
 ## 原本変更の継続確認（WORK1-FRESHNESS-1）
 

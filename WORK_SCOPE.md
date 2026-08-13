@@ -40,7 +40,9 @@ flowchart TD
     H2["WORK1-RELEASE-EVIDENCE-HARDENING-AUDIT-1<br/>read-only監査<br/>GO・P2 1件"]
     P1["WORK1-RELEASE-EVIDENCE-PERMALINK-1<br/>最終HEAD証拠のRelease固定<br/>完了"]
     I1["WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1<br/>公開情報と内部診断の分離<br/>公開・最終受入済み"]
-    I2["WORK1-PUBLIC-INFORMATION-ARCHITECTURE-AUDIT-1<br/>次のread-only監査・未着手"]
+    I2["WORK1-PUBLIC-INFORMATION-ARCHITECTURE-AUDIT-1<br/>read-only監査<br/>GO・P2 1件"]
+    B1["WORK1-SIMILAR-SERVICE-BENCHMARK-1<br/>国内3サービスの体系比較<br/>公開・最終受入済み"]
+    B2["WORK1-SIMILAR-SERVICE-BENCHMARK-AUDIT-1<br/>次のread-only監査・未着手"]
     C2["作品②の比較用出力<br/>作品②Chatが所有"]
     D{"比較・注力判断<br/>人が決定"}
     S["選んだ作品を応募品質まで強化"]
@@ -48,7 +50,7 @@ flowchart TD
 
     G --> W1
     G --> W2
-    W1 --> F --> L --> C1 --> A1 --> M1 --> A2 --> V1 --> V2 --> C3 --> C4 --> T1 --> T2 --> R1 --> R2 --> H1 --> H2 --> P1 --> I1 --> I2 --> D
+    W1 --> F --> L --> C1 --> A1 --> M1 --> A2 --> V1 --> V2 --> C3 --> C4 --> T1 --> T2 --> R1 --> R2 --> H1 --> H2 --> P1 --> I1 --> I2 --> B1 --> B2 --> D
     W2 --> C2 --> D
     D --> S --> A
 ```
@@ -97,8 +99,13 @@ flowchart TD
 - `WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1`: 利用者向けPagesを作品の機能・利用価値・実装事実・
   出典・限界中心へ整理し、改善用の数値診断をPagesから分離した。内部正本を保持し、全CI、
   attestation GO、公開PC・スマートフォン、現行200・旧3 URLの404まで最終受入済み。
-- `WORK1-PUBLIC-INFORMATION-ARCHITECTURE-AUDIT-1`: 公開導線、削除ページ、内部診断の保持、
-  作品②入力0件をread-onlyで再監査する次段階。現在は未着手。
+- `WORK1-PUBLIC-INFORMATION-ARCHITECTURE-AUDIT-1`: 固定HEAD `c8dc19d`の公開導線、削除ページ、
+  内部診断の保持、作品②入力0件をread-onlyで再監査し、P0 0件、P1 0件、P2 1件でGO。
+- `WORK1-SIMILAR-SERVICE-BENCHMARK-1`: 国内3サービス・一次資料6件を同一観点で比較し、作品①を
+  登録供給・公式GTFS確認状況・日付・限界を市町別に揃える協議前確認の層として公開・最終受入済み。
+- `WORK1-SIMILAR-SERVICE-BENCHMARK-AUDIT-1`: 比較対象、一次資料、役割差、非主張、公開配信、
+  作品②入力0件を変更なしで再監査する次段階。現在は未着手。
 - 作品①の公開出力: [市町別の登録供給ビュー](https://yyy-yuichi.github.io/yamaguchi-yusho-data/)
 - 作品①の実務出力: [市町別 交通協議前確認メモ](https://yyy-yuichi.github.io/yamaguchi-yusho-data/municipality-memo.html)
+- 作品①の位置づけ: [国内3サービスとの役割比較](https://yyy-yuichi.github.io/yamaguchi-yusho-data/entry.html#benchmark-title)
 - 応募送信、本応募、BODIK登録、作品②の変更は別の人間承認・別Chatの責任範囲である。

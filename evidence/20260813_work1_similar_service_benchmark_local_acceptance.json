@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-SIMILAR-SERVICE-BENCHMARK-1",
+  "evidence_type": "local_acceptance",
+  "checked_at": "2026-08-13",
+  "decision": "LOCAL_GO",
+  "baseline": {
+    "branch": "main",
+    "commit_sha": "c8dc19d6b2a9303018e4eccf3426aa7c3c11a262",
+    "origin_main_sha": "c8dc19d6b2a9303018e4eccf3426aa7c3c11a262",
+    "worktree_was_clean": true
+  },
+  "research": {
+    "comparator_count": 3,
+    "primary_source_count": 6,
+    "verified_at": "2026-08-13",
+    "comparison_axis_count": 6,
+    "other_work_input_count": 0,
+    "research_evidence": "evidence/20260813_work1_similar_service_benchmark_research.json",
+    "research_bytes": 10864,
+    "research_sha256": "5db0504850e0a3841a9ccb36a9fea8b99f0afa5fa54dbf946b006b2b1e2ffee3"
+  },
+  "implementation": {
+    "entry": {
+      "path": "docs/entry.html",
+      "bytes": 19049,
+      "sha256": "da71ea2775547d68af0f2b51da0faf7e852ef3b7d5e2cbce4ad187d79442d431",
+      "required_comparators_present": 3,
+      "primary_source_links_present": 6,
+      "numeric_self_score_published": false
+    },
+    "status": {
+      "path": "docs/status.html",
+      "bytes": 58702,
+      "sha256": "3994dae042f2f24555f60bafe24a0ac7056e4c075ae269d570a09d500a4a6924",
+      "stale_public_scorecard_claim_removed": true,
+      "next_stage": "WORK1-SIMILAR-SERVICE-BENCHMARK-AUDIT-1"
+    },
+    "dedicated_test": {
+      "path": "tests/test_similar_service_benchmark.py",
+      "bytes": 4123,
+      "sha256": "cda1f7c0076982e192707804296ebdaed97de48cfced1c08d4847e61ac5a8feb",
+      "passed": 6,
+      "failed": 0
+    }
+  },
+  "verification": {
+    "tests": {
+      "discovered": 157,
+      "passed": 157,
+      "failed": 0
+    },
+    "spec_coverage": {
+      "baseline_tokens": 950,
+      "missing": 0,
+      "unexplained": 0
+    },
+    "diff_check_passed": true,
+    "scope_guard_passed": true,
+    "secret_pattern_hits": 0,
+    "protected_diff_exit": 0
+  },
+  "protected_assets": [
+    {
+      "path": "docs/index.html",
+      "bytes": 48875,
+      "sha256": "502eb93199d3df71593dc7d220d575159a9167a2692bdec2bb8b5b4b7d7c4b49",
+      "baseline_match": true
+    },
+    {
+      "path": "data/work1_award_scorecard.json",
+      "bytes": 23699,
+      "sha256": "0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021",
+      "baseline_match": true
+    },
+    {
+      "path": "data/award_scorecard_schema.json",
+      "bytes": 8604,
+      "sha256": "5a9be868d93de7b8c889eb2a0c9ea54a2af3c59dad031a5469aafd6e1c8c9cb1",
+      "baseline_match": true
+    }
+  ],
+  "boundaries": {
+    "raw_source_changes": 0,
+    "gtfs_zip_changes": 0,
+    "existing_data_changes": 0,
+    "existing_docs_data_changes": 0,
+    "internal_score_changes": 0,
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0,
+    "release_or_tag_deletions": 0
+  },
+  "next_actions": [
+    "commit and push the implementation to main",
+    "verify scope lock, Pages, and release attestation on the same commit",
+    "read back public bytes and PC/mobile rendering",
+    "record initial public acceptance and reverify its final commit",
+    "stop before WORK1-SIMILAR-SERVICE-BENCHMARK-AUDIT-1"
+  ],
+  "errors": []
+}

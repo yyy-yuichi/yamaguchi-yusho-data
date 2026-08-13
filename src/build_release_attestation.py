@@ -44,7 +44,7 @@ PUBLIC_ASSETS = (
 )
 FIXED_PROTECTED_SHA256 = {
     "docs/index.html": "502eb93199d3df71593dc7d220d575159a9167a2692bdec2bb8b5b4b7d7c4b49",
-    "docs/entry.html": "217c904713188dbfe2a81a90aa346fb905e905d07bbaee7daedf82cff66870ba",
+    "docs/entry.html": "da71ea2775547d68af0f2b51da0faf7e852ef3b7d5e2cbce4ad187d79442d431",
     "data/work1_award_scorecard.json": "0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021",
 }
 

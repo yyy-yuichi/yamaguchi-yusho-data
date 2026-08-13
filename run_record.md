@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-13 (rev.59) / 状態: WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 最終受入済み / 次: WORK1-PUBLIC-INFORMATION-ARCHITECTURE-AUDIT-1（read-only・未着手）
+最終更新: 2026-08-13 (rev.60) / 状態: WORK1-SIMILAR-SERVICE-BENCHMARK-1 ローカル受入済み / 次: commit・push・CI・Pages公開受入
 
 ## 0. このファイルについて
 
@@ -1168,3 +1168,24 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - この受入記録を含む最終HEAD自身もscope lock、Pages、attestationで再確認し、run IDは
   外部正本としてrepoへ再書込みしない。
 - 次段階は変更を伴わない`WORK1-PUBLIC-INFORMATION-ARCHITECTURE-AUDIT-1`だけとし、開始しない。
+
+### 改訂点（rev.60）
+
+- 固定HEAD `c8dc19d6b2a9303018e4eccf3426aa7c3c11a262`の
+  `WORK1-PUBLIC-INFORMATION-ARCHITECTURE-AUDIT-1`はGO、P0 0件、P1 0件、P2 1件。
+- 151 / 151テスト、scope allowed、旧SPEC 941トークン欠落0、公開4画面のcommit bytes一致、
+  削除3 URLの404、PC・スマートフォンの横overflow・壊れた画像・dev log各0を独立確認した。
+- P2は現HEADのCI artifactが2026-11-11に失効し、latest GitHub Releaseは直前HEAD
+  `1858190c47ad364a99fbf4fa32cfaf607279073d`を対象にする証拠寿命の差である。
+- 証拠だけの再固定を繰り返さず、自力実行候補の`WORK1-SIMILAR-SERVICE-BENCHMARK-1`を開始する。
+  GTFSデータリポジトリ、GTFS-GO、LINKS Mobilysの一次資料を同一観点で比較し、作品①の役割、
+  共通点、差分、非主張を公開説明へ反映する。内部点数は変更しない。
+- 変更範囲は`SPEC.md` rev.5.17 §29を正とする。作品②、参加者連絡、応募・BODIK、原本・既存値・
+  公開トップ・内部診断の変更は行わない。
+- 3対象・6一次資料・6比較軸を
+  `evidence/20260813_work1_similar_service_benchmark_research.json`へ固定した。応募説明に主役割、
+  役割差、公式URL、非主張を追加し、状況ページから旧いスコアカード公開済み表示を削除した。
+- 専用6 / 6、全157 / 157テスト、旧SPEC 950トークン欠落0、scope checker、`git diff --check`、
+  秘密情報定型検査0件が成功した。原本・既存data・docs/data・公開トップ・内部診断は不変。
+- ローカル正本は`evidence/20260813_work1_similar_service_benchmark_local_acceptance.json`。
+  `LOCAL_GO`としてmainへcommit・pushし、同一SHAのCI・Pages・公開PC・スマートフォンを読戻す。

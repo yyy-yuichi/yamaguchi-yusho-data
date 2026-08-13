@@ -2602,3 +2602,22 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
 - PC 1440×1600・スマートフォン390×844は横overflow、壊れた画像、dev log各0。
   現行4 URLは200、削除3 URLは404。公開HTMLに旧スコアリンクは0件。
 - この記録を含む最終HEAD自身を同じ3 workflowで外部再確認する。次段階はread-only監査だけ。
+
+## 2026-08-13 WORK1-SIMILAR-SERVICE-BENCHMARK-1 ローカル受入
+
+- 固定HEAD `c8dc19d6b2a9303018e4eccf3426aa7c3c11a262`の公開情報設計監査はGO、
+  P0 0件、P1 0件、P2 1件。P2は現HEADのCI artifactと永続Releaseの証拠寿命の差である。
+- 国内3サービスを工程別に選定した。GTFSデータリポジトリは取得、GTFS-GOは可視化・頻度集計、
+  LINKS Mobilysは計画分析・シナリオ検討を主役割として、運営・開発主体と国土交通省の一次資料
+  6件を2026-08-13に確認した。
+- 作品①は、登録供給・公式GTFS確認状況・日付・根拠・限界を19市町の同じ入口で揃え、
+  共有・印刷できる協議前確認メモへ渡す前段の確認層として説明する。
+- `docs/entry.html`へ3比較対象、主役割、役割差、6一次資料リンク、比較限界を追加した。
+  `docs/status.html`では旧い「比較スコアカード公開済み」という誤表示を削除し、現在地と次の監査を同期した。
+- 世界初、国内唯一、優劣、国内網羅、対象側の機能不存在、高度分析の代替、点数上昇は主張しない。
+- 専用6 / 6、全157 / 157テスト、旧SPEC 950トークン欠落0、scope checker、
+  `git diff --check`、秘密情報定型検査0件はsuccess。
+- `raw/`、既存`data/`、既存`docs/data/`、公開トップ、内部診断2件は基準HEADと同一。
+  作品②入力、参加者連絡、応募・BODIK、Release・tag削除は各0件。
+- ローカル正本は`evidence/20260813_work1_similar_service_benchmark_local_acceptance.json`。
+  次はcommit・main push、同一SHAのscope lock・Pages・attestation、公開PC・スマートフォン読戻し。

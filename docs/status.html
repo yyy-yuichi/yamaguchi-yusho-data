@@ -853,10 +853,11 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">作品の現在地</p>
-          <h2 id="progress-title">WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報の整理</h2>
-          <p><a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/releases/latest">公開GitHub Release</a>への最終HEAD証拠5資産の固定に続き、公開ページを作品の利用価値・実装事実・出典・限界中心へ整理し、改善判断用の数値診断をPagesの公開成果物から分離しました。</p>
-          <p><a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>の市町別ビュー、協議前確認メモ、GTFS供給比較、応募説明、検証状況は維持します。数値診断の正本は公開リポジトリ内で開発資料として保持しますが、作品利用者向けページには自己採点を表示しません。UDC概要フォーム、本応募、BODIK登録、参加者連絡はこの段階に含みません。</p>
-          <p>初回公開commit <code>18170b2</code>からの検証履歴と初回GO artifactは維持しています。全151 / 151テスト、90日保存の外部artifactを補う<a href="data/work1_release_attestation_audit.json">監査証拠JSON</a>、<a href="data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json">可読snapshot</a>、<a href="data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json.b64">Base64正本</a>と、<code>work1-release-attestation.zip</code>、<code>attestation.json</code>、<code>attestation.md</code>、<code>release-provenance.json</code>、<code>SHA256SUMS.txt</code>を固定したGitHub Releaseから検証できます。Release/tagは検証証拠の公開であり、応募手続ではありません。この整理後の自動公開照合は4資産です。</p>
+          <h2 id="progress-title">WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービスの体系比較</h2>
+          <p>公開情報設計の独立監査は固定HEAD <code>c8dc19d</code>についてGOでした。続いて、GTFSデータリポジトリ、GTFS-GO、LINKS Mobilysの一次資料6件を同じ観点で比較し、本作品の役割を公開説明へ反映しました。</p>
+          <p><a href="entry.html#benchmark-title">公開した比較</a>は優劣ランキングではありません。データを探す、GTFSを可視化する、計画を分析する各工程に対し、本作品はその前段で登録供給・公式GTFS確認状況・日付・限界を市町別に揃え、協議前確認メモへ渡します。</p>
+          <p><a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>の既存機能と数値は維持しています。国内唯一、対象サービスに機能がない、高度分析を代替できるとは主張せず、内部診断値も変更していません。UDC概要フォーム、本応募、BODIK登録、参加者連絡はこの段階に含みません。</p>
+          <p>初回公開commit <code>18170b2</code>からの検証履歴と初回GO artifactは維持しています。全151 / 151テスト、90日保存の外部artifactを補う<a href="data/work1_release_attestation_audit.json">監査証拠JSON</a>、<a href="data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json">可読snapshot</a>、<a href="data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json.b64">Base64正本</a>と、<code>work1-release-attestation.zip</code>、<code>release-provenance.json</code>、<code>SHA256SUMS.txt</code>を固定した<a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/releases/latest">公開GitHub Release</a>から検証できます。Release/tagは検証証拠の公開であり、応募手続ではありません。自動の公開照合は4資産です。</p>
         </div>
         <strong class="progress-summary">公開基盤を保持して受賞品質を継続改善</strong>
       </div>
@@ -962,9 +963,19 @@
           <span class="step-title">WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1: 公開情報と内部診断の分離</span>
           <span class="step-state">公開・CI・PC/スマホ・最終受入済み</span>
         </li>
-        <li class="todo">
+        <li class="done">
           <span class="step-no">20</span>
           <span class="step-title">WORK1-PUBLIC-INFORMATION-ARCHITECTURE-AUDIT-1: 公開情報設計の独立再監査</span>
+          <span class="step-state">read-only監査GO・P2 1件</span>
+        </li>
+        <li class="done">
+          <span class="step-no">21</span>
+          <span class="step-title">WORK1-SIMILAR-SERVICE-BENCHMARK-1: 国内3サービスの体系比較</span>
+          <span class="step-state">一次資料6件・公開説明・最終受入済み</span>
+        </li>
+        <li class="todo">
+          <span class="step-no">22</span>
+          <span class="step-title">WORK1-SIMILAR-SERVICE-BENCHMARK-AUDIT-1: 比較根拠の独立再監査</span>
           <span class="step-state">次のread-only監査・未着手</span>
         </li>
         <li class="todo">
@@ -1220,7 +1231,7 @@
         <div>
           <p class="eyebrow">この作業の区切り</p>
           <h2 id="next-title">公開基盤は受入済み、受賞品質の改善は継続</h2>
-          <p><a href="entry.html">応募説明ページ</a>、公開デモ、コード、データ、確認メモ、原本照合、比較スコアカードは公開済みです。ここを完成の終点とはせず、比較、独立監査、自力実行可能な改善を一段階ずつ反復します。外部提出と参加者連絡は残り1工程ではなく、別途本人が判断する独立した人間承認ゲートです。</p>
+          <p><a href="entry.html">応募説明ページ</a>、公開デモ、コード、データ、確認メモ、原本照合、類似サービス比較は公開済みです。ここを完成の終点とはせず、比較、独立監査、自力実行可能な改善を一段階ずつ反復します。内部診断は公開リポジトリ内の開発資料として使い、外部提出と参加者連絡は別途本人が判断する独立した人間承認ゲートです。</p>
         </div>
       </div>
 
@@ -1329,10 +1340,40 @@
         </li>
         <li>
           <strong>外部提出と参加者連絡は別ゲート</strong>
-          <p>この公開整理はUDC概要フォーム、本応募、BODIK登録、参加者への連絡を実行しません。次段階は変更を伴わない独立監査です。</p>
+          <p>この公開整理ではUDC概要フォーム、本応募、BODIK登録、参加者への連絡を実行しませんでした。独立監査GO後、一次資料だけで進められる類似サービス比較へ進みました。</p>
         </li>
       </ul>
       <p class="source-note">根拠: UDC2026作品募集要領、SPEC.md §20・§23・§28。公開ページは審査結果や受賞確率を表すものではありません。</p>
+    </section>
+
+    <section aria-labelledby="similar-service-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">WORK1-SIMILAR-SERVICE-BENCHMARK-1 / 公開・最終受入済み</p>
+          <h2 id="similar-service-title">「探す・詳しく見る・計画する」と、本作品の確認工程を分ける</h2>
+          <p>国内3サービスの一次資料6件を確認し、対象利用者・目的、入力、確認できる出力、利用環境、本作品との役割差を同じ形式で整理しました。</p>
+        </div>
+      </div>
+
+      <ul class="next-list">
+        <li>
+          <strong>GTFSデータリポジトリ: 探して取得する</strong>
+          <p>GTFSの登録・公開、Web・APIによる検索と取得を担います。本作品は配布基盤ではなく、登録供給と公式GTFS確認状況を市町単位で揃えます。</p>
+        </li>
+        <li>
+          <strong>GTFS-GO: 停留所・経路・頻度を詳しく見る</strong>
+          <p>QGIS上でGTFSを可視化・集計します。本作品はGTFS内部の分析ではなく、確認できた市町範囲、日付、根拠、限界を示します。</p>
+        </li>
+        <li>
+          <strong>LINKS Mobilys: 計画を分析する</strong>
+          <p>GTFS、乗降実績、OD等から到達圏やシナリオを分析します。本作品はその前段の公開資料確認と協議前メモを担い、高度分析を代替しません。</p>
+        </li>
+        <li>
+          <strong>比較の限界を残す</strong>
+          <p>対象側の説明に書かれていない機能を不存在とせず、3件だけから国内唯一・網羅・優位とは主張しません。内部診断値も変更していません。</p>
+        </li>
+      </ul>
+      <p class="source-note">根拠: <a href="entry.html#benchmark-title">応募説明の比較節</a>、SPEC.md §29、2026-08-13確認の運営・開発主体および国土交通省一次資料。</p>
     </section>
 
     <section aria-labelledby="task-memo-title">

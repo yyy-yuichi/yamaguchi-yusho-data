@@ -318,6 +318,37 @@
       <p class="fact">ここでは利用者が確かめられる事実を示します。UDC2026一次審査の3観点にも対応しますが、応募者による自己採点は公開せず、評価は審査に委ねます。</p>
     </section>
 
+    <section aria-labelledby="benchmark-title">
+      <p class="eyebrow">Similar service benchmark</p>
+      <h2 id="benchmark-title">既存のGTFS関連ツールと比べた役割</h2>
+      <p>国内で公開されている3サービスについて、運営・開発主体と国土交通省の一次資料を2026-08-13に確認しました。優劣を決めるランキングではなく、公共交通データを使う工程のどこを担うかを比べます。</p>
+      <div class="grid-3">
+        <article class="card">
+          <h3>GTFSデータリポジトリ</h3>
+          <p><strong>確認した主役割:</strong> GTFSを登録・公開し、WebやAPIから検索・取得できるようにする基盤です。</p>
+          <p><strong>本作品との役割差:</strong> 本作品はフィード配布ではなく、山口県の登録供給と公式GTFS確認状況を市町別・日付付きで揃えます。</p>
+          <p><a href="https://gtfs-data.jp/" target="_blank" rel="noopener noreferrer">サービス本体</a> / <a href="https://docs.gtfs-data.jp/api.v2.html" target="_blank" rel="noopener noreferrer">API文書</a></p>
+        </article>
+        <article class="card">
+          <h3>GTFS-GO</h3>
+          <p><strong>確認した主役割:</strong> QGIS上でGTFSの停留所・経路を描画し、指定日の運行頻度を集計するプラグインです。</p>
+          <p><strong>本作品との役割差:</strong> GTFS内部の地図・頻度分析ではなく、公式資料で確認できる市町範囲と登録供給を同じ入口で確認します。</p>
+          <p><a href="https://qgis.mierune.co.jp/posts/howto_plugin_gtfsgo" target="_blank" rel="noopener noreferrer">開発者による解説</a> / <a href="https://github.com/MIERUNE/GTFS-GO" target="_blank" rel="noopener noreferrer">ソースコード</a></p>
+        </article>
+        <article class="card">
+          <h3>LINKS Mobilys</h3>
+          <p><strong>確認した主役割:</strong> GTFS、乗降実績、OD等を使い、運行頻度・到達圏・利用状況・シナリオを分析する計画支援ツールです。</p>
+          <p><strong>本作品との役割差:</strong> 高度な計画分析の前に、公開資料の所在、対象市町、日付、限界を短時間で揃える確認工程を担います。</p>
+          <p><a href="https://www.mlit.go.jp/commmmons/document/008/" target="_blank" rel="noopener noreferrer">国土交通省の紹介</a> / <a href="https://www.mlit.go.jp/commmmons/document/008/commmmons_doc_008_ver01.pdf" target="_blank" rel="noopener noreferrer">利用マニュアル</a></p>
+        </article>
+      </div>
+      <div class="fact">
+        <strong>本作品が受け持つ手前の確認</strong>
+        <p>GTFSを探す、地図で詳しく見る、計画案を分析する前に、登録供給・公式GTFS確認状況・日付・根拠・限界を19市町の同じ入口で揃え、共有・印刷できる協議前確認メモへ渡します。</p>
+      </div>
+      <p>比較対象の一次資料に書かれていない機能は、存在しないとは判断していません。本作品もGTFS-GOやLINKS Mobilysの分析機能を代替するものではありません。今回確認した3件だけから、国内唯一・網羅・優位とは主張しません。</p>
+    </section>
+
     <section aria-labelledby="limits-title">
       <p class="eyebrow">Scope and limits</p>
       <h2 id="limits-title">分かること／分からないこと</h2>

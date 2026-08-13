@@ -2521,3 +2521,23 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 
 この記録を含む最終HEAD自身をscope lock、Pages、release attestationで再確認し、後続run IDは
 外部正本としてrepoへ再書込みしない。次段階はread-only監査だけとする。
+
+## WORK1-SIMILAR-SERVICE-BENCHMARK-1 ローカル検証（2026-08-13）
+
+| 検証 | 結果 |
+|---|---|
+| 監査入力 | `c8dc19d6b2a9303018e4eccf3426aa7c3c11a262`、公開情報設計監査GO、P0 0 / P1 0 / P2 1 |
+| 比較対象 | GTFSデータリポジトリ、GTFS-GO、LINKS Mobilysの3件 |
+| 一次資料 | 運営・開発主体、国土交通省の計6件、確認日2026-08-13 |
+| 比較軸 | 対象・目的、入力、確認できる出力、利用環境、本作品との役割差、未確認・非主張の6軸 |
+| 公開説明 | `docs/entry.html`へ主役割・役割差・公式URL・比較限界を追加 |
+| 位置づけ | 深い分析の前に、登録供給・公式GTFS確認状況・日付・限界を市町別に揃える確認層 |
+| 非主張 | 世界初、唯一、優劣、国内網羅、対象側の機能不存在、高度分析代替、内部点数上昇を主張しない |
+| 専用回帰 | 6 / 6 success |
+| 全回帰 | 157件検出、157 / 157 success、終了コード0 |
+| 旧SPEC網羅 | 950トークン、欠落0、説明なし0 |
+| 差分・秘密情報 | `git diff --check` success、認証情報定型パターン0件 |
+| 不変対象 | `raw/`、既存`data/`、既存`docs/data/`、`docs/index.html`、内部診断2件は基準HEADと同一 |
+| scope | 変更前ガード`WORK1_SCOPE_ALLOWED`、作品②入力・参加者連絡・応募・BODIK各0 |
+| 正本 | `evidence/20260813_work1_similar_service_benchmark_local_acceptance.json` |
+| 判定 | `LOCAL_GO`。実装commitをmainへpushし、CI・Pages・公開ブラウザ受入へ進む |
