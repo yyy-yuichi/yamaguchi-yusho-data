@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-13 (rev.61) / 状態: WORK1-SIMILAR-SERVICE-BENCHMARK-1 公開受入済み / 次: read-only独立監査
+最終更新: 2026-08-13 (rev.62) / 状態: WORK1-PRECONSULTATION-HANDOFF-1 実行中 / 次: 状態別ハンドオフ実装
 
 ## 0. このファイルについて
 
@@ -1203,3 +1203,15 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - 公開受入正本は`evidence/20260813_work1_similar_service_benchmark_public_acceptance.json`。
   この記録を含む最終HEAD自身を同じ3 workflowで再確認し、後続run IDは外部正本として再書込みしない。
 - 次段階は変更を伴わない`WORK1-SIMILAR-SERVICE-BENCHMARK-AUDIT-1`だけとし、開始しない。
+
+### 改訂点（rev.62）
+
+- 固定HEAD `0aeff8fd58d2cd3d7ea49635f17c46037e6801b5`の
+  `WORK1-SIMILAR-SERVICE-BENCHMARK-AUDIT-1`はGO、P0 0件、P1 0件、P2 3件。
+- P2はAPI詳細URLの取得不安定、GitHub管理workflowのNode 20警告、現HEAD artifactと永続Releaseの
+  証拠寿命差である。現公開、比較内容、同一HEAD受入を否定するP0・P1はなかった。
+- ユーザー承認により`WORK1-PRECONSULTATION-HANDOFF-1`を開始する。`SPEC.md` rev.5.18 §30を正とし、
+  市町別メモへ4状態別の共有事実、次の確認、外部分析へ渡す条件を追加する。
+- 入力は作品①の既存公開JSONだけとし、原本、公開値、内部点数、公開トップ、応募説明は変えない。
+  外部サービスへデータを自動送信せず、参加者連絡、応募・BODIK、作品②の参照・操作を行わない。
+- 完了後の次段階はread-onlyの`WORK1-PRECONSULTATION-HANDOFF-AUDIT-1`だけとし、この段階では開始しない。

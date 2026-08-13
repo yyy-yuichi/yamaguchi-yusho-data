@@ -1,6 +1,6 @@
-# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較
+# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ
 
-**rev.5.17 / 2026-08-13**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31。消した記述はそこに全部書いてある）
+**rev.5.18 / 2026-08-13**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32。消した記述はそこに全部書いてある）
 
 UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下に `SPEC.md` として置き、Claude Code に読ませる。**
 
@@ -10,7 +10,8 @@ UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下
 §18は受け入れ済みENTRY-PAGE-1、§19は受け入れ済みWORK1-FRESHNESS-1、
 §20は受け入れ済みWORK1-AWARD-COMPARISON-1、§21は受け入れ済みWORK1-TASK-MEMO-1、
 §22はWORK1-GTFS-COVERAGE-2、§23〜§28は受入済みの比較・証拠・公開情報整理、
-§29はWORK1-SIMILAR-SERVICE-BENCHMARK-1の実行仕様である。
+§29は受け入れ済みWORK1-SIMILAR-SERVICE-BENCHMARK-1、§30は
+WORK1-PRECONSULTATION-HANDOFF-1の実行仕様である。
 プロジェクトのゴール、終了条件、確定方針は`run_record.md` §0.5 を正とし、
 このファイルがそれを上書きしてはならない。
 
@@ -1153,6 +1154,15 @@ P1 0件、P2 1件）だった。P2は現HEADのCI artifactが2026-11-11に失効
 直前HEADを対象にする証拠寿命の差である。証拠だけを再固定する循環を優先せず、内部診断の
 自力実行候補だった国内類似サービス比較を先に行う。比較は点数を上げる作業ではなく、一次資料で
 作品①の役割、共通点、差分、確認できない事項を明確にし、後続の製品改善と利用者検証を選びやすくする。
+
+### 10.32 rev.5.17 → rev.5.18
+
+固定HEAD `0aeff8fd58d2cd3d7ea49635f17c46037e6801b5`の類似サービス比較監査はGO（P0 0件、
+P1 0件、P2 3件）だった。P2はAPI文書1 URLの取得不安定、GitHub Pages workflowのNode 20
+警告、現HEAD artifactの期限と永続Release対象HEADの差で、いずれも現公開の停止条件ではない。
+比較で整理した工程差を実用品質へつなげるため、協議前確認メモへ、現在の市町状態から導く
+「共有する事実」「次に確認する事項」「外部分析へ渡せる条件」を追加する。外部サービスへの自動送信、
+原本・公開値の自動採用、内部再採点は行わない。
 
 ---
 
@@ -3002,4 +3012,85 @@ BODIK登録、履歴・Release・tagの削除、内部再採点を行わない�
 - 一次資料で対象の主役割またはURLを確認できない
 - 対象側にない機能、国内唯一、受賞寄与、内部点数上昇を断定する必要が生じる
 - 原本、既存公開値、公開トップ、内部診断、scope境界の変更が必要になる
+- 作品②、参加者連絡、応募・登録、履歴書換え、Release削除が必要になる
+
+---
+
+## 30. WORK1-PRECONSULTATION-HANDOFF-1
+
+### 30.1 段階ゴール
+
+市町別交通協議前確認メモを、事実と確認項目を並べるだけの出力から、選択市町の現状態に応じて
+「何を共有するか」「次に何を確認するか」「どの条件を満たせば外部の可視化・分析工程へ渡せるか」を
+一枚で判断できる実務用ハンドオフへ進める。登録0件やGTFS未確認を不存在とせず、外部サービスへの
+自動送信・自動採用は行わない。
+
+### 30.2 状態モデルと表示契約
+
+既存の`municipal_supply.json`、`municipality_gtfs.json`、`gtfs_feeds.json`、
+`gtfs_supply_metrics.json`だけを入力にし、19市町を次の4状態へ決定的に分類する。
+
+1. 登録簿記録あり・GTFS確認済み
+2. 登録簿上0件・GTFS確認済み
+3. 登録簿記録あり・GTFS確認範囲では未確認
+4. 登録簿上0件・GTFS確認範囲では未確認
+
+測定済み指標の有無は別属性として扱う。各状態で、共有する事実、次の確認、分析へ渡す条件を表示する。
+GTFS確認済みでは公式配布先の最新版・ライセンス・日付・対象範囲を再確認してからGTFS-GO等へ渡す。
+未確認では公式カタログ、事業者案内、GTFSデータリポジトリを追加確認し、適切なフィードを確認するまで
+可視化工程へ渡さない。LINKS Mobilys等の計画分析は、GTFSだけでなく乗降実績・OD・計画条件等の
+入力と利用条件を人が確認した場合だけを候補とする。
+
+### 30.3 非主張と安全境界
+
+- 登録簿上0件は、交通手段、移動支援、制度、事業者の不存在を意味しない。
+- GTFS未確認は、GTFSまたは交通サービスの不存在を意味しない。
+- 測定済み指標はフィード全体の構造・予定便であり、市町内供給、需要充足、利便性を示さない。
+- 外部サービスの機能、適合性、利用可否を断定せず、利用者が公式条件を確認する。
+- この画面は外部サービスへデータを自動送信せず、原本や公開値を自動更新しない。
+
+### 30.4 外部参照
+
+ハンドオフから次の安定した公式・開発主体ページへ到達できるようにする。
+
+- GTFSデータリポジトリ: `https://gtfs-data.jp/`
+- GTFS-GOの開発主体による説明: `https://qgis.mierune.co.jp/posts/howto_plugin_gtfsgo`
+- 国土交通省 LINKS Mobilys: `https://www.mlit.go.jp/commmmons/document/008/`
+
+外部リンクはHTTPS、別タブ、`noopener noreferrer`とする。取得不安定だったAPI詳細URLを
+ハンドオフの必須導線にしない。
+
+### 30.5 変更範囲と不変境界
+
+変更・追加できるのは次だけとする。
+
+- `SPEC.md`、`run_record.md`、`README.md`、`WORK_SCOPE.md`、`PROGRESS.md`、`verification.md`
+- `docs/municipality-memo.html`、`docs/status.html`
+- `src/build_release_attestation.py`
+- `tests/test_preconsultation_handoff.py`と、固定保護SHAを直接検証する既存テスト
+- `evidence/20260813_work1_preconsultation_handoff_*`
+
+`raw/`、GTFS ZIP、既存`data/`、既存`docs/data/`、`docs/index.html`、`docs/entry.html`、供給値・
+実測値、内部診断2件、scope境界ファイルは変更しない。作品②を入力にせず、参加者連絡、
+UDC概要フォーム、本応募、BODIK登録、外部サービスへのデータ送信、内部再採点を行わない。
+
+### 30.6 完了条件
+
+1. 19市町すべてが既存データから4状態のいずれかへ分類され、測定値有無も区別される。
+2. 各状態で共有事実、次の確認、外部分析へ渡す条件が具体的に表示される。
+3. 登録0件・GTFS未確認・測定値の非主張と、自動送信・自動採用をしない境界が読める。
+4. 3外部参照がHTTPS・別タブ・安全な`rel`で到達でき、取得不安定なAPI詳細URLに依存しない。
+5. 共有URL、印刷・PDF保存、既存の市町別詳細導線が維持される。
+6. 原本6件、既存data・docs/data、公開トップ、応募説明、内部診断2件が基準HEADと一致する。
+7. 専用テストと全unittest、scope checker、`git diff --check`、旧SPEC網羅検査が成功する。
+8. commit・main push後、scope lock、Pages、release attestationが同一HEADでsuccess・GOになる。
+9. 公開PC 1440×1600とスマートフォン390×844で4状態、外部リンク、印刷、横overflow 0、
+   runtime/dev error 0、壊れた画像0を確認する。
+10. 次段階をread-onlyの`WORK1-PRECONSULTATION-HANDOFF-AUDIT-1`だけに定義し、開始しない。
+
+### 30.7 停止条件
+
+- 既存公開データだけでは4状態を決定できない
+- 未確認・0件を不存在と断定する、または外部サービスへ自動送信する必要が生じる
+- 原本、既存公開値、公開トップ、応募説明、内部診断、scope境界の変更が必要になる
 - 作品②、参加者連絡、応募・登録、履歴書換え、Release削除が必要になる

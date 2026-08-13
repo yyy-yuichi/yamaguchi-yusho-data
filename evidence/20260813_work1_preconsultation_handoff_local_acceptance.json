@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-PRECONSULTATION-HANDOFF-1",
+  "evidence_type": "local_acceptance",
+  "checked_at": "2026-08-13",
+  "decision": "LOCAL_GO",
+  "baseline": {
+    "branch": "main",
+    "commit_sha": "0aeff8fd58d2cd3d7ea49635f17c46037e6801b5",
+    "origin_main_sha": "0aeff8fd58d2cd3d7ea49635f17c46037e6801b5",
+    "worktree_was_clean": true
+  },
+  "state_model": {
+    "municipality_count": 19,
+    "registered_gtfs_confirmed": 4,
+    "no_registry_gtfs_confirmed": 2,
+    "registered_gtfs_unconfirmed": 11,
+    "no_registry_gtfs_unconfirmed": 2,
+    "metrics_are_separate_attribute": true,
+    "input_public_json_count": 4
+  },
+  "implementation": {
+    "memo": {
+      "path": "docs/municipality-memo.html",
+      "bytes": 38414,
+      "sha256": "fac3e8b11eced6b2418f11814cfbf5fb19f8f872356d0d85ea81092388663f02",
+      "handoff_columns": 3,
+      "external_reference_links": 3,
+      "automatic_external_transmission": false
+    },
+    "status": {
+      "path": "docs/status.html",
+      "bytes": 59362,
+      "sha256": "1a3566386ffa52c7726669754416632e0b2c28a10b808b06e8d37cc13fca85da",
+      "benchmark_audit_recorded": true,
+      "next_stage": "WORK1-PRECONSULTATION-HANDOFF-AUDIT-1"
+    },
+    "dedicated_test": {
+      "path": "tests/test_preconsultation_handoff.py",
+      "bytes": 4386,
+      "sha256": "5fd02b0e4e62a4555ce2095eca952fbd998a3f10a19bce0c50e3ffad8c68db26",
+      "passed": 6,
+      "failed": 0
+    }
+  },
+  "local_browser": {
+    "viewport": "1280x720",
+    "representative_cases": [
+      {"municipality": "下関市", "state": "registered-gtfs-unconfirmed", "has_metrics": false},
+      {"municipality": "宇部市", "state": "no-registry-gtfs-confirmed", "has_metrics": false},
+      {"municipality": "岩国市", "state": "registered-gtfs-confirmed", "has_metrics": true},
+      {"municipality": "防府市", "state": "no-registry-gtfs-unconfirmed", "has_metrics": false}
+    ],
+    "case_matches": 4,
+    "safe_external_links_per_case": 3,
+    "horizontal_overflow_cases": 0,
+    "runtime_error_cases": 0,
+    "visual_review_passed": true,
+    "public_pc_mobile_pending": true
+  },
+  "verification": {
+    "tests": {"discovered": 163, "passed": 163, "failed": 0},
+    "spec_coverage": {"baseline_tokens": 963, "missing": 0, "unexplained": 0},
+    "accepted_source_matches": 6,
+    "external_reference_gets": 3,
+    "external_reference_successes": 3,
+    "diff_check_passed": true,
+    "scope_guard_passed": true,
+    "secret_pattern_hits": 0,
+    "print_contract_tested": true
+  },
+  "protected_assets": [
+    {"path": "docs/index.html", "bytes": 48875, "sha256": "502eb93199d3df71593dc7d220d575159a9167a2692bdec2bb8b5b4b7d7c4b49", "baseline_match": true},
+    {"path": "docs/entry.html", "bytes": 19049, "sha256": "da71ea2775547d68af0f2b51da0faf7e852ef3b7d5e2cbce4ad187d79442d431", "baseline_match": true},
+    {"path": "data/work1_award_scorecard.json", "bytes": 23699, "sha256": "0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021", "baseline_match": true},
+    {"path": "data/award_scorecard_schema.json", "bytes": 8604, "sha256": "5a9be868d93de7b8c889eb2a0c9ea54a2af3c59dad031a5469aafd6e1c8c9cb1", "baseline_match": true}
+  ],
+  "boundaries": {
+    "raw_source_changes": 0,
+    "gtfs_zip_changes": 0,
+    "existing_data_changes": 0,
+    "existing_docs_data_changes": 0,
+    "internal_score_changes": 0,
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0,
+    "external_service_data_transmissions": 0
+  },
+  "next_actions": [
+    "commit and push the implementation to main",
+    "verify scope lock, Pages, and release attestation on the same commit",
+    "verify four public states at PC and smartphone viewports",
+    "record initial public acceptance and reverify its final commit",
+    "stop before WORK1-PRECONSULTATION-HANDOFF-AUDIT-1"
+  ],
+  "errors": []
+}

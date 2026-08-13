@@ -2563,3 +2563,24 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 
 この受入記録を含む最終HEAD自身をscope lock、Pages、release attestationで再確認し、後続run IDは
 外部正本としてrepoへ再書込みしない。
+
+## 2026-08-13 WORK1-PRECONSULTATION-HANDOFF-1 ローカル検証
+
+| 検証 | 結果 |
+|---|---|
+| 状態分類 | 19市町、登録あり＋GTFS確認済み4、登録0＋確認済み2、登録あり＋未確認11、登録0＋未確認2 |
+| 測定値属性 | 確認済みフィードとの関連から独立判定。岩国市の代表確認は`true` |
+| 表示 | 共有事実3、次確認2、分析条件2を各状態で生成 |
+| 非主張 | 登録0・GTFS未確認・フィード全体指標を不存在・市町供給・利便性としない |
+| 自動処理境界 | 外部サービスへの送信0、原本・公開値の自動採用0、外部URLへの`fetch` 0 |
+| 外部導線 | GTFSデータリポジトリ、GTFS-GO、国土交通省LINKS Mobilysの3 / 3到達、安全な別タブリンク |
+| 専用回帰 | 6 / 6 success |
+| 全回帰 | 163件検出、163 / 163 success、終了コード0 |
+| 旧SPEC網羅 | 基準HEADの963トークン、欠落0、説明なし0 |
+| 実ブラウザ4状態 | 下関市・宇部市・岩国市・防府市、状態・測定値属性一致、runtime error 0、横overflow 0 |
+| 目視・印刷 | 1280×720で3列ハンドオフを目視。印刷時の操作非表示、カード罫線、外部URL追記を静的回帰 |
+| 不変対象 | 6原本、既存`data/`・`docs/data/`、`docs/index.html`、`docs/entry.html`、内部診断2件は基準HEADと同一 |
+| 差分・scope | `git diff --check` success、`WORK1_SCOPE_ALLOWED`、秘密情報定型パターン0件 |
+| 境界 | 作品②入力・参加者連絡・UDC応募・BODIK・内部再採点・外部データ送信は各0 |
+| 正本 | `evidence/20260813_work1_preconsultation_handoff_local_acceptance.json` |
+| 判定 | `LOCAL_GO`。実装commitをmainへpushし、CI・Pages・公開PC・スマホ受入へ進む |

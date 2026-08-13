@@ -44,9 +44,10 @@ GTFS供給比較**、**市町別の交通協議前確認メモ**までを担う�
 
 [`docs/municipality-memo.html`](docs/municipality-memo.html)は、既存の公開JSONだけから、選択した
 市町について「いま確認できる範囲」「登録簿上の供給」「GTFSの公開確認状況」「測定済み指標」
-「協議前に次に確認すること」を一枚に構成する。市町をURLに保持でき、共有URLのコピーと
-印刷・PDF保存に対応する。登録0件やGTFS未確認をサービスの不存在とせず、指標のない市町へ
-値を補完しない。
+「協議前に次に確認すること」を一枚に構成する。さらに、登録簿記録あり/0件とGTFS確認済み/
+確認範囲では未確認の4状態に応じて、共有する事実、次の確認、外部分析へ渡す条件を示す。
+市町をURLに保持でき、共有URLのコピーと印刷・PDF保存に対応する。登録0件やGTFS未確認を
+サービスの不存在とせず、指標のない市町へ値を補完しない。外部サービスへ自動送信しない。
 
 - 公開画面: <https://yyy-yuichi.github.io/yamaguchi-yusho-data/municipality-memo.html>
 - 入力: `docs/data/municipal_supply.json`、`docs/data/municipality_gtfs.json`、
@@ -65,7 +66,7 @@ GTFS供給比較**、**市町別の交通協議前確認メモ**までを担う�
 
 対象は山口県分 4 ファイル（上記2区分 × 市町村営・NPO等）。
 
-## 現在地（WORK1-SIMILAR-SERVICE-BENCHMARK-1 最終受入済み、2026-08-13時点）
+## 現在地（WORK1-PRECONSULTATION-HANDOFF-1 ローカル受入済み、2026-08-13時点）
 
 このリポジトリはI-1〜I-4までの市町別ビューに、受入済みGTFS検査・供給指標を使う
 SUPPLY-VIEW-1の比較画面を追加し、RELEASE-1でGitHub Pagesへ公開した。公開URLに対する
@@ -141,6 +142,12 @@ UDC2026応募全体の終了条件（作品概要エントリー・本応募・�
   運営・開発主体と国土交通省の一次資料6件で比較した。作品①を、データ取得や高度分析の代替ではなく、
   登録供給・公式GTFS確認状況・日付・限界を市町別に揃える協議前確認の層として位置付けた。
   唯一・優劣・機能不存在は主張せず、内部診断値は変更していない
+- **WORK1-SIMILAR-SERVICE-BENCHMARK-AUDIT-1**: 固定HEAD `0aeff8f`をread-only監査し、
+  P0 0件・P1 0件・P2 3件でGO。P2はAPI詳細URLの取得不安定、GitHub Pages workflowの
+  Node 20警告、現HEAD artifactと永続Releaseの証拠寿命差
+- **WORK1-PRECONSULTATION-HANDOFF-1**: 市町別メモへ4状態別の共有事実・次の確認・分析へ渡す
+  条件を追加し、ローカル受入済み。GTFSデータリポジトリ、GTFS-GO、LINKS Mobilysは公式条件を
+  確認して人が手動で選ぶ次工程とし、この画面からデータを自動送信しない
 
 ## 原本変更の継続確認（WORK1-FRESHNESS-1）
 

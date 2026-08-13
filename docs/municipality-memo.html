@@ -63,8 +63,8 @@
     .memo-header p { margin: .35rem 0 0; }
     .memo-section { padding: 1.2rem 1.35rem; }
     .memo-section h3 { margin-top: 0; }
-    .summary-grid, .metric-grid, .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: .8rem; }
-    .summary-card, .metric, .data-card { min-width: 0; padding: .9rem; border: 1px solid var(--line); border-radius: 12px; background: #fbfcfb; }
+    .summary-grid, .metric-grid, .card-grid, .handoff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: .8rem; }
+    .summary-card, .metric, .data-card, .handoff-card { min-width: 0; padding: .9rem; border: 1px solid var(--line); border-radius: 12px; background: #fbfcfb; }
     .summary-card dt, .metric dt { color: var(--muted); font-size: .88rem; font-weight: 700; }
     .summary-card dd, .metric dd { margin: .2rem 0 0; font-size: 1.25rem; font-weight: 850; }
     .pill { display: inline-block; padding: .18rem .55rem; border-radius: 999px; font-size: .82rem; font-weight: 800; }
@@ -78,6 +78,11 @@
     .compact-list li + li { margin-top: .45rem; }
     .data-card h4 { margin: 0 0 .4rem; }
     .data-card p { margin: .25rem 0; overflow-wrap: anywhere; }
+    .handoff-summary { margin: 0 0 1rem; padding: .8rem 1rem; border-left: 5px solid var(--green); background: var(--green-soft); font-weight: 750; }
+    .handoff-card h4 { margin: 0 0 .5rem; color: var(--green-dark); }
+    .handoff-card p { margin: .25rem 0; overflow-wrap: anywhere; }
+    .handoff-card a { font-weight: 750; }
+    .handoff-boundary { margin: 1rem 0 0; color: var(--muted); }
     .muted { color: var(--muted); }
     .source-list { padding-left: 1.2rem; }
     .source-list li + li { margin-top: .65rem; }
@@ -100,9 +105,10 @@
       .shell { width: 100%; }
       main { padding: 0; }
       .memo-header { margin-top: 0; color: #000; background: #fff; border: 2px solid #000; break-after: avoid; }
-      .memo-section, .summary-card, .metric, .data-card { box-shadow: none; background: #fff; border-color: #777; }
+      .memo-section, .summary-card, .metric, .data-card, .handoff-card { box-shadow: none; background: #fff; border-color: #777; }
       .memo-section { break-inside: avoid; }
       a { color: #000; text-decoration: underline; overflow-wrap: anywhere; }
+      .handoff-card a::after { content: " (" attr(href) ")"; font-size: 8.5pt; font-weight: 400; }
     }
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
   </style>
@@ -214,8 +220,28 @@
         <ol id="checklist" class="compact-list"></ol>
       </section>
 
+      <section id="handoff-section" class="memo-section" aria-labelledby="handoff-title">
+        <h3 id="handoff-title">6. この確認を次の行動へつなぐ</h3>
+        <p id="handoff-summary" class="handoff-summary"></p>
+        <div class="handoff-grid">
+          <article class="handoff-card">
+            <h4>このメモで共有する</h4>
+            <ul id="handoff-facts" class="compact-list"></ul>
+          </article>
+          <article class="handoff-card">
+            <h4>次に確認する</h4>
+            <ul id="handoff-next" class="compact-list"></ul>
+          </article>
+          <article class="handoff-card">
+            <h4>分析へ渡す条件</h4>
+            <ul id="handoff-tools" class="compact-list"></ul>
+          </article>
+        </div>
+        <p id="handoff-boundary" class="handoff-boundary">この画面は外部サービスへデータを自動送信しません。公式の利用条件と入力範囲を人が確認し、必要な場合だけ手動で次の工程へ渡します。</p>
+      </section>
+
       <section class="memo-section" aria-labelledby="limits-title">
-        <h3 id="limits-title">6. 読み方・限界・根拠</h3>
+        <h3 id="limits-title">7. 読み方・限界・根拠</h3>
         <ul id="limits" class="compact-list"></ul>
         <h4>このメモが参照した公開データ</h4>
         <ul id="source-links" class="source-list"></ul>
@@ -294,6 +320,21 @@
         link.rel = "noopener noreferrer";
         link.textContent = label;
         parent.appendChild(link);
+      }
+
+      function addHandoffItem(list, title, detail, linkLabel, linkUrl) {
+        const item = document.createElement("li");
+        const heading = document.createElement("strong");
+        heading.textContent = title;
+        const description = document.createElement("p");
+        description.textContent = detail;
+        item.append(heading, description);
+        if (linkLabel && linkUrl) {
+          const linkRow = document.createElement("p");
+          addExternalLink(linkRow, linkLabel, linkUrl);
+          item.appendChild(linkRow);
+        }
+        list.appendChild(item);
       }
 
       function feedIds(row) {
@@ -493,6 +534,57 @@
         addListItem(list, "交通空白、利便性、需要充足の判断には、路線・時刻・予約条件・利用実績・人口等の追加情報を組み合わせる。");
       }
 
+      function renderHandoff(item, gtfsRow) {
+        const root = document.getElementById("handoff-section");
+        const facts = document.getElementById("handoff-facts");
+        const next = document.getElementById("handoff-next");
+        const tools = document.getElementById("handoff-tools");
+        clear(facts);
+        clear(next);
+        clear(tools);
+
+        const hasRegistry = item.operator_count > 0;
+        const confirmed = gtfsRow.availability_status === "confirmed";
+        const associatedFeedIds = new Set(feedIds(gtfsRow));
+        const hasMetrics = state.metrics.some(row => associatedFeedIds.has(row.feed_id));
+        const handoffState = `${hasRegistry ? "registered" : "no-registry"}-${confirmed ? "gtfs-confirmed" : "gtfs-unconfirmed"}`;
+        root.dataset.handoffState = handoffState;
+        root.dataset.hasMetrics = String(hasMetrics);
+
+        const stateLabels = {
+          "registered-gtfs-confirmed": "登録簿記録あり・GTFS確認済み",
+          "no-registry-gtfs-confirmed": "登録簿上0件・GTFS確認済み",
+          "registered-gtfs-unconfirmed": "登録簿記録あり・GTFS確認範囲では未確認",
+          "no-registry-gtfs-unconfirmed": "登録簿上0件・GTFS確認範囲では未確認"
+        };
+        text("handoff-summary", `${item.municipality}は「${stateLabels[handoffState]}」です。0件や未確認を不存在とせず、この状態から次の確認へ進みます。`);
+
+        addHandoffItem(facts, "登録供給", hasRegistry
+          ? `${state.supply.meta.data_as_of || "基準日要確認"}時点の4登録簿で${item.operator_count}団体・${item.vehicles_total}台を確認しています。実際の運行や予約可能性を示す値ではありません。`
+          : `${state.supply.meta.data_as_of || "基準日要確認"}時点の4登録簿では該当記載0件です。交通手段、移動支援、別制度の不存在を意味しません。`);
+        addHandoffItem(facts, "GTFS公開確認", confirmed
+          ? `${gtfsRow.checked_at}の確認範囲で公式GTFSを確認しています。最新版、ライセンス、有効期間、対象範囲は利用前に再確認します。`
+          : `${gtfsRow.checked_at}の確認範囲では公式GTFSを確認できていません。GTFSや交通サービスが存在しないという意味ではありません。`);
+        addHandoffItem(facts, "測定済み指標", hasMetrics
+          ? "取得・安全確認済みフィードの構造と予定便の測定値があります。フィード全体の値で、市町内供給や利便性の評価ではありません。"
+          : "この市町に関連付けられた測定済み指標はありません。値を補完・推定しません。");
+
+        addHandoffItem(next, hasRegistry ? "登録内容を原本で確認" : "0件の外側を追加確認", hasRegistry
+          ? "登録番号、有効期間、運送区域、連絡先、現在の運行・予約条件を原本と関係機関で確認します。"
+          : "今回の4登録簿以外の制度、更新版、区域表記、自治体・交通事業者の案内を確認します。");
+        addHandoffItem(next, confirmed ? "公式配布条件を再確認" : "公開フィードを追加探索", confirmed
+          ? "公式配布ページで最新版、ライセンス、基準日、有効期間、対象事業者・路線を確認します。"
+          : "公式オープンデータカタログ、交通事業者の案内、GTFSデータリポジトリを確認します。未確認のまま分析用フィードとして扱いません。",
+          "GTFSデータリポジトリを確認", "https://gtfs-data.jp/");
+
+        addHandoffItem(tools, confirmed ? "GTFS-GOへ渡す候補" : "GTFS-GOへはまだ渡さない", confirmed
+          ? "公式配布条件と対象範囲を確認し、利用するGTFSを手動で選んだ後に、停留所・経路・運行頻度の可視化候補とします。"
+          : "適切なGTFSと利用条件を確認するまで可視化工程へ渡しません。ツールの役割と必要入力だけを先に確認できます。",
+          "GTFS-GOの説明を確認", "https://qgis.mierune.co.jp/posts/howto_plugin_gtfsgo");
+        addHandoffItem(tools, "LINKS Mobilys等へ渡す条件", "GTFSだけで結論を出さず、乗降実績・OD・計画条件など必要な入力、対象範囲、利用条件を確認できた場合だけ計画分析の候補とします。",
+          "国土交通省のLINKS Mobilys資料を確認", "https://www.mlit.go.jp/commmmons/document/008/");
+      }
+
       function renderLimits(gtfsRow) {
         const list = document.getElementById("limits");
         clear(list);
@@ -533,6 +625,7 @@
         renderGtfs(gtfsRow);
         renderMeasuredMetrics(item, gtfsRow);
         renderChecklist(item, gtfsRow);
+        renderHandoff(item, gtfsRow);
         renderLimits(gtfsRow);
 
         const url = new URL(window.location.href);

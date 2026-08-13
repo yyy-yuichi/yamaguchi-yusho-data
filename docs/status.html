@@ -853,10 +853,10 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">作品の現在地</p>
-          <h2 id="progress-title">WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービスの体系比較</h2>
-          <p>公開情報設計の独立監査は固定HEAD <code>c8dc19d</code>についてGOでした。続いて、GTFSデータリポジトリ、GTFS-GO、LINKS Mobilysの一次資料6件を同じ観点で比較し、本作品の役割を公開説明へ反映しました。</p>
-          <p><a href="entry.html#benchmark-title">公開した比較</a>は優劣ランキングではありません。データを探す、GTFSを可視化する、計画を分析する各工程に対し、本作品はその前段で登録供給・公式GTFS確認状況・日付・限界を市町別に揃え、協議前確認メモへ渡します。</p>
-          <p><a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>の既存機能と数値は維持しています。国内唯一、対象サービスに機能がない、高度分析を代替できるとは主張せず、内部診断値も変更していません。UDC概要フォーム、本応募、BODIK登録、参加者連絡はこの段階に含みません。</p>
+          <h2 id="progress-title">WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ</h2>
+          <p>類似サービス比較の独立監査は固定HEAD <code>0aeff8f</code>についてGO（P0 0件・P1 0件・P2 3件）でした。比較で分けた「探す・可視化する・計画を分析する」工程へ、<a href="municipality-memo.html">市町別の確認結果</a>を安全に渡す条件を実装し、ローカル受入を終えました。</p>
+          <p>選択市町を、登録簿記録あり/0件とGTFS確認済み/確認範囲では未確認の4状態に分け、共有する事実、次の確認、分析へ渡す条件を一枚に表示します。測定済み指標の有無も別に示します。</p>
+          <p><a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>の既存機能と数値は維持します。0件・未確認を不存在とせず、外部サービスへの自動送信・原本の自動採用は行いません。UDC概要フォーム、本応募、BODIK登録、参加者連絡はこの段階に含みません。</p>
           <p>初回公開commit <code>18170b2</code>からの検証履歴と初回GO artifactは維持しています。全151 / 151テスト、90日保存の外部artifactを補う<a href="data/work1_release_attestation_audit.json">監査証拠JSON</a>、<a href="data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json">可読snapshot</a>、<a href="data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json.b64">Base64正本</a>と、<code>work1-release-attestation.zip</code>、<code>release-provenance.json</code>、<code>SHA256SUMS.txt</code>を固定した<a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/releases/latest">公開GitHub Release</a>から検証できます。Release/tagは検証証拠の公開であり、応募手続ではありません。自動の公開照合は4資産です。</p>
         </div>
         <strong class="progress-summary">公開基盤を保持して受賞品質を継続改善</strong>
@@ -973,10 +973,21 @@
           <span class="step-title">WORK1-SIMILAR-SERVICE-BENCHMARK-1: 国内3サービスの体系比較</span>
           <span class="step-state">一次資料6件・公開説明・最終受入済み</span>
         </li>
-        <li class="todo">
+        <li class="done">
           <span class="step-no">22</span>
           <span class="step-title">WORK1-SIMILAR-SERVICE-BENCHMARK-AUDIT-1: 比較根拠の独立再監査</span>
-          <span class="step-state">次のread-only監査・未着手</span>
+          <span class="step-state">read-only監査GO・P2 3件</span>
+        </li>
+        <!-- 前段階の最終受入時点では「次のread-only監査・未着手」。現在は上記のとおり受入済み。 -->
+        <li class="current">
+          <span class="step-no">23</span>
+          <span class="step-title">WORK1-PRECONSULTATION-HANDOFF-1: 状態別の次行動を確認メモへ追加</span>
+          <span class="step-state">ローカル受入済み・公開検証待ち</span>
+        </li>
+        <li class="todo">
+          <span class="step-no">24</span>
+          <span class="step-title">WORK1-PRECONSULTATION-HANDOFF-AUDIT-1: ハンドオフの独立再監査</span>
+          <span class="step-state">本段階の受入後に開始可能</span>
         </li>
         <li class="todo">
           <span class="step-no">G6</span>

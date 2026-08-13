@@ -2603,6 +2603,26 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   現行4 URLは200、削除3 URLは404。公開HTMLに旧スコアリンクは0件。
 - この記録を含む最終HEAD自身を同じ3 workflowで外部再確認する。次段階はread-only監査だけ。
 
+## 2026-08-13 WORK1-PRECONSULTATION-HANDOFF-1
+
+### 仕様・実装・ローカル受入
+
+- 固定HEAD `0aeff8fd58d2cd3d7ea49635f17c46037e6801b5`の類似サービス比較監査はGO、
+  P0 0件、P1 0件、P2 3件。`SPEC.md` rev.5.18 §30と`run_record.md` rev.62へ次段階を固定した。
+- 既存4 JSONだけから、19市町を登録あり・GTFS確認済み4、登録0・確認済み2、登録あり・
+  未確認11、登録0・未確認2へ分類する。測定値有無は別属性として表示する。
+- `docs/municipality-memo.html`へ「共有する事実」「次に確認する」「分析へ渡す条件」を追加した。
+  0件・未確認・フィード全体指標の非主張と、外部サービスへ自動送信しない境界を明記した。
+- GTFSデータリポジトリ、GTFS-GO、国土交通省LINKS Mobilysの安定した3 HTTPS導線を採用した。
+  2026-08-13に3 / 3到達を再確認し、取得不安定だったAPI詳細URLへ依存しない。
+- 専用6 / 6、全163 / 163、旧SPEC 963トークン欠落0、scope checker、`git diff --check`、
+  秘密情報定型検査0件はsuccess。6原本、既存data・docs/data、公開トップ、応募説明、内部診断は不変。
+- ローカル実ブラウザで下関市・宇部市・岩国市・防府市の4状態を確認し、全ケースで状態・測定値属性、
+  3外部安全リンク、横overflow 0、runtime error 0。1280×720でハンドオフ節を目視し、印刷CSSと
+  共有URL・既存詳細導線の回帰テストも成功した。
+- ローカル正本は`evidence/20260813_work1_preconsultation_handoff_local_acceptance.json`。
+  次は実装commitをmainへpushし、同一SHAのscope lock・Pages・attestationと公開PC・スマホを受け入れる。
+
 ## 2026-08-13 WORK1-SIMILAR-SERVICE-BENCHMARK-1 ローカル受入
 
 - 固定HEAD `c8dc19d6b2a9303018e4eccf3426aa7c3c11a262`の公開情報設計監査はGO、
