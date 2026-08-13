@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-13 (rev.62) / 状態: WORK1-PRECONSULTATION-HANDOFF-1 実行中 / 次: 状態別ハンドオフ実装
+最終更新: 2026-08-13 (rev.63) / 状態: WORK1-PRECONSULTATION-HANDOFF-1 公開受入済み / 次: read-only独立監査
 
 ## 0. このファイルについて
 
@@ -1215,3 +1215,20 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - 入力は作品①の既存公開JSONだけとし、原本、公開値、内部点数、公開トップ、応募説明は変えない。
   外部サービスへデータを自動送信せず、参加者連絡、応募・BODIK、作品②の参照・操作を行わない。
 - 完了後の次段階はread-onlyの`WORK1-PRECONSULTATION-HANDOFF-AUDIT-1`だけとし、この段階では開始しない。
+
+### 改訂点（rev.63）
+
+- 実装commit `5cb74d3b39e7750816c931bdf711e41c34eb581b`を`main`へpushした。scope lock
+  `31677956643`、Pages `31677956172`、release attestation `31678001513`は同一SHAで全success。
+- attestation artifact `9172305641`を独立読戻しし、decision GO、163 / 163、公開4 / 4、
+  原本6 / 6、保護3 / 3、`pages_copy_absent=true`、errors 0を確認した。
+- 公開中核4 URLはHTTP 200かつ同commit bytes一致。公開メモの4状態を直接ブラウザで確認し、
+  1440×1600と390×844の同一bytes検証枠でも全8ケースが状態・測定値属性・安全リンクと一致、
+  横overflow、対象runtime error、壊れた画像は各0だった。
+- 390pxではハンドオフ3カードが325px幅の1列、1440pxでは350px幅の3列になり、共有URL・印刷・
+  既存詳細導線を維持した。外部3参照は到達可能で、自動送信は0件。
+- 内部点数、6原本、GTFS ZIP、既存公開値、公開トップ、応募説明、作品②入力、参加者連絡、
+  UDC応募、BODIK登録は変更・実行していない。
+- 公開受入正本は`evidence/20260813_work1_preconsultation_handoff_public_acceptance.json`。
+  この記録を含む最終HEAD自身を同じ3 workflowで再確認し、後続run IDは外部正本として再書込みしない。
+- 次段階は変更を伴わない`WORK1-PRECONSULTATION-HANDOFF-AUDIT-1`だけとし、開始しない。

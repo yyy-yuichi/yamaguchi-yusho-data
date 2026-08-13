@@ -66,7 +66,7 @@ GTFS供給比較**、**市町別の交通協議前確認メモ**までを担う�
 
 対象は山口県分 4 ファイル（上記2区分 × 市町村営・NPO等）。
 
-## 現在地（WORK1-PRECONSULTATION-HANDOFF-1 ローカル受入済み、2026-08-13時点）
+## 現在地（WORK1-PRECONSULTATION-HANDOFF-1 最終受入済み、2026-08-13時点）
 
 このリポジトリはI-1〜I-4までの市町別ビューに、受入済みGTFS検査・供給指標を使う
 SUPPLY-VIEW-1の比較画面を追加し、RELEASE-1でGitHub Pagesへ公開した。公開URLに対する
@@ -146,8 +146,9 @@ UDC2026応募全体の終了条件（作品概要エントリー・本応募・�
   P0 0件・P1 0件・P2 3件でGO。P2はAPI詳細URLの取得不安定、GitHub Pages workflowの
   Node 20警告、現HEAD artifactと永続Releaseの証拠寿命差
 - **WORK1-PRECONSULTATION-HANDOFF-1**: 市町別メモへ4状態別の共有事実・次の確認・分析へ渡す
-  条件を追加し、ローカル受入済み。GTFSデータリポジトリ、GTFS-GO、LINKS Mobilysは公式条件を
-  確認して人が手動で選ぶ次工程とし、この画面からデータを自動送信しない
+  条件を追加し、公開・最終受入済み。GTFSデータリポジトリ、GTFS-GO、LINKS Mobilysは公式条件を
+  確認して人が手動で選ぶ次工程とし、この画面からデータを自動送信しない。実装commit `5cb74d3`は
+  scope lock・Pages・attestationが同一SHAでsuccess・GO、公開PC・スマホの4状態も受入済み
 
 ## 原本変更の継続確認（WORK1-FRESHNESS-1）
 

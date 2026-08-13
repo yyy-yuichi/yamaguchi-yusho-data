@@ -2623,6 +2623,22 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
 - ローカル正本は`evidence/20260813_work1_preconsultation_handoff_local_acceptance.json`。
   次は実装commitをmainへpushし、同一SHAのscope lock・Pages・attestationと公開PC・スマホを受け入れる。
 
+### 公開受入GO
+
+- 実装commit `5cb74d3b39e7750816c931bdf711e41c34eb581b`のscope lock `31677956643`、Pages
+  `31677956172`、release attestation `31678001513`は同一SHAで全success。
+- artifact `9172305641`はGO、163 / 163、公開4 / 4、原本6 / 6、保護3 / 3、
+  `pages_copy_absent=true`、errors 0。JSON 8,974 bytes・SHA256
+  `96be84edc277dda880fc0de1737c97aa6f7794191396cf423ac126061c0f631c`を読戻した。
+- 公開中核4 URLはHTTP 200かつ同commit bytes一致。公開4状態を直接確認し、PC 1440×1600と
+  スマートフォン390×844の4状態計8ケースも状態・測定値属性・安全リンクに一致した。
+- PCは3列、スマートフォンは1列。全ケースで横overflow 0、対象runtime error 0、壊れた画像0。
+  直接公開ページのdev logも0。共有URL、印刷、既存詳細導線を維持した。
+- 内部点数、原本、GTFS ZIP、既存公開値、公開トップ、応募説明、作品②入力、参加者連絡、
+  応募・BODIK、外部サービスへのデータ送信は各0変更・0実行。
+- 公開正本は`evidence/20260813_work1_preconsultation_handoff_public_acceptance.json`。
+  この記録を含む最終HEAD自身を同じ3 workflowで外部再確認する。次段階はread-only監査だけ。
+
 ## 2026-08-13 WORK1-SIMILAR-SERVICE-BENCHMARK-1 ローカル受入
 
 - 固定HEAD `c8dc19d6b2a9303018e4eccf3426aa7c3c11a262`の公開情報設計監査はGO、

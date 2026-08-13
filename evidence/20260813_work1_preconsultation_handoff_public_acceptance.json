@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-PRECONSULTATION-HANDOFF-1",
+  "evidence_type": "public_acceptance",
+  "checked_at": "2026-08-13",
+  "decision": "GO",
+  "subject": {
+    "branch": "main",
+    "commit_sha": "5cb74d3b39e7750816c931bdf711e41c34eb581b",
+    "origin_main_sha": "5cb74d3b39e7750816c931bdf711e41c34eb581b"
+  },
+  "workflows": {
+    "scope_lock": {"run_id": 31677956643, "conclusion": "success", "head_sha_match": true},
+    "pages": {"run_id": 31677956172, "conclusion": "success", "reported_head_sha_match": true},
+    "release_attestation": {"run_id": 31678001513, "conclusion": "success", "decision": "GO"}
+  },
+  "attestation_artifact": {
+    "artifact_id": 9172305641,
+    "name": "work1-release-attestation-5cb74d3b39e7750816c931bdf711e41c34eb581b",
+    "archive_bytes": 2635,
+    "archive_digest": "sha256:6dfe08d6571b813781830e306f018a44b2cb416b35c26c93cc64e3df4e4080a4",
+    "expires_at": "2026-11-11T07:29:57Z",
+    "json_bytes": 8974,
+    "json_sha256": "96be84edc277dda880fc0de1737c97aa6f7794191396cf423ac126061c0f631c",
+    "errors": []
+  },
+  "attestation_verification": {
+    "tests_discovered": 163,
+    "tests_passed": 163,
+    "scope_guard_passed": true,
+    "public_assets_matched": 4,
+    "accepted_sources_matched": 6,
+    "protected_assets_matched": 3,
+    "pages_copy_absent": true
+  },
+  "public_core_pages": [
+    {"path": "index.html", "http": 200, "bytes": 48875, "sha256": "502eb93199d3df71593dc7d220d575159a9167a2692bdec2bb8b5b4b7d7c4b49", "commit_bytes_match": true},
+    {"path": "entry.html", "http": 200, "bytes": 19049, "sha256": "da71ea2775547d68af0f2b51da0faf7e852ef3b7d5e2cbce4ad187d79442d431", "commit_bytes_match": true},
+    {"path": "status.html", "http": 200, "bytes": 59362, "sha256": "1a3566386ffa52c7726669754416632e0b2c28a10b808b06e8d37cc13fca85da", "commit_bytes_match": true},
+    {"path": "municipality-memo.html", "http": 200, "bytes": 38414, "sha256": "fac3e8b11eced6b2418f11814cfbf5fb19f8f872356d0d85ea81092388663f02", "commit_bytes_match": true}
+  ],
+  "browser_acceptance": {
+    "representative_states": [
+      {"municipality": "下関市", "state": "registered-gtfs-unconfirmed", "has_metrics": false},
+      {"municipality": "宇部市", "state": "no-registry-gtfs-confirmed", "has_metrics": false},
+      {"municipality": "岩国市", "state": "registered-gtfs-confirmed", "has_metrics": true},
+      {"municipality": "防府市", "state": "no-registry-gtfs-unconfirmed", "has_metrics": false}
+    ],
+    "direct_public_cases_matched": 4,
+    "desktop": {
+      "viewport": "1440x1600",
+      "cases_matched": 4,
+      "document_client_width": 1425,
+      "horizontal_overflow_cases": 0,
+      "handoff_layout": "three_columns",
+      "handoff_card_width": 350
+    },
+    "smartphone": {
+      "viewport": "390x844",
+      "cases_matched": 4,
+      "document_client_width": 375,
+      "horizontal_overflow_cases": 0,
+      "handoff_layout": "one_column",
+      "handoff_card_width": 325
+    },
+    "safe_external_links_per_case": 3,
+    "subject_runtime_error_cases": 0,
+    "broken_image_cases": 0,
+    "direct_public_dev_log_errors": 0,
+    "same_bytes_viewport_harness_removed_after_check": true
+  },
+  "external_references": {
+    "checked": 3,
+    "reachable": 3,
+    "urls": [
+      "https://gtfs-data.jp/",
+      "https://qgis.mierune.co.jp/posts/howto_plugin_gtfsgo",
+      "https://www.mlit.go.jp/commmmons/document/008/"
+    ]
+  },
+  "boundaries": {
+    "raw_source_changes": 0,
+    "gtfs_zip_changes": 0,
+    "existing_data_changes": 0,
+    "existing_docs_data_changes": 0,
+    "internal_score_changes": 0,
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0,
+    "external_service_data_transmissions": 0
+  },
+  "next_stage": "WORK1-PRECONSULTATION-HANDOFF-AUDIT-1",
+  "next_stage_started": false,
+  "errors": []
+}

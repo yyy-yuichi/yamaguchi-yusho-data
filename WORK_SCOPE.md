@@ -43,7 +43,7 @@ flowchart TD
     I2["WORK1-PUBLIC-INFORMATION-ARCHITECTURE-AUDIT-1<br/>read-only監査<br/>GO・P2 1件"]
     B1["WORK1-SIMILAR-SERVICE-BENCHMARK-1<br/>国内3サービスの体系比較<br/>公開・最終受入済み"]
     B2["WORK1-SIMILAR-SERVICE-BENCHMARK-AUDIT-1<br/>read-only監査<br/>GO・P2 3件"]
-    Q1["WORK1-PRECONSULTATION-HANDOFF-1<br/>4状態別の次行動<br/>実行中"]
+    Q1["WORK1-PRECONSULTATION-HANDOFF-1<br/>4状態別の次行動<br/>公開・最終受入済み"]
     Q2["WORK1-PRECONSULTATION-HANDOFF-AUDIT-1<br/>次のread-only監査<br/>未着手"]
     C2["作品②の比較用出力<br/>作品②Chatが所有"]
     D{"比較・注力判断<br/>人が決定"}
@@ -108,7 +108,7 @@ flowchart TD
 - `WORK1-SIMILAR-SERVICE-BENCHMARK-AUDIT-1`: 固定HEAD `0aeff8f`を変更なしで再監査し、
   P0 0件、P1 0件、P2 3件でGO。
 - `WORK1-PRECONSULTATION-HANDOFF-1`: 市町別メモへ、登録簿記録あり/0件とGTFS確認済み/未確認の
-  4状態から導く共有事実、次の確認、外部分析へ渡す条件を追加する現在段階。外部送信は行わない。
+  4状態から導く共有事実、次の確認、外部分析へ渡す条件を追加し、公開・最終受入済み。外部送信は行わない。
 - `WORK1-PRECONSULTATION-HANDOFF-AUDIT-1`: 現段階の最終受入後に開始できる次の一段階。
   変更を伴わず、4状態、非主張、外部リンク、印刷、公開配信、作品②入力0件を独立監査する。
 - 作品①の公開出力: [市町別の登録供給ビュー](https://yyy-yuichi.github.io/yamaguchi-yusho-data/)

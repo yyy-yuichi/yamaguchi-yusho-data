@@ -2584,3 +2584,25 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 | 境界 | 作品②入力・参加者連絡・UDC応募・BODIK・内部再採点・外部データ送信は各0 |
 | 正本 | `evidence/20260813_work1_preconsultation_handoff_local_acceptance.json` |
 | 判定 | `LOCAL_GO`。実装commitをmainへpushし、CI・Pages・公開PC・スマホ受入へ進む |
+
+### 公開受入
+
+| 検証 | 結果 |
+|---|---|
+| subject | `5cb74d3b39e7750816c931bdf711e41c34eb581b` |
+| scope lock / Pages / attestation | `31677956643` / `31677956172` / `31678001513`、全success |
+| artifact | ID `9172305641`、digest `sha256:6dfe08d6571b813781830e306f018a44b2cb416b35c26c93cc64e3df4e4080a4` |
+| decision / errors | `GO` / 0 |
+| tests / public / sources / protected | 163 / 163、4 / 4、6 / 6、3 / 3 |
+| 公開中核4 URL | index・entry・status・memoはHTTP 200、同commit bytes一致 |
+| 4状態 | 下関市・宇部市・岩国市・防府市で状態・測定値属性一致 |
+| PC | 1440×1600、4 / 4、3カード横並び、横overflow 0、安全リンク3 / 3 |
+| smartphone | 390×844、4 / 4、3カード1列、横overflow 0、安全リンク3 / 3 |
+| runtime / images / dev log | 対象runtime error 0、壊れた画像0、直接公開ページdev log 0 |
+| 外部参照 | GTFSデータリポジトリ、GTFS-GO、国土交通省LINKS Mobilysの3 / 3到達 |
+| 境界 | 内部点数・6原本・GTFS ZIP・既存公開値・作品②・参加者連絡・応募・BODIK・外部送信各0変更/0実行 |
+| 正本 | `evidence/20260813_work1_preconsultation_handoff_public_acceptance.json` |
+| 判定 | `GO`。次段階は`WORK1-PRECONSULTATION-HANDOFF-AUDIT-1`だけ |
+
+この受入記録を含む最終HEAD自身をscope lock、Pages、release attestationで再確認し、後続run IDは
+外部正本としてrepoへ再書込みしない。
