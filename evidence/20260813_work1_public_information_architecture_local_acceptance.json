@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work1_public_information_architecture_local_acceptance",
+  "stage": "WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1",
+  "recorded_at_jst": "2026-08-13",
+  "baseline_head": "1858190c47ad364a99fbf4fa32cfaf607279073d",
+  "decision": "GO_FOR_COMMIT_AND_PUBLIC_ACCEPTANCE",
+  "public_information_contract": {
+    "public_core": [
+      "docs/index.html",
+      "docs/municipality-memo.html",
+      "docs/entry.html",
+      "docs/status.html"
+    ],
+    "removed_from_pages": [
+      "docs/award-comparison.html",
+      "docs/data/work1_award_scorecard.json",
+      "docs/data/award_scorecard_schema.json"
+    ],
+    "development_diagnostics_retained": [
+      "data/work1_award_scorecard.json",
+      "data/award_scorecard_schema.json"
+    ],
+    "scorecard_sha256": "0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021",
+    "numeric_self_score_markers_in_public_html": 0,
+    "removed_pages_assets_present": 0
+  },
+  "entry_explanation": {
+    "heading": "利用価値と現在の到達点",
+    "fact_cards": [
+      "協議前にどう役立つか",
+      "現在できること",
+      "新しく取り組んだこと"
+    ],
+    "applicant_numeric_self_score_published": false
+  },
+  "verification": {
+    "related_tests": {"passed": 69, "total": 69},
+    "all_tests": {"passed": 151, "total": 151},
+    "spec_coverage": {"tokens": 941, "missing": 0},
+    "scope_check": "WORK1_SCOPE_ALLOWED",
+    "git_diff_check": "success",
+    "release_attestation_public_asset_contract": 4,
+    "protected_asset_contract": 3,
+    "accepted_source_contract": 6
+  },
+  "boundaries": {
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0,
+    "raw_source_changes": 0,
+    "gtfs_zip_changes": 0,
+    "published_value_changes": 0,
+    "history_rewrites": 0
+  },
+  "remaining": [
+    "commit_and_push_main",
+    "same_head_actions_acceptance",
+    "public_pages_pc_and_mobile_acceptance",
+    "removed_pages_urls_return_404"
+  ],
+  "next_stage_only": "WORK1-PUBLIC-INFORMATION-ARCHITECTURE-AUDIT-1"
+}

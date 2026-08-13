@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-13 (rev.57) / 状態: WORK1-RELEASE-EVIDENCE-PERMALINK-1 実装中 / 次: 同一最終HEADのCI・Release固定・公開受入
+最終更新: 2026-08-13 (rev.58) / 状態: WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 実装中 / 次: 全回帰・push・Actions・Pages公開受入
 
 ## 0. このファイルについて
 
@@ -1142,3 +1142,16 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - 原本、GTFS ZIP、既存公開値、スコアカード、公開トップ、応募説明、作品②入力、参加者連絡、
   応募・BODIKは変更しない。追加のworkflow権限・secret・外部連携も行わない。
 - 次段階はread-onlyの`WORK1-RELEASE-EVIDENCE-PERMALINK-AUDIT-1`だけとし、この段階では開始しない。
+
+### 改訂点（rev.58）
+
+- WORK1-RELEASE-EVIDENCE-PERMALINK-1は最終HEAD `1858190c47ad364a99fbf4fa32cfaf607279073d`、
+  `main`・`origin/main`一致、scope lock・Pages・attestation success、同一SHAのannotated tag、
+  latest GitHub Release、未認証GET可能な5資産まで最終受入済み。
+- ユーザー判断により、診断値は改善のための内部資料とする。内部正本と計算は保持するが、Pages用の
+  スコアカードHTML・JSON・schemaを削除し、作品の利用者向け導線から数値自己評価を外す。
+- 応募説明は審査観点の実質を残しつつ、「利用価値と現在の到達点」「協議前にどう役立つか」
+  「現在できること」「新しく取り組んだこと」という検証可能な事実へ書き換える。
+- 過去のGit履歴・公開Release証拠は変更しない。公開リポジトリ内の内部診断は秘密情報ではない。
+- raw原本、GTFS ZIP、公開データ・計算値、公開トップ、作品②、参加者連絡、応募・BODIKは変更しない。
+- 次段階はread-onlyの`WORK1-PUBLIC-INFORMATION-ARCHITECTURE-AUDIT-1`だけとし、まだ開始しない。

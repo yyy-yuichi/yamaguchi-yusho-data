@@ -13,32 +13,15 @@ GTFS-JP の整備状況・鮮度、交通空白、福祉輸送（UD タクシー
   データ整備に反映している点
 - **狙う賞**: GTFS 賞、BODIK 賞
 
-## UDC2026受賞準備スコアカード第2版
+## 公開情報と開発用診断
 
-[公開スコアカード](https://yyy-yuichi.github.io/yamaguchi-yusho-data/award-comparison.html)は、
-UDC2026公式の一次審査基準（実用度・完成度・挑戦度）に、作品①の公開証拠、確信度、
-不足証拠、前回から増えた証拠、改善上位3件を対応づける。0〜5点と総合比較指数は、公式配点・順位・受賞確率ではなく、
-配点非公開の3観点を同率にした内部診断値である。
+[GitHub Pages](https://yyy-yuichi.github.io/yamaguchi-yusho-data/)は、作品を使う人が必要とする
+機能、利用価値、現在の到達点、出典、日付、限界を中心に構成する。UDC2026一次審査の観点は
+応募説明へ事実として反映するが、応募者による数値の自己採点はPagesへ掲載しない。
 
-- 評価基準日: 2026-08-12
-- 内部比較指数: 70.0 / 100（実用度3.5、完成度4.0、挑戦度3.0）
-- 比較第2版の変更: 市町別確認メモの公開を根拠に`method_fit`を4.0から4.5へ更新。
-  GTFS関連確認6/19市町・未確認13/19市町を反映したが、外部利用者証拠と新規実測フィードが
-  増えていないため、3基準と総合比較指数は据え置き
-- 作品タイプ: アプリケーション
-- 作品テーマ: 道路・交通（2026年度重点分野）
-- GTFS賞: 公式GTFS / GTFS-JPを使用しているため条件該当
-- BODIK賞: 本年度のBODIK APPs登録を未実施のため条件未充足
-- DATAKIDS賞: 現作品では該当を主張しない
-- JACIC賞: 2026年公式作品募集要領に掲載なし
-- 他作品からの入力: 0件。各作品は同じ形式を独立に出力し、比較・注力判断は人が行う
-
-改善上位3件は、参加者への連絡前に本人承認が必要なオンライン利用者検証と、作品①だけで
-自力実行可能な類似サービス比較・再生成復旧訓練に分離した。応募・利用者連絡を作品開発の
-唯一の残工程とは扱わず、公開基盤の上で比較・独立監査・改善を一段階ずつ反復する。
-
-機械可読な正本は`data/work1_award_scorecard.json`、共通形式は
-`data/award_scorecard_schema.json`。公開用の`docs/data/`配下とそれぞれバイト一致する。
+改善優先度を検討する機械可読な診断資料は`data/work1_award_scorecard.json`、共通形式は
+`data/award_scorecard_schema.json`に保持する。リポジトリ自体は公開されているため秘密情報では
+ないが、作品の機能や公式評価と誤解されないよう、利用者向け公開成果物とは分離する。
 公式根拠は[UDC2026作品募集要領](https://urbandata-challenge.jp/udc2026_entry)である。
 
 ## このリポジトリの役割
@@ -82,7 +65,7 @@ GTFS供給比較**、**市町別の交通協議前確認メモ**までを担う�
 
 対象は山口県分 4 ファイル（上記2区分 × 市町村営・NPO等）。
 
-## 現在地（WORK1-RELEASE-EVIDENCE-PERMALINK-1 実装中、2026-08-13時点）
+## 現在地（WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 実装中、2026-08-13時点）
 
 このリポジトリはI-1〜I-4までの市町別ビューに、受入済みGTFS検査・供給指標を使う
 SUPPLY-VIEW-1の比較画面を追加し、RELEASE-1でGitHub Pagesへ公開した。公開URLに対する
@@ -116,11 +99,11 @@ UDC2026応募全体の終了条件（作品概要エントリー・本応募・�
 - **WORK1-GTFS-COVERAGE-AUDIT-1**: 固定HEADと公開配信をread-onlyで監査し、P0 0件、P1 0件、
   P2 1件でGO。P2の有限工程表示は比較第2版で継続改善モデルへ訂正
 - **WORK1-AWARD-COMPARISON-2**: 受け入れ済み確認メモとGTFS範囲再確認を現行証拠へ反映し、
-  根拠のない加点を行わず総合70.0を据え置いた。Actions・Pages・公開PC/スマホ読戻しまで最終受入済み
+  根拠のない加点を行わず診断値を据え置いた。Actions・Pages・公開PC/スマホ読戻しまで最終受入済み
 - **WORK1-AWARD-COMPARISON-AUDIT-2**: 固定HEADと公開配信をread-onlyで監査し、P0 0件、P1 0件、
   P2 2件でGO。公式用語の揺れと比較第2版の根拠節不足を検出
 - **WORK1-AWARD-COMPARISON-TRACEABILITY-1**: 公式用語を「実用度・完成度・挑戦度」へ統一し、
-  状況ページの根拠を`SPEC.md §20・§23`へ接続した。総合70.0とスコアカードbytesは変更せず、
+  状況ページの根拠を`SPEC.md §20・§23`へ接続した。診断資料のbytesは変更せず、
   全150テスト、Actions・Pages、公開PC・スマホ読戻しまで最終受入済み
 - **WORK1-AWARD-COMPARISON-TRACEABILITY-AUDIT-1**: 最終HEAD `a0fd712`をread-onlyで監査し、
   P0 0件、P1 0件、P2 1件でGO。P2は最終commit自身と後続run IDをrepo内へ記録できない自己参照
@@ -135,7 +118,7 @@ UDC2026応募全体の終了条件（作品概要エントリー・本応募・�
   [可読snapshot](docs/data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json)、
   [Base64正本](docs/data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json.b64)を
   Git履歴・Pagesへ保存する。Pages報告SHA不一致をNO_GOとし、観測GETと運用宣言を分離する。
-  新しいattestationの公開照合対象は6資産。スコアカードと評価値は変更しない
+  この時点のattestation公開照合対象は6資産。診断資料の値は変更しない
 - 初回強化commit `7b4527a8737166acebead845afc3a0549cc40227`はscope lock
   `31650244128`、Pages `31650243548`、attestation `31650293402`がsuccess。
   artifactはGO、151 / 151、公開6 / 6、原本6 / 6、保護3 / 3、Pages報告SHA一致、errors 0です。
@@ -146,7 +129,9 @@ UDC2026応募全体の終了条件（作品概要エントリー・本応募・�
 - **WORK1-RELEASE-EVIDENCE-PERMALINK-1**: [最新の公開Release](https://github.com/yyy-yuichi/yamaguchi-yusho-data/releases/latest)へ、
   `work1-release-attestation.zip`、`attestation.json`、`attestation.md`、
   `release-provenance.json`、`SHA256SUMS.txt`を固定する。Release/tagは検証証拠の公開であり、
-  UDC概要フォーム、本応募、BODIK登録ではない。最終commitのCI成功後に同じSHAへ添付し、mainは再変更しない
+  UDC概要フォーム、本応募、BODIK登録ではない。5資産とtagを公開し、最終受入済み
+- **WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1**: Pagesを機能・利用価値・実装事実・出典・限界中心へ
+  整理し、改善判断用の数値診断を利用者向け公開成果物から分離する。内部正本と計算検証は保持する
 
 ## 原本変更の継続確認（WORK1-FRESHNESS-1）
 
@@ -241,8 +226,7 @@ GTFS収録の交通ブランド情報、路線情報ID、乗降場所IDと、202
 - `docs/index.html` — 市町別の登録供給、公式GTFS確認状況、岩国市・光市の供給比較を確認できるHTML
 - `docs/municipality-memo.html` — 市町別の根拠・限界・次の確認事項を共有・印刷できる協議前確認メモ
 - `docs/status.html` — このリポジトリの現況説明（受入済み成果・残作業・終了条件の状況）
-- `docs/award-comparison.html` — UDC2026公式3観点、増えた証拠、据え置き理由、改善上位3件の比較第2版
-- `data/work1_award_scorecard.json` / `data/award_scorecard_schema.json` — 現行比較の正本JSONと共通形式
+- `data/work1_award_scorecard.json` / `data/award_scorecard_schema.json` — 改善優先度を検討する開発用診断の正本JSONと共通形式（Pagesには配信しない）
 
 **代表者の氏名は抽出も出力もしていない。**
 

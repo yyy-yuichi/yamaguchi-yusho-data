@@ -824,7 +824,6 @@
       <p class="lead">福祉有償運送と交通空白地有償運送の公表登録簿を市町から確認し、公式GTFS/GTFS-JPの確認状況、比較指標、協議前に次に確認することまでを根拠付きで共有できる静的アプリです。</p>
       <a class="app-link" href="index.html?v=20260811#supply-comparison">GTFS供給比較を開く</a>
       <a class="app-link" href="municipality-memo.html">協議前確認メモを作る</a>
-      <a class="app-link" href="award-comparison.html">受賞準備スコアカードを開く</a>
 
       <div class="metrics" aria-label="主要な進捗数値">
         <div class="metric complete">
@@ -854,9 +853,10 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">作品の現在地</p>
-          <h2 id="progress-title">WORK1-RELEASE-EVIDENCE-PERMALINK-1 最終HEAD証拠のRelease固定</h2>
-          <p>強化後の最終HEAD <code>618d636</code>の独立監査はP0 0件・P1 0件・P2 1件でGOでした。P2は最終attestation artifactが90日で失効し、最終runへの恒久的な発見経路がないことです。この段階では、最終commit自身のCI成功後に同じSHAのtagを作り、<a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/releases/latest">最新の公開GitHub Release</a>へ<code>work1-release-attestation.zip</code>、<code>attestation.json</code>、<code>attestation.md</code>、<code>release-provenance.json</code>、<code>SHA256SUMS.txt</code>を固定します。Release/tagは検証証拠の公開であり、UDC概要フォーム、本応募、BODIK登録ではありません。自己参照を避けるため、Release公開後はこの段階のためにmainを書き換えません。</p>
-          <p><a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>（初回公開commit <code>18170b2</code>）の基盤を保ったまま、固定HEAD <code>ed1f0b4</code>の独立監査はP0 0件・P1 0件・P2 3件でGOでした。<a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/31646637352">最終artifact run</a>の配布ZIP digest、全151 / 151テスト、公開3 / 3資産、6 / 6原本、保護対象3 / 3を再確認しています。前段階では初回GO artifactと最終artifactを読み戻しました。90日保存の外部artifactの失効後も検証できるよう、<a href="data/work1_release_attestation_audit.json">監査証拠JSON</a>、<a href="data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json">可読snapshot</a>、元7,446 bytesを復元する<a href="data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json.b64">Base64正本</a>をGit履歴とPagesへ固定します。以後はPages報告SHAが対象SHAと異なればNO_GOとし、workflowが観測した公開GETと、作品②入力・参加者連絡・応募・BODIK各0件という運用宣言を別構造で記録します。公開照合は6資産です。初回強化commit <code>7b4527a</code>はscope lock <code>31650244128</code>、Pages <code>31650243548</code>、attestation <a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/31650293402"><code>31650293402</code></a>がsuccessで、artifactを独立読戻ししてGO、公開6 / 6、Pages報告SHA一致、errors 0を確認しました。この受入記録を含む最終HEAD自身も同じworkflow artifactで証明し、run IDはartifactを正本としてrepoへ再書込みしません。実用度3.5・完成度4.0・挑戦度3.0・総合比較指数70.0と公開スコアカードは変更していません。</p>
+          <h2 id="progress-title">WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報の整理</h2>
+          <p><a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/releases/latest">公開GitHub Release</a>への最終HEAD証拠5資産の固定は完了しました。現在は、公開ページを作品の利用価値・実装事実・出典・限界が中心になるよう整理し、改善判断用の数値診断をPagesの公開成果物から分離しています。</p>
+          <p><a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>の市町別ビュー、協議前確認メモ、GTFS供給比較、応募説明、検証状況は維持します。数値診断の正本は公開リポジトリ内で開発資料として保持しますが、作品利用者向けページには自己採点を表示しません。UDC概要フォーム、本応募、BODIK登録、参加者連絡はこの段階に含みません。</p>
+          <p>初回公開commit <code>18170b2</code>からの検証履歴と初回GO artifactは維持しています。全151 / 151テスト、90日保存の外部artifactを補う<a href="data/work1_release_attestation_audit.json">監査証拠JSON</a>、<a href="data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json">可読snapshot</a>、<a href="data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json.b64">Base64正本</a>と、<code>work1-release-attestation.zip</code>、<code>attestation.json</code>、<code>attestation.md</code>、<code>release-provenance.json</code>、<code>SHA256SUMS.txt</code>を固定したGitHub Releaseから検証できます。Release/tagは検証証拠の公開であり、応募手続ではありません。この整理後の自動公開照合は4資産です。</p>
         </div>
         <strong class="progress-summary">公開基盤を保持して受賞品質を継続改善</strong>
       </div>
@@ -952,14 +952,19 @@
           <span class="step-title">WORK1-RELEASE-EVIDENCE-HARDENING-AUDIT-1: 強化後の独立再監査</span>
           <span class="step-state">read-only監査GO・P2 1件</span>
         </li>
-        <li class="current">
+        <li class="done">
           <span class="step-no">18</span>
           <span class="step-title">WORK1-RELEASE-EVIDENCE-PERMALINK-1: 最終HEAD証拠のRelease固定</span>
-          <span class="step-state">実装・同一HEADのCI・Release公開受入中</span>
+          <span class="step-state">公開Release・5資産・最終受入済み</span>
+        </li>
+        <li class="current">
+          <span class="step-no">19</span>
+          <span class="step-title">WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1: 公開情報と内部診断の分離</span>
+          <span class="step-state">実装・CI・Pages公開受入中</span>
         </li>
         <li class="todo">
-          <span class="step-no">19</span>
-          <span class="step-title">WORK1-RELEASE-EVIDENCE-PERMALINK-AUDIT-1: Release固定の独立再監査</span>
+          <span class="step-no">20</span>
+          <span class="step-title">WORK1-PUBLIC-INFORMATION-ARCHITECTURE-AUDIT-1: 公開情報設計の独立再監査</span>
           <span class="step-state">次のread-only監査・未着手</span>
         </li>
         <li class="todo">
@@ -1296,38 +1301,38 @@
       <p class="source-note">根拠: SPEC.md §19、data/source_freshness_manifest.json、verification.md。公式ページの掲載日、GTFS内部有効期間、検査実行日時は別々に保持します。</p>
     </section>
 
-    <section aria-labelledby="award-comparison-title">
+    <section aria-labelledby="public-information-title">
       <div class="section-head">
         <div>
-          <p class="eyebrow">WORK1-AWARD-COMPARISON-2 / 公開・最終受入済み</p>
-          <h2 id="award-comparison-title">増えた証拠と据え置き理由を同じ画面で確認</h2>
-          <p><a href="award-comparison.html">受賞準備スコアカード第2版</a>は、実用度・完成度・挑戦度を0〜5点の共通内部尺度で診断し、前回から増えた証拠、変わらない限界、外部承認ゲート、自力実行可能な改善を同時に示します。</p>
+          <p class="eyebrow">WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 / 実装中</p>
+          <h2 id="public-information-title">作品利用者向けの事実と、開発用診断を分離</h2>
+          <p>公開ページは、誰にどう役立つか、現在できること、新しく取り組んだこと、出典と限界を中心にします。改善優先度を検討する数値診断は公開リポジトリ内の開発資料として保持し、GitHub Pagesの利用者向け成果物には含めません。</p>
         </div>
       </div>
 
       <ul class="next-list">
         <li>
-          <strong>公式点と内部診断を分離</strong>
-          <p>UDC2026公式要項は数値配点を公開していません。方法の妥当性は4.5へ更新しましたが、総合比較指数70.0 / 100は据え置きで、公式点、順位、受賞確率ではありません。</p>
+          <strong>公開するのは利用判断に必要な事実</strong>
+          <p>市町別ビュー、協議前確認メモ、GTFS供給比較、使用データ、基準日、限界、検証状況を同じ公開導線から確認できます。</p>
         </li>
         <li>
-          <strong>2026年の賞条件だけを照合</strong>
-          <p>道路・交通は重点分野です。GTFS賞は条件該当、BODIK賞は本年度登録未実施、DATAKIDS賞は該当を主張せず、JACIC賞は2026年公式要項に掲載なしと区別します。</p>
+          <strong>審査観点は事実説明へ反映</strong>
+          <p>応募説明は「協議前にどう役立つか」「現在できること」「新しく取り組んだこと」で構成し、応募者の自己採点ではなく検証できる到達点を示します。</p>
+        </li>
+        <li>
+          <strong>数値診断は改善判断に継続利用</strong>
+          <p>正本と計算検証はリポジトリ内に残します。秘密情報ではありませんが、作品の機能や公的評価と誤解されないようPagesから分離します。</p>
         </li>
         <li>
           <strong>他作品からの入力は0件</strong>
-          <p>作品①の公開URL・公開データ・コード・検証状況と公式要項だけを根拠にしました。比較と注力判断は人が行います。</p>
+          <p>この判断と実装には作品①のファイル、公開URL、公式要項だけを使い、作品②のパス・ファイル・Git履歴・公開物を入力していません。</p>
         </li>
         <li>
-          <strong>GitHub Pages公開を受入済み</strong>
-          <p>commit <code>a96aa04</code>のscope lock run <code>31551751898</code>とPages run <code>31551751667</code>は成功。公開HTML・2 JSON・応募説明・検証状況はcommit済みbytesと一致し、公開ブラウザで横overflow・runtime error・dev errorが0でした。</p>
-        </li>
-        <li>
-          <strong>独立監査はGO判定済み</strong>
-          <p><code>WORK1-AWARD-COMPARISON-AUDIT-2</code>は固定HEAD、公開配信、計算、作品②入力0件をread-onlyで監査し、P0・P1なし、P2 2件でGOでした。公式用語を「実用度・完成度・挑戦度」へ統一し、比較根拠を第1版§20と第2版§23へ接続します。</p>
+          <strong>外部提出と参加者連絡は別ゲート</strong>
+          <p>この公開整理はUDC概要フォーム、本応募、BODIK登録、参加者への連絡を実行しません。次段階は変更を伴わない独立監査です。</p>
         </li>
       </ul>
-      <p class="source-note">機械可読正本: <a href="data/work1_award_scorecard.json">work1_award_scorecard.json</a> / 共通形式: <a href="data/award_scorecard_schema.json">award_scorecard_schema.json</a> / 根拠: SPEC.md §20・§23</p>
+      <p class="source-note">根拠: UDC2026作品募集要領、SPEC.md §20・§23・§28。公開ページは審査結果や受賞確率を表すものではありません。</p>
     </section>
 
     <section aria-labelledby="task-memo-title">
@@ -1368,12 +1373,11 @@
     <section class="sources" aria-labelledby="source-title">
       <h2 id="source-title">このページの根拠</h2>
       <ul>
-        <li>応募説明（docs/entry.html）: <a href="entry.html">作品の課題・使い方・評価根拠</a></li>
-        <li>受賞比較第2版（docs/award-comparison.html）: <a href="award-comparison.html">公式3観点・増えた証拠・据え置き理由・改善上位3件</a></li>
+        <li>応募説明（docs/entry.html）: <a href="entry.html">作品の課題・使い方・利用価値・現在の到達点</a></li>
         <li>協議前確認メモ（docs/municipality-memo.html）: <a href="municipality-memo.html">市町別の根拠・限界・次の確認事項</a></li>
         <li>公開用アプリ（docs/index.html）: <a href="index.html?v=20260811">市町別の登録供給ビュー</a>（<a href="index.html?v=20260811#supply-comparison">岩国市・光市のGTFS供給比較</a>、<a href="index.html?v=20260811#limits-title">データの限界</a>、<a href="index.html?v=20260811#sources-title">出典と利用条件</a>）</li>
-        <li>公開JSON: <a href="data/operators.json">operators.json</a> / <a href="data/vehicles.json">vehicles.json</a> / <a href="data/municipal_supply.json">municipal_supply.json</a> / <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a> / <a href="data/gtfs_supply_metrics.json">gtfs_supply_metrics.json</a> / <a href="data/work1_award_scorecard.json">work1_award_scorecard.json</a></li>
-        <li>リポジトリ内: run_record.md、SPEC.md、verification.md、data/operators.csv、data/vehicles.csv、data/gtfs_feeds.csv、data/municipality_gtfs.csv、data/gtfs_supply_metrics.json</li>
+        <li>公開JSON: <a href="data/operators.json">operators.json</a> / <a href="data/vehicles.json">vehicles.json</a> / <a href="data/municipal_supply.json">municipal_supply.json</a> / <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a> / <a href="data/gtfs_supply_metrics.json">gtfs_supply_metrics.json</a></li>
+        <li>リポジトリ内: run_record.md、SPEC.md、verification.md、data/operators.csv、data/vehicles.csv、data/gtfs_feeds.csv、data/municipality_gtfs.csv、data/gtfs_supply_metrics.json。改善用の数値診断はPagesとは分離して管理</li>
         <li>括弧付き台数の扱い: 国自旅第317号「<a href="https://www.mlit.go.jp/jidosha/content/001766049.pdf">福祉有償運送の登録に関する処理方針について</a>」2.(2)⑦</li>
         <li>交通空白地の車種区分: 国自旅第316号「<a href="https://www.mlit.go.jp/jidosha/content/001766048.pdf">交通空白地有償運送の登録に関する処理方針について</a>」2.(2)⑦</li>
         <li>山口県の市町数: 出典: 山口県「市町｜関連リンク」 <a href="https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html">https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html</a></li>

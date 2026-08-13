@@ -2483,3 +2483,22 @@ P2はrepo内の最終受入記録が実装commit `7fdf04a`とそのrun IDを記�
 
 ローカル正本は`evidence/20260813_work1_release_evidence_permalink_local_acceptance.json`。
 GitHub Release/tagは外部公開される検証証拠であり、UDC概要フォーム、本応募、BODIK登録ではない。
+
+## WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 ローカル検証（2026-08-13）
+
+| 検証 | 結果 |
+|---|---|
+| 前段階 | HEAD `1858190c47ad364a99fbf4fa32cfaf607279073d`、Release 5資産、最終受入済み |
+| 公開から削除 | `docs/award-comparison.html`、Pages用scorecard JSON、schema JSON |
+| 内部診断 | `data/work1_award_scorecard.json`とschemaを保持、値・bytesは未変更 |
+| 応募説明 | 利用価値、現在できること、新しい取組へ事実ベースで再構成 |
+| 公開HTML検査 | scorecard URL、内部JSON URL、数値自己診断の公開参照0件 |
+| attestation契約 | 公開4資産、原本6件、保護3件、内部診断Pages不在をfail closed検査 |
+| 関連回帰 | 69 / 69 success |
+| 全回帰 | 151 / 151 success |
+| 旧SPEC網羅 | 941トークン、欠落0 |
+| 差分 | scope checker、`git diff --check` success |
+| ローカル正本 | `evidence/20260813_work1_public_information_architecture_local_acceptance.json` |
+| scope | 変更前ガード`WORK1_SCOPE_ALLOWED`、作品②入力・参加者連絡・応募・BODIK各0 |
+| 残り | commit・push、Actions、公開PC・スマートフォン受入 |
+| 判定 | `LOCAL_GO`。mainへcommit/pushし、同一SHAのCIとPages公開読戻しへ進む |

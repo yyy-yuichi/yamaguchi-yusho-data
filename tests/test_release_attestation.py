@@ -61,7 +61,7 @@ class ReleaseAttestationContractTest(unittest.TestCase):
         self.assertTrue(
             all(item["commit_bytes_match"] for item in record["verification"]["public_assets"])
         )
-        self.assertEqual(6, len(record["verification"]["public_assets"]))
+        self.assertEqual(4, len(record["verification"]["public_assets"]))
         self.assertEqual(
             {"実用度": 3.5, "完成度": 4.0, "挑戦度": 3.0},
             record["verification"]["scorecard"]["scores"],
@@ -69,7 +69,7 @@ class ReleaseAttestationContractTest(unittest.TestCase):
         self.assertEqual(70.0, record["verification"]["scorecard"]["overall_comparison_index"])
         observations = record["scope"]["workflow_observations"]
         declarations = record["scope"]["declared_boundaries"]
-        self.assertEqual(6, len(observations["requested_public_assets"]))
+        self.assertEqual(4, len(observations["requested_public_assets"]))
         self.assertTrue(all(item["method"] == "GET" for item in observations["requested_public_assets"]))
         self.assertEqual(
             "stage_execution_declaration_not_external_measurement",

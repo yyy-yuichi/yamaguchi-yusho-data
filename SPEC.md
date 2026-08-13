@@ -1,6 +1,6 @@
-# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定
+# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理
 
-**rev.5.15 / 2026-08-13**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29。消した記述はそこに全部書いてある）
+**rev.5.16 / 2026-08-13**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30。消した記述はそこに全部書いてある）
 
 UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下に `SPEC.md` として置き、Claude Code に読ませる。**
 
@@ -1136,6 +1136,14 @@ P2 1件）だった。P2は、最終attestation artifactがActionsの保持期�
 恒久的な発見経路が公開物にないことである。WORK1-RELEASE-EVIDENCE-PERMALINK-1では、最終HEADを
 指すtagとGitHub Releaseへ同じartifact、可読JSON・Markdown、来歴JSON、SHA256一覧を固定し、
 `/releases/latest`から到達可能にする。採点値、原本、公開トップ、応募説明は変えない。
+
+### 10.30 rev.5.15 → rev.5.16
+
+WORK1-RELEASE-EVIDENCE-PERMALINK-1は最終HEAD `1858190c47ad364a99fbf4fa32cfaf607279073d`、
+同一SHAのtag、latest Release、未認証GET可能な5資産まで最終受入済みである。利用者向けPagesに
+改善用の数値自己診断を置く必然性を見直し、`docs/award-comparison.html`とPages用2 JSONを削除する。
+内部正本、計算、改善優先度は保持し、応募説明の公式観点見出しは利用価値・現在の実装・新しい取組の
+事実説明へ改める。これは診断の破棄や秘匿ではなく、公開成果物と開発資料の役割分離である。
 
 ---
 
@@ -2856,3 +2864,54 @@ secret、外部連携を追加しない。Release公開後は、この段階の�
 - scope lock、Pages、attestationの失敗、decision `NO_GO`
 - 追加権限、secret、外部連携、原本・公開値・公開トップ・応募説明の変更が必要
 - 作品②、参加者連絡、応募・登録を入力または操作にする必要が生じた
+
+---
+
+## 28. WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1
+
+### 28.1 段階ゴール
+
+公開サイトを作品の機能、利用価値、現在の到達点、出典、日付、限界が伝わる構成へ整理する。
+改善優先度を検討する数値診断はリポジトリ内の開発資料として保持し、GitHub Pagesの利用者向け
+成果物から分離する。診断値の変更や削除を目的にせず、作品の機能または公式評価との誤認を防ぐ。
+
+### 28.2 公開情報契約
+
+- 公開中核は`docs/index.html`、`docs/municipality-memo.html`、GTFS供給比較、`docs/entry.html`とする。
+- 公開補助は`docs/status.html`、原本・出典・限界・鮮度・検証記録・GitHub Release証拠とする。
+- `docs/award-comparison.html`、`docs/data/work1_award_scorecard.json`、
+  `docs/data/award_scorecard_schema.json`は削除し、Pagesで配信しない。
+- `data/work1_award_scorecard.json`と`data/award_scorecard_schema.json`は開発用正本として保持し、
+  SHA256、計算、証拠境界、作品②入力0件を回帰検査する。公開リポジトリ内なので秘密とは扱わない。
+- 応募説明の旧見出し「実用度・完成度・挑戦度の根拠」は「利用価値と現在の到達点」へ変更し、
+  「協議前にどう役立つか」「現在できること」「新しく取り組んだこと」の事実説明を置く。
+- 公式3観点への対応は説明するが、応募者の数値自己採点は公開しない。評価は審査に委ねる。
+- release attestationの公開bytes照合は、状況ページとdurable evidence 3件の計4資産に変更する。
+  保護対象は公開トップ、改訂後の応募説明、内部診断正本の3件を維持する。
+- 過去のGit履歴・証拠・Releaseは改変しない。履歴書換え、Release削除、tag削除を行わない。
+
+### 28.3 変更範囲と不変境界
+
+変更対象はSPEC、run record、README、WORK_SCOPE、公開説明2 HTML、削除するPages用3資産、
+attestation builder、関連テスト、PROGRESS、verification、ローカル受入証拠だけとする。
+raw原本、GTFS ZIP、既存公開データ・計算値、公開トップ、作品②、参加者連絡、UDC概要フォーム、
+本応募、BODIK登録は変更・操作しない。作品②のパス・ファイル・Git履歴・公開物を入力にしない。
+
+### 28.4 完了条件
+
+1. Pages用3資産がGitから削除され、全公開HTMLに旧URL、内部JSON URL、数値自己診断の表示がない。
+2. 応募説明に利用価値、現在できること、新しい取組、自己採点を公開しない理由が表示される。
+3. 内部診断正本2件は変更せず、計算・公式根拠・改善優先度・作品①境界の検査が成功する。
+4. release attestationが公開4 / 4、原本6 / 6、保護3 / 3、Pages報告SHA一致でGOになる。
+5. 全151 / 151テスト、scope checker、`git diff --check`、旧SPEC網羅検査が成功する。
+6. commit・main push後、scope lock、Pages、release attestationが同一HEADでsuccessになる。
+7. 公開PC 1440×1600とスマートフォン390×844で、主要導線、改訂文、横overflow 0、runtime/dev
+   error 0、壊れた画像0を確認し、削除3 URLが404になる。
+8. 次段階を変更なしの`WORK1-PUBLIC-INFORMATION-ARCHITECTURE-AUDIT-1`だけに定義し、開始しない。
+
+### 28.5 停止条件
+
+- 内部診断正本・既存公開データ・原本・ZIPのbytesが変わる
+- 公開中核ページまたは検証証拠への到達性が失われる
+- scope lock、Pages、attestationが失敗またはNO_GOになる
+- 作品②、参加者連絡、応募・登録、履歴書換えを必要とする

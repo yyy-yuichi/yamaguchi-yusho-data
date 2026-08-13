@@ -29,8 +29,6 @@ SHA256_RE = re.compile(r"^[0-9a-f]{40}$")
 MAX_PUBLIC_BYTES = 2 * 1024 * 1024
 PUBLIC_ASSETS = (
     ("status.html", "docs/status.html"),
-    ("award-comparison.html", "docs/award-comparison.html"),
-    ("data/work1_award_scorecard.json", "docs/data/work1_award_scorecard.json"),
     (
         "data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json",
         "docs/data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json",
@@ -46,7 +44,7 @@ PUBLIC_ASSETS = (
 )
 FIXED_PROTECTED_SHA256 = {
     "docs/index.html": "502eb93199d3df71593dc7d220d575159a9167a2692bdec2bb8b5b4b7d7c4b49",
-    "docs/entry.html": "c89d25f9e491da49b391578929369d8c1d0b98cc18b669f0c3dfb77b9c52a95c",
+    "docs/entry.html": "217c904713188dbfe2a81a90aa346fb905e905d07bbaee7daedf82cff66870ba",
     "data/work1_award_scorecard.json": "0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021",
 }
 
@@ -160,14 +158,18 @@ def _protected_checks(repo_root: Path) -> tuple[list[dict[str, Any]], list[str]]
 
 def _scorecard_check(repo_root: Path) -> tuple[dict[str, Any], list[str]]:
     path = repo_root / "data" / "work1_award_scorecard.json"
-    public_copy = repo_root / "docs" / "data" / "work1_award_scorecard.json"
     payload = path.read_bytes()
     scorecard = json.loads(payload)
     criteria = {item["criterion_id"]: item for item in scorecard["criteria"]}
+    pages_paths = (
+        repo_root / "docs" / "award-comparison.html",
+        repo_root / "docs" / "data" / "work1_award_scorecard.json",
+        repo_root / "docs" / "data" / "award_scorecard_schema.json",
+    )
     result = {
         "bytes": len(payload),
         "sha256": sha256_bytes(payload),
-        "public_copy_match": payload == public_copy.read_bytes(),
+        "pages_copy_absent": not any(item.exists() for item in pages_paths),
         "work_id": scorecard.get("work_id"),
         "repository_id": scorecard.get("evidence_boundary", {}).get("repository_id"),
         "other_work_input_count": scorecard.get("evidence_boundary", {}).get(
@@ -192,8 +194,8 @@ def _scorecard_check(repo_root: Path) -> tuple[dict[str, Any], list[str]]:
     for key, value in expected.items():
         if result[key] != value:
             errors.append(f"scorecard_mismatch:{key}")
-    if not result["public_copy_match"]:
-        errors.append("scorecard_public_copy_mismatch")
+    if not result["pages_copy_absent"]:
+        errors.append("internal_scorecard_published_to_pages")
     return result, errors
 
 

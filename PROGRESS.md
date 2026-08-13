@@ -2577,3 +2577,17 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
 - Release/tagは検証証拠の公開でありUDC提出ではない。作品②、参加者連絡、応募・BODIK、
   原本、公開値、スコアカード、公開トップ、応募説明、workflow権限は変更しない。
 - 次段階はread-onlyの`WORK1-RELEASE-EVIDENCE-PERMALINK-AUDIT-1`だけとし、まだ開始しない。
+
+## 2026-08-13 WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 ローカル実装
+
+- WORK1-RELEASE-EVIDENCE-PERMALINK-1は最終HEAD `1858190c47ad364a99fbf4fa32cfaf607279073d`と
+  公開Releaseの5資産まで最終受入済み。
+- 改善判断用の数値診断は`data/`の正本2件に保持し、Pages用HTML・JSON・schema 3件を削除した。
+- 応募説明を「利用価値と現在の到達点」へ改め、自己採点ではなく利用価値・実装・新しい取組の
+  事実を示す。状況・README・WORK_SCOPEも同じ公開情報設計へ同期した。
+- attestation公開照合を6資産から4資産へ変更し、内部診断がPagesに再混入した場合は
+  `internal_scorecard_published_to_pages`でNO_GOにする。
+- 関連69 / 69、全151 / 151テスト、scope checker、`git diff --check`はsuccess。旧SPECの
+  検査対象941トークンは欠落0件。CI、Pages、PC・スマートフォン公開受入は続行する。
+- ローカル正本は`evidence/20260813_work1_public_information_architecture_local_acceptance.json`。
+- 作品②入力、参加者連絡、UDC概要フォーム、本応募、BODIK登録は各0件。

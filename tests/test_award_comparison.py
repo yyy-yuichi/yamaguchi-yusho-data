@@ -11,7 +11,6 @@ from urllib.parse import urlparse
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = REPO_ROOT / "data"
 DOCS_DIR = REPO_ROOT / "docs"
-DOCS_DATA_DIR = DOCS_DIR / "data"
 
 
 def read_json(path: Path):
@@ -27,16 +26,14 @@ class AwardComparisonContractTest(unittest.TestCase):
     def setUpClass(cls):
         cls.schema = read_json(DATA_DIR / "award_scorecard_schema.json")
         cls.scorecard = read_json(DATA_DIR / "work1_award_scorecard.json")
-        cls.html = (DOCS_DIR / "award-comparison.html").read_text(encoding="utf-8")
+        cls.entry_html = (DOCS_DIR / "entry.html").read_text(encoding="utf-8")
         cls.status_html = (DOCS_DIR / "status.html").read_text(encoding="utf-8")
 
-    def test_public_json_copies_are_byte_identical(self):
+    def test_pages_copies_are_absent_and_internal_sources_are_tracked(self):
         for filename in ("award_scorecard_schema.json", "work1_award_scorecard.json"):
-            self.assertEqual(
-                (DATA_DIR / filename).read_bytes(),
-                (DOCS_DATA_DIR / filename).read_bytes(),
-                f"docs/data/{filename} がdata/{filename}と一致しない",
-            )
+            self.assertTrue((DATA_DIR / filename).is_file())
+            self.assertFalse((DOCS_DIR / "data" / filename).exists())
+        self.assertFalse((DOCS_DIR / "award-comparison.html").exists())
 
     def test_schema_declares_internal_not_official_scale(self):
         self.assertEqual("1.0.0", self.scorecard["schema_version"])
@@ -194,34 +191,32 @@ class AwardComparisonContractTest(unittest.TestCase):
         self.assertEqual("human", boundary["decision_owner"])
         self.assertEqual("yyy-yuichi/yamaguchi-yusho-data", boundary["repository_id"])
 
-    def test_public_page_loads_json_and_uses_safe_dom_api(self):
+    def test_public_site_explains_value_without_publishing_numeric_self_score(self):
         for marker in (
-            'const scorecardUrl = "data/work1_award_scorecard.json"',
-            "fetch(scorecardUrl",
-            "renderScorecard",
-            "textContent",
-            "document.createElement",
-            "window.__awardRuntimeErrors = runtimeErrors",
-            "WORK1-AWARD-COMPARISON-2",
-            "増えた証拠と、点数を据え置いた理由",
-            "総合比較指数70.0は据え置きます",
-            "人間承認ゲート",
-            "自力実行可能",
-            "公式点・順位・受賞確率ではありません",
-            "他作品のパス、URL、ファイル、Git履歴、公開物、得点は入力していません",
+            "利用価値と現在の到達点",
+            "協議前にどう役立つか",
+            "現在できること",
+            "新しく取り組んだこと",
+            "応募者による自己採点は公開せず",
         ):
-            self.assertIn(marker, self.html)
-        self.assertNotIn("innerHTML", self.html)
-        self.assertNotIn(">70.0<", self.html)
-        self.assertNotIn(">3.5 / 5<", self.html)
+            self.assertIn(marker, self.entry_html)
+        combined = "\n".join(
+            path.read_text(encoding="utf-8") for path in DOCS_DIR.glob("*.html")
+        )
+        for marker in (
+            "award-comparison.html",
+            "work1_award_scorecard.json",
+            "受賞準備スコアカード",
+            "総合比較指数70.0",
+            "実用度3.5",
+        ):
+            self.assertNotIn(marker, combined)
 
     def test_status_uses_continuous_improvement_not_finite_submission_countdown(self):
         for marker in (
             "公開基盤を保持して受賞品質を継続改善",
-            "WORK1-AWARD-COMPARISON-2",
-            "WORK1-AWARD-COMPARISON-AUDIT-2",
-            "WORK1-AWARD-COMPARISON-TRACEABILITY-1",
-            "WORK1-AWARD-COMPARISON-TRACEABILITY-AUDIT-1",
+            "WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1",
+            "WORK1-PUBLIC-INFORMATION-ARCHITECTURE-AUDIT-1",
             "WORK1-RELEASE-ATTESTATION-1",
             "WORK1-RELEASE-ATTESTATION-AUDIT-1",
             "read-only監査GO・P2 2件",
@@ -229,7 +224,7 @@ class AwardComparisonContractTest(unittest.TestCase):
             "90日保存の外部artifact",
             "初回GO artifact",
             "全151 / 151テスト",
-            "根拠: SPEC.md §20・§23",
+            "公開ページは、誰にどう役立つか",
             "独立した人間承認ゲート",
         ):
             self.assertIn(marker, self.status_html)
@@ -263,12 +258,14 @@ class AwardComparisonContractTest(unittest.TestCase):
             hashlib.sha256((DATA_DIR / "work1_award_scorecard.json").read_bytes()).hexdigest(),
         )
 
-    def test_navigation_links_are_present_on_public_entry_points(self):
+    def test_public_entry_points_link_to_product_not_scorecard(self):
         for path in (REPO_ROOT / "README.md", DOCS_DIR / "entry.html", DOCS_DIR / "status.html"):
             text = path.read_text(encoding="utf-8")
-            self.assertIn("award-comparison.html", text, str(path))
+            self.assertNotIn("award-comparison.html", text, str(path))
         work_scope = (REPO_ROOT / "WORK_SCOPE.md").read_text(encoding="utf-8")
-        self.assertIn("award-comparison.html", work_scope)
+        self.assertNotIn("award-comparison.html", work_scope)
+        self.assertIn("municipality-memo.html", self.entry_html)
+        self.assertIn("index.html#supply-comparison", self.entry_html)
 
 
 if __name__ == "__main__":
