@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
-  "scorecard_id": "work1-award-comparison-2-2026-08-12",
+  "scorecard_id": "work1-award-scorecard-recalibration-2026-08-13",
   "work_id": "WORK1",
   "work_title": "山口県 市町別の登録供給ビュー",
-  "evaluation_as_of": "2026-08-12",
+  "evaluation_as_of": "2026-08-13",
   "evidence_boundary": {
     "repository_id": "yyy-yuichi/yamaguchi-yusho-data",
     "other_work_input_count": 0,
@@ -41,7 +41,7 @@
       "comparison_weight": 0.3333333333333333,
       "score": 3.5,
       "confidence": "medium",
-      "rationale": "分散した登録簿と公式GTFSを、市町・日付・根拠・限界を保った一つの入口へまとめ、市町別の確認メモへつなぐ方法は課題に整合する。一方、想定利用者が実務時間を短縮できたことや意思決定に使えたことを示す外部利用者証拠はまだない。",
+      "rationale": "分散した登録簿と公式GTFSを、市町・日付・根拠・限界を保った一つの入口へまとめ、4状態に応じた協議前ハンドオフへつなぐ方法は課題に整合する。一方、想定利用者が実務時間を短縮できたことや意思決定に使えたことを示す外部利用者証拠はまだない。",
       "evidence": [
         {
           "claim": "公開説明が課題、想定利用者、3段階の利用方法、分かることと分からないことを示す。",
@@ -56,10 +56,10 @@
           "as_of": "2026-08-12"
         },
         {
-          "claim": "選択市町の根拠・日付・限界・次の確認事項を、共有・印刷できる確認メモとして公開している。",
+          "claim": "選択市町を4状態に分け、共有事実・次の確認・分析へ渡す条件を、共有・印刷できる確認メモとして公開している。",
           "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/municipality-memo.html",
           "evidence_type": "public_demo",
-          "as_of": "2026-08-12"
+          "as_of": "2026-08-13"
         }
       ],
       "missing_evidence": [
@@ -67,7 +67,7 @@
         "従来手順との所要時間または見落とし件数の比較",
         "公開情報の確認後に実際の調査・協議へつながった事例"
       ],
-      "as_of": "2026-08-12",
+      "as_of": "2026-08-13",
       "subcriteria": [
         {
           "subcriterion_id": "problem_value_clarity",
@@ -84,14 +84,14 @@
             }
           ],
           "missing_evidence": ["課題の頻度や作業負担を示す外部調査"],
-          "as_of": "2026-08-12"
+          "as_of": "2026-08-13"
         },
         {
           "subcriterion_id": "method_fit",
           "label": "方法の妥当性",
           "score": 4.5,
           "confidence": "high",
-          "rationale": "市町選択、GTFS状況、同一週の2フィード比較、原本・日付・限界への導線に加え、選択市町の確認事項を共有・印刷できるメモが、交通協議前に公開情報を取り違えず確認する目的へ直接対応する。",
+          "rationale": "市町選択、GTFS状況、同一週の2フィード比較、原本・日付・限界への導線に加え、4状態別に共有事実・次の確認・分析条件を示すメモが、交通協議前に公開情報を取り違えず確認する目的へ直接対応する。",
           "evidence": [
             {
               "claim": "公開アプリが市町別確認と同一週比較を実装している。",
@@ -100,14 +100,14 @@
               "as_of": "2026-08-12"
             },
             {
-              "claim": "確認結果を根拠・日付・限界・次の確認事項を含む市町別メモへ渡せる。",
+              "claim": "確認結果を根拠・日付・限界に加え、状態別の共有事実・次の確認・分析条件を含む市町別メモへ渡せる。",
               "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/municipality-memo.html",
               "evidence_type": "public_demo",
-              "as_of": "2026-08-12"
+              "as_of": "2026-08-13"
             }
           ],
           "missing_evidence": ["実務タスクに対する方法選択の第三者評価"],
-          "as_of": "2026-08-12"
+          "as_of": "2026-08-13"
         },
         {
           "subcriterion_id": "user_value_evidence",
@@ -124,7 +124,7 @@
             }
           ],
           "missing_evidence": ["想定利用者の観察・インタビュー・アンケート", "実務上の時間短縮または判断改善"],
-          "as_of": "2026-08-12"
+          "as_of": "2026-08-13"
         }
       ]
     },
@@ -136,7 +136,7 @@
       "comparison_weight": 0.3333333333333333,
       "score": 4.0,
       "confidence": "high",
-      "rationale": "公開デモ、市町別確認メモ、機械可読データ、コード、出典、検証状況、原本変更検知まで稼働している。主要用途は実装済みだが、GTFS関連確認6/19市町、関連実測表示3市町・実測2フィードという範囲制限と外部利用実績の不足が残る。",
+      "rationale": "公開デモ、4状態別の市町確認メモ、機械可読データ、コード、出典、検証状況、原本変更検知、同一HEADの外部attestationまで稼働している。主要用途は実装済みだが、GTFS関連確認6/19市町、関連実測表示3市町・実測2フィードという範囲制限と外部利用実績の不足が残る。",
       "evidence": [
         {
           "claim": "公開アプリ、応募説明、検証状況、公開JSONへ第三者が到達できる。",
@@ -156,14 +156,14 @@
         "公式資料で未確認の13市町に対する追加確認",
         "公開後の利用者環境での長期可用性実績"
       ],
-      "as_of": "2026-08-12",
+      "as_of": "2026-08-13",
       "subcriteria": [
         {
           "subcriterion_id": "public_implementation",
           "label": "利用可能な公開実装",
           "score": 4.5,
           "confidence": "high",
-          "rationale": "静的Webアプリとして公開され、登録供給、GTFS確認状況、2フィードの同一週比較に加え、市町別確認メモを共有・印刷できる。",
+          "rationale": "静的Webアプリとして公開され、登録供給、GTFS確認状況、2フィードの同一週比較に加え、4状態別の市町確認メモを共有・印刷できる。",
           "evidence": [
             {
               "claim": "主要機能を公開URLで利用できる。",
@@ -172,21 +172,21 @@
               "as_of": "2026-08-12"
             },
             {
-              "claim": "19市町の確認メモを公開JSONから生成し、共有・印刷できる。",
+              "claim": "19市町の確認メモを公開JSONから4状態別に生成し、共有・印刷できる。",
               "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/municipality-memo.html",
               "evidence_type": "public_demo",
-              "as_of": "2026-08-12"
+              "as_of": "2026-08-13"
             }
           ],
           "missing_evidence": ["支援技術利用者を含む外部ユーザー受入"],
-          "as_of": "2026-08-12"
+          "as_of": "2026-08-13"
         },
         {
           "subcriterion_id": "reproducibility_verifiability",
           "label": "再現性と検証可能性",
           "score": 4.5,
           "confidence": "high",
-          "rationale": "公開JSON、原本SHA256、処理コード、テスト、検証記録、週次のread-only原本照合があり、数値と根拠を追跡できる。",
+          "rationale": "公開JSON、原本SHA256、処理コード、テスト、検証記録、週次のread-only原本照合、同一HEADの外部attestationがあり、数値と根拠を追跡できる。",
           "evidence": [
             {
               "claim": "検証状況ページが出典、データ、完了条件、継続照合へ接続する。",
@@ -202,7 +202,7 @@
             }
           ],
           "missing_evidence": ["別実装者がゼロから再生成した独立再現記録"],
-          "as_of": "2026-08-12"
+          "as_of": "2026-08-13"
         },
         {
           "subcriterion_id": "scope_reliability",
@@ -225,7 +225,7 @@
             }
           ],
           "missing_evidence": ["未確認13市町の追加調査", "認証が必要なGTFS本体の検証", "県内全交通モードの範囲定義"],
-          "as_of": "2026-08-12"
+          "as_of": "2026-08-13"
         }
       ]
     },
@@ -237,7 +237,7 @@
       "comparison_weight": 0.3333333333333333,
       "score": 3.0,
       "confidence": "medium",
-      "rationale": "異なる制度資料とGTFSを、日付と限界を失わず接続し、市町別確認メモと継続照合まで実装した点は挑戦的である。一方、新規採用フィードは0件で、GTFS実測の網羅性と関係アクターの多様性は弱い。",
+      "rationale": "異なる制度資料とGTFSを、日付と限界を失わず接続し、市町別確認メモと継続照合まで実装した。国内3サービス・6一次資料との限定比較で前段の確認層という役割差も示した。一方、新規採用フィードは0件で、GTFS実測の網羅性と関係アクターの多様性は弱い。",
       "evidence": [
         {
           "claim": "登録供給と予定運行を同じ入口で示し、異なる単位を順位へ丸めない。",
@@ -250,31 +250,43 @@
           "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/status.html#freshness-title",
           "evidence_type": "public_verification",
           "as_of": "2026-08-12"
+        },
+        {
+          "claim": "国内3サービス・6一次資料を同じ観点で比較し、作品①を深い分析の前段にある確認層として限定的に位置づけている。",
+          "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/entry.html#benchmark-title",
+          "evidence_type": "public_verification",
+          "as_of": "2026-08-13"
         }
       ],
       "missing_evidence": [
-        "既存類似サービスとの体系的な比較",
+        "今回の3サービスを越える追加比較または第三者による位置づけ評価",
         "GTFS実測対象の広域化",
         "行政・事業者・市民等との共同設計または継続運用"
       ],
-      "as_of": "2026-08-12",
+      "as_of": "2026-08-13",
       "subcriteria": [
         {
           "subcriterion_id": "novelty",
           "label": "目的・方法の新規性",
-          "score": 3.5,
+          "score": 4.0,
           "confidence": "medium",
-          "rationale": "公表登録簿の機械可読化とGTFS予定供給を、日付・根拠・限界を保持して接続する構成は特徴的だが、類似作品との網羅的比較は未実施である。",
+          "rationale": "公表登録簿の機械可読化とGTFS予定供給を、日付・根拠・限界を保持して接続する構成に加え、国内3サービス・6一次資料との限定比較で、取得・詳細可視化・計画分析の前段にある市町別確認層という役割差を示した。今回の比較範囲を越える唯一性は主張しない。",
           "evidence": [
             {
               "claim": "異なる制度資料とGTFSを同じ確認手順へ接続している。",
               "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/entry.html#usage-title",
               "evidence_type": "public_demo",
               "as_of": "2026-08-12"
+            },
+            {
+              "claim": "国内3サービスを6一次資料で比較し、同じ組合せを今回の確認範囲では確認できなかったことと比較限界を公開している。",
+              "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/entry.html#benchmark-title",
+              "evidence_type": "public_verification",
+              "as_of": "2026-08-13"
             }
           ],
-          "missing_evidence": ["国内の既存類似サービス・作品との体系的比較"],
-          "as_of": "2026-08-12"
+          "missing_evidence": ["今回の3サービスを越える追加比較", "第三者による新規性・位置づけ評価"],
+          "as_of": "2026-08-13"
         },
         {
           "subcriterion_id": "output_comprehensiveness",
@@ -291,7 +303,7 @@
             }
           ],
           "missing_evidence": ["未確認市町の追加確認", "県内全交通事業者・モードの網羅"],
-          "as_of": "2026-08-12"
+          "as_of": "2026-08-13"
         },
         {
           "subcriterion_id": "continuity",
@@ -308,7 +320,7 @@
             }
           ],
           "missing_evidence": ["複数月にわたる運用履歴", "保守担当の冗長化"],
-          "as_of": "2026-08-12"
+          "as_of": "2026-08-13"
         },
         {
           "subcriterion_id": "actor_diversity",
@@ -325,7 +337,7 @@
             }
           ],
           "missing_evidence": ["行政・交通事業者・市民との共同設計", "外部組織による継続運用または再利用"],
-          "as_of": "2026-08-12"
+          "as_of": "2026-08-13"
         }
       ]
     }
@@ -334,7 +346,7 @@
     "comparison_index": 70.0,
     "max_index": 100.0,
     "confidence": "medium",
-    "interpretation": "市町別確認メモとGTFS関連範囲6/19市町の検証を反映した。方法の妥当性は向上したが、外部利用者による効果実証、新規実測フィード、関係アクターの多様性がないため、総合比較値70.0は据え置く。"
+    "interpretation": "国内3サービス・6一次資料の限定比較と4状態別ハンドオフを反映し、新規性小項目は3.5から4.0へ更新した。一方、利用者実証、新規実測フィード、関係アクター参加がなく、各基準の0.5刻み丸め後は3.5 / 4.0 / 3.0のため、総合比較値70.0は据え置く。"
   },
   "special_awards": [
     {
@@ -434,25 +446,25 @@
     },
     {
       "priority": 2,
-      "improvement_id": "similar_service_benchmark",
-      "title": "国内の類似サービス・作品との体系的比較",
-      "why": "構成の特徴は説明できるが、既存サービスとの違い、新規性の範囲、既に実現済みの機能を一次情報で比較した公開証拠がない。",
-      "target_subcriteria": ["novelty", "problem_value_clarity"],
-      "expected_index_gain_range": [0.0, 3.3],
-      "effort": "medium",
-      "external_dependency": false,
-      "acceptance_evidence": ["公式・公開資料だけを用いた比較対象台帳", "作品①との差分と共通点を同じ観点で示す比較表", "確認できない事項と主張しない事項を含む公開ページ"]
-    },
-    {
-      "priority": 3,
       "improvement_id": "independent_reproduction_drill",
       "title": "第三者手順を想定したゼロからの再生成・復旧訓練",
-      "why": "処理コードと検証記録は公開済みだが、別の作業環境で最初から生成し、差異や失敗から復旧した独立再現記録がない。",
+      "why": "処理コード、検証記録、同一HEADの外部attestationはあるが、クリーン環境で最初から生成し、差異や失敗から復旧した独立再現記録がない。",
       "target_subcriteria": ["reproducibility_verifiability", "continuity"],
       "expected_index_gain_range": [0.0, 3.3],
       "effort": "medium",
       "external_dependency": false,
       "acceptance_evidence": ["クリーン環境からの再生成手順と実行記録", "生成物のSHA-256または意味内容比較", "想定失敗と復旧結果を含む公開検証記録"]
+    },
+    {
+      "priority": 3,
+      "improvement_id": "official_gtfs_coverage_extension",
+      "title": "未確認13市町の公式GTFS追加確認と範囲拡張",
+      "why": "登録簿は19市町を扱う一方、公式GTFS関連確認は6/19市町、実測は2フィードに限られる。未確認を不存在とせず、公式配布の有無と取得条件を再現可能に追加確認する余地が大きい。",
+      "target_subcriteria": ["scope_reliability", "output_comprehensiveness"],
+      "expected_index_gain_range": [0.0, 6.7],
+      "effort": "medium",
+      "external_dependency": false,
+      "acceptance_evidence": ["未確認13市町の公式配布先・確認日・結果台帳", "確認できた場合だけ原本を手動受入する証拠", "確認不能・認証必要・対象外を区別した公開範囲説明"]
     }
   ],
   "links": [

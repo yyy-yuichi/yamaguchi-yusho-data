@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-13 (rev.63) / 状態: WORK1-PRECONSULTATION-HANDOFF-1 公開受入済み / 次: read-only独立監査
+最終更新: 2026-08-13 (rev.64) / 状態: WORK1-AWARD-SCORECARD-RECALIBRATION-1 ローカル受入済み / 次: 公開受入
 
 ## 0. このファイルについて
 
@@ -1232,3 +1232,23 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - 公開受入正本は`evidence/20260813_work1_preconsultation_handoff_public_acceptance.json`。
   この記録を含む最終HEAD自身を同じ3 workflowで再確認し、後続run IDは外部正本として再書込みしない。
 - 次段階は変更を伴わない`WORK1-PRECONSULTATION-HANDOFF-AUDIT-1`だけとし、開始しない。
+
+### 改訂点（rev.64）
+
+- 固定HEAD `f3b90c9ac7a3a97b6983d66a1e62874a65c26e41`の
+  `WORK1-PRECONSULTATION-HANDOFF-AUDIT-1`はGO、P0 0件、P1 0件、P2 2件。P2は最終artifactの
+  2026-11-11失効とGitHub Pages側のNode.js 20廃止予定警告で、公開機能の不一致ではない。
+- `SPEC.md` rev.5.19 §31へ`WORK1-AWARD-SCORECARD-RECALIBRATION-1`を固定した。2026-08-13時点の
+  類似比較と4状態ハンドオフを、公開しない内部診断へ同一基準で反映する。
+- 3サービス・6一次資料の限定比較により新規性小項目は3.5から4.0へ更新する。一方、利用者実証、
+  追加採用フィード、共同設計は0件のため、実用度3.5、完成度4.0、挑戦度3.0、総合70.0は維持する。
+- 完了済みの類似比較を改善候補から除外する。利用者検証は人間承認ゲートとして残し、自走可能な
+  最上位候補を独立再生成・復旧訓練、次候補を未確認13市町の追加確認とする。
+- 内部診断のPages用3資産は不在を維持し、公開4 HTML、原本6件、既存公開値、公式基準、作品①境界は
+  変更しない。作品②入力、参加者連絡、応募・BODIK登録は0件のまま進める。
+- 次段階はread-onlyの`WORK1-AWARD-SCORECARD-RECALIBRATION-AUDIT-1`だけとし、この段階では開始しない。
+- 内部正本は25,203 bytes、SHA256
+  `b1f03e1f09d4a39fbe8c8afdf4253c837bfea9c09bf7f3be02bb51449c12215d`。専用27 / 27、
+  全169 / 169、旧SPEC 984トークン欠落0、scope checker、`git diff --check`、秘密情報定型検査0件。
+- 原本6 / 6、公開4 HTML、既存公開値は基準HEADと一致し、Pages用内部診断3資産は不在。
+  ローカル正本は`evidence/20260813_work1_award_scorecard_recalibration_local_acceptance.json`。

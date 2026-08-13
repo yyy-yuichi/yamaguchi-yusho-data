@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-AWARD-SCORECARD-RECALIBRATION-1",
+  "evidence_type": "local_acceptance",
+  "checked_at": "2026-08-13",
+  "decision": "LOCAL_GO",
+  "baseline": {
+    "branch": "main",
+    "commit_sha": "f3b90c9ac7a3a97b6983d66a1e62874a65c26e41",
+    "origin_main_sha": "f3b90c9ac7a3a97b6983d66a1e62874a65c26e41",
+    "worktree_was_clean": true
+  },
+  "inputs": [
+    {
+      "path": "evidence/20260813_work1_similar_service_benchmark_research.json",
+      "bytes": 10864,
+      "sha256": "5db0504850e0a3841a9ccb36a9fea8b99f0afa5fa54dbf946b006b2b1e2ffee3"
+    },
+    {
+      "path": "evidence/20260813_work1_similar_service_benchmark_public_acceptance.json",
+      "bytes": 4267,
+      "sha256": "c491084a238ed693008b8fe90a1f1b2e405c9753c0843f4723a1c4f4afc40f6d"
+    },
+    {
+      "path": "evidence/20260813_work1_preconsultation_handoff_local_acceptance.json",
+      "bytes": 3897,
+      "sha256": "a9a816df24568c414862617d8a53f1a14cd730ed56f25c87c53b36c21282e2d1"
+    },
+    {
+      "path": "evidence/20260813_work1_preconsultation_handoff_public_acceptance.json",
+      "bytes": 3867,
+      "sha256": "845a73965d89dd5a10ae857ec1d086e652206b38a48b63d28ce8166ad79c434c"
+    }
+  ],
+  "recalibration": {
+    "evaluation_as_of_before": "2026-08-12",
+    "evaluation_as_of_after": "2026-08-13",
+    "criterion_scores_before": {"utility": 3.5, "completeness": 4.0, "challenge": 3.0},
+    "criterion_scores_after": {"utility": 3.5, "completeness": 4.0, "challenge": 3.0},
+    "overall_before": 70.0,
+    "overall_after": 70.0,
+    "supported_subcriterion_changes": [
+      {"subcriterion_id": "novelty", "before": 3.5, "after": 4.0}
+    ],
+    "unchanged_missing_evidence": {
+      "user_value_evidence": 2.0,
+      "actor_diversity": 1.0,
+      "newly_accepted_gtfs_feeds": 0,
+      "participant_contacts": 0
+    },
+    "scorecard": {
+      "path": "data/work1_award_scorecard.json",
+      "bytes": 25203,
+      "sha256": "b1f03e1f09d4a39fbe8c8afdf4253c837bfea9c09bf7f3be02bb51449c12215d"
+    }
+  },
+  "remaining_improvements": [
+    {"priority": 1, "id": "remote_user_evaluation", "external_dependency": true, "human_contact_gate": true},
+    {"priority": 2, "id": "independent_reproduction_drill", "external_dependency": false, "human_contact_gate": false},
+    {"priority": 3, "id": "official_gtfs_coverage_extension", "external_dependency": false, "human_contact_gate": false}
+  ],
+  "verification": {
+    "focused_tests_discovered": 27,
+    "focused_tests_passed": 27,
+    "full_tests_discovered": 169,
+    "full_tests_passed": 169,
+    "spec_coverage_tokens": 984,
+    "spec_missing_unexplained": 0,
+    "scope_guard_passed": true,
+    "diff_check_passed": true,
+    "secret_pattern_hits": 0,
+    "accepted_sources_matched": 6,
+    "public_html_baseline_matches": 4,
+    "pages_internal_assets_absent": 3
+  },
+  "boundaries": {
+    "raw_source_changes": 0,
+    "gtfs_zip_changes": 0,
+    "existing_public_json_changes": 0,
+    "public_html_changes": 0,
+    "official_rule_changes": 0,
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0
+  },
+  "next_actions": [
+    "commit and push the recalibration to main",
+    "verify scope lock, Pages, and release attestation on the same commit",
+    "verify four public pages still match and three internal Pages assets remain 404",
+    "record public acceptance and reverify the final acceptance commit",
+    "stop before WORK1-AWARD-SCORECARD-RECALIBRATION-AUDIT-1"
+  ],
+  "errors": []
+}

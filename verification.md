@@ -2564,6 +2564,26 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 この受入記録を含む最終HEAD自身をscope lock、Pages、release attestationで再確認し、後続run IDは
 外部正本としてrepoへ再書込みしない。
 
+## WORK1-AWARD-SCORECARD-RECALIBRATION-1 ローカル検証（2026-08-13）
+
+| 検証 | 結果 |
+|---|---|
+| 監査入力 | HEAD `f3b90c9ac7a3a97b6983d66a1e62874a65c26e41`、協議前ハンドオフ監査GO、P0 0 / P1 0 / P2 2 |
+| 新規性 | 3サービス・6一次資料の限定比較を根拠に3.5→4.0。唯一・優位・国内網羅は非主張 |
+| 据置 | 実用度3.5、完成度4.0、挑戦度3.0、総合70.0 |
+| 未達維持 | 利用者価値2.0、関係アクター1.0、追加採用フィード0、共同設計0 |
+| 改善候補 | 利用者検証は人間承認ゲート。自走候補1位は独立再生成・復旧訓練 |
+| 内部正本 | 25,203 bytes、SHA256 `b1f03e1f09d4a39fbe8c8afdf4253c837bfea9c09bf7f3be02bb51449c12215d` |
+| 公開分離 | Pages用内部診断3資産なし、公開HTMLの数値・内部JSON導線0 |
+| 専用回帰 | 27 / 27 success |
+| 全回帰 | 169件検出、169 / 169 success、終了コード0 |
+| 旧SPEC網羅 | 984トークン、欠落0、説明なし0 |
+| 原本・公開HTML | 原本6 / 6、公開4 / 4が基準HEADと一致 |
+| 差分・scope | `git diff --check` success、`WORK1_SCOPE_ALLOWED`、秘密情報定型パターン0件 |
+| 境界 | 作品②入力・参加者連絡・応募・BODIK・公開値変更各0 |
+| 正本 | `evidence/20260813_work1_award_scorecard_recalibration_local_acceptance.json` |
+| 判定 | `LOCAL_GO`。実装commitをmainへpushし、CI・Pages・公開非露出を受け入れる |
+
 ## 2026-08-13 WORK1-PRECONSULTATION-HANDOFF-1 ローカル検証
 
 | 検証 | 結果 |

@@ -90,9 +90,9 @@ class AwardComparisonContractTest(unittest.TestCase):
         self.assertEqual(expected, self.scorecard["overall"]["comparison_index"])
         self.assertEqual(70.0, expected)
 
-    def test_comparison2_updates_only_supported_scores_and_scope_counts(self):
+    def test_recalibration_updates_only_supported_scores_and_scope_counts(self):
         self.assertEqual(
-            "work1-award-comparison-2-2026-08-12",
+            "work1-award-scorecard-recalibration-2026-08-13",
             self.scorecard["scorecard_id"],
         )
         criteria = {item["criterion_id"]: item for item in self.scorecard["criteria"]}
@@ -126,7 +126,7 @@ class AwardComparisonContractTest(unittest.TestCase):
             scored_items.extend(criterion["subcriteria"])
         for item in scored_items:
             self.assertIn(item["confidence"], {"high", "medium", "low"})
-            self.assertEqual("2026-08-12", item["as_of"])
+            self.assertEqual("2026-08-13", item["as_of"])
             self.assertTrue(item["rationale"].strip())
             self.assertTrue(item["evidence"])
             self.assertTrue(item["missing_evidence"])
@@ -144,7 +144,7 @@ class AwardComparisonContractTest(unittest.TestCase):
                     and parsed.path.startswith("/yyy-yuichi/yamaguchi-yusho-data")
                 )
                 self.assertTrue(allowed, evidence["url"])
-                self.assertEqual("2026-08-12", evidence["as_of"])
+                self.assertLessEqual(evidence["as_of"], self.scorecard["evaluation_as_of"])
 
     def test_special_award_statuses_match_2026_rules(self):
         awards = {item["award_id"]: item["status"] for item in self.scorecard["special_awards"]}
@@ -167,8 +167,8 @@ class AwardComparisonContractTest(unittest.TestCase):
         self.assertEqual(
             [
                 "remote_user_evaluation",
-                "similar_service_benchmark",
                 "independent_reproduction_drill",
+                "official_gtfs_coverage_extension",
             ],
             [item["improvement_id"] for item in improvements],
         )
@@ -254,7 +254,7 @@ class AwardComparisonContractTest(unittest.TestCase):
             self.assertNotIn("実用性", current_record, str(path))
             self.assertNotIn("チャレンジ性", current_record, str(path))
         self.assertEqual(
-            "0826a1851464cd7198f10f9eb4eddb0896c8af2c1a156e8a87cca49754d9d021",
+            "b1f03e1f09d4a39fbe8c8afdf4253c837bfea9c09bf7f3be02bb51449c12215d",
             hashlib.sha256((DATA_DIR / "work1_award_scorecard.json").read_bytes()).hexdigest(),
         )
 

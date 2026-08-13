@@ -2603,6 +2603,22 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   現行4 URLは200、削除3 URLは404。公開HTMLに旧スコアリンクは0件。
 - この記録を含む最終HEAD自身を同じ3 workflowで外部再確認する。次段階はread-only監査だけ。
 
+## 2026-08-13 WORK1-AWARD-SCORECARD-RECALIBRATION-1 ローカル受入
+
+- 類似サービス3件・一次資料6件と4状態別協議前ハンドオフを、公開しない内部診断へ再評価した。
+- 新規性小項目は3.5→4.0。利用者実証、追加採用フィード、共同設計は未達のため、実用度3.5、
+  完成度4.0、挑戦度3.0、総合70.0は据え置いた。
+- 完了済みの類似比較を改善候補から除外した。利用者検証は人間承認ゲートとして残し、自走可能な
+  最上位候補を独立再生成・復旧訓練、次候補を未確認13市町の公式GTFS追加確認とした。
+- 内部正本は25,203 bytes、SHA256
+  `b1f03e1f09d4a39fbe8c8afdf4253c837bfea9c09bf7f3be02bb51449c12215d`。
+- 専用27 / 27、全169 / 169、旧SPEC 984トークン欠落0、scope checker、`git diff --check`、
+  秘密情報定型検査0件。原本6 / 6、公開4 HTMLは基準HEADと一致する。
+- Pages用内部診断3資産は不在で、公開HTMLへの点数・内部JSON導線は0件。
+- 作品②入力、参加者連絡、応募・BODIK登録、公開値変更は各0件。
+- ローカル正本は`evidence/20260813_work1_award_scorecard_recalibration_local_acceptance.json`。
+  次はcommit・main push、同一SHAのscope lock・Pages・attestation、公開非露出の読戻し。
+
 ## 2026-08-13 WORK1-PRECONSULTATION-HANDOFF-1
 
 ### 仕様・実装・ローカル受入

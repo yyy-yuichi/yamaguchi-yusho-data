@@ -1,6 +1,6 @@
-# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ
+# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価
 
-**rev.5.18 / 2026-08-13**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32。消した記述はそこに全部書いてある）
+**rev.5.19 / 2026-08-13**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33。消した記述はそこに全部書いてある）
 
 UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下に `SPEC.md` として置き、Claude Code に読ませる。**
 
@@ -10,8 +10,8 @@ UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下
 §18は受け入れ済みENTRY-PAGE-1、§19は受け入れ済みWORK1-FRESHNESS-1、
 §20は受け入れ済みWORK1-AWARD-COMPARISON-1、§21は受け入れ済みWORK1-TASK-MEMO-1、
 §22はWORK1-GTFS-COVERAGE-2、§23〜§28は受入済みの比較・証拠・公開情報整理、
-§29は受け入れ済みWORK1-SIMILAR-SERVICE-BENCHMARK-1、§30は
-WORK1-PRECONSULTATION-HANDOFF-1の実行仕様である。
+§29は受け入れ済みWORK1-SIMILAR-SERVICE-BENCHMARK-1、§30は受け入れ済み
+WORK1-PRECONSULTATION-HANDOFF-1、§31はWORK1-AWARD-SCORECARD-RECALIBRATION-1の実行仕様である。
 プロジェクトのゴール、終了条件、確定方針は`run_record.md` §0.5 を正とし、
 このファイルがそれを上書きしてはならない。
 
@@ -1163,6 +1163,14 @@ P1 0件、P2 3件）だった。P2はAPI文書1 URLの取得不安定、GitHub P
 比較で整理した工程差を実用品質へつなげるため、協議前確認メモへ、現在の市町状態から導く
 「共有する事実」「次に確認する事項」「外部分析へ渡せる条件」を追加する。外部サービスへの自動送信、
 原本・公開値の自動採用、内部再採点は行わない。
+
+### 10.33 rev.5.18 → rev.5.19
+
+固定HEAD `f3b90c9ac7a3a97b6983d66a1e62874a65c26e41`の協議前ハンドオフ監査はGO（P0 0件、
+P1 0件、P2 2件）だった。類似比較と4状態ハンドオフが完成したため、公開から分離した内部診断を
+2026-08-13時点へ再評価する。新規性小項目は限定比較の証拠により3.5から4.0へ更新するが、利用者実証、
+追加採用フィード、共同設計を達成扱いせず、3基準と総合70.0は据え置く。完了済み改善を候補から外し、
+人間承認が必要な利用者検証と、自走可能な独立再生成・範囲拡張を区別する。Pagesへ内部値を再公開しない。
 
 ---
 
@@ -3093,4 +3101,72 @@ UDC概要フォーム、本応募、BODIK登録、外部サービスへのデー
 - 既存公開データだけでは4状態を決定できない
 - 未確認・0件を不存在と断定する、または外部サービスへ自動送信する必要が生じる
 - 原本、既存公開値、公開トップ、応募説明、内部診断、scope境界の変更が必要になる
+- 作品②、参加者連絡、応募・登録、履歴書換え、Release削除が必要になる
+
+---
+
+## 31. WORK1-AWARD-SCORECARD-RECALIBRATION-1
+
+### 31.1 段階ゴール
+
+公開情報設計、国内3サービス・一次資料6件による類似比較、4状態の協議前ハンドオフと独立監査を、
+開発用の内部スコアカードへ同一基準で反映する。点数を上げること自体を目的にせず、改善済みの不足、
+残った不足、人間承認が必要な施策、自走可能な施策を区別して、次に受賞寄与を検証する一作業を選べる
+状態にする。内部診断値はPagesへ再公開しない。
+
+### 31.2 再採点入力と規則
+
+再評価日は2026-08-13とし、次だけを新しい入力にする。
+
+- `evidence/20260813_work1_similar_service_benchmark_research.json`と同段階の公開受入証拠
+- `evidence/20260813_work1_preconsultation_handoff_local_acceptance.json`と公開受入証拠
+- 固定HEAD `f3b90c9ac7a3a97b6983d66a1e62874a65c26e41`に対するread-only独立監査結果
+- 既存のUDC2026公式基準、共通0.5刻み、3基準等重み、四捨五入規則
+
+資料や説明を追加しただけでは利用者価値、網羅性、関係アクター参加を加点しない。3サービス・6一次資料の
+限定比較により、今回確認した説明では作品①と同じ組合せを確認できなかったことは新規性の根拠にできるが、
+国内唯一、優位、網羅、受賞確率は主張しない。利用者本人の実証0件、追加採用フィード0件、共同設計0件は
+未達のまま扱う。
+
+### 31.3 再採点結果の契約
+
+- 実用度は3.5、完成度は4.0、挑戦度は3.0、総合比較値は70.0を維持する。
+- 新規性の小項目だけを3.5から4.0へ更新する。
+- 挑戦度は4小項目の平均を0.5刻みに丸めるため3.0のままとする。
+- 完了済みの`similar_service_benchmark`を改善候補から除外する。
+- 利用者検証は最大不足として残すが、参加者連絡は独立した人間承認ゲートとする。
+- 自走可能な最上位候補を`independent_reproduction_drill`とし、未確認13市町の追加確認を次候補にする。
+
+### 31.4 公開分離と変更範囲
+
+変更・追加できるのは次だけとする。
+
+- `SPEC.md`、`run_record.md`、`PROGRESS.md`、`verification.md`
+- `data/work1_award_scorecard.json`
+- `src/build_release_attestation.py`
+- `tests/test_award_comparison.py`、`tests/test_award_scorecard_recalibration.py`
+- `evidence/20260813_work1_award_scorecard_recalibration_*`
+
+`docs/award-comparison.html`、`docs/data/work1_award_scorecard.json`、
+`docs/data/award_scorecard_schema.json`は存在しない状態を維持する。公開HTMLへ内部点数、受賞確率、順位を
+追加しない。`raw/`、GTFS ZIP、既存公開JSON・計算値、公開4 HTML、公式基準、scope境界は変更しない。
+作品②を入力にせず、参加者連絡、UDC概要フォーム、本応募、BODIK登録を行わない。
+
+### 31.5 完了条件
+
+1. 再評価日、入力証拠、変更・据置理由、未達証拠が内部JSONから追跡できる。
+2. 全小項目から3基準と総合値を再計算でき、新規性4.0、3基準3.5 / 4.0 / 3.0、総合70.0になる。
+3. 完了済み改善を候補から除外し、人間承認ゲートと自走可能候補を区別する。
+4. Pages用内部診断3資産が不在で、公開HTMLに内部点数・内部JSON導線がない。
+5. 6原本、既存公開JSON・計算値、公開4 HTML、公式基準、作品①境界が基準HEADと一致する。
+6. 専用テストと全unittest、scope checker、`git diff --check`、旧SPEC網羅検査が成功する。
+7. commit・main push後、scope lock、Pages、release attestationが同一HEADでsuccess・GOになる。
+8. 公開4 URLがcommit bytesと一致し、削除済み内部診断3 URLが404を維持する。
+9. 次段階をread-onlyの`WORK1-AWARD-SCORECARD-RECALIBRATION-AUDIT-1`だけに定義し、開始しない。
+
+### 31.6 停止条件
+
+- 利用者実証、共同設計、追加フィードを証拠なしに達成扱いする必要が生じる
+- 国内唯一、優位、受賞確率、公式点として内部値を使う必要が生じる
+- 公開HTML、原本、既存公開値、公式基準、scope境界の変更が必要になる
 - 作品②、参加者連絡、応募・登録、履歴書換え、Release削除が必要になる
