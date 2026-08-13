@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-13 (rev.60) / 状態: WORK1-SIMILAR-SERVICE-BENCHMARK-1 ローカル受入済み / 次: commit・push・CI・Pages公開受入
+最終更新: 2026-08-13 (rev.61) / 状態: WORK1-SIMILAR-SERVICE-BENCHMARK-1 公開受入済み / 次: read-only独立監査
 
 ## 0. このファイルについて
 
@@ -1189,3 +1189,17 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   秘密情報定型検査0件が成功した。原本・既存data・docs/data・公開トップ・内部診断は不変。
 - ローカル正本は`evidence/20260813_work1_similar_service_benchmark_local_acceptance.json`。
   `LOCAL_GO`としてmainへcommit・pushし、同一SHAのCI・Pages・公開PC・スマートフォンを読戻す。
+
+### 改訂点（rev.61）
+
+- 実装commit `84125e2f12337c3f73ceda484676d7316780422c`を`main`へpushした。scope lock
+  `31673053501`、Pages `31673053080`、release attestation `31673111345`は同一SHAで全success。
+- attestation artifact `9170461765`を独立読戻しし、decision GO、157 / 157、公開4 / 4、
+  原本6 / 6、保護3 / 3、`pages_copy_absent=true`、errors 0を確認した。
+- 公開応募説明は3比較対象・公式リンク6件・比較限界4項目をPC 1440×1600と390×844で確認した。
+  状況ページもPC 1440×1200と390×844で確認し、全画面で横overflow、壊れた画像、dev log各0。
+- 公開中核4 URLはHTTP 200かつ同commit bytes一致。削除済み内部診断HTML・JSON・schemaは404を維持した。
+- 内部点数、原本、GTFS ZIP、公開値、作品②入力、参加者連絡、応募・BODIKは変更していない。
+- 公開受入正本は`evidence/20260813_work1_similar_service_benchmark_public_acceptance.json`。
+  この記録を含む最終HEAD自身を同じ3 workflowで再確認し、後続run IDは外部正本として再書込みしない。
+- 次段階は変更を伴わない`WORK1-SIMILAR-SERVICE-BENCHMARK-AUDIT-1`だけとし、開始しない。

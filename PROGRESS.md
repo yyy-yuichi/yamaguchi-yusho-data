@@ -2621,3 +2621,16 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   作品②入力、参加者連絡、応募・BODIK、Release・tag削除は各0件。
 - ローカル正本は`evidence/20260813_work1_similar_service_benchmark_local_acceptance.json`。
   次はcommit・main push、同一SHAのscope lock・Pages・attestation、公開PC・スマートフォン読戻し。
+
+### 公開受入GO
+
+- 実装commit `84125e2f12337c3f73ceda484676d7316780422c`のscope lock `31673053501`、Pages
+  `31673053080`、release attestation `31673111345`は同一SHAで全success。
+- artifact `9170461765`はGO、157 / 157、公開4 / 4、原本6 / 6、保護3 / 3、
+  `pages_copy_absent=true`、errors 0。正本は
+  `evidence/20260813_work1_similar_service_benchmark_public_acceptance.json`。
+- 公開応募説明はPC 1440×1600・スマートフォン390×844で3比較対象、公式リンク6件、比較限界4項目を確認。
+  状況ページも1440×1200・390×844で確認し、横overflow、壊れた画像、dev logは全て0。
+- 公開中核4 URLは200かつcommit bytes一致。削除した内部診断HTML・JSON・schemaは404を維持した。
+- 内部点数、原本、GTFS ZIP、公開値、作品②入力、参加者連絡、応募・BODIKは各0変更。
+- この記録を含む最終HEAD自身を同じ3 workflowで外部再確認する。次段階はread-only監査だけ。

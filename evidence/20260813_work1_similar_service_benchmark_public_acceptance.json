@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work1_similar_service_benchmark_public_acceptance",
+  "stage": "WORK1-SIMILAR-SERVICE-BENCHMARK-1",
+  "recorded_at_jst": "2026-08-13",
+  "subject_commit": "84125e2f12337c3f73ceda484676d7316780422c",
+  "decision": "GO",
+  "actions": {
+    "scope_lock": {
+      "run_id": 31673053501,
+      "conclusion": "success"
+    },
+    "pages": {
+      "run_id": 31673053080,
+      "conclusion": "success"
+    },
+    "release_attestation": {
+      "run_id": 31673111345,
+      "conclusion": "success",
+      "artifact_id": 9170461765,
+      "artifact_name": "work1-release-attestation-84125e2f12337c3f73ceda484676d7316780422c",
+      "artifact_digest": "sha256:bf323d395f6f8fe8d4e58a61b7d76e4ba4a2c2625dddbf3e9f002ba2fd085b8d",
+      "expires_at": "2026-11-11T06:14:27Z"
+    }
+  },
+  "attestation": {
+    "decision": "GO",
+    "commit_matches_head": true,
+    "pages_reported_head_sha_matches": true,
+    "tests": {"passed": 157, "total": 157},
+    "public_assets": {"matched": 4, "total": 4},
+    "accepted_sources": {"matched": 6, "total": 6},
+    "protected_assets": {"matched": 3, "total": 3},
+    "scorecard_pages_copy_absent": true,
+    "errors": []
+  },
+  "public_http": [
+    {"path": "index.html", "status": 200, "sha256": "502eb93199d3df71593dc7d220d575159a9167a2692bdec2bb8b5b4b7d7c4b49"},
+    {"path": "entry.html", "status": 200, "sha256": "da71ea2775547d68af0f2b51da0faf7e852ef3b7d5e2cbce4ad187d79442d431"},
+    {"path": "status.html", "status": 200, "sha256": "3994dae042f2f24555f60bafe24a0ac7056e4c075ae269d570a09d500a4a6924"},
+    {"path": "municipality-memo.html", "status": 200, "sha256": "5857ba6412eeaa0abd86c2c44331fc75c156a559fa9f2348eea02ac5f4f729be"},
+    {"path": "award-comparison.html", "status": 404},
+    {"path": "data/work1_award_scorecard.json", "status": 404},
+    {"path": "data/award_scorecard_schema.json", "status": 404}
+  ],
+  "primary_source_reachability": [
+    {"url": "https://gtfs-data.jp/", "result": "HTTP 200"},
+    {"url": "https://docs.gtfs-data.jp/api.v2.html", "result": "browser and web parser reachable"},
+    {"url": "https://qgis.mierune.co.jp/posts/howto_plugin_gtfsgo", "result": "HTTP 200"},
+    {"url": "https://github.com/MIERUNE/GTFS-GO", "result": "HTTP 200"},
+    {"url": "https://www.mlit.go.jp/commmmons/document/008/", "result": "HTTP 200"},
+    {"url": "https://www.mlit.go.jp/commmmons/document/008/commmmons_doc_008_ver01.pdf", "result": "HTTP 200"}
+  ],
+  "browser_acceptance": {
+    "entry_pc": {
+      "viewport": [1440, 1600],
+      "comparator_cards": 3,
+      "official_source_links": 6,
+      "safe_external_links": 6,
+      "horizontal_overflow": 0,
+      "broken_images": 0,
+      "dev_logs": 0,
+      "ranking_disclaimer_present": true,
+      "absence_disclaimer_present": true,
+      "replacement_disclaimer_present": true,
+      "uniqueness_disclaimer_present": true
+    },
+    "entry_smartphone": {
+      "viewport": [390, 844],
+      "comparator_cards": 3,
+      "official_source_links": 6,
+      "safe_external_links": 6,
+      "horizontal_overflow": 0,
+      "broken_images": 0,
+      "dev_logs": 0,
+      "ranking_disclaimer_present": true,
+      "absence_disclaimer_present": true,
+      "replacement_disclaimer_present": true,
+      "uniqueness_disclaimer_present": true
+    },
+    "status_pc": {
+      "viewport": [1440, 1200],
+      "horizontal_overflow": 0,
+      "broken_images": 0,
+      "dev_logs": 0,
+      "current_stage_present": true,
+      "benchmark_summary_present": true,
+      "next_audit_present": true,
+      "stale_public_scorecard_claim_present": false
+    },
+    "status_smartphone": {
+      "viewport": [390, 844],
+      "horizontal_overflow": 0,
+      "broken_images": 0,
+      "dev_logs": 0,
+      "current_stage_present": true,
+      "benchmark_summary_present": true,
+      "next_audit_present": true,
+      "stale_public_scorecard_claim_present": false
+    }
+  },
+  "boundaries": {
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0,
+    "raw_source_changes": 0,
+    "gtfs_zip_changes": 0,
+    "published_value_changes": 0,
+    "internal_score_changes": 0,
+    "history_rewrites": 0
+  },
+  "next_stage_only": "WORK1-SIMILAR-SERVICE-BENCHMARK-AUDIT-1"
+}

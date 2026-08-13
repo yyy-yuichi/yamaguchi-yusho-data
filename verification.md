@@ -2541,3 +2541,25 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 | scope | 変更前ガード`WORK1_SCOPE_ALLOWED`、作品②入力・参加者連絡・応募・BODIK各0 |
 | 正本 | `evidence/20260813_work1_similar_service_benchmark_local_acceptance.json` |
 | 判定 | `LOCAL_GO`。実装commitをmainへpushし、CI・Pages・公開ブラウザ受入へ進む |
+
+### 公開受入
+
+| 検証 | 結果 |
+|---|---|
+| subject | `84125e2f12337c3f73ceda484676d7316780422c` |
+| scope lock / Pages / attestation | `31673053501` / `31673053080` / `31673111345`、全success |
+| artifact | ID `9170461765`、digest `sha256:bf323d395f6f8fe8d4e58a61b7d76e4ba4a2c2625dddbf3e9f002ba2fd085b8d` |
+| decision / errors | `GO` / 0 |
+| tests / public / sources / protected | 157 / 157、4 / 4、6 / 6、3 / 3 |
+| 内部診断分離 | `pages_copy_absent=true`、削除3 URLは404 |
+| 応募説明PC | 1440×1600、比較3件、公式リンク6件、安全な外部リンク6件、横overflow 0、壊れた画像0、dev log 0 |
+| 応募説明smartphone | 390×844、比較3件、公式リンク6件、安全な外部リンク6件、横overflow 0、壊れた画像0、dev log 0 |
+| 状況PC / smartphone | 1440×1200 / 390×844、現在地・比較要約・次監査あり、横overflow・壊れた画像・dev log各0 |
+| 比較限界 | ランキング、機能不存在、分析代替、唯一性の過大主張なし |
+| 公開HTTP | index・entry・status・memoは200、同commit bytes一致 |
+| 境界 | 内部点数・原本・GTFS ZIP・公開値・作品②・参加者連絡・応募・BODIK各0変更 |
+| 正本 | `evidence/20260813_work1_similar_service_benchmark_public_acceptance.json` |
+| 判定 | `GO`。次段階は`WORK1-SIMILAR-SERVICE-BENCHMARK-AUDIT-1`だけ |
+
+この受入記録を含む最終HEAD自身をscope lock、Pages、release attestationで再確認し、後続run IDは
+外部正本としてrepoへ再書込みしない。
