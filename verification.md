@@ -2502,3 +2502,22 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 | scope | 変更前ガード`WORK1_SCOPE_ALLOWED`、作品②入力・参加者連絡・応募・BODIK各0 |
 | 残り | commit・push、Actions、公開PC・スマートフォン受入 |
 | 判定 | `LOCAL_GO`。mainへcommit/pushし、同一SHAのCIとPages公開読戻しへ進む |
+
+### 初回公開受入
+
+| 検証 | 結果 |
+|---|---|
+| subject | `48f5f90e6edbc104927095f6c4b0f4f03fe697ad` |
+| scope lock / Pages / attestation | `31669272686` / `31669272478` / `31669319617`、全success |
+| artifact | ID `9169120899`、digest `sha256:6d54486ba9e96860976716343ce3600e7900d192e6a326941fed0522d0f39d71` |
+| decision / errors | `GO` / 0 |
+| tests / public / sources / protected | 151 / 151、4 / 4、6 / 6、3 / 3 |
+| 内部診断分離 | `pages_copy_absent=true` |
+| PC | 1440×1600、横overflow 0、壊れた画像0、dev log 0 |
+| smartphone | 390×844、横overflow 0、壊れた画像0、dev log 0 |
+| 公開HTTP | index・entry・status・memoは200、削除HTML・JSON・schemaは404 |
+| 公開bytes | entry、status、indexはcommit済みSHA256と一致 |
+| 正本 | `evidence/20260813_work1_public_information_architecture_public_acceptance.json` |
+
+この記録を含む最終HEAD自身をscope lock、Pages、release attestationで再確認し、後続run IDは
+外部正本としてrepoへ再書込みしない。次段階はread-only監査だけとする。

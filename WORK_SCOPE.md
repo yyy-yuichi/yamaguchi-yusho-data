@@ -39,7 +39,7 @@ flowchart TD
     H1["WORK1-RELEASE-EVIDENCE-HARDENING-1<br/>証拠永続化・厳格化<br/>公開・最終受入済み"]
     H2["WORK1-RELEASE-EVIDENCE-HARDENING-AUDIT-1<br/>read-only監査<br/>GO・P2 1件"]
     P1["WORK1-RELEASE-EVIDENCE-PERMALINK-1<br/>最終HEAD証拠のRelease固定<br/>完了"]
-    I1["WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1<br/>公開情報と内部診断の分離<br/>実装中"]
+    I1["WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1<br/>公開情報と内部診断の分離<br/>公開・最終受入済み"]
     I2["WORK1-PUBLIC-INFORMATION-ARCHITECTURE-AUDIT-1<br/>次のread-only監査・未着手"]
     C2["作品②の比較用出力<br/>作品②Chatが所有"]
     D{"比較・注力判断<br/>人が決定"}
@@ -95,7 +95,8 @@ flowchart TD
 - `WORK1-RELEASE-EVIDENCE-PERMALINK-1`: 最終HEAD自身のattestationを同じSHAのtagとGitHub Releaseへ
   固定し、`/releases/latest`から永続的に発見可能にした。5資産を一般公開し、最終受入済み。
 - `WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1`: 利用者向けPagesを作品の機能・利用価値・実装事実・
-  出典・限界中心へ整理し、改善用の数値診断をPagesから分離する現在段階。
+  出典・限界中心へ整理し、改善用の数値診断をPagesから分離した。内部正本を保持し、全CI、
+  attestation GO、公開PC・スマートフォン、現行200・旧3 URLの404まで最終受入済み。
 - `WORK1-PUBLIC-INFORMATION-ARCHITECTURE-AUDIT-1`: 公開導線、削除ページ、内部診断の保持、
   作品②入力0件をread-onlyで再監査する次段階。現在は未着手。
 - 作品①の公開出力: [市町別の登録供給ビュー](https://yyy-yuichi.github.io/yamaguchi-yusho-data/)

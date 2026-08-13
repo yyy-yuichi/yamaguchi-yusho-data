@@ -65,7 +65,7 @@ GTFS供給比較**、**市町別の交通協議前確認メモ**までを担う�
 
 対象は山口県分 4 ファイル（上記2区分 × 市町村営・NPO等）。
 
-## 現在地（WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 実装中、2026-08-13時点）
+## 現在地（WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 最終受入済み、2026-08-13時点）
 
 このリポジトリはI-1〜I-4までの市町別ビューに、受入済みGTFS検査・供給指標を使う
 SUPPLY-VIEW-1の比較画面を追加し、RELEASE-1でGitHub Pagesへ公開した。公開URLに対する
@@ -131,7 +131,10 @@ UDC2026応募全体の終了条件（作品概要エントリー・本応募・�
   `release-provenance.json`、`SHA256SUMS.txt`を固定する。Release/tagは検証証拠の公開であり、
   UDC概要フォーム、本応募、BODIK登録ではない。5資産とtagを公開し、最終受入済み
 - **WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1**: Pagesを機能・利用価値・実装事実・出典・限界中心へ
-  整理し、改善判断用の数値診断を利用者向け公開成果物から分離する。内部正本と計算検証は保持する
+  整理し、改善判断用の数値診断を利用者向け公開成果物から分離した。内部正本と計算検証は保持。
+  commit `48f5f90`のscope lock `31669272686`、Pages `31669272478`、attestation
+  `31669319617`はsuccess・GOで、151 / 151、公開4 / 4、原本6 / 6、保護3 / 3、errors 0。
+  公開PC・スマートフォン、現行4 URLの200、旧3 URLの404まで受入済み
 
 ## 原本変更の継続確認（WORK1-FRESHNESS-1）
 

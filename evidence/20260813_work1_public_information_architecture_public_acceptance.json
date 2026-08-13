@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "work1_public_information_architecture_public_acceptance",
+  "stage": "WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1",
+  "recorded_at_jst": "2026-08-13",
+  "subject_commit": "48f5f90e6edbc104927095f6c4b0f4f03fe697ad",
+  "decision": "GO",
+  "actions": {
+    "scope_lock": {
+      "run_id": 31669272686,
+      "conclusion": "success"
+    },
+    "pages": {
+      "run_id": 31669272478,
+      "conclusion": "success"
+    },
+    "release_attestation": {
+      "run_id": 31669319617,
+      "conclusion": "success",
+      "artifact_id": 9169120899,
+      "artifact_name": "work1-release-attestation-48f5f90e6edbc104927095f6c4b0f4f03fe697ad",
+      "artifact_digest": "sha256:6d54486ba9e96860976716343ce3600e7900d192e6a326941fed0522d0f39d71",
+      "expires_at": "2026-11-11T05:08:45Z"
+    }
+  },
+  "attestation": {
+    "decision": "GO",
+    "tests": {"passed": 151, "total": 151},
+    "public_assets": {"matched": 4, "total": 4},
+    "accepted_sources": {"matched": 6, "total": 6},
+    "protected_assets": {"matched": 3, "total": 3},
+    "scorecard_pages_copy_absent": true,
+    "errors": []
+  },
+  "public_http": [
+    {"path": "index.html", "status": 200, "sha256": "502eb93199d3df71593dc7d220d575159a9167a2692bdec2bb8b5b4b7d7c4b49"},
+    {"path": "entry.html", "status": 200, "sha256": "217c904713188dbfe2a81a90aa346fb905e905d07bbaee7daedf82cff66870ba"},
+    {"path": "status.html", "status": 200, "sha256": "9b4fb550cc3a7d8f61c04c26e8e800dae87c94cd0e68ad6fe54d5c50824907ba"},
+    {"path": "municipality-memo.html", "status": 200, "sha256": "5857ba6412eeaa0abd86c2c44331fc75c156a559fa9f2348eea02ac5f4f729be"},
+    {"path": "award-comparison.html", "status": 404},
+    {"path": "data/work1_award_scorecard.json", "status": 404},
+    {"path": "data/award_scorecard_schema.json", "status": 404}
+  ],
+  "browser_acceptance": {
+    "entry_pc": {
+      "viewport": [1440, 1600],
+      "horizontal_overflow": 0,
+      "broken_images": 0,
+      "dev_logs": 0,
+      "value_heading_present": true,
+      "fact_cards_present": true,
+      "self_score_policy_present": true,
+      "stale_score_links": 0
+    },
+    "entry_smartphone": {
+      "viewport": [390, 844],
+      "horizontal_overflow": 0,
+      "broken_images": 0,
+      "dev_logs": 0,
+      "value_heading_present": true,
+      "fact_cards_present": true,
+      "self_score_policy_present": true,
+      "stale_score_links": 0
+    },
+    "status_pc_and_smartphone": {
+      "horizontal_overflow": 0,
+      "broken_images": 0,
+      "dev_logs": 0,
+      "current_stage_present": true,
+      "separation_explanation_present": true,
+      "stale_score_links": 0
+    }
+  },
+  "boundaries": {
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0,
+    "raw_source_changes": 0,
+    "gtfs_zip_changes": 0,
+    "published_value_changes": 0,
+    "history_rewrites": 0
+  },
+  "next_stage_only": "WORK1-PUBLIC-INFORMATION-ARCHITECTURE-AUDIT-1"
+}

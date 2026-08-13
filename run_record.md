@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-13 (rev.58) / 状態: WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 実装中 / 次: 全回帰・push・Actions・Pages公開受入
+最終更新: 2026-08-13 (rev.59) / 状態: WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 最終受入済み / 次: WORK1-PUBLIC-INFORMATION-ARCHITECTURE-AUDIT-1（read-only・未着手）
 
 ## 0. このファイルについて
 
@@ -1155,3 +1155,16 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - 過去のGit履歴・公開Release証拠は変更しない。公開リポジトリ内の内部診断は秘密情報ではない。
 - raw原本、GTFS ZIP、公開データ・計算値、公開トップ、作品②、参加者連絡、応募・BODIKは変更しない。
 - 次段階はread-onlyの`WORK1-PUBLIC-INFORMATION-ARCHITECTURE-AUDIT-1`だけとし、まだ開始しない。
+
+### 改訂点（rev.59）
+
+- 初回公開対象commit `48f5f90e6edbc104927095f6c4b0f4f03fe697ad`のscope lock
+  `31669272686`、Pages `31669272478`、release attestation `31669319617`は全success。
+- attestation artifact `9169120899`を独立読戻しし、decision GO、151 / 151、公開4 / 4、
+  原本6 / 6、保護3 / 3、内部診断のPages不在、errors 0を確認した。
+- 公開応募説明・状況を1440×1600と390×844で確認し、横overflow、壊れた画像、dev logは各0。
+  新しい事実説明と自己採点を公開しない方針を読め、旧スコアリンクは0件だった。
+- 公開中核4 URLはHTTP 200かつcommit bytes一致。削除したHTML・JSON・schemaの3 URLは404。
+- この受入記録を含む最終HEAD自身もscope lock、Pages、attestationで再確認し、run IDは
+  外部正本としてrepoへ再書込みしない。
+- 次段階は変更を伴わない`WORK1-PUBLIC-INFORMATION-ARCHITECTURE-AUDIT-1`だけとし、開始しない。

@@ -2591,3 +2591,14 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   検査対象941トークンは欠落0件。CI、Pages、PC・スマートフォン公開受入は続行する。
 - ローカル正本は`evidence/20260813_work1_public_information_architecture_local_acceptance.json`。
 - 作品②入力、参加者連絡、UDC概要フォーム、本応募、BODIK登録は各0件。
+
+### 初回公開受入GO
+
+- commit `48f5f90e6edbc104927095f6c4b0f4f03fe697ad`のscope lock `31669272686`、Pages
+  `31669272478`、release attestation `31669319617`は全success。
+- artifact `9169120899`はGO、151 / 151、公開4 / 4、原本6 / 6、保護3 / 3、
+  `pages_copy_absent=true`、errors 0。正本は
+  `evidence/20260813_work1_public_information_architecture_public_acceptance.json`。
+- PC 1440×1600・スマートフォン390×844は横overflow、壊れた画像、dev log各0。
+  現行4 URLは200、削除3 URLは404。公開HTMLに旧スコアリンクは0件。
+- この記録を含む最終HEAD自身を同じ3 workflowで外部再確認する。次段階はread-only監査だけ。
