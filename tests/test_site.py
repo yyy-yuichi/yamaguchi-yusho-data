@@ -602,6 +602,13 @@ class StatusHtmlContractTest(unittest.TestCase):
         self.assertIn("県内全事業者・全路線の網羅を示しません", self.html)
         self.assertIn("一般配布なし", self.html)
 
+        self.assertIn(".next-list code", self.html)
+        self.assertIn("overflow-wrap: anywhere", self.html)
+        self.assertIn("word-break: break-all", self.html)
+        self.assertIn("min-width: 0", self.html)
+        self.assertIn(".source-note", self.html)
+        self.assertIn("word-break: break-word", self.html)
+
     def test_t1_to_t3_and_t4_are_separated_and_marked_not_met(self):
         # SPEC.md §13.5.5: T1〜T3は自力終了条件、T4は成果条件として分離し、
         # いずれも未達と表示する。

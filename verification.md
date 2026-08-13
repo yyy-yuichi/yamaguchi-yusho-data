@@ -2585,6 +2585,7 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 | 不変対象 | 4 PDF、既存2 GTFS ZIP、供給指標、内部スコアカード、応募説明は基準HEADと一致 |
 | ローカルPC | 1440×1600、4状態4ケース一致、横overflow 0、壊れた画像0 |
 | ローカルsmartphone | 390×844、4状態4ケース一致、行動カード1列、横overflow 0、壊れた画像0 |
+| status smartphone退行 | 初回公開で長いSHA256・証拠パスの横overflow 170pxを検出。折返し修正後のローカル再確認は0 |
 | browser error | console error 0 |
 | 境界 | 作品②を入力にせず書込み0、参加者連絡・UDC応募・BODIK・非公開原本取得各0 |
 | 正本 | `evidence/20260813_work1_official_gtfs_coverage_extension_local_acceptance.json` |

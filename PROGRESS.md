@@ -2616,6 +2616,8 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
 - 専用5 / 5、全174 / 174、旧SPEC 1,000トークン欠落0、scope・差分・JSON検査はsuccess。
 - ローカルPC 1440×1600・スマートフォン390×844で山口・宇部・下関・和木の4状態を確認。
   全ケースで状態一致、横overflow 0、壊れた画像0、console error 0。スマホの行動カードは1列。
+- 初回公開後に検証状況ページの長いSHA256・証拠パスで横overflow 170pxを検出した。
+  折返しCSSと静的回帰を追加し、390×844ローカル再確認は横overflow 0。
 - 正本は`evidence/20260813_work1_official_gtfs_coverage_extension_local_acceptance.json`。
   次はcommit・push、同一SHAの3 workflow、公開PC・スマホ読戻し。監査はまだ開始しない。
 

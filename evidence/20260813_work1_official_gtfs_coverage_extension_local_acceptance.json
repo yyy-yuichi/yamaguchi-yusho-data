@@ -113,7 +113,15 @@
       "horizontal_overflow": 0,
       "broken_images": 0
     },
-    "console_errors": 0
+    "console_errors": 0,
+    "status_page_mobile_regression": {
+      "detected_after_first_public_deploy": true,
+      "initial_horizontal_overflow_px": 170,
+      "cause": "unbroken_sha256_and_evidence_paths",
+      "fix": "wrap_next_list_code_and_source_notes",
+      "local_recheck_horizontal_overflow_px": 0,
+      "regression_assertions_added": true
+    }
   },
   "boundaries": {
     "work2_used_as_input": false,

@@ -1284,5 +1284,7 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   横overflow・壊れた画像・console error各0を確認した。
 - ローカル正本は`evidence/20260813_work1_official_gtfs_coverage_extension_local_acceptance.json`。
   commit・main push、同一SHAのscope lock・Pages・release attestation、公開PC・スマホ読戻しへ進む。
+- 初回公開読戻しで`status.html`の長いSHA256・証拠パスがスマホ幅から170pxはみ出す退行を検出した。
+  コードと出典注記へ折返し規則を追加し、390×844のローカル再確認で横overflow 0へ修正した。
 - 公開受入後の次段階はread-onlyの`WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-AUDIT-1`だけとし、
   この段階では開始しない。作品②を入力にせず、書込み0、参加者連絡・応募・BODIK登録各0。
