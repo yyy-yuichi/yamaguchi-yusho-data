@@ -2617,6 +2617,16 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   `evidence/20260814_work1_award_scorecard_recalibration_2_local_acceptance.json`。
 - 判定は`LOCAL_GO`。次はcommit・push・同一HEADの3 workflow・公開非露出受入。
 
+### 公開受入GO
+
+- 実装commit `4250c5d00dd6753712a61cda0f644ea382f760a3`のscope lock `31758902249`、
+  Pages `31758901395`、attestation `31758940307`は同一SHAで全success。
+- artifact `9203835239`はGO、174 / 174、原本7 / 7、公開4 / 4、内部診断26,259 bytes・
+  SHA256一致、3基準3.5 / 4.5 / 3.0、総合73.3、Pages copy不在、errors 0。
+- 公開4 HTMLはHTTP 200・commit bytes一致。内部診断3 URLは404、公開HTMLの内部点数・導線は0件。
+- 正本は`evidence/20260814_work1_award_scorecard_recalibration_2_public_acceptance.json`。
+- 次は記録commit自身の同一HEAD workflowを確認し、read-only独立監査の前で停止する。
+
 ## 2026-08-13 WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 ローカル受入
 
 - 固定HEAD `a00d2351d41a5f3c9f2db96405effc6cdd3b79f6`から、未確認13市町を公式一次資料で再調査した。

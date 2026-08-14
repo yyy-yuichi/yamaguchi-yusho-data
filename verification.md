@@ -2585,6 +2585,23 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 | 正本 | `evidence/20260814_work1_award_scorecard_recalibration_2_local_acceptance.json` |
 | 判定 | `LOCAL_GO`。実装commitをmainへpushし、CI・Pages・公開非露出を受け入れる |
 
+### 公開受入
+
+| 検証 | 結果 |
+|---|---|
+| subject | `4250c5d00dd6753712a61cda0f644ea382f760a3` |
+| scope lock / Pages / attestation | `31758902249` / `31758901395` / `31758940307`、全success |
+| artifact | ID `9203835239`、digest `sha256:8526746f2f10fa46cfdf06d2d00e32a15673ad9846dc5bfb5567ff89456e4d91` |
+| decision / errors | `GO` / 0 |
+| tests / sources / public | 174 / 174、7 / 7、4 / 4 |
+| 内部正本 | 26,259 bytes、SHA256 `7dd51a118c5a32053c6c40d584f3c769bf8bfcea8bf24eda812bcf57ffeedea3` |
+| 3基準・総合 | 実用度3.5、完成度4.5、挑戦度3.0、総合73.3 |
+| 内部診断分離 | `pages_copy_absent=true`、内部診断3 URLは404、公開HTMLの内部値・導線0 |
+| 公開4 HTML | HTTP 200、同commit bytes一致 |
+| 境界 | 参加者連絡・応募・BODIK・原本・公開値変更各0 |
+| 正本 | `evidence/20260814_work1_award_scorecard_recalibration_2_public_acceptance.json` |
+| 判定 | `GO`。次段階はread-onlyの`WORK1-AWARD-SCORECARD-RECALIBRATION-2-AUDIT-1`だけ |
+
 ## WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 ローカル検証（2026-08-13）
 
 | 検証 | 結果 |
