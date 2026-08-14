@@ -63,10 +63,10 @@ class ReleaseAttestationContractTest(unittest.TestCase):
         )
         self.assertEqual(4, len(record["verification"]["public_assets"]))
         self.assertEqual(
-            {"実用度": 3.5, "完成度": 4.0, "挑戦度": 3.0},
+            {"実用度": 3.5, "完成度": 4.5, "挑戦度": 3.0},
             record["verification"]["scorecard"]["scores"],
         )
-        self.assertEqual(70.0, record["verification"]["scorecard"]["overall_comparison_index"])
+        self.assertEqual(73.3, record["verification"]["scorecard"]["overall_comparison_index"])
         observations = record["scope"]["workflow_observations"]
         declarations = record["scope"]["declared_boundaries"]
         self.assertEqual(4, len(observations["requested_public_assets"]))

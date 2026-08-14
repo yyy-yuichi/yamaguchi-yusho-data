@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-AWARD-SCORECARD-RECALIBRATION-2",
+  "evidence_type": "local_acceptance",
+  "checked_at": "2026-08-14",
+  "decision": "LOCAL_GO",
+  "baseline": {
+    "branch": "main",
+    "commit_sha": "8917657c9454d67f4211235b984568c34e4ddd19",
+    "origin_main_sha": "8917657c9454d67f4211235b984568c34e4ddd19",
+    "worktree_was_clean": true
+  },
+  "inputs": [
+    {"type": "coverage_research", "path": "evidence/20260813_work1_official_gtfs_coverage_extension_research.json"},
+    {"type": "coverage_local_acceptance", "path": "evidence/20260813_work1_official_gtfs_coverage_extension_local_acceptance.json"},
+    {"type": "coverage_public_acceptance", "path": "evidence/20260813_work1_official_gtfs_coverage_extension_public_acceptance.json"},
+    {
+      "type": "read_only_audit",
+      "subject": "8917657c9454d67f4211235b984568c34e4ddd19",
+      "decision": "GO",
+      "severity": {"P0": 0, "P1": 0, "P2": 3}
+    }
+  ],
+  "recalibration": {
+    "evaluation_as_of_before": "2026-08-13",
+    "evaluation_as_of_after": "2026-08-14",
+    "criterion_scores_before": {"utility": 3.5, "completeness": 4.0, "challenge": 3.0},
+    "criterion_scores_after": {"utility": 3.5, "completeness": 4.5, "challenge": 3.0},
+    "overall_before": 70.0,
+    "overall_after": 73.3,
+    "supported_subcriterion_changes": [
+      {
+        "subcriterion_id": "scope_reliability",
+        "before": 3.5,
+        "after": 4.0,
+        "evidence": "公式GTFS関係を6/19市町から19/19市町へ根拠付き4状態7 / 2 / 9 / 1で整理した。"
+      },
+      {
+        "subcriterion_id": "output_comprehensiveness",
+        "before": 3.0,
+        "after": 3.5,
+        "evidence": "公式フィード記録8件、受入GTFS原本3件へ拡張したが、供給実測は2フィードに限定した。"
+      }
+    ],
+    "unchanged_missing_evidence": {
+      "user_value_evidence_score": 2.0,
+      "actor_diversity_score": 1.0,
+      "measured_gtfs_feeds": 2,
+      "participant_contacts": 0
+    },
+    "scorecard": {
+      "path": "data/work1_award_scorecard.json",
+      "bytes": 26259,
+      "sha256": "7dd51a118c5a32053c6c40d584f3c769bf8bfcea8bf24eda812bcf57ffeedea3"
+    }
+  },
+  "remaining_improvements": [
+    {"priority": 1, "improvement_id": "remote_user_evaluation", "external_dependency": true, "human_approval_gate": "participant_contact"},
+    {"priority": 2, "improvement_id": "jrbus_supply_metrics_extension", "external_dependency": false},
+    {"priority": 3, "improvement_id": "independent_reproduction_drill", "external_dependency": false}
+  ],
+  "verification": {
+    "focused_tests_discovered": 21,
+    "focused_tests_passed": 21,
+    "full_tests_discovered": 174,
+    "full_tests_passed": 174,
+    "spec_coverage_tokens": 1023,
+    "spec_missing_unexplained": 0,
+    "scope_guard_passed": true,
+    "diff_check_passed": true,
+    "secret_pattern_hits": 0,
+    "accepted_sources_matched": 7,
+    "public_html_baseline_matches": 4,
+    "pages_internal_assets_absent": 3
+  },
+  "boundaries": {
+    "raw_source_changes": 0,
+    "gtfs_zip_changes": 0,
+    "existing_public_json_changes": 0,
+    "public_html_changes": 0,
+    "official_rule_changes": 0,
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0
+  },
+  "next_actions": [
+    "commit and push the accepted implementation to main",
+    "read back scope lock, Pages, and release attestation for the same HEAD",
+    "create public acceptance evidence, then stop before the read-only audit"
+  ],
+  "errors": []
+}

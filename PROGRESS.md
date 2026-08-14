@@ -2603,6 +2603,20 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   現行4 URLは200、削除3 URLは404。公開HTMLに旧スコアリンクは0件。
 - この記録を含む最終HEAD自身を同じ3 workflowで外部再確認する。次段階はread-only監査だけ。
 
+## 2026-08-14 WORK1-AWARD-SCORECARD-RECALIBRATION-2 ローカル受入
+
+- 公式GTFS範囲拡張監査GO（P0 0 / P1 0 / P2 3）を入力に、内部診断を再評価した。
+- `scope_reliability`は3.5→4.0、`output_comprehensiveness`は3.0→3.5。
+- 実用度3.5、完成度4.5、挑戦度3.0、総合比較値73.3。利用者価値2.0と関係アクター1.0は据え置き。
+- 完了済みの公式範囲拡張を改善候補から除外し、自走候補1位をJRバス中国GTFSの独立供給指標化とした。
+- 内部正本は26,259 bytes、SHA256
+  `7dd51a118c5a32053c6c40d584f3c769bf8bfcea8bf24eda812bcf57ffeedea3`。
+- 専用21 / 21、全174 / 174、旧SPEC 1,023トークン欠落0、scope・差分検査はsuccess。
+- 7原本、既存公開JSON・計算値、公開4 HTMLは不変。Pages用内部診断3資産は不在。
+- 作品②入力、参加者連絡、応募・BODIK登録は各0。正本は
+  `evidence/20260814_work1_award_scorecard_recalibration_2_local_acceptance.json`。
+- 判定は`LOCAL_GO`。次はcommit・push・同一HEADの3 workflow・公開非露出受入。
+
 ## 2026-08-13 WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 ローカル受入
 
 - 固定HEAD `a00d2351d41a5f3c9f2db96405effc6cdd3b79f6`から、未確認13市町を公式一次資料で再調査した。

@@ -2564,6 +2564,27 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 この受入記録を含む最終HEAD自身をscope lock、Pages、release attestationで再確認し、後続run IDは
 外部正本としてrepoへ再書込みしない。
 
+## WORK1-AWARD-SCORECARD-RECALIBRATION-2 ローカル検証（2026-08-14）
+
+| 検証 | 結果 |
+|---|---|
+| 基準HEAD | `8917657c9454d67f4211235b984568c34e4ddd19`、監査GO、P0 0 / P1 0 / P2 3 |
+| 根拠差分 | 公式GTFS関係6/19→19/19市町、4状態7 / 2 / 9 / 1、受入原本2→3件 |
+| 小項目更新 | `scope_reliability` 3.5→4.0、`output_comprehensiveness` 3.0→3.5 |
+| 3基準・総合 | 実用度3.5、完成度4.5、挑戦度3.0、総合73.3 |
+| 据置不足 | 利用者価値2.0、関係アクター1.0、供給実測2フィード、参加者連絡0 |
+| 改善候補 | 利用者検証は人間承認ゲート。自走候補1位はJRバス中国GTFSの独立供給指標化 |
+| 内部正本 | 26,259 bytes、SHA256 `7dd51a118c5a32053c6c40d584f3c769bf8bfcea8bf24eda812bcf57ffeedea3` |
+| 公開分離 | Pages用内部診断3資産なし、公開HTMLへの内部値・内部JSON導線0 |
+| 専用回帰 | 21 / 21 success |
+| 全回帰 | 174件検出、174 / 174 success、終了コード0 |
+| 旧SPEC網羅 | 1,023トークン、欠落0、説明なし0 |
+| 不変対象 | 7原本、既存公開JSON・計算値、公開4 HTMLが基準HEADと一致 |
+| 差分・scope | `git diff --check` success、`WORK1_SCOPE_ALLOWED`、秘密情報定型パターン0件 |
+| 境界 | 作品②入力・参加者連絡・応募・BODIK・公開値変更各0 |
+| 正本 | `evidence/20260814_work1_award_scorecard_recalibration_2_local_acceptance.json` |
+| 判定 | `LOCAL_GO`。実装commitをmainへpushし、CI・Pages・公開非露出を受け入れる |
+
 ## WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 ローカル検証（2026-08-13）
 
 | 検証 | 結果 |

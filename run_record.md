@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-13 (rev.66) / 状態: WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公開受入GO / 次: read-only独立監査
+最終更新: 2026-08-14 (rev.67) / 状態: WORK1-AWARD-SCORECARD-RECALIBRATION-2 ローカル受入GO / 次: commit・push・公開受入
 
 ## 0. このファイルについて
 
@@ -1295,3 +1295,21 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   390×844で4状態各4ケース、検証状況、横overflow・壊れた画像・console error各0を再確認した。
 - 公開正本は`evidence/20260813_work1_official_gtfs_coverage_extension_public_acceptance.json`。
   この正本を含む最終記録commit自身も同じ3 workflowで再確認し、後続run IDはrepoへ書き戻さない。
+
+### 改訂点（rev.67）
+
+- 固定HEAD `8917657c9454d67f4211235b984568c34e4ddd19`の公式GTFS範囲拡張監査はGO、
+  P0 0件、P1 0件、P2 3件。受入済み成果を内部診断へ再評価した。
+- 公式GTFS関係6/19→19/19市町、4状態7 / 2 / 9 / 1、受入原本2→3件を根拠に、
+  `scope_reliability`を3.5→4.0、`output_comprehensiveness`を3.0→3.5へ更新した。
+- 利用者実証と関係アクター参加は増えていないため、実用度3.5・挑戦度3.0を維持した。
+  完成度は4.0→4.5、総合比較値は70.0→73.3となる。
+- 完了済みの公式GTFS範囲拡張を候補から除外した。利用者検証は参加者連絡の人間承認ゲート、
+  自走可能な最上位候補は採用済みJRバス中国GTFSの独立供給指標化とする。
+- 内部正本は26,259 bytes、SHA256
+  `7dd51a118c5a32053c6c40d584f3c769bf8bfcea8bf24eda812bcf57ffeedea3`。
+- 専用21 / 21、全174 / 174、旧SPEC 1,023トークン欠落0、scope checker、
+  `git diff --check`はsuccess。7原本、既存公開値、公開4 HTMLは不変で、Pages用内部診断3資産は不在。
+- 作品②入力、参加者連絡、応募・BODIK登録は各0。ローカル正本は
+  `evidence/20260814_work1_award_scorecard_recalibration_2_local_acceptance.json`。
+- 次は実装commitをmainへpushし、同一SHAのscope lock・Pages・attestationと公開非露出を受け入れる。

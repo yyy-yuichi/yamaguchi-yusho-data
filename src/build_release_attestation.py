@@ -45,7 +45,7 @@ PUBLIC_ASSETS = (
 FIXED_PROTECTED_SHA256 = {
     "docs/index.html": "c0b5e9b2ee1d459c72f42b061a5731e0e768b33b6c1ea716bab415c8c6efe8e9",
     "docs/entry.html": "da71ea2775547d68af0f2b51da0faf7e852ef3b7d5e2cbce4ad187d79442d431",
-    "data/work1_award_scorecard.json": "b1f03e1f09d4a39fbe8c8afdf4253c837bfea9c09bf7f3be02bb51449c12215d",
+    "data/work1_award_scorecard.json": "7dd51a118c5a32053c6c40d584f3c769bf8bfcea8bf24eda812bcf57ffeedea3",
 }
 
 FetchResult = tuple[int, str, bytes]
@@ -187,8 +187,8 @@ def _scorecard_check(repo_root: Path) -> tuple[dict[str, Any], list[str]]:
         "work_id": WORK_ID,
         "repository_id": REPOSITORY_ID,
         "other_work_input_count": 0,
-        "scores": {"実用度": 3.5, "完成度": 4.0, "挑戦度": 3.0},
-        "overall_comparison_index": 70.0,
+        "scores": {"実用度": 3.5, "完成度": 4.5, "挑戦度": 3.0},
+        "overall_comparison_index": 73.3,
     }
     errors: list[str] = []
     for key, value in expected.items():

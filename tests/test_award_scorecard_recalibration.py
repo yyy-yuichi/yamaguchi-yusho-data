@@ -26,7 +26,7 @@ class AwardScorecardRecalibrationTest(unittest.TestCase):
         }
 
     def test_recalibration_date_and_supported_score_change(self):
-        self.assertEqual("2026-08-13", self.scorecard["evaluation_as_of"])
+        self.assertEqual("2026-08-14", self.scorecard["evaluation_as_of"])
         novelty = {
             item["subcriterion_id"]: item
             for item in self.criteria["challenge"]["subcriteria"]
@@ -40,10 +40,10 @@ class AwardScorecardRecalibrationTest(unittest.TestCase):
             sub_scores = [item["score"] for item in criterion["subcriteria"]]
             self.assertEqual(round_half(sum(sub_scores) / len(sub_scores)), criterion["score"])
         self.assertEqual(
-            {"utility": 3.5, "completeness": 4.0, "challenge": 3.0},
+            {"utility": 3.5, "completeness": 4.5, "challenge": 3.0},
             {key: value["score"] for key, value in self.criteria.items()},
         )
-        self.assertEqual(70.0, self.scorecard["overall"]["comparison_index"])
+        self.assertEqual(73.3, self.scorecard["overall"]["comparison_index"])
 
     def test_missing_user_and_actor_evidence_remain_unscored(self):
         utility = {
@@ -64,13 +64,16 @@ class AwardScorecardRecalibrationTest(unittest.TestCase):
         self.assertEqual(
             [
                 "remote_user_evaluation",
+                "jrbus_supply_metrics_extension",
                 "independent_reproduction_drill",
-                "official_gtfs_coverage_extension",
             ],
             [item["improvement_id"] for item in improvements],
         )
         self.assertEqual([True, False, False], [item["external_dependency"] for item in improvements])
-        self.assertNotIn("similar_service_benchmark", [item["improvement_id"] for item in improvements])
+        completed = ["similar_service_benchmark", "official_gtfs_coverage_extension"]
+        self.assertTrue(
+            all(item not in [action["improvement_id"] for action in improvements] for item in completed)
+        )
 
     def test_internal_scores_and_json_stay_out_of_pages(self):
         self.assertFalse((REPO_ROOT / "docs" / "award-comparison.html").exists())
@@ -80,7 +83,7 @@ class AwardScorecardRecalibrationTest(unittest.TestCase):
             path.read_text(encoding="utf-8")
             for path in (REPO_ROOT / "docs").glob("*.html")
         )
-        for marker in ("実用度3.5", "完成度4.0", "挑戦度3.0", "総合比較指数70.0", SCORECARD_PATH.name):
+        for marker in ("実用度3.5", "完成度4.5", "挑戦度3.0", "総合比較指数73.3", SCORECARD_PATH.name):
             self.assertNotIn(marker, combined)
 
     def test_release_attestation_protects_the_current_internal_scorecard(self):

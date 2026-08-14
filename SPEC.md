@@ -1,6 +1,6 @@
-# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価 / WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況拡張
+# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価 / WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況拡張 / WORK1-AWARD-SCORECARD-RECALIBRATION-2 拡張成果再評価
 
-**rev.5.20 / 2026-08-13**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34。消した記述はそこに全部書いてある）
+**rev.5.21 / 2026-08-14**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34、rev.5.20→rev.5.21 は §10.35。消した記述はそこに全部書いてある）
 
 UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下に `SPEC.md` として置き、Claude Code に読ませる。**
 
@@ -12,7 +12,7 @@ UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下
 §22はWORK1-GTFS-COVERAGE-2、§23〜§28は受入済みの比較・証拠・公開情報整理、
 §29は受け入れ済みWORK1-SIMILAR-SERVICE-BENCHMARK-1、§30は受け入れ済み
 WORK1-PRECONSULTATION-HANDOFF-1、§31はWORK1-AWARD-SCORECARD-RECALIBRATION-1、§32は
-WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1の実行仕様である。
+WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1、§33はWORK1-AWARD-SCORECARD-RECALIBRATION-2の実行仕様である。
 プロジェクトのゴール、終了条件、確定方針は`run_record.md` §0.5 を正とし、
 このファイルがそれを上書きしてはならない。
 
@@ -1181,6 +1181,15 @@ P1 0件、P2 2件）だった。内部点数は現状把握の診断値として
 公開取得可能・認証が必要・一般配布なし・現在取得不能の4状態へ更新する。ユーザーが明示承認した
 JRバス中国の公式ZIP 1件だけを手動受入し、認証先・非公開原本・取得不能原本を推測または自動採用しない。
 既存の輸送供給指標は2フィードの同一条件比較なので、広域フィードであるJRバス中国を混ぜず維持する。
+
+### 10.35 rev.5.20 → rev.5.21
+
+固定HEAD `8917657c9454d67f4211235b984568c34e4ddd19`の公式GTFS範囲拡張監査はGO（P0 0件、
+P1 0件、P2 3件）だった。公式GTFS関係を6/19市町から19/19市町へ根拠付き4状態で整理し、
+JRバス中国の公式GTFS原本1件を追加受入した成果だけを内部診断へ反映する。利用者実証と関係アクター
+参加は増えていないため据え置き、共通条件の供給実測が2フィードのままである限界も保持する。
+完了済みの公式範囲拡張を改善候補から除外し、採用済みJRバス中国GTFSの独立供給指標化を、
+参加者連絡なしで進められる最上位候補として再評価する。
 
 ---
 
@@ -3264,3 +3273,74 @@ GTFS不存在、交通不存在、永久非公開を意味せず、現在取得�
 - 一般配布なし・現在取得不能からGTFSや交通の不存在を断定する必要が生じる
 - 供給指標、登録簿原本・公開値、内部診断を根拠なく変更する必要が生じる
 - 作品②、参加者連絡、UDC応募・登録、履歴書換え、Release削除が必要になる
+
+---
+
+## 33. WORK1-AWARD-SCORECARD-RECALIBRATION-2
+
+### 33.1 段階ゴール
+
+受入済みの公式GTFS範囲拡張と独立監査結果を、公開しない内部受賞スコアカードへ同一基準で反映する。
+点数上昇を目的にせず、6/19市町から19/19市町への根拠付き状態整理、公式GTFS原本1件の追加受入、
+実測2フィードの維持、外部利用者証拠0件を別々に評価する。完了済み施策を改善候補から除外し、
+次に自走でき、かつ受賞寄与を検証できる一作業を選べる状態にする。
+
+### 33.2 再採点入力と規則
+
+再評価日は2026-08-14、基準HEADは`8917657c9454d67f4211235b984568c34e4ddd19`とし、次を入力にする。
+
+- `evidence/20260813_work1_official_gtfs_coverage_extension_research.json`
+- 同段階のローカル・公開受入証拠と、固定HEADに対するread-only独立監査GO（P0 0、P1 0、P2 3）
+- 8件の公式フィード記録、19市町4状態7 / 2 / 9 / 1、受入済みGTFS原本3件
+- 既存のUDC2026公式基準、共通0.5刻み、3基準等重み、四捨五入規則
+
+19市町の状態を根拠付きで解決したことは目的範囲の信頼性とアウトプット範囲へ反映する。
+JRバス中国は原本受入と山口県関係4路線の確認だけを達成扱いとし、供給指標の測定済みとはしない。
+利用者実証、共同設計、認証・一般非配布・取得不能原本の検証を達成扱いにしない。
+
+### 33.3 再採点結果の契約
+
+- `scope_reliability`は3.5から4.0、`output_comprehensiveness`は3.0から3.5へ更新する。
+- 実用度は3.5を維持し、完成度は4.0から4.5、挑戦度は3.0を維持する。
+- 総合比較値は`mean(3.5, 4.5, 3.0) / 5 * 100`を小数1桁へ丸めた73.3とする。
+- `user_value_evidence` 2.0、`actor_diversity` 1.0、`novelty` 4.0は据え置く。
+- 完了済みの`official_gtfs_coverage_extension`を改善候補から除外する。
+- 利用者検証は最大不足かつ人間承認ゲートとして残す。
+- 自走可能な最上位候補を`jrbus_supply_metrics_extension`、次候補を
+  `independent_reproduction_drill`とする。
+
+### 33.4 公開分離と変更範囲
+
+変更・追加できるのは次だけとする。
+
+- `SPEC.md`、`run_record.md`、`PROGRESS.md`、`verification.md`
+- `data/work1_award_scorecard.json`
+- `src/build_release_attestation.py`
+- `tests/test_award_comparison.py`、`tests/test_award_scorecard_recalibration.py`、
+  `tests/test_release_attestation.py`
+- `evidence/20260814_work1_award_scorecard_recalibration_2_*`
+
+`docs/award-comparison.html`、`docs/data/work1_award_scorecard.json`、
+`docs/data/award_scorecard_schema.json`は不在を維持し、公開HTMLへ内部点数、順位、受賞確率、内部JSON導線を
+追加しない。`raw/`7原本、既存公開JSON・CSV・計算値、公開4 HTML、公式基準、scope境界は変更しない。
+作品②を入力にせず、参加者連絡、UDC概要フォーム、本応募、BODIK登録を行わない。
+
+### 33.5 完了条件
+
+1. 再評価日、入力証拠、変更・据置理由、未達証拠を内部JSONから追跡できる。
+2. 全小項目から3基準と総合値を再計算でき、3.5 / 4.5 / 3.0、総合73.3になる。
+3. 旧い6/19市町・追加採用0件の記述を解消し、完了済み施策を改善候補から除外する。
+4. 利用者検証の人間承認ゲートと、自走可能なJRバス中国供給指標化を区別する。
+5. Pages用内部診断3資産が不在で、公開HTMLに内部点数・内部JSON導線がない。
+6. 7原本、既存公開JSON・計算値、公開4 HTML、公式基準、作品①境界が基準HEADと一致する。
+7. 専用テストと全unittest、scope checker、`git diff --check`、旧SPEC網羅検査が成功する。
+8. commit・main push後、scope lock、Pages、release attestationが同一HEADでsuccess・GOになる。
+9. 公開4 URLがcommit bytesと一致し、内部診断3 URLが404を維持する。
+10. 次段階をread-onlyの`WORK1-AWARD-SCORECARD-RECALIBRATION-2-AUDIT-1`だけに定義し、開始しない。
+
+### 33.6 停止条件
+
+- 利用者実証、共同設計、供給指標を証拠なしに達成扱いする必要が生じる
+- 国内唯一、優位、受賞確率、公式点として内部値を使う必要が生じる
+- 公開HTML、原本、既存公開値、公式基準、scope境界の変更が必要になる
+- 作品②、参加者連絡、応募・登録、履歴書換え、Release削除が必要になる
