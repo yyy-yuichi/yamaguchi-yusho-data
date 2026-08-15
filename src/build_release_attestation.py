@@ -41,10 +41,14 @@ PUBLIC_ASSETS = (
         "data/work1_release_attestation_audit.json",
         "docs/data/work1_release_attestation_audit.json",
     ),
+    (
+        "data/jrbus_chugoku_supply_metrics.json",
+        "docs/data/jrbus_chugoku_supply_metrics.json",
+    ),
 )
 FIXED_PROTECTED_SHA256 = {
-    "docs/index.html": "c0b5e9b2ee1d459c72f42b061a5731e0e768b33b6c1ea716bab415c8c6efe8e9",
-    "docs/entry.html": "da71ea2775547d68af0f2b51da0faf7e852ef3b7d5e2cbce4ad187d79442d431",
+    "docs/index.html": "e20ffd6f2791d75b4e8b916f3182e2a996c0b44a2a4565d48ae0c0890254e6a9",
+    "docs/entry.html": "f1c3aa1e4475ddded2b38281296bde94126e859fad64c79a593d2f908278677e",
     "data/work1_award_scorecard.json": "7dd51a118c5a32053c6c40d584f3c769bf8bfcea8bf24eda812bcf57ffeedea3",
 }
 
@@ -392,7 +396,7 @@ def render_summary(record: dict[str, Any]) -> str:
             f"- Pages run: [{pages['run_id']}]({pages['run_url']})",
             f"- Tests: {tests['passed']} / {tests['discovered']}",
             f"- Public commit-byte matches: {public_ok} / {len(PUBLIC_ASSETS)}",
-            f"- Accepted source baseline matches: {sources_ok} / 6",
+            f"- Accepted source baseline matches: {sources_ok} / {len(record['verification']['accepted_sources'])}",
             f"- Observed public GET targets: {len(observations['requested_public_assets'])}",
             "- Declared boundaries (not externally measured): "
             f"{declarations['other_work_inputs']} / "

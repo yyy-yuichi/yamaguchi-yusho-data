@@ -1,0 +1,100 @@
+{
+  "stage": "WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1",
+  "acceptance_kind": "local",
+  "recorded_at": "2026-08-15T11:09:20+09:00",
+  "baseline_head": "1e5f0f4253bf4bd646cc3d4cf43326cbf845ad73",
+  "decision": "LOCAL_GO",
+  "implementation": {
+    "metric_version": "JRBUS-SUPPLY-METRIC-1",
+    "feed_id": "jrbus-chugoku-gtfs",
+    "measurement_scope": "whole_feed",
+    "comparison_mode": "independent_not_comparable",
+    "source_zip": {
+      "path": "raw/gtfs/jrbus_chugoku_gtfs_20260813.zip",
+      "bytes": 1863715,
+      "sha256": "9162224158a8a748d0365e850f2c0575c845a98063b7a469912c0a15b9201620"
+    },
+    "output": {
+      "data_path": "data/jrbus_chugoku_supply_metrics.json",
+      "public_path": "docs/data/jrbus_chugoku_supply_metrics.json",
+      "bytes": 3537,
+      "sha256": "eac7e55b0b548f2fe69cf8ce17a03d6d7f4516edf089da362ecbfcc371c6fc05",
+      "copies_byte_identical": true,
+      "deterministic_regeneration": true
+    },
+    "comparison_week": {
+      "start": "2026-08-17",
+      "end": "2026-08-23"
+    },
+    "structure_values": {
+      "gtfs_agency_record_count": 1,
+      "gtfs_route_id_count": 18,
+      "gtfs_boarding_location_id_count": 890
+    },
+    "scheduled_trip_count_by_date": {
+      "2026-08-17": 436,
+      "2026-08-18": 436,
+      "2026-08-19": 436,
+      "2026-08-20": 436,
+      "2026-08-21": 436,
+      "2026-08-22": 323,
+      "2026-08-23": 242
+    },
+    "confirmed_yamaguchi_route_count": 4
+  },
+  "verification": {
+    "dedicated_tests": {
+      "passed": 6,
+      "discovered": 6
+    },
+    "full_tests": {
+      "passed": 180,
+      "discovered": 180
+    },
+    "spec_coverage": {
+      "tokens": 1038,
+      "missing": 0
+    },
+    "scope_guard": "WORK1_SCOPE_ALLOWED",
+    "git_diff_check": "success",
+    "existing_two_feed_comparison": {
+      "sha256": "c277e1050086da6ad5cc703051deb672458f7bf2829e1aca92fd0b17b4d20930",
+      "changed": false
+    },
+    "browser": {
+      "desktop": {
+        "viewport": "1440x1600",
+        "structure_rows": 3,
+        "daily_rows": 7,
+        "route_rows": 4,
+        "horizontal_overflow": 0,
+        "runtime_errors": 0,
+        "broken_images": 0
+      },
+      "smartphone": {
+        "viewport": "390x844",
+        "structure_rows": 3,
+        "daily_rows": 7,
+        "route_rows": 4,
+        "horizontal_overflow": 0,
+        "runtime_errors": 0,
+        "broken_images": 0
+      },
+      "existing_two_feed_visible": true,
+      "municipal_view_visible": true
+    },
+    "public_internal_score_marker_hits": 0
+  },
+  "boundaries": {
+    "raw_source_changes": 0,
+    "automatic_source_adoptions": 0,
+    "existing_supply_metric_changes": 0,
+    "municipality_metric_inferences": 0,
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0,
+    "internal_score_publications": 0
+  },
+  "next": "commit and push the implementation, then accept scope lock, Pages, release attestation, artifact, live public bytes and exclusions for the same final HEAD"
+}

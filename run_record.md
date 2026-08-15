@@ -1326,3 +1326,26 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - 公開正本は`evidence/20260814_work1_award_scorecard_recalibration_2_public_acceptance.json`。
   この記録を含む最終HEAD自身を同じ3 workflowで再確認し、後続run IDはrepoへ再書込みしない。
 - 次段階は変更を伴わない`WORK1-AWARD-SCORECARD-RECALIBRATION-2-AUDIT-1`だけとし、開始しない。
+
+### 改訂点（rev.69）
+
+- `WORK1-AWARD-SCORECARD-RECALIBRATION-2-AUDIT-1`は変更なしのread-only監査としてGO。
+  P0 0件、P1 0件で、次の自走可能な改善を
+  `WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1`に限定した。
+- 本人承認後、受入済みJRバス中国GTFSを県外を含む広域フィード全体として独立測定した。
+  既存の岩国市・光市2フィード比較、市町別指標、順位・比率・合計には混在させない。
+- 固定週2026-08-17〜23で、交通ブランド情報1件、路線情報ID 18、乗降場所ID 890、
+  予定運行便436 / 436 / 436 / 436 / 436 / 323 / 242便を原本から再計算した。
+  山口県関係4路線はroute_id・名称を照合する関係アンカーであり、4路線だけの供給量ではない。
+- 新しい`data/jrbus_chugoku_supply_metrics.json`とPages用コピーは各3,537 bytes、
+  SHA256 `eac7e55b0b548f2fe69cf8ce17a03d6d7f4516edf089da362ecbfcc371c6fc05`で一致。
+  既存2フィードJSONはSHA256 `c277e1050086da6ad5cc703051deb672458f7bf2829e1aca92fd0b17b4d20930`
+  のまま不変。
+- 専用6 / 6、全180 / 180、旧SPEC 1,038トークン欠落0、scope checker、
+  `git diff --check`はsuccess。PC 1440×1600とスマートフォン390×844で構造3行、
+  日別7行、関係4路線、既存比較・市町ビューを確認し、横overflow・runtime error・壊れた画像各0。
+- 原本変更、自動採用、市町値推定、内部点数公開、作品②入力、参加者連絡、応募・BODIK登録は各0。
+  ローカル正本は
+  `evidence/20260815_work1_jrbus_supply_metrics_local_acceptance.json`。
+- 次は実装・ローカル受入記録をcommitしてmainへpushし、同一SHAのscope lock・Pages・release
+  attestation、artifact、公開bytes、内部3 URLの404を受け入れる。GO前に完了とは扱わない。

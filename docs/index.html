@@ -542,6 +542,57 @@
     </noscript>
   </section>
 
+  <section id="jrbus-supply-metric" class="page-shell panel supply-comparison" aria-labelledby="jrbus-supply-title">
+    <p class="eyebrow">Independent wide-area GTFS metric</p>
+    <h2 id="jrbus-supply-title">JRバス中国は広域フィード全体を別枠で確認</h2>
+    <p class="section-copy">
+      受入済みGTFSは県外を含むため、既存2フィード比較とは別枠で測定します。
+      山口県関係4路線は関係根拠として示しますが、表示値は4路線だけ、4市内だけ、
+      山口県内だけに切り分けた値ではなく、市町間の順位・比率・合計には使えません。
+    </p>
+    <p id="jrbus-metric-status" class="loading" role="status">JRバス中国の独立指標を読み込んでいます。</p>
+
+    <div id="jrbus-metric-content" hidden>
+      <div class="comparison-block">
+        <h3>フィード全体に収録された情報の件数</h3>
+        <div class="table-wrap">
+          <table class="comparison-table">
+            <caption>JRバス中国の広域フィード全体の構造指標</caption>
+            <thead><tr><th scope="col">指標</th><th scope="col">広域フィード全体</th></tr></thead>
+            <tbody id="jrbus-structure-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="comparison-block">
+        <h3>この日にGTFSで予定された運行便</h3>
+        <div class="table-wrap">
+          <table class="comparison-table">
+            <caption>広域フィード全体の7実日付の予定運行便</caption>
+            <thead><tr><th scope="col">実日付</th><th scope="col">広域フィード全体</th></tr></thead>
+            <tbody id="jrbus-daily-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="comparison-block">
+        <h3>山口県との関係を確認した4路線</h3>
+        <ul id="jrbus-route-list" class="plain-list"></ul>
+        <p id="jrbus-scope-note" class="section-copy"></p>
+        <h3>限界</h3>
+        <ul id="jrbus-limit-list" class="plain-list"></ul>
+        <div id="jrbus-evidence" class="evidence-grid"></div>
+        <p class="section-copy">表示用の検証済みJSON:
+          <a href="data/jrbus_chugoku_supply_metrics.json">jrbus_chugoku_supply_metrics.json</a>
+        </p>
+      </div>
+    </div>
+
+    <noscript>
+      <p class="error">独立指標の表示にはJavaScriptが必要です。<a href="data/jrbus_chugoku_supply_metrics.json">検証済みJSONを直接確認できます。</a></p>
+    </noscript>
+  </section>
+
   <main id="main" class="page-shell">
     <section class="panel selector-panel" aria-labelledby="selector-title">
       <div>
@@ -669,7 +720,7 @@
         <li>市町一覧: 山口県「<a href="https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html">市町｜関連リンク</a>」</li>
         <li>GTFS/GTFS-JP確認: 「<a href="https://yamaguchi-opendata.jp/">山口県オープンデータカタログサイト</a>」（岩国市・光市のフィードを掲載）、
           公共交通オープンデータセンター「<a href="https://ckan.odpt.org/organization/sentetsu_bus">船木鉄道株式会社</a>」（確認日2026-08-09）</li>
-        <li>公開データ: <a href="data/operators.json">operators.json</a> / <a href="data/vehicles.json">vehicles.json</a> / <a href="data/municipal_supply.json">municipal_supply.json</a> / <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a> / <a href="data/gtfs_supply_metrics.json">gtfs_supply_metrics.json</a></li>
+        <li>公開データ: <a href="data/operators.json">operators.json</a> / <a href="data/vehicles.json">vehicles.json</a> / <a href="data/municipal_supply.json">municipal_supply.json</a> / <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a> / <a href="data/gtfs_supply_metrics.json">gtfs_supply_metrics.json</a> / <a href="data/jrbus_chugoku_supply_metrics.json">jrbus_chugoku_supply_metrics.json</a></li>
       </ul>
       <p class="section-copy">
         原本を加工して作成。原本は公共データ利用規約（第1.0版）PDL1.0準拠、
@@ -704,6 +755,7 @@
       const gtfsFeedsUrl = "data/gtfs_feeds.json";
       const municipalityGtfsUrl = "data/municipality_gtfs.json";
       const supplyMetricsUrl = "data/gtfs_supply_metrics.json";
+      const jrbusMetricsUrl = "data/jrbus_chugoku_supply_metrics.json";
       const select = document.getElementById("municipality-select");
       const loading = document.getElementById("loading");
       const error = document.getElementById("error");
@@ -725,6 +777,13 @@
       const supplyStructureBody = document.getElementById("supply-structure-body");
       const supplyDailyBody = document.getElementById("supply-daily-body");
       const supplyEvidenceList = document.getElementById("supply-evidence-list");
+      const jrbusMetricStatus = document.getElementById("jrbus-metric-status");
+      const jrbusMetricContent = document.getElementById("jrbus-metric-content");
+      const jrbusStructureBody = document.getElementById("jrbus-structure-body");
+      const jrbusDailyBody = document.getElementById("jrbus-daily-body");
+      const jrbusRouteList = document.getElementById("jrbus-route-list");
+      const jrbusLimitList = document.getElementById("jrbus-limit-list");
+      const jrbusEvidence = document.getElementById("jrbus-evidence");
 
       const SUPPLY_FEED_ORDER = ["iwakuni-gtfsjp", "hikari-gtfs"];
       const STRUCTURE_METRICS = [
@@ -970,6 +1029,85 @@
         supplyComparisonContent.hidden = false;
       }
 
+      function validateJrBusMetric(record) {
+        if (!record || typeof record !== "object" || Array.isArray(record)) {
+          throw new Error("JRバス中国の独立指標がオブジェクトではありません");
+        }
+        if (
+          record.metric_version !== "JRBUS-SUPPLY-METRIC-1" ||
+          record.feed_id !== "jrbus-chugoku-gtfs" ||
+          record.measurement_scope !== "whole_feed" ||
+          record.comparison_mode !== "independent_not_comparable"
+        ) {
+          throw new Error("JRバス中国の版・対象範囲・比較区分が不正です");
+        }
+        const metricIds = STRUCTURE_METRICS.map(item => item[0]);
+        if (!record.metrics || !sameList(Object.keys(record.metrics), metricIds)) {
+          throw new Error("JRバス中国の構造指標が一致しません");
+        }
+        const dates = Object.keys(record.scheduled_trip_count_by_date || {});
+        if (
+          dates.length !== 7 ||
+          dates[0] !== record.comparison_week_start ||
+          dates[dates.length - 1] !== record.comparison_week_end
+        ) {
+          throw new Error("JRバス中国の測定週が不正です");
+        }
+        if (!/^[0-9a-f]{64}$/.test(record.source_zip_sha256 || "") || !record.date_basis) {
+          throw new Error("JRバス中国の原本または内部日付の根拠が不正です");
+        }
+        if (!Array.isArray(record.confirmed_yamaguchi_routes) || record.confirmed_yamaguchi_routes.length !== 4) {
+          throw new Error("JRバス中国の山口県関係路線が4件ではありません");
+        }
+        if (!Array.isArray(record.limitations) || record.limitations.length < 4) {
+          throw new Error("JRバス中国の限界説明が不足しています");
+        }
+        for (const metricId of metricIds) validateSupplyMetric(record.metrics[metricId], `jrbus.${metricId}`);
+        for (const dateKey of dates) validateSupplyMetric(record.scheduled_trip_count_by_date[dateKey], `jrbus.${dateKey}`);
+        return { record, metricIds, dates };
+      }
+
+      function renderJrBusMetric(record) {
+        const validated = validateJrBusMetric(record);
+        jrbusStructureBody.replaceChildren();
+        jrbusDailyBody.replaceChildren();
+        jrbusRouteList.replaceChildren();
+        jrbusLimitList.replaceChildren();
+        jrbusEvidence.replaceChildren();
+
+        for (const [metricId, label, unit] of STRUCTURE_METRICS) {
+          appendComparisonRow(jrbusStructureBody, label, [record.metrics[metricId]], unit);
+        }
+        for (const dateKey of validated.dates) {
+          appendComparisonRow(
+            jrbusDailyBody,
+            formatActualDate(dateKey),
+            [record.scheduled_trip_count_by_date[dateKey]],
+            "便",
+          );
+        }
+        for (const route of record.confirmed_yamaguchi_routes) {
+          addText(jrbusRouteList, "li", `${route.route_long_name}（route_id: ${route.route_id}）`);
+        }
+        setText("jrbus-scope-note", record.scope_note);
+        for (const limitation of record.limitations) addText(jrbusLimitList, "li", limitation);
+
+        const details = document.createElement("details");
+        details.className = "evidence-card";
+        const summary = document.createElement("summary");
+        summary.textContent = "広域フィード独立指標の根拠";
+        details.appendChild(summary);
+        addText(details, "p", `測定週: ${record.comparison_week_start}〜${record.comparison_week_end} ／ 指標版: ${record.metric_version}`, "section-copy");
+        addText(details, "p", `公式基準日: ${record.official_reference_date} ／ 確認日: ${record.checked_at} ／ 計算日: ${record.metric_computed_at}`, "section-copy");
+        addText(details, "p", `原本ZIP: ${record.source_zip_path}（${record.source_zip_size_bytes} bytes）`, "section-copy");
+        addText(details, "p", `原本ZIP SHA256: ${record.source_zip_sha256}`, "section-copy hash-text");
+        addText(details, "p", `GTFS内部日付: ${internalDateText(record.date_basis)}`, "section-copy");
+        jrbusEvidence.appendChild(details);
+
+        jrbusMetricStatus.hidden = true;
+        jrbusMetricContent.hidden = false;
+      }
+
       function renderBreakdown(groups) {
         breakdown.replaceChildren();
         for (const group of groups) {
@@ -1197,6 +1335,15 @@
           supplyComparisonLoading.hidden = true;
           supplyComparisonContent.hidden = true;
           supplyComparisonError.hidden = false;
+        });
+
+      fetchJson(jrbusMetricsUrl)
+        .then(record => renderJrBusMetric(record))
+        .catch(cause => {
+          console.error("JR Bus independent supply metric load failed", cause);
+          jrbusMetricStatus.textContent = "JRバス中国の独立指標を表示できません。市町別表示と既存2フィード比較は引き続き利用できます。";
+          jrbusMetricStatus.className = "error";
+          jrbusMetricContent.hidden = true;
         });
     })();
   </script>

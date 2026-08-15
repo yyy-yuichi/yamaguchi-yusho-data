@@ -1,6 +1,6 @@
 # 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価 / WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況拡張 / WORK1-AWARD-SCORECARD-RECALIBRATION-2 拡張成果再評価
 
-**rev.5.21 / 2026-08-14**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34、rev.5.20→rev.5.21 は §10.35。消した記述はそこに全部書いてある）
+**rev.5.22 / 2026-08-14**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34、rev.5.20→rev.5.21 は §10.35、rev.5.21→rev.5.22 は §10.36。消した記述はそこに全部書いてある）
 
 UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下に `SPEC.md` として置き、Claude Code に読ませる。**
 
@@ -12,7 +12,8 @@ UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下
 §22はWORK1-GTFS-COVERAGE-2、§23〜§28は受入済みの比較・証拠・公開情報整理、
 §29は受け入れ済みWORK1-SIMILAR-SERVICE-BENCHMARK-1、§30は受け入れ済み
 WORK1-PRECONSULTATION-HANDOFF-1、§31はWORK1-AWARD-SCORECARD-RECALIBRATION-1、§32は
-WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1、§33はWORK1-AWARD-SCORECARD-RECALIBRATION-2の実行仕様である。
+WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1、§33はWORK1-AWARD-SCORECARD-RECALIBRATION-2、§34は
+WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1の実行仕様である。
 プロジェクトのゴール、終了条件、確定方針は`run_record.md` §0.5 を正とし、
 このファイルがそれを上書きしてはならない。
 
@@ -1190,6 +1191,13 @@ JRバス中国の公式GTFS原本1件を追加受入した成果だけを内部�
 参加は増えていないため据え置き、共通条件の供給実測が2フィードのままである限界も保持する。
 完了済みの公式範囲拡張を改善候補から除外し、採用済みJRバス中国GTFSの独立供給指標化を、
 参加者連絡なしで進められる最上位候補として再評価する。
+
+### 10.36 rev.5.21 → rev.5.22
+
+固定HEAD `1e5f0f4253bf4bd646cc3d4cf43326cbf845ad73`の再採点段階とread-only独立監査はGOだった。
+ユーザー承認を受け、受入済みJRバス中国GTFSを既存2フィードの同一週比較へ混ぜず、広域フィード
+全体の独立指標として測定する。山口県関係4路線は関係根拠として保持するが、4市の供給量へ転用しない。
+新しい公開JSONと独立表示は、原本・既存比較JSON・内部スコアカードを変更せず追加する。
 
 ---
 
@@ -3189,6 +3197,94 @@ UDC概要フォーム、本応募、BODIK登録、外部サービスへのデー
 - 国内唯一、優位、受賞確率、公式点として内部値を使う必要が生じる
 - 公開HTML、原本、既存公開値、公式基準、scope境界の変更が必要になる
 - 作品②、参加者連絡、応募・登録、履歴書換え、Release削除が必要になる
+
+---
+
+## 34. WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1
+
+### 34.1 段階ゴール
+
+受入済みJRバス中国GTFSを、岩国市・光市の既存2フィード比較へ混ぜず、広域フィード全体の
+独立した供給指標として決定論的に測定・公開する。山口県関係4路線はフィード採用の関係根拠として
+表示するが、4市それぞれの供給量、市内値、県内値へ転用しない。
+
+### 34.2 入力と測定範囲
+
+入力原本は`raw/gtfs/jrbus_chugoku_gtfs_20260813.zip`だけとし、1,863,715 bytes、SHA-256
+`9162224158a8a748d0365e850f2c0575c845a98063b7a469912c0a15b9201620`に一致しなければ計算しない。
+`feed_id`は`jrbus-chugoku-gtfs`、公式基準日・確認日は2026-08-13とする。
+
+測定単位は`whole_feed`であり、県外を含むフィード全体である。比較モードは
+`independent_not_comparable`とし、市町コード、市町名、市町合計、既存2フィードとの順位・比率を持たせない。
+山口県関係の確認済み路線IDは次の4件を、名称とともに関係根拠として固定する。
+
+- `2229846746`: 防長線
+- `435934628`: 新山口駅～東萩駅線（スーパーはぎ号）
+- `2196404353`: 秋吉線
+- `3240589115`: 秋芳洞循環バス
+
+構造指標と予定運行便数の計算規則は§15.4〜§15.6を再利用する。比較週は公式基準日以後の最初の
+月曜日から始まり、`feed_info.txt`の範囲内にある2026-08-17〜2026-08-23の7実日付とする。
+
+### 34.3 独立データ契約
+
+正本は`data/jrbus_chugoku_supply_metrics.json`、公開コピーは
+`docs/data/jrbus_chugoku_supply_metrics.json`とし、両者をバイト同一にする。単一JSONオブジェクトに
+最低限次を持たせる。
+
+- `metric_version`: `JRBUS-SUPPLY-METRIC-1`
+- `feed_id`、`measurement_scope`、`comparison_mode`
+- `source_zip_path`、`source_zip_sha256`、`source_zip_size_bytes`
+- `official_reference_date`、`checked_at`、`metric_computed_at`
+- `comparison_week_start`、`comparison_week_end`、分離した`date_basis`
+- §15.4.2の構造3指標と、7実日付の`scheduled_trip_count_by_date`
+- 4件の`confirmed_yamaguchi_routes`
+- 広域フィード、ID単位、予定値、実運行・利便性非評価を示す`limitations`
+
+既存`data/gtfs_supply_metrics.json`と公開コピーは変更せず、レコード数2、比較週、値、SHA-256を維持する。
+
+### 34.4 公開表示契約
+
+`docs/index.html`に既存2フィード比較とは別の独立区画を設け、新しいJSONだけから構造3指標、7日分の
+予定運行便、4路線の関係根拠、原本・日付・限界を表示する。入力失敗は独立区画内で閉じ、既存の
+登録供給、市町別GTFS状態、岩国・光比較を壊さない。`docs/status.html`と`docs/entry.html`は、
+「広域フィード全体の独立測定」であり4市の供給量ではないこと、新JSONへの導線を事実として同期する。
+
+### 34.5 変更範囲と不変境界
+
+変更・追加できるのは次だけとする。
+
+- `SPEC.md`、`run_record.md`、`PROGRESS.md`、`verification.md`
+- `src/calculate_jrbus_supply_metrics.py`、`src/build_site_data.py`、`src/build_release_attestation.py`
+- `data/jrbus_chugoku_supply_metrics.json`、`docs/data/jrbus_chugoku_supply_metrics.json`
+- `docs/index.html`、`docs/status.html`、`docs/entry.html`
+- `tests/test_jrbus_supply_metrics.py`、`tests/test_release_attestation.py`
+- `evidence/20260815_work1_jrbus_supply_metrics_*`
+
+7原本、既存`gtfs_supply_metrics.json`正本・公開コピー、登録供給JSON・CSV、GTFS状態JSON・CSV、
+`docs/municipality-memo.html`、内部スコアカードと非公開3資産の不在は変更しない。作品②を読まず、
+参加者連絡、UDC応募、BODIK登録、新規原本取得、認証変更を行わない。
+
+### 34.6 完了条件
+
+1. 固定SHAの原本1件から新JSONを決定論的に再生成でき、2回の生成がバイト一致する。
+2. 構造3指標、7実日付の予定運行便、GTFS内部日付を専用テストと独立再計算で再現できる。
+3. 確認済み4路線ID・名称が原本`routes.txt`と一致し、供給値は広域フィード全体と明示される。
+4. 既存2フィードJSONが基準HEADとバイト一致し、新データへ混入しない。
+5. 公開正本コピーがバイト一致し、公開区画がJSONから値・根拠・限界を表示する。
+6. 新JSONの失敗が既存3機能へ波及しないことを静的テストとブラウザで確認する。
+7. 専用テストと全unittest、scope checker、`git diff --check`、旧SPEC網羅検査が成功する。
+8. PC 1440×1600とスマートフォン390×844で横overflow 0、runtime/dev error 0、壊れた画像0になる。
+9. commit・main push後、scope lock、Pages、release attestationが同一HEADでsuccess・GOになる。
+10. 新JSONと主要公開ページがcommit bytesと一致し、内部診断3 URLが404を維持する。
+11. 次段階をread-onlyの`WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-AUDIT-1`だけに定義し、開始しない。
+
+### 34.7 停止条件
+
+- 原本SHA不一致、GTFS構造不正、4路線ID・名称不一致で測定の根拠を固定できない
+- 広域値を市町値へ配分・推定する必要が生じる
+- 既存2フィード指標、原本、内部スコアカードを根拠なく変更する必要が生じる
+- 作品②、参加者連絡、応募・登録、履歴書換え、新規・認証付き原本の取得が必要になる
 
 ---
 

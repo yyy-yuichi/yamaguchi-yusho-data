@@ -861,13 +861,13 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">作品の現在地</p>
-          <h2 id="progress-title">WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況の拡張</h2>
-          <p>未確認だった13市町を公式一次情報から再調査し、全19市町を「公開取得可能・認証が必要・存在確認済みで一般配布なし・公式記録ありで現在取得不能」の4状態に更新しました。</p>
-          <p>JRバス中国の公式GTFS ZIP 1件を人間承認後に手動受入し、SHA256・ZIP安全性・GTFS構造を検査しました。非公開・認証必要・404の原本は取得も推定もしていません。</p>
+          <h2 id="progress-title">WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 広域GTFSの独立指標</h2>
+          <p>JRバス中国の受入済み公式GTFS ZIPを、既存の岩国市・光市2フィード比較へ混ぜず、県外を含む広域フィード全体の独立指標として測定しました。</p>
+          <p>山口県関係4路線は関係根拠として確認していますが、数値を4路線だけ、山口県内だけ、4市それぞれの市内値へ分割していません。非公開・認証必要・404の原本は取得も推定もしていません。</p>
           <p><a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>の市町別ビューと<a href="municipality-memo.html">協議前確認メモ</a>は、4状態ごとに次の確認を変えます。これは県内交通の完全収録や市町の優劣を示す評価ではありません。</p>
-          <p>初回公開commit <code>18170b2</code>からの検証履歴と初回GO artifactは維持しています。全151 / 151テスト、90日保存の外部artifactを補う<a href="data/work1_release_attestation_audit.json">監査証拠JSON</a>、<a href="data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json">可読snapshot</a>、<a href="data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json.b64">Base64正本</a>と、<code>work1-release-attestation.zip</code>、<code>release-provenance.json</code>、<code>SHA256SUMS.txt</code>を固定した<a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/releases/latest">公開GitHub Release</a>から検証できます。Release/tagは検証証拠の公開であり、応募手続ではありません。自動の公開照合は4資産です。</p>
+          <p>初回公開commit <code>18170b2</code>からの検証履歴と初回GO artifact（全151 / 151テスト、当時の公開照合は4資産）は維持しています。90日保存の外部artifactを補う<a href="data/work1_release_attestation_audit.json">監査証拠JSON</a>、<a href="data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json">可読snapshot</a>、<a href="data/release-attestation-ed1f0b4997acd19016da45e21c88821ef57bb365.json.b64">Base64正本</a>と、<code>work1-release-attestation.zip</code>、<code>release-provenance.json</code>、<code>SHA256SUMS.txt</code>を固定した<a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data/releases/latest">公開GitHub Release</a>から検証できます。Release/tagは検証証拠の公開であり、応募手続ではありません。現在の自動公開照合は独立指標JSONを含む5資産です。</p>
         </div>
-        <strong class="progress-summary">19市町すべてのGTFSアクセス状態を根拠付きで区分</strong>
+        <strong class="progress-summary">広域フィードを市町値と誤認させず独立測定</strong>
       </div>
 
       <div class="overall-bar" role="img" aria-label="受け入れ済み公開基盤の上で、独立監査と次の改善を反復中">
@@ -1149,7 +1149,7 @@
         </div>
       </div>
 
-      <p class="lead">受入済み原本は岩国市・光市・JRバス中国の公式3 ZIPです。JRバス中国は山口市・萩市・防府市・美祢市との関係を確認しましたが、フィード全18路線の数値を各市内の供給量としては表示しません。船木鉄道は認証が必要なため本体未取得です。</p>
+      <p class="lead">受入済み原本は岩国市・光市・JRバス中国の公式3 ZIPです。JRバス中国は山口市・萩市・防府市・美祢市との関係を確認し、全18路線を含む広域フィード全体の指標を独立表示します。これは市町別の値ではない独立指標です。船木鉄道は認証が必要なため本体未取得です。</p>
 
       <div class="note">4状態はGTFSへのアクセス条件です。交通サービスの有無、利便性、整備達成度、県内全事業者・全路線の網羅を示しません。一般配布なし・認証必要・現在取得不能の原本を、存在する公開値のように補完していません。</div>
 
@@ -1435,10 +1435,26 @@
         <li><strong>JRバス中国ZIPを手動受入</strong><p>1,863,715バイト、SHA256 <code>9162224158a8a748d0365e850f2c0575c845a98063b7a469912c0a15b9201620</code>。23ファイル、危険パス0、暗号化0、CRC異常0を確認しました。</p></li>
         <li><strong>公開取得可能 7 / 19</strong><p>岩国市・光市・周南市・山口市・萩市・防府市・美祢市。公開原本との関係確認であり、市内全交通の網羅値ではありません。</p></li>
         <li><strong>認証2・一般配布なし9・現在取得不能1</strong><p>本体を取得できない理由を区別しました。非公開値や過去原本は補完せず、次に誰へ何を確認するかを協議前メモへ表示します。</p></li>
-        <li><strong>供給比較は検証済み2フィードのまま</strong><p>JRバス中国は県外を含む全18路線のフィードなので、既存の岩国市・光市比較へ混在させて市町値と誤認させません。</p></li>
+        <li><strong>供給比較は検証済み2フィードのまま</strong><p>JRバス中国は県外を含む全18路線の広域フィードなので、既存の岩国市・光市比較へ混在させず、独立指標として表示します。</p></li>
         <li><strong>専用5 / 5・全174 / 174テスト成功</strong><p>JRバス中国ZIPの同一性・安全性、19市町の4状態、既存供給指標JSONのバイト一致、7原本の変更検知を回帰検証しています。</p></li>
       </ul>
       <p class="source-note">根拠: data/municipality_gtfs.json、data/gtfs_feeds.json、evidence/20260813_work1_official_gtfs_coverage_extension_research.json、verification.md。</p>
+    </section>
+
+    <section aria-labelledby="jrbus-metric-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1</p>
+          <h2 id="jrbus-metric-title">JRバス中国を広域フィード全体として独立測定</h2>
+          <p>2026-08-17〜23の7実日付を固定し、交通ブランド情報1件、路線情報ID 18、乗降場所ID 890、予定運行便436・436・436・436・436・323・242便を原本から決定的に再計算します。</p>
+        </div>
+      </div>
+      <ul class="next-list">
+        <li><strong>既存2フィード比較から分離</strong><p>比較JSONはバイト不変のままです。広域値を岩国市・光市や山口県19市町の順位・比率・合計へ使いません。</p></li>
+        <li><strong>関係4路線は根拠アンカー</strong><p>防長線、スーパーはぎ号、秋吉線、秋芳洞循環バスを原本のroute_idと名称で照合しますが、この4路線だけの供給値とは解釈しません。</p></li>
+        <li><strong>原本・日付・限界を併記</strong><p>ZIPのSHA256、内部有効期間、計算日、フィード全体という範囲、実運行や利用者数ではないことを公開JSONと画面に残します。</p></li>
+      </ul>
+      <p class="source-note">公開データ: <a href="data/jrbus_chugoku_supply_metrics.json">jrbus_chugoku_supply_metrics.json</a>。表示: <a href="index.html#jrbus-supply-metric">JRバス中国の独立指標</a>。根拠: SPEC.md §34、verification.md。</p>
     </section>
 
     <section class="sources" aria-labelledby="source-title">
@@ -1447,8 +1463,8 @@
         <li>応募説明（docs/entry.html）: <a href="entry.html">作品の課題・使い方・利用価値・現在の到達点</a></li>
         <li>協議前確認メモ（docs/municipality-memo.html）: <a href="municipality-memo.html">市町別の根拠・限界・次の確認事項</a></li>
         <li>公開用アプリ（docs/index.html）: <a href="index.html?v=20260811">市町別の登録供給ビュー</a>（<a href="index.html?v=20260811#supply-comparison">岩国市・光市のGTFS供給比較</a>、<a href="index.html?v=20260811#limits-title">データの限界</a>、<a href="index.html?v=20260811#sources-title">出典と利用条件</a>）</li>
-        <li>公開JSON: <a href="data/operators.json">operators.json</a> / <a href="data/vehicles.json">vehicles.json</a> / <a href="data/municipal_supply.json">municipal_supply.json</a> / <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a> / <a href="data/gtfs_supply_metrics.json">gtfs_supply_metrics.json</a></li>
-        <li>リポジトリ内: run_record.md、SPEC.md、verification.md、data/operators.csv、data/vehicles.csv、data/gtfs_feeds.csv、data/municipality_gtfs.csv、data/gtfs_supply_metrics.json。改善用の数値診断はPagesとは分離して管理</li>
+        <li>公開JSON: <a href="data/operators.json">operators.json</a> / <a href="data/vehicles.json">vehicles.json</a> / <a href="data/municipal_supply.json">municipal_supply.json</a> / <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a> / <a href="data/gtfs_supply_metrics.json">gtfs_supply_metrics.json</a> / <a href="data/jrbus_chugoku_supply_metrics.json">jrbus_chugoku_supply_metrics.json</a></li>
+        <li>リポジトリ内: run_record.md、SPEC.md、verification.md、data/operators.csv、data/vehicles.csv、data/gtfs_feeds.csv、data/municipality_gtfs.csv、data/gtfs_supply_metrics.json、data/jrbus_chugoku_supply_metrics.json。改善用の数値診断はPagesとは分離して管理</li>
         <li>括弧付き台数の扱い: 国自旅第317号「<a href="https://www.mlit.go.jp/jidosha/content/001766049.pdf">福祉有償運送の登録に関する処理方針について</a>」2.(2)⑦</li>
         <li>交通空白地の車種区分: 国自旅第316号「<a href="https://www.mlit.go.jp/jidosha/content/001766048.pdf">交通空白地有償運送の登録に関する処理方針について</a>」2.(2)⑦</li>
         <li>山口県の市町数: 出典: 山口県「市町｜関連リンク」 <a href="https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html">https://www.pref.yamaguchi.lg.jp/soshiki/21/26969.html</a></li>

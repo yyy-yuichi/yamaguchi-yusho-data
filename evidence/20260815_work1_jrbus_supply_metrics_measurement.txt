@@ -1,0 +1,20 @@
+取得日時: 2026-08-15T11:09:20+09:00 JST
+取得元  : C:\Users\user\dev\udc2026\.venv\Scripts\python.exe -B -c "import sys,json,hashlib; sys.path.insert(0,'src'); import calculate_jrbus_supply_metrics as m; ..."
+取得方法: 受入済みJRバス中国GTFS ZIPだけをローカルで読取り、固定週の独立指標JSONを決定的に生成
+metric_version=JRBUS-SUPPLY-METRIC-1
+feed_id=jrbus-chugoku-gtfs
+measurement_scope=whole_feed
+comparison_mode=independent_not_comparable
+source_zip_path=raw/gtfs/jrbus_chugoku_gtfs_20260813.zip
+source_zip_bytes=1863715
+source_zip_sha256=9162224158a8a748d0365e850f2c0575c845a98063b7a469912c0a15b9201620
+comparison_week=2026-08-17..2026-08-23
+structure=[1,18,890]
+scheduled_trip_count_by_date=[436,436,436,436,436,323,242]
+confirmed_yamaguchi_routes=4
+output=data/jrbus_chugoku_supply_metrics.json
+output_bytes=3537
+output_sha256=eac7e55b0b548f2fe69cf8ce17a03d6d7f4516edf089da362ecbfcc371c6fc05
+docs_copy_byte_identical=true
+existing_two_feed_sha256=c277e1050086da6ad5cc703051deb672458f7bf2829e1aca92fd0b17b4d20930
+existing_two_feed_changed=false

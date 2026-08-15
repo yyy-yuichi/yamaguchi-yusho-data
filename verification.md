@@ -2564,6 +2564,30 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 この受入記録を含む最終HEAD自身をscope lock、Pages、release attestationで再確認し、後続run IDは
 外部正本としてrepoへ再書込みしない。
 
+## 2026-08-15 WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 ローカル検証
+
+| 検証 | 結果 |
+|---|---|
+| 原本 | `raw/gtfs/jrbus_chugoku_gtfs_20260813.zip`、1,863,715 bytes、SHA256 `9162224158a8a748d0365e850f2c0575c845a98063b7a469912c0a15b9201620` |
+| 測定範囲 | `whole_feed`、`independent_not_comparable`。県外を含む広域フィード全体 |
+| 固定週 | 2026-08-17〜2026-08-23 |
+| 構造指標 | 交通ブランド情報1、路線情報ID 18、乗降場所ID 890 |
+| 予定運行便 | 436 / 436 / 436 / 436 / 436 / 323 / 242 |
+| 関係アンカー | 山口県関係4路線のroute_id・名称が原本一致。4路線だけの供給値とはしない |
+| 出力 | data・docs/data各3,537 bytes、SHA256 `eac7e55b0b548f2fe69cf8ce17a03d6d7f4516edf089da362ecbfcc371c6fc05`、byte一致 |
+| 既存比較 | `gtfs_supply_metrics.json` 2コピーはSHA256 `c277e1050086da6ad5cc703051deb672458f7bf2829e1aca92fd0b17b4d20930`、変更0 |
+| 専用回帰 | 6 / 6 success |
+| 全回帰 | 180件検出、180 / 180 success、終了コード0 |
+| 旧SPEC網羅 | 基準HEADの1,038トークン、欠落0 |
+| scope・差分 | `WORK1_SCOPE_ALLOWED`、`git diff --check` success |
+| PC | 1440×1600、構造3行・日別7行・4路線、横overflow 0、runtime error 0、壊れた画像0 |
+| smartphone | 390×844、構造3行・日別7行・4路線、横overflow 0、runtime error 0、壊れた画像0 |
+| 既存機能 | 2フィード比較・市町別ビューとも表示 |
+| 公開分離 | 公開4 HTMLの内部点数・内部JSONマーカー0 |
+| 境界 | 原本・自動採用・市町値推定・作品②入力・参加者連絡・応募・BODIK・内部点数公開各0 |
+| 正本 | `evidence/20260815_work1_jrbus_supply_metrics_local_acceptance.json` |
+| 判定 | `LOCAL_GO`。同一最終HEADのCI・Pages・artifact・公開bytes受入へ進む |
+
 ## WORK1-AWARD-SCORECARD-RECALIBRATION-2 ローカル検証（2026-08-14）
 
 | 検証 | 結果 |

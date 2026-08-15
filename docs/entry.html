@@ -279,7 +279,7 @@
       <ol class="steps">
         <li><strong>市町を選ぶ。</strong> 山口県19市町から選び、登録簿上でその市町を運送区域に含む団体と登録車両を確認します。</li>
         <li><strong>確認できたGTFSを見る。</strong> 公式資料で市町名との関係を確認できたフィード、公開主体、データ基準日、アクセス条件を確認します。</li>
-        <li><strong>同じ実日付で比べる。</strong> 岩国市関連・光市関連の2フィードについて、2026-04-06〜2026-04-12の予定運行便を切替なしで比較し、原本・日付・限界まで読みます。</li>
+        <li><strong>同じ実日付で比べる。</strong> 岩国市関連・光市関連の2フィードは2026-04-06〜12で比較し、JRバス中国は県外を含むため2026-08-17〜23の広域フィード独立指標として、原本・日付・限界まで読みます。</li>
         <li><strong>協議前の確認メモにする。</strong> 選択した市町について、いま分かること、未確認事項、次に原本や関係機関へ確認することを一枚にまとめ、共有URLまたは印刷・PDF保存で共有します。</li>
       </ol>
     </section>
@@ -291,11 +291,11 @@
         <dt>山口県公表の自家用有償旅客運送登録簿</dt>
         <dd>山口県分4PDFを処理。23団体、実車両136台（軽20台は内数）を原本へ追跡できる形で整理しました。</dd>
         <dt>山口県オープンデータカタログ等の公式GTFS / GTFS-JP</dt>
-        <dd>公式一次資料で3フィードを確認し、公式資料が対象市町名を明記した5市町との関係を整理しました。岩国市・光市の2 ZIPは内部構成と予定運行を実測済みです。</dd>
+        <dd>公式フィード記録8件と19市町のアクセス状態を整理し、公式3 ZIPを受入済みです。岩国市・光市の2 ZIPは同じ週で比較し、JRバス中国は山口県関係4路線を確認したうえで、県外を含む広域フィード全体の独立指標として実測しました。</dd>
         <dt>山口県の公式19市町一覧</dt>
         <dd>市町選択の順序と対象を一次資料に合わせています。</dd>
       </dl>
-      <p class="fact">主要な公開データ: <a href="data/municipal_supply.json">municipal_supply.json</a> / <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a> / <a href="data/gtfs_supply_metrics.json">gtfs_supply_metrics.json</a></p>
+      <p class="fact">主要な公開データ: <a href="data/municipal_supply.json">municipal_supply.json</a> / <a href="data/gtfs_feeds.json">gtfs_feeds.json</a> / <a href="data/municipality_gtfs.json">municipality_gtfs.json</a> / <a href="data/gtfs_supply_metrics.json">gtfs_supply_metrics.json</a> / <a href="data/jrbus_chugoku_supply_metrics.json">jrbus_chugoku_supply_metrics.json</a></p>
     </section>
 
     <section aria-labelledby="value-title">
@@ -308,7 +308,7 @@
         </article>
         <article class="card">
           <h3>現在できること</h3>
-          <p>登録簿4PDFの機械可読化、19市町ビュー、公式GTFS状況、2フィードの実測比較を公開済みです。データ・コード・検証状況を第三者が同じURLから追跡できます。</p>
+          <p>登録簿4PDFの機械可読化、19市町ビュー、公式GTFS状況、2フィードの実測比較、JRバス中国の広域フィード独立指標を公開しています。データ・コード・検証状況を第三者が同じURLから追跡できます。</p>
         </article>
         <article class="card">
           <h3>新しく取り組んだこと</h3>
@@ -358,7 +358,7 @@
           <ul class="plain-list">
             <li>公表登録簿上の団体・登録車両と原本</li>
             <li>今回確認した公式資料におけるGTFSの公開状況</li>
-            <li>岩国市関連・光市関連フィード全体の構造と、同じ7実日付の予定運行便</li>
+            <li>岩国市関連・光市関連フィードの同週比較と、JRバス中国の広域フィード全体の独立指標</li>
             <li>表示値の基準日、内部有効期間、検証日、対象範囲</li>
           </ul>
         </article>
@@ -382,6 +382,7 @@
         <a href="index.html">公開デモ: 山口県 市町別の登録供給ビュー</a>
         <a href="municipality-memo.html">市町別 交通協議前確認メモを作る</a>
         <a href="index.html#supply-comparison">公開デモ: 岩国市・光市のGTFS供給比較</a>
+        <a href="index.html#jrbus-supply-metric">公開デモ: JRバス中国の広域フィード独立指標</a>
         <a href="status.html">工程・完了条件・未達条件を確認する</a>
         <a href="https://github.com/yyy-yuichi/yamaguchi-yusho-data" target="_blank" rel="noopener">GitHubリポジトリでコードとデータを見る</a>
       </div>

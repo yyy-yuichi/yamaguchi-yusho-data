@@ -2603,6 +2603,25 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   現行4 URLは200、削除3 URLは404。公開HTMLに旧スコアリンクは0件。
 - この記録を含む最終HEAD自身を同じ3 workflowで外部再確認する。次段階はread-only監査だけ。
 
+## 2026-08-15 WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 ローカル受入
+
+- 受入済みJRバス中国GTFSを、既存2フィード比較から分離した広域フィード全体の独立指標として実装。
+- 固定週2026-08-17〜23の構造指標は1 / 18 / 890、予定運行便は
+  436 / 436 / 436 / 436 / 436 / 323 / 242。山口県関係4路線は関係根拠として原本照合。
+- 出力2コピーは3,537 bytes、SHA256
+  `eac7e55b0b548f2fe69cf8ce17a03d6d7f4516edf089da362ecbfcc371c6fc05`で完全一致。
+  既存2フィードJSONは固定SHA256のまま不変。
+- indexは別枠の構造3行・日別7行・関係4路線・原本・限界をJSONから表示。
+  statusとentryも「市町別値ではない」ことを明記。
+- 専用6 / 6、全180 / 180、旧SPEC 1,038トークン欠落0、scope checker、
+  `git diff --check`はsuccess。
+- PC 1440×1600・スマートフォン390×844とも、横overflow 0、runtime error 0、
+  壊れた画像0。既存2フィード比較と市町ビューも同時に表示。
+- 原本、自動採用、既存供給JSON、内部点数、作品②、参加者連絡、応募・BODIKは各0変更・0実行。
+- ローカル正本:
+  `evidence/20260815_work1_jrbus_supply_metrics_local_acceptance.json`。
+  判定は`LOCAL_GO`。公開受入が成功するまで段階完了とは扱わない。
+
 ## 2026-08-14 WORK1-AWARD-SCORECARD-RECALIBRATION-2 ローカル受入
 
 - 公式GTFS範囲拡張監査GO（P0 0 / P1 0 / P2 3）を入力に、内部診断を再評価した。
