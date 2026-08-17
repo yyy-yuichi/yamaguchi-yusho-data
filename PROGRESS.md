@@ -2603,6 +2603,26 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   現行4 URLは200、削除3 URLは404。公開HTMLに旧スコアリンクは0件。
 - この記録を含む最終HEAD自身を同じ3 workflowで外部再確認する。次段階はread-only監査だけ。
 
+## 2026-08-17 WORK1-AWARD-SCORECARD-RECALIBRATION-3 ローカル受入
+
+- 固定HEAD `a573e78adc0019fb3d9d410813c306267c3a350a`のJRバス中国独立指標化監査はGO、
+  P0 0件、P1 0件。原本・既存2フィード・公開配信にドリフトはなかった。
+- JRバス中国の広域1フィードを既存2フィードへ混在させず独立公開した根拠だけを反映し、
+  `output_comprehensiveness`を3.5→4.0へ更新した。第三者評価がない`method_fit`は4.5据え置き。
+- 実用度3.5、完成度4.5を維持し、挑戦度3.0→3.5、総合比較値73.3→76.7となった。
+  利用者価値2.0、関係アクター1.0は据え置いた。
+- 完了済み`jrbus_supply_metrics_extension`を候補から除外した。利用者検証は人間承認ゲート、
+  自走可能な最上位候補は`independent_reproduction_drill`、新規原本受入候補は別ゲートとした。
+- 内部正本は27,275 bytes、SHA256
+  `6a4c1e16e10835ced55243dcdb0c418045f0b5f44e78c1cd7d295aacfc931131`。
+- 専用21 / 21、全180 / 180、旧SPEC 1,065トークン欠落0、scope checker、
+  `git diff --check`、秘密情報定型検査0件はsuccess。
+- Pages用内部診断3資産は不在。`raw/`、既存公開JSON、公開4 HTML、JRバス公開JSON、
+  作品②入力、参加者連絡、応募・BODIK、原本自動採用、内部点数公開は各0変更・0実行。
+- ローカル正本は
+  `evidence/20260817_work1_award_scorecard_recalibration_3_local_acceptance.json`。
+  判定は`LOCAL_GO`。次は実装commitをmainへpushし、同一HEADのCI・Pages・artifact・公開非露出を受け入れる。
+
 ## 2026-08-15 WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 ローカル受入
 
 - 受入済みJRバス中国GTFSを、既存2フィード比較から分離した広域フィード全体の独立指標として実装。

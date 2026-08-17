@@ -26,24 +26,29 @@ class AwardScorecardRecalibrationTest(unittest.TestCase):
         }
 
     def test_recalibration_date_and_supported_score_change(self):
-        self.assertEqual("2026-08-14", self.scorecard["evaluation_as_of"])
-        novelty = {
+        self.assertEqual("2026-08-17", self.scorecard["evaluation_as_of"])
+        challenge = {
             item["subcriterion_id"]: item
             for item in self.criteria["challenge"]["subcriteria"]
-        }["novelty"]
+        }
+        novelty = challenge["novelty"]
         self.assertEqual(4.0, novelty["score"])
         self.assertIn("国内3サービス・6一次資料", novelty["rationale"])
         self.assertIn("唯一性は主張しない", novelty["rationale"])
+        output = challenge["output_comprehensiveness"]
+        self.assertEqual(4.0, output["score"])
+        self.assertIn("広域1フィードを条件分離して独立表示", output["rationale"])
+        self.assertNotIn("採用済みJRバス中国GTFSの供給指標化", output["missing_evidence"])
 
     def test_criteria_and_overall_stay_recomputable_without_score_inflation(self):
         for criterion in self.criteria.values():
             sub_scores = [item["score"] for item in criterion["subcriteria"]]
             self.assertEqual(round_half(sum(sub_scores) / len(sub_scores)), criterion["score"])
         self.assertEqual(
-            {"utility": 3.5, "completeness": 4.5, "challenge": 3.0},
+            {"utility": 3.5, "completeness": 4.5, "challenge": 3.5},
             {key: value["score"] for key, value in self.criteria.items()},
         )
-        self.assertEqual(73.3, self.scorecard["overall"]["comparison_index"])
+        self.assertEqual(76.7, self.scorecard["overall"]["comparison_index"])
 
     def test_missing_user_and_actor_evidence_remain_unscored(self):
         utility = {
@@ -64,13 +69,17 @@ class AwardScorecardRecalibrationTest(unittest.TestCase):
         self.assertEqual(
             [
                 "remote_user_evaluation",
-                "jrbus_supply_metrics_extension",
                 "independent_reproduction_drill",
+                "remaining_public_gtfs_supply_measurement",
             ],
             [item["improvement_id"] for item in improvements],
         )
-        self.assertEqual([True, False, False], [item["external_dependency"] for item in improvements])
-        completed = ["similar_service_benchmark", "official_gtfs_coverage_extension"]
+        self.assertEqual([True, False, True], [item["external_dependency"] for item in improvements])
+        completed = [
+            "similar_service_benchmark",
+            "official_gtfs_coverage_extension",
+            "jrbus_supply_metrics_extension",
+        ]
         self.assertTrue(
             all(item not in [action["improvement_id"] for action in improvements] for item in completed)
         )
@@ -83,7 +92,7 @@ class AwardScorecardRecalibrationTest(unittest.TestCase):
             path.read_text(encoding="utf-8")
             for path in (REPO_ROOT / "docs").glob("*.html")
         )
-        for marker in ("実用度3.5", "完成度4.5", "挑戦度3.0", "総合比較指数73.3", SCORECARD_PATH.name):
+        for marker in ("実用度3.5", "完成度4.5", "挑戦度3.5", "総合比較指数76.7", SCORECARD_PATH.name):
             self.assertNotIn(marker, combined)
 
     def test_release_attestation_protects_the_current_internal_scorecard(self):

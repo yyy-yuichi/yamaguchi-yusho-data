@@ -88,16 +88,16 @@ class AwardComparisonContractTest(unittest.TestCase):
         scores = [item["score"] for item in self.scorecard["criteria"]]
         expected = round(sum(scores) / len(scores) / 5 * 100, 1)
         self.assertEqual(expected, self.scorecard["overall"]["comparison_index"])
-        self.assertEqual(73.3, expected)
+        self.assertEqual(76.7, expected)
 
     def test_recalibration_updates_only_supported_scores_and_scope_counts(self):
         self.assertEqual(
-            "work1-award-scorecard-recalibration-2-2026-08-14",
+            "work1-award-scorecard-recalibration-3-2026-08-17",
             self.scorecard["scorecard_id"],
         )
         criteria = {item["criterion_id"]: item for item in self.scorecard["criteria"]}
         self.assertEqual(
-            {"utility": 3.5, "completeness": 4.5, "challenge": 3.0},
+            {"utility": 3.5, "completeness": 4.5, "challenge": 3.5},
             {key: value["score"] for key, value in criteria.items()},
         )
         utility = {
@@ -114,8 +114,9 @@ class AwardComparisonContractTest(unittest.TestCase):
             "19/19市町",
             "公開取得可能7",
             "受入原本は3フィード",
-            "共通条件の供給実測は2フィード",
-            "総合比較値は73.3",
+            "JRバス中国の広域フィード",
+            "既存2フィードへ混在させず",
+            "総合比較値は76.7",
         ):
             self.assertIn(marker, encoded)
 
@@ -126,7 +127,7 @@ class AwardComparisonContractTest(unittest.TestCase):
             scored_items.extend(criterion["subcriteria"])
         for item in scored_items:
             self.assertIn(item["confidence"], {"high", "medium", "low"})
-            self.assertEqual("2026-08-14", item["as_of"])
+            self.assertEqual("2026-08-17", item["as_of"])
             self.assertTrue(item["rationale"].strip())
             self.assertTrue(item["evidence"])
             self.assertTrue(item["missing_evidence"])
@@ -167,13 +168,13 @@ class AwardComparisonContractTest(unittest.TestCase):
         self.assertEqual(
             [
                 "remote_user_evaluation",
-                "jrbus_supply_metrics_extension",
                 "independent_reproduction_drill",
+                "remaining_public_gtfs_supply_measurement",
             ],
             [item["improvement_id"] for item in improvements],
         )
         self.assertEqual(
-            [True, False, False],
+            [True, False, True],
             [item["external_dependency"] for item in improvements],
         )
         self.assertEqual(3, len({item["improvement_id"] for item in improvements}))
@@ -207,7 +208,7 @@ class AwardComparisonContractTest(unittest.TestCase):
             "award-comparison.html",
             "work1_award_scorecard.json",
             "受賞準備スコアカード",
-            "総合比較指数73.3",
+            "総合比較指数76.7",
             "実用度3.5",
         ):
             self.assertNotIn(marker, combined)
@@ -254,7 +255,7 @@ class AwardComparisonContractTest(unittest.TestCase):
             self.assertNotIn("実用性", current_record, str(path))
             self.assertNotIn("チャレンジ性", current_record, str(path))
         self.assertEqual(
-            "7dd51a118c5a32053c6c40d584f3c769bf8bfcea8bf24eda812bcf57ffeedea3",
+            "6a4c1e16e10835ced55243dcdb0c418045f0b5f44e78c1cd7d295aacfc931131",
             hashlib.sha256((DATA_DIR / "work1_award_scorecard.json").read_bytes()).hexdigest(),
         )
 

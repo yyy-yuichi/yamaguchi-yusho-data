@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
-  "scorecard_id": "work1-award-scorecard-recalibration-2-2026-08-14",
+  "scorecard_id": "work1-award-scorecard-recalibration-3-2026-08-17",
   "work_id": "WORK1",
   "work_title": "山口県 市町別の登録供給ビュー",
-  "evaluation_as_of": "2026-08-14",
+  "evaluation_as_of": "2026-08-17",
   "evidence_boundary": {
     "repository_id": "yyy-yuichi/yamaguchi-yusho-data",
     "other_work_input_count": 0,
@@ -67,7 +67,7 @@
         "従来手順との所要時間または見落とし件数の比較",
         "公開情報の確認後に実際の調査・協議へつながった事例"
       ],
-      "as_of": "2026-08-14",
+      "as_of": "2026-08-17",
       "subcriteria": [
         {
           "subcriterion_id": "problem_value_clarity",
@@ -84,7 +84,7 @@
             }
           ],
           "missing_evidence": ["課題の頻度や作業負担を示す外部調査"],
-          "as_of": "2026-08-14"
+          "as_of": "2026-08-17"
         },
         {
           "subcriterion_id": "method_fit",
@@ -107,7 +107,7 @@
             }
           ],
           "missing_evidence": ["実務タスクに対する方法選択の第三者評価"],
-          "as_of": "2026-08-14"
+          "as_of": "2026-08-17"
         },
         {
           "subcriterion_id": "user_value_evidence",
@@ -124,7 +124,7 @@
             }
           ],
           "missing_evidence": ["想定利用者の観察・インタビュー・アンケート", "実務上の時間短縮または判断改善"],
-          "as_of": "2026-08-14"
+          "as_of": "2026-08-17"
         }
       ]
     },
@@ -156,7 +156,7 @@
         "現在取得できない、または一般配布されないGTFS本体の検証",
         "公開後の利用者環境での長期可用性実績"
       ],
-      "as_of": "2026-08-14",
+      "as_of": "2026-08-17",
       "subcriteria": [
         {
           "subcriterion_id": "public_implementation",
@@ -179,7 +179,7 @@
             }
           ],
           "missing_evidence": ["支援技術利用者を含む外部ユーザー受入"],
-          "as_of": "2026-08-14"
+          "as_of": "2026-08-17"
         },
         {
           "subcriterion_id": "reproducibility_verifiability",
@@ -202,7 +202,7 @@
             }
           ],
           "missing_evidence": ["別実装者がゼロから再生成した独立再現記録"],
-          "as_of": "2026-08-14"
+          "as_of": "2026-08-17"
         },
         {
           "subcriterion_id": "scope_reliability",
@@ -225,7 +225,7 @@
             }
           ],
           "missing_evidence": ["認証が必要または一般配布されないGTFS本体の検証", "公開取得可能7市に関係する全フィードの供給実測", "県内全交通モードの範囲定義"],
-          "as_of": "2026-08-14"
+          "as_of": "2026-08-17"
         }
       ]
     },
@@ -235,9 +235,9 @@
       "official_definition": "目的や方法の新規性、アウトプットの網羅性、期間的な持続・継続性、関係アクターの多様性等をチャレンジ要素として評価",
       "official_weight": null,
       "comparison_weight": 0.3333333333333333,
-      "score": 3.0,
+      "score": 3.5,
       "confidence": "medium",
-      "rationale": "異なる制度資料とGTFSを、日付と限界を失わず接続し、市町別確認メモと継続照合まで実装した。国内3サービス・6一次資料との限定比較で前段の確認層という役割差を示し、JRバス中国の公式GTFS 1件を追加受入して19市町の状態を解決した。一方、追加原本の供給実測は未着手で、関係アクターの多様性も弱い。",
+      "rationale": "異なる制度資料とGTFSを、日付と限界を失わず接続し、市町別確認メモと継続照合まで実装した。国内3サービス・6一次資料との限定比較で前段の確認層という役割差を示し、JRバス中国の広域フィードを既存2フィードへ混ぜず独立測定した。一方、利用者実証、共同設計、公開取得可能な全フィードの供給実測は未達である。",
       "evidence": [
         {
           "claim": "登録供給と予定運行を同じ入口で示し、異なる単位を順位へ丸めない。",
@@ -256,14 +256,20 @@
           "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/entry.html#benchmark-title",
           "evidence_type": "public_verification",
           "as_of": "2026-08-13"
+        },
+        {
+          "claim": "JRバス中国の広域フィードを既存2フィード比較へ混ぜず、構造3指標と7実日付の予定運行便を独立公開している。",
+          "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/data/jrbus_chugoku_supply_metrics.json",
+          "evidence_type": "public_data",
+          "as_of": "2026-08-17"
         }
       ],
       "missing_evidence": [
         "今回の3サービスを越える追加比較または第三者による位置づけ評価",
-        "採用済みJRバス中国を含むGTFS実測対象の拡張",
+        "公開取得可能7市に関係する全フィードの供給実測",
         "行政・事業者・市民等との共同設計または継続運用"
       ],
-      "as_of": "2026-08-14",
+      "as_of": "2026-08-17",
       "subcriteria": [
         {
           "subcriterion_id": "novelty",
@@ -286,24 +292,30 @@
             }
           ],
           "missing_evidence": ["今回の3サービスを越える追加比較", "第三者による新規性・位置づけ評価"],
-          "as_of": "2026-08-14"
+          "as_of": "2026-08-17"
         },
         {
           "subcriterion_id": "output_comprehensiveness",
           "label": "アウトプットの網羅性",
-          "score": 3.5,
+          "score": 4.0,
           "confidence": "high",
-          "rationale": "登録簿は山口県分4PDFと19市町ビューを備え、公式GTFS関係8件を19/19市町の4状態へ整理し、受入原本を3フィードへ拡張した。ただし共通条件の供給実測は2フィードで、認証・一般非配布・取得不能の本体は未取得である。",
+          "rationale": "登録簿は山口県分4PDFと19市町ビューを備え、公式GTFS関係8件を19/19市町の4状態へ整理した。供給実測は共通条件の2フィードに加え、JRバス中国の広域1フィードを条件分離して独立表示した。ただし公開取得可能7市に関係する全フィード、認証・一般非配布・取得不能の本体、県内全交通モードは未収録である。",
           "evidence": [
             {
               "claim": "公開画面と機械可読データが19市町の4状態、公式フィード記録8件、公開取得可能7市を示す。",
               "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/data/municipality_gtfs.json",
               "evidence_type": "public_data",
               "as_of": "2026-08-13"
+            },
+            {
+              "claim": "受入済みJRバス中国GTFSを広域フィード全体として独立測定し、既存2フィードの供給指標へ混在させず公開している。",
+              "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/data/jrbus_chugoku_supply_metrics.json",
+              "evidence_type": "public_data",
+              "as_of": "2026-08-17"
             }
           ],
-          "missing_evidence": ["採用済みJRバス中国GTFSの供給指標化", "認証・一般非配布・取得不能原本の未取得範囲", "県内全交通事業者・モードの網羅"],
-          "as_of": "2026-08-14"
+          "missing_evidence": ["公開取得可能7市に関係する全フィードの供給実測", "認証・一般非配布・取得不能原本の未取得範囲", "県内全交通事業者・モードの網羅"],
+          "as_of": "2026-08-17"
         },
         {
           "subcriterion_id": "continuity",
@@ -320,7 +332,7 @@
             }
           ],
           "missing_evidence": ["複数月にわたる運用履歴", "保守担当の冗長化"],
-          "as_of": "2026-08-14"
+          "as_of": "2026-08-17"
         },
         {
           "subcriterion_id": "actor_diversity",
@@ -337,16 +349,16 @@
             }
           ],
           "missing_evidence": ["行政・交通事業者・市民との共同設計", "外部組織による継続運用または再利用"],
-          "as_of": "2026-08-14"
+          "as_of": "2026-08-17"
         }
       ]
     }
   ],
   "overall": {
-    "comparison_index": 73.3,
+    "comparison_index": 76.7,
     "max_index": 100.0,
     "confidence": "medium",
-    "interpretation": "公式GTFS関係を6/19市町から19/19市町へ拡張し、JRバス中国の公式原本1件を追加受入した根拠から、目的範囲の充足と信頼性を3.5から4.0、アウトプットの網羅性を3.0から3.5へ更新した。利用者実証と関係アクター参加は未達のため、各基準は3.5 / 4.5 / 3.0、総合比較値は73.3とする。"
+    "interpretation": "19/19市町の公式GTFS状態整理に加え、JRバス中国の広域フィードを既存2フィードへ混在させず独立測定した根拠から、アウトプットの網羅性を3.5から4.0へ更新した。第三者による方法評価、利用者実証、関係アクター参加は未達のため、各基準は3.5 / 4.5 / 3.5、総合比較値は76.7とする。"
   },
   "special_awards": [
     {
@@ -452,17 +464,6 @@
     },
     {
       "priority": 2,
-      "improvement_id": "jrbus_supply_metrics_extension",
-      "title": "採用済みJRバス中国GTFSの独立供給指標化",
-      "why": "公式原本と山口県関係4路線は受入済みだが、広域フィードのため既存2フィードの同一週比較へ混ぜず、供給指標は未測定のままである。比較条件を分離した独立表示でGTFS活用範囲を広げる余地がある。",
-      "target_subcriteria": ["output_comprehensiveness", "method_fit"],
-      "expected_index_gain_range": [0.0, 3.3],
-      "effort": "medium",
-      "external_dependency": false,
-      "acceptance_evidence": ["JRバス中国フィードの指標定義と対象範囲", "既存2フィード比較へ混在させない公開表示", "決定的再生成・根拠・限界・回帰テスト"]
-    },
-    {
-      "priority": 3,
       "improvement_id": "independent_reproduction_drill",
       "title": "第三者手順を想定したゼロからの再生成・復旧訓練",
       "why": "処理コード、検証記録、同一HEADの外部attestationはあるが、クリーン環境で最初から生成し、差異や失敗から復旧した独立再現記録がない。",
@@ -471,6 +472,17 @@
       "effort": "medium",
       "external_dependency": false,
       "acceptance_evidence": ["クリーン環境からの再生成手順と実行記録", "生成物のSHA-256または意味内容比較", "想定失敗と復旧結果を含む公開検証記録"]
+    },
+    {
+      "priority": 3,
+      "improvement_id": "remaining_public_gtfs_supply_measurement",
+      "title": "公開取得可能な未測定公式GTFSの受入・供給実測",
+      "why": "供給値は共通条件の2フィードとJRバス中国の広域1フィードまで拡張したが、公開取得可能7市に関係する全フィードを測定したわけではない。原本の本人受入を前提に、比較条件を定義して未測定範囲を縮める余地がある。",
+      "target_subcriteria": ["scope_reliability", "output_comprehensiveness"],
+      "expected_index_gain_range": [0.0, 3.3],
+      "effort": "medium",
+      "external_dependency": true,
+      "acceptance_evidence": ["公式配布URLと取得時点の原本同一性", "本人承認による原本受入記録", "比較可能または独立条件の指標定義・公開表示・回帰テスト"]
     }
   ],
   "links": [

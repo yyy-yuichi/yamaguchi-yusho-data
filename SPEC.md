@@ -1,6 +1,6 @@
-# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価 / WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況拡張 / WORK1-AWARD-SCORECARD-RECALIBRATION-2 拡張成果再評価
+# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価 / WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況拡張 / WORK1-AWARD-SCORECARD-RECALIBRATION-2 拡張成果再評価 / WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 広域GTFS独立供給指標 / WORK1-AWARD-SCORECARD-RECALIBRATION-3 独立指標成果再評価
 
-**rev.5.22 / 2026-08-14**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34、rev.5.20→rev.5.21 は §10.35、rev.5.21→rev.5.22 は §10.36。消した記述はそこに全部書いてある）
+**rev.5.23 / 2026-08-17**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34、rev.5.20→rev.5.21 は §10.35、rev.5.21→rev.5.22 は §10.36、rev.5.22→rev.5.23 は §10.37。消した記述はそこに全部書いてある）
 
 UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下に `SPEC.md` として置き、Claude Code に読ませる。**
 
@@ -13,7 +13,7 @@ UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下
 §29は受け入れ済みWORK1-SIMILAR-SERVICE-BENCHMARK-1、§30は受け入れ済み
 WORK1-PRECONSULTATION-HANDOFF-1、§31はWORK1-AWARD-SCORECARD-RECALIBRATION-1、§32は
 WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1、§33はWORK1-AWARD-SCORECARD-RECALIBRATION-2、§34は
-WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1の実行仕様である。
+WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1、§35はWORK1-AWARD-SCORECARD-RECALIBRATION-3の実行仕様である。
 プロジェクトのゴール、終了条件、確定方針は`run_record.md` §0.5 を正とし、
 このファイルがそれを上書きしてはならない。
 
@@ -1198,6 +1198,13 @@ JRバス中国の公式GTFS原本1件を追加受入した成果だけを内部�
 ユーザー承認を受け、受入済みJRバス中国GTFSを既存2フィードの同一週比較へ混ぜず、広域フィード
 全体の独立指標として測定する。山口県関係4路線は関係根拠として保持するが、4市の供給量へ転用しない。
 新しい公開JSONと独立表示は、原本・既存比較JSON・内部スコアカードを変更せず追加する。
+
+### 10.37 rev.5.22 → rev.5.23
+
+固定HEAD `a573e78adc0019fb3d9d410813c306267c3a350a`のJRバス中国独立供給指標化とread-only監査はGOだった。
+既存2フィードへ混在させず広域1フィードを独立測定した成果だけを内部診断へ反映し、第三者評価、
+利用者実証、共同設計、未取得原本を達成扱いにしない。完了済みJRバス指標化を改善候補から除外し、
+参加者連絡や新規原本受入を必要としない独立再生成・復旧訓練を次の自走可能な候補とする。
 
 ---
 
@@ -3197,6 +3204,77 @@ UDC概要フォーム、本応募、BODIK登録、外部サービスへのデー
 - 国内唯一、優位、受賞確率、公式点として内部値を使う必要が生じる
 - 公開HTML、原本、既存公開値、公式基準、scope境界の変更が必要になる
 - 作品②、参加者連絡、応募・登録、履歴書換え、Release削除が必要になる
+
+---
+
+## 35. WORK1-AWARD-SCORECARD-RECALIBRATION-3
+
+### 35.1 段階ゴール
+
+受入済みJRバス中国の独立供給指標化とread-only監査GOを、公開しない内部受賞スコアカードへ
+同一基準で反映する。点数上昇を目的にせず、広域1フィードの独立測定、既存2フィードとの分離、
+外部利用者証拠0件、関係アクター参加0件を別々に評価する。完了済み施策を改善候補から除外し、
+次に自走でき、かつ受賞寄与を検証できる一作業を選べる状態にする。
+
+### 35.2 再採点入力と規則
+
+再評価日は2026-08-17、基準HEADは`a573e78adc0019fb3d9d410813c306267c3a350a`とする。
+
+- `WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1`のローカル・公開受入GOと同基準HEADのread-only監査GO
+- JRバス中国GTFS原本1件、構造3指標、7実日付436 / 436 / 436 / 436 / 436 / 323 / 242便
+- 既存2フィードJSONへ非混入、内部・公開JRバスJSONのバイト一致、公開5資産の受入
+- 既存のUDC2026公式基準、共通0.5刻み、3基準等重み、四捨五入規則
+
+JRバス中国の供給指標化はアウトプット範囲へ反映する。広域フィードを既存2フィード比較や市町値へ
+混在させなかったことは方法の妥当性の根拠へ追加するが、第三者評価がないため同項目の点数は上げない。
+利用者実証、共同設計、未取得・未受入原本、県内全交通モードを達成扱いにしない。
+
+### 35.3 再採点結果の契約
+
+- `output_comprehensiveness`は3.5から4.0へ更新し、`method_fit`は4.5を維持する。
+- 実用度3.5、完成度4.5を維持し、挑戦度は3.0から3.5へ更新する。
+- 総合比較値は`mean(3.5, 4.5, 3.5) / 5 * 100`を小数1桁へ丸めた76.7とする。
+- `user_value_evidence` 2.0、`actor_diversity` 1.0、`scope_reliability` 4.0は据え置く。
+- 完了済みの`jrbus_supply_metrics_extension`を改善候補から除外する。
+- 利用者検証は最大不足かつ人間承認ゲートとして残す。
+- 自走可能な最上位候補を`independent_reproduction_drill`とし、原本受入ゲートを伴う
+  `remaining_public_gtfs_supply_measurement`と区別する。
+
+### 35.4 公開分離と変更範囲
+
+変更・追加できるのは次だけとする。
+
+- `SPEC.md`、`run_record.md`、`PROGRESS.md`、`verification.md`
+- `data/work1_award_scorecard.json`
+- `src/build_release_attestation.py`
+- `tests/test_award_comparison.py`、`tests/test_award_scorecard_recalibration.py`、
+  `tests/test_release_attestation.py`
+- `evidence/20260817_work1_award_scorecard_recalibration_3_*`
+
+`docs/award-comparison.html`、`docs/data/work1_award_scorecard.json`、
+`docs/data/award_scorecard_schema.json`は不在を維持し、公開HTMLへ内部点数、順位、受賞確率、内部JSON導線を
+追加しない。`raw/`7原本、既存公開JSON・CSV・計算値、公開4 HTMLとJRバス公開JSON、公式基準、
+scope境界は変更しない。作品②を入力にせず、参加者連絡、UDC概要フォーム、本応募、BODIK登録を行わない。
+
+### 35.5 完了条件
+
+1. 再評価日、入力証拠、変更・据置理由、未達証拠を内部JSONから追跡できる。
+2. 全小項目から3基準と総合値を再計算でき、3.5 / 4.5 / 3.5、総合76.7になる。
+3. JRバス供給指標が未測定という旧記述を解消し、完了済み施策を改善候補から除外する。
+4. 利用者検証・新規原本受入の人間承認ゲートと、自走可能な独立再生成訓練を区別する。
+5. Pages用内部診断3資産が不在で、公開HTMLに内部点数・内部JSON導線がない。
+6. 7原本、既存公開JSON・計算値、公開4 HTMLとJRバス公開JSON、公式基準が基準HEADと一致する。
+7. 専用テストと全unittest、scope checker、`git diff --check`、旧SPEC網羅検査が成功する。
+8. commit・main push後、scope lock、Pages、release attestationが同一HEADでsuccess・GOになる。
+9. 公開4 HTMLとJRバスJSONがcommit bytesと一致し、内部診断3 URLが404を維持する。
+10. 次段階をread-onlyの`WORK1-AWARD-SCORECARD-RECALIBRATION-3-AUDIT-1`だけに定義し、開始しない。
+
+### 35.6 停止条件
+
+- 利用者実証、共同設計、未取得原本、第三者再現を証拠なしに達成扱いする必要が生じる
+- 国内唯一、優位、受賞確率、公式点として内部値を使う必要が生じる
+- 公開HTML、原本、既存公開値、公式基準、scope境界の変更が必要になる
+- 作品②、参加者連絡、新規原本受入、応募・登録、履歴書換え、Release削除が必要になる
 
 ---
 

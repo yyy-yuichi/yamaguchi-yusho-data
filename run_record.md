@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-14 (rev.68) / 状態: WORK1-AWARD-SCORECARD-RECALIBRATION-2 公開受入GO / 次: read-only独立監査
+最終更新: 2026-08-17 (rev.71) / 状態: WORK1-AWARD-SCORECARD-RECALIBRATION-3 ローカル受入GO / 次: 公開受入
 
 ## 0. このファイルについて
 
@@ -1364,3 +1364,24 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - `WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1`をGOとする。次段階は変更を伴わない
   `WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-AUDIT-1`だけとし、開始しない。この記録を含む最終HEAD自身を
   同じ3 workflowで再確認し、後続run IDはrepoへ再書込みしない。
+
+### 改訂点（rev.71）
+
+- 固定HEAD `a573e78adc0019fb3d9d410813c306267c3a350a`の
+  `WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-AUDIT-1`はread-only監査としてGO。P0 0件、P1 0件で、
+  原本・既存2フィード・公開配信にドリフトはなかった。
+- 本人承認後、JRバス中国の広域1フィードを既存2フィードへ混在させず独立公開した成果だけを
+  内部診断へ反映した。`output_comprehensiveness`は3.5→4.0、`method_fit`は4.5据え置き。
+- 実用度3.5、完成度4.5を維持し、挑戦度3.0→3.5、総合比較値73.3→76.7とした。
+  利用者価値2.0、関係アクター1.0、外部利用者証拠0件、参加者連絡0件は据え置いた。
+- 完了済み`jrbus_supply_metrics_extension`を改善候補から除外し、利用者検証は人間承認ゲート、
+  自走可能な最上位候補を`independent_reproduction_drill`とした。新規原本受入候補は別ゲートである。
+- 内部正本は27,275 bytes、SHA256
+  `6a4c1e16e10835ced55243dcdb0c418045f0b5f44e78c1cd7d295aacfc931131`。
+  専用21 / 21、全180 / 180、旧SPEC 1,065トークン欠落0、scope checker、
+  `git diff --check`、秘密情報定型検査0件はsuccess。
+- 原本、GTFS ZIP、既存公開JSON、公開4 HTML、JRバス公開JSON、内部診断Pages資産、作品②入力、
+  参加者連絡、応募・BODIKは各0変更・0実行。ローカル正本は
+  `evidence/20260817_work1_award_scorecard_recalibration_3_local_acceptance.json`。
+- 判定は`LOCAL_GO`。次は実装・ローカル受入記録をcommitしてmainへpushし、同一SHAのscope lock、
+  Pages、release attestation、artifact、公開bytes、内部3 URLの404を受け入れる。

@@ -2564,6 +2564,27 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 この受入記録を含む最終HEAD自身をscope lock、Pages、release attestationで再確認し、後続run IDは
 外部正本としてrepoへ再書込みしない。
 
+## WORK1-AWARD-SCORECARD-RECALIBRATION-3 ローカル検証（2026-08-17）
+
+| 検証 | 結果 |
+|---|---|
+| 基準HEAD | `a573e78adc0019fb3d9d410813c306267c3a350a`、JRバス独立指標化監査GO、P0 0 / P1 0 |
+| 根拠差分 | 広域1フィードの構造3指標・7実日付を既存2フィードへ混在させず独立公開 |
+| 小項目更新 | `output_comprehensiveness` 3.5→4.0、`method_fit` 4.5据え置き |
+| 3基準・総合 | 実用度3.5、完成度4.5、挑戦度3.5、総合76.7 |
+| 据置不足 | 利用者価値2.0、関係アクター1.0、第三者方法評価0、参加者連絡0 |
+| 改善候補 | 利用者検証は人間承認ゲート。自走候補1位は`independent_reproduction_drill` |
+| 内部正本 | 27,275 bytes、SHA256 `6a4c1e16e10835ced55243dcdb0c418045f0b5f44e78c1cd7d295aacfc931131` |
+| 公開分離 | Pages用内部診断3資産不在、公開HTMLの内部点数・内部JSON導線0 |
+| 不変対象 | 7原本、既存公開JSON・計算値、公開4 HTML、JRバス公開JSONが基準HEADと一致 |
+| 専用回帰 | 21 / 21 success |
+| 全回帰 | 180件検出、180 / 180 success、終了コード0 |
+| 旧SPEC網羅 | 基準HEADの1,065トークン、欠落0 |
+| scope・差分 | `WORK1_SCOPE_ALLOWED`、`git diff --check` success、秘密情報定型0件 |
+| 境界 | 作品②入力・参加者連絡・応募・BODIK・原本自動採用・公開値変更各0 |
+| 正本 | `evidence/20260817_work1_award_scorecard_recalibration_3_local_acceptance.json` |
+| 判定 | `LOCAL_GO`。同一最終HEADのCI・Pages・artifact・公開非露出受入へ進む |
+
 ## 2026-08-15 WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 ローカル検証
 
 | 検証 | 結果 |
