@@ -2624,6 +2624,24 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   `evidence/20260817_work1_independent_reproduction_drill_local_acceptance.json`。
   判定は`LOCAL_GO`。次は実装commitをmainへpushし、専用CI・scope lock・Pages・attestationを受け入れる。
 
+### 公開受入GO
+
+- 実装commit `67ae2331c2ba534b07792a051de274764847583b`とOS差修正commit
+  `8bc365851400ff9d77337530efd50bbd0cacf92b`をmainへ適用した。
+- 最終HEADの専用reproduction run `32000484380`、scope lock `32000484357`、Pages
+  `32000484004`、release attestation `32000534195`は同一SHAで全success。
+- reproduction artifact `9278207726`はGO。Ubuntu / Python 3.12で原本7 / 7、再作成17 / 17、
+  正規化一致17 / 17、完全byte一致17 / 17、欠損検知・復旧success、全188 / 188、一時領域削除、errors 0。
+- release artifact `9278233578`はGO、188 / 188、原本7 / 7、公開5 / 5、保護内部評価の期待値・
+  固定ハッシュ一致、Pages copy不在、errors 0。
+- 公開4 HTMLとJRバス供給指標JSONはHTTP 200かつcommit bytes一致。内部診断3 URLは404、
+  公開HTMLの内部点数・内部JSONマーカーは0件。
+- 原本、GTFS ZIP、公開値、内部評価、作品②入力、参加者連絡、応募・BODIKは各0変更・0実行。
+  公開正本は`evidence/20260817_work1_independent_reproduction_drill_public_acceptance.json`。
+- 判定は`GO`。次段階は変更なしの
+  `WORK1-INDEPENDENT-REPRODUCTION-DRILL-AUDIT-1`だけとし、開始しない。この記録を含む最終HEAD自身を
+  同じ4 workflowで外部再確認し、後続run IDはrepoへ再書込みしない。
+
 ## 2026-08-17 WORK1-AWARD-SCORECARD-RECALIBRATION-3 ローカル受入
 
 - 固定HEAD `a573e78adc0019fb3d9d410813c306267c3a350a`のJRバス中国独立指標化監査はGO、

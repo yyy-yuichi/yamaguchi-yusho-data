@@ -2589,6 +2589,29 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 | 正本 | `evidence/20260817_work1_independent_reproduction_drill_local_acceptance.json` |
 | 判定 | `LOCAL_GO`。同一HEADの専用CI・Pages・release artifact・公開境界受入へ進む |
 
+### 公開受入
+
+| 検証 | 結果 |
+|---|---|
+| subject | `8bc365851400ff9d77337530efd50bbd0cacf92b` |
+| reproduction / scope lock / Pages / attestation | `32000484380` / `32000484357` / `32000484004` / `32000534195`、全success |
+| reproduction artifact | ID `9278207726`、digest `sha256:4591a2a18b38652a21c9c0184d9b645c86cadb1906bc58f416a6da150beb0ef5`、期限2026-11-15T06:09:20Z |
+| release artifact | ID `9278233578`、digest `sha256:8c2b83f88f6016ce14195bc0845f11596adef40638c2f1fec9ab43a5f7b15951`、期限2026-11-15T06:10:04Z |
+| reproduction decision / errors | `GO` / 0 |
+| Ubuntu再現 | 原本7 / 7、再作成17 / 17、正規化一致17 / 17、完全byte一致17 / 17 |
+| 復旧・回帰 | 欠損検知・復旧success、188 / 188、一時領域削除、正本書込み0 |
+| release decision / errors | `GO` / 0 |
+| release tests / sources / public | 188 / 188、7 / 7、5 / 5 |
+| 内部評価保護 | 期待値・固定ハッシュ一致、`pages_copy_absent=true` |
+| 公開4 HTML・JRバスJSON | HTTP 200、同commit bytes一致 |
+| 内部診断分離 | 内部診断3 URLは404、公開HTMLの内部値・導線0 |
+| 境界 | 新規原本・自動採用・公開値・内部評価・作品②・参加者連絡・応募・BODIK各0変更/0実行 |
+| 正本 | `evidence/20260817_work1_independent_reproduction_drill_public_acceptance.json` |
+| 判定 | `GO`。次段階はread-onlyの`WORK1-INDEPENDENT-REPRODUCTION-DRILL-AUDIT-1`だけ。開始しない |
+
+この受入記録を含む最終HEAD自身を専用reproduction、scope lock、Pages、release attestationで再確認し、
+後続run IDは外部正本としてrepoへ再書込みしない。
+
 ## WORK1-AWARD-SCORECARD-RECALIBRATION-3 ローカル検証（2026-08-17）
 
 | 検証 | 結果 |

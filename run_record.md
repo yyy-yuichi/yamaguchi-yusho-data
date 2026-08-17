@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-17 (rev.73) / 状態: WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 ローカル受入GO / 次: 公開受入
+最終更新: 2026-08-17 (rev.74) / 状態: WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 GO / 次: read-only監査（未開始）
 
 ## 0. このファイルについて
 
@@ -1420,3 +1420,20 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   ローカル正本は`evidence/20260817_work1_independent_reproduction_drill_local_acceptance.json`。
 - 判定は`LOCAL_GO`。次は実装commitをmainへpushし、同一SHAの専用reproduction workflow、
   scope lock、Pages、release attestation、両artifact、公開bytes、内部3 URLの404を受け入れる。
+
+### 改訂点（rev.74）
+
+- 実装commit `67ae2331c2ba534b07792a051de274764847583b`とクロスプラットフォーム修正commit
+  `8bc365851400ff9d77337530efd50bbd0cacf92b`をmainへpushした。
+- 最終HEADの専用reproduction `32000484380`、scope lock `32000484357`、Pages
+  `32000484004`、release attestation `32000534195`は同一SHAで全success。
+- reproduction artifact `9278207726`はGO。Ubuntuで原本7 / 7、17生成物の再作成・正規化・
+  完全byte一致各17 / 17、欠損検知・復旧success、全188 / 188、一時領域削除、errors 0。
+- release artifact `9278233578`もGO。188 / 188、原本7 / 7、公開5 / 5、保護内部評価の期待値・
+  固定ハッシュ一致、Pages copy不在、errors 0。
+- 公開4 HTMLとJRバス供給指標JSONはHTTP 200かつcommit bytes一致。内部診断3 URLは404、
+  公開HTMLの内部点数・内部JSONマーカーは0件。原本・公開値・内部評価の変更は0。
+- 公開正本は`evidence/20260817_work1_independent_reproduction_drill_public_acceptance.json`。
+  `WORK1-INDEPENDENT-REPRODUCTION-DRILL-1`をGOとする。
+- 次段階は変更を伴わない`WORK1-INDEPENDENT-REPRODUCTION-DRILL-AUDIT-1`だけとし、開始しない。
+  この記録commit自身を同じ4 workflowで再確認し、後続run IDはrepoへ再書込みしない。
