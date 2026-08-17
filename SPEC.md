@@ -1,6 +1,6 @@
-# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価 / WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況拡張 / WORK1-AWARD-SCORECARD-RECALIBRATION-2 拡張成果再評価 / WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 広域GTFS独立供給指標 / WORK1-AWARD-SCORECARD-RECALIBRATION-3 独立指標成果再評価 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 独立再現・復旧訓練 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1 再現判定厳格化
+# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価 / WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況拡張 / WORK1-AWARD-SCORECARD-RECALIBRATION-2 拡張成果再評価 / WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 広域GTFS独立供給指標 / WORK1-AWARD-SCORECARD-RECALIBRATION-3 独立指標成果再評価 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 独立再現・復旧訓練 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1 再現判定厳格化 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1 記録整合・最終保存
 
-**rev.5.25 / 2026-08-18**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34、rev.5.20→rev.5.21 は §10.35、rev.5.21→rev.5.22 は §10.36、rev.5.22→rev.5.23 は §10.37、rev.5.23→rev.5.24 は §10.38、rev.5.24→rev.5.25 は §10.39。消した記述はそこに全部書いてある）
+**rev.5.26 / 2026-08-18**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34、rev.5.20→rev.5.21 は §10.35、rev.5.21→rev.5.22 は §10.36、rev.5.22→rev.5.23 は §10.37、rev.5.23→rev.5.24 は §10.38、rev.5.24→rev.5.25 は §10.39、rev.5.25→rev.5.26 は §10.40。消した記述はそこに全部書いてある）
 
 UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下に `SPEC.md` として置き、Claude Code に読ませる。**
 
@@ -3193,6 +3193,61 @@ Python 3.12、`contents: read`、認証情報非保持で実行する。再生�
 - 固定依存版で生成内容・テスト・公開境界が退行する
 - 原本、公開値、内部評価、scope境界の変更が必要になる
 - 指定アカウント・Drive親フォルダを確認できない
+
+---
+
+## 38. WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1
+
+### 38.1 段階ゴール
+
+read-only監査で検出した「実作業は完了しているが、正本がDrive保存待ちのまま」というP1の
+記録不整合を解消する。作品・公開値・原本を変更せず、最終受入、Drive保存、次段階を一意にする。
+
+### 38.2 入力と変更範囲
+
+- 基準HEADは`2cbcda1422119ff774cd345f485efc0a27d3eb1f`とする。
+- 同HEADのreproduction `32062573376`、scope lock `32062573317`、Pages `32062572842`、
+  release attestation `32062648070`と、両artifactの読戻し結果を入力にする。
+- 指定Driveフォルダ`1SUaiAzx8m54CDxHLtqS_9Mwjvh9oADAX`の既存bundleと公開受入JSONを入力にする。
+- 変更できるのは`SPEC.md`、`PROGRESS.md`、`run_record.md`、`verification.md`、
+  `evidence/20260818_work1_independent_reproduction_drill_hardening_closure.json`だけとする。
+- コード、workflow、依存、7原本、`data/`、`docs/`、内部評価、公開値は変更しない。
+
+### 38.3 最終化契約
+
+1. 歴史的な公開受入JSONの`drive_save_pending=true`は書換えず、closure証拠で完了事実を後置する。
+2. closure証拠を含むcommitのSHAは、そのファイルを含むGit commitから解決する。
+3. commitをmainへpush後、専用reproduction、scope lock、Pages、release attestationを
+   同一SHAでsuccess・GOと確認する。
+4. 最終commitのbundleを`yamaguchi-yusho-data-<短縮SHA>-closure.bundle`として作成し、
+   closure証拠JSONとともに指定Driveフォルダへ新規保存して読み戻す。
+5. post-commitのrun ID、artifact ID、Drive file IDは外部サービスがcommit後に生成するため、
+   自己参照を避けてrepoへ再書込みしない。ファイル名、同一SHA、外部読戻しで結び付ける。
+
+### 38.4 完了条件
+
+1. 正本4文書とclosure証拠が最終GO、Drive保存済み、次段階未開始で一致する。
+2. 専用10 / 10、全190 / 190、旧SPEC網羅、scope checker、`git diff --check`が成功する。
+3. 変更範囲が38.2の5ファイルだけで、原本・公開値・公開資産・内部評価の差分が0件である。
+4. 最終commitをmainへpushし、同一SHAの4 workflowと両artifactを外部読戻しする。
+5. 公開5資産がcommit bytesと一致し、内部診断3 URLが404、内部マーカー0を維持する。
+6. 最終bundleが完全履歴とmainを含み、bundleとclosure証拠を指定Driveへ保存・読戻す。
+7. 次段階は変更なしの
+   `WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-AUDIT-1`だけとし、開始しない。
+
+### 38.5 停止条件
+
+- remote mainが基準HEADと異なる、または予定外の差分がある
+- 190テスト、4 workflow、artifact、公開境界のいずれかが失敗する
+- 指定Driveアカウント・フォルダ・保存bytesを確認できない
+- 原本、公開値、内部評価、他作品、外部連絡、応募操作の変更が必要になる
+
+### 10.40 rev.5.25 → rev.5.26
+
+- `WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1`を追加し、監査で検出した
+  「実作業完了と正本の保存待ち表示の不一致」を解消する終了条件を固定した。
+- post-commitの外部IDを再commitし続けない自己参照回避と、最終bundle・closure証拠の
+  Drive新規保存・読戻し規則を明文化した。
 
 ---
 

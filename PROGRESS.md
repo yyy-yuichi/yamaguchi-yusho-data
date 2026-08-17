@@ -2603,6 +2603,27 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   現行4 URLは200、削除3 URLは404。公開HTMLに旧スコアリンクは0件。
 - この記録を含む最終HEAD自身を同じ3 workflowで外部再確認する。次段階はread-only監査だけ。
 
+## 2026-08-18 WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1 GO
+
+- read-only監査はP0 0件、P1 1件、P2 0件でNO-GO。成果自体ではなく、`run_record.md`と
+  `verification.md`がDrive保存待ちを示し、歴史的な公開受入JSONに`drive_save_pending=true`が
+  残る一方、最終HEAD再受入とDrive保存は完了済みという正本の食い違いを検出した。
+- 基準HEAD `2cbcda1422119ff774cd345f485efc0a27d3eb1f`のreproduction `32062573376`、
+  scope lock `32062573317`、Pages `32062572842`、release attestation `32062648070`は
+  同一SHAで全success。再現artifact `9298673019`はstrict required、`pdfplumber` 0.11.10、
+  原本7 / 7、正規化・完全byte一致17 / 17、復旧success、190 / 190、errors 0でGO。
+- release artifact `9298717667`もGO、190 / 190、原本7 / 7、公開5 / 5、errors 0。
+  公開5資産はHTTP 200・commit bytes一致、内部診断3 URLは404、公開HTMLの内部マーカーは0件。
+- 指定Driveフォルダには検証済み`yamaguchi-yusho-data-2cbcda1.bundle`（24,666,096 bytes、
+  SHA256 `5b6aae145238827e7b646fc530cad560f3af94e9cc38e3b05c1eecd62bc220e5`）と公開受入JSONを
+  保存・読戻し済み。歴史的JSONは改変せず、本closure証拠が保存完了を後置して正本を解消する。
+- 本closure commit自身の4 workflowと最終closure bundle・JSONは、commit後に生成される外部IDを
+  repoへ再書込みせず、同一SHA・決定的ファイル名・Drive読戻しを外部最終化証拠とする。
+- 作品コード、workflow、依存、7原本、公開値、内部評価、作品②、参加者連絡、応募・BODIKの
+  変更・実行は各0。判定は`GO`。
+- 次段階は変更を伴わない
+  `WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-AUDIT-1`だけとし、開始しない。
+
 ## 2026-08-18 WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1 ローカル受入
 
 - 直前のread-only監査はP0 0件、P1 1件、P2 1件でNO-GO。Ubuntuでbyte 17 / 17の実績は

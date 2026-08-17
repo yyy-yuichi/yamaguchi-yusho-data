@@ -2564,6 +2564,27 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 この受入記録を含む最終HEAD自身をscope lock、Pages、release attestationで再確認し、後続run IDは
 外部正本としてrepoへ再書込みしない。
 
+## WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1（2026-08-18）
+
+| 検証 | 結果 |
+|---|---|
+| 監査判定 | P0 0 / P1 1 / P2 0、NO-GO。P1は実完了と正本のDrive保存待ち表示の不一致 |
+| 基準HEAD | `2cbcda1422119ff774cd345f485efc0a27d3eb1f`、local / origin / remote main一致、clean |
+| 同一HEAD workflow | reproduction `32062573376`、scope `32062573317`、Pages `32062572842`、attestation `32062648070`、全success |
+| reproduction artifact | `9298673019`、digest `sha256:2bde98b3f7f2d387e389f414512a662135ceeb922827800502cb0fff7ecee970`、GO |
+| Ubuntu再現 | strict required、`pdfplumber` 0.11.10、原本7 / 7、正規化・完全byte一致17 / 17、復旧success、190 / 190、errors 0 |
+| release artifact | `9298717667`、digest `sha256:7b6d0a34bb1c060b9aa055b4a09b8c8db09d5db69aacdcce848387d2b23fabf9`、GO |
+| release readback | 190 / 190、原本7 / 7、公開5 / 5、errors 0 |
+| 公開境界 | 公開5資産HTTP 200・commit bytes 5 / 5、内部3 URL 404、内部マーカー0 |
+| Drive account / folder | `water.2929sawa.2010@gmail.com` / `1SUaiAzx8m54CDxHLtqS_9Mwjvh9oADAX` |
+| 既存Drive bundle | file `1_LIsNPD6F7ivhp4543SgUH6cbvVdlelB`、24,666,096 bytes、SHA256 `5b6aae145238827e7b646fc530cad560f3af94e9cc38e3b05c1eecd62bc220e5`、完全履歴・mainを確認 |
+| 既存Drive JSON | file `1HmtkTdg0XsxybNxQHxjjHNhYOKq3_22w`、5,046 bytes、repo bytes一致 |
+| P1解消 | 歴史的JSONを変更せず、本closure証拠が最終GO・Drive保存完了を後置する |
+| 変更境界 | 正本5ファイルだけ。コード・workflow・依存・原本・data・docs・内部評価変更0 |
+| 自己参照回避 | closure commit後の4 workflow・最終bundle・Drive file IDは外部読戻しし、repoへ再書込みしない |
+| 正本 | `evidence/20260818_work1_independent_reproduction_drill_hardening_closure.json` |
+| 判定 | `GO`。次は`WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-AUDIT-1`だけ、未開始 |
+
 ## WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1 ローカル検証（2026-08-18）
 
 | 検証 | 結果 |

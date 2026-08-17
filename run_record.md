@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-18 (rev.76) / 状態: WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1 PUBLIC_GO / 次: 最終HEAD再受入・Drive保存
+最終更新: 2026-08-18 (rev.77) / 状態: WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1 GO / 次: 変更なしread-only監査（未開始）
 
 ## 0. このファイルについて
 
@@ -1474,3 +1474,21 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   次はこの記録commit自身を同じ4 workflowで再確認し、検証済みbundleと公開正本を指定Driveへ保存する。
 - Drive読戻し後の次段階は変更を伴わない
   `WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-AUDIT-1`だけとし、開始しない。
+
+### 改訂点（rev.77）
+
+- 直前のread-only監査はP0 0件、P1 1件、P2 0件でNO-GO。P1は、最終HEAD再受入とDrive保存が
+  実際には完了している一方、正本が`PUBLIC_GO`・Drive保存待ちのままだった記録不整合である。
+- 基準HEAD `2cbcda1422119ff774cd345f485efc0a27d3eb1f`のreproduction `32062573376`、scope lock
+  `32062573317`、Pages `32062572842`、release attestation `32062648070`は同一SHAで全success。
+  reproduction artifact `9298673019`とrelease artifact `9298717667`はいずれもGO。
+- Ubuntu再現はstrict required、`pdfplumber` 0.11.10、原本7 / 7、正規化・完全byte一致17 / 17、
+  復旧success、190 / 190、errors 0。releaseは190 / 190、原本7 / 7、公開5 / 5、errors 0。
+- 公開5資産はHTTP 200・commit bytes一致、内部診断3 URLは404、公開HTML内部マーカー0件。
+  原本、公開値、内部評価、作品②入力、参加者連絡、応募・BODIKは各0変更・0実行。
+- 指定Driveには検証済みbundleと公開受入JSONを保存・読戻し済み。歴史的公開受入JSONの
+  `drive_save_pending=true`は履歴として維持し、closure証拠で完了事実を後置した。
+- 本記録commit自身の同一HEAD 4 workflowと最終closure bundle・JSONを外部読戻しし、commit後に
+  生成されるrun ID・artifact ID・Drive file IDは自己参照を避けてrepoへ再書込みしない。
+- `WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1`をGOとする。次段階は変更なしの
+  `WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-AUDIT-1`だけとし、開始しない。

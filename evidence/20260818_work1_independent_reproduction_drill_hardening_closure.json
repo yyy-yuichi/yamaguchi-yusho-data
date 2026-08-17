@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1",
+  "evidence_type": "closure",
+  "checked_at": "2026-08-18",
+  "decision": "GO",
+  "resolved_audit_finding": {
+    "audit_decision": "NO_GO",
+    "severity_counts": {
+      "P0": 0,
+      "P1": 1,
+      "P2": 0
+    },
+    "finding": "Final same-head acceptance and Drive save were complete, but canonical records still said PUBLIC_GO and Drive save pending.",
+    "resolution": "This closure evidence supersedes the pending status without rewriting the historical public-acceptance record."
+  },
+  "verified_subject": {
+    "branch": "main",
+    "commit_sha": "2cbcda1422119ff774cd345f485efc0a27d3eb1f",
+    "local_origin_remote_match": true,
+    "worktree_clean": true
+  },
+  "github_actions": {
+    "reproduction_drill": {
+      "run_id": 32062573376,
+      "conclusion": "success",
+      "artifact_id": 9298673019,
+      "artifact_digest": "sha256:2bde98b3f7f2d387e389f414512a662135ceeb922827800502cb0fff7ecee970"
+    },
+    "scope_lock": {
+      "run_id": 32062573317,
+      "conclusion": "success"
+    },
+    "pages": {
+      "run_id": 32062572842,
+      "conclusion": "success"
+    },
+    "release_attestation": {
+      "run_id": 32062648070,
+      "conclusion": "success",
+      "artifact_id": 9298717667,
+      "artifact_digest": "sha256:7b6d0a34bb1c060b9aa055b4a09b8c8db09d5db69aacdcce848387d2b23fabf9"
+    },
+    "all_head_sha_match": true
+  },
+  "reproduction_readback": {
+    "decision": "GO",
+    "exact_byte_match_required": true,
+    "installed_pdfplumber_version": "0.11.10",
+    "accepted_sources_matched": 7,
+    "accepted_sources_total": 7,
+    "normalized_matched": 17,
+    "byte_matched": 17,
+    "targets_total": 17,
+    "recovery_success": true,
+    "tests_discovered": 190,
+    "tests_passed": 190,
+    "all_acceptance_checks_true": true,
+    "errors": 0
+  },
+  "attestation_readback": {
+    "decision": "GO",
+    "tests_discovered": 190,
+    "tests_passed": 190,
+    "accepted_source_count": 7,
+    "public_assets_matched": 5,
+    "public_assets_total": 5,
+    "errors": 0
+  },
+  "public_boundary": {
+    "http_200_assets": 5,
+    "commit_bytes_matched": 5,
+    "internal_urls_404": 3,
+    "public_internal_score_marker_hits": 0
+  },
+  "drive_readback": {
+    "account": "water.2929sawa.2010@gmail.com",
+    "folder_id": "1SUaiAzx8m54CDxHLtqS_9Mwjvh9oADAX",
+    "folder_url": "https://drive.google.com/drive/folders/1SUaiAzx8m54CDxHLtqS_9Mwjvh9oADAX",
+    "bundle": {
+      "file_id": "1_LIsNPD6F7ivhp4543SgUH6cbvVdlelB",
+      "name": "yamaguchi-yusho-data-2cbcda1.bundle",
+      "size_bytes": 24666096,
+      "sha256": "5b6aae145238827e7b646fc530cad560f3af94e9cc38e3b05c1eecd62bc220e5",
+      "complete_history_verified": true,
+      "contains_main_subject": true
+    },
+    "public_acceptance_json": {
+      "file_id": "1HmtkTdg0XsxybNxQHxjjHNhYOKq3_22w",
+      "name": "20260818_work1_independent_reproduction_drill_hardening_public_acceptance.json",
+      "size_bytes": 5046,
+      "repo_bytes_match": true
+    }
+  },
+  "record_commit_finalization_contract": {
+    "record_commit_resolution": "Use the Git commit that contains this evidence file.",
+    "required_same_head_workflows": [
+      "Work 1 independent reproduction drill",
+      "Work 1 scope lock",
+      "pages build and deployment",
+      "Work 1 release attestation"
+    ],
+    "required_workflow_conclusion": "success",
+    "required_reproduction_decision": "GO",
+    "required_release_decision": "GO",
+    "closure_bundle_name_pattern": "yamaguchi-yusho-data-<short-record-commit>-closure.bundle",
+    "closure_evidence_drive_name": "20260818_work1_independent_reproduction_drill_hardening_closure.json",
+    "drive_folder_id": "1SUaiAzx8m54CDxHLtqS_9Mwjvh9oADAX",
+    "external_generated_ids_not_recursively_committed": true
+  },
+  "boundaries": {
+    "code_changes": 0,
+    "workflow_changes": 0,
+    "dependency_changes": 0,
+    "raw_source_changes": 0,
+    "gtfs_zip_changes": 0,
+    "public_value_changes": 0,
+    "internal_score_changes": 0,
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0
+  },
+  "next_stage": "WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-AUDIT-1",
+  "next_stage_started": false,
+  "errors": []
+}
