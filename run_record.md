@@ -1349,3 +1349,18 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   `evidence/20260815_work1_jrbus_supply_metrics_local_acceptance.json`。
 - 次は実装・ローカル受入記録をcommitしてmainへpushし、同一SHAのscope lock・Pages・release
   attestation、artifact、公開bytes、内部3 URLの404を受け入れる。GO前に完了とは扱わない。
+
+### 改訂点（rev.70）
+
+- 実装commit `24f9daaa51c55c2ca7082902af33b2a4b574f12e`をmainへ適用した。scope lock
+  `31992603588`、Pages `31992603178`、release attestation `31992641885`は同一SHAで全success。
+- artifact `9275834888`はGO、180 / 180、原本7 / 7、公開5 / 5、errors 0。内部正本は
+  26,259 bytes、SHA256 `7dd51a118c5a32053c6c40d584f3c769bf8bfcea8bf24eda812bcf57ffeedea3`、
+  3基準3.5 / 4.5 / 3.0、総合73.3、Pages copy不在で一致した。
+- 公開4 HTMLと新JSONはHTTP 200かつcommit bytes一致。内部診断HTML・JSON・schemaの3 URLは
+  404を維持し、公開HTMLの内部点数・内部JSONマーカーは0件だった。
+- 公開正本は`evidence/20260817_work1_jrbus_supply_metrics_public_acceptance.json`。
+  原本、既存2フィード指標、市町値推定、作品②入力、参加者連絡、応募・BODIK、内部点数公開は各0。
+- `WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1`をGOとする。次段階は変更を伴わない
+  `WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-AUDIT-1`だけとし、開始しない。この記録を含む最終HEAD自身を
+  同じ3 workflowで再確認し、後続run IDはrepoへ再書込みしない。

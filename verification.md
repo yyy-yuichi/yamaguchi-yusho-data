@@ -2588,6 +2588,27 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 | 正本 | `evidence/20260815_work1_jrbus_supply_metrics_local_acceptance.json` |
 | 判定 | `LOCAL_GO`。同一最終HEADのCI・Pages・artifact・公開bytes受入へ進む |
 
+### 公開受入
+
+| 検証 | 結果 |
+|---|---|
+| subject | `24f9daaa51c55c2ca7082902af33b2a4b574f12e` |
+| scope lock / Pages / attestation | `31992603588` / `31992603178` / `31992641885`、全success |
+| artifact | ID `9275834888`、digest `sha256:0ef5a663ee312ab2c40bf976238f6f88cb46a420aaac9757c31d2d2d66189fa7` |
+| decision / errors | `GO` / 0 |
+| tests / sources / public | 180 / 180、7 / 7、5 / 5 |
+| JRバス指標 | 3,537 bytes、SHA256 `eac7e55b0b548f2fe69cf8ce17a03d6d7f4516edf089da362ecbfcc371c6fc05`、HTTP 200・commit bytes一致 |
+| 内部正本 | 26,259 bytes、SHA256 `7dd51a118c5a32053c6c40d584f3c769bf8bfcea8bf24eda812bcf57ffeedea3` |
+| 3基準・総合 | 実用度3.5、完成度4.5、挑戦度3.0、総合73.3 |
+| 内部診断分離 | `pages_copy_absent=true`、内部診断3 URLは404、公開HTMLの内部値・導線0 |
+| 公開4 HTML | HTTP 200、同commit bytes一致 |
+| 境界 | 原本・既存2フィード指標・市町値推定・作品②・参加者連絡・応募・BODIK・内部点数公開各0 |
+| 正本 | `evidence/20260817_work1_jrbus_supply_metrics_public_acceptance.json` |
+| 判定 | `GO`。次段階はread-onlyの`WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-AUDIT-1`だけ。開始しない |
+
+この受入記録を含む最終HEAD自身をscope lock、Pages、release attestationで再確認し、後続run IDは
+外部正本としてrepoへ再書込みしない。
+
 ## WORK1-AWARD-SCORECARD-RECALIBRATION-2 ローカル検証（2026-08-14）
 
 | 検証 | 結果 |

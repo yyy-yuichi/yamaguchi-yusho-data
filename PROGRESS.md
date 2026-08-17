@@ -2622,6 +2622,23 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   `evidence/20260815_work1_jrbus_supply_metrics_local_acceptance.json`。
   判定は`LOCAL_GO`。公開受入が成功するまで段階完了とは扱わない。
 
+### 公開受入GO
+
+- 実装commit `24f9daaa51c55c2ca7082902af33b2a4b574f12e`のscope lock `31992603588`、
+  Pages `31992603178`、release attestation `31992641885`は同一SHAで全success。
+- artifact `9275834888`はGO、180 / 180、原本7 / 7、公開5 / 5、errors 0。
+  内部正本は26,259 bytes、SHA256
+  `7dd51a118c5a32053c6c40d584f3c769bf8bfcea8bf24eda812bcf57ffeedea3`、
+  3基準3.5 / 4.5 / 3.0、総合73.3、Pages copy不在で一致した。
+- 公開4 HTMLと新しいJRバス供給指標JSONはHTTP 200・commit bytes一致。内部診断3 URLは404、
+  公開HTMLの内部点数・内部JSONマーカーは0件。
+- 原本、既存2フィード供給JSON、市町値推定、内部点数、作品②、参加者連絡、応募・BODIKは
+  各0変更・0実行。公開正本は
+  `evidence/20260817_work1_jrbus_supply_metrics_public_acceptance.json`。
+- 判定は`GO`。次段階は変更なしの
+  `WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-AUDIT-1`だけとし、開始しない。
+  この記録を含む最終HEAD自身を同じ3 workflowで外部再確認する。
+
 ## 2026-08-14 WORK1-AWARD-SCORECARD-RECALIBRATION-2 ローカル受入
 
 - 公式GTFS範囲拡張監査GO（P0 0 / P1 0 / P2 3）を入力に、内部診断を再評価した。
