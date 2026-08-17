@@ -2585,6 +2585,26 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 | 正本 | `evidence/20260818_work1_independent_reproduction_drill_hardening_local_acceptance.json` |
 | 判定 | `LOCAL_GO`。同一HEADの4 workflow・2 artifact・公開境界・Drive保存受入へ進む |
 
+### 公開受入
+
+| 検証 | 結果 |
+|---|---|
+| subject | `8cc1dd1faa5ddce55a8df13e294625c577008d07` |
+| reproduction / scope lock / Pages / attestation | `32061952130` / `32061952004` / `32061951202` / `32062034517`、全success・同一SHA |
+| reproduction artifact | ID `9298453361`、digest `sha256:83b3a9039a294da92bb548352f5252394335a2f6aec2006a8b136c08397bbaca`、期限2026-11-15T19:43:43Z |
+| release artifact | ID `9298500411`、digest `sha256:0873579a676ac970f2b34bd02b01510d711f5242e18db0d1c88aafa486bd4f0b`、期限2026-11-15T19:44:38Z |
+| strict契約 | required true、全acceptance checks true、decision GO、errors 0 |
+| Ubuntu環境 | Linux / Python 3.12.13 / `pdfplumber` 0.11.10 |
+| Ubuntu再現 | 原本7 / 7、再作成17 / 17、正規化17 / 17、完全byte 17 / 17、復旧success |
+| 再現回帰 | 190 / 190、一時領域削除、正本書込み0 |
+| release | GO、190 / 190、原本7 / 7、公開5 / 5、errors 0 |
+| 内部評価保護 | 27,275 bytes、固定SHA一致、3.5 / 4.5 / 3.5、総合76.7、Pages copy不在 |
+| 公開4 HTML・JRバスJSON | HTTP 200、同commit bytes一致 |
+| 内部診断分離 | 内部診断3 URLは404、公開HTMLの内部値・導線0 |
+| 境界 | 新規原本・自動採用・公開値・内部評価・作品②・参加者連絡・応募・BODIK各0変更/0実行 |
+| 正本 | `evidence/20260818_work1_independent_reproduction_drill_hardening_public_acceptance.json` |
+| 判定 | `PUBLIC_GO`。記録commitの同一HEAD再受入とDrive保存後に最終GOとする |
+
 ## WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 ローカル検証（2026-08-17）
 
 | 検証 | 結果 |

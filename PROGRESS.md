@@ -2620,6 +2620,23 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   `evidence/20260818_work1_independent_reproduction_drill_hardening_local_acceptance.json`。
   判定は`LOCAL_GO`。公開同一HEAD受入とDrive正本保存が成功するまで段階完了とは扱わない。
 
+### 公開受入GO
+
+- 実装commit `8cc1dd1faa5ddce55a8df13e294625c577008d07`の専用reproduction
+  `32061952130`、scope lock `32061952004`、Pages `32061951202`、release attestation
+  `32062034517`は同一SHAで全success。
+- reproduction artifact `9298453361`はstrict required、`pdfplumber` 0.11.10、原本7 / 7、
+  再作成・正規化・完全byte一致各17 / 17、復旧success、全190 / 190、全checks true、errors 0でGO。
+- release artifact `9298500411`もGO。190 / 190、原本7 / 7、公開5 / 5、保護内部評価の期待値・
+  固定ハッシュ一致、Pages copy不在、errors 0。
+- 公開4 HTMLとJRバス供給指標JSONはHTTP 200・commit bytes一致。内部診断3 URLは404、
+  公開HTMLの内部点数・内部JSONマーカーは0件。
+- 原本・GTFS ZIP・公開値・内部評価・作品②入力・参加者連絡・応募・BODIKは各0変更・0実行。
+  公開正本は
+  `evidence/20260818_work1_independent_reproduction_drill_hardening_public_acceptance.json`。
+- 次は公開記録commit自身の同一HEAD 4 workflowを再確認し、bundleと公開正本を指定Google Driveへ
+  保存・読戻す。そこまで成功した場合だけ段階を最終GOとする。
+
 ## 2026-08-17 WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 ローカル受入
 
 - 固定HEAD `69b51d0f305451de94d9d8f7c04ab755ea13176e`の再採点監査はread-onlyでGO、

@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-18 (rev.75) / 状態: WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1 LOCAL_GO / 次: commit・公開受入
+最終更新: 2026-08-18 (rev.76) / 状態: WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1 PUBLIC_GO / 次: 最終HEAD再受入・Drive保存
 
 ## 0. このファイルについて
 
@@ -1456,3 +1456,21 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   `evidence/20260818_work1_independent_reproduction_drill_hardening_local_acceptance.json`。
 - 判定は`LOCAL_GO`。次は実装commitをmainへpushし、同一HEADの専用reproduction、scope lock、
   Pages、release attestation、両artifact、公開bytes、内部3 URLの404を受け入れる。
+
+### 改訂点（rev.76）
+
+- 実装commit `8cc1dd1faa5ddce55a8df13e294625c577008d07`をmainへpushした。同一HEADの専用reproduction
+  `32061952130`、scope lock `32061952004`、Pages `32061951202`、release attestation
+  `32062034517`は全success。
+- reproduction artifact `9298453361`はGO。Ubuntu / Python 3.12.13でstrict required、
+  `pdfplumber` 0.11.10、原本7 / 7、再作成・正規化・完全byte一致各17 / 17、復旧success、
+  全190 / 190、全acceptance checks true、一時領域削除、errors 0。
+- release artifact `9298500411`もGO。190 / 190、原本7 / 7、公開5 / 5、保護内部評価の期待値・
+  固定ハッシュ一致、Pages copy不在、errors 0。
+- 公開4 HTMLとJRバス供給指標JSONはHTTP 200かつcommit bytes一致。内部診断3 URLは404、
+  公開HTMLの内部点数・内部JSONマーカーは0件。原本・公開値・内部評価の変更は0。
+- 公開正本は
+  `evidence/20260818_work1_independent_reproduction_drill_hardening_public_acceptance.json`。
+  次はこの記録commit自身を同じ4 workflowで再確認し、検証済みbundleと公開正本を指定Driveへ保存する。
+- Drive読戻し後の次段階は変更を伴わない
+  `WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-AUDIT-1`だけとし、開始しない。

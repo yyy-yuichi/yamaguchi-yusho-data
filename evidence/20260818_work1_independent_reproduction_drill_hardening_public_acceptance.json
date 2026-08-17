@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1",
+  "evidence_type": "public_acceptance",
+  "checked_at": "2026-08-18",
+  "decision": "PUBLIC_GO",
+  "subject": {
+    "branch": "main",
+    "commit_sha": "8cc1dd1faa5ddce55a8df13e294625c577008d07"
+  },
+  "github_actions": {
+    "reproduction_drill": {
+      "run_id": 32061952130,
+      "conclusion": "success",
+      "head_sha": "8cc1dd1faa5ddce55a8df13e294625c577008d07",
+      "artifact_id": 9298453361,
+      "artifact_name": "work1-reproduction-drill-8cc1dd1faa5ddce55a8df13e294625c577008d07",
+      "artifact_size_bytes": 3361,
+      "artifact_digest": "sha256:83b3a9039a294da92bb548352f5252394335a2f6aec2006a8b136c08397bbaca",
+      "artifact_expires_at": "2026-11-15T19:43:43Z"
+    },
+    "scope_lock": {
+      "run_id": 32061952004,
+      "conclusion": "success",
+      "head_sha": "8cc1dd1faa5ddce55a8df13e294625c577008d07"
+    },
+    "pages": {
+      "run_id": 32061951202,
+      "conclusion": "success",
+      "head_sha": "8cc1dd1faa5ddce55a8df13e294625c577008d07"
+    },
+    "release_attestation": {
+      "run_id": 32062034517,
+      "conclusion": "success",
+      "head_sha": "8cc1dd1faa5ddce55a8df13e294625c577008d07",
+      "artifact_id": 9298500411,
+      "artifact_name": "work1-release-attestation-8cc1dd1faa5ddce55a8df13e294625c577008d07",
+      "artifact_size_bytes": 2798,
+      "artifact_digest": "sha256:0873579a676ac970f2b34bd02b01510d711f5242e18db0d1c88aafa486bd4f0b",
+      "artifact_expires_at": "2026-11-15T19:44:38Z"
+    }
+  },
+  "reproduction_readback": {
+    "decision": "GO",
+    "subject_head_match": true,
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "python": "3.12.13",
+    "installed_pdfplumber_version": "0.11.10",
+    "exact_byte_match_required": true,
+    "accepted_sources_matched": 7,
+    "accepted_sources_total": 7,
+    "targets_recreated": 17,
+    "targets_total": 17,
+    "normalized_matched": 17,
+    "byte_matched": 17,
+    "recovery_missing_detected": true,
+    "recovery_success": true,
+    "tests_discovered": 190,
+    "tests_passed": 190,
+    "temporary_snapshot_removed": true,
+    "checked_out_source_writes": 0,
+    "all_acceptance_checks_true": true,
+    "errors": 0
+  },
+  "attestation_readback": {
+    "decision": "GO",
+    "subject_head_match": true,
+    "upstream_pages_head_match": true,
+    "tests_discovered": 190,
+    "tests_passed": 190,
+    "accepted_source_count": 7,
+    "public_assets_matched": 5,
+    "public_assets_total": 5,
+    "protected_internal_evaluation": {
+      "bytes": 27275,
+      "sha256": "6a4c1e16e10835ced55243dcdb0c418045f0b5f44e78c1cd7d295aacfc931131",
+      "fixed_hash_match": true,
+      "pages_copy_absent": true,
+      "scores": {
+        "実用度": 3.5,
+        "完成度": 4.5,
+        "挑戦度": 3.5
+      },
+      "overall_comparison_index": 76.7,
+      "other_work_input_count": 0
+    },
+    "errors": 0
+  },
+  "public_commit_byte_readback": [
+    {
+      "path": "index.html",
+      "http_status": 200,
+      "bytes": 58757,
+      "sha256": "e20ffd6f2791d75b4e8b916f3182e2a996c0b44a2a4565d48ae0c0890254e6a9",
+      "commit_bytes_match": true
+    },
+    {
+      "path": "entry.html",
+      "http_status": 200,
+      "bytes": 19469,
+      "sha256": "f1c3aa1e4475ddded2b38281296bde94126e859fad64c79a593d2f908278677e",
+      "commit_bytes_match": true
+    },
+    {
+      "path": "status.html",
+      "http_status": 200,
+      "bytes": 61634,
+      "sha256": "329523877f2ed5013fc0b4d33305ee80eff8efcf56ee21b585401d535e3196d7",
+      "commit_bytes_match": true
+    },
+    {
+      "path": "municipality-memo.html",
+      "http_status": 200,
+      "bytes": 39905,
+      "sha256": "2e2b58a991194c8460eaa5e6c3b1e03e24501c1c00785d5ea70f3c47f8575758",
+      "commit_bytes_match": true
+    },
+    {
+      "path": "data/jrbus_chugoku_supply_metrics.json",
+      "http_status": 200,
+      "bytes": 3537,
+      "sha256": "eac7e55b0b548f2fe69cf8ce17a03d6d7f4516edf089da362ecbfcc371c6fc05",
+      "commit_bytes_match": true
+    }
+  ],
+  "internal_pages_absent": [
+    {
+      "path": "award-comparison.html",
+      "http_status": 404
+    },
+    {
+      "path": "data/work1_award_scorecard.json",
+      "http_status": 404
+    },
+    {
+      "path": "data/award_scorecard_schema.json",
+      "http_status": 404
+    }
+  ],
+  "public_internal_score_marker_hits": 0,
+  "boundaries": {
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0,
+    "raw_source_changes": 0,
+    "gtfs_zip_changes": 0,
+    "source_downloads": 0,
+    "automatic_source_adoptions": 0,
+    "public_value_changes": 0,
+    "internal_score_changes": 0,
+    "internal_score_publications": 0
+  },
+  "pages_observation": {
+    "conclusion": "success",
+    "node20_deprecation_warning": true,
+    "runner_forced_node24": true,
+    "artifact_or_public_mismatch": false
+  },
+  "drive_save_pending": true,
+  "next_stage": "WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-AUDIT-1",
+  "next_stage_started": false,
+  "errors": []
+}
