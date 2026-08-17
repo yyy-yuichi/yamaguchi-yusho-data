@@ -40,6 +40,7 @@ jobs:
           --repo .
           --subject-sha "${{ github.sha }}"
           --run-tests
+          --require-byte-match
           --output-dir "${{ runner.temp }}/work1-reproduction-drill"
 
       - name: Publish drill summary

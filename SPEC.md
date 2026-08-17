@@ -1,6 +1,6 @@
-# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価 / WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況拡張 / WORK1-AWARD-SCORECARD-RECALIBRATION-2 拡張成果再評価 / WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 広域GTFS独立供給指標 / WORK1-AWARD-SCORECARD-RECALIBRATION-3 独立指標成果再評価 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 独立再現・復旧訓練
+# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価 / WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況拡張 / WORK1-AWARD-SCORECARD-RECALIBRATION-2 拡張成果再評価 / WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 広域GTFS独立供給指標 / WORK1-AWARD-SCORECARD-RECALIBRATION-3 独立指標成果再評価 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 独立再現・復旧訓練 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1 再現判定厳格化
 
-**rev.5.24 / 2026-08-17**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34、rev.5.20→rev.5.21 は §10.35、rev.5.21→rev.5.22 は §10.36、rev.5.22→rev.5.23 は §10.37、rev.5.23→rev.5.24 は §10.38。消した記述はそこに全部書いてある）
+**rev.5.25 / 2026-08-18**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34、rev.5.20→rev.5.21 は §10.35、rev.5.21→rev.5.22 は §10.36、rev.5.22→rev.5.23 は §10.37、rev.5.23→rev.5.24 は §10.38、rev.5.24→rev.5.25 は §10.39。消した記述はそこに全部書いてある）
 
 UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下に `SPEC.md` として置き、Claude Code に読ませる。**
 
@@ -14,7 +14,8 @@ UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下
 WORK1-PRECONSULTATION-HANDOFF-1、§31はWORK1-AWARD-SCORECARD-RECALIBRATION-1、§32は
 WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1、§33はWORK1-AWARD-SCORECARD-RECALIBRATION-2、§34は
 WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1、§35はWORK1-AWARD-SCORECARD-RECALIBRATION-3、§36は
-WORK1-INDEPENDENT-REPRODUCTION-DRILL-1の実行仕様である。
+WORK1-INDEPENDENT-REPRODUCTION-DRILL-1、§37は
+WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1の実行仕様である。
 プロジェクトのゴール、終了条件、確定方針は`run_record.md` §0.5 を正とし、
 このファイルがそれを上書きしてはならない。
 
@@ -1213,6 +1214,14 @@ JRバス中国の公式GTFS原本1件を追加受入した成果だけを内部�
 P0 0件、P1 0件だった。ユーザー承認を受け、確定済み7原本と対象commitだけを入力に、
 一時スナップショットで17生成物をゼロから再生成し、欠落1件を復旧する独立訓練を行う。
 新規原本取得、正本worktreeでの削除、内部再採点、参加者連絡は行わない。
+
+### 10.39 rev.5.24 → rev.5.25
+
+固定HEAD `9f61af5a0825d1c2b1c2e69303af25c0d35efcc2`の独立再現・復旧訓練監査は
+P0 0件、P1 1件、P2 1件でNO-GOだった。実績値はUbuntuでbyte 17 / 17だったが、GO判定が
+正規化一致だけを必須にしており、将来のbyte不一致を誤ってGOにできる。直接依存
+`pdfplumber`も版未固定だった。ユーザー承認を受け、strict byte gate、依存版固定、
+artifactへの実版記録を追加する。原本・生成値・公開HTML・内部評価は変更しない。
 
 ---
 
@@ -3132,6 +3141,58 @@ Python 3.12、`contents: read`、認証情報非保持で実行する。再生�
 - 一時領域外の原本・生成物を削除または変更する必要が生じる
 - 新規・認証付き・一般非配布原本、外部利用者、他作品を入力にする必要が生じる
 - 内部点数公開、応募・登録、認証変更、履歴書換えが必要になる
+
+---
+
+## 37. WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1
+
+### 37.1 段階ゴール
+
+独立再現workflowの実績表示だけでなく、Ubuntu runnerの完全byte一致17 / 17をGO判定へ強制する。
+同時に検証済み直接依存を固定し、artifactへ実際の依存版を記録して、監査P1・P2を閉じる。
+
+### 37.2 実装契約
+
+- 通常のWindowsローカル実行は、OS改行差を許容する既存の正規化一致契約を維持する。
+- GitHub workflowは`--require-byte-match`を必須で渡し、17件中1件でもbyte不一致なら
+  decisionを`NO_GO`、終了コードを非0にする。
+- GO判定の全条件を機械可読な`acceptance.checks`としてartifactへ記録する。
+- `requirements.txt`は会社PCと成功済みrunnerで一致した`pdfplumber==0.11.10`へ固定する。
+- artifactの`environment.dependencies.pdfplumber`へ実際の導入版を記録する。
+- byte 16 / 17をstrict modeが拒否し、17 / 17を許可する回帰テストを置く。
+
+### 37.3 変更範囲と不変境界
+
+変更・追加できるのは次だけとする。
+
+- `requirements.txt`
+- `src/run_reproduction_drill.py`
+- `tests/test_reproduction_drill.py`
+- `.github/workflows/reproduction-drill.yml`
+- `README.md`、`SPEC.md`、`PROGRESS.md`、`run_record.md`、`verification.md`
+- `evidence/20260818_work1_independent_reproduction_drill_hardening_*`
+
+7原本、既存`data/`・`docs/data/`生成物、公開4 HTML、内部評価、scope境界は変更しない。
+作品②、新規原本、認証、参加者連絡、応募・BODIKを入力・操作しない。
+
+### 37.4 完了条件
+
+1. 専用回帰でstrict modeのbyte 16 / 17が失敗、17 / 17が成功する。
+2. 通常Windowsモードは正規化17 / 17・復旧success・全テストsuccessを維持する。
+3. `pdfplumber==0.11.10`が固定され、ローカルとGitHub artifactの実版が一致する。
+4. GitHub artifactはstrict required、byte 17 / 17、全acceptance checks true、decision GOになる。
+5. scope lock、Pages、release attestationが同一HEADでsuccess、公開5資産と内部3 URL境界を維持する。
+6. 原本・公開値・内部評価・他作品・外部連絡・応募操作の変更は0件。
+7. 検証済みGit bundleと公開受入JSONを指定Google Driveの作品①専用フォルダへ保存し、読戻す。
+8. 次段階をread-onlyの
+   `WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-AUDIT-1`だけに定義し、開始しない。
+
+### 37.5 停止条件
+
+- strict modeでbyte 17 / 17を確認できない
+- 固定依存版で生成内容・テスト・公開境界が退行する
+- 原本、公開値、内部評価、scope境界の変更が必要になる
+- 指定アカウント・Drive親フォルダを確認できない
 
 ---
 

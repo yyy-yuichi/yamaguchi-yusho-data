@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-17 (rev.74) / 状態: WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 GO / 次: read-only監査（未開始）
+最終更新: 2026-08-18 (rev.75) / 状態: WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1 LOCAL_GO / 次: commit・公開受入
 
 ## 0. このファイルについて
 
@@ -1437,3 +1437,22 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   `WORK1-INDEPENDENT-REPRODUCTION-DRILL-1`をGOとする。
 - 次段階は変更を伴わない`WORK1-INDEPENDENT-REPRODUCTION-DRILL-AUDIT-1`だけとし、開始しない。
   この記録commit自身を同じ4 workflowで再確認し、後続run IDはrepoへ再書込みしない。
+
+### 改訂点（rev.75）
+
+- 固定HEAD `9f61af5a0825d1c2b1c2e69303af25c0d35efcc2`の
+  `WORK1-INDEPENDENT-REPRODUCTION-DRILL-AUDIT-1`はP0 0件、P1 1件、P2 1件でNO-GO。
+  P1はUbuntuの完全byte一致17 / 17がGO条件でなかったこと、P2は`pdfplumber`の版未固定と
+  artifactへの実版未記録だったこと。
+- workflowへ`--require-byte-match`を渡し、strict modeではbyte 16 / 17を拒否し、17 / 17だけを
+  許可する回帰を追加した。GO条件は`acceptance.checks`へ機械可読で記録する。
+- 直接依存を`pdfplumber==0.11.10`へ固定し、実際の導入版を
+  `environment.dependencies.pdfplumber`へ記録する。
+- 専用10 / 10、全190 / 190、旧SPEC 1,096トークン欠落0、scope checker、
+  `git diff --check`はsuccess。Windows通常モードは内容17 / 17、byte 8 / 17、復旧success、
+  snapshot全188 / 188でGO。strict probeは同じbyte差を正しく検知してNO-GOにした。
+- 原本7件、既存`data/`・`docs/data/`、公開4 HTML、内部評価、作品②入力、参加者連絡、
+  応募・BODIKは各0変更・0実行。ローカル正本は
+  `evidence/20260818_work1_independent_reproduction_drill_hardening_local_acceptance.json`。
+- 判定は`LOCAL_GO`。次は実装commitをmainへpushし、同一HEADの専用reproduction、scope lock、
+  Pages、release attestation、両artifact、公開bytes、内部3 URLの404を受け入れる。

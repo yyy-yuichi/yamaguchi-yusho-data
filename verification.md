@@ -2564,6 +2564,27 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 この受入記録を含む最終HEAD自身をscope lock、Pages、release attestationで再確認し、後続run IDは
 外部正本としてrepoへ再書込みしない。
 
+## WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1 ローカル検証（2026-08-18）
+
+| 検証 | 結果 |
+|---|---|
+| 基準HEAD・監査 | `9f61af5a0825d1c2b1c2e69303af25c0d35efcc2`、P0 0 / P1 1 / P2 1、NO-GO |
+| P1解消 | workflowに`--require-byte-match`。strict modeはbyte 17 / 17だけをGO条件にする |
+| P2解消 | `pdfplumber==0.11.10`固定、artifactの`environment.dependencies.pdfplumber`へ実版記録 |
+| strict回帰 | byte 16 / 17はfalse、17 / 17は全checks true |
+| 専用回帰 | 10 / 10 success |
+| 全回帰 | 190件検出、190 / 190 success、終了コード0 |
+| Windows通常ドリル | 原本7 / 7、再作成17 / 17、正規化一致17 / 17、byte 8 / 17、復旧success、GO |
+| snapshot回帰 | 188件検出、188 / 188 success |
+| Windows strict probe | byte 8 / 17を拒否、exact byte check false、NO-GO、終了コード1（期待どおり） |
+| 依存版読戻し | 通常・strictとも`pdfplumber` 0.11.10 |
+| 旧SPEC網羅 | 1,096トークン、欠落0、説明なし0 |
+| scope・差分 | `WORK1_SCOPE_ALLOWED`、`git diff --check` success |
+| 不変対象 | `raw/`、既存`data/`・`docs/data/`、公開4 HTML、内部評価は基準HEADから変更0 |
+| 境界 | 新規原本・自動採用・作品②・参加者連絡・応募・BODIK・内部点数公開各0 |
+| 正本 | `evidence/20260818_work1_independent_reproduction_drill_hardening_local_acceptance.json` |
+| 判定 | `LOCAL_GO`。同一HEADの4 workflow・2 artifact・公開境界・Drive保存受入へ進む |
+
 ## WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 ローカル検証（2026-08-17）
 
 | 検証 | 結果 |

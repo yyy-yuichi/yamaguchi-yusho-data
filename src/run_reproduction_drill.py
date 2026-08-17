@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import hashlib
+import importlib.metadata
 import io
 import json
 import os
@@ -55,6 +56,7 @@ GENERATED_TARGETS = (
 
 RECOVERY_TARGET = "docs/data/municipal_supply.json"
 RECOVERY_BUILDER = "src/build_site_data.py"
+RECORDED_DEPENDENCIES = ("pdfplumber",)
 
 
 def sha256_bytes(payload: bytes) -> str:
@@ -65,6 +67,16 @@ def normalized_text_bytes(payload: bytes) -> bytes:
     """Ignore only operating-system newline representation."""
 
     return payload.replace(b"\r\n", b"\n")
+
+
+def installed_dependency_versions() -> dict[str, str | None]:
+    versions: dict[str, str | None] = {}
+    for package in RECORDED_DEPENDENCIES:
+        try:
+            versions[package] = importlib.metadata.version(package)
+        except importlib.metadata.PackageNotFoundError:
+            versions[package] = None
+    return versions
 
 
 def child_path(root: Path, relative: str) -> Path:
@@ -235,7 +247,34 @@ def render_markdown(report: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
-def execute_drill(repo: Path, subject_sha: str, *, include_tests: bool) -> dict[str, Any]:
+def acceptance_checks(
+    report: dict[str, Any],
+    *,
+    include_tests: bool,
+    require_exact_byte_match: bool,
+) -> dict[str, bool]:
+    reconstruction = report.get("reconstruction", {})
+    return {
+        "tests": not include_tests or report.get("tests", {}).get("success", False),
+        "accepted_sources": report.get("accepted_sources", {}).get("matched") == 7,
+        "normalized_reconstruction": reconstruction.get("normalized_matched")
+        == len(GENERATED_TARGETS),
+        "exact_byte_reconstruction": not require_exact_byte_match
+        or reconstruction.get("byte_matched") == len(GENERATED_TARGETS),
+        "recovery": report.get("recovery", {}).get("success", False),
+        "temporary_snapshot_removed": report.get("boundaries", {}).get(
+            "temporary_snapshot_removed", False
+        ),
+    }
+
+
+def execute_drill(
+    repo: Path,
+    subject_sha: str,
+    *,
+    include_tests: bool,
+    require_exact_byte_match: bool = False,
+) -> dict[str, Any]:
     repo = repo.resolve(strict=True)
     errors: list[str] = []
     report: dict[str, Any] = {
@@ -246,7 +285,9 @@ def execute_drill(repo: Path, subject_sha: str, *, include_tests: bool) -> dict[
         "environment": {
             "platform": platform.platform(),
             "python": platform.python_version(),
+            "dependencies": installed_dependency_versions(),
         },
+        "contract": {"require_exact_byte_match": require_exact_byte_match},
         "errors": errors,
     }
 
@@ -339,6 +380,8 @@ def execute_drill(repo: Path, subject_sha: str, *, include_tests: bool) -> dict[
             }
             if normalized_matched != len(GENERATED_TARGETS):
                 errors.append("reconstructed target content mismatch")
+            if require_exact_byte_match and byte_matched != len(GENERATED_TARGETS):
+                errors.append("exact-byte target mismatch under strict mode")
 
             recovery_path = child_path(work, RECOVERY_TARGET)
             recovery_path.unlink()
@@ -390,14 +433,16 @@ def execute_drill(repo: Path, subject_sha: str, *, include_tests: bool) -> dict[
             "bodik_registrations": 0,
         }
 
-    tests_ok = not include_tests or report.get("tests", {}).get("success", False)
-    sources_ok = report.get("accepted_sources", {}).get("matched") == 7
-    reconstruction_ok = (
-        report.get("reconstruction", {}).get("normalized_matched") == len(GENERATED_TARGETS)
+    checks = acceptance_checks(
+        report,
+        include_tests=include_tests,
+        require_exact_byte_match=require_exact_byte_match,
     )
-    recovery_ok = report.get("recovery", {}).get("success", False)
-    cleanup_ok = report["boundaries"]["temporary_snapshot_removed"]
-    if not errors and tests_ok and sources_ok and reconstruction_ok and recovery_ok and cleanup_ok:
+    report["acceptance"] = {
+        "exact_byte_match_required": require_exact_byte_match,
+        "checks": checks,
+    }
+    if not errors and all(checks.values()):
         report["decision"] = "GO"
     return report
 
@@ -407,6 +452,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--repo", default=".")
     parser.add_argument("--subject-sha", default="HEAD")
     parser.add_argument("--run-tests", action="store_true")
+    parser.add_argument(
+        "--require-byte-match",
+        action="store_true",
+        help="Require all generated targets to match the commit bytes exactly.",
+    )
     parser.add_argument("--output-dir", required=True)
     return parser
 
@@ -417,6 +467,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         Path(args.repo),
         args.subject_sha,
         include_tests=args.run_tests,
+        require_exact_byte_match=args.require_byte_match,
     )
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)

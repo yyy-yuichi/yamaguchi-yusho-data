@@ -55,6 +55,7 @@ class ReproductionDrillContractTest(unittest.TestCase):
         self.assertIn("persist-credentials: false", workflow)
         self.assertIn("src/run_reproduction_drill.py", workflow)
         self.assertIn("--run-tests", workflow)
+        self.assertIn("--require-byte-match", workflow)
         self.assertIn("actions/upload-artifact@v7", workflow)
         for forbidden in ("git push", "pull_request_target", "contents: write"):
             self.assertNotIn(forbidden, workflow)
@@ -79,6 +80,35 @@ class ReproductionDrillContractTest(unittest.TestCase):
         self.assertIn("Decision: **GO**", text)
         self.assertNotIn("総合比較", text)
         self.assertNotIn("work1_award_scorecard", text)
+
+    def test_strict_acceptance_requires_all_exact_bytes(self):
+        report = {
+            "accepted_sources": {"matched": 7},
+            "reconstruction": {"normalized_matched": 17, "byte_matched": 16},
+            "recovery": {"success": True},
+            "tests": {"success": True},
+            "boundaries": {"temporary_snapshot_removed": True},
+        }
+        local_checks = drill.acceptance_checks(
+            report, include_tests=True, require_exact_byte_match=False
+        )
+        strict_checks = drill.acceptance_checks(
+            report, include_tests=True, require_exact_byte_match=True
+        )
+        self.assertTrue(all(local_checks.values()))
+        self.assertFalse(strict_checks["exact_byte_reconstruction"])
+        report["reconstruction"]["byte_matched"] = 17
+        strict_checks = drill.acceptance_checks(
+            report, include_tests=True, require_exact_byte_match=True
+        )
+        self.assertTrue(all(strict_checks.values()))
+
+    def test_pdfplumber_dependency_is_pinned_and_reported(self):
+        requirements = (REPO_ROOT / "requirements.txt").read_text(encoding="utf-8").splitlines()
+        self.assertEqual(["pdfplumber==0.11.10"], requirements)
+        self.assertEqual(
+            "0.11.10", drill.installed_dependency_versions()["pdfplumber"]
+        )
 
 
 if __name__ == "__main__":

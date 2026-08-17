@@ -2603,6 +2603,23 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   現行4 URLは200、削除3 URLは404。公開HTMLに旧スコアリンクは0件。
 - この記録を含む最終HEAD自身を同じ3 workflowで外部再確認する。次段階はread-only監査だけ。
 
+## 2026-08-18 WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1 ローカル受入
+
+- 直前のread-only監査はP0 0件、P1 1件、P2 1件でNO-GO。Ubuntuでbyte 17 / 17の実績は
+  あったがGO条件ではなく、直接依存の版固定とartifactへの実版記録もなかった。
+- GitHub workflowをstrict modeにし、17件中1件でもbyte不一致ならNO-GO・非0終了とした。
+  strict 16 / 17の拒否と17 / 17の許可を回帰テストで固定した。
+- `pdfplumber==0.11.10`を固定し、再現artifactへ実際の導入版を記録する。
+- Windows通常ドリルは原本7 / 7、再作成・内容一致17 / 17、byte 8 / 17、復旧success、
+  snapshot全188 / 188、全acceptance checks true、errors 0でGO。
+- Windows strict probeはbyte 8 / 17を検知し、exact byte check false、decision NO-GO、終了コード1。
+  これはUbuntu CIで17 / 17未満を見逃さないことの期待どおりの失敗である。
+- 専用10 / 10、全190 / 190、旧SPEC 1,096トークン欠落0、scope checker、
+  `git diff --check`はsuccess。原本・公開値・公開HTML・内部評価の変更は0。
+- ローカル正本は
+  `evidence/20260818_work1_independent_reproduction_drill_hardening_local_acceptance.json`。
+  判定は`LOCAL_GO`。公開同一HEAD受入とDrive正本保存が成功するまで段階完了とは扱わない。
+
 ## 2026-08-17 WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 ローカル受入
 
 - 固定HEAD `69b51d0f305451de94d9d8f7c04ab755ea13176e`の再採点監査はread-onlyでGO、

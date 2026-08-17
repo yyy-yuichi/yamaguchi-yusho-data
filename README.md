@@ -269,7 +269,10 @@ python -B src/run_reproduction_drill.py --repo . --subject-sha HEAD --run-tests 
 ```
 
 WindowsとLinuxのテキスト改行差は、完全byte一致と改行正規化後の内容一致を分けて記録する。
-新規原本の取得・自動採用・外部送信は行わない。公開されたクリーンrunnerの結果は
+通常のローカル実行は内容一致を判定し、GitHubのUbuntu runnerは`--require-byte-match`により
+17件すべての完全byte一致も必須にする。再現時の直接依存は`pdfplumber==0.11.10`へ固定し、
+artifactへ実際のバージョンを記録する。新規原本の取得・自動採用・外部送信は行わない。
+公開されたクリーンrunnerの結果は
 [Work 1 independent reproduction drill](https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/workflows/reproduction-drill.yml)
 で確認できる。
 
