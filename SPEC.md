@@ -1,6 +1,6 @@
-# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価 / WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況拡張 / WORK1-AWARD-SCORECARD-RECALIBRATION-2 拡張成果再評価 / WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 広域GTFS独立供給指標 / WORK1-AWARD-SCORECARD-RECALIBRATION-3 独立指標成果再評価
+# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価 / WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況拡張 / WORK1-AWARD-SCORECARD-RECALIBRATION-2 拡張成果再評価 / WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 広域GTFS独立供給指標 / WORK1-AWARD-SCORECARD-RECALIBRATION-3 独立指標成果再評価 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 独立再現・復旧訓練
 
-**rev.5.23 / 2026-08-17**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34、rev.5.20→rev.5.21 は §10.35、rev.5.21→rev.5.22 は §10.36、rev.5.22→rev.5.23 は §10.37。消した記述はそこに全部書いてある）
+**rev.5.24 / 2026-08-17**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34、rev.5.20→rev.5.21 は §10.35、rev.5.21→rev.5.22 は §10.36、rev.5.22→rev.5.23 は §10.37、rev.5.23→rev.5.24 は §10.38。消した記述はそこに全部書いてある）
 
 UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下に `SPEC.md` として置き、Claude Code に読ませる。**
 
@@ -13,7 +13,8 @@ UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下
 §29は受け入れ済みWORK1-SIMILAR-SERVICE-BENCHMARK-1、§30は受け入れ済み
 WORK1-PRECONSULTATION-HANDOFF-1、§31はWORK1-AWARD-SCORECARD-RECALIBRATION-1、§32は
 WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1、§33はWORK1-AWARD-SCORECARD-RECALIBRATION-2、§34は
-WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1、§35はWORK1-AWARD-SCORECARD-RECALIBRATION-3の実行仕様である。
+WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1、§35はWORK1-AWARD-SCORECARD-RECALIBRATION-3、§36は
+WORK1-INDEPENDENT-REPRODUCTION-DRILL-1の実行仕様である。
 プロジェクトのゴール、終了条件、確定方針は`run_record.md` §0.5 を正とし、
 このファイルがそれを上書きしてはならない。
 
@@ -1205,6 +1206,13 @@ JRバス中国の公式GTFS原本1件を追加受入した成果だけを内部�
 既存2フィードへ混在させず広域1フィードを独立測定した成果だけを内部診断へ反映し、第三者評価、
 利用者実証、共同設計、未取得原本を達成扱いにしない。完了済みJRバス指標化を改善候補から除外し、
 参加者連絡や新規原本受入を必要としない独立再生成・復旧訓練を次の自走可能な候補とする。
+
+### 10.38 rev.5.23 → rev.5.24
+
+固定HEAD `69b51d0f305451de94d9d8f7c04ab755ea13176e`の内部診断再評価とread-only監査はGO、
+P0 0件、P1 0件だった。ユーザー承認を受け、確定済み7原本と対象commitだけを入力に、
+一時スナップショットで17生成物をゼロから再生成し、欠落1件を復旧する独立訓練を行う。
+新規原本取得、正本worktreeでの削除、内部再採点、参加者連絡は行わない。
 
 ---
 
@@ -3055,6 +3063,74 @@ BODIK登録、履歴・Release・tagの削除、内部再採点を行わない�
 - 対象側にない機能、国内唯一、受賞寄与、内部点数上昇を断定する必要が生じる
 - 原本、既存公開値、公開トップ、内部診断、scope境界の変更が必要になる
 - 作品②、参加者連絡、応募・登録、履歴書換え、Release削除が必要になる
+
+---
+
+## 36. WORK1-INDEPENDENT-REPRODUCTION-DRILL-1
+
+### 36.1 段階ゴール
+
+確定済み7原本と対象commitだけから、登録供給、GTFS状態、既存2フィード供給指標、JRバス中国独立指標、
+Pages用JSONの計17生成物を、正本worktreeと分離した一時スナップショットで再生成する。生成内容の一致と、
+意図的に欠落させた1生成物の復旧を、ローカルとGitHubのクリーンrunnerで証拠化する。
+
+### 36.2 入力・再生成・比較契約
+
+- 基準HEADは`69b51d0f305451de94d9d8f7c04ab755ea13176e`とし、`git archive`へ
+  `core.autocrlf=false`を明示してcommitスナップショットを作る。
+- 入力原本は`data/source_freshness_manifest.json`で固定した4 PDF・3 GTFS ZIPだけとし、
+  7件すべてのbytes・SHA-256一致を再生成前に確認する。
+- `src/parse.py`、`src/build_gtfs_status.py`、`src/calculate_gtfs_supply_metrics.py`、
+  `src/calculate_jrbus_supply_metrics.py`、`src/build_site_data.py`をこの順で実行する。
+- 対象は上記5ビルダーが作る`data/`10件と`docs/data/`7件、計17件とする。
+- 完全byte一致と、CRLFをLFへ変換した後の内容一致を別々に記録する。OS改行差だけを許容し、
+  JSON値、CSVセル、行順、件数、数値、パスの差は許容しない。
+
+### 36.3 失敗注入・復旧契約
+
+全17件の再生成後、一時スナップショット内の`docs/data/municipal_supply.json`だけを削除する。
+欠落を検知した後、`src/build_site_data.py`を再実行し、同ファイルと他16件が基準内容へ戻ることを確認する。
+正本worktree、原本、Git履歴、Pages公開物を削除対象にしない。
+
+### 36.4 GitHub独立実行契約
+
+`.github/workflows/reproduction-drill.yml`はmain pushと手動実行で起動し、Ubuntuのクリーンrunner、
+Python 3.12、`contents: read`、認証情報非保持で実行する。再生成・復旧後の全unittestを同じ一時スナップ
+ショットで実行し、JSONとMarkdownを90日artifactとして保存する。commit、issue、Pagesの自動更新は行わない。
+
+### 36.5 変更範囲と不変境界
+
+変更・追加できるのは次だけとする。
+
+- `SPEC.md`、`README.md`、`PROGRESS.md`、`run_record.md`、`verification.md`
+- `src/run_reproduction_drill.py`
+- `tests/test_reproduction_drill.py`
+- `.github/workflows/reproduction-drill.yml`
+- `evidence/20260817_work1_independent_reproduction_drill_*`
+
+7原本、既存`data/`・`docs/data/`生成物、公開4 HTML、内部スコアカード、scope境界は変更しない。
+作品②を入力にせず、新規原本取得、認証変更、参加者連絡、UDC応募、BODIK登録を行わない。
+
+### 36.6 完了条件
+
+1. 一時スナップショット外へ書かず、7原本がmanifestのbytes・SHA-256と一致する。
+2. 17生成物すべてを削除状態から再作成し、改行正規化後の内容が対象commitと一致する。
+3. Windowsローカルはbyte一致と内容一致を分離し、Ubuntu runnerでは両方を記録する。
+4. 欠落1件を検知し、既存ビルダーで復旧後に17 / 17一致へ戻る。
+5. 専用テスト、再構成スナップショット内の全unittest、通常worktreeの全unittestが成功する。
+6. scope checker、`git diff --check`、旧SPEC網羅検査、秘密情報定型検査が成功する。
+7. READMEから再現コマンドと公開workflowへ第三者が到達できる。
+8. commit・main push後、専用workflow、scope lock、Pages、release attestationが同一HEADでsuccess・GOになる。
+9. 専用artifactがGO、7 / 7、17 / 17、復旧success、全テストsuccess、errors 0になる。
+10. 公開5資産がcommit bytesと一致し、内部診断3 URLが404、公開HTMLの内部マーカー0を維持する。
+11. 次段階をread-onlyの`WORK1-INDEPENDENT-REPRODUCTION-DRILL-AUDIT-1`だけに定義し、開始しない。
+
+### 36.7 停止条件
+
+- 受入原本のbytes・SHA-256不一致、17生成物の内容差、または欠落復旧失敗がある
+- 一時領域外の原本・生成物を削除または変更する必要が生じる
+- 新規・認証付き・一般非配布原本、外部利用者、他作品を入力にする必要が生じる
+- 内部点数公開、応募・登録、認証変更、履歴書換えが必要になる
 
 ---
 

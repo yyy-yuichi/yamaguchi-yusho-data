@@ -2603,6 +2603,24 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   現行4 URLは200、削除3 URLは404。公開HTMLに旧スコアリンクは0件。
 - この記録を含む最終HEAD自身を同じ3 workflowで外部再確認する。次段階はread-only監査だけ。
 
+## 2026-08-17 WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 ローカル受入
+
+- 固定HEAD `69b51d0f305451de94d9d8f7c04ab755ea13176e`の再採点監査はread-onlyでGO、
+  P0 0件、P1 0件。人間承認後、外部依存のない独立再現・復旧訓練を開始した。
+- `git archive`の一時スナップショットだけで、manifest固定の4 PDF・3 GTFS ZIPを7 / 7照合し、
+  5ビルダーが作る`data/`10件・`docs/data/`7件を削除状態から再生成した。
+- Windowsローカルでは完全byte一致6 / 17、CRLFをLFへ正規化した内容一致17 / 17。
+  差はOSのテキスト改行表現だけで、JSON値・CSVセル・行順・件数・数値の差は0。
+- 一時スナップショット内の`docs/data/municipal_supply.json`を意図的に欠落させ、欠落検知後に
+  `src/build_site_data.py`で復旧し、全17件が再び内容一致した。正本worktreeの削除・変更は0。
+- 専用8 / 8、通常worktree全188 / 188、一時スナップショット全180 / 180、
+  一時領域削除、scope checker、`git diff --check`はsuccess。
+- Ubuntuのクリーンrunnerで同じドリルと全188件を実行し、専用artifactへJSON・Markdownを保存する
+  read-only workflowを追加した。新規原本取得・自動採用・作品②入力・参加者連絡・応募・BODIKは各0。
+- ローカル正本は
+  `evidence/20260817_work1_independent_reproduction_drill_local_acceptance.json`。
+  判定は`LOCAL_GO`。次は実装commitをmainへpushし、専用CI・scope lock・Pages・attestationを受け入れる。
+
 ## 2026-08-17 WORK1-AWARD-SCORECARD-RECALIBRATION-3 ローカル受入
 
 - 固定HEAD `a573e78adc0019fb3d9d410813c306267c3a350a`のJRバス中国独立指標化監査はGO、

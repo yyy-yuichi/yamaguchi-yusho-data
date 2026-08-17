@@ -258,6 +258,21 @@ pip install -r requirements.txt
 
 依存は `pdfplumber` のみ。pandas は使用しない。
 
+### 独立再現・復旧ドリル
+
+確定済み7原本だけを使い、対象commitの一時スナップショットで17生成物を削除・再生成して
+内容を照合する。さらに一時スナップショット内の`docs/data/municipal_supply.json`を意図的に
+欠落させ、既存ビルダーで復旧できることを確認する。正本worktreeの原本・生成物は削除しない。
+
+```
+python -B src/run_reproduction_drill.py --repo . --subject-sha HEAD --run-tests --output-dir reproduction-out
+```
+
+WindowsとLinuxのテキスト改行差は、完全byte一致と改行正規化後の内容一致を分けて記録する。
+新規原本の取得・自動採用・外部送信は行わない。公開されたクリーンrunnerの結果は
+[Work 1 independent reproduction drill](https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/workflows/reproduction-drill.yml)
+で確認できる。
+
 ## ライセンス
 
 派生データセット（`data/` 配下の CSV・JSON）は **CC BY 4.0**。

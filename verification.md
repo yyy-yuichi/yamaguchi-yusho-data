@@ -2564,6 +2564,28 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 この受入記録を含む最終HEAD自身をscope lock、Pages、release attestationで再確認し、後続run IDは
 外部正本としてrepoへ再書込みしない。
 
+## WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 ローカル検証（2026-08-17）
+
+| 検証 | 結果 |
+|---|---|
+| 基準HEAD | `69b51d0f305451de94d9d8f7c04ab755ea13176e`、直前監査GO、P0 0 / P1 0 |
+| スナップショット | `git -c core.autocrlf=false archive`、正本worktreeと分離した一時領域 |
+| 入力原本 | manifest固定4 PDF・3 GTFS ZIP、7 / 7 bytes・SHA256一致 |
+| ビルダー | `parse`→`build_gtfs_status`→既存2フィード指標→JRバス指標→`build_site_data`の5本 |
+| 再生成対象 | `data/`10件＋`docs/data/`7件＝17件、削除状態から17 / 17再作成 |
+| Windows byte比較 | 6 / 17完全一致。残り11件はテキスト改行表現だけが差分 |
+| 内容比較 | CRLF→LF正規化後17 / 17一致。JSON値・CSVセル・行順・件数・数値の差0 |
+| 失敗注入 | 一時領域の`docs/data/municipal_supply.json`欠落を検知 |
+| 復旧 | `src/build_site_data.py`再実行後、対象1件と全17件が内容一致、success |
+| 専用回帰 | 8 / 8 success |
+| 通常全回帰 | 188件検出、188 / 188 success、終了コード0 |
+| 基準snapshot回帰 | 180件検出、180 / 180 success、終了コード0 |
+| 一時領域 | 終了後削除、正本worktree変更0 |
+| GitHub契約 | Ubuntu / Python 3.12 / `contents: read` / 認証非保持 / artifact 90日 |
+| 境界 | 新規原本・自動採用・内部点数公開・作品②・参加者連絡・応募・BODIK各0 |
+| 正本 | `evidence/20260817_work1_independent_reproduction_drill_local_acceptance.json` |
+| 判定 | `LOCAL_GO`。同一HEADの専用CI・Pages・release artifact・公開境界受入へ進む |
+
 ## WORK1-AWARD-SCORECARD-RECALIBRATION-3 ローカル検証（2026-08-17）
 
 | 検証 | 結果 |

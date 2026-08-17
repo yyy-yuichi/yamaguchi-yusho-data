@@ -1,0 +1,60 @@
+name: Work 1 independent reproduction drill
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce-and-recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONUTF8: "1"
+      PYTHONIOENCODING: utf-8
+
+    steps:
+      - name: Check out exact Work 1 commit
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Install the recorded dependency
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+
+      - name: Verify Work 1 boundary
+        run: python -B src/check_work_scope.py --repo . --json
+
+      - name: Rebuild, compare, recover, and test
+        run: >-
+          python -B src/run_reproduction_drill.py
+          --repo .
+          --subject-sha "${{ github.sha }}"
+          --run-tests
+          --output-dir "${{ runner.temp }}/work1-reproduction-drill"
+
+      - name: Publish drill summary
+        if: always()
+        shell: bash
+        run: |
+          if [ -f "${{ runner.temp }}/work1-reproduction-drill/reproduction-drill.md" ]; then
+            cat "${{ runner.temp }}/work1-reproduction-drill/reproduction-drill.md" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload drill evidence
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: work1-reproduction-drill-${{ github.sha }}
+          path: ${{ runner.temp }}/work1-reproduction-drill/
+          if-no-files-found: error
+          retention-days: 90

@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-17 (rev.72) / 状態: WORK1-AWARD-SCORECARD-RECALIBRATION-3 GO / 次: 変更なし監査（未開始）
+最終更新: 2026-08-17 (rev.73) / 状態: WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 ローカル受入GO / 次: 公開受入
 
 ## 0. このファイルについて
 
@@ -1399,3 +1399,20 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - `WORK1-AWARD-SCORECARD-RECALIBRATION-3`をGOとする。次段階は変更を伴わない
   `WORK1-AWARD-SCORECARD-RECALIBRATION-3-AUDIT-1`だけとし、開始しない。この記録を含む
   最終HEAD自身を同じ3 workflowで再確認し、後続run IDはrepoへ再書込みしない。
+
+### 改訂点（rev.73）
+
+- 固定HEAD `69b51d0f305451de94d9d8f7c04ab755ea13176e`の
+  `WORK1-AWARD-SCORECARD-RECALIBRATION-3-AUDIT-1`はread-onlyでGO、P0 0件、P1 0件。
+  本人承認後、自走可能な`WORK1-INDEPENDENT-REPRODUCTION-DRILL-1`を開始した。
+- commitを`core.autocrlf=false`で一時展開し、確定済み7原本をmanifestへ7 / 7照合した。
+  5ビルダーで17生成物を削除状態から再作成し、Windowsではbyte一致6 / 17、改行正規化後の
+  内容一致17 / 17。OS改行以外の内容差は0だった。
+- 一時領域内の`docs/data/municipal_supply.json`を欠落させ、欠落検知後に既存ビルダーで復旧し、
+  全17件の内容一致へ戻した。一時領域は終了後に削除し、正本worktreeの原本・生成物変更は0。
+- 専用8 / 8、通常全188 / 188、基準commit一時スナップショット全180 / 180、scope checker、
+  `git diff --check`はsuccess。Ubuntuで同じドリルと全テストを行うread-only workflowを追加した。
+- 新規原本取得、認証変更、内部再採点・公開、作品②入力、参加者連絡、応募・BODIKは各0。
+  ローカル正本は`evidence/20260817_work1_independent_reproduction_drill_local_acceptance.json`。
+- 判定は`LOCAL_GO`。次は実装commitをmainへpushし、同一SHAの専用reproduction workflow、
+  scope lock、Pages、release attestation、両artifact、公開bytes、内部3 URLの404を受け入れる。

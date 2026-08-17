@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-INDEPENDENT-REPRODUCTION-DRILL-1",
+  "evidence_type": "local_acceptance",
+  "checked_at": "2026-08-17",
+  "decision": "LOCAL_GO",
+  "baseline": {
+    "branch": "main",
+    "commit_sha": "69b51d0f305451de94d9d8f7c04ab755ea13176e",
+    "prior_audit_decision": "GO",
+    "prior_audit_p0": 0,
+    "prior_audit_p1": 0
+  },
+  "drill_contract": {
+    "snapshot_method": "git archive with core.autocrlf=false",
+    "accepted_source_count": 7,
+    "builder_count": 5,
+    "generated_target_count": 17,
+    "recovery_target": "docs/data/municipal_supply.json",
+    "persistent_worktree_deletions": 0
+  },
+  "local_drill": {
+    "subject_commit_sha": "69b51d0f305451de94d9d8f7c04ab755ea13176e",
+    "accepted_sources_matched": 7,
+    "accepted_sources_total": 7,
+    "targets_recreated": 17,
+    "targets_total": 17,
+    "exact_byte_matches": 6,
+    "newline_normalized_content_matches": 17,
+    "content_mismatches": 0,
+    "recovery_missing_detected": true,
+    "recovery_success": true,
+    "post_recovery_content_matches": 17,
+    "snapshot_tests_discovered": 180,
+    "snapshot_tests_passed": 180,
+    "temporary_snapshot_removed": true,
+    "errors": []
+  },
+  "working_tree_verification": {
+    "dedicated_tests_discovered": 8,
+    "dedicated_tests_passed": 8,
+    "full_tests_discovered": 188,
+    "full_tests_passed": 188,
+    "scope_guard": "WORK1_SCOPE_ALLOWED",
+    "git_diff_check": "success",
+    "worktree_source_changes": 0,
+    "worktree_generated_value_changes": 0
+  },
+  "first_attempt_observation": {
+    "decision": "NO_GO",
+    "reason": "temporary repository basename did not match the Work 1 scope contract",
+    "boundary_guard_behaved_as_designed": true,
+    "remediation": "use yamaguchi-yusho-data as the temporary repository basename",
+    "retry_decision": "GO"
+  },
+  "github_acceptance_pending": {
+    "clean_runner": "ubuntu-latest",
+    "python": "3.12",
+    "expected_exact_byte_matches": 17,
+    "required_workflows": [
+      "Work 1 independent reproduction drill",
+      "Work 1 scope lock",
+      "pages-build-deployment",
+      "Work 1 release attestation"
+    ]
+  },
+  "boundaries": {
+    "source_downloads": 0,
+    "source_adoptions": 0,
+    "raw_source_changes": 0,
+    "gtfs_zip_changes": 0,
+    "public_value_changes": 0,
+    "internal_score_publications": 0,
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0
+  },
+  "next_actions": [
+    "commit the implementation and local acceptance on main",
+    "push the implementation commit",
+    "accept the four same-head workflows and two artifacts",
+    "verify public commit bytes and internal 404 boundary",
+    "record public acceptance before closing the stage"
+  ],
+  "errors": []
+}
