@@ -2623,6 +2623,21 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   `evidence/20260817_work1_award_scorecard_recalibration_3_local_acceptance.json`。
   判定は`LOCAL_GO`。次は実装commitをmainへpushし、同一HEADのCI・Pages・artifact・公開非露出を受け入れる。
 
+### 公開受入GO
+
+- 実装commit `adee2e563c6e366d2e72bcf834b2455a663f307a`のscope lock `31997422132`、
+  Pages `31997421753`、release attestation `31997461330`は同一SHAで全success。
+- artifact `9277289118`はGO、180 / 180、原本7 / 7、公開5 / 5、errors 0。
+  保護した内部評価の期待値と固定ハッシュは一致し、Pages copyは不在だった。
+- 公開4 HTMLとJRバス供給指標JSONはHTTP 200かつcommit bytes一致。内部診断HTML・JSON・schemaの
+  3 URLは404を維持し、公開HTMLの内部点数・内部JSONマーカーは0件だった。
+- 原本、GTFS ZIP、既存公開値、公開5資産、作品②入力、参加者連絡、応募・BODIK、
+  原本自動採用、内部点数公開は各0変更・0実行。公開正本は
+  `evidence/20260817_work1_award_scorecard_recalibration_3_public_acceptance.json`。
+- 判定は`GO`。次段階は変更なしの
+  `WORK1-AWARD-SCORECARD-RECALIBRATION-3-AUDIT-1`だけとし、開始しない。
+  この記録を含む最終HEAD自身を同じ3 workflowで外部再確認する。
+
 ## 2026-08-15 WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 ローカル受入
 
 - 受入済みJRバス中国GTFSを、既存2フィード比較から分離した広域フィード全体の独立指標として実装。

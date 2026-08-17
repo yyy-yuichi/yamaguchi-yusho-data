@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-17 (rev.71) / 状態: WORK1-AWARD-SCORECARD-RECALIBRATION-3 ローカル受入GO / 次: 公開受入
+最終更新: 2026-08-17 (rev.72) / 状態: WORK1-AWARD-SCORECARD-RECALIBRATION-3 GO / 次: 変更なし監査（未開始）
 
 ## 0. このファイルについて
 
@@ -1385,3 +1385,17 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   `evidence/20260817_work1_award_scorecard_recalibration_3_local_acceptance.json`。
 - 判定は`LOCAL_GO`。次は実装・ローカル受入記録をcommitしてmainへpushし、同一SHAのscope lock、
   Pages、release attestation、artifact、公開bytes、内部3 URLの404を受け入れる。
+
+### 改訂点（rev.72）
+
+- 実装commit `adee2e563c6e366d2e72bcf834b2455a663f307a`をmainへ適用した。scope lock
+  `31997422132`、Pages `31997421753`、release attestation `31997461330`は同一SHAで全success。
+- artifact `9277289118`はGO、180 / 180、原本7 / 7、公開5 / 5、errors 0。
+  保護した内部評価の期待値と固定ハッシュは一致し、Pages copyは不在だった。
+- 公開4 HTMLとJRバス供給指標JSONはHTTP 200かつcommit bytes一致。内部診断HTML・JSON・schemaの
+  3 URLは404を維持し、公開HTMLの内部点数・内部JSONマーカーは0件だった。
+- 公開正本は`evidence/20260817_work1_award_scorecard_recalibration_3_public_acceptance.json`。
+  原本、GTFS ZIP、既存公開値、作品②入力、参加者連絡、応募・BODIK、内部点数公開は各0。
+- `WORK1-AWARD-SCORECARD-RECALIBRATION-3`をGOとする。次段階は変更を伴わない
+  `WORK1-AWARD-SCORECARD-RECALIBRATION-3-AUDIT-1`だけとし、開始しない。この記録を含む
+  最終HEAD自身を同じ3 workflowで再確認し、後続run IDはrepoへ再書込みしない。

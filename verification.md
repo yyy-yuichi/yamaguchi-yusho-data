@@ -2585,6 +2585,25 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 | 正本 | `evidence/20260817_work1_award_scorecard_recalibration_3_local_acceptance.json` |
 | 判定 | `LOCAL_GO`。同一最終HEADのCI・Pages・artifact・公開非露出受入へ進む |
 
+### 公開受入
+
+| 検証 | 結果 |
+|---|---|
+| subject | `adee2e563c6e366d2e72bcf834b2455a663f307a` |
+| scope lock / Pages / attestation | `31997422132` / `31997421753` / `31997461330`、全success |
+| artifact | ID `9277289118`、digest `sha256:b0115ec205182ecfbe165f352c80a7e894c222fca0ece451ffbf7b05feea1be7`、期限2026-11-15T05:18:48Z |
+| decision / errors | `GO` / 0 |
+| tests / sources / public | 180 / 180、7 / 7、5 / 5 |
+| 内部評価保護 | 期待値・固定ハッシュ一致、`pages_copy_absent=true` |
+| 内部診断分離 | 内部診断3 URLは404、公開HTMLの内部値・導線0 |
+| 公開4 HTML・JRバスJSON | HTTP 200、同commit bytes一致 |
+| 境界 | 原本・GTFS ZIP・既存公開値・作品②・参加者連絡・応募・BODIK・内部点数公開各0 |
+| 正本 | `evidence/20260817_work1_award_scorecard_recalibration_3_public_acceptance.json` |
+| 判定 | `GO`。次段階はread-onlyの`WORK1-AWARD-SCORECARD-RECALIBRATION-3-AUDIT-1`だけ。開始しない |
+
+この受入記録を含む最終HEAD自身をscope lock、Pages、release attestationで再確認し、後続run IDは
+外部正本としてrepoへ再書込みしない。
+
 ## 2026-08-15 WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 ローカル検証
 
 | 検証 | 結果 |
