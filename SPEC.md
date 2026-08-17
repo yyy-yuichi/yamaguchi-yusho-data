@@ -3104,7 +3104,8 @@ Python 3.12、`contents: read`、認証情報非保持で実行する。再生�
 
 - `SPEC.md`、`README.md`、`PROGRESS.md`、`run_record.md`、`verification.md`
 - `src/run_reproduction_drill.py`
-- `tests/test_reproduction_drill.py`
+- `src/parse.py`（CSV改行のLF固定）
+- `tests/test_reproduction_drill.py`、`tests/test_gtfs_inspection.py`（OS依存仮定の除去）
 - `.github/workflows/reproduction-drill.yml`
 - `evidence/20260817_work1_independent_reproduction_drill_*`
 
@@ -3115,7 +3116,7 @@ Python 3.12、`contents: read`、認証情報非保持で実行する。再生�
 
 1. 一時スナップショット外へ書かず、7原本がmanifestのbytes・SHA-256と一致する。
 2. 17生成物すべてを削除状態から再作成し、改行正規化後の内容が対象commitと一致する。
-3. Windowsローカルはbyte一致と内容一致を分離し、Ubuntu runnerでは両方を記録する。
+3. Windowsローカルはbyte一致と内容一致を分離し、Ubuntu runnerではCSVを含む17件のbyte一致も確認する。
 4. 欠落1件を検知し、既存ビルダーで復旧後に17 / 17一致へ戻る。
 5. 専用テスト、再構成スナップショット内の全unittest、通常worktreeの全unittestが成功する。
 6. scope checker、`git diff --check`、旧SPEC網羅検査、秘密情報定型検査が成功する。

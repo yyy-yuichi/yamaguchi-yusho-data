@@ -232,13 +232,14 @@ class GtfsArchiveInspectionTest(unittest.TestCase):
             self.assertEqual(
                 gi.check_member_name("dir\\agency.txt"), "メンバー名にバックスラッシュを含む"
             )
-            # 実ZIP経由では正規化されて"/"を含む名前になり、階層検査で拒否されることを確認する。
+            # zipfileの名前正規化はOS依存で、Windowsは"/"へ変換し、Linuxは"\\"を
+            # 保持する。どちらでも本実装が危険名として拒否することを確認する。
             raw = _build_simple_zip_bytes("dirXagency.txt")
             patched = _patch_name(raw, "dirXagency.txt", b"dir\\agency.txt")
             with zipfile.ZipFile(io.BytesIO(patched)) as zf:
                 normalized_name = zf.infolist()[0].filename
                 result = gi.inspect_zipfile(zf, "backslash_normalized")
-            self.assertEqual(normalized_name, "dir/agency.txt")
+            self.assertIn(normalized_name, {"dir/agency.txt", "dir\\agency.txt"})
             self.assertFalse(result.safety.ok)
             self.assertTrue(any(f.check == "member_name" for f in result.safety.failures))
 

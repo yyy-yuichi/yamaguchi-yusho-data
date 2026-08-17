@@ -2617,6 +2617,9 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   一時領域削除、scope checker、`git diff --check`はsuccess。
 - Ubuntuのクリーンrunnerで同じドリルと全188件を実行し、専用artifactへJSON・Markdownを保存する
   read-only workflowを追加した。新規原本取得・自動採用・作品②入力・参加者連絡・応募・BODIKは各0。
+- 初回Ubuntu run `32000044592`は原本7 / 7、内容17 / 17、byte 15 / 17、復旧successまで通過後、
+  既存ZIP安全テストが`zipfile`のバックスラッシュ処理をWindows固有と仮定して1件失敗しNO-GO。
+  artifact `9278075041`を読戻し、CSV 2件をLF固定し、テストを両OS許容へ修正した。安全判定は緩和しない。
 - ローカル正本は
   `evidence/20260817_work1_independent_reproduction_drill_local_acceptance.json`。
   判定は`LOCAL_GO`。次は実装commitをmainへpushし、専用CI・scope lock・Pages・attestationを受け入れる。

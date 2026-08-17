@@ -1412,6 +1412,10 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   全17件の内容一致へ戻した。一時領域は終了後に削除し、正本worktreeの原本・生成物変更は0。
 - 専用8 / 8、通常全188 / 188、基準commit一時スナップショット全180 / 180、scope checker、
   `git diff --check`はsuccess。Ubuntuで同じドリルと全テストを行うread-only workflowを追加した。
+- 初回Ubuntu run `32000044592`は7 / 7、内容17 / 17、byte 15 / 17、復旧successの後、
+  `zipfile`のバックスラッシュ正規化をWindows固有と仮定した既存テスト1件でNO-GO。artifact
+  `9278075041`を読戻し、登録供給CSV 2件をLF固定、テストをWindows/Linux両挙動へ修正した。
+  バックスラッシュ名を拒否する本体安全判定は維持した。
 - 新規原本取得、認証変更、内部再採点・公開、作品②入力、参加者連絡、応募・BODIKは各0。
   ローカル正本は`evidence/20260817_work1_independent_reproduction_drill_local_acceptance.json`。
 - 判定は`LOCAL_GO`。次は実装commitをmainへpushし、同一SHAの専用reproduction workflow、

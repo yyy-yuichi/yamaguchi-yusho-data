@@ -64,6 +64,26 @@
       "Work 1 release attestation"
     ]
   },
+  "first_github_run_observation": {
+    "run_id": 32000044592,
+    "conclusion": "failure",
+    "artifact_id": 9278075041,
+    "artifact_digest": "sha256:17d0fd7deab2f52f123d4fad5bf60762e9622a53200a583b9c9cc3f87c17e8e1",
+    "accepted_sources_matched": 7,
+    "normalized_content_matches": 17,
+    "exact_byte_matches": 15,
+    "recovery_success": true,
+    "tests_discovered": 188,
+    "tests_passed": 0,
+    "failed_test_count": 1,
+    "cause": "existing test assumed Windows-only zipfile backslash normalization",
+    "remediation": [
+      "fix operators and vehicles CSV writers to emit LF on every operating system",
+      "accept both documented zipfile name representations in the test while preserving rejection"
+    ],
+    "safety_check_weakened": false,
+    "retry_required": true
+  },
   "boundaries": {
     "source_downloads": 0,
     "source_adoptions": 0,

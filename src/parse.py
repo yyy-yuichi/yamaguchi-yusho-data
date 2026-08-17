@@ -1433,14 +1433,14 @@ def main():
                 vehicles.extend(page_vehicles)
 
     with (DATA_DIR / "operators.csv").open("w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=OPERATORS_COLUMNS)
+        w = csv.DictWriter(f, fieldnames=OPERATORS_COLUMNS, lineterminator="\n")
         w.writeheader()
         w.writerows(operators)
     with (DATA_DIR / "operators.json").open("w", encoding="utf-8") as f:
         json.dump(operators, f, ensure_ascii=False, indent=2)
 
     with (DATA_DIR / "vehicles.csv").open("w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=VEHICLES_COLUMNS)
+        w = csv.DictWriter(f, fieldnames=VEHICLES_COLUMNS, lineterminator="\n")
         w.writeheader()
         w.writerows(vehicles)
     with (DATA_DIR / "vehicles.json").open("w", encoding="utf-8") as f:

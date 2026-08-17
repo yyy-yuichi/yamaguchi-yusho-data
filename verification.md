@@ -2582,6 +2582,9 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 | 基準snapshot回帰 | 180件検出、180 / 180 success、終了コード0 |
 | 一時領域 | 終了後削除、正本worktree変更0 |
 | GitHub契約 | Ubuntu / Python 3.12 / `contents: read` / 認証非保持 / artifact 90日 |
+| 初回Ubuntu観測 | run `32000044592`、7 / 7、内容17 / 17、byte 15 / 17、復旧success、既存OS依存テスト1件でNO-GO |
+| 初回artifact | `9278075041`、digest `sha256:17d0fd7deab2f52f123d4fad5bf60762e9622a53200a583b9c9cc3f87c17e8e1` |
+| 修正 | `parse.py`のCSVをLF固定。ZIP名テストをWindows/Linux両挙動へ対応し、安全拒否は維持 |
 | 境界 | 新規原本・自動採用・内部点数公開・作品②・参加者連絡・応募・BODIK各0 |
 | 正本 | `evidence/20260817_work1_independent_reproduction_drill_local_acceptance.json` |
 | 判定 | `LOCAL_GO`。同一HEADの専用CI・Pages・release artifact・公開境界受入へ進む |
