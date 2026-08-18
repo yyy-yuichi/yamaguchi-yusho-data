@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
-  "scorecard_id": "work1-award-scorecard-recalibration-4-2026-08-18",
+  "scorecard_id": "work1-award-scorecard-recalibration-5-2026-08-19",
   "work_id": "WORK1",
   "work_title": "山口県 市町別の登録供給ビュー",
-  "evaluation_as_of": "2026-08-18",
+  "evaluation_as_of": "2026-08-19",
   "evidence_boundary": {
     "repository_id": "yyy-yuichi/yamaguchi-yusho-data",
     "other_work_input_count": 0,
@@ -91,7 +91,7 @@
           "label": "方法の妥当性",
           "score": 4.5,
           "confidence": "high",
-          "rationale": "市町選択、GTFS状況、同一週の2フィード比較、原本・日付・限界への導線に加え、4状態別に共有事実・次の確認・分析条件を示すメモが、交通協議前に公開情報を取り違えず確認する目的へ直接対応する。",
+          "rationale": "市町選択、GTFS状況、同一週の2フィード比較、原本・日付・限界への導線に加え、4状態別に共有事実・次の確認・分析条件を示すメモが、交通協議前に公開情報を取り違えず確認する目的へ直接対応する。公開4画面の操作アクセシビリティ監査もGOだが、実務タスクの第三者評価ではないため4.5を維持する。",
           "evidence": [
             {
               "claim": "公開アプリが市町別確認と同一週比較を実装している。",
@@ -104,10 +104,16 @@
               "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/municipality-memo.html",
               "evidence_type": "public_demo",
               "as_of": "2026-08-13"
+            },
+            {
+              "claim": "公開4画面の名前・役割・焦点表示・320 CSS pxリフロー・コントラスト・動的更新を変更なしで監査し、P0 / P1 / P2各0でGOとした。",
+              "url": "https://github.com/yyy-yuichi/yamaguchi-yusho-data/blob/main/evidence/20260819_work1_operability_accessibility_audit.json",
+              "evidence_type": "public_verification",
+              "as_of": "2026-08-19"
             }
           ],
           "missing_evidence": ["実務タスクに対する方法選択の第三者評価"],
-          "as_of": "2026-08-17"
+          "as_of": "2026-08-19"
         },
         {
           "subcriterion_id": "user_value_evidence",
@@ -163,7 +169,7 @@
           "label": "利用可能な公開実装",
           "score": 4.5,
           "confidence": "high",
-          "rationale": "静的Webアプリとして公開され、登録供給、19市町すべてのGTFS確認状況、2フィードの同一週比較に加え、4状態別の市町確認メモを共有・印刷できる。",
+          "rationale": "静的Webアプリとして公開され、登録供給、19市町すべてのGTFS確認状況、2フィードの同一週比較に加え、4状態別の市町確認メモを共有・印刷できる。公開4画面は名前・役割・焦点表示・320 CSS pxリフロー・コントラスト・動的更新の変更なし監査でGOだが、支援技術利用者の受入ではないため4.5を維持する。",
           "evidence": [
             {
               "claim": "主要機能を公開URLで利用できる。",
@@ -176,10 +182,16 @@
               "url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/municipality-memo.html",
               "evidence_type": "public_demo",
               "as_of": "2026-08-13"
+            },
+            {
+              "claim": "公開4画面をWCAG 2.2 A / AAの関連観点で変更なし監査し、構造・焦点表示・リフロー・コントラスト・動的更新を確認した。適合認証や外部ユーザー受入は主張しない。",
+              "url": "https://github.com/yyy-yuichi/yamaguchi-yusho-data/blob/main/evidence/20260819_work1_operability_accessibility_audit.json",
+              "evidence_type": "public_verification",
+              "as_of": "2026-08-19"
             }
           ],
           "missing_evidence": ["支援技術利用者を含む外部ユーザー受入"],
-          "as_of": "2026-08-17"
+          "as_of": "2026-08-19"
         },
         {
           "subcriterion_id": "reproducibility_verifiability",
@@ -465,25 +477,25 @@
   "top_improvements": [
     {
       "priority": 1,
+      "improvement_id": "site_clarity_before_user_evaluation",
+      "title": "利用者検証より先に行う公開サイトの明瞭性監査・改善",
+      "why": "サイトの目的、分かること、分からないこと、協議前確認メモまでの進み方を作成者自身がまだ平易に説明できない段階では、外部参加者向けの検証資料を先に作らない。まず初見の人がサイトだけで流れを理解できるかを監査し、不明瞭な箇所を限定して改善する。",
+      "target_subcriteria": ["method_fit", "public_implementation"],
+      "expected_index_gain_range": [0.0, 0.0],
+      "effort": "small",
+      "external_dependency": false,
+      "acceptance_evidence": ["目的・対象者・分かること・分からないことを公開ページ上の根拠箇所で追える", "市町選択から日付・対象範囲・不足情報・確認事項・協議前確認メモまでを初見導線として追える", "不明瞭な箇所を重要度付きで記録し、必要な変更を限定できる", "外部連絡0・利用者テスト依頼0のまま明瞭性確認と利用者検証を区別", "明瞭性確認と作成者本人の開始承認が終わるまで利用者検証準備資料を作らない"]
+    },
+    {
+      "priority": 2,
       "improvement_id": "remote_user_evaluation",
-      "title": "交通担当者・事業者によるオンライン利用者検証",
-      "why": "最大の不足は、想定利用者が実務で使えたという外部証拠と関係アクター参加の欠如である。",
+      "title": "サイト明瞭化後の交通担当者・事業者によるオンライン利用者検証",
+      "why": "最大の不足は、想定利用者が実務で使えたという外部証拠と関係アクター参加の欠如である。ただし、公開サイトの明瞭性確認と作成者本人の開始承認を前提とし、それまではHUMAN_GATE_PENDINGとして資料作成・連絡・依頼を行わず、未実施のまま加点しない。",
       "target_subcriteria": ["user_value_evidence", "actor_diversity"],
       "expected_index_gain_range": [3.3, 6.7],
       "effort": "medium",
       "external_dependency": true,
-      "acceptance_evidence": ["3名以上の同意済みオンラインタスク記録", "タスク成功率と所要時間", "指摘と改修対応の公開要約"]
-    },
-    {
-      "priority": 2,
-      "improvement_id": "accessibility_task_audit",
-      "title": "キーボード・読み上げ・色依存を含む操作アクセシビリティ監査",
-      "why": "PC・スマートフォンの表示と横overflowは検証済みだが、キーボード操作、フォーカス順、読み上げ名、色以外の状態伝達を一連の利用タスクとしてまだ検証していない。外部参加者へ連絡せず自走できる。",
-      "target_subcriteria": ["public_implementation", "method_fit"],
-      "expected_index_gain_range": [0.0, 3.3],
-      "effort": "medium",
-      "external_dependency": false,
-      "acceptance_evidence": ["主要タスクのキーボード操作・フォーカス順記録", "自動検査と読み上げ確認の指摘一覧", "修正前後の回帰テストと公開読戻し"]
+      "acceptance_evidence": ["site_clarity_before_user_evaluationの完了と作成者本人の開始承認", "3名以上の同意済みオンラインタスク記録", "タスク成功率と所要時間", "指摘と改修対応の公開要約"]
     },
     {
       "priority": 3,

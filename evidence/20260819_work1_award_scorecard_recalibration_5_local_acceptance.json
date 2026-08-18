@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-AWARD-SCORECARD-RECALIBRATION-5",
+  "evidence_type": "local_acceptance",
+  "checked_at": "2026-08-19",
+  "decision": "LOCAL_GO",
+  "baseline": {
+    "branch": "main",
+    "commit_sha": "4faebc430e70fd31245dc80cb5011dad218f9d31",
+    "origin_main_sha": "4faebc430e70fd31245dc80cb5011dad218f9d31",
+    "worktree_was_clean": true
+  },
+  "inputs": [
+    {
+      "type": "read_only_audit",
+      "subject": "4faebc430e70fd31245dc80cb5011dad218f9d31",
+      "decision": "GO",
+      "severity": {
+        "P0": 0,
+        "P1": 0,
+        "P2": 1
+      },
+      "p2": "完了済みの操作性・アクセシビリティ監査が未実施の改善候補として残る記録上の軽微な不整合"
+    },
+    {
+      "type": "operability_accessibility_audit",
+      "path": "evidence/20260819_work1_operability_accessibility_audit.json",
+      "decision": "GO",
+      "severity": {
+        "P0": 0,
+        "P1": 0,
+        "P2": 0
+      },
+      "public_pages_checked": 4,
+      "visible_controls_checked": 115,
+      "full_tests": "196/196",
+      "limitations": [
+        "アプリ内自動操作では連続Tab移動とEnter既定動作を再現できなかった",
+        "スクリーンリーダー利用者・障害当事者・行政交通地域活動の実務者による評価ではない",
+        "WCAG適合認証ではない"
+      ]
+    }
+  ],
+  "recalibration": {
+    "evaluation_as_of_before": "2026-08-18",
+    "evaluation_as_of_after": "2026-08-19",
+    "criterion_scores_before": {
+      "utility": 3.5,
+      "completeness": 4.5,
+      "challenge": 3.5
+    },
+    "criterion_scores_after": {
+      "utility": 3.5,
+      "completeness": 4.5,
+      "challenge": 3.5
+    },
+    "overall_before": 76.7,
+    "overall_after": 76.7,
+    "supported_unchanged_subcriteria": [
+      {
+        "subcriterion_id": "method_fit",
+        "score": 4.5,
+        "reason": "公開4ページの操作性・アクセシビリティ監査はGOだが、第三者による実務タスク評価ではない。"
+      },
+      {
+        "subcriterion_id": "public_implementation",
+        "score": 4.5,
+        "reason": "構造・フォーカス・狭幅・コントラスト・動的更新を監査したが、支援技術利用者による受入ではない。"
+      },
+      {
+        "subcriterion_id": "user_value_evidence",
+        "score": 2.0,
+        "reason": "利用者本人による評価と実務効果の外部証拠がなく、HUMAN_GATE_PENDINGのままである。"
+      },
+      {
+        "subcriterion_id": "actor_diversity",
+        "score": 1.0,
+        "reason": "行政・交通事業者・地域活動関係者が企画・検証・運用へ参加した公開証拠がない。"
+      }
+    ],
+    "scorecard": {
+      "path": "data/work1_award_scorecard.json",
+      "bytes": 30787,
+      "sha256": "d0b134879cfdcd49765ef924fff12f11c58c38c46437eea8e997558960d6715d"
+    }
+  },
+  "remaining_improvements": [
+    {
+      "priority": 1,
+      "improvement_id": "site_clarity_before_user_evaluation",
+      "external_dependency": false,
+      "expected_score_gain": [
+        0.0,
+        0.0
+      ],
+      "note": "サイトの目的、分かること、分からないこと、協議前確認メモまでの初見導線を監査・明瞭化する。作成者本人が説明できるようになるまで利用者検証準備資料を作らない。"
+    },
+    {
+      "priority": 2,
+      "improvement_id": "remote_user_evaluation",
+      "external_dependency": true,
+      "status": "HUMAN_GATE_PENDING",
+      "prerequisites": [
+        "site_clarity_before_user_evaluation complete",
+        "owner start approval"
+      ],
+      "human_approval_gate": "participant_contact"
+    },
+    {
+      "priority": 3,
+      "improvement_id": "remaining_public_gtfs_supply_measurement",
+      "external_dependency": true,
+      "human_approval_gate": "source_acceptance"
+    }
+  ],
+  "verification": {
+    "focused_tests_discovered": 22,
+    "focused_tests_passed": 22,
+    "full_tests_discovered": 197,
+    "full_tests_passed": 197,
+    "scope_guard_passed": true,
+    "diff_check_passed": true,
+    "accepted_sources_matched": 7,
+    "public_assets_baseline_matches": 5,
+    "pages_internal_assets_absent": 3,
+    "pages_internal_marker_hits": 0
+  },
+  "boundaries": {
+    "raw_source_changes": 0,
+    "gtfs_zip_changes": 0,
+    "existing_public_value_changes": 0,
+    "public_asset_changes": 0,
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "user_test_requests": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0,
+    "automatic_source_adoptions": 0,
+    "internal_score_publications": 0
+  },
+  "next_actions": [
+    "commit and push the accepted implementation to main",
+    "read back scope lock, Pages, and release attestation for the same HEAD",
+    "record public acceptance and verify that the internal score remains absent from Pages",
+    "define WORK1-AWARD-SCORECARD-RECALIBRATION-5-AUDIT-1 without starting it"
+  ],
+  "errors": []
+}

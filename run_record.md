@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-19 (rev.81) / 状態: WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1 GO / 次: 変更なしread-only監査（未開始）
+最終更新: 2026-08-19 (rev.82) / 状態: WORK1-AWARD-SCORECARD-RECALIBRATION-5 LOCAL_GO / 次: commit・同一HEAD公開受入
 
 ## 0. このファイルについて
 
@@ -1562,3 +1562,29 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   `WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1`をGOとする。
 - 次段階は変更を伴わない
   `WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1-AUDIT-1`だけとし、開始しない。
+
+### 改訂点（rev.82）
+
+- 基準HEAD `4faebc430e70fd31245dc80cb5011dad218f9d31`の変更なし監査はGO、
+  P0 0 / P1 0 / P2 1。P2は、完了済みの操作性・アクセシビリティ監査が内部採点表に
+  未実施の改善候補として残る記録上の軽微な不整合である。
+- 公開4ページの監査証拠を内部採点表へ追加した。構造、115個の表示操作要素、320×800狭幅、
+  選択色のコントラスト、2市の動的更新はGO、P0 / P1 / P2各0。連続Tab・Enter既定動作の
+  アプリ内自動再現、スクリーンリーダー・障害当事者・実務者評価は未達で、WCAG適合認証ではない。
+- この証拠は記録整合だけに使い、実用度3.5、完成度4.5、挑戦度3.5、総合76.7、
+  `method_fit` 4.5、`public_implementation` 4.5、利用者価値2.0、関係アクター1.0を据え置いた。
+- 完了済みの操作性・アクセシビリティ監査を改善候補から除外した。当初の
+  `user_evaluation_readiness_packet`は、作成者本人がサイトと依頼内容をまだ平易に説明できないとの
+  判断を受けて採用しない。最初の自走候補は`site_clarity_before_user_evaluation`とし、目的、
+  分かること、分からないこと、協議前確認メモまでの初見導線を先に監査・明瞭化する。
+- 利用者検証は明瞭性確認と作成者本人の開始承認を前提とする`HUMAN_GATE_PENDING`に維持した。
+  それまでは準備資料作成、外部連絡、利用者テスト依頼、記録開始を行わず、加点しない。
+- 内部正本は30,787 bytes、SHA256
+  `d0b134879cfdcd49765ef924fff12f11c58c38c46437eea8e997558960d6715d`。
+  専用22 / 22、全197 / 197、scope checker、`git diff --check`、JSON構文検査を完了した。
+- 原本・GTFS ZIP・既存公開値・公開5資産・作品②入力は0変更。外部連絡、利用者テスト依頼、
+  UDC応募、BODIK登録、新原本取得・採用、内部点数公開は各0。
+- ローカル正本は
+  `evidence/20260819_work1_award_scorecard_recalibration_5_local_acceptance.json`。判定は`LOCAL_GO`。
+  次は実装commitをmainへpushし、同一HEADの4 workflowと公開非露出を受け入れる。
+  その完了後にだけ、変更なしの`WORK1-AWARD-SCORECARD-RECALIBRATION-5-AUDIT-1`を定義し、開始しない。

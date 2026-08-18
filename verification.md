@@ -2564,6 +2564,26 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 この受入記録を含む最終HEAD自身をscope lock、Pages、release attestationで再確認し、後続run IDは
 外部正本としてrepoへ再書込みしない。
 
+## WORK1-AWARD-SCORECARD-RECALIBRATION-5 ローカル検証（2026-08-19）
+
+| 検証 | 結果 |
+|---|---|
+| 基準HEAD・監査 | `4faebc430e70fd31245dc80cb5011dad218f9d31`、GO、P0 0 / P1 0 / P2 1 |
+| 操作性・アクセシビリティ証拠 | 公開4ページ、115操作要素、320×800、コントラスト、2市動的更新、P0 / P1 / P2各0 |
+| 監査限界 | 連続Tab・Enter自動再現なし、支援技術利用者・障害当事者・実務者評価なし、WCAG認証ではない |
+| 3基準・総合 | 実用度3.5、完成度4.5、挑戦度3.5、総合76.7を据置 |
+| 未達維持 | 利用者価値2.0、関係アクター1.0。利用者検証は`HUMAN_GATE_PENDING` |
+| 次の自走候補 | `site_clarity_before_user_evaluation`。準備資料より先に目的・範囲・限界・協議前メモ導線を明瞭化 |
+| 利用者検証の前提 | サイト明瞭性確認と作成者本人の開始承認。完了まで資料作成・外部連絡・依頼0 |
+| 内部正本 | 30,787 bytes、SHA256 `d0b134879cfdcd49765ef924fff12f11c58c38c46437eea8e997558960d6715d` |
+| 専用回帰 | 22 / 22 success |
+| 全回帰 | 197 / 197 success |
+| 差分・scope | `git diff --check` success、`WORK1_SCOPE_ALLOWED`、JSON構文success |
+| 公開分離 | 公開5資産は基準HEAD一致、Pages用内部診断3資産なし、公開HTML内部マーカー0 |
+| 境界 | 原本・GTFS ZIP・公開値・作品②変更0。外部連絡・利用者テスト・応募・BODIK・新原本採用0 |
+| 正本 | `evidence/20260819_work1_award_scorecard_recalibration_5_local_acceptance.json` |
+| 判定 | `LOCAL_GO`。次はcommit・同一HEAD公開受入。その後は変更なし監査だけ、未開始 |
+
 ## 2026-08-19 Whyから協議前確認メモまでの利用導線修正
 
 ### 入力監査

@@ -1,6 +1,6 @@
 # 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価 / WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況拡張 / WORK1-AWARD-SCORECARD-RECALIBRATION-2 拡張成果再評価 / WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 広域GTFS独立供給指標 / WORK1-AWARD-SCORECARD-RECALIBRATION-3 独立指標成果再評価 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 独立再現・復旧訓練 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1 再現判定厳格化 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1 記録整合・最終保存 / WORK1-AWARD-SCORECARD-RECALIBRATION-4 再現成果再評価 / WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1 Why・利用導線接続
 
-**rev.5.28 / 2026-08-19**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34、rev.5.20→rev.5.21 は §10.35、rev.5.21→rev.5.22 は §10.36、rev.5.22→rev.5.23 は §10.37、rev.5.23→rev.5.24 は §10.38、rev.5.24→rev.5.25 は §10.39、rev.5.25→rev.5.26 は §10.40、rev.5.26→rev.5.27 は §10.41、rev.5.27→rev.5.28 は §10.42。消した記述はそこに全部書いてある）
+**rev.5.29 / 2026-08-19**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34、rev.5.20→rev.5.21 は §10.35、rev.5.21→rev.5.22 は §10.36、rev.5.22→rev.5.23 は §10.37、rev.5.23→rev.5.24 は §10.38、rev.5.24→rev.5.25 は §10.39、rev.5.25→rev.5.26 は §10.40、rev.5.26→rev.5.27 は §10.41、rev.5.27→rev.5.28 は §10.42、rev.5.28→rev.5.29 は §10.43。消した記述はそこに全部書いてある）
 
 UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下に `SPEC.md` として置き、Claude Code に読ませる。**
 
@@ -16,8 +16,8 @@ WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1、§33はWORK1-AWARD-SCORECARD-RECALIBR
 WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1、§35はWORK1-AWARD-SCORECARD-RECALIBRATION-3、§36は
 WORK1-INDEPENDENT-REPRODUCTION-DRILL-1、§37は
 WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1、§38は同段階の記録整合・最終保存、§39は
-WORK1-AWARD-SCORECARD-RECALIBRATION-4、§40はWORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1の
-実行仕様である。
+WORK1-AWARD-SCORECARD-RECALIBRATION-4、§40はWORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1、
+§41はWORK1-AWARD-SCORECARD-RECALIBRATION-5の実行仕様である。
 プロジェクトのゴール、終了条件、確定方針は`run_record.md` §0.5 を正とし、
 このファイルがそれを上書きしてはならない。
 
@@ -3141,6 +3141,83 @@ P0 0 / P1 2 / P2 2で利用導線はNO_GOと判定した。
 - Whyを根拠なく交通充足の達成や行政判断へ読み替える必要が生じる
 - 既存公開データ、原本、内部診断、scope境界の変更が必要になる
 - 作品②、外部連絡、利用者テスト、応募・登録、新しい原本採用が必要になる
+
+---
+
+## 41. WORK1-AWARD-SCORECARD-RECALIBRATION-5
+
+### 41.1 入力監査と段階ゴール
+
+固定HEAD `4faebc430e70fd31245dc80cb5011dad218f9d31`の公開4画面について、
+`WORK1-OPERABILITY-ACCESSIBILITY-AUDIT-1`を変更なしで実施した。日本語指定、題名、見出し、
+main、操作要素の名前・役割、焦点表示、320 CSS pxでのリフロー、コントラスト、動的更新を確認し、
+196 / 196テストとworktree cleanを再確認した。判定はGO、P0 0 / P1 0 / P2 0である。
+
+一方、自動ブラウザではTab / Enterの連続した既定動作を直接再現できず、スクリーンリーダー利用者・
+障害当事者・交通担当者・事業者による試用も0件である。WCAG適合認証や外部ユーザー受入とは扱わない。
+
+本段階は、この完了事実と限界だけを公開しない内部スコアカードへ反映し、監査未実施という古い改善候補を
+除く。得点上昇を目的とせず、外部依存の利用者検証を`HUMAN_GATE_PENDING`として残しながら、
+利用者検証より先に行う公開サイトの明瞭性監査・改善を次の自走候補へ更新する。
+
+### 41.2 再評価規則と据置
+
+- `method_fit`は4.5を維持する。公開導線の構造・操作監査GOは補強証拠だが、実務タスクの第三者評価ではない。
+- `public_implementation`は4.5を維持する。公開4画面の監査GOは補強証拠だが、支援技術利用者の受入ではない。
+- `user_value_evidence`は2.0、`actor_diversity`は1.0を維持する。参加者、利用ログ、共同設計は0件である。
+- 実用度3.5、完成度4.5、挑戦度3.5、総合比較値76.7を維持する。
+- 完了した`accessibility_task_audit`を改善候補から除外する。
+- 改善候補は、利用者検証より先に行う公開サイト明瞭性監査・改善（自走可）、明瞭化後の利用者検証
+  （人間ゲート）、残存公開GTFS測定（原本受入ゲート）の順とする。
+
+### 41.3 利用者検証より先に行うサイト明瞭性候補
+
+`site_clarity_before_user_evaluation`は、サイトの目的、対象者、分かること、分からないことと、市町選択から
+日付・対象範囲・不足情報・確認事項・協議前確認メモまでの初見導線を、公開ページ上の根拠箇所で追えるか
+監査する。不明瞭な箇所は重要度付きで記録し、必要な変更を限定する。監査と明瞭化だけを利用者検証完了、
+利用者価値、関係アクター参加へ加点しない。
+
+作成者本人がサイトと依頼内容を平易に説明できない間は、利用者検証準備資料を先に作らない。
+`remote_user_evaluation`は、この明瞭性確認と作成者本人の開始承認が終わるまで`HUMAN_GATE_PENDING`とし、
+参加者への連絡、テスト依頼、説明・同意・タスク・匿名記録様式の作成、記録開始を行わない。
+
+### 41.4 変更範囲と公開分離
+
+変更・追加できるのは`SPEC.md`、`run_record.md`、`PROGRESS.md`、`verification.md`、
+`data/work1_award_scorecard.json`、`src/build_release_attestation.py`、
+`tests/test_award_comparison.py`、`tests/test_award_scorecard_recalibration.py`、
+`evidence/20260819_work1_operability_accessibility_audit.json`、
+`evidence/20260819_work1_award_scorecard_recalibration_5_*`だけとする。
+
+Pages用内部診断3資産は不在を維持し、公開HTMLへ内部点数・内部JSON導線を追加しない。
+公開4 HTML、7原本、既存公開JSON・CSV・計算値、作品②は変更・入力しない。参加者連絡、
+利用者テスト依頼、UDC応募、BODIK登録、新規・認証付き原本取得を行わない。
+
+### 41.5 完了条件
+
+1. 操作アクセシビリティ監査の確認項目、限界、P0 / P1 / P2、GOを証拠JSONから追跡できる。
+2. `method_fit`、`public_implementation`、`user_value_evidence`、`actor_diversity`の据置理由を追跡できる。
+3. 3基準3.5 / 4.5 / 3.5、総合76.7を再計算でき、点数が変わらない。
+4. 完了済み`accessibility_task_audit`を改善候補から除外し、利用者検証より先に行うサイト明瞭性候補を
+   未加点で追加する。
+5. 専用テストと全unittest、schema、scope checker、`git diff --check`が成功する。
+6. Pages用内部診断3資産が不在で、公開HTMLの内部点数・内部JSON導線が0件である。
+7. 公開4 HTML、7原本、公開JSON・CSV・計算値が基準HEADと一致する。
+8. 作品②入力、外部連絡、利用者テスト、応募・BODIK、新原本取得・採用が各0である。
+9. 次段階を変更なしの`WORK1-AWARD-SCORECARD-RECALIBRATION-5-AUDIT-1`だけに定義し、開始しない。
+
+### 41.6 停止条件
+
+- 内部監査だけで外部利用者受入、WCAG適合、実務成果、共同設計を達成扱いする必要が生じる
+- 点数を上げるために未実施の利用者検証や支援技術検証を証拠化する必要が生じる
+- 公開HTML、原本、公開値、作品②、scope境界を変更する必要が生じる
+- 外部連絡、利用者テスト、応募・登録、新しい原本採用が必要になる
+
+### 10.43 rev.5.28 → rev.5.29
+
+- 操作アクセシビリティ監査GOを補強証拠として内部診断へ反映するが、外部受入ではないため点数を据え置く。
+- 完了済み監査を改善候補から除外し、利用者検証より先に行うサイト明瞭性監査・改善を
+  未加点の自走候補として追加する。
 
 ---
 

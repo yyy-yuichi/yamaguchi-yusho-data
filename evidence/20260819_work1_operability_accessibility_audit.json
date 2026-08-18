@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0.0",
+  "stage_id": "WORK1-OPERABILITY-ACCESSIBILITY-AUDIT-1",
+  "work_id": "WORK1",
+  "subject": {
+    "repository": "yyy-yuichi/yamaguchi-yusho-data",
+    "commit_sha": "4faebc430e70fd31245dc80cb5011dad218f9d31",
+    "branch": "main",
+    "origin_main_match": true,
+    "worktree_clean_before": true,
+    "worktree_clean_after": true
+  },
+  "audit_date": "2026-08-19",
+  "mode": "read_only",
+  "basis": [
+    {
+      "title": "Web Content Accessibility Guidelines (WCAG) 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/"
+    },
+    {
+      "title": "Understanding Success Criterion 1.4.10: Reflow",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow"
+    },
+    {
+      "title": "Evaluating Web Accessibility Overview",
+      "url": "https://www.w3.org/WAI/test-evaluate/"
+    },
+    {
+      "title": "Involving Users in Web Accessibility",
+      "url": "https://www.w3.org/WAI/test-evaluate/involving-users/"
+    }
+  ],
+  "public_pages": [
+    "https://yyy-yuichi.github.io/yamaguchi-yusho-data/index.html",
+    "https://yyy-yuichi.github.io/yamaguchi-yusho-data/entry.html",
+    "https://yyy-yuichi.github.io/yamaguchi-yusho-data/status.html",
+    "https://yyy-yuichi.github.io/yamaguchi-yusho-data/municipality-memo.html"
+  ],
+  "checks": {
+    "document_structure": {
+      "pages_checked": 4,
+      "language_title_h1_main_present": 4,
+      "unnamed_visible_controls": 0,
+      "duplicate_ids": 0,
+      "broken_label_references": 0,
+      "broken_aria_references": 0,
+      "positive_tabindex": 0,
+      "heading_level_jumps": 0
+    },
+    "focus_and_semantics": {
+      "visible_controls_focus_checked": 115,
+      "missing_focus_indicators": 0,
+      "author_fixed_or_sticky_obstructions": 0,
+      "native_links_buttons_selects_inputs": true,
+      "memo_accessibility_snapshot_roles": [
+        "combobox:市町名",
+        "button:印刷・PDF保存",
+        "textbox:共有URL",
+        "button:URLをコピー",
+        "status"
+      ]
+    },
+    "responsive_reflow": {
+      "viewport_css_px": {
+        "width": 320,
+        "height": 800
+      },
+      "pages_with_document_horizontal_overflow": 0,
+      "pages_with_text_clipping": 0,
+      "small_non_inline_controls": 0,
+      "wide_table_overflow_isolated_to_scroll_region": true
+    },
+    "contrast": {
+      "visible_text_occurrences_checked": 986,
+      "below_selected_wcag_threshold": 0,
+      "method": "computed foreground and composited background contrast; automated screening, not certification"
+    },
+    "dynamic_flow": {
+      "index_selection_checked": "防府市",
+      "index_title_heading_live_regions_and_memo_url_updated": true,
+      "memo_selection_checked": "山陽小野田市",
+      "memo_title_heading_share_url_unknowns_and_questions_updated": true,
+      "browser_errors": 0
+    },
+    "regression": {
+      "tests_discovered": 196,
+      "tests_passed": 196,
+      "exit_code": 0
+    }
+  },
+  "limitations": [
+    "The in-app automation did not reproduce the browser default action for continuous Tab and Enter key traversal; native semantics, focusability, focus indicators, destinations, and anchor target placement were checked separately.",
+    "No screen reader user or disabled user participated.",
+    "This audit is not a WCAG conformance certification.",
+    "Automated contrast and DOM checks cannot establish accessibility on their own."
+  ],
+  "severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0
+  },
+  "decision": "GO",
+  "boundaries": {
+    "other_work_inputs": 0,
+    "external_contacts": 0,
+    "user_test_requests": 0,
+    "new_source_adoptions": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0,
+    "repository_file_changes_during_audit": 0
+  }
+}

@@ -26,7 +26,7 @@ class AwardScorecardRecalibrationTest(unittest.TestCase):
         }
 
     def test_reproduction_evidence_updates_continuity_without_overclaim(self):
-        self.assertEqual("2026-08-18", self.scorecard["evaluation_as_of"])
+        self.assertEqual("2026-08-19", self.scorecard["evaluation_as_of"])
         completeness = {
             item["subcriterion_id"]: item
             for item in self.criteria["completeness"]["subcriteria"]
@@ -79,26 +79,58 @@ class AwardScorecardRecalibrationTest(unittest.TestCase):
         self.assertIn("利用者本人による評価", utility["user_value_evidence"]["rationale"])
         self.assertIn("参加した公開証拠はない", challenge["actor_diversity"]["rationale"])
 
-    def test_completed_reproduction_is_replaced_by_ranked_remaining_actions(self):
+    def test_accessibility_audit_is_recorded_without_score_inflation(self):
+        utility = {
+            item["subcriterion_id"]: item
+            for item in self.criteria["utility"]["subcriteria"]
+        }
+        completeness = {
+            item["subcriterion_id"]: item
+            for item in self.criteria["completeness"]["subcriteria"]
+        }
+        method_fit = utility["method_fit"]
+        public_implementation = completeness["public_implementation"]
+        self.assertEqual(4.5, method_fit["score"])
+        self.assertEqual(4.5, public_implementation["score"])
+        self.assertIn("操作アクセシビリティ監査", method_fit["rationale"])
+        self.assertIn("支援技術利用者の受入ではない", public_implementation["rationale"])
+        audit_name = "20260819_work1_operability_accessibility_audit.json"
+        self.assertTrue(
+            any(audit_name in item["url"] for item in method_fit["evidence"])
+        )
+        self.assertTrue(
+            any(audit_name in item["url"] for item in public_implementation["evidence"])
+        )
+        self.assertTrue((REPO_ROOT / "evidence" / audit_name).is_file())
+
+    def test_completed_work_is_replaced_by_ranked_remaining_actions(self):
         improvements = self.scorecard["top_improvements"]
         self.assertEqual(
             [
+                "site_clarity_before_user_evaluation",
                 "remote_user_evaluation",
-                "accessibility_task_audit",
                 "remaining_public_gtfs_supply_measurement",
             ],
             [item["improvement_id"] for item in improvements],
         )
-        self.assertEqual([True, False, True], [item["external_dependency"] for item in improvements])
+        self.assertEqual([False, True, True], [item["external_dependency"] for item in improvements])
         completed = [
             "similar_service_benchmark",
             "official_gtfs_coverage_extension",
             "jrbus_supply_metrics_extension",
             "independent_reproduction_drill",
+            "accessibility_task_audit",
         ]
         self.assertTrue(
             all(item not in [action["improvement_id"] for action in improvements] for item in completed)
         )
+        clarity = improvements[0]
+        remote = improvements[1]
+        self.assertEqual([0.0, 0.0], clarity["expected_index_gain_range"])
+        self.assertIn("利用者テスト依頼0", " ".join(clarity["acceptance_evidence"]))
+        self.assertIn("開始承認", " ".join(clarity["acceptance_evidence"]))
+        self.assertIn("HUMAN_GATE_PENDING", remote["why"])
+        self.assertIn("資料作成・連絡・依頼を行わず", remote["why"])
 
     def test_internal_scores_and_json_stay_out_of_pages(self):
         self.assertFalse((REPO_ROOT / "docs" / "award-comparison.html").exists())

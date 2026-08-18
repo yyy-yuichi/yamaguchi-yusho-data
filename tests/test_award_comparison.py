@@ -92,7 +92,7 @@ class AwardComparisonContractTest(unittest.TestCase):
 
     def test_recalibration_updates_only_supported_scores_and_scope_counts(self):
         self.assertEqual(
-            "work1-award-scorecard-recalibration-4-2026-08-18",
+            "work1-award-scorecard-recalibration-5-2026-08-19",
             self.scorecard["scorecard_id"],
         )
         criteria = {item["criterion_id"]: item for item in self.scorecard["criteria"]}
@@ -129,7 +129,7 @@ class AwardComparisonContractTest(unittest.TestCase):
             scored_items.extend(criterion["subcriteria"])
         for item in scored_items:
             self.assertIn(item["confidence"], {"high", "medium", "low"})
-            self.assertLessEqual(item["as_of"], "2026-08-18")
+            self.assertLessEqual(item["as_of"], "2026-08-19")
             self.assertTrue(item["rationale"].strip())
             self.assertTrue(item["evidence"])
             self.assertTrue(item["missing_evidence"])
@@ -169,14 +169,14 @@ class AwardComparisonContractTest(unittest.TestCase):
         self.assertEqual([1, 2, 3], [item["priority"] for item in improvements])
         self.assertEqual(
             [
+                "site_clarity_before_user_evaluation",
                 "remote_user_evaluation",
-                "accessibility_task_audit",
                 "remaining_public_gtfs_supply_measurement",
             ],
             [item["improvement_id"] for item in improvements],
         )
         self.assertEqual(
-            [True, False, True],
+            [False, True, True],
             [item["external_dependency"] for item in improvements],
         )
         self.assertEqual(3, len({item["improvement_id"] for item in improvements}))
@@ -257,7 +257,7 @@ class AwardComparisonContractTest(unittest.TestCase):
             self.assertNotIn("実用性", current_record, str(path))
             self.assertNotIn("チャレンジ性", current_record, str(path))
         self.assertEqual(
-            "284574b2fb11528c803493a510238a7e9dc8f9e45e877933ef07c99eafa7979c",
+            "d0b134879cfdcd49765ef924fff12f11c58c38c46437eea8e997558960d6715d",
             hashlib.sha256((DATA_DIR / "work1_award_scorecard.json").read_bytes()).hexdigest(),
         )
 

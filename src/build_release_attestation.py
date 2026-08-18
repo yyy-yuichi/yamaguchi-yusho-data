@@ -49,7 +49,7 @@ PUBLIC_ASSETS = (
 FIXED_PROTECTED_SHA256 = {
     "docs/index.html": "246485d8f400fa8b46a2772b505daec0bf28a82b0d0e88a134fc8d05345bc165",
     "docs/entry.html": "61f96b315671d2481ff09c1243231982e5f0c67f8994001154888fc15bc97f7c",
-    "data/work1_award_scorecard.json": "284574b2fb11528c803493a510238a7e9dc8f9e45e877933ef07c99eafa7979c",
+    "data/work1_award_scorecard.json": "d0b134879cfdcd49765ef924fff12f11c58c38c46437eea8e997558960d6715d",
 }
 
 FetchResult = tuple[int, str, bytes]

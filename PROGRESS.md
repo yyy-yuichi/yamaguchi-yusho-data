@@ -2603,6 +2603,26 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   現行4 URLは200、削除3 URLは404。公開HTMLに旧スコアリンクは0件。
 - この記録を含む最終HEAD自身を同じ3 workflowで外部再確認する。次段階はread-only監査だけ。
 
+## 2026-08-19 WORK1-AWARD-SCORECARD-RECALIBRATION-5 ローカル受入
+
+- 基準HEAD `4faebc430e70fd31245dc80cb5011dad218f9d31`の変更なし監査はGO、
+  P0 0 / P1 0 / P2 1。P2は完了済みの操作性・アクセシビリティ監査が改善候補に残る記録不整合。
+- 公開4ページの操作性・アクセシビリティ監査GOを内部採点表へ反映した。115操作要素、320×800、
+  コントラスト、2市の動的更新を確認したが、連続Tab・Enterの自動再現、支援技術利用者・障害当事者・
+  実務者評価は未達で、WCAG適合認証ではない。
+- 実用度3.5、完成度4.5、挑戦度3.5、総合76.7、利用者価値2.0、関係アクター1.0は据え置いた。
+- 完了済み監査を改善候補から除外。当初の利用者検証準備資料は採用せず、先に
+  `site_clarity_before_user_evaluation`で、サイトの目的・分かること・分からないこと・協議前メモまでの
+  初見導線を監査・明瞭化する。利用者検証は明瞭性確認と本人開始承認まで`HUMAN_GATE_PENDING`。
+- 内部正本は30,787 bytes、SHA256
+  `d0b134879cfdcd49765ef924fff12f11c58c38c46437eea8e997558960d6715d`。
+- 専用22 / 22、全197 / 197、scope checker、`git diff --check`、JSON構文検査はsuccess。
+- 原本・GTFS ZIP・既存公開値・公開5資産・作品②入力は0変更。外部連絡、利用者テスト依頼、応募・
+  BODIK、新原本取得・採用、内部点数公開は各0。
+- 正本は`evidence/20260819_work1_award_scorecard_recalibration_5_local_acceptance.json`。
+  判定は`LOCAL_GO`。次はcommit・main push、同一HEADの4 workflow、公開非露出の受入。
+  その後の次段階は変更なしの`WORK1-AWARD-SCORECARD-RECALIBRATION-5-AUDIT-1`だけ、未開始。
+
 ## 2026-08-19 WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1 ローカル受入
 
 - 基準HEAD `7f06e3af77f4f128a914148a1a510d6915f99957`の変更なし利用導線監査は、
