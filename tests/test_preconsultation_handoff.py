@@ -44,7 +44,7 @@ class PreconsultationHandoffTest(unittest.TestCase):
         ):
             self.assertIn(f'id="{identifier}"', self.html)
         for marker in (
-            "6. この確認を次の行動へつなぐ", "このメモで共有する", "次に確認する",
+            "7. この確認を次の行動へつなぐ", "このメモで共有する", "次に確認する",
             "分析へ渡す条件", "renderHandoff(item, gtfsRow)", "root.dataset.handoffState",
             "root.dataset.hasMetrics", "public_download_confirmed", "authentication_required",
             "not_publicly_distributed", "official_resource_unavailable",

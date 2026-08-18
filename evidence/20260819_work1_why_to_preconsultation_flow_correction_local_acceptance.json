@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1",
+  "evidence_type": "local_acceptance",
+  "checked_at": "2026-08-19T06:07:58+09:00",
+  "decision": "LOCAL_GO",
+  "baseline": {
+    "branch": "main",
+    "commit_sha": "7f06e3af77f4f128a914148a1a510d6915f99957",
+    "origin_main_sha": "7f06e3af77f4f128a914148a1a510d6915f99957",
+    "worktree_was_clean": true
+  },
+  "input_audit": {
+    "stage": "WORK1-AWARD-SCORECARD-RECALIBRATION-4-AUDIT-1",
+    "decision": "NO_GO",
+    "severity": {
+      "P0": 0,
+      "P1": 2,
+      "P2": 2
+    },
+    "p1": [
+      "確定したWhyと現在の第一段階が公開4画面に明示されていなかった",
+      "市町別GTFS説明が現行の取得・安全確認・解析状況と矛盾し、確認日も選択行に連動していなかった"
+    ],
+    "p2": [
+      "公開トップの最初の画面から市町選択へ進む主要操作が見つけにくかった",
+      "市町別に分からないことと行政・事業者への確認事項が独立して整理されていなかった"
+    ]
+  },
+  "why": "自家用車に頼れない人も、地域で通学・通院・買物などの生活を続けられる交通になっているかを確かめたい",
+  "role_boundary": "行政・交通事業者・地域関係者が協議前に確認事実・根拠・不足情報をそろえる第一段階。住民の交通判断や行政判断を直接代行しない。",
+  "flow": [
+    "市町を選ぶ",
+    "現在確認できる登録・公式交通データ",
+    "日付と対象範囲",
+    "分からないこと",
+    "行政・事業者へ確認する事項",
+    "協議前確認メモ"
+  ],
+  "data_matrix": {
+    "municipalities": 19,
+    "municipalities_with_registration_records": 15,
+    "registered_operators": 23,
+    "registered_vehicle_rows": 90,
+    "gtfs_feeds": 8,
+    "gtfs_access_state_counts": {
+      "authentication_required": 2,
+      "not_publicly_distributed": 9,
+      "official_resource_unavailable": 1,
+      "public_download_confirmed": 7
+    },
+    "selected_row_checked_at": "2026-08-13"
+  },
+  "verification": {
+    "focused_flow_tests_discovered": 6,
+    "focused_flow_tests_passed": 6,
+    "combined_contract_tests_discovered": 81,
+    "combined_contract_tests_passed": 81,
+    "full_tests_discovered": 196,
+    "full_tests_passed": 196,
+    "scope_guard_passed": true,
+    "diff_check_passed": true,
+    "desktop_browser_states": 6,
+    "mobile_browser_states": 6,
+    "desktop_viewport": "1280x720",
+    "mobile_viewport": "390x844",
+    "horizontal_overflow_failures": 0,
+    "runtime_errors": 0,
+    "developer_log_warnings_or_errors": 0
+  },
+  "public_asset_hashes": {
+    "docs/index.html": "246485d8f400fa8b46a2772b505daec0bf28a82b0d0e88a134fc8d05345bc165",
+    "docs/entry.html": "61f96b315671d2481ff09c1243231982e5f0c67f8994001154888fc15bc97f7c",
+    "docs/status.html": "0a1633ea734fb81e01d3c00b65222a7774d064a436b0552824791e4b0b0ed45a",
+    "docs/municipality-memo.html": "f8e58aafe31b9f6e923513efaad1f1de61c563d04379d9d58e442c6e3c594224"
+  },
+  "boundaries": {
+    "raw_source_changes": 0,
+    "data_changes": 0,
+    "published_json_or_csv_changes": 0,
+    "calculation_code_changes": 0,
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "user_test_requests": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0,
+    "new_source_acquisitions_or_adoptions": 0,
+    "external_service_data_sends": 0
+  },
+  "next_actions": [
+    "commit and push the accepted implementation to main",
+    "read back scope lock, Pages, release attestation, and reproduction for the same HEAD",
+    "verify public bytes and the live desktop/mobile flow",
+    "record public acceptance"
+  ],
+  "errors": []
+}

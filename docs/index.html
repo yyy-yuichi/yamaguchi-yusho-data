@@ -91,6 +91,39 @@
       font-size: clamp(1rem, 1.8vw, 1.18rem);
     }
 
+    .why-statement {
+      max-width: 780px;
+      margin: 1rem 0 0;
+      padding-left: 1rem;
+      border-left: 5px solid var(--green);
+      color: var(--ink);
+      font-weight: 750;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+      margin-top: 1.2rem;
+    }
+
+    .primary-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.7rem 1.1rem;
+      border: 1px solid var(--green-dark);
+      border-radius: 12px;
+      background: var(--green-dark);
+      color: #fff;
+      font-weight: 850;
+      text-decoration: none;
+    }
+
+    .primary-action:hover { background: var(--green); color: #fff; }
+
     .coverage-card {
       padding: 22px;
       border: 1px solid rgba(23, 107, 85, 0.22);
@@ -421,7 +454,14 @@
           福祉有償運送と交通空白地有償運送の登録簿を、市町から確認できます。
           県・市町の交通担当者が、公開情報として確認できる団体と登録車両を追跡するためのビューです。
         </p>
-        <p class="section-copy"><a href="entry.html">初めての方へ: この作品が解決する問題・使い方・評価根拠</a></p>
+        <p id="why-statement" class="why-statement">
+          目指すことは、自家用車に頼れない人も、地域で通学・通院・買物などの生活を続けられる交通になっているかを確かめたい、ということです。
+          この作品は判断を直接代行せず、行政・交通事業者・地域関係者が協議前に事実・根拠・不足情報をそろえる第一段階です。
+        </p>
+        <div class="hero-actions">
+          <a id="municipality-cta" class="primary-action" href="#municipality-select">市町を選んで確認する</a>
+          <a href="entry.html">初めての方へ: 問題・使い方・現在の範囲</a>
+        </div>
       </div>
       <aside class="coverage-card" aria-label="原本処理状況">
         <span class="summary-label">Source coverage</span>
@@ -677,7 +717,8 @@
       </div>
       <p class="section-copy">
         国・山口県・市町の公式サイト、公式オープンデータサイト、公共交通オープンデータセンター（ODPT）
-        を確認した結果です（確認日 2026-08-09）。GTFS本体のダウンロード・認証・解析は行っていません。
+        を確認した結果です（確認日 <span id="gtfs-check-date">—</span>）。公開取得できる公式原本の一部は
+        受入・安全確認・解析済みです。認証が必要、一般配布なし、現在取得不能の原本は取得していません。
       </p>
       <p id="gtfs-availability-body" class="section-copy"></p>
       <p id="gtfs-scope-note" class="section-copy"></p>
@@ -1227,6 +1268,7 @@
         }
 
         const status = row.availability_status;
+        setText("gtfs-check-date", row.checked_at || "要再確認");
         setText("gtfs-availability-badge", AVAILABILITY_BADGE_TEXT[status] || status);
         setText("gtfs-availability-body", AVAILABILITY_BODY_TEXT[status] || "");
         setText("gtfs-scope-note", row.scope_note);

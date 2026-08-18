@@ -1,6 +1,6 @@
-# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価 / WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況拡張 / WORK1-AWARD-SCORECARD-RECALIBRATION-2 拡張成果再評価 / WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 広域GTFS独立供給指標 / WORK1-AWARD-SCORECARD-RECALIBRATION-3 独立指標成果再評価 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 独立再現・復旧訓練 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1 再現判定厳格化 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1 記録整合・最終保存 / WORK1-AWARD-SCORECARD-RECALIBRATION-4 再現成果再評価
+# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価 / WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況拡張 / WORK1-AWARD-SCORECARD-RECALIBRATION-2 拡張成果再評価 / WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 広域GTFS独立供給指標 / WORK1-AWARD-SCORECARD-RECALIBRATION-3 独立指標成果再評価 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 独立再現・復旧訓練 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1 再現判定厳格化 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1 記録整合・最終保存 / WORK1-AWARD-SCORECARD-RECALIBRATION-4 再現成果再評価 / WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1 Why・利用導線接続
 
-**rev.5.27 / 2026-08-18**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34、rev.5.20→rev.5.21 は §10.35、rev.5.21→rev.5.22 は §10.36、rev.5.22→rev.5.23 は §10.37、rev.5.23→rev.5.24 は §10.38、rev.5.24→rev.5.25 は §10.39、rev.5.25→rev.5.26 は §10.40、rev.5.26→rev.5.27 は §10.41。消した記述はそこに全部書いてある）
+**rev.5.28 / 2026-08-19**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34、rev.5.20→rev.5.21 は §10.35、rev.5.21→rev.5.22 は §10.36、rev.5.22→rev.5.23 は §10.37、rev.5.23→rev.5.24 は §10.38、rev.5.24→rev.5.25 は §10.39、rev.5.25→rev.5.26 は §10.40、rev.5.26→rev.5.27 は §10.41、rev.5.27→rev.5.28 は §10.42。消した記述はそこに全部書いてある）
 
 UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下に `SPEC.md` として置き、Claude Code に読ませる。**
 
@@ -16,7 +16,8 @@ WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1、§33はWORK1-AWARD-SCORECARD-RECALIBR
 WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1、§35はWORK1-AWARD-SCORECARD-RECALIBRATION-3、§36は
 WORK1-INDEPENDENT-REPRODUCTION-DRILL-1、§37は
 WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1、§38は同段階の記録整合・最終保存、§39は
-WORK1-AWARD-SCORECARD-RECALIBRATION-4の実行仕様である。
+WORK1-AWARD-SCORECARD-RECALIBRATION-4、§40はWORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1の
+実行仕様である。
 プロジェクトのゴール、終了条件、確定方針は`run_record.md` §0.5 を正とし、
 このファイルがそれを上書きしてはならない。
 
@@ -3076,6 +3077,73 @@ BODIK登録、履歴・Release・tagの削除、内部再採点を行わない�
 
 ---
 
+## 40. WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1
+
+### 40.1 入力監査と段階ゴール
+
+2026-08-19に固定HEAD `7f06e3af77f4f128a914148a1a510d6915f99957`を変更なしで監査した。
+データ・画面の機械的な導線は19 / 19市町で成立し、4アクセス状態、登録簿あり・0件、実測あり・なしを
+表示できた。一方、Whyの公開不在と古いGTFS説明をP1、市町選択の発見性と市町別不足情報の分散をP2とし、
+P0 0 / P1 2 / P2 2で利用導線はNO_GOと判定した。
+
+本段階は、次のWhyと、現在の作品が担う協議前の第一段階を、公開画面の一つの利用導線として接続する。
+
+> 自家用車に頼れない人も、地域で通学・通院・買物などの生活を続けられる交通になっているかを確かめたい
+
+作品は住民の交通判断や行政判断を直接代行しない。行政・交通事業者・地域関係者が協議前に、公開情報から
+確認できる事実・根拠・日付・対象範囲・分からないこと・確認事項をそろえる第一段階として説明する。
+
+### 40.2 利用導線契約
+
+公開利用者が次を順番にたどれるようにする。
+
+1. 公開トップの最初の画面でWhyと現在の第一段階を理解し、見える操作から市町選択へ移動する。
+2. 市町を選び、登録簿上の供給と公式GTFSアクセス状態を確認する。
+3. 登録簿基準日、GTFS確認日、公式基準日、対象範囲を区別する。
+4. 選択市町について、この公開情報だけでは分からないことを独立した一覧で確認する。
+5. 分からないことと混同せず、行政・事業者へ次に確認する事項を確認する。
+6. 同じ市町を保持した協議前確認メモとして共有・印刷する。
+
+### 40.3 表示修正契約
+
+- `docs/index.html`、`docs/entry.html`、`docs/municipality-memo.html`、`docs/status.html`にWhyと第一段階を明示する。
+- 公開トップのhero内に、市町選択へ移動する常時表示の主要操作を置く。
+- 市町別GTFS説明の確認日は`municipality_gtfs.json`の選択行から表示する。
+- 受入・安全確認・解析済み原本と、認証・一般非配布・取得不能で未取得の原本を同じ文で混同しない。
+- 市町別メモに「この公開情報だけでは分からないこと」を追加し、登録有無、4アクセス状態、実測有無から
+  決定的に生成する。確認事項は別節として維持する。
+- 0件、一般配布なし、現在取得不能、実測なしを、交通・制度・GTFSの不存在や失敗へ読み替えない。
+
+### 40.4 変更範囲と境界
+
+変更できるのは`SPEC.md`、`run_record.md`、`PROGRESS.md`、`verification.md`、公開4 HTML、
+`src/build_release_attestation.py`、専用テスト、本段階の受入JSONだけとする。
+
+7原本、`data/`、`docs/data/`、計算コード、公開値、内部スコアカード、scope境界は変更しない。
+作品②を読まず、参加者連絡、利用者テスト依頼、UDC応募、BODIK登録、新規原本取得・採用、認証変更、
+外部サービスへのデータ送信を行わない。
+
+### 40.5 完了条件
+
+1. Whyと現在の第一段階が公開4 HTMLで確認できる。
+2. 公開トップの最初の画面から、常時表示の操作で市町選択へ移動できる。
+3. 19市町のGTFS確認日が現行JSONと一致し、取得・解析状況の矛盾表現がない。
+4. 全19市町で、分からないことと行政・事業者への確認事項が別々に表示される。
+5. 6状態組合せ、4アクセス状態、登録0件、実測有無で非主張境界を維持する。
+6. 専用テストと全unittest、scope checker、`git diff --check`が成功する。
+7. デスクトップと390×844で主要導線、横overflow 0、runtime/dev error 0を確認する。
+8. commit・main push後、scope lock、Pages、release attestationが同一HEADでsuccess・GOになる。
+9. 公開4 HTMLがcommit bytesと一致し、公開実画面でWhyから協議前メモまで読戻せる。
+10. 原本・公開JSON・内部診断・作品②・外部承認ゲートに変更がない。
+
+### 40.6 停止条件
+
+- Whyを根拠なく交通充足の達成や行政判断へ読み替える必要が生じる
+- 既存公開データ、原本、内部診断、scope境界の変更が必要になる
+- 作品②、外部連絡、利用者テスト、応募・登録、新しい原本採用が必要になる
+
+---
+
 ## 36. WORK1-INDEPENDENT-REPRODUCTION-DRILL-1
 
 ### 36.1 段階ゴール
@@ -3317,6 +3385,13 @@ BODIK登録、新規・認証付き原本取得を行わない。
 - `WORK1-AWARD-SCORECARD-RECALIBRATION-4`を追加し、独立再現成果を過大評価せず内部診断へ反映する
   再採点規則と公開分離を固定した。
 - 完了済み再現訓練を改善候補から除外し、自走可能な次候補を操作アクセシビリティ監査へ更新した。
+
+### 10.42 rev.5.27 → rev.5.28
+
+- `WORK1-AWARD-SCORECARD-RECALIBRATION-4-AUDIT-1`の結果、Whyから協議前確認メモまでの利用導線を
+  P0 0 / P1 2 / P2 2、NO_GOと判定した。
+- `WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1`を追加し、Why、第一段階、市町選択、日付・範囲、
+  分からないこと、確認事項、協議前確認メモを一つの公開導線として固定した。
 
 ---
 

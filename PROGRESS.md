@@ -2603,6 +2603,24 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   現行4 URLは200、削除3 URLは404。公開HTMLに旧スコアリンクは0件。
 - この記録を含む最終HEAD自身を同じ3 workflowで外部再確認する。次段階はread-only監査だけ。
 
+## 2026-08-19 WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1 ローカル受入
+
+- 基準HEAD `7f06e3af77f4f128a914148a1a510d6915f99957`の変更なし利用導線監査は、
+  P0 0 / P1 2 / P2 2、NO_GO。機械的な19市町の導線は成立したが、Whyの公開不在、古いGTFS説明、
+  市町選択の発見性、市町別の不足情報整理に未完了があった。
+- 確定Whyと現在の第一段階を公開4 HTMLへ明示し、トップの主要操作から市町選択、現在確認できる
+  登録・公式交通データ、日付・対象範囲、分からないこと、行政・事業者への確認事項、同じ市町の
+  協議前確認メモまでを一つの導線にした。
+- 市町別GTFS確認日は選択行の`2026-08-13`へ連動。取得・安全確認・解析済みと、認証・一般非配布・
+  取得不能を混同する古い一律説明を解消した。
+- 専用6 / 6、関連契約81 / 81、全196 / 196、scope guard、`git diff --check`がsuccess。
+  PC 1280×720・スマートフォン390×844で6状態組合せを確認し、横overflow・runtime error・
+  developer log warning/errorは各0。
+- 原本、`data/`、`docs/data/`、公開JSON・CSV、計算コード、内部診断、作品②入力は各0変更。
+  外部連絡、利用者テスト依頼、応募・BODIK、新原本取得・採用、外部送信は各0実行。
+- 正本は`evidence/20260819_work1_why_to_preconsultation_flow_correction_local_acceptance.json`。
+  判定は`LOCAL_GO`。次は同一HEADのCI・Pages・公開byte・公開実画面受入。
+
 ## 2026-08-18 WORK1-AWARD-SCORECARD-RECALIBRATION-4 ローカル受入
 
 - 直前の変更なし監査はGO、P0 0 / P1 0 / P2 1。P2は完了済みの独立再現訓練が

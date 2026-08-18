@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-18 (rev.79) / 状態: WORK1-AWARD-SCORECARD-RECALIBRATION-4 GO / 次: 変更なしread-only監査（未開始）
+最終更新: 2026-08-19 (rev.80) / 状態: WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1 LOCAL_GO / 次: 同一HEADの公開受入
 
 ## 0. このファイルについて
 
@@ -1524,3 +1524,23 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - 本記録commit自身の4 workflowと最終bundle・指定Driveへの公開正本保存を外部読戻しする。
   post-commitのrun・artifact・Drive IDは自己参照を避けてrepoへ再書込みしない。
 - 次段階は変更を伴わない`WORK1-AWARD-SCORECARD-RECALIBRATION-4-AUDIT-1`だけとし、開始しない。
+
+### 改訂点（rev.80）
+
+- 基準HEAD `7f06e3af77f4f128a914148a1a510d6915f99957`の
+  `WORK1-AWARD-SCORECARD-RECALIBRATION-4-AUDIT-1`を変更なしで完了した。機械的な市町別導線は
+  19 / 19で成立したが、Whyの公開不在と古いGTFS説明をP1、市町選択の発見性と不足情報の分散を
+  P2とし、P0 0 / P1 2 / P2 2、NO_GOと判定した。
+- ユーザー承認後、`WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1`を開始した。確定Whyと
+  協議前の第一段階を公開4 HTMLへ明示し、トップの主要操作から市町選択、現行データ、日付・範囲、
+  分からないこと、行政・事業者への確認事項、同じ市町の協議前確認メモまで接続した。
+- GTFS確認日は選択行の`2026-08-13`へ連動し、取得・安全確認・解析済み原本と、認証・一般非配布・
+  取得不能の原本を混同する古い一律説明を削除した。
+- 専用6 / 6、関連契約81 / 81、全196 / 196。PC 1280×720とスマートフォン390×844で
+  6状態組合せを確認し、横overflow、runtime error、developer log warning/errorは各0。
+- 7原本、`data/`、`docs/data/`、公開JSON・CSV、計算コード、内部診断、作品②の入力は0変更。
+  参加者連絡、利用者テスト依頼、UDC応募、BODIK登録、新原本の取得・採用、外部送信は各0。
+- ローカル正本は
+  `evidence/20260819_work1_why_to_preconsultation_flow_correction_local_acceptance.json`。
+  判定は`LOCAL_GO`。次は実装commitをmainへpushし、同一SHAの4 workflow、公開byte、公開PC・
+  スマートフォンを読戻して公開受入を判定する。

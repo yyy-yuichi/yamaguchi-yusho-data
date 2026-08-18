@@ -132,6 +132,7 @@
       <p class="eyebrow">UDC2026 作品① / 実務向け出力</p>
       <h1>市町別 交通協議前確認メモ</h1>
       <p class="lead">登録簿とGTFSの公開確認結果を、最初の打合せで「何が分かり、次に何を確かめるか」を共有できる一枚にまとめます。行政判断や交通の充足度を断定する資料ではありません。</p>
+      <p class="lead">目指すことは、自家用車に頼れない人も、地域で通学・通院・買物などの生活を続けられる交通になっているかを確かめたい、ということです。このメモは、そのために行政・交通事業者・地域関係者が公開事実と不足情報をそろえる第一段階です。</p>
     </div>
   </header>
 
@@ -179,6 +180,11 @@
         <p id="memo-subtitle"></p>
       </header>
 
+      <section class="memo-section" aria-labelledby="why-context-title">
+        <h3 id="why-context-title">このメモの目的と現在の役割</h3>
+        <p id="why-statement">自家用車に頼れない人も、地域で通学・通院・買物などの生活を続けられる交通になっているかを確かめたい。その最終判断に進む前に、このメモは公開情報から確認できる事実・根拠・不足情報をそろえる第一段階として使います。</p>
+      </section>
+
       <section class="memo-section" aria-labelledby="summary-title">
         <h3 id="summary-title">1. いま確認できる範囲</h3>
         <dl id="summary-grid" class="summary-grid"></dl>
@@ -216,13 +222,18 @@
         <p id="metrics-empty" class="notice" hidden></p>
       </section>
 
+      <section class="memo-section" aria-labelledby="unknowns-title">
+        <h3 id="unknowns-title">5. この公開情報だけでは分からないこと</h3>
+        <ul id="unknowns" class="compact-list"></ul>
+      </section>
+
       <section class="memo-section" aria-labelledby="checklist-title">
-        <h3 id="checklist-title">5. 協議前に確認すること</h3>
+        <h3 id="checklist-title">6. 行政・事業者へ確認すること</h3>
         <ol id="checklist" class="compact-list"></ol>
       </section>
 
       <section id="handoff-section" class="memo-section" aria-labelledby="handoff-title">
-        <h3 id="handoff-title">6. この確認を次の行動へつなぐ</h3>
+        <h3 id="handoff-title">7. この確認を次の行動へつなぐ</h3>
         <p id="handoff-summary" class="handoff-summary"></p>
         <div class="handoff-grid">
           <article class="handoff-card">
@@ -242,7 +253,7 @@
       </section>
 
       <section class="memo-section" aria-labelledby="limits-title">
-        <h3 id="limits-title">7. 読み方・限界・根拠</h3>
+        <h3 id="limits-title">8. 読み方・限界・根拠</h3>
         <ul id="limits" class="compact-list"></ul>
         <h4>このメモが参照した公開データ</h4>
         <ul id="source-links" class="source-list"></ul>
@@ -572,6 +583,35 @@
         addListItem(list, "交通空白、利便性、需要充足の判断には、路線・時刻・予約条件・利用実績・人口等の追加情報を組み合わせる。");
       }
 
+      function renderUnknowns(item, gtfsRow) {
+        const list = document.getElementById("unknowns");
+        clear(list);
+        addListItem(list, "この登録供給だけでは、現在の運行状況や予約可能性までは分かりません。");
+        if (item.operator_count === 0) {
+          addListItem(list, "登録簿上0件だけから、地域の交通手段や移動支援が存在しないとは分かりません。");
+        } else {
+          addListItem(list, "登録団体が実際にどの日時・区間で利用できるかは、登録簿だけでは分かりません。");
+        }
+
+        if (gtfsRow.availability_status === "public_download_confirmed") {
+          addListItem(list, "公開取得できるGTFSが、市町内の全事業者・全路線を含むかは分かりません。");
+        } else if (gtfsRow.availability_status === "authentication_required") {
+          addListItem(list, "認証後の原本内容と利用可能な範囲は、まだ分かりません。");
+        } else if (gtfsRow.availability_status === "not_publicly_distributed") {
+          addListItem(list, "一般配布の可否、提供条件、現在の内容は、まだ分かりません。");
+        } else {
+          addListItem(list, "現行の配布先、復旧時期、現在の内容は、まだ分かりません。");
+        }
+
+        const associatedFeedIds = new Set(feedIds(gtfsRow));
+        const hasMetrics = state.metrics.some(row => associatedFeedIds.has(row.feed_id));
+        if (hasMetrics) {
+          addListItem(list, "フィード全体の測定値から、市町内だけの供給量や、通学・通院・買物に足りるかは分かりません。");
+        } else {
+          addListItem(list, "この市町に関連するGTFSの予定便などの供給指標は、まだ測定できていません。");
+        }
+      }
+
       function renderHandoff(item, gtfsRow) {
         const root = document.getElementById("handoff-section");
         const facts = document.getElementById("handoff-facts");
@@ -653,6 +693,7 @@
         renderRegistry(item);
         renderGtfs(gtfsRow);
         renderMeasuredMetrics(item, gtfsRow);
+        renderUnknowns(item, gtfsRow);
         renderChecklist(item, gtfsRow);
         renderHandoff(item, gtfsRow);
         renderLimits(gtfsRow);
