@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-AWARD-SCORECARD-RECALIBRATION-4",
+  "evidence_type": "public_acceptance",
+  "checked_at": "2026-08-18",
+  "decision": "GO",
+  "subject": {
+    "branch": "main",
+    "commit_sha": "97d8dd0ad2ab289968b99cfacc037c6121c0208f"
+  },
+  "github_actions": {
+    "reproduction": {
+      "run_id": 32082844455,
+      "conclusion": "success",
+      "head_sha": "97d8dd0ad2ab289968b99cfacc037c6121c0208f",
+      "artifact_id": 9305663647,
+      "artifact_name": "work1-reproduction-drill-97d8dd0ad2ab289968b99cfacc037c6121c0208f",
+      "artifact_size_bytes": 3364,
+      "artifact_digest": "sha256:40c8f369ac500dd5ebb12f2d18024796597ec1fc20f0910f1b7edd4af40a307c",
+      "artifact_expires_at": "2026-11-16T00:01:12Z"
+    },
+    "scope_lock": {
+      "run_id": 32082844340,
+      "conclusion": "success",
+      "head_sha": "97d8dd0ad2ab289968b99cfacc037c6121c0208f"
+    },
+    "pages": {
+      "run_id": 32082843686,
+      "conclusion": "success",
+      "head_sha": "97d8dd0ad2ab289968b99cfacc037c6121c0208f"
+    },
+    "release_attestation": {
+      "run_id": 32082918200,
+      "conclusion": "success",
+      "head_sha": "97d8dd0ad2ab289968b99cfacc037c6121c0208f",
+      "artifact_id": 9305689516,
+      "artifact_name": "work1-release-attestation-97d8dd0ad2ab289968b99cfacc037c6121c0208f",
+      "artifact_size_bytes": 2798,
+      "artifact_digest": "sha256:7d82881874c62fcabee5a8bb3c18c54bb97b8986e9418f98d86243c63b09168b",
+      "artifact_expires_at": "2026-11-16T00:02:16Z"
+    }
+  },
+  "reproduction_readback": {
+    "decision": "GO",
+    "subject_head_match": true,
+    "platform": "Linux",
+    "python": "3.12.13",
+    "pdfplumber": "0.11.10",
+    "exact_byte_match_required": true,
+    "accepted_sources_matched": 7,
+    "accepted_sources_total": 7,
+    "generated_outputs_recreated": 17,
+    "generated_outputs_normalized_matched": 17,
+    "generated_outputs_byte_matched": 17,
+    "recovery_success": true,
+    "tests_discovered": 190,
+    "tests_passed": 190,
+    "temporary_snapshot_removed": true,
+    "errors": 0
+  },
+  "attestation_readback": {
+    "decision": "GO",
+    "subject_head_match": true,
+    "pages_head_match": true,
+    "tests_discovered": 190,
+    "tests_passed": 190,
+    "accepted_source_count": 7,
+    "public_assets_matched": 5,
+    "public_assets_total": 5,
+    "scorecard": {
+      "bytes": 28683,
+      "sha256": "284574b2fb11528c803493a510238a7e9dc8f9e45e877933ef07c99eafa7979c",
+      "scores": {
+        "utility": 3.5,
+        "completeness": 4.5,
+        "challenge": 3.5
+      },
+      "overall_comparison_index": 76.7,
+      "fixed_hash_match": true,
+      "pages_copy_absent": true,
+      "other_work_input_count": 0
+    },
+    "errors": 0
+  },
+  "public_commit_byte_readback": [
+    {
+      "path": "index.html",
+      "http_status": 200,
+      "bytes": 58757,
+      "sha256": "e20ffd6f2791d75b4e8b916f3182e2a996c0b44a2a4565d48ae0c0890254e6a9",
+      "commit_bytes_match": true
+    },
+    {
+      "path": "entry.html",
+      "http_status": 200,
+      "bytes": 19469,
+      "sha256": "f1c3aa1e4475ddded2b38281296bde94126e859fad64c79a593d2f908278677e",
+      "commit_bytes_match": true
+    },
+    {
+      "path": "status.html",
+      "http_status": 200,
+      "bytes": 61634,
+      "sha256": "329523877f2ed5013fc0b4d33305ee80eff8efcf56ee21b585401d535e3196d7",
+      "commit_bytes_match": true
+    },
+    {
+      "path": "municipality-memo.html",
+      "http_status": 200,
+      "bytes": 39905,
+      "sha256": "2e2b58a991194c8460eaa5e6c3b1e03e24501c1c00785d5ea70f3c47f8575758",
+      "commit_bytes_match": true
+    },
+    {
+      "path": "data/jrbus_chugoku_supply_metrics.json",
+      "http_status": 200,
+      "bytes": 3537,
+      "sha256": "eac7e55b0b548f2fe69cf8ce17a03d6d7f4516edf089da362ecbfcc371c6fc05",
+      "commit_bytes_match": true
+    }
+  ],
+  "internal_pages_absent": [
+    {
+      "path": "award-comparison.html",
+      "http_status": 404
+    },
+    {
+      "path": "data/work1_award_scorecard.json",
+      "http_status": 404
+    },
+    {
+      "path": "data/award_scorecard_schema.json",
+      "http_status": 404
+    }
+  ],
+  "public_internal_score_marker_hits": 0,
+  "boundaries": {
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0,
+    "raw_source_changes": 0,
+    "gtfs_zip_changes": 0,
+    "automatic_source_adoptions": 0,
+    "public_value_changes": 0,
+    "public_asset_changes": 0,
+    "internal_score_publications": 0
+  },
+  "external_finalization_contract": {
+    "record_commit_same_head_workflows_required": [
+      "Work 1 independent reproduction drill",
+      "Work 1 scope lock",
+      "pages-build-deployment",
+      "Work 1 release attestation"
+    ],
+    "designated_drive_folder_id": "1SUaiAzx8m54CDxHLtqS_9Mwjvh9oADAX",
+    "required_drive_files": [
+      "final record commit bundle",
+      "this public acceptance JSON"
+    ],
+    "post_commit_external_ids_are_not_recommitted": true,
+    "reason": "commit後に生成されるworkflow・artifact・Drive IDをrepoへ再書込みする自己参照ループを避ける。"
+  },
+  "next_stage": "WORK1-AWARD-SCORECARD-RECALIBRATION-4-AUDIT-1",
+  "next_stage_started": false,
+  "errors": []
+}

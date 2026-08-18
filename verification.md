@@ -2581,6 +2581,25 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 | 正本 | `evidence/20260818_work1_award_scorecard_recalibration_4_local_acceptance.json` |
 | 判定 | `LOCAL_GO`。実装commitの同一HEAD公開受入とDrive読戻し後に最終GOとする |
 
+### 公開受入
+
+| 検証 | 結果 |
+|---|---|
+| subject | `97d8dd0ad2ab289968b99cfacc037c6121c0208f` |
+| reproduction / scope / Pages / attestation | `32082844455` / `32082844340` / `32082843686` / `32082918200`、全success・同一SHA |
+| reproduction artifact | `9305663647`、digest `sha256:40c8f369ac500dd5ebb12f2d18024796597ec1fc20f0910f1b7edd4af40a307c`、GO |
+| Ubuntu再現 | Python 3.12.13、`pdfplumber` 0.11.10、原本7 / 7、完全byte一致17 / 17、欠損復旧、190 / 190、errors 0 |
+| release artifact | `9305689516`、digest `sha256:7d82881874c62fcabee5a8bb3c18c54bb97b8986e9418f98d86243c63b09168b`、GO |
+| release読戻し | 190 / 190、原本7 / 7、公開5 / 5、errors 0 |
+| 内部評価 | 28,683 bytes、固定SHA一致、3.5 / 4.5 / 3.5、総合76.7、Pages copy不在 |
+| 公開境界 | 公開5資産HTTP 200・commit bytes 5 / 5、内部3 URL 404、内部マーカー0 |
+| 変更境界 | 原本・公開値・作品②・参加者連絡・応募・BODIK・内部点数公開各0 |
+| 正本 | `evidence/20260818_work1_award_scorecard_recalibration_4_public_acceptance.json` |
+| 判定 | `GO`。次は`WORK1-AWARD-SCORECARD-RECALIBRATION-4-AUDIT-1`だけ、未開始 |
+
+本記録commit自身の4 workflowと最終bundle・Drive保存は外部読戻しし、post-commit IDは
+自己参照を避けてrepoへ再書込みしない。
+
 ## WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1（2026-08-18）
 
 | 検証 | 結果 |

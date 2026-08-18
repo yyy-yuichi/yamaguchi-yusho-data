@@ -2620,6 +2620,21 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
 - ローカル正本は`evidence/20260818_work1_award_scorecard_recalibration_4_local_acceptance.json`。
   判定は`LOCAL_GO`。同一HEADの4 workflow、両artifact、公開境界、Drive保存の受入まで完了扱いにしない。
 
+### 公開受入GO
+
+- 実装commit `97d8dd0ad2ab289968b99cfacc037c6121c0208f`のreproduction
+  `32082844455`、scope lock `32082844340`、Pages `32082843686`、release attestation
+  `32082918200`は同一SHAで全success。
+- reproduction artifact `9305663647`はGO。Ubuntu / Python 3.12.13、`pdfplumber` 0.11.10、
+  原本7 / 7、再作成・正規化・完全byte一致17 / 17、欠損復旧、190 / 190、errors 0。
+- release artifact `9305689516`もGO。190 / 190、原本7 / 7、公開5 / 5、内部正本28,683 bytes・
+  固定SHA一致、3基準3.5 / 4.5 / 3.5、総合76.7、Pages copy不在、errors 0。
+- 公開4 HTMLとJRバスJSONはHTTP 200・commit bytes一致。内部診断3 URLは404、内部マーカー0件。
+- 公開正本は`evidence/20260818_work1_award_scorecard_recalibration_4_public_acceptance.json`。
+  判定は`GO`。次段階は変更なしの`WORK1-AWARD-SCORECARD-RECALIBRATION-4-AUDIT-1`だけ、未開始。
+- 本記録commit自身の4 workflow、最終bundle、指定Driveへのbundle・公開正本保存は外部読戻しし、
+  commit後に生成されるIDを自己参照させないためrepoへ再書込みしない。
+
 ## 2026-08-18 WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1 GO
 
 - read-only監査はP0 0件、P1 1件、P2 0件でNO-GO。成果自体ではなく、`run_record.md`と

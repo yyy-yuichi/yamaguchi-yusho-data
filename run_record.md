@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-18 (rev.78) / 状態: WORK1-AWARD-SCORECARD-RECALIBRATION-4 LOCAL_GO / 次: commit・同一HEAD公開受入・Drive保存
+最終更新: 2026-08-18 (rev.79) / 状態: WORK1-AWARD-SCORECARD-RECALIBRATION-4 GO / 次: 変更なしread-only監査（未開始）
 
 ## 0. このファイルについて
 
@@ -1508,3 +1508,19 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - ローカル正本は`evidence/20260818_work1_award_scorecard_recalibration_4_local_acceptance.json`。
   公開同一HEAD受入とDrive読戻しまで成功した場合だけ最終GOとし、次段階は変更なしの
   `WORK1-AWARD-SCORECARD-RECALIBRATION-4-AUDIT-1`だけに定義する。
+
+### 改訂点（rev.79）
+
+- 実装commit `97d8dd0ad2ab289968b99cfacc037c6121c0208f`のreproduction
+  `32082844455`、scope lock `32082844340`、Pages `32082843686`、release attestation
+  `32082918200`は同一SHAで全success。
+- reproduction artifact `9305663647`はUbuntuで固定依存、原本7 / 7、完全byte一致17 / 17、
+  欠損復旧、190 / 190、errors 0。release artifact `9305689516`もGO、190 / 190、
+  原本7 / 7、公開5 / 5、内部正本の固定SHA・3.5 / 4.5 / 3.5・総合76.7に一致した。
+- 公開5資産はHTTP 200・commit bytes一致、内部診断3 URLは404、内部マーカー0件。
+  原本・公開値・作品②・参加者連絡・応募・BODIK・内部点数公開は各0。
+- 公開正本は`evidence/20260818_work1_award_scorecard_recalibration_4_public_acceptance.json`。
+  `WORK1-AWARD-SCORECARD-RECALIBRATION-4`をGOとする。
+- 本記録commit自身の4 workflowと最終bundle・指定Driveへの公開正本保存を外部読戻しする。
+  post-commitのrun・artifact・Drive IDは自己参照を避けてrepoへ再書込みしない。
+- 次段階は変更を伴わない`WORK1-AWARD-SCORECARD-RECALIBRATION-4-AUDIT-1`だけとし、開始しない。
