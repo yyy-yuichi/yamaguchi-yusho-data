@@ -2584,6 +2584,22 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 | 正本 | `evidence/20260819_work1_award_scorecard_recalibration_5_local_acceptance.json` |
 | 判定 | `LOCAL_GO`。次はcommit・同一HEAD公開受入。その後は変更なし監査だけ、未開始 |
 
+### 公開受入
+
+| 検証 | 結果 |
+|---|---|
+| subject | `dd65668e517aeb5927d2a789a8b7428908101a58` |
+| scope / Pages / reproduction / attestation | `32198859082` / `32198858763` / `32198859130` / `32198907327`、同一SHA・全success |
+| reproduction artifact | `9346782119`、digest `sha256:54f94b7a44ed17d8218869d68933bbb7cbe34c8b3efff91f7ae319cdea7ce6c6`、GO |
+| Ubuntu再現 | 原本7 / 7、再作成17 / 17、完全byte一致17 / 17、復旧success、197 / 197、errors 0 |
+| release artifact | `9346805963`、digest `sha256:464112d3479fbab17170378c22b2277f67a27b4c1f2a45559d03980545bfeb28`、GO |
+| release読戻し | 197 / 197、原本7 / 7、公開attestation資産5 / 5、保護3 / 3、Pages内部採点表不在、errors 0 |
+| 公開直接読戻し | 4 HTML＋JRバスJSONはHTTP 200、commit bytes 5 / 5一致 |
+| 公開分離 | 内部マーカー0、内部診断3 URLは404 |
+| 人間ゲート | 利用者検証準備資料・連絡・依頼0。明瞭性確認と本人開始承認まで`HUMAN_GATE_PENDING` |
+| 正本 | `evidence/20260819_work1_award_scorecard_recalibration_5_public_acceptance.json` |
+| 判定 | `GO`。次は変更なしの`WORK1-AWARD-SCORECARD-RECALIBRATION-5-AUDIT-1`だけ、未開始 |
+
 ## 2026-08-19 Whyから協議前確認メモまでの利用導線修正
 
 ### 入力監査

@@ -2623,6 +2623,19 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   判定は`LOCAL_GO`。次はcommit・main push、同一HEADの4 workflow、公開非露出の受入。
   その後の次段階は変更なしの`WORK1-AWARD-SCORECARD-RECALIBRATION-5-AUDIT-1`だけ、未開始。
 
+### 公開受入GO
+
+- 実装commit `dd65668e517aeb5927d2a789a8b7428908101a58`のscope lock、Pages、独立再現、
+  release attestationは同一SHAで全success。
+- 独立再現artifact `9346782119`はGO、原本7 / 7、17生成物再作成・完全byte一致17 / 17、
+  欠損復旧、197 / 197、errors 0。release artifact `9346805963`もGO、197 / 197、原本7 / 7、
+  公開attestation資産5 / 5、保護3 / 3、Pages内部採点表不在、errors 0。
+- 公開4 HTMLとJRバスJSONはHTTP 200・commit bytes 5 / 5一致。内部マーカー0、内部3 URLは404。
+- 正本は`evidence/20260819_work1_award_scorecard_recalibration_5_public_acceptance.json`。
+  判定は`GO`。利用者検証は`HUMAN_GATE_PENDING`を維持する。
+- 次段階は変更なしの`WORK1-AWARD-SCORECARD-RECALIBRATION-5-AUDIT-1`だけ、未開始。
+  本記録commit自身の4 workflowは外部読戻しし、IDをrepoへ再書込みしない。
+
 ## 2026-08-19 WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1 ローカル受入
 
 - 基準HEAD `7f06e3af77f4f128a914148a1a510d6915f99957`の変更なし利用導線監査は、

@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-19 (rev.82) / 状態: WORK1-AWARD-SCORECARD-RECALIBRATION-5 LOCAL_GO / 次: commit・同一HEAD公開受入
+最終更新: 2026-08-19 (rev.83) / 状態: WORK1-AWARD-SCORECARD-RECALIBRATION-5 GO / 次: 変更なしread-only監査（未開始）
 
 ## 0. このファイルについて
 
@@ -1588,3 +1588,21 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   `evidence/20260819_work1_award_scorecard_recalibration_5_local_acceptance.json`。判定は`LOCAL_GO`。
   次は実装commitをmainへpushし、同一HEADの4 workflowと公開非露出を受け入れる。
   その完了後にだけ、変更なしの`WORK1-AWARD-SCORECARD-RECALIBRATION-5-AUDIT-1`を定義し、開始しない。
+
+### 改訂点（rev.83）
+
+- 実装commit `dd65668e517aeb5927d2a789a8b7428908101a58`のscope lock `32198859082`、
+  Pages `32198858763`、独立再現 `32198859130`、release attestation `32198907327`は
+  同一SHAで全success。
+- 独立再現artifact `9346782119`はGO、固定原本7 / 7、再作成17 / 17、完全byte一致17 / 17、
+  欠損復旧success、197 / 197、errors 0。release artifact `9346805963`もGO、197 / 197、
+  原本7 / 7、公開attestation資産5 / 5、保護3 / 3、Pages内部採点表不在、errors 0。
+- 公開4 HTMLとJRバスJSONはHTTP 200・commit bytes 5 / 5一致。公開HTMLの内部点数マーカーは0件、
+  内部診断3 URLは404を維持した。
+- 公開正本は
+  `evidence/20260819_work1_award_scorecard_recalibration_5_public_acceptance.json`。
+  `WORK1-AWARD-SCORECARD-RECALIBRATION-5`をGOとする。
+- 利用者検証準備資料、外部連絡、利用者テスト依頼、応募・BODIK、新原本採用、作品②入力は各0。
+  利用者検証はサイト明瞭性確認と作成者本人の開始承認まで`HUMAN_GATE_PENDING`を維持する。
+- 次段階は変更を伴わない`WORK1-AWARD-SCORECARD-RECALIBRATION-5-AUDIT-1`だけとし、開始しない。
+  本記録commit自身の4 workflowは外部読戻しし、post-commit IDは自己参照を避けてrepoへ再書込みしない。

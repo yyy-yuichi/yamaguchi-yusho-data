@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-AWARD-SCORECARD-RECALIBRATION-5",
+  "evidence_type": "public_acceptance",
+  "checked_at": "2026-08-19",
+  "decision": "GO",
+  "subject": {
+    "branch": "main",
+    "commit_sha": "dd65668e517aeb5927d2a789a8b7428908101a58",
+    "origin_main_sha": "dd65668e517aeb5927d2a789a8b7428908101a58"
+  },
+  "workflows": {
+    "scope_lock": {
+      "run_id": 32198859082,
+      "conclusion": "success",
+      "head_sha": "dd65668e517aeb5927d2a789a8b7428908101a58"
+    },
+    "pages": {
+      "run_id": 32198858763,
+      "conclusion": "success",
+      "head_sha": "dd65668e517aeb5927d2a789a8b7428908101a58"
+    },
+    "independent_reproduction": {
+      "run_id": 32198859130,
+      "conclusion": "success",
+      "head_sha": "dd65668e517aeb5927d2a789a8b7428908101a58"
+    },
+    "release_attestation": {
+      "run_id": 32198907327,
+      "conclusion": "success",
+      "head_sha": "dd65668e517aeb5927d2a789a8b7428908101a58"
+    }
+  },
+  "artifacts": {
+    "independent_reproduction": {
+      "artifact_id": 9346782119,
+      "digest": "sha256:54f94b7a44ed17d8218869d68933bbb7cbe34c8b3efff91f7ae319cdea7ce6c6",
+      "decision": "GO",
+      "accepted_sources": "7/7",
+      "recreated_targets": "17/17",
+      "exact_byte_matches": "17/17",
+      "recovery": "success",
+      "tests": "197/197",
+      "errors": 0
+    },
+    "release_attestation": {
+      "artifact_id": 9346805963,
+      "digest": "sha256:464112d3479fbab17170378c22b2277f67a27b4c1f2a45559d03980545bfeb28",
+      "decision": "GO",
+      "tests": "197/197",
+      "accepted_sources": "7/7",
+      "attested_public_assets": "5/5",
+      "protected_assets": "3/3",
+      "pages_internal_scorecard_absent": true,
+      "errors": 0
+    }
+  },
+  "scorecard": {
+    "path": "data/work1_award_scorecard.json",
+    "bytes": 30787,
+    "sha256": "d0b134879cfdcd49765ef924fff12f11c58c38c46437eea8e997558960d6715d",
+    "criterion_scores": {
+      "utility": 3.5,
+      "completeness": 4.5,
+      "challenge": 3.5
+    },
+    "overall": 76.7,
+    "public_score_inflation": false
+  },
+  "direct_public_readback": {
+    "assets": [
+      "docs/index.html",
+      "docs/entry.html",
+      "docs/status.html",
+      "docs/municipality-memo.html",
+      "docs/data/jrbus_chugoku_supply_metrics.json"
+    ],
+    "http_200": "5/5",
+    "commit_bytes_match": "5/5",
+    "internal_marker_hits_in_four_html": 0,
+    "internal_urls": {
+      "award-comparison.html": 404,
+      "data/work1_award_scorecard.json": 404,
+      "data/award_scorecard_schema.json": 404
+    }
+  },
+  "remaining_human_gate": {
+    "status": "HUMAN_GATE_PENDING",
+    "prerequisites": [
+      "site_clarity_before_user_evaluation complete",
+      "owner start approval"
+    ],
+    "preparation_material_created": false,
+    "participant_contacted": false,
+    "user_test_requested": false
+  },
+  "boundaries": {
+    "raw_source_changes": 0,
+    "gtfs_zip_changes": 0,
+    "existing_public_value_changes": 0,
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "user_test_requests": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0,
+    "automatic_source_adoptions": 0,
+    "internal_score_publications": 0
+  },
+  "next_stage": {
+    "stage": "WORK1-AWARD-SCORECARD-RECALIBRATION-5-AUDIT-1",
+    "change_policy": "read_only",
+    "started": false,
+    "purpose": "再採点記録、据置根拠、公開分離、利用者検証前のサイト明瞭性候補が矛盾なく固定されたかを監査する。"
+  },
+  "errors": []
+}
