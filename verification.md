@@ -2564,6 +2564,23 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 この受入記録を含む最終HEAD自身をscope lock、Pages、release attestationで再確認し、後続run IDは
 外部正本としてrepoへ再書込みしない。
 
+## WORK1-AWARD-SCORECARD-RECALIBRATION-4 ローカル検証（2026-08-18）
+
+| 検証 | 結果 |
+|---|---|
+| 基準HEAD・監査 | `1a73227e8d9089a27daca77aab58ae448b36ed8d`、GO、P0 0 / P1 0 / P2 1 |
+| 再現根拠 | Ubuntu、`pdfplumber` 0.11.10、原本7 / 7、完全byte一致17 / 17、欠損復旧、190 / 190 |
+| 更新 | `continuity` 4.0→4.5 |
+| 据置 | `reproducibility_verifiability` 4.5。別の人間による第三者再現は未達 |
+| 3基準・総合 | 実用度3.5、完成度4.5、挑戦度3.5、総合76.7 |
+| 未達維持 | 利用者価値2.0、関係アクター1.0、外部利用・共同設計0 |
+| 改善候補 | 利用者検証（人間ゲート）／操作アクセシビリティ監査（自走可）／残存公開GTFS測定（原本ゲート） |
+| 内部正本 | 28,683 bytes、SHA256 `284574b2fb11528c803493a510238a7e9dc8f9e45e877933ef07c99eafa7979c` |
+| 公開分離 | Pages用内部診断3資産なし、公開HTMLへの内部点数・内部JSON導線0 |
+| 不変対象 | 7原本、既存公開値、公開5資産、作品②入力・変更0 |
+| 正本 | `evidence/20260818_work1_award_scorecard_recalibration_4_local_acceptance.json` |
+| 判定 | `LOCAL_GO`。実装commitの同一HEAD公開受入とDrive読戻し後に最終GOとする |
+
 ## WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1（2026-08-18）
 
 | 検証 | 結果 |

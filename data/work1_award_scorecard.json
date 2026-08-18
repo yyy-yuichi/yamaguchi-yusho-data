@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
-  "scorecard_id": "work1-award-scorecard-recalibration-3-2026-08-17",
+  "scorecard_id": "work1-award-scorecard-recalibration-4-2026-08-18",
   "work_id": "WORK1",
   "work_title": "山口県 市町別の登録供給ビュー",
-  "evaluation_as_of": "2026-08-17",
+  "evaluation_as_of": "2026-08-18",
   "evidence_boundary": {
     "repository_id": "yyy-yuichi/yamaguchi-yusho-data",
     "other_work_input_count": 0,
@@ -136,7 +136,7 @@
       "comparison_weight": 0.3333333333333333,
       "score": 4.5,
       "confidence": "high",
-      "rationale": "公開デモ、4状態別の市町確認メモ、機械可読データ、コード、出典、検証状況、原本変更検知、同一HEADの外部attestationまで稼働している。公式GTFS関係は19/19市町を根拠付き4状態へ整理し、受入原本は3フィードになった。一方、共通条件の供給実測は2フィードで、外部利用実績も不足している。",
+      "rationale": "公開デモ、4状態別の市町確認メモ、機械可読データ、コード、出典、検証状況、原本変更検知、同一HEADの外部attestationに加え、クリーンUbuntuで7原本から17生成物を完全byte一致で再作成し、欠損検知から復旧する訓練まで稼働している。公式GTFS関係は19/19市町を根拠付き4状態へ整理した。一方、外部利用実績と人間による第三者再現は不足している。",
       "evidence": [
         {
           "claim": "公開アプリ、応募説明、検証状況、公開JSONへ第三者が到達できる。",
@@ -156,7 +156,7 @@
         "現在取得できない、または一般配布されないGTFS本体の検証",
         "公開後の利用者環境での長期可用性実績"
       ],
-      "as_of": "2026-08-17",
+      "as_of": "2026-08-18",
       "subcriteria": [
         {
           "subcriterion_id": "public_implementation",
@@ -186,7 +186,7 @@
           "label": "再現性と検証可能性",
           "score": 4.5,
           "confidence": "high",
-          "rationale": "公開JSON、原本SHA256、処理コード、テスト、検証記録、週次のread-only原本照合、同一HEADの外部attestationがあり、数値と根拠を追跡できる。",
+          "rationale": "公開JSON、原本SHA256、処理コード、テスト、週次のread-only原本照合、同一HEADの外部attestationに加え、クリーンUbuntuで7原本から17生成物を完全byte一致で再作成し、欠損検知・復旧・190テストを行う厳格な再現workflowがあり、数値と根拠を追跡できる。別の人間による実行ではないため4.5を維持する。",
           "evidence": [
             {
               "claim": "検証状況ページが出典、データ、完了条件、継続照合へ接続する。",
@@ -199,10 +199,16 @@
               "url": "https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/workflows/source-freshness.yml",
               "evidence_type": "public_verification",
               "as_of": "2026-08-12"
+            },
+            {
+              "claim": "クリーンUbuntuで7原本と17生成物を完全byte一致で再現し、欠損検知・復旧・190テストを同一HEADで完了した。",
+              "url": "https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/32069876975",
+              "evidence_type": "public_verification",
+              "as_of": "2026-08-18"
             }
           ],
-          "missing_evidence": ["別実装者がゼロから再生成した独立再現記録"],
-          "as_of": "2026-08-17"
+          "missing_evidence": ["リポジトリ作成者以外の人間が手順を実行した第三者再現記録"],
+          "as_of": "2026-08-18"
         },
         {
           "subcriterion_id": "scope_reliability",
@@ -237,7 +243,7 @@
       "comparison_weight": 0.3333333333333333,
       "score": 3.5,
       "confidence": "medium",
-      "rationale": "異なる制度資料とGTFSを、日付と限界を失わず接続し、市町別確認メモと継続照合まで実装した。国内3サービス・6一次資料との限定比較で前段の確認層という役割差を示し、JRバス中国の広域フィードを既存2フィードへ混ぜず独立測定した。一方、利用者実証、共同設計、公開取得可能な全フィードの供給実測は未達である。",
+      "rationale": "異なる制度資料とGTFSを、日付と限界を失わず接続し、市町別確認メモ、継続照合、クリーン環境での完全byte再現・復旧訓練まで実装した。国内3サービス・6一次資料との限定比較で前段の確認層という役割差を示し、JRバス中国の広域フィードを既存2フィードへ混ぜず独立測定した。一方、利用者実証、共同設計、公開取得可能な全フィードの供給実測は未達である。",
       "evidence": [
         {
           "claim": "登録供給と予定運行を同じ入口で示し、異なる単位を順位へ丸めない。",
@@ -269,7 +275,7 @@
         "公開取得可能7市に関係する全フィードの供給実測",
         "行政・事業者・市民等との共同設計または継続運用"
       ],
-      "as_of": "2026-08-17",
+      "as_of": "2026-08-18",
       "subcriteria": [
         {
           "subcriterion_id": "novelty",
@@ -320,19 +326,25 @@
         {
           "subcriterion_id": "continuity",
           "label": "期間的な持続・継続性",
-          "score": 4.0,
+          "score": 4.5,
           "confidence": "high",
-          "rationale": "静的公開、最小権限の週次照合、変更・取得不能時の非自動採用を実装し、継続運用時の誤更新を防いでいる。",
+          "rationale": "静的公開、最小権限の週次照合、変更・取得不能時の非自動採用に加え、クリーン環境での完全byte再現、依存版固定、意図的な欠損からの復旧を自動検証し、継続運用時の誤更新と復旧不能を防いでいる。複数月運用と保守担当の冗長化は未達のため4.5とする。",
           "evidence": [
             {
               "claim": "週次・手動の原本照合と履歴が公開されている。",
               "url": "https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/workflows/source-freshness.yml",
               "evidence_type": "public_verification",
               "as_of": "2026-08-12"
+            },
+            {
+              "claim": "依存版を固定したクリーンrunnerで完全byte再現と欠損からの復旧を同一HEADで検証している。",
+              "url": "https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/32069876975",
+              "evidence_type": "public_verification",
+              "as_of": "2026-08-18"
             }
           ],
           "missing_evidence": ["複数月にわたる運用履歴", "保守担当の冗長化"],
-          "as_of": "2026-08-17"
+          "as_of": "2026-08-18"
         },
         {
           "subcriterion_id": "actor_diversity",
@@ -358,7 +370,7 @@
     "comparison_index": 76.7,
     "max_index": 100.0,
     "confidence": "medium",
-    "interpretation": "19/19市町の公式GTFS状態整理に加え、JRバス中国の広域フィードを既存2フィードへ混在させず独立測定した根拠から、アウトプットの網羅性を3.5から4.0へ更新した。第三者による方法評価、利用者実証、関係アクター参加は未達のため、各基準は3.5 / 4.5 / 3.5、総合比較値は76.7とする。"
+    "interpretation": "独立再現・復旧訓練、完全byte一致の厳格化、依存版固定を根拠に継続性を4.0から4.5へ更新した。再現性は強化されたが人間による第三者再現ではないため4.5を維持する。利用者実証と関係アクター参加は未達で、丸め後の各基準3.5 / 4.5 / 3.5、総合比較値76.7は据え置く。"
   },
   "special_awards": [
     {
@@ -464,14 +476,14 @@
     },
     {
       "priority": 2,
-      "improvement_id": "independent_reproduction_drill",
-      "title": "第三者手順を想定したゼロからの再生成・復旧訓練",
-      "why": "処理コード、検証記録、同一HEADの外部attestationはあるが、クリーン環境で最初から生成し、差異や失敗から復旧した独立再現記録がない。",
-      "target_subcriteria": ["reproducibility_verifiability", "continuity"],
+      "improvement_id": "accessibility_task_audit",
+      "title": "キーボード・読み上げ・色依存を含む操作アクセシビリティ監査",
+      "why": "PC・スマートフォンの表示と横overflowは検証済みだが、キーボード操作、フォーカス順、読み上げ名、色以外の状態伝達を一連の利用タスクとしてまだ検証していない。外部参加者へ連絡せず自走できる。",
+      "target_subcriteria": ["public_implementation", "method_fit"],
       "expected_index_gain_range": [0.0, 3.3],
       "effort": "medium",
       "external_dependency": false,
-      "acceptance_evidence": ["クリーン環境からの再生成手順と実行記録", "生成物のSHA-256または意味内容比較", "想定失敗と復旧結果を含む公開検証記録"]
+      "acceptance_evidence": ["主要タスクのキーボード操作・フォーカス順記録", "自動検査と読み上げ確認の指摘一覧", "修正前後の回帰テストと公開読戻し"]
     },
     {
       "priority": 3,

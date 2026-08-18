@@ -25,20 +25,35 @@ class AwardScorecardRecalibrationTest(unittest.TestCase):
             item["criterion_id"]: item for item in cls.scorecard["criteria"]
         }
 
-    def test_recalibration_date_and_supported_score_change(self):
-        self.assertEqual("2026-08-17", self.scorecard["evaluation_as_of"])
+    def test_reproduction_evidence_updates_continuity_without_overclaim(self):
+        self.assertEqual("2026-08-18", self.scorecard["evaluation_as_of"])
+        completeness = {
+            item["subcriterion_id"]: item
+            for item in self.criteria["completeness"]["subcriteria"]
+        }
+        reproducibility = completeness["reproducibility_verifiability"]
+        self.assertEqual(4.5, reproducibility["score"])
+        self.assertIn("完全byte一致", reproducibility["rationale"])
+        self.assertIn("人間による実行ではない", reproducibility["rationale"])
+        self.assertTrue(
+            any(
+                "第三者再現記録" in item
+                for item in reproducibility["missing_evidence"]
+            )
+        )
         challenge = {
             item["subcriterion_id"]: item
             for item in self.criteria["challenge"]["subcriteria"]
         }
-        novelty = challenge["novelty"]
-        self.assertEqual(4.0, novelty["score"])
-        self.assertIn("国内3サービス・6一次資料", novelty["rationale"])
-        self.assertIn("唯一性は主張しない", novelty["rationale"])
-        output = challenge["output_comprehensiveness"]
-        self.assertEqual(4.0, output["score"])
-        self.assertIn("広域1フィードを条件分離して独立表示", output["rationale"])
-        self.assertNotIn("採用済みJRバス中国GTFSの供給指標化", output["missing_evidence"])
+        continuity = challenge["continuity"]
+        self.assertEqual(4.5, continuity["score"])
+        self.assertIn("依存版固定", continuity["rationale"])
+        self.assertIn("欠損からの復旧", continuity["rationale"])
+        evidence_urls = [item["url"] for item in continuity["evidence"]]
+        self.assertIn(
+            "https://github.com/yyy-yuichi/yamaguchi-yusho-data/actions/runs/32069876975",
+            evidence_urls,
+        )
 
     def test_criteria_and_overall_stay_recomputable_without_score_inflation(self):
         for criterion in self.criteria.values():
@@ -64,12 +79,12 @@ class AwardScorecardRecalibrationTest(unittest.TestCase):
         self.assertIn("利用者本人による評価", utility["user_value_evidence"]["rationale"])
         self.assertIn("参加した公開証拠はない", challenge["actor_diversity"]["rationale"])
 
-    def test_completed_benchmark_is_replaced_by_ranked_remaining_actions(self):
+    def test_completed_reproduction_is_replaced_by_ranked_remaining_actions(self):
         improvements = self.scorecard["top_improvements"]
         self.assertEqual(
             [
                 "remote_user_evaluation",
-                "independent_reproduction_drill",
+                "accessibility_task_audit",
                 "remaining_public_gtfs_supply_measurement",
             ],
             [item["improvement_id"] for item in improvements],
@@ -79,6 +94,7 @@ class AwardScorecardRecalibrationTest(unittest.TestCase):
             "similar_service_benchmark",
             "official_gtfs_coverage_extension",
             "jrbus_supply_metrics_extension",
+            "independent_reproduction_drill",
         ]
         self.assertTrue(
             all(item not in [action["improvement_id"] for action in improvements] for item in completed)

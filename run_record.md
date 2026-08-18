@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-18 (rev.77) / 状態: WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1 GO / 次: 変更なしread-only監査（未開始）
+最終更新: 2026-08-18 (rev.78) / 状態: WORK1-AWARD-SCORECARD-RECALIBRATION-4 LOCAL_GO / 次: commit・同一HEAD公開受入・Drive保存
 
 ## 0. このファイルについて
 
@@ -1492,3 +1492,19 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   生成されるrun ID・artifact ID・Drive file IDは自己参照を避けてrepoへ再書込みしない。
 - `WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1`をGOとする。次段階は変更なしの
   `WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-AUDIT-1`だけとし、開始しない。
+
+### 改訂点（rev.78）
+
+- 基準HEAD `1a73227e8d9089a27daca77aab58ae448b36ed8d`の変更なし監査はGO、
+  P0 0 / P1 0 / P2 1。P2は完了済み再現訓練が改善候補に残る記録上の軽微な不整合である。
+- Ubuntuの固定7原本、17生成物完全byte一致、欠損復旧、固定依存、190 / 190を反映し、
+  継続性を4.0→4.5へ更新した。人間による第三者再現ではないため再現性4.5は据え置いた。
+- 3基準3.5 / 4.5 / 3.5、総合76.7、利用者価値2.0、関係アクター1.0は据え置いた。
+- 完了済み再現訓練を改善候補から除外し、自走候補を操作アクセシビリティ監査へ更新した。
+  利用者検証と残存公開GTFS測定には、それぞれ外部連絡・原本受入の人間ゲートを維持する。
+- 内部正本は28,683 bytes、SHA256
+  `284574b2fb11528c803493a510238a7e9dc8f9e45e877933ef07c99eafa7979c`。
+  Pages用内部診断3資産は不在、原本・公開値・公開5資産・作品②の変更は0。
+- ローカル正本は`evidence/20260818_work1_award_scorecard_recalibration_4_local_acceptance.json`。
+  公開同一HEAD受入とDrive読戻しまで成功した場合だけ最終GOとし、次段階は変更なしの
+  `WORK1-AWARD-SCORECARD-RECALIBRATION-4-AUDIT-1`だけに定義する。

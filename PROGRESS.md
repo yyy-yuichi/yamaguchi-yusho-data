@@ -2603,6 +2603,23 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   現行4 URLは200、削除3 URLは404。公開HTMLに旧スコアリンクは0件。
 - この記録を含む最終HEAD自身を同じ3 workflowで外部再確認する。次段階はread-only監査だけ。
 
+## 2026-08-18 WORK1-AWARD-SCORECARD-RECALIBRATION-4 ローカル受入
+
+- 直前の変更なし監査はGO、P0 0 / P1 0 / P2 1。P2は完了済みの独立再現訓練が
+  改善候補に残っていた記録上の軽微な不整合である。
+- Ubuntuで固定7原本から17生成物を完全byte一致で再作成し、欠損から復旧した実績、
+  `pdfplumber==0.11.10`、190 / 190テストを内部診断へ追加した。
+- `continuity`を4.0→4.5へ更新した。人間による第三者再現ではないため
+  `reproducibility_verifiability`は4.5を維持した。
+- 実用度3.5、完成度4.5、挑戦度3.5、総合比較値76.7、利用者価値2.0、関係アクター1.0は据え置いた。
+- 完了済み再現訓練を改善候補から除外した。次の自走候補は操作アクセシビリティ監査とし、
+  利用者検証は連絡の人間承認ゲート、残存公開GTFS供給測定は原本受入ゲートとして分離した。
+- 内部正本は28,683 bytes、SHA256
+  `284574b2fb11528c803493a510238a7e9dc8f9e45e877933ef07c99eafa7979c`。
+- Pages用内部診断3資産は不在を維持し、原本・公開値・公開5資産・作品②は変更していない。
+- ローカル正本は`evidence/20260818_work1_award_scorecard_recalibration_4_local_acceptance.json`。
+  判定は`LOCAL_GO`。同一HEADの4 workflow、両artifact、公開境界、Drive保存の受入まで完了扱いにしない。
+
 ## 2026-08-18 WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1 GO
 
 - read-only監査はP0 0件、P1 1件、P2 0件でNO-GO。成果自体ではなく、`run_record.md`と

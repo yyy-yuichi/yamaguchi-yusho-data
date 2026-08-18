@@ -1,6 +1,6 @@
-# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価 / WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況拡張 / WORK1-AWARD-SCORECARD-RECALIBRATION-2 拡張成果再評価 / WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 広域GTFS独立供給指標 / WORK1-AWARD-SCORECARD-RECALIBRATION-3 独立指標成果再評価 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 独立再現・復旧訓練 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1 再現判定厳格化 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1 記録整合・最終保存
+# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価 / WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況拡張 / WORK1-AWARD-SCORECARD-RECALIBRATION-2 拡張成果再評価 / WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 広域GTFS独立供給指標 / WORK1-AWARD-SCORECARD-RECALIBRATION-3 独立指標成果再評価 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 独立再現・復旧訓練 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1 再現判定厳格化 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1 記録整合・最終保存 / WORK1-AWARD-SCORECARD-RECALIBRATION-4 再現成果再評価
 
-**rev.5.26 / 2026-08-18**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34、rev.5.20→rev.5.21 は §10.35、rev.5.21→rev.5.22 は §10.36、rev.5.22→rev.5.23 は §10.37、rev.5.23→rev.5.24 は §10.38、rev.5.24→rev.5.25 は §10.39、rev.5.25→rev.5.26 は §10.40。消した記述はそこに全部書いてある）
+**rev.5.27 / 2026-08-18**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34、rev.5.20→rev.5.21 は §10.35、rev.5.21→rev.5.22 は §10.36、rev.5.22→rev.5.23 は §10.37、rev.5.23→rev.5.24 は §10.38、rev.5.24→rev.5.25 は §10.39、rev.5.25→rev.5.26 は §10.40、rev.5.26→rev.5.27 は §10.41。消した記述はそこに全部書いてある）
 
 UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下に `SPEC.md` として置き、Claude Code に読ませる。**
 
@@ -15,7 +15,8 @@ WORK1-PRECONSULTATION-HANDOFF-1、§31はWORK1-AWARD-SCORECARD-RECALIBRATION-1�
 WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1、§33はWORK1-AWARD-SCORECARD-RECALIBRATION-2、§34は
 WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1、§35はWORK1-AWARD-SCORECARD-RECALIBRATION-3、§36は
 WORK1-INDEPENDENT-REPRODUCTION-DRILL-1、§37は
-WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1の実行仕様である。
+WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1、§38は同段階の記録整合・最終保存、§39は
+WORK1-AWARD-SCORECARD-RECALIBRATION-4の実行仕様である。
 プロジェクトのゴール、終了条件、確定方針は`run_record.md` §0.5 を正とし、
 このファイルがそれを上書きしてはならない。
 
@@ -3248,6 +3249,74 @@ read-only監査で検出した「実作業は完了しているが、正本がDr
   「実作業完了と正本の保存待ち表示の不一致」を解消する終了条件を固定した。
 - post-commitの外部IDを再commitし続けない自己参照回避と、最終bundle・closure証拠の
   Drive新規保存・読戻し規則を明文化した。
+
+---
+
+## 39. WORK1-AWARD-SCORECARD-RECALIBRATION-4
+
+### 39.1 段階ゴール
+
+受入済みの独立再現・復旧訓練、再現判定厳格化、記録整合・最終保存と、その後のread-only監査GOを、
+公開しない内部受賞スコアカードへ同一基準で反映する。自動CIを人間による第三者再現と誤認せず、
+完了済み施策を改善候補から除外し、次の自走可能な一作業を選べる状態にする。
+
+### 39.2 入力と再評価規則
+
+- 基準HEADは`1a73227e8d9089a27daca77aab58ae448b36ed8d`とする。
+- 直前監査はGO、P0 0 / P1 0 / P2 1。P2は完了済みの
+  `independent_reproduction_drill`が改善候補に残る記録上の軽微な不整合である。
+- 最終reproduction `32069876975`、scope lock `32069877273`、Pages `32069874790`、
+  release attestation `32069938789`と両artifactを根拠にする。
+- Ubuntuで固定7原本から17生成物を完全byte一致で再作成し、欠損検知・復旧、
+  `pdfplumber==0.11.10`、190 / 190テストを確認した事実だけを加点根拠にする。
+- 別の人間による手順実行、外部利用実績、共同設計、複数月運用は達成扱いにしない。
+
+### 39.3 再採点結果の契約
+
+- `continuity`は4.0から4.5へ更新する。
+- `reproducibility_verifiability`は成果を追記するが、人間の第三者再現がないため4.5を維持する。
+- 実用度3.5、完成度4.5、挑戦度3.5、総合比較値76.7を維持する。
+- 利用者価値2.0、関係アクター1.0を維持する。
+- 完了済みの`independent_reproduction_drill`を改善候補から除外する。
+- 改善候補は、外部承認ゲートの利用者検証、自走可能な操作アクセシビリティ監査、
+  原本受入ゲートの残存公開GTFS供給測定の順とする。
+
+### 39.4 変更範囲と公開分離
+
+変更・追加できるのは`SPEC.md`、`PROGRESS.md`、`run_record.md`、`verification.md`、
+`data/work1_award_scorecard.json`、`src/build_release_attestation.py`、
+`tests/test_award_comparison.py`、`tests/test_award_scorecard_recalibration.py`、
+`evidence/20260818_work1_award_scorecard_recalibration_4_*`だけとする。
+
+Pages用内部診断3資産は不在を維持し、公開HTMLへ内部点数・内部JSON導線を追加しない。
+コード生成物、7原本、既存公開値、公開5資産、作品②は変更・入力しない。参加者連絡、UDC応募、
+BODIK登録、新規・認証付き原本取得を行わない。
+
+### 39.5 完了条件
+
+1. 内部JSONから変更・据置理由、未達証拠、改善候補を追跡できる。
+2. 3基準3.5 / 4.5 / 3.5、総合76.7を再計算でき、継続性だけが4.5へ変わる。
+3. 専用回帰と全190テスト、schema、旧SPEC網羅、scope checker、`git diff --check`が成功する。
+4. 変更範囲が39.4だけで、原本・公開値・公開5資産の差分が0件である。
+5. 実装commitをmainへpushし、同一SHAの4 workflowと両artifactがsuccess・GOになる。
+6. 公開5資産がcommit bytesと一致し、内部診断3 URLが404、公開HTML内部マーカー0を維持する。
+7. 公開受入記録commit自身を同一4 workflowで再確認する。
+8. 最終bundleと公開受入JSONを指定Driveへ新規保存・読戻す。post-commitの外部IDは自己参照を避けて
+   repoへ再書込みしない。
+9. 次段階は変更なしの`WORK1-AWARD-SCORECARD-RECALIBRATION-4-AUDIT-1`だけとし、開始しない。
+
+### 39.6 停止条件
+
+- 人間の第三者再現、利用者実績、共同設計を証拠なしに達成扱いする必要が生じる
+- 内部点数を公開物へ載せる、または原本・公開値・作品②を変更する必要が生じる
+- remote main、workflow、artifact、公開境界、Drive読戻しのいずれかが期待値と異なる
+- 参加者連絡、応募・登録、新規原本取得、認証変更、履歴書換えが必要になる
+
+### 10.41 rev.5.26 → rev.5.27
+
+- `WORK1-AWARD-SCORECARD-RECALIBRATION-4`を追加し、独立再現成果を過大評価せず内部診断へ反映する
+  再採点規則と公開分離を固定した。
+- 完了済み再現訓練を改善候補から除外し、自走可能な次候補を操作アクセシビリティ監査へ更新した。
 
 ---
 
