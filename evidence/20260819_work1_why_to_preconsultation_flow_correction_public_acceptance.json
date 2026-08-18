@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1",
+  "evidence_type": "public_acceptance",
+  "checked_at": "2026-08-19T06:20:09+09:00",
+  "decision": "GO",
+  "implementation": {
+    "branch": "main",
+    "commit_sha": "cb579000acd04dc5f2795ba4c11e76fe11b212ae",
+    "origin_main_sha": "cb579000acd04dc5f2795ba4c11e76fe11b212ae"
+  },
+  "workflows": {
+    "scope_lock": {
+      "run_id": 32186549188,
+      "conclusion": "success",
+      "head_sha": "cb579000acd04dc5f2795ba4c11e76fe11b212ae"
+    },
+    "pages": {
+      "run_id": 32186548326,
+      "conclusion": "success",
+      "head_sha": "cb579000acd04dc5f2795ba4c11e76fe11b212ae"
+    },
+    "independent_reproduction": {
+      "run_id": 32186549175,
+      "conclusion": "success",
+      "head_sha": "cb579000acd04dc5f2795ba4c11e76fe11b212ae",
+      "artifact_id": 9342661261,
+      "artifact_digest": "sha256:22a0569674d9ee2a14ea506822de694542571c138bd110f13d7e4fdd911d651b",
+      "decision": "GO",
+      "accepted_sources": "7/7",
+      "generated_outputs_exact_bytes": "17/17",
+      "recovery": "success",
+      "tests": "196/196",
+      "errors": 0
+    },
+    "release_attestation": {
+      "run_id": 32186630884,
+      "conclusion": "success",
+      "head_sha": "cb579000acd04dc5f2795ba4c11e76fe11b212ae",
+      "artifact_id": 9342694153,
+      "artifact_digest": "sha256:ac8a5c94b0cdf48964832b3da8a8a8e13e444260316dd76c86fbc496d70006d1",
+      "decision": "GO",
+      "tests": "196/196",
+      "accepted_sources": "7/7",
+      "protected_assets": "3/3",
+      "published_attestation_assets": "5/5",
+      "errors": 0
+    }
+  },
+  "public_byte_readback": [
+    {
+      "path": "index.html",
+      "http": 200,
+      "bytes": 60300,
+      "sha256": "246485d8f400fa8b46a2772b505daec0bf28a82b0d0e88a134fc8d05345bc165",
+      "commit_bytes_match": true
+    },
+    {
+      "path": "entry.html",
+      "http": 200,
+      "bytes": 19979,
+      "sha256": "61f96b315671d2481ff09c1243231982e5f0c67f8994001154888fc15bc97f7c",
+      "commit_bytes_match": true
+    },
+    {
+      "path": "status.html",
+      "http": 200,
+      "bytes": 61950,
+      "sha256": "0a1633ea734fb81e01d3c00b65222a7774d064a436b0552824791e4b0b0ed45a",
+      "commit_bytes_match": true
+    },
+    {
+      "path": "municipality-memo.html",
+      "http": 200,
+      "bytes": 42961,
+      "sha256": "f8e58aafe31b9f6e923513efaad1f1de61c563d04379d9d58e442c6e3c594224",
+      "commit_bytes_match": true
+    }
+  ],
+  "public_browser_readback": {
+    "representative_municipalities": [
+      "岩国市",
+      "防府市",
+      "宇部市",
+      "下関市",
+      "平生町",
+      "和木町"
+    ],
+    "desktop": {
+      "viewport": "1280x720",
+      "initial_cta_visible": true,
+      "states_passed": "6/6",
+      "selected_municipality_preserved": "6/6",
+      "selected_row_checked_at": "2026-08-13",
+      "unknown_items_per_state": 4,
+      "government_or_operator_questions_per_state": 5,
+      "memo_steps_per_state": 8,
+      "horizontal_overflow_failures": 0
+    },
+    "mobile": {
+      "viewport": "390x844",
+      "initial_cta_visible": true,
+      "states_passed": "6/6",
+      "selected_municipality_preserved": "6/6",
+      "selected_row_checked_at": "2026-08-13",
+      "unknown_items_per_state": 4,
+      "government_or_operator_questions_per_state": 5,
+      "memo_steps_per_state": 8,
+      "horizontal_overflow_failures": 0
+    },
+    "why_visible": true,
+    "first_stage_visible": true,
+    "stale_gtfs_blanket_statement_absent": true,
+    "browser_operation_errors": 0
+  },
+  "internal_publication_boundary": {
+    "award-comparison.html": 404,
+    "data/work1_award_scorecard.json": 404,
+    "data/award_scorecard_schema.json": 404
+  },
+  "boundaries": {
+    "raw_source_changes": 0,
+    "published_json_or_csv_changes": 0,
+    "calculation_code_changes": 0,
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "user_test_requests": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0,
+    "new_source_acquisitions_or_adoptions": 0,
+    "external_service_data_sends": 0
+  },
+  "next_stage": {
+    "id": "WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1-AUDIT-1",
+    "mode": "read_only",
+    "started": false
+  },
+  "errors": []
+}

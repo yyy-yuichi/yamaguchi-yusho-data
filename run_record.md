@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-19 (rev.80) / 状態: WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1 LOCAL_GO / 次: 同一HEADの公開受入
+最終更新: 2026-08-19 (rev.81) / 状態: WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1 GO / 次: 変更なしread-only監査（未開始）
 
 ## 0. このファイルについて
 
@@ -1544,3 +1544,21 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   `evidence/20260819_work1_why_to_preconsultation_flow_correction_local_acceptance.json`。
   判定は`LOCAL_GO`。次は実装commitをmainへpushし、同一SHAの4 workflow、公開byte、公開PC・
   スマートフォンを読戻して公開受入を判定する。
+
+### 改訂点（rev.81）
+
+- 実装commit `cb579000acd04dc5f2795ba4c11e76fe11b212ae`のscope lock `32186549188`、
+  Pages `32186548326`、独立再現 `32186549175`、release attestation `32186630884`は
+  同一SHAで全success。
+- 独立再現artifact `9342661261`はGO、固定7原本7 / 7、17生成物完全byte一致17 / 17、
+  欠損復旧、196 / 196、errors 0。release artifact `9342694153`もGO、196 / 196、
+  原本7 / 7、保護3 / 3、公開attestation資産5 / 5、errors 0。
+- 公開4 HTMLはHTTP 200・commit bytes一致。内部診断3 URLは404を維持した。
+- 公開PC 1280×720・スマートフォン390×844で6市町を操作し、最初の画面の主要操作、市町保持、
+  確認日`2026-08-13`、分からないこと4項目、確認事項5項目、8段階メモを6 / 6で確認。
+  横overflowとブラウザー操作errorは各0。
+- 公開正本は
+  `evidence/20260819_work1_why_to_preconsultation_flow_correction_public_acceptance.json`。
+  `WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1`をGOとする。
+- 次段階は変更を伴わない
+  `WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1-AUDIT-1`だけとし、開始しない。

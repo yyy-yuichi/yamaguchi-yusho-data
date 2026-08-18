@@ -2595,6 +2595,24 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 | 正本 | `evidence/20260819_work1_why_to_preconsultation_flow_correction_local_acceptance.json` |
 | 判定 | `LOCAL_GO`。同一HEADのCI・Pages・公開byte・公開実画面受入へ進む |
 
+### 公開受入
+
+| 検証 | 結果 |
+|---|---|
+| subject | `cb579000acd04dc5f2795ba4c11e76fe11b212ae` |
+| scope lock / Pages | `32186549188` / `32186548326`、同一SHA、success |
+| independent reproduction | run `32186549175`、artifact `9342661261`、GO、7 / 7、17 / 17完全byte一致、復旧success、196 / 196 |
+| release attestation | run `32186630884`、artifact `9342694153`、GO、196 / 196、原本7 / 7、保護3 / 3、公開5 / 5 |
+| 公開4 HTML | index・entry・status・memoはHTTP 200、同commit bytes一致 |
+| 内部診断3 URL | award-comparison HTML・scorecard JSON・schema JSONは404 |
+| PC | 1280×720、6市町、最初の画面の主要操作、市町保持、4不足項目、5確認事項、8段階メモ、横overflow 0 |
+| smartphone | 390×844、6市町、最初の画面の主要操作、市町保持、4不足項目、5確認事項、8段階メモ、横overflow 0 |
+| 表示境界 | Why・第一段階・確認日`2026-08-13`を確認、古い一律GTFS説明なし |
+| ブラウザー操作 | error 0 |
+| 境界 | 原本・公開JSON/CSV・計算コード・作品②・外部連絡・利用者テスト・応募・BODIK・新原本・外部送信各0 |
+| 正本 | `evidence/20260819_work1_why_to_preconsultation_flow_correction_public_acceptance.json` |
+| 判定 | `GO`。次は変更なしの`WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1-AUDIT-1`だけ、未開始 |
+
 ## WORK1-AWARD-SCORECARD-RECALIBRATION-4 ローカル検証（2026-08-18）
 
 | 検証 | 結果 |

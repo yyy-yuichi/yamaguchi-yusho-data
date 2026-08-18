@@ -2621,6 +2621,19 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
 - 正本は`evidence/20260819_work1_why_to_preconsultation_flow_correction_local_acceptance.json`。
   判定は`LOCAL_GO`。次は同一HEADのCI・Pages・公開byte・公開実画面受入。
 
+### 公開受入GO
+
+- 実装commit `cb579000acd04dc5f2795ba4c11e76fe11b212ae`の4 workflowは同一SHAで全success。
+  独立再現は7原本、17生成物完全byte一致、欠損復旧、196 / 196。release attestationもGO、
+  196 / 196、保護3 / 3、公開attestation資産5 / 5、errors 0。
+- 公開4 HTMLはHTTP 200・commit bytes一致。内部診断3 URLは404を維持した。
+- PC 1280×720・スマートフォン390×844で6市町を操作し、主要操作、市町保持、確認日、
+  分からないこと4項目、確認事項5項目、8段階メモを6 / 6で確認。横overflow・操作errorは0。
+- 公開正本は
+  `evidence/20260819_work1_why_to_preconsultation_flow_correction_public_acceptance.json`。
+  判定は`GO`。次段階は変更なしの
+  `WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1-AUDIT-1`だけ、未開始。
+
 ## 2026-08-18 WORK1-AWARD-SCORECARD-RECALIBRATION-4 ローカル受入
 
 - 直前の変更なし監査はGO、P0 0 / P1 0 / P2 1。P2は完了済みの独立再現訓練が
