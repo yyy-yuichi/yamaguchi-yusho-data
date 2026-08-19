@@ -1,0 +1,153 @@
+{
+  "schema_version": "WORK1-SUPPLY-SIDE-INFORMATION-MODEL-DEFINITION-LOCAL-ACCEPTANCE-1",
+  "task_id": "WORK1-SUPPLY-SIDE-INFORMATION-MODEL-DEFINITION-1",
+  "created_at": "2026-08-19T15:06:16+09:00",
+  "decision": "LOCAL_GO",
+  "audit_input": {
+    "baseline_head": "66b5aa7dd3b51dd5e32764a6d0f0c7d40fff0db1",
+    "baseline_branch": "main",
+    "baseline_origin_main": "66b5aa7dd3b51dd5e32764a6d0f0c7d40fff0db1",
+    "audit_severity": {
+      "P0": 0,
+      "P1": 2,
+      "P2": 2
+    },
+    "audit_decision": "NO_GO",
+    "audit_decision_scope": "サイト故障ではなく、必要情報の分類と不足状態の分離が未実装だったことへの判定"
+  },
+  "goal_acceptance": {
+    "categories": 8,
+    "items": 35,
+    "gap_types": 3,
+    "status_vocabulary": 4,
+    "status_counts": {
+      "VISIBLE_CURRENT": 8,
+      "ACCEPTED_SOURCE_UNMEASURED": 12,
+      "ADDITIONAL_SOURCE_REQUIRED": 10,
+      "DEMAND_COMPARATOR_REQUIRED": 5
+    },
+    "accepted_source_mapping": "7/7",
+    "municipality_input_match": "19/19",
+    "gtfs_access_state_count": 4,
+    "future_matrix_required_fields": 10,
+    "deep_motivation_boundary": "intentionally_not_recorded_or_inferred",
+    "working_hypothesis_role": "inspection_starting_point_not_conclusion"
+  },
+  "artifact_hashes": [
+    {
+      "path": "data/work1_supply_side_information_model.json",
+      "bytes": 31846,
+      "sha256": "95b49775f88e72c3179ee6c6a3397bf152ee69e6dc16603282a4a21e9153d674"
+    },
+    {
+      "path": "tests/test_supply_side_information_model.py",
+      "bytes": 11218,
+      "sha256": "8c8725870025f364488c09b30ec7954d2e1177c9bc64c73cf268d74471b9c885"
+    },
+    {
+      "path": "SPEC.md",
+      "bytes": 297822,
+      "sha256": "c9f31bff49bfa26e3ed1e1e93c0391ef585985b721e500fc597259dc4929c2b0"
+    },
+    {
+      "path": "run_record.md",
+      "bytes": 146741,
+      "sha256": "207379d37c9ff752ec34e76947a09645a6b1852eb002291431a3c99adb3a923d"
+    },
+    {
+      "path": "PROGRESS.md",
+      "bytes": 241931,
+      "sha256": "15dd68e07755d48d2571a38e0047442ab122b0c98650897e33fac9ba0e940a56"
+    },
+    {
+      "path": "verification.md",
+      "bytes": 201975,
+      "sha256": "6f7c12e7406373e7cbfe6973c610ebd307ecb0a8825a8bba9f7bc0e58952c320"
+    }
+  ],
+  "verification": {
+    "dedicated_tests": {
+      "command": "python -B -m unittest tests.test_supply_side_information_model -v",
+      "detected": 13,
+      "passed": 13,
+      "failed": 0
+    },
+    "full_tests": {
+      "command": "python -B -m unittest discover -s tests -q",
+      "detected": 222,
+      "passed": 222,
+      "failed": 0
+    },
+    "work_scope": "WORK1_SCOPE_ALLOWED",
+    "git_diff_check": "success",
+    "protected_diff_count": 0,
+    "accepted_source_bytes_sha_match": "7/7",
+    "gtfs_zip_check": "3/3 archives inspected without extraction",
+    "public_copy_of_internal_model": false
+  },
+  "unchanged_boundaries": [
+    "docs/index.html",
+    "docs/entry.html",
+    "docs/municipality-memo.html",
+    "docs/status.html",
+    "docs/data/",
+    "raw/ accepted 4 registry PDFs and 3 GTFS ZIPs",
+    "existing public JSON and CSV values",
+    "data/work1_award_scorecard.json",
+    "AGENTS.md",
+    "work_scope.json",
+    "src/check_work_scope.py"
+  ],
+  "not_executed": {
+    "work2_read_search_or_write": 0,
+    "new_original_download_or_adoption": 0,
+    "authenticated_or_nonpublic_data_access": 0,
+    "external_contact": 0,
+    "user_test_request": 0,
+    "udc_entry_or_submission": 0,
+    "bodik_registration": 0,
+    "public_site_change": 0,
+    "deployment_or_push": 0
+  },
+  "next_stage": {
+    "task_id": "WORK1-SUPPLY-SIDE-INFORMATION-COVERAGE-MATRIX-1",
+    "status": "DEFINED_NOT_STARTED",
+    "goal": "現在の7原本と既存派生データだけから、19市町×35情報項目の現在状態を決定的に生成する。",
+    "inputs": [
+      "data/work1_supply_side_information_model.json",
+      "docs/data/municipal_supply.json",
+      "data/municipality_gtfs.json",
+      "data/gtfs_supply_metrics.json",
+      "data/jrbus_chugoku_supply_metrics.json"
+    ],
+    "required_output": "市町コード・市町名・分類・項目・状態・受入原本ID・証拠日・範囲注記・次確認・主張境界を持つ決定的な内部行列",
+    "done_conditions": [
+      "山口県19市町が各35項目を持つ",
+      "4状態以外を生成しない",
+      "登録0件・GTFSアクセス状態・フィード全体指標を不存在・市町供給量・サービス不足へ変換しない",
+      "JRバス中国広域指標を市町へ配賦しない",
+      "同一入力から完全byte一致で再生成できる",
+      "公開4ページ、新原本、外部ゲートを変更しない"
+    ],
+    "human_approval_required_to_start": true
+  },
+  "next_chat_resume_order": [
+    "AGENTS.md",
+    "SPEC.md section 44",
+    "run_record.md revision 88",
+    "data/work1_supply_side_information_model.json",
+    "evidence/20260819_work1_supply_side_information_model_definition_local_acceptance.json",
+    "verification.md WORK1-SUPPLY-SIDE-INFORMATION-MODEL-DEFINITION-1 section",
+    "git status, HEAD, origin/main"
+  ],
+  "next_chat_invariants": [
+    "Repository is Work 1 only; never inspect Work 2.",
+    "Deeper motivation is intentionally not recorded or inferred.",
+    "Working hypothesis is not a conclusion.",
+    "Use accepted sources before considering new originals.",
+    "New original adoption and external contact remain human approval gates.",
+    "Do not redesign the public four pages before the coverage matrix is accepted.",
+    "If conversation summary conflicts with repository canonical records, repository records win."
+  ],
+  "evidence_self_hash": "not_recorded_to_avoid_self_reference"
+}

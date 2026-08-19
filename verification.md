@@ -1,5 +1,24 @@
 # verification.md — I-1（3PDF統合）検証結果
 
+## WORK1-SUPPLY-SIDE-INFORMATION-MODEL-DEFINITION-1 ローカル検証（2026-08-19）
+
+| 検証 | 結果 |
+|---|---|
+| 監査入力 | HEAD `66b5aa7dd3b51dd5e32764a6d0f0c7d40fff0db1`、P0 0 / P1 2 / P2 2、`NO_GO` |
+| 仮説境界 | 「地域交通は弱いのではないか」は検証開始点。深い問題意識は`intentionally_not_recorded_or_inferred` |
+| モデル | 8分類、35項目、4状態、3 gap type |
+| 状態内訳 | 表示済み8、受入済み原本内未測定12、追加原本必要10、需要比較必要5 |
+| 7原本対応 | manifestのID・種別・パス・bytes・SHA-256が7 / 7一致 |
+| GTFS非展開検査 | 3 / 3でagency・routes・trips・stops・stop_times・calendar・calendar_dates・fare・shapes・feed_infoを確認 |
+| 19市町契約 | 登録供給とGTFSの名称集合19 / 19一致、4アクセス状態一致、将来行列必須10項目 |
+| 専用回帰 | 13 / 13 success |
+| 全回帰 | 222件検出、222 / 222 success、終了コード0 |
+| scope・差分 | `WORK1_SCOPE_ALLOWED`、`git diff --check` success |
+| 不変対象 | 公開4 HTML、`docs/data/`、7原本、既存公開値、内部スコアカードは基準HEADから不変 |
+| 境界 | 作品②入力、新原本取得・採用、外部連絡、利用者テスト、応募・BODIK各0 |
+| 正本 | `evidence/20260819_work1_supply_side_information_model_definition_local_acceptance.json` |
+| 判定 | `LOCAL_GO`。次は`WORK1-SUPPLY-SIDE-INFORMATION-COVERAGE-MATRIX-1`だけ、未開始 |
+
 対象: `raw/000271730.pdf`（福祉有償運送・NPO等、山口県、4ページ=4団体）と
 `raw/000230003.pdf`（福祉有償運送・市町村営、山口県、3ページ=3団体）、
 `raw/000359215.pdf`（交通空白地有償運送・市町村営、山口県、20ページ=12団体）の

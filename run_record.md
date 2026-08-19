@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-19 (rev.87) / 状態: WORK1-GENERAL-READER-PURPOSE-CLARITY-CORRECTION-1 GO / 次: 変更なしread-only監査（未開始）
+最終更新: 2026-08-19 (rev.88) / 状態: WORK1-SUPPLY-SIDE-INFORMATION-MODEL-DEFINITION-1 LOCAL_GO / 次: WORK1-SUPPLY-SIDE-INFORMATION-COVERAGE-MATRIX-1（未開始）
 
 ## 0. このファイルについて
 
@@ -1698,3 +1698,24 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
 - 次段階は変更を伴わない
   `WORK1-GENERAL-READER-PURPOSE-CLARITY-CORRECTION-1-AUDIT-1`だけとし、開始しない。
   本記録commit自身の4 workflowと公開bytesを外部読戻しし、post-commit IDはrepoへ再書込みしない。
+
+### 改訂点（rev.88）
+
+- `WORK1-SUPPLY-SIDE-INFORMATION-MODEL-AUDIT-1`はP0 0 / P1 2 / P2 2、`NO_GO`。
+  現行サイトの機械的健全性ではなく、必要情報の分類と不足状態の分離が未実装だったためである。
+- 作業仮説「山口県の地域交通は弱いのではないか」は検証開始点として保持する。作成者のより深い
+  問題意識は意図的に記録・推測せず、作業仮説を問題意識全体の代替説明にしない。
+- `data/work1_supply_side_information_model.json`へ8分類・35項目、4状態、3種類の不足、
+  7原本7 / 7対応、19市町への適用契約を固定した。
+- 現在状態は表示済み8、受入済み原本内未測定12、追加原本必要10、需要比較必要5。
+  3 GTFSの時刻・停留所・運賃等を、原本不在ではなく測定不足へ分類した。
+- 実行優先度は、受入済み原本内12項目の活用、追加原本候補10項目、需要比較5項目の順。
+  新原本取得・採用は独立した人間承認ゲートのままである。
+- 専用13 / 13、全222 / 222、scope、差分、不変対象をローカル検証し、正本を
+  `evidence/20260819_work1_supply_side_information_model_definition_local_acceptance.json`とする。
+- 公開4 HTML、`docs/data/`、7原本、既存公開値、内部スコアカードは不変。作品②入力、
+  新原本取得・採用、外部連絡、利用者テスト、UDC応募、BODIK登録は各0。
+- 次段階は現在7原本だけから19市町×35項目の状態を生成する
+  `WORK1-SUPPLY-SIDE-INFORMATION-COVERAGE-MATRIX-1`一つだけ。`DEFINED_NOT_STARTED`で停止する。
+- 次ChatはSPEC §44、情報モデルJSON、ローカル受入JSON、Git statusをこの順で読み、会話要約より
+  正本を優先する。公開画面修正や新原本探索へ先回りしない。

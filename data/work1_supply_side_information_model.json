@@ -1,0 +1,550 @@
+{
+  "schema_version": "WORK1-SUPPLY-SIDE-INFORMATION-MODEL-1",
+  "task_id": "WORK1-SUPPLY-SIDE-INFORMATION-MODEL-DEFINITION-1",
+  "model_as_of": "2026-08-19",
+  "goal": "山口県の生活交通を検討するために必要な供給側情報について、市町ごとに現在確認できる公開データと不足情報を明らかにするための情報モデルを定義する。",
+  "working_hypothesis": {
+    "text": "山口県の地域交通は弱いのではないか",
+    "role": "検証を始めるための作業仮説であり、現在の作品が証明した結論ではない。",
+    "deeper_motivation": "intentionally_not_recorded_or_inferred",
+    "boundary": "作成者にはここへ記録しない深い問題意識がある。内容を推測、要約、代替表現へ変換しない。"
+  },
+  "social_purpose": "自家用車に頼れない人も、地域で通学・通院・買物などの生活を続けられる交通になっているかを確かめたい。",
+  "intended_use": {
+    "direct_users": [
+      "県・市町の公共交通担当者",
+      "交通事業者",
+      "地域で交通や生活支援に関わる人"
+    ],
+    "beneficiaries": [
+      "自家用車に頼れない住民"
+    ],
+    "current_stage": "公開情報から確認できる事実、日付、範囲、不足情報、次の確認事項を協議前にそろえる段階",
+    "not_current_stage": [
+      "住民ごとの経路検索",
+      "交通政策または運行判断の代行",
+      "交通サービス不足の断定"
+    ]
+  },
+  "reference_frameworks": [
+    {
+      "reference_id": "mlit-mobility-data-guide-v1",
+      "title": "地域公共交通計画のアップデートガイダンス Ver1.0 データ活用の手引き",
+      "url": "https://www.mlit.go.jp/sogoseisaku/transport/content/data_guide.pdf",
+      "role": "人口、地域特性、交通ネットワーク、利用状況、潜在需要、持続性を分けて現状診断するための分類根拠",
+      "accepted_original": false,
+      "adoption_status": "taxonomy_reference_only"
+    },
+    {
+      "reference_id": "mlit-gtfs-jp",
+      "title": "公共交通運行情報標準データ（GTFS-JP）に関する資料・検討会",
+      "url": "https://www.mlit.go.jp/sogoseisaku/transport/sosei_transport_tk_000067.html",
+      "role": "時刻表、駅・停留所、運賃等を扱う運行情報標準の定義根拠",
+      "accepted_original": false,
+      "adoption_status": "taxonomy_reference_only"
+    },
+    {
+      "reference_id": "mlit-tares-2025",
+      "title": "地域交通政策データ基盤（TARES）の構築・可視化（2025年度）",
+      "url": "https://www.mlit.go.jp/links/use-cases/4742.html",
+      "role": "交通モード横断の事業内容、輸送実績、営業状況等を分けて扱う必要性の参照根拠",
+      "accepted_original": false,
+      "adoption_status": "taxonomy_reference_only"
+    }
+  ],
+  "gap_types": [
+    {
+      "code": "information_gap",
+      "definition": "必要な事実を裏づける原本が、受入済み7原本に含まれていない状態。",
+      "allowed_conclusion": "追加原本候補の検討が必要。",
+      "prohibited_conclusion": "情報対象または交通サービスが存在しない。"
+    },
+    {
+      "code": "measurement_gap",
+      "definition": "受入済み原本に必要な列・表があるが、現在の派生データまたは公開画面で未集計・未表示の状態。",
+      "allowed_conclusion": "新原本を採用せずに抽出・測定・表示できる可能性がある。",
+      "prohibited_conclusion": "原本に情報がない。"
+    },
+    {
+      "code": "service_gap",
+      "definition": "現実の交通サービスが住民の移動目的、時間、条件、需要に対して不足している状態。",
+      "allowed_conclusion": "供給情報を需要・活動機会・実運行と比較した後にだけ検討できる。",
+      "prohibited_conclusion": "登録0件、GTFS未確認、予定便数、原本不足だけから交通不足を断定する。"
+    }
+  ],
+  "status_vocabulary": [
+    {
+      "code": "VISIBLE_CURRENT",
+      "meaning": "受入済み原本を根拠に現在の公開画面または公開JSONで確認できる。",
+      "gap_type": null,
+      "next_action": "根拠、日付、範囲、非主張を維持する。"
+    },
+    {
+      "code": "ACCEPTED_SOURCE_UNMEASURED",
+      "meaning": "受入済み原本に関連表・列があるが、必要な単位では未抽出・未測定・未表示である。",
+      "gap_type": "measurement_gap",
+      "next_action": "新原本を追加せず、既存原本から再現可能な派生方法を定義する。"
+    },
+    {
+      "code": "ADDITIONAL_SOURCE_REQUIRED",
+      "meaning": "受入済み7原本だけでは必要な事実を裏づけられない。",
+      "gap_type": "information_gap",
+      "next_action": "候補原本、発行主体、更新日、利用条件を調べ、人間承認後にだけ採用する。"
+    },
+    {
+      "code": "DEMAND_COMPARATOR_REQUIRED",
+      "meaning": "供給の有無や量だけでは判断できず、人口、目的地、需要、利用経験等との比較が必要である。",
+      "gap_type": "service_gap",
+      "next_action": "供給モデルと混ぜず比較入力として定義し、人間承認後の原本だけを使う。"
+    }
+  ],
+  "categories": [
+    {
+      "category_id": "C1_EVIDENCE_PROVENANCE",
+      "label": "根拠・日付・範囲",
+      "domain": "evidence",
+      "question": "どの公式資料の、いつ、どの範囲を根拠にしているか。",
+      "items": [
+        {
+          "item_id": "source_identity",
+          "label": "発行主体、公式URL、原本識別子",
+          "current_status": "VISIBLE_CURRENT",
+          "accepted_source_ids": ["mlit-registry-000230003", "mlit-registry-000268896", "mlit-registry-000271730", "mlit-registry-000359215", "iwakuni-gtfsjp", "hikari-gtfs", "jrbus-chugoku-gtfs"],
+          "scope_note": "7原本はsource_freshness_manifestでbytesとSHA-256を固定している。"
+        },
+        {
+          "item_id": "reference_and_validity_dates",
+          "label": "基準日、取得日、確認日、内部有効期間",
+          "current_status": "VISIBLE_CURRENT",
+          "accepted_source_ids": ["mlit-registry-000230003", "mlit-registry-000268896", "mlit-registry-000271730", "mlit-registry-000359215", "iwakuni-gtfsjp", "hikari-gtfs", "jrbus-chugoku-gtfs"],
+          "scope_note": "日付の意味を同一視しない。"
+        },
+        {
+          "item_id": "scope_and_completeness_note",
+          "label": "対象制度、事業者、路線、市町範囲と網羅性注記",
+          "current_status": "VISIBLE_CURRENT",
+          "accepted_source_ids": ["mlit-registry-000230003", "mlit-registry-000268896", "mlit-registry-000271730", "mlit-registry-000359215", "iwakuni-gtfsjp", "hikari-gtfs", "jrbus-chugoku-gtfs"],
+          "scope_note": "7原本は県内全交通を網羅しない。"
+        },
+        {
+          "item_id": "access_license_freshness",
+          "label": "アクセス条件、ライセンス、鮮度確認",
+          "current_status": "VISIBLE_CURRENT",
+          "accepted_source_ids": ["mlit-registry-000230003", "mlit-registry-000268896", "mlit-registry-000271730", "mlit-registry-000359215", "iwakuni-gtfsjp", "hikari-gtfs", "jrbus-chugoku-gtfs"],
+          "scope_note": "差異検出を自動採用に変換しない。"
+        }
+      ]
+    },
+    {
+      "category_id": "C2_SERVICE_INVENTORY",
+      "label": "サービス・運営主体・登録供給",
+      "domain": "supply",
+      "question": "どの移動サービスを、誰が、どの制度・区域・車両で提供する登録になっているか。",
+      "items": [
+        {
+          "item_id": "registered_operator_and_type",
+          "label": "登録団体、運送種別、運営主体種別",
+          "current_status": "VISIBLE_CURRENT",
+          "accepted_source_ids": ["mlit-registry-000230003", "mlit-registry-000268896", "mlit-registry-000271730", "mlit-registry-000359215"],
+          "scope_note": "福祉有償運送・交通空白地有償運送の4登録簿に限る。"
+        },
+        {
+          "item_id": "registered_vehicle_count",
+          "label": "登録車両数と車種内訳",
+          "current_status": "VISIBLE_CURRENT",
+          "accepted_source_ids": ["mlit-registry-000230003", "mlit-registry-000268896", "mlit-registry-000271730", "mlit-registry-000359215"],
+          "scope_note": "登録車両であり、現在稼働可能な車両数ではない。"
+        },
+        {
+          "item_id": "registered_service_area_detail",
+          "label": "原文の運送区域と事務所所在地",
+          "current_status": "ACCEPTED_SOURCE_UNMEASURED",
+          "accepted_source_ids": ["mlit-registry-000230003", "mlit-registry-000268896", "mlit-registry-000271730", "mlit-registry-000359215"],
+          "scope_note": "operators.csvにはあるが、市町ビューは市町を含むかの集計を中心に表示している。"
+        },
+        {
+          "item_id": "gtfs_agency_and_feed_inventory",
+          "label": "受入済みGTFSの交通ブランド・フィード単位",
+          "current_status": "VISIBLE_CURRENT",
+          "accepted_source_ids": ["iwakuni-gtfsjp", "hikari-gtfs", "jrbus-chugoku-gtfs"],
+          "scope_note": "公式フィード記録8件のうち、原本受入済みは3件。"
+        },
+        {
+          "item_id": "all_mode_service_inventory",
+          "label": "鉄軌道、一般路線バス、タクシー、乗合・デマンド交通、公共ライドシェア、公共的送迎等を含む全体目録",
+          "current_status": "ADDITIONAL_SOURCE_REQUIRED",
+          "accepted_source_ids": [],
+          "scope_note": "現在の登録簿4件とGTFS3件だけから県内全交通を網羅したとは言えない。"
+        }
+      ]
+    },
+    {
+      "category_id": "C3_SPATIAL_SUPPLY",
+      "label": "どこを結ぶか",
+      "domain": "supply",
+      "question": "どの区域、路線、停留所を結び、どの生活目的地へ到達できる可能性があるか。",
+      "items": [
+        {
+          "item_id": "route_identity_and_name",
+          "label": "路線ID、路線名、運行系統",
+          "current_status": "ACCEPTED_SOURCE_UNMEASURED",
+          "accepted_source_ids": ["iwakuni-gtfsjp", "hikari-gtfs", "jrbus-chugoku-gtfs"],
+          "scope_note": "現在は主に路線ID数を表示し、路線一覧は一般導線で未表示。"
+        },
+        {
+          "item_id": "stop_name_and_coordinates",
+          "label": "乗降場所名、緯度経度、のりば関係",
+          "current_status": "ACCEPTED_SOURCE_UNMEASURED",
+          "accepted_source_ids": ["iwakuni-gtfsjp", "hikari-gtfs", "jrbus-chugoku-gtfs"],
+          "scope_note": "現在は乗降場所ID数を表示し、場所そのものは未表示。"
+        },
+        {
+          "item_id": "route_shape",
+          "label": "運行経路形状",
+          "current_status": "ACCEPTED_SOURCE_UNMEASURED",
+          "accepted_source_ids": ["iwakuni-gtfsjp", "hikari-gtfs", "jrbus-chugoku-gtfs"],
+          "scope_note": "3 GTFSにshapes.txtがあるが、地理表示・市町境界集計は未実装。"
+        },
+        {
+          "item_id": "municipality_feed_spatial_coverage",
+          "label": "受入済みフィードが各市町内で覆う範囲",
+          "current_status": "ACCEPTED_SOURCE_UNMEASURED",
+          "accepted_source_ids": ["iwakuni-gtfsjp", "hikari-gtfs", "jrbus-chugoku-gtfs"],
+          "scope_note": "JRバス中国は県外を含む全体値のまま市町別供給量へ割り当てない。"
+        },
+        {
+          "item_id": "all_service_spatial_coverage",
+          "label": "全交通モードの提供区域・停留所・路線の空間的な重なり",
+          "current_status": "ADDITIONAL_SOURCE_REQUIRED",
+          "accepted_source_ids": [],
+          "scope_note": "受入済み3 GTFSと4登録簿だけでは全サービスの空間範囲にならない。"
+        }
+      ]
+    },
+    {
+      "category_id": "C4_TEMPORAL_SUPPLY",
+      "label": "いつ・どの程度動くか",
+      "domain": "supply",
+      "question": "何曜日・何時に、どの程度の頻度で移動できる予定か。",
+      "items": [
+        {
+          "item_id": "scheduled_trip_count_by_date",
+          "label": "指定週の日別予定便数",
+          "current_status": "VISIBLE_CURRENT",
+          "accepted_source_ids": ["iwakuni-gtfsjp", "hikari-gtfs", "jrbus-chugoku-gtfs"],
+          "scope_note": "予定便であり、実運行・市町内だけの便数・利便性を表さない。"
+        },
+        {
+          "item_id": "service_calendar",
+          "label": "通常運行曜日、例外運行日、フィード有効期間",
+          "current_status": "ACCEPTED_SOURCE_UNMEASURED",
+          "accepted_source_ids": ["iwakuni-gtfsjp", "hikari-gtfs", "jrbus-chugoku-gtfs"],
+          "scope_note": "日別便数の算出には使用しているが、利用者が曜日条件として確認する表示はない。"
+        },
+        {
+          "item_id": "stop_level_timetable",
+          "label": "便ごとの乗降場所別発着予定時刻",
+          "current_status": "ACCEPTED_SOURCE_UNMEASURED",
+          "accepted_source_ids": ["iwakuni-gtfsjp", "hikari-gtfs", "jrbus-chugoku-gtfs"],
+          "scope_note": "3 GTFSにstop_times.txtがあるが、現在は個別時刻を表示していない。"
+        },
+        {
+          "item_id": "time_band_frequency",
+          "label": "時間帯別運行頻度、始発・終発、運行間隔",
+          "current_status": "ACCEPTED_SOURCE_UNMEASURED",
+          "accepted_source_ids": ["iwakuni-gtfsjp", "hikari-gtfs", "jrbus-chugoku-gtfs"],
+          "scope_note": "既存の予定時刻から派生可能だが、算出仕様・市町単位は未定義。"
+        },
+        {
+          "item_id": "transfer_wait_and_travel_time",
+          "label": "乗換、待ち時間、所要時間",
+          "current_status": "ACCEPTED_SOURCE_UNMEASURED",
+          "accepted_source_ids": ["iwakuni-gtfsjp", "hikari-gtfs", "jrbus-chugoku-gtfs"],
+          "scope_note": "光市GTFSにはtransfers.txtがある。全フィード横断の接続保証や実所要時間は示さない。"
+        }
+      ]
+    },
+    {
+      "category_id": "C5_ACCESS_CONDITIONS_AND_COST",
+      "label": "誰が・どんな条件と費用で使えるか",
+      "domain": "supply",
+      "question": "利用対象、予約、運賃、支払、バリアフリー等の利用条件は何か。",
+      "items": [
+        {
+          "item_id": "welfare_eligibility_scope",
+          "label": "福祉有償運送の利用対象区分",
+          "current_status": "ACCEPTED_SOURCE_UNMEASURED",
+          "accepted_source_ids": ["mlit-registry-000230003", "mlit-registry-000271730"],
+          "scope_note": "operators.csvに対象区分があるが、利用可否の最終判断や現在の会員条件を表さない。"
+        },
+        {
+          "item_id": "fare_and_payment",
+          "label": "運賃額、適用区間、支払方法",
+          "current_status": "ACCEPTED_SOURCE_UNMEASURED",
+          "accepted_source_ids": ["iwakuni-gtfsjp", "hikari-gtfs", "jrbus-chugoku-gtfs"],
+          "scope_note": "3 GTFSにfare_attributes.txtとfare_rules.txtがあるが、内容・適用完全性は未検証。"
+        },
+        {
+          "item_id": "reservation_method_and_deadline",
+          "label": "予約要否、方法、受付時間、締切",
+          "current_status": "ADDITIONAL_SOURCE_REQUIRED",
+          "accepted_source_ids": [],
+          "scope_note": "登録簿と静的GTFSだけでは現在の予約運用を確認できない。"
+        },
+        {
+          "item_id": "service_use_rules_and_contact",
+          "label": "会員登録、居住地等の利用条件、問い合わせ先",
+          "current_status": "ADDITIONAL_SOURCE_REQUIRED",
+          "accepted_source_ids": [],
+          "scope_note": "登録上の対象と現在の利用案内を同一視しない。"
+        },
+        {
+          "item_id": "accessibility_features",
+          "label": "車いす対応車両、停留所・便のアクセシビリティ",
+          "current_status": "ACCEPTED_SOURCE_UNMEASURED",
+          "accepted_source_ids": ["mlit-registry-000230003", "mlit-registry-000268896", "mlit-registry-000271730", "mlit-registry-000359215", "jrbus-chugoku-gtfs"],
+          "scope_note": "登録車種とJRバス中国GTFSの関連列は部分情報で、実利用可能性を保証しない。"
+        }
+      ]
+    },
+    {
+      "category_id": "C6_ACTUAL_OPERATION_AND_CAPACITY",
+      "label": "実際に動いたか・供給を維持できるか",
+      "domain": "supply",
+      "question": "予定ではなく実際に運行し、必要な車両・人員を確保できているか。",
+      "items": [
+        {
+          "item_id": "actual_trip_and_cancellation",
+          "label": "実運行便、運休、迂回、遅延、定時性",
+          "current_status": "ADDITIONAL_SOURCE_REQUIRED",
+          "accepted_source_ids": [],
+          "scope_note": "現在の3 GTFSは静的な予定情報である。"
+        },
+        {
+          "item_id": "active_vehicle_capacity",
+          "label": "実稼働可能な車両、座席・車いす等の輸送容量",
+          "current_status": "ADDITIONAL_SOURCE_REQUIRED",
+          "accepted_source_ids": [],
+          "scope_note": "登録車両数を実稼働車両数や同時供給量へ読み替えない。"
+        },
+        {
+          "item_id": "driver_and_operation_capacity",
+          "label": "運転者数、勤務体制、運行継続上の人員制約",
+          "current_status": "ADDITIONAL_SOURCE_REQUIRED",
+          "accepted_source_ids": [],
+          "scope_note": "7原本には運転者・勤務体制の実態がない。"
+        }
+      ]
+    },
+    {
+      "category_id": "C7_USE_AND_SUSTAINABILITY",
+      "label": "どれだけ使われ・続けられるか",
+      "domain": "supply",
+      "question": "供給されたサービスがどれだけ利用され、財政・事業面で持続できるか。",
+      "items": [
+        {
+          "item_id": "ridership_and_transport_volume",
+          "label": "利用者数、輸送人員、利用区間・時間帯",
+          "current_status": "ADDITIONAL_SOURCE_REQUIRED",
+          "accepted_source_ids": [],
+          "scope_note": "予定便数を利用者数へ読み替えない。"
+        },
+        {
+          "item_id": "finance_and_public_funding",
+          "label": "収支、運賃収入、公的資金投入額",
+          "current_status": "ADDITIONAL_SOURCE_REQUIRED",
+          "accepted_source_ids": [],
+          "scope_note": "7原本には事業収支・自治体負担がない。"
+        },
+        {
+          "item_id": "multi_year_sustainability",
+          "label": "複数年の利用・供給・人員・財務の変化",
+          "current_status": "ADDITIONAL_SOURCE_REQUIRED",
+          "accepted_source_ids": [],
+          "scope_note": "一時点の登録簿・GTFSだけで継続可能性を判定しない。"
+        }
+      ]
+    },
+    {
+      "category_id": "C8_DEMAND_AND_ACTIVITY_COMPARATOR",
+      "label": "住民の生活・需要との比較入力",
+      "domain": "comparator_not_supply",
+      "question": "供給を、住民の居住地、生活目的地、移動需要、利用経験と比べるとどうか。",
+      "items": [
+        {
+          "item_id": "population_and_age_distribution",
+          "label": "人口、高齢者人口、将来人口の分布",
+          "current_status": "DEMAND_COMPARATOR_REQUIRED",
+          "accepted_source_ids": [],
+          "scope_note": "供給側情報とは別の比較入力として扱う。"
+        },
+        {
+          "item_id": "essential_destination_locations",
+          "label": "病院、学校、買物先等の生活目的地",
+          "current_status": "DEMAND_COMPARATOR_REQUIRED",
+          "accepted_source_ids": [],
+          "scope_note": "停留所があるだけで目的地へ到達できるとは判断しない。"
+        },
+        {
+          "item_id": "origin_destination_and_trip_purpose",
+          "label": "出発地・目的地、移動目的、時間帯別需要",
+          "current_status": "DEMAND_COMPARATOR_REQUIRED",
+          "accepted_source_ids": [],
+          "scope_note": "需要データは供給量とは別に取得条件・精度を確認する。"
+        },
+        {
+          "item_id": "resident_experience_and_unmet_need",
+          "label": "利用経験、利用できなかった移動、困りごと",
+          "current_status": "DEMAND_COMPARATOR_REQUIRED",
+          "accepted_source_ids": [],
+          "scope_note": "将来の利用者検証・関係者確認は説明・同意を伴う人間承認ゲート。"
+        },
+        {
+          "item_id": "essential_destination_accessibility",
+          "label": "生活目的地までの到達可能性、所要時間、待ち・乗換",
+          "current_status": "DEMAND_COMPARATOR_REQUIRED",
+          "accepted_source_ids": [],
+          "scope_note": "C3・C4の供給と人口・施設・需要を重ねた後にだけ算出候補となる。"
+        }
+      ]
+    }
+  ],
+  "accepted_source_mapping": [
+    {
+      "source_id": "mlit-registry-000230003",
+      "source_type": "registry_pdf",
+      "local_path": "raw/000230003.pdf",
+      "source_scope": "福祉有償運送・市町村営",
+      "contributes_item_ids": ["source_identity", "reference_and_validity_dates", "scope_and_completeness_note", "access_license_freshness", "registered_operator_and_type", "registered_vehicle_count", "registered_service_area_detail", "welfare_eligibility_scope", "accessibility_features"],
+      "limitations": ["登録状態であり実運行を示さない", "福祉有償運送・市町村営の範囲に限る"]
+    },
+    {
+      "source_id": "mlit-registry-000268896",
+      "source_type": "registry_pdf",
+      "local_path": "raw/000268896.pdf",
+      "source_scope": "交通空白地有償運送・NPO等",
+      "contributes_item_ids": ["source_identity", "reference_and_validity_dates", "scope_and_completeness_note", "access_license_freshness", "registered_operator_and_type", "registered_vehicle_count", "registered_service_area_detail", "accessibility_features"],
+      "limitations": ["登録状態であり実運行を示さない", "交通空白地有償運送・NPO等の範囲に限る"]
+    },
+    {
+      "source_id": "mlit-registry-000271730",
+      "source_type": "registry_pdf",
+      "local_path": "raw/000271730.pdf",
+      "source_scope": "福祉有償運送・NPO等",
+      "contributes_item_ids": ["source_identity", "reference_and_validity_dates", "scope_and_completeness_note", "access_license_freshness", "registered_operator_and_type", "registered_vehicle_count", "registered_service_area_detail", "welfare_eligibility_scope", "accessibility_features"],
+      "limitations": ["登録状態であり実運行を示さない", "福祉有償運送・NPO等の範囲に限る"]
+    },
+    {
+      "source_id": "mlit-registry-000359215",
+      "source_type": "registry_pdf",
+      "local_path": "raw/000359215.pdf",
+      "source_scope": "交通空白地有償運送・市町村営",
+      "contributes_item_ids": ["source_identity", "reference_and_validity_dates", "scope_and_completeness_note", "access_license_freshness", "registered_operator_and_type", "registered_vehicle_count", "registered_service_area_detail", "accessibility_features"],
+      "limitations": ["登録状態であり実運行を示さない", "交通空白地有償運送・市町村営の範囲に限る"]
+    },
+    {
+      "source_id": "iwakuni-gtfsjp",
+      "source_type": "gtfs_zip",
+      "local_path": "raw/gtfs/iwakuni_gtfsjp_20260401.zip",
+      "source_scope": "岩国市の生活交通バス・由宇地区バス関連フィード",
+      "declared_tables": ["agency.txt", "routes.txt", "trips.txt", "stops.txt", "stop_times.txt", "calendar.txt", "calendar_dates.txt", "fare_attributes.txt", "fare_rules.txt", "shapes.txt", "feed_info.txt"],
+      "contributes_item_ids": ["source_identity", "reference_and_validity_dates", "scope_and_completeness_note", "access_license_freshness", "gtfs_agency_and_feed_inventory", "route_identity_and_name", "stop_name_and_coordinates", "route_shape", "municipality_feed_spatial_coverage", "scheduled_trip_count_by_date", "service_calendar", "stop_level_timetable", "time_band_frequency", "transfer_wait_and_travel_time", "fare_and_payment"],
+      "limitations": ["市域全体・全事業者・全路線を示さない", "予定情報であり実運行・利用実績を示さない"]
+    },
+    {
+      "source_id": "hikari-gtfs",
+      "source_type": "gtfs_zip",
+      "local_path": "raw/gtfs/hikari_gtfs_20260401.zip",
+      "source_scope": "光市の広域生活交通・ひかりぐるりんバス・光市営バス関連フィード",
+      "declared_tables": ["agency.txt", "routes.txt", "trips.txt", "stops.txt", "stop_times.txt", "calendar.txt", "calendar_dates.txt", "fare_attributes.txt", "fare_rules.txt", "transfers.txt", "shapes.txt", "feed_info.txt"],
+      "contributes_item_ids": ["source_identity", "reference_and_validity_dates", "scope_and_completeness_note", "access_license_freshness", "gtfs_agency_and_feed_inventory", "route_identity_and_name", "stop_name_and_coordinates", "route_shape", "municipality_feed_spatial_coverage", "scheduled_trip_count_by_date", "service_calendar", "stop_level_timetable", "time_band_frequency", "transfer_wait_and_travel_time", "fare_and_payment"],
+      "limitations": ["光市・周南市の全交通を示さない", "予定情報であり実運行・利用実績を示さない"]
+    },
+    {
+      "source_id": "jrbus-chugoku-gtfs",
+      "source_type": "gtfs_zip",
+      "local_path": "raw/gtfs/jrbus_chugoku_gtfs_20260813.zip",
+      "source_scope": "県外を含むJRバス中国広域フィード全体",
+      "declared_tables": ["agency.txt", "routes.txt", "trips.txt", "stops.txt", "stop_times.txt", "calendar.txt", "calendar_dates.txt", "fare_attributes.txt", "fare_rules.txt", "shapes.txt", "feed_info.txt"],
+      "contributes_item_ids": ["source_identity", "reference_and_validity_dates", "scope_and_completeness_note", "access_license_freshness", "gtfs_agency_and_feed_inventory", "route_identity_and_name", "stop_name_and_coordinates", "route_shape", "municipality_feed_spatial_coverage", "scheduled_trip_count_by_date", "service_calendar", "stop_level_timetable", "time_band_frequency", "transfer_wait_and_travel_time", "fare_and_payment", "accessibility_features"],
+      "limitations": ["広域フィード全体値を山口県内・市町内の値へ割り当てない", "予定情報であり実運行・利用実績を示さない"]
+    }
+  ],
+  "municipality_coverage_contract": {
+    "expected_municipality_count": 19,
+    "input_paths": [
+      "docs/data/municipal_supply.json",
+      "data/municipality_gtfs.json",
+      "data/gtfs_supply_metrics.json",
+      "data/jrbus_chugoku_supply_metrics.json"
+    ],
+    "gtfs_access_states": [
+      "public_download_confirmed",
+      "authentication_required",
+      "not_publicly_distributed",
+      "official_resource_unavailable"
+    ],
+    "rules": [
+      "operator_countが0でも登録簿4PDF上の該当記載0件とだけ表し、交通手段や別制度の不存在にしない。",
+      "GTFSアクセス状態は確認した公式資料への到達条件であり、交通サービスの有無・質・網羅率にしない。",
+      "gtfs_supply_metricsは関連付けた受入済みフィード全体の測定値であり、市町境界内だけの供給量にしない。",
+      "JRバス中国の独立指標は県外を含む広域フィード全体のまま保持し、市町値へ配賦しない。",
+      "各情報項目はVISIBLE_CURRENT、ACCEPTED_SOURCE_UNMEASURED、ADDITIONAL_SOURCE_REQUIRED、DEMAND_COMPARATOR_REQUIREDのいずれかで示し、service_gapを自動判定しない。"
+    ],
+    "required_future_matrix_fields": [
+      "municipality_code",
+      "municipality",
+      "category_id",
+      "item_id",
+      "current_status",
+      "accepted_source_ids",
+      "evidence_date",
+      "scope_note",
+      "next_confirmation",
+      "claim_boundary"
+    ]
+  },
+  "execution_priority": [
+    {
+      "order": 1,
+      "priority_id": "accepted_source_exploitation",
+      "description": "新原本を増やす前に、受入済み原本の未測定項目と市町適用範囲を確定する。",
+      "item_ids": ["registered_service_area_detail", "welfare_eligibility_scope", "route_identity_and_name", "stop_name_and_coordinates", "route_shape", "municipality_feed_spatial_coverage", "service_calendar", "stop_level_timetable", "time_band_frequency", "transfer_wait_and_travel_time", "fare_and_payment", "accessibility_features"]
+    },
+    {
+      "order": 2,
+      "priority_id": "additional_source_candidates",
+      "description": "受入済み7原本で埋まらない供給項目だけ、候補原本と採用条件を整理する。採用は人間承認後。",
+      "item_ids": ["all_mode_service_inventory", "all_service_spatial_coverage", "reservation_method_and_deadline", "service_use_rules_and_contact", "actual_trip_and_cancellation", "active_vehicle_capacity", "driver_and_operation_capacity", "ridership_and_transport_volume", "finance_and_public_funding", "multi_year_sustainability"]
+    },
+    {
+      "order": 3,
+      "priority_id": "demand_comparison",
+      "description": "供給情報が整理された後、需要・生活目的地との比較設計を別入力として行う。",
+      "item_ids": ["population_and_age_distribution", "essential_destination_locations", "origin_destination_and_trip_purpose", "resident_experience_and_unmet_need", "essential_destination_accessibility"]
+    }
+  ],
+  "claim_boundaries": [
+    "登録簿記録0件は、交通サービス、移動支援、別制度の不存在を意味しない。",
+    "GTFS未確認・一般配布なし・認証必要・取得不能は、GTFSまたは交通サービスの不存在を意味しない。",
+    "登録車両数は、実稼働車両数、同時輸送力、利用可能性を意味しない。",
+    "GTFS上の予定便・時刻は、実運行、定時性、利用者数を意味しない。",
+    "情報不足と測定不足は、実際のサービス不足を意味しない。",
+    "交通が弱いかどうかは、供給情報を需要・活動機会・実運行と比較する前に結論づけない。"
+  ],
+  "human_approval_gates": [
+    "新しい原本の取得・採用",
+    "認証付き・非公開データへのアクセス",
+    "外部関係者への連絡",
+    "利用者テストの依頼と同意取得",
+    "UDC概要フォーム・本応募",
+    "BODIK登録",
+    "公開4ページの大幅な情報設計変更"
+  ],
+  "next_stage": {
+    "task_id": "WORK1-SUPPLY-SIDE-INFORMATION-COVERAGE-MATRIX-1",
+    "status": "DEFINED_NOT_STARTED",
+    "goal": "現在の7原本と既存派生データだけから、19市町×情報項目の現在状態を決定的に生成し、表示済み・原本内未測定・追加原本必要・需要比較必要を市町別に区別する。",
+    "boundary": "新原本取得・採用、公開4ページ変更、外部連絡、利用者テスト、応募・登録は行わない。"
+  }
+}

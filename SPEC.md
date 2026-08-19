@@ -1,6 +1,6 @@
 # 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価 / WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況拡張 / WORK1-AWARD-SCORECARD-RECALIBRATION-2 拡張成果再評価 / WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 広域GTFS独立供給指標 / WORK1-AWARD-SCORECARD-RECALIBRATION-3 独立指標成果再評価 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 独立再現・復旧訓練 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1 再現判定厳格化 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1 記録整合・最終保存 / WORK1-AWARD-SCORECARD-RECALIBRATION-4 再現成果再評価 / WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1 Why・利用導線接続 / WORK1-GENERAL-READER-PURPOSE-CLARITY-CORRECTION-1 一般読者向け目的接続
 
-**rev.5.30 / 2026-08-19**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34、rev.5.20→rev.5.21 は §10.35、rev.5.21→rev.5.22 は §10.36、rev.5.22→rev.5.23 は §10.37、rev.5.23→rev.5.24 は §10.38、rev.5.24→rev.5.25 は §10.39、rev.5.25→rev.5.26 は §10.40、rev.5.26→rev.5.27 は §10.41、rev.5.27→rev.5.28 は §10.42、rev.5.28→rev.5.29 は §10.43、rev.5.29→rev.5.30 は §10.44。消した記述はそこに全部書いてある）
+**rev.5.31 / 2026-08-19**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34、rev.5.20→rev.5.21 は §10.35、rev.5.21→rev.5.22 は §10.36、rev.5.22→rev.5.23 は §10.37、rev.5.23→rev.5.24 は §10.38、rev.5.24→rev.5.25 は §10.39、rev.5.25→rev.5.26 は §10.40、rev.5.26→rev.5.27 は §10.41、rev.5.27→rev.5.28 は §10.42、rev.5.28→rev.5.29 は §10.43、rev.5.29→rev.5.30 は §10.44、rev.5.30→rev.5.31 は §10.45。消した記述はそこに全部書いてある）
 
 UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下に `SPEC.md` として置き、Claude Code に読ませる。**
 
@@ -3299,6 +3299,18 @@ Pages用内部診断3資産は不在を維持し、公開HTMLへ内部点数・�
 - 公開4ページの冒頭へ、利用者、相談目的、見る情報、サイトだけでは決めない限界を同じ平易な順序で置く。
 - 既存の専門情報、検証証拠、Why、市町別導線は削除せず、一般向け説明を先行させる。
 
+### 10.45 rev.5.30 → rev.5.31
+
+- `WORK1-SUPPLY-SIDE-INFORMATION-MODEL-AUDIT-1`の変更なし監査で、現在のサイトは限界を
+  誠実に表示する一方、必要情報の分類と、原本未入手・原本内未測定・需要比較必要を区別する
+  情報モデルがないことをP1とした。
+- `data/work1_supply_side_information_model.json`を内部正本とし、8分類・35項目、4状態、
+  3種類の不足、受入済み7原本7 / 7対応、19市町への適用規則を固定する。
+- 「山口県の地域交通は弱いのではないか」は検証開始の作業仮説であり、作成者のより深い
+  問題意識は意図的に記録・推測しない。
+- 公開4ページと7原本は変更せず、次段階は現在7原本だけから19市町別の情報充足状態を生成する
+  `WORK1-SUPPLY-SIDE-INFORMATION-COVERAGE-MATRIX-1`一つだけとする。
+
 ---
 
 ## 36. WORK1-INDEPENDENT-REPRODUCTION-DRILL-1
@@ -4090,3 +4102,109 @@ JRバス中国は原本受入と山口県関係4路線の確認だけを達成�
 - 国内唯一、優位、受賞確率、公式点として内部値を使う必要が生じる
 - 公開HTML、原本、既存公開値、公式基準、scope境界の変更が必要になる
 - 作品②、参加者連絡、応募・登録、履歴書換え、Release削除が必要になる
+
+---
+
+## 44. WORK1-SUPPLY-SIDE-INFORMATION-MODEL-DEFINITION-1
+
+### 44.1 入力監査と段階ゴール
+
+固定HEAD `66b5aa7dd3b51dd5e32764a6d0f0c7d40fff0db1`を変更なしで監査し、現在の4ページは
+登録簿・GTFSの限界を明記する一方、「路線・時刻・予約条件・利用実績・人口等」を一文にまとめ、
+原本がない情報不足、受入済み原本内の測定不足、需要比較後にだけ検討できる実サービス不足を
+区別していなかった。判定はP0 0 / P1 2 / P2 2、`NO_GO`である。
+
+本段階は、山口県の生活交通を検討するための情報を分類し、現在の7原本が何を裏づけ、何が未測定で、
+どこから追加原本または需要比較が必要かを機械可読な内部正本へ固定する。情報収集自体を目的にせず、
+公式手引きは分類根拠として参照するだけで、新しい採用原本には数えない。
+
+作業仮説「山口県の地域交通は弱いのではないか」は検証開始点であり結論ではない。作成者にはここへ
+記録しない深い問題意識があるが、その内容を推測、要約、代替表現へ変換しない。
+
+### 44.2 情報モデル正本
+
+内部正本を`data/work1_supply_side_information_model.json`とし、次を固定する。
+
+1. C1 根拠・日付・範囲
+2. C2 サービス・運営主体・登録供給
+3. C3 どこを結ぶか
+4. C4 いつ・どの程度動くか
+5. C5 誰が・どんな条件と費用で使えるか
+6. C6 実際に動いたか・供給を維持できるか
+7. C7 どれだけ使われ・続けられるか
+8. C8 住民の生活・需要との比較入力（供給側とは分離）
+
+各情報項目の現在状態は次の4値だけを使う。
+
+- `VISIBLE_CURRENT`: 現在の公開画面または公開JSONで確認できる。
+- `ACCEPTED_SOURCE_UNMEASURED`: 受入済み原本に関連表・列があるが必要単位で未測定・未表示。
+- `ADDITIONAL_SOURCE_REQUIRED`: 受入済み7原本だけでは裏づけられない。
+- `DEMAND_COMPARATOR_REQUIRED`: 人口、生活目的地、需要、利用経験等との比較が必要。
+
+不足は`information_gap`、`measurement_gap`、`service_gap`を区別する。最初の2種は証拠状態であり、
+実際の交通不足を意味しない。`service_gap`は供給を需要・活動機会・実運行と比較した後にだけ検討する。
+
+### 44.3 7原本対応と現在地
+
+`data/source_freshness_manifest.json`の4登録簿PDF・3 GTFS ZIPを7 / 7で対応づける。
+
+- 4登録簿は、登録団体、運送種別、登録車両、運送区域、有効期間、福祉有償運送の対象区分等を
+  部分的に裏づける。登録状態を実運行・予約可能性・実稼働容量へ読み替えない。
+- 3 GTFSは、事業者、路線、停留所、経路形状、予定時刻、運行日、運賃等を含む。現在表示中の
+  路線ID数、乗降場所ID数、日別予定便数以外は多くが未測定・未表示である。
+- JRバス中国は県外を含む広域フィード全体のまま保持し、市町値へ配賦しない。
+
+35項目の状態は`VISIBLE_CURRENT` 8、`ACCEPTED_SOURCE_UNMEASURED` 12、
+`ADDITIONAL_SOURCE_REQUIRED` 10、`DEMAND_COMPARATOR_REQUIRED` 5とする。
+
+### 44.4 19市町適用と実行優先度
+
+次段階の市町別行列は`docs/data/municipal_supply.json`、`data/municipality_gtfs.json`、
+`data/gtfs_supply_metrics.json`、`data/jrbus_chugoku_supply_metrics.json`を入力にする。
+19市町の名称集合一致、GTFS 4アクセス状態、市町値へ配賦しない境界を維持する。
+
+実行順は次で固定する。
+
+1. 受入済み原本内の未測定12項目と、市町への適用範囲を確定する。
+2. それでも空欄の供給10項目だけ追加原本候補を検討し、採用は人間承認後とする。
+3. 供給整理後に、需要・活動機会5項目を別入力として比較設計する。
+
+### 44.5 変更範囲と境界
+
+変更・追加できるのは次だけとする。
+
+- `data/work1_supply_side_information_model.json`
+- `tests/test_supply_side_information_model.py`
+- `SPEC.md`、`run_record.md`、`PROGRESS.md`、`verification.md`
+- `evidence/20260819_work1_supply_side_information_model_definition_local_acceptance.json`
+
+公開4 HTML、`docs/data/`、7原本、既存公開JSON・CSV・計算値、内部スコアカード、scope境界を変更しない。
+作品②を入力にしない。新原本取得・採用、認証付き・非公開データへのアクセス、外部連絡、利用者テスト、
+UDC応募、BODIK登録を行わない。公式参照3件は分類根拠であり、受入済み原本7件へ追加しない。
+
+### 44.6 完了条件
+
+1. 8分類・35項目、4状態、3種類の不足を内部JSONから一意に読み戻せる。
+2. 受入済み7原本がmanifestとID・種別・パス・bytes・SHA-256で7 / 7一致する。
+3. 3 GTFSの宣言表をZIP非展開で確認し、時刻・停留所・運賃等の測定不足を原本不在と区別できる。
+4. 19市町の既存入力集合とGTFS 4状態が一致し、市町別行列の必須10項目を定義できる。
+5. 深い問題意識を記録・推測せず、作業仮説を結論にしない境界が機械可読である。
+6. 新原本前の既存原本活用、追加原本候補、需要比較の優先順を追跡できる。
+7. 専用13 / 13、全222 / 222、scope checker、`git diff --check`が成功する。
+8. 公開4 HTML、`docs/data/`、7原本、既存公開値、内部スコアカード、作品①境界が基準HEADから不変である。
+9. 新原本、作品②入力、外部連絡、利用者テスト、応募・登録が各0である。
+10. 次段階を`WORK1-SUPPLY-SIDE-INFORMATION-COVERAGE-MATRIX-1`一つだけに定義し、開始しない。
+11. 次Chatが正本・受入証拠・Git状態だけから目的、判断、変更、未完了、次段階、禁止事項を復元できる。
+
+### 44.7 次段階と停止条件
+
+次段階は`WORK1-SUPPLY-SIDE-INFORMATION-COVERAGE-MATRIX-1`だけとする。現在の7原本と既存派生データから、
+19市町×35情報項目の状態行列を決定的に生成する。新原本取得・採用、公開4ページ変更、外部連絡、
+利用者テスト、応募・登録は行わず、開始承認まで`DEFINED_NOT_STARTED`とする。
+
+次の場合は停止する。
+
+- 深い問題意識の内容を推測または公開説明へ変換する必要が生じる
+- 情報不足・測定不足から実サービス不足を断定する必要が生じる
+- 新原本、認証付き・非公開情報、作品②、外部連絡、応募・登録が必要になる
+- 公開4ページや既存公開値を情報モデル定義と同時に変更する必要が生じる

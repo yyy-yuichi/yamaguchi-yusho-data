@@ -1,5 +1,28 @@
 # PROGRESS
 
+## 2026-08-19 WORK1-SUPPLY-SIDE-INFORMATION-MODEL-DEFINITION-1
+
+### 情報モデル定義・ローカル受入
+
+- 変更なし監査はP0 0 / P1 2 / P2 2、`NO_GO`。サイト故障ではなく、「必要な供給側情報」と
+  原本未入手・原本内未測定・需要比較必要の区別が未実装だった。
+- `data/work1_supply_side_information_model.json`を追加し、根拠、サービス目録、空間、時間、
+  利用条件・費用、実運行・容量、利用・持続性、需要比較の8分類・35項目を定義した。
+- 状態は`VISIBLE_CURRENT` 8、`ACCEPTED_SOURCE_UNMEASURED` 12、
+  `ADDITIONAL_SOURCE_REQUIRED` 10、`DEMAND_COMPARATOR_REQUIRED` 5。
+- 4登録簿PDF・3 GTFS ZIPをmanifestへ7 / 7対応。3 GTFSの路線、停留所、経路形状、予定時刻、
+  運行日、運賃等をZIP非展開で確認し、現在画面で未集計・未表示の項目を測定不足へ分けた。
+- 19市町の既存登録供給・GTFS入力の名称集合、4アクセス状態、市町値に配賦しないJRバス中国境界、
+  将来行列の必須10項目を固定した。
+- 作成者の深い問題意識は意図的に記録・推測しない。作業仮説は検証開始点であり結論ではない。
+- 専用13 / 13、全222 / 222、scope checker、`git diff --check`が成功。公開4 HTML、
+  `docs/data/`、7原本、既存公開値、内部スコアカードは不変。
+- 作品②入力、新原本取得・採用、外部連絡、利用者テスト、UDC応募、BODIK登録は各0。
+- ローカル正本は
+  `evidence/20260819_work1_supply_side_information_model_definition_local_acceptance.json`。
+- 次段階は`WORK1-SUPPLY-SIDE-INFORMATION-COVERAGE-MATRIX-1`一つだけ。現在7原本から
+  19市町×35項目の状態行列を生成する段階で、開始承認まで未開始とする。
+
 ## 2026-08-07 リポジトリセットアップ
 
 ### やったこと
