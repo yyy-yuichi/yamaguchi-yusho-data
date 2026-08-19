@@ -4208,3 +4208,119 @@ UDC応募、BODIK登録を行わない。公式参照3件は分類根拠であ�
 - 情報不足・測定不足から実サービス不足を断定する必要が生じる
 - 新原本、認証付き・非公開情報、作品②、外部連絡、応募・登録が必要になる
 - 公開4ページや既存公開値を情報モデル定義と同時に変更する必要が生じる
+
+## 45. WORK1-SUPPLY-SIDE-INFORMATION-COVERAGE-MATRIX-1
+
+### 45.1 開始承認と段階ゴール
+
+2026-08-19に作成者の開始承認を受けた。本段階は§44の情報モデルを、現在の7原本と既存派生データだけで
+山口県19市町へ適用し、19×35=665行の内部カバレッジ行列として決定的に生成する。
+
+行列は交通サービスの評価表ではなく、各市町・各情報項目について、現在表示済みか、受入済み原本内で
+未測定か、追加原本が必要か、需要比較が必要かを区別する証拠状態表である。登録0件、GTFSアクセス状態、
+予定便数、フィード全体指標から交通の不存在・質・実サービス不足を導かない。
+
+### 45.2 入力・生成器・内部出力
+
+入力は次の5ファイルだけとし、出力メタデータへ各SHA-256を固定する。
+
+- `data/work1_supply_side_information_model.json`
+- `docs/data/municipal_supply.json`
+- `data/municipality_gtfs.json`
+- `data/gtfs_supply_metrics.json`
+- `data/jrbus_chugoku_supply_metrics.json`
+
+生成器は`src/build_supply_side_information_coverage_matrix.py`、内部出力は
+`data/work1_supply_side_information_coverage_matrix.json`とする。壁時計・ネットワーク・認証情報を使わず、
+市町は`data/municipality_gtfs.json`順、分類・項目は情報モデル順、JSONはUTF-8・LF・末尾改行1つで固定する。
+同じ5入力から完全byte一致で再生成できなければならない。
+
+各行は§44.4の必須10フィールドだけをこの順で持つ。
+
+1. `municipality_code`
+2. `municipality`
+3. `category_id`
+4. `item_id`
+5. `current_status`
+6. `accepted_source_ids`
+7. `evidence_date`
+8. `scope_note`
+9. `next_confirmation`
+10. `claim_boundary`
+
+`evidence_date`は原本発行日を混合した値ではなく、情報モデルに基づき行状態を判定した基準日
+`2026-08-19`とする。各GTFSの公式基準日・確認日は`scope_note`へ別の意味のまま記録し、同一視しない。
+
+### 45.3 市町別状態の決定規則
+
+1. C1の4項目と登録団体・登録車両の2項目は、4登録簿全体を19市町名で照合した既存派生入力を根拠に
+   `VISIBLE_CURRENT`とする。登録0件は4登録簿内の該当記載0件だけを表す。
+2. 登録簿内未測定項目は、その市町に対応する登録行と項目対応原本がある場合だけ
+   `ACCEPTED_SOURCE_UNMEASURED`を維持する。対応行がなければ`ADDITIONAL_SOURCE_REQUIRED`とし、
+   登録簿外サービスの不存在にしない。
+3. GTFS項目は、`data/municipality_gtfs.json`の関連フィードIDが受入済み3 GTFS原本のIDと一致する市町だけ、
+   情報モデルの`VISIBLE_CURRENT`または`ACCEPTED_SOURCE_UNMEASURED`を維持する。受入原本との対応がない市町は
+   `ADDITIONAL_SOURCE_REQUIRED`とし、4アクセス状態を交通の有無・質・網羅率へ変換しない。
+4. 岩国市は岩国市GTFS、光市・周南市は光市GTFS、山口市・萩市・防府市・美祢市はJRバス中国GTFSとの
+   既存対応だけを使う。未受入フィードを`accepted_source_ids`へ入れない。
+5. GTFS測定値はフィード全体の収録値のまま保持する。特にJRバス中国の県外を含む広域値を4市へ配賦せず、
+   行列に数値自体を複製しない。
+6. 情報モデルで`ADDITIONAL_SOURCE_REQUIRED`または`DEMAND_COMPARATOR_REQUIRED`の項目は市町別でも維持し、
+   `accepted_source_ids`を空配列にする。
+7. どの行にも`service_gap`フィールドや自動判定を作らず、`claim_boundary`で非主張を明記する。
+
+### 45.4 生成結果
+
+- 市町: 19
+- 分類: 8
+- 各市町の項目: 35
+- 行: 665
+- `VISIBLE_CURRENT`: 128
+- `ACCEPTED_SOURCE_UNMEASURED`: 98
+- `ADDITIONAL_SOURCE_REQUIRED`: 344
+- `DEMAND_COMPARATOR_REQUIRED`: 95
+
+モデル全体の8 / 12 / 10 / 5は項目分類の現在地であり、128 / 98 / 344 / 95は市町別の受入原本対応を
+適用した行状態である。両者を同じ母数の値として比較しない。
+
+### 45.5 変更範囲と境界
+
+変更・追加できるのは次だけとする。
+
+- `src/build_supply_side_information_coverage_matrix.py`
+- `data/work1_supply_side_information_coverage_matrix.json`
+- `tests/test_supply_side_information_coverage_matrix.py`
+- `SPEC.md`、`run_record.md`、`PROGRESS.md`、`verification.md`
+- `evidence/20260819_work1_supply_side_information_coverage_matrix_local_acceptance.json`
+
+公開4 HTML、`docs/data/`、入力5ファイル、7原本、既存公開値、内部スコアカード、作品①scope境界を変更しない。
+新原本探索・取得・採用、認証付き・非公開データへのアクセス、外部連絡、利用者テスト、UDC応募、
+BODIK登録、push・Pages更新を行わない。作品②を探索・参照・入力・変更しない。作成者の深い問題意識を
+推測、要約、代替表現へ変換しない。
+
+### 45.6 完了条件
+
+1. 19市町が各35項目を1回ずつ持ち、665行・必須10フィールドとなる。
+2. 4状態以外を生成せず、状態内訳が128 / 98 / 344 / 95となる。
+3. 同じ5入力から複数回生成して完全byte一致し、保存済み内部JSONとも一致する。
+4. 登録0件を交通・移動支援・別制度の不存在にしない。
+5. GTFSアクセス状態を交通の有無・質・網羅率にしない。
+6. フィード全体値を市町内供給量にせず、JRバス中国の広域指標を市町へ配賦しない。
+7. 情報不足・測定不足から`service_gap`を自動判定しない。
+8. 専用10 / 10、全232 / 232、scope checker、`git diff --check`が成功する。
+9. 公開4 HTML、`docs/data/`、入力5ファイル、7原本、既存公開値、内部スコアカードが開始HEADから不変である。
+10. 新原本、作品②入力、外部連絡、利用者テスト、応募・登録、push・Pages更新が各0である。
+
+### 45.7 次段階と停止条件
+
+次段階は`WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-MEASUREMENT-SPEC-1`だけとする。行列で確定した
+`ACCEPTED_SOURCE_UNMEASURED` 98行について、既存7原本の表・列、測定単位、市町適用範囲、検証方法、
+非主張を測定仕様へ固定する段階であり、開始承認まで`DEFINED_NOT_STARTED`とする。新原本取得、公開表示、
+実サービス不足判定は含めない。
+
+次の場合は停止する。
+
+- 新原本、認証付き・非公開情報、作品②、外部連絡、応募・登録が必要になる
+- フィード全体値を市町値へ配賦する必要が生じる
+- 情報不足・測定不足から実サービス不足を断定する必要が生じる
+- 作成者の深い問題意識を推測または公開説明へ変換する必要が生じる

@@ -1,5 +1,28 @@
 # PROGRESS
 
+## 2026-08-19 WORK1-SUPPLY-SIDE-INFORMATION-COVERAGE-MATRIX-1
+
+### 市町別カバレッジ行列・ローカル受入
+
+- 作成者の開始承認後、現在の7原本と既存派生データだけから19市町×35項目=665行の内部行列を生成した。
+- 生成器は`src/build_supply_side_information_coverage_matrix.py`、内部正本は
+  `data/work1_supply_side_information_coverage_matrix.json`。固定5入力のSHA-256、固定順序、UTF-8・LFで
+  完全byte一致再生成できる。
+- 必須10フィールドを全行が持ち、状態内訳は`VISIBLE_CURRENT` 128、
+  `ACCEPTED_SOURCE_UNMEASURED` 98、`ADDITIONAL_SOURCE_REQUIRED` 344、
+  `DEMAND_COMPARATOR_REQUIRED` 95。
+- 登録0件は4登録簿内の該当記載0件に限定し、GTFSアクセス状態を交通の有無・質へ変換していない。
+- GTFS測定値を市町内供給量として行列へ複製せず、JRバス中国の広域指標を4市へ配賦していない。
+- 全665行に非主張境界を持たせ、情報不足・測定不足から`service_gap`を自動判定していない。
+- 専用10 / 10、全232 / 232、再生成byte一致、scope checker、`git diff --check`が成功。
+- 公開4 HTML、`docs/data/`、入力5ファイル、7原本、既存公開値、内部スコアカードは不変。
+- 作品②入力、新原本探索・取得・採用、認証付き・非公開アクセス、外部連絡、利用者テスト、
+  UDC応募、BODIK登録、push・Pages更新は各0。
+- ローカル正本は
+  `evidence/20260819_work1_supply_side_information_coverage_matrix_local_acceptance.json`。
+- 次段階は`WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-MEASUREMENT-SPEC-1`一つだけ。
+  98測定不足行の測定仕様を定義する段階で、開始承認まで未開始とする。
+
 ## 2026-08-19 WORK1-SUPPLY-SIDE-INFORMATION-MODEL-DEFINITION-1
 
 ### 情報モデル定義・ローカル受入

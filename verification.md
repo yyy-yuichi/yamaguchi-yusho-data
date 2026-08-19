@@ -1,5 +1,26 @@
 # verification.md — I-1（3PDF統合）検証結果
 
+## WORK1-SUPPLY-SIDE-INFORMATION-COVERAGE-MATRIX-1 ローカル検証（2026-08-19）
+
+| 検証 | 結果 |
+|---|---|
+| 入力 | 情報モデル、登録供給、GTFS市町対応、既存2フィード指標、JRバス中国広域指標の固定5ファイル |
+| 行列 | 19市町×35項目=665行、各行必須10フィールド |
+| 状態 | `VISIBLE_CURRENT` 128、`ACCEPTED_SOURCE_UNMEASURED` 98、`ADDITIONAL_SOURCE_REQUIRED` 344、`DEMAND_COMPARATOR_REQUIRED` 95 |
+| 市町集合 | 登録供給・GTFS入力19 / 19一致、市町コード19件一意 |
+| 登録0件境界 | 宇部市・防府市・山陽小野田市・平生町は4登録簿内該当記載0件。交通不存在へ変換なし |
+| GTFS境界 | 4アクセス状態を交通の有無・質に変換せず、受入原本との市町対応がある7市だけ表示済み・原本内未測定を維持 |
+| フィード範囲 | フィード全体値を市町内供給量へ複製せず、JRバス中国広域指標を4市へ配賦なし |
+| gap境界 | 全665行で情報不足・測定不足から`service_gap`自動判定なし |
+| 決定性 | 連続2回の生成結果、保存済み内部JSONが完全byte一致 |
+| 専用回帰 | 10 / 10 success |
+| 全回帰 | 232件検出、232 / 232 success、終了コード0 |
+| scope・差分 | `WORK1_SCOPE_ALLOWED`、`git diff --check` success |
+| 不変対象 | 公開4 HTML、`docs/data/`、入力5ファイル、7原本、既存公開値、内部スコアカードは開始HEADから不変 |
+| 境界 | 作品②入力、新原本、認証付き・非公開アクセス、外部連絡、利用者テスト、応募・BODIK、push・Pages各0 |
+| 正本 | `evidence/20260819_work1_supply_side_information_coverage_matrix_local_acceptance.json` |
+| 判定 | `LOCAL_GO`。次は`WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-MEASUREMENT-SPEC-1`だけ、未開始 |
+
 ## WORK1-SUPPLY-SIDE-INFORMATION-MODEL-DEFINITION-1 ローカル検証（2026-08-19）
 
 | 検証 | 結果 |

@@ -1,0 +1,166 @@
+{
+  "schema_version": "WORK1-SUPPLY-SIDE-INFORMATION-COVERAGE-MATRIX-LOCAL-ACCEPTANCE-1",
+  "task_id": "WORK1-SUPPLY-SIDE-INFORMATION-COVERAGE-MATRIX-1",
+  "created_at": "2026-08-19T15:53:31+09:00",
+  "decision": "LOCAL_GO",
+  "start_approval": {
+    "approved_by": "creator",
+    "approved_on": "2026-08-19",
+    "approved_task_id": "WORK1-SUPPLY-SIDE-INFORMATION-COVERAGE-MATRIX-1"
+  },
+  "baseline": {
+    "branch": "main",
+    "head": "f88a8425347779b836acf8d2fc8b424605b3297b",
+    "head_subject": "Define supply-side information model",
+    "origin_main": "66b5aa7dd3b51dd5e32764a6d0f0c7d40fff0db1",
+    "baseline_worktree": "clean"
+  },
+  "goal_acceptance": {
+    "municipality_count": 19,
+    "category_count": 8,
+    "item_count_per_municipality": 35,
+    "matrix_row_count": 665,
+    "required_fields_per_row": 10,
+    "unique_municipality_codes": 19,
+    "status_vocabulary_count": 4,
+    "status_counts": {
+      "VISIBLE_CURRENT": 128,
+      "ACCEPTED_SOURCE_UNMEASURED": 98,
+      "ADDITIONAL_SOURCE_REQUIRED": 344,
+      "DEMAND_COMPARATOR_REQUIRED": 95
+    },
+    "registry_zero_municipality_count": 4,
+    "accepted_gtfs_related_municipality_count": 7,
+    "input_count": 5,
+    "deep_motivation_boundary": "intentionally_not_recorded_or_inferred"
+  },
+  "matrix_artifact": {
+    "path": "data/work1_supply_side_information_coverage_matrix.json",
+    "bytes": 648058,
+    "sha256": "5a8e3742818787470d7316c135d19b89e8a8c3c2c0172aff87f81efd9b2066ca",
+    "encoding": "UTF-8",
+    "line_ending": "LF",
+    "trailing_newline_count": 1,
+    "public_copy": false
+  },
+  "input_hashes": [
+    {
+      "path": "data/work1_supply_side_information_model.json",
+      "sha256": "95b49775f88e72c3179ee6c6a3397bf152ee69e6dc16603282a4a21e9153d674"
+    },
+    {
+      "path": "docs/data/municipal_supply.json",
+      "sha256": "d61948840687b2ecf2d85d65de5af695884ae8478e06748c8ffa2f15b1d7b0a0"
+    },
+    {
+      "path": "data/municipality_gtfs.json",
+      "sha256": "e3bd0fd1a2268828c4703842441ade749f92b5c8c1cd5e0d5262f8c252456141"
+    },
+    {
+      "path": "data/gtfs_supply_metrics.json",
+      "sha256": "c277e1050086da6ad5cc703051deb672458f7bf2829e1aca92fd0b17b4d20930"
+    },
+    {
+      "path": "data/jrbus_chugoku_supply_metrics.json",
+      "sha256": "eac7e55b0b548f2fe69cf8ce17a03d6d7f4516edf089da362ecbfcc371c6fc05"
+    }
+  ],
+  "state_derivation_acceptance": {
+    "registry_zero_boundary": "4登録簿内の該当記載0件だけを表し、交通手段・移動支援・別制度の不存在に変換しない",
+    "gtfs_access_boundary": "4アクセス状態を交通の有無・質・網羅率に変換しない",
+    "feed_metric_boundary": "フィード全体値を市町内供給量として行列へ複製しない",
+    "jrbus_boundary": "県外を含むJRバス中国広域指標を山口市・萩市・防府市・美祢市へ配賦しない",
+    "gap_boundary": "情報不足・測定不足からservice_gapを自動判定しない",
+    "unaccepted_feed_adoption": 0
+  },
+  "artifact_hashes": [
+    {
+      "path": "src/build_supply_side_information_coverage_matrix.py",
+      "bytes": 16856,
+      "sha256": "01224106f7defc9038114b80d9812273665c9fc680961b668d20ea767e2fef77"
+    },
+    {
+      "path": "data/work1_supply_side_information_coverage_matrix.json",
+      "bytes": 648058,
+      "sha256": "5a8e3742818787470d7316c135d19b89e8a8c3c2c0172aff87f81efd9b2066ca"
+    },
+    {
+      "path": "tests/test_supply_side_information_coverage_matrix.py",
+      "bytes": 10419,
+      "sha256": "6a8ebf062e887983413b7448d8a2a567082b5aa1e74e52106aa5c59041e4557d"
+    },
+    {
+      "path": "SPEC.md",
+      "bytes": 304746,
+      "sha256": "185a1f4460d4f07f651a499d412cfe663de04e3de23b219e3ee74a273979e4e8"
+    },
+    {
+      "path": "run_record.md",
+      "bytes": 148768,
+      "sha256": "184b65ae9d6289d1e2a57509cba4347eb9479bc177186fc9339b248de22e8294"
+    },
+    {
+      "path": "PROGRESS.md",
+      "bytes": 243739,
+      "sha256": "a2be099ba2ed4dd4511380e9dff47998e0b938b6e74c3c0de3a474eab1b528ce"
+    },
+    {
+      "path": "verification.md",
+      "bytes": 203839,
+      "sha256": "1b6db16d4a85179ff0c3d1e5bbc487c3033ebe57fc4e419f0d51cfd8fd65ba4f"
+    }
+  ],
+  "verification": {
+    "dedicated_tests": {
+      "command": "python -B -m unittest tests.test_supply_side_information_coverage_matrix -v",
+      "detected": 10,
+      "passed": 10,
+      "failed": 0
+    },
+    "full_tests": {
+      "command": "python -B -m unittest discover -s tests -q",
+      "detected": 232,
+      "passed": 232,
+      "failed": 0
+    },
+    "regeneration_byte_identical": true,
+    "work_scope": "WORK1_SCOPE_ALLOWED",
+    "git_diff_check": "success",
+    "protected_diff_count": 0,
+    "accepted_source_bytes_sha_match": "7/7"
+  },
+  "unchanged_boundaries": [
+    "docs/index.html",
+    "docs/entry.html",
+    "docs/municipality-memo.html",
+    "docs/status.html",
+    "docs/data/",
+    "the five fixed input files",
+    "raw/ accepted 4 registry PDFs and 3 GTFS ZIPs",
+    "existing public JSON and CSV values",
+    "data/work1_award_scorecard.json",
+    "AGENTS.md",
+    "work_scope.json",
+    "src/check_work_scope.py"
+  ],
+  "not_executed": {
+    "work2_read_search_or_write": 0,
+    "new_original_search_download_or_adoption": 0,
+    "authenticated_or_nonpublic_data_access": 0,
+    "external_contact": 0,
+    "user_test_request": 0,
+    "udc_entry_or_submission": 0,
+    "bodik_registration": 0,
+    "public_site_change": 0,
+    "deployment_or_push": 0,
+    "pages_update": 0
+  },
+  "next_stage": {
+    "task_id": "WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-MEASUREMENT-SPEC-1",
+    "status": "DEFINED_NOT_STARTED",
+    "goal": "ACCEPTED_SOURCE_UNMEASURED 98行について、既存7原本の表・列、測定単位、市町適用範囲、検証方法、非主張を測定仕様へ固定する。",
+    "boundary": "新原本取得、公開表示、外部連絡、実サービス不足判定は行わない。",
+    "human_approval_required_to_start": true
+  },
+  "evidence_self_hash": "not_recorded_to_avoid_self_reference"
+}
