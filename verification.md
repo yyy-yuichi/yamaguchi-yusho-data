@@ -2585,6 +2585,28 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 | 正本 | `evidence/20260819_work1_site_clarity_before_user_evaluation_correction_local_acceptance.json` |
 | 判定 | `LOCAL_GO`。次はcommit・同一HEADの4 workflow・公開byte・PC/スマホ受入 |
 
+### 公開受入
+
+| 検証 | 結果 |
+|---|---|
+| subject | `a2ad4a695dfbae6bd872f2edc1e085b45df18313`、origin/main一致 |
+| scope lock / Pages | `32202827945` / `32202827091`、同一SHA・success |
+| independent reproduction | run `32202827975`、artifact `9348108226`、digest `sha256:d26c44de8ca6f1070936c687630d8bd12d1928a98ad402bb39011969368eb44a` |
+| Ubuntu再現 | GO、固定原本7 / 7、再作成・完全byte一致17 / 17、欠損復旧、204 / 204、errors 0 |
+| release attestation | run `32202869267`、artifact `9348123713`、digest `sha256:991ce30a87cb677860bdf7b28ea510d366de2661d2ea7f6033fe62b57d2d58d4` |
+| release内容 | GO、204 / 204、原本7 / 7、保護3 / 3、公開attestation資産5 / 5、errors 0 |
+| 直接公開読戻し | 4 HTML＋JRバスJSONはHTTP 200、commit bytes 5 / 5一致 |
+| PC 1280×720 | 4 / 4、同一4ナビ・現在ページ、任意details初期閉、status要約先行、横overflow 0 |
+| smartphone 390×844 | 4 / 4、同一4ナビ・現在ページ、防府市メモ、横overflow 0 |
+| 直接リンク | `#supply-comparison`で任意分析が開き、対象viewport top 0、横overflow 0 |
+| 内部分離 | 公開HTML内部点数マーカー0、内部診断3 URLは404 |
+| 人間ゲート | 利用者検証は`HUMAN_GATE_PENDING`。準備資料・外部連絡・依頼0 |
+| 正本 | `evidence/20260819_work1_site_clarity_before_user_evaluation_correction_public_acceptance.json` |
+| 判定 | `GO`。次は変更なしの`WORK1-SITE-CLARITY-BEFORE-USER-EVALUATION-CORRECTION-1-AUDIT-1`だけ、未開始 |
+
+この受入記録を含む最終HEAD自身を4 workflowと公開bytesで再確認し、後続run IDは
+外部正本としてrepoへ再書込みしない。
+
 ## WORK1-AWARD-SCORECARD-RECALIBRATION-5 ローカル検証（2026-08-19）
 
 | 検証 | 結果 |

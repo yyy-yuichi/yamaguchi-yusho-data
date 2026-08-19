@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-SITE-CLARITY-BEFORE-USER-EVALUATION-CORRECTION-1",
+  "evidence_type": "public_acceptance",
+  "checked_at": "2026-08-19T09:57:52+09:00",
+  "decision": "GO",
+  "implementation": {
+    "branch": "main",
+    "commit_sha": "a2ad4a695dfbae6bd872f2edc1e085b45df18313",
+    "origin_main_sha": "a2ad4a695dfbae6bd872f2edc1e085b45df18313"
+  },
+  "workflows": {
+    "scope_lock": {
+      "run_id": 32202827945,
+      "conclusion": "success",
+      "head_sha": "a2ad4a695dfbae6bd872f2edc1e085b45df18313"
+    },
+    "pages": {
+      "run_id": 32202827091,
+      "conclusion": "success",
+      "head_sha": "a2ad4a695dfbae6bd872f2edc1e085b45df18313"
+    },
+    "independent_reproduction": {
+      "run_id": 32202827975,
+      "conclusion": "success",
+      "head_sha": "a2ad4a695dfbae6bd872f2edc1e085b45df18313",
+      "artifact_id": 9348108226,
+      "artifact_digest": "sha256:d26c44de8ca6f1070936c687630d8bd12d1928a98ad402bb39011969368eb44a",
+      "decision": "GO",
+      "accepted_sources": "7/7",
+      "recreated_targets": "17/17",
+      "generated_outputs_exact_bytes": "17/17",
+      "recovery": "success",
+      "tests": "204/204",
+      "errors": 0
+    },
+    "release_attestation": {
+      "run_id": 32202869267,
+      "conclusion": "success",
+      "head_sha": "a2ad4a695dfbae6bd872f2edc1e085b45df18313",
+      "artifact_id": 9348123713,
+      "artifact_digest": "sha256:991ce30a87cb677860bdf7b28ea510d366de2661d2ea7f6033fe62b57d2d58d4",
+      "decision": "GO",
+      "tests": "204/204",
+      "accepted_sources": "7/7",
+      "protected_assets": "3/3",
+      "published_attestation_assets": "5/5",
+      "errors": 0
+    }
+  },
+  "direct_public_readback": {
+    "base_url": "https://yyy-yuichi.github.io/yamaguchi-yusho-data/",
+    "assets": [
+      {"path": "index.html", "http": 200, "bytes": 62731, "sha256": "201ac42861b4cce03bb82c39ee34638350d1e9da8331629366d20a2b6b42bd97", "commit_bytes_match": true},
+      {"path": "entry.html", "http": 200, "bytes": 21144, "sha256": "7d29e1df3c79ba2dd85c4cf8f12aa5b36e34fc4ceaed267ccfcf33f69639b365", "commit_bytes_match": true},
+      {"path": "status.html", "http": 200, "bytes": 65453, "sha256": "a3f7312fb510bcb645fba68ea7adebe5a57e9112212c181eadf0d5e66db0a75c", "commit_bytes_match": true},
+      {"path": "municipality-memo.html", "http": 200, "bytes": 43079, "sha256": "075f610b990d4c73f970cf14a4dc485b05e208db2e3e92567a77e569ef354435", "commit_bytes_match": true},
+      {"path": "data/jrbus_chugoku_supply_metrics.json", "http": 200, "bytes": 3537, "sha256": "eac7e55b0b548f2fe69cf8ce17a03d6d7f4516edf089da362ecbfcc371c6fc05", "commit_bytes_match": true}
+    ],
+    "http_200": "5/5",
+    "commit_bytes_match": "5/5",
+    "internal_marker_hits_in_four_html": 0,
+    "internal_urls": {
+      "award-comparison.html": 404,
+      "data/work1_award_scorecard.json": 404,
+      "data/award_scorecard_schema.json": 404
+    }
+  },
+  "public_browser_readback": {
+    "desktop": {
+      "viewport": "1280x720",
+      "pages_checked": "4/4",
+      "shared_navigation": "4/4",
+      "current_page_marker": "4/4",
+      "horizontal_overflow_failures": 0,
+      "index_advanced_analysis_initially_closed": true,
+      "entry_optional_analysis_initially_closed": true,
+      "status_technical_record_initially_closed": true,
+      "index_municipality_control_document_y": 968,
+      "status_collapsed_document_height": 1326
+    },
+    "mobile": {
+      "viewport": "390x844",
+      "pages_checked": "4/4",
+      "shared_navigation": "4/4",
+      "current_page_marker": "4/4",
+      "horizontal_overflow_failures": 0,
+      "index_advanced_analysis_initially_closed": true,
+      "entry_optional_analysis_initially_closed": true,
+      "status_technical_record_initially_closed": true,
+      "index_municipality_control_document_y": 1388,
+      "status_collapsed_document_height": 2277,
+      "memo_selected_municipality": "防府市"
+    },
+    "direct_supply_comparison_hash_opens_advanced_analysis": true,
+    "direct_hash_target_viewport_top": 0,
+    "why_visible_on_all_four_pages": true,
+    "browser_operation_errors": 0
+  },
+  "remaining_human_gate": {
+    "status": "HUMAN_GATE_PENDING",
+    "site_clarity_public_acceptance_complete": true,
+    "owner_start_approval_for_user_evaluation": false,
+    "preparation_material_created": false,
+    "participant_contacted": false,
+    "user_test_requested": false
+  },
+  "boundaries": {
+    "raw_source_changes": 0,
+    "published_json_or_csv_changes": 0,
+    "calculation_result_changes": 0,
+    "internal_scorecard_changes": 0,
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "user_test_requests": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0,
+    "new_source_acquisitions_or_adoptions": 0
+  },
+  "next_stage": {
+    "id": "WORK1-SITE-CLARITY-BEFORE-USER-EVALUATION-CORRECTION-1-AUDIT-1",
+    "mode": "read_only",
+    "started": false,
+    "purpose": "公開4ページの役割分担、基本導線と任意分析の分離、初心者向け要約、既存Why・協議前メモ導線が同一HEADで矛盾なく固定されたかを変更なしで監査する。"
+  },
+  "errors": []
+}

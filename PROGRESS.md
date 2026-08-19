@@ -2963,6 +2963,28 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
 - 判定は`LOCAL_GO`。次はcommit・main push、同一HEADのscope lock・Pages・独立再現・
   release attestation、公開byte、PC・スマートフォンを受け入れる。
 
+### 公開受入GO
+
+- 実装commit `a2ad4a695dfbae6bd872f2edc1e085b45df18313`のscope lock `32202827945`、
+  Pages `32202827091`、独立再現 `32202827975`、release attestation `32202869267`は
+  同一SHAで全success。
+- 独立再現artifact `9348108226`はGO、固定原本7 / 7、17生成物再作成・完全byte一致17 / 17、
+  欠損復旧、204 / 204、errors 0。release artifact `9348123713`もGO、204 / 204、
+  原本7 / 7、保護3 / 3、公開attestation資産5 / 5、errors 0。
+- 公開4 HTMLとJRバスJSONはHTTP 200・commit bytes 5 / 5一致。公開HTMLの内部点数マーカーは0件、
+  内部診断3 URLは404を維持した。
+- 公開PC 1280×720・スマートフォン390×844の各4ページで、共通4ナビ、現在ページ、
+  基本導線と任意分析の分離、初心者向け状況要約、防府市メモ、横overflow 0を確認した。
+  `#supply-comparison`への直接リンクだけが任意分析を開き、対象はviewport上端へ移動した。
+- 公開正本は
+  `evidence/20260819_work1_site_clarity_before_user_evaluation_correction_public_acceptance.json`。
+  `WORK1-SITE-CLARITY-BEFORE-USER-EVALUATION-CORRECTION-1`をGOとする。
+- 利用者検証は別の作成者開始承認まで`HUMAN_GATE_PENDING`。準備資料、外部連絡、
+  利用者テスト依頼、応募・BODIK、新原本採用、作品②入力は各0。
+- 次段階は変更を伴わない
+  `WORK1-SITE-CLARITY-BEFORE-USER-EVALUATION-CORRECTION-1-AUDIT-1`だけとし、開始しない。
+  本記録commit自身の4 workflowは外部読戻しし、post-commit IDは自己参照を避けてrepoへ再書込みしない。
+
 ## 2026-08-13 WORK1-PRECONSULTATION-HANDOFF-1
 
 ### 仕様・実装・ローカル受入
