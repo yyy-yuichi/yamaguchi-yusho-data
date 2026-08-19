@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-19 (rev.83) / 状態: WORK1-AWARD-SCORECARD-RECALIBRATION-5 GO / 次: 変更なしread-only監査（未開始）
+最終更新: 2026-08-19 (rev.86) / 状態: WORK1-GENERAL-READER-PURPOSE-CLARITY-CORRECTION-1 LOCAL_GO / 次: 同一HEAD公開受入
 
 ## 0. このファイルについて
 
@@ -1654,3 +1654,26 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   `WORK1-SITE-CLARITY-BEFORE-USER-EVALUATION-CORRECTION-1-AUDIT-1`だけとし、開始しない。
   本記録commit自身の4 workflowと公開bytesを再確認し、post-commitのrun・artifact IDは
   自己参照を避けてrepoへ再書込みしない。
+
+### 改訂点（rev.86）
+
+- 基準HEAD `c30400ee969c71fe326323df50b1f3de93f2ad71`の一般読者向け目的明瞭性監査は、
+  P0 0 / P1 1 / P2 2、`NO_GO`。Why自体は先頭にあったが、登録団体・登録車両・GTFS予定値が
+  誰のどんな相談へつながるかを「事実・根拠・不足情報」という専門家向け表現へ圧縮していた。
+- 公開4ページの冒頭へ同一の「このサイトがしたいこと」を追加し、Why、利用者、最初の相談、
+  市町選択後に見るもの、行政・交通事業者へ尋ねること、サイトだけでは決めない限界を平易に接続した。
+- 「第一段階」は削除せず「相談を始めるための第一段階」と意味を補った。トップでは制度上の
+  福祉有償運送・交通空白地有償運送という名称を、一般向け説明より後に置いた。
+- 検証状況は「現在使えるもの／確認していること／まだ分からないこと」を主要進捗数値より前へ移動。
+  既存の閉じた技術記録、公開4ナビ、市町別導線、詳しい分析、8段階メモは維持した。
+- PC 1280×720・スマートフォン390×844の4ページすべてで目的接続が初期viewport内、横overflow 0。
+  トップの主要操作はPC文書Y 606、スマホY 680。検証状況の初心者要約は進捗数値より前にある。
+- 専用5 / 5、既存明瞭性7 / 7、全209 / 209、release attestation固定ハッシュ保護、
+  scope checker、`git diff --check`はsuccess。7原本、`data/`、`docs/data/`、公開値、計算結果、
+  内部スコアカードは不変。
+- natural-japanese導入・実行・依存、作品②入力、外部連絡、利用者テスト依頼、UDC応募、BODIK登録、
+  新原本取得・採用は各0。利用者検証は`HUMAN_GATE_PENDING`を維持する。
+- ローカル正本は
+  `evidence/20260819_work1_general_reader_purpose_clarity_correction_local_acceptance.json`。
+  判定は`LOCAL_GO`。次は実装commitをmainへpushし、同一HEADの4 workflow、公開5資産bytes、
+  PC・スマートフォン表示を受け入れる。

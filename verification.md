@@ -2564,6 +2564,26 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 この受入記録を含む最終HEAD自身をscope lock、Pages、release attestationで再確認し、後続run IDは
 外部正本としてrepoへ再書込みしない。
 
+## WORK1-GENERAL-READER-PURPOSE-CLARITY-CORRECTION-1 ローカル検証（2026-08-19）
+
+| 検証 | 結果 |
+|---|---|
+| 基準HEAD・入力監査 | `c30400ee969c71fe326323df50b1f3de93f2ad71`、P0 0 / P1 1 / P2 2、`NO_GO` |
+| P1解消 | 一般側の読者へ、誰が・どの相談に・何を見る情報を使うかを公開4ページ冒頭で明示 |
+| データ説明 | 登録団体・登録車両、GTFSの予定時刻・乗降場所を画面で見るものとして平易に説明 |
+| 判断境界 | 交通が足りるか・実際に利用できるかをサイトだけで決めないと同じ目的枠内に明示 |
+| status順序 | 初心者向け3要約を主要進捗数値と閉じた技術記録より前に配置 |
+| PC 1280×720 | 4ページの目的接続が初期viewport内4 / 4、横overflow 0。トップ主要操作Y 606 |
+| smartphone 390×844 | 4ページの目的接続が初期viewport内4 / 4、横overflow 0。トップ主要操作Y 680 |
+| 専用・既存明瞭性 | 5 / 5、7 / 7 success |
+| 全回帰 | 209 / 209 success |
+| release保護 | 更新したindex・entry固定SHA256でfail-closed契約success |
+| scope・差分 | `WORK1_SCOPE_ALLOWED`、`git diff --check` success |
+| 不変対象 | 7原本、`data/`、`docs/data/`、公開JSON・CSV、計算結果、内部スコアカード、scope境界 |
+| 人間ゲート | natural-japanese・作品②入力・外部連絡・利用者テスト依頼・応募・BODIK・新原本採用0。利用者検証は`HUMAN_GATE_PENDING` |
+| 正本 | `evidence/20260819_work1_general_reader_purpose_clarity_correction_local_acceptance.json` |
+| 判定 | `LOCAL_GO`。次はcommit・同一HEADの4 workflow・公開bytes・PC/スマホ受入 |
+
 ## WORK1-SITE-CLARITY-BEFORE-USER-EVALUATION-CORRECTION-1 ローカル検証（2026-08-19）
 
 | 検証 | 結果 |

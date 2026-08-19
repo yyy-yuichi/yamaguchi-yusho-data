@@ -111,6 +111,22 @@
       font-size: 1rem;
     }
 
+    .purpose-summary {
+      max-width: 880px;
+      margin-top: 18px;
+      padding: 16px 18px;
+      border: 1px solid var(--gray);
+      border-left: 6px solid var(--green);
+      border-radius: 12px;
+      background: var(--paper);
+    }
+
+    .purpose-summary p { margin: 0; }
+    .purpose-summary p + p { margin-top: 9px; }
+    .purpose-label { color: var(--green); font-size: 0.82rem; font-weight: 850; letter-spacing: 0.08em; }
+    .purpose-why { color: var(--ink); font-size: 1.08rem; }
+    .purpose-data { color: var(--gray-text); }
+
     .metrics {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -898,14 +914,38 @@
     <header>
       <p class="eyebrow">UDC2026 応募作品① / 検証状況</p>
       <h1>山口県 市町別の<br>登録供給ビュー</h1>
-      <p class="lead">福祉有償運送と交通空白地有償運送の公表登録簿を市町から確認し、公式GTFS/GTFS-JPの確認状況、比較指標、協議前に次に確認することまでを根拠付きで共有できる静的アプリです。</p>
-      <p>目指すことは、自家用車に頼れない人も、地域で通学・通院・買物などの生活を続けられる交通になっているかを確かめたい、ということです。現在の作品は、行政・交通事業者・地域関係者が協議前に事実・根拠・不足情報をそろえる第一段階です。</p>
+      <div id="general-reader-purpose" class="purpose-summary">
+        <p class="purpose-label">このサイトがしたいこと</p>
+        <p class="purpose-why"><strong>自家用車に頼れない人も、地域で通学・通院・買物などの生活を続けられる交通になっているかを確かめたい。</strong></p>
+        <p>市町の担当者、交通事業者、地域で活動する人が、最初の相談を始める準備に使います。市町を選ぶと、公開資料で確認できる移動サービス、まだ分からないこと、行政や交通事業者へ尋ねることを一つの流れで確認できます。この確認が、相談を始めるための第一段階です。</p>
+        <p class="purpose-data"><strong>この画面で見るもの:</strong> 自治体やNPOなどの登録団体・登録車両と、GTFSというデータに入ったバスなどの予定時刻・乗降場所です。交通が足りているか、実際に利用できるかを、このサイトだけで決めるものではありません。</p>
+      </div>
       <nav class="route-nav" aria-label="このサイトの4ページ">
         <a href="index.html">1. データを見る</a>
         <a href="entry.html">2. 作品を知る</a>
         <a href="municipality-memo.html">3. 協議前メモ</a>
         <a href="status.html" aria-current="page">4. 検証を確かめる</a>
       </nav>
+
+      <section id="reader-status" aria-labelledby="reader-status-title">
+        <p class="eyebrow">初めて確認する方へ</p>
+        <h2 id="reader-status-title">この作品は、いま何ができるのか</h2>
+        <p>このページは、公開中の作品で確認できる範囲と、まだ判断できないことを分けて示すためのページです。使い方を知りたい場合は「作品を知る」、市町の事実を確認したい場合は「データを見る」から始めてください。</p>
+        <div class="status-summary-grid">
+          <article class="status-summary-card">
+            <h3>現在使えるもの</h3>
+            <p>山口県19市町から選び、登録簿、公式GTFSの確認状況、日付、根拠、不足情報を確認できます。同じ市町の協議前メモも作れます。</p>
+          </article>
+          <article class="status-summary-card">
+            <h3>確認していること</h3>
+            <p>受入済み原本、公開データ、計算結果、PC・スマホ表示を自動テストと公開後の読戻しで検証しています。</p>
+          </article>
+          <article class="status-summary-card">
+            <h3>まだ分からないこと</h3>
+            <p>実際の運行、予約可能性、利用者数、便利さ、地域交通の充足度は、この公開データだけでは判断できません。</p>
+          </article>
+        </div>
+      </section>
 
       <div class="metrics" aria-label="主要な進捗数値">
         <div class="metric complete">
@@ -930,26 +970,6 @@
         </div>
       </div>
     </header>
-
-    <section id="reader-status" aria-labelledby="reader-status-title">
-      <p class="eyebrow">初めて確認する方へ</p>
-      <h2 id="reader-status-title">この作品は、いま何ができるのか</h2>
-      <p>このページは、公開中の作品で確認できる範囲と、まだ判断できないことを分けて示すためのページです。使い方を知りたい場合は「作品を知る」、市町の事実を確認したい場合は「データを見る」から始めてください。</p>
-      <div class="status-summary-grid">
-        <article class="status-summary-card">
-          <h3>現在使えるもの</h3>
-          <p>山口県19市町から選び、登録簿、公式GTFSの確認状況、日付、根拠、不足情報を確認できます。同じ市町の協議前メモも作れます。</p>
-        </article>
-        <article class="status-summary-card">
-          <h3>確認していること</h3>
-          <p>受入済み原本、公開データ、計算結果、PC・スマホ表示を自動テストと公開後の読戻しで検証しています。</p>
-        </article>
-        <article class="status-summary-card">
-          <h3>まだ分からないこと</h3>
-          <p>実際の運行、予約可能性、利用者数、便利さ、地域交通の充足度は、この公開データだけでは判断できません。</p>
-        </article>
-      </div>
-    </section>
 
     <details class="technical-record">
       <summary>開発・検証の詳しい記録を開く<span>内部タスク名、テスト履歴、SHA256、公開証拠などを確認する方向けです。</span></summary>

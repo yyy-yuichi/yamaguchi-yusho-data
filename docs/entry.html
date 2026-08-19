@@ -82,6 +82,22 @@
       font-size: clamp(1.04rem, 2vw, 1.3rem);
     }
 
+    .purpose-summary {
+      max-width: 54rem;
+      margin-top: 18px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--green);
+      border-radius: 14px;
+      background: rgba(255, 253, 248, 0.9);
+    }
+
+    .purpose-summary p { margin: 0; }
+    .purpose-summary p + p { margin-top: 9px; }
+    .purpose-label { color: var(--green-dark); font-size: 0.82rem; font-weight: 850; letter-spacing: 0.08em; }
+    .purpose-why { font-size: clamp(1.04rem, 2vw, 1.25rem); }
+    .purpose-data { color: var(--muted); }
+
     .meta-row, .actions {
       display: flex;
       flex-wrap: wrap;
@@ -259,8 +275,12 @@
   <header class="hero shell">
     <p class="eyebrow">UDC2026 作品① / 応募説明</p>
     <h1>山口県<br>市町別の登録供給ビュー</h1>
-    <p class="lead">公共交通の計画を考える前に、「地域にどんな移動サービスが登録され、どのくらいの予定運行がデータに入っているか」を、根拠と日付を分けて確かめるための静的Webアプリです。</p>
-    <p id="why-statement" class="lead"><strong>目指すこと:</strong> 自家用車に頼れない人も、地域で通学・通院・買物などの生活を続けられる交通になっているかを確かめたい。そのために、現在の作品は行政・交通事業者・地域関係者が協議前に事実・根拠・不足情報をそろえる第一段階を担います。住民の移動や交通の充足度を、このデータだけで直接判断するものではありません。</p>
+    <div id="general-reader-purpose" class="purpose-summary">
+      <p class="purpose-label">このサイトがしたいこと</p>
+      <p id="why-statement" class="purpose-why"><strong>自家用車に頼れない人も、地域で通学・通院・買物などの生活を続けられる交通になっているかを確かめたい。</strong></p>
+      <p>市町の担当者、交通事業者、地域で活動する人が、最初の相談を始める準備に使います。市町を選ぶと、公開資料で確認できる移動サービス、まだ分からないこと、行政や交通事業者へ尋ねることを一つの流れで確認できます。この確認が、相談を始めるための第一段階です。</p>
+      <p class="purpose-data"><strong>この画面で見るもの:</strong> 自治体やNPOなどの登録団体・登録車両と、GTFSというデータに入ったバスなどの予定時刻・乗降場所です。交通が足りているか、実際に利用できるかを、このサイトだけで決めるものではありません。</p>
+    </div>
     <div class="meta-row" aria-label="応募区分">
       <span class="tag">作品タイプ: アプリケーション</span>
       <span class="tag">作品テーマ: 道路・交通</span>

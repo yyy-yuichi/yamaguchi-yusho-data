@@ -84,21 +84,22 @@
       letter-spacing: -0.045em;
     }
 
-    .lead {
-      max-width: 760px;
-      margin: 1.35rem 0 0;
-      color: var(--muted);
-      font-size: clamp(1rem, 1.8vw, 1.18rem);
+    .purpose-summary {
+      max-width: 780px;
+      margin: 1.25rem 0 0;
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(23, 107, 85, 0.28);
+      border-left: 6px solid var(--green);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.82);
     }
 
-    .why-statement {
-      max-width: 780px;
-      margin: 1rem 0 0;
-      padding-left: 1rem;
-      border-left: 5px solid var(--green);
-      color: var(--ink);
-      font-weight: 750;
-    }
+    .purpose-summary p { margin: 0; }
+    .purpose-summary p + p { margin-top: 0.55rem; }
+    .purpose-label { color: var(--green-dark); font-size: 0.82rem; font-weight: 850; letter-spacing: 0.08em; }
+    .purpose-why { font-size: clamp(1rem, 1.8vw, 1.18rem); }
+    .purpose-data { color: var(--muted); }
+    .technical-note { max-width: 780px; margin: 0.65rem 0 0; color: var(--muted); font-size: 0.9rem; }
 
     .hero-actions {
       display: flex;
@@ -506,14 +507,13 @@
     <div class="hero-grid">
       <div>
         <h1>山口県<br>市町別の登録供給ビュー</h1>
-        <p class="lead">
-          福祉有償運送と交通空白地有償運送の登録簿を、市町から確認できます。
-          県・市町の交通担当者が、公開情報として確認できる団体と登録車両を追跡するためのビューです。
-        </p>
-        <p id="why-statement" class="why-statement">
-          目指すことは、自家用車に頼れない人も、地域で通学・通院・買物などの生活を続けられる交通になっているかを確かめたい、ということです。
-          この作品は判断を直接代行せず、行政・交通事業者・地域関係者が協議前に事実・根拠・不足情報をそろえる第一段階です。
-        </p>
+        <div id="general-reader-purpose" class="purpose-summary">
+          <p class="purpose-label">このサイトがしたいこと</p>
+          <p id="why-statement" class="purpose-why"><strong>自家用車に頼れない人も、地域で通学・通院・買物などの生活を続けられる交通になっているかを確かめたい。</strong></p>
+          <p>市町の担当者、交通事業者、地域で活動する人が、最初の相談を始める準備に使います。市町を選ぶと、公開資料で確認できる移動サービス、まだ分からないこと、行政や交通事業者へ尋ねることを一つの流れで確認できます。この確認が、相談を始めるための第一段階です。</p>
+          <p class="purpose-data"><strong>この画面で見るもの:</strong> 自治体やNPOなどの登録団体・登録車両と、GTFSというデータに入ったバスなどの予定時刻・乗降場所です。交通が足りているか、実際に利用できるかを、このサイトだけで決めるものではありません。</p>
+        </div>
+        <p class="technical-note"><strong>登録簿の詳しい区分:</strong> 福祉有償運送と交通空白地有償運送を扱います。</p>
         <div class="hero-actions">
           <a id="municipality-cta" class="primary-action" href="#municipality-select">市町を選んで確認する</a>
           <a href="entry.html">初めての方へ: 問題・使い方・現在の範囲</a>

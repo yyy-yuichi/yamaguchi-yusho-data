@@ -2603,6 +2603,24 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   現行4 URLは200、削除3 URLは404。公開HTMLに旧スコアリンクは0件。
 - この記録を含む最終HEAD自身を同じ3 workflowで外部再確認する。次段階はread-only監査だけ。
 
+## 2026-08-19 WORK1-GENERAL-READER-PURPOSE-CLARITY-CORRECTION-1 ローカル受入
+
+- 変更なし監査はP0 0 / P1 1 / P2 2、`NO_GO`。既存Whyは表示されていたが、登録団体・登録車両・
+  GTFS予定値が、誰のどんな相談や確認へつながるのかを専門家向け表現へ圧縮していた。
+- 公開4ページの最初に「このサイトがしたいこと」を置き、市町の担当者、交通事業者、地域で活動する人が、
+  市町を選んで最初の相談を始める準備に使うことを平易に示した。
+- 登録団体・登録車両とGTFSの予定時刻・乗降場所を「この画面で見るもの」と説明し、交通の充足や
+  実利用可否をサイトだけでは決めないことを同じ枠内に示した。
+- 検証状況の初心者向け3要約を主要進捗数値より前へ移動。専門情報・技術証拠・既存導線は削除していない。
+- PC 1280×720とスマートフォン390×844の4ページで、目的接続は初期viewport内4 / 4、横overflow 0。
+- 専用5 / 5、既存明瞭性7 / 7、全209 / 209、scope、差分検査はsuccess。7原本、公開JSON・CSV、
+  計算結果、内部スコアカードは不変。
+- natural-japanese、作品②入力、外部連絡、利用者テスト依頼、応募・BODIK、新原本取得・採用は各0。
+  利用者検証は`HUMAN_GATE_PENDING`。
+- ローカル正本は
+  `evidence/20260819_work1_general_reader_purpose_clarity_correction_local_acceptance.json`。判定は`LOCAL_GO`。
+  次はcommit・main push後、同一HEADの4 workflow、公開bytes、PC・スマートフォン表示を受け入れる。
+
 ## 2026-08-19 WORK1-AWARD-SCORECARD-RECALIBRATION-5 ローカル受入
 
 - 基準HEAD `4faebc430e70fd31245dc80cb5011dad218f9d31`の変更なし監査はGO、

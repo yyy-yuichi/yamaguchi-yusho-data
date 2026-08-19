@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-GENERAL-READER-PURPOSE-CLARITY-CORRECTION-1",
+  "checked_at": "2026-08-19",
+  "decision": "LOCAL_GO",
+  "subject": {
+    "work_id": "WORK1",
+    "branch": "main",
+    "baseline_commit": "c30400ee969c71fe326323df50b1f3de93f2ad71"
+  },
+  "audit_input": {
+    "decision": "NO_GO",
+    "severity": {"P0": 0, "P1": 1, "P2": 2},
+    "finding": "Whyは先頭に表示されていたが、登録団体・登録車両・GTFS予定値が誰のどんな相談へつながるかを、事実・根拠・不足情報という専門家向け表現へ圧縮していた",
+    "general_reader_observation": "作成者本人が一般側の読者として、サイトだけでは何をしたいのか分からないと感じた"
+  },
+  "implementation": {
+    "shared_purpose_block": "公開4ページの冒頭に同一の一般読者向け目的接続を配置",
+    "why": "自家用車に頼れない人も生活を続けられる交通になっているか確かめたい",
+    "users": ["市町の担当者", "交通事業者", "地域で活動する人"],
+    "consultation_use": "市町を選び、公開資料で確認できる移動サービス、まだ分からないこと、行政・交通事業者へ尋ねることを一つの流れで確認し、最初の相談を始める準備に使う",
+    "data_explanation": "登録団体・登録車両と、GTFSに入ったバス等の予定時刻・乗降場所を画面で見るものとして説明",
+    "boundary": "交通の充足や実利用可否をサイトだけで決めない",
+    "status_order": "初心者向け3要約を主要進捗数値と技術記録より前へ移動",
+    "preserved": ["公開4ページナビ", "市町別導線", "詳しい分析", "既存Why", "8段階協議前メモ", "技術証拠"]
+  },
+  "verification": {
+    "scope_guard": "WORK1_SCOPE_ALLOWED",
+    "dedicated_tests": {"passed": 5, "discovered": 5},
+    "existing_site_clarity_tests": {"passed": 7, "discovered": 7},
+    "all_tests": {"passed": 209, "discovered": 209},
+    "git_diff_check": true,
+    "browser": {
+      "pc": {
+        "viewport": "1280x720",
+        "pages_checked": 4,
+        "purpose_fully_in_first_viewport": "4/4",
+        "horizontal_overflow": 0,
+        "index_purpose_document_y": [276, 553],
+        "index_primary_action_document_y": 606,
+        "status_reader_summary_before_progress_metrics": true
+      },
+      "smartphone": {
+        "viewport": "390x844",
+        "pages_checked": 4,
+        "purpose_fully_in_first_viewport": "4/4",
+        "horizontal_overflow": 0,
+        "index_purpose_document_y": [151, 603],
+        "index_primary_action_document_y": 680,
+        "status_reader_summary_before_progress_metrics": true
+      },
+      "browser_operation_errors": 0
+    },
+    "public_asset_local_fingerprints": [
+      {"path": "docs/index.html", "bytes": 63603, "sha256": "ba6f9bf5f0dc9ec22205609c4bbc065c006b8802b8f645e518021c5f2e9764b8"},
+      {"path": "docs/entry.html", "bytes": 22018, "sha256": "47e02f0be6aa17302e942231e5ef7e7d454cbb8e78c83799e4e11a1f5cb3a1d1"},
+      {"path": "docs/status.html", "bytes": 66501, "sha256": "162c80aa925a62705a1ed42d7dfc5d274b4c899c30920d08484824c18e2a77ad"},
+      {"path": "docs/municipality-memo.html", "bytes": 44032, "sha256": "024f4ba8d3f8fc437621093690f25340fe0bda2aae8e07990973e2f379aea1a0"},
+      {"path": "docs/data/jrbus_chugoku_supply_metrics.json", "bytes": 3537, "sha256": "eac7e55b0b548f2fe69cf8ce17a03d6d7f4516edf089da362ecbfcc371c6fc05"}
+    ]
+  },
+  "unchanged": {
+    "accepted_sources": 7,
+    "raw": true,
+    "data_directory": true,
+    "docs_data_directory": true,
+    "calculation_results": true,
+    "internal_scorecard": true,
+    "work_scope_boundary": true
+  },
+  "boundaries": {
+    "natural_japanese_installations_or_executions": 0,
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "user_test_requests": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0,
+    "new_source_acquisitions": 0,
+    "new_source_adoptions": 0
+  },
+  "human_gate": {
+    "remote_user_evaluation": "HUMAN_GATE_PENDING",
+    "condition": "サイト完成度と依頼内容を作成者が理解した後の別承認"
+  },
+  "next": "commit_main_push_and_same_head_public_acceptance"
+}

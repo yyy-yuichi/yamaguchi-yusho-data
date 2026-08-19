@@ -1,6 +1,6 @@
-# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価 / WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況拡張 / WORK1-AWARD-SCORECARD-RECALIBRATION-2 拡張成果再評価 / WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 広域GTFS独立供給指標 / WORK1-AWARD-SCORECARD-RECALIBRATION-3 独立指標成果再評価 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 独立再現・復旧訓練 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1 再現判定厳格化 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1 記録整合・最終保存 / WORK1-AWARD-SCORECARD-RECALIBRATION-4 再現成果再評価 / WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1 Why・利用導線接続
+# 作品① 実行仕様 — I-1 登録簿の機械可読化 / I-4 GTFS公式状況表示 / I-5 現況説明同期 / GTFS-2 公式ZIP取得・実測 / SUPPLY-METRIC-1 輸送供給指標定義 / SUPPLY-VIEW-1 輸送供給比較表示 / RELEASE-1 公開 / ENTRY-PAGE-1 応募説明ページ / WORK1-FRESHNESS-1 原本変更検知 / WORK1-AWARD-COMPARISON-1 比較準備 / WORK1-TASK-MEMO-1 交通協議前確認メモ / WORK1-GTFS-COVERAGE-2 公式範囲再確認 / WORK1-AWARD-COMPARISON-2 現行証拠再評価 / WORK1-AWARD-COMPARISON-TRACEABILITY-1 公式用語・根拠追跡 / WORK1-RELEASE-ATTESTATION-1 最終公開HEAD証明 / WORK1-RELEASE-EVIDENCE-HARDENING-1 証拠永続化・厳格化 / WORK1-RELEASE-EVIDENCE-PERMALINK-1 Release固定 / WORK1-PUBLIC-INFORMATION-ARCHITECTURE-1 公開情報整理 / WORK1-SIMILAR-SERVICE-BENCHMARK-1 類似サービス体系比較 / WORK1-PRECONSULTATION-HANDOFF-1 事前相談ハンドオフ / WORK1-AWARD-SCORECARD-RECALIBRATION-1 内部診断再評価 / WORK1-OFFICIAL-GTFS-COVERAGE-EXTENSION-1 公式GTFSアクセス状況拡張 / WORK1-AWARD-SCORECARD-RECALIBRATION-2 拡張成果再評価 / WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1 広域GTFS独立供給指標 / WORK1-AWARD-SCORECARD-RECALIBRATION-3 独立指標成果再評価 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-1 独立再現・復旧訓練 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1 再現判定厳格化 / WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-CLOSURE-1 記録整合・最終保存 / WORK1-AWARD-SCORECARD-RECALIBRATION-4 再現成果再評価 / WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1 Why・利用導線接続 / WORK1-GENERAL-READER-PURPOSE-CLARITY-CORRECTION-1 一般読者向け目的接続
 
-**rev.5.29 / 2026-08-19**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34、rev.5.20→rev.5.21 は §10.35、rev.5.21→rev.5.22 は §10.36、rev.5.22→rev.5.23 は §10.37、rev.5.23→rev.5.24 は §10.38、rev.5.24→rev.5.25 は §10.39、rev.5.25→rev.5.26 は §10.40、rev.5.26→rev.5.27 は §10.41、rev.5.27→rev.5.28 は §10.42、rev.5.28→rev.5.29 は §10.43。消した記述はそこに全部書いてある）
+**rev.5.30 / 2026-08-19**（rev.1→rev.2 の改訂点は §10.1、rev.2→rev.3 は §10.2、rev.3→rev.4 は §10.3、rev.4→rev.4.1 は §10.4、rev.4.1→rev.4.2 は §10.5、rev.4.2→rev.4.3 は §10.6、rev.4.3→rev.4.4 は §10.7、rev.4.4→rev.4.5 は §10.8、rev.4.5→rev.4.6 は §10.9、rev.4.6→rev.4.7 は §10.10、rev.4.7→rev.4.8 は §10.11、rev.4.8→rev.4.9 は §10.12、rev.4.9→rev.4.10 は §10.13、rev.4.10→rev.5.0 は §10.14、rev.5.0→rev.5.1 は §10.15、rev.5.1→rev.5.2 は §10.16、rev.5.2→rev.5.3 は §10.17、rev.5.3→rev.5.4 は §10.18、rev.5.4→rev.5.5 は §10.19、rev.5.5→rev.5.6 は §10.20、rev.5.6→rev.5.7 は §10.21、rev.5.7→rev.5.8 は §10.22、rev.5.8→rev.5.9 は §10.23、rev.5.9→rev.5.10 は §10.24、rev.5.10→rev.5.11 は §10.25、rev.5.11→rev.5.12 は §10.26、rev.5.12→rev.5.13 は §10.27、rev.5.13→rev.5.14 は §10.28、rev.5.14→rev.5.15 は §10.29、rev.5.15→rev.5.16 は §10.30、rev.5.16→rev.5.17 は §10.31、rev.5.17→rev.5.18 は §10.32、rev.5.18→rev.5.19 は §10.33、rev.5.19→rev.5.20 は §10.34、rev.5.20→rev.5.21 は §10.35、rev.5.21→rev.5.22 は §10.36、rev.5.22→rev.5.23 は §10.37、rev.5.23→rev.5.24 は §10.38、rev.5.24→rev.5.25 は §10.39、rev.5.25→rev.5.26 は §10.40、rev.5.26→rev.5.27 は §10.41、rev.5.27→rev.5.28 は §10.42、rev.5.28→rev.5.29 は §10.43、rev.5.29→rev.5.30 は §10.44。消した記述はそこに全部書いてある）
 
 UDC2026 作品① の実装仕様。**このファイルはリポジトリ直下に `SPEC.md` として置き、Claude Code に読ませる。**
 
@@ -17,7 +17,8 @@ WORK1-JRBUS-CHUGOKU-SUPPLY-METRIC-1、§35はWORK1-AWARD-SCORECARD-RECALIBRATION
 WORK1-INDEPENDENT-REPRODUCTION-DRILL-1、§37は
 WORK1-INDEPENDENT-REPRODUCTION-DRILL-HARDENING-1、§38は同段階の記録整合・最終保存、§39は
 WORK1-AWARD-SCORECARD-RECALIBRATION-4、§40はWORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1、
-§41はWORK1-AWARD-SCORECARD-RECALIBRATION-5の実行仕様である。
+§41はWORK1-AWARD-SCORECARD-RECALIBRATION-5、§42はサイト明瞭化、§43は
+WORK1-GENERAL-READER-PURPOSE-CLARITY-CORRECTION-1の実行仕様である。
 プロジェクトのゴール、終了条件、確定方針は`run_record.md` §0.5 を正とし、
 このファイルがそれを上書きしてはならない。
 
@@ -3077,6 +3078,78 @@ BODIK登録、履歴・Release・tagの削除、内部再採点を行わない�
 
 ---
 
+## 43. WORK1-GENERAL-READER-PURPOSE-CLARITY-CORRECTION-1
+
+### 43.1 入力監査と段階ゴール
+
+基準HEAD `c30400ee969c71fe326323df50b1f3de93f2ad71`の公開4ページを、一般側の読者が
+「このサイトは何をしたいのか」「表示される登録団体・登録車両・GTFS予定値が、誰のどんな相談や
+確認につながるのか」を追えるか変更なしで監査した。Whyは4ページの先頭に表示され、基本操作も成立したが、
+相談への橋渡しを「行政・交通事業者・地域関係者が事実・根拠・不足情報をそろえる第一段階」という
+専門家向け表現へ圧縮していた。作成者本人が一般側の読者として「何をしたいのか分からない」と感じた
+事実とも整合する。入力判定はP0 0 / P1 1 / P2 2、`NO_GO`である。
+
+この段階では、公開4ページの冒頭だけで、Why、利用者、相談目的、画面で見るもの、分からないこと、
+サイトの限界を平易な順序で理解できる状態へ限定修正する。新しいデータ、機能、外部評価は追加しない。
+
+### 43.2 一般読者向け目的接続
+
+公開4ページは`#general-reader-purpose`を各1件持ち、次を同じ順序で示す。
+
+1. 「このサイトがしたいこと」として既存Whyを示す。
+2. 市町の担当者、交通事業者、地域で活動する人が、最初の相談を始める準備に使うと示す。
+3. 市町選択から、公開資料で確認できる移動サービス、まだ分からないこと、行政・交通事業者へ
+   尋ねることまでを一つの流れで確認できると示す。
+4. 登録団体・登録車両と、GTFSに入った予定時刻・乗降場所を、画面で見るものとして説明する。
+5. 交通が足りているか、実際に利用できるかをサイトだけで決めないと示す。
+
+「第一段階」は削除せず、「相談を始めるための第一段階」と意味を補って使う。制度上の詳細名称や
+内部検証情報は一般読者向け目的接続より後に置く。
+
+### 43.3 検証状況ページの説明順
+
+`docs/status.html`は、初心者向けの「現在使えるもの／確認していること／まだ分からないこと」を、
+改善サイクル、PDF、団体、車両の進捗数値より前に置く。閉じた技術記録とその証拠は削除しない。
+
+### 43.4 変更範囲と境界
+
+変更・追加できるのは次だけとする。
+
+- 公開4 HTML
+- `tests/test_general_reader_purpose_clarity.py`
+- 公開HTMLの受入後ハッシュを保護する`src/build_release_attestation.py`
+- `SPEC.md`、`run_record.md`、`PROGRESS.md`、`verification.md`
+- `evidence/20260819_work1_general_reader_purpose_clarity_correction_*`
+
+7原本、`data/`、`docs/data/`、公開JSON・CSV、計算コード、内部スコアカード、scope境界を変更しない。
+natural-japaneseを導入・実行・依存せず、作品②を入力にしない。外部連絡、利用者テスト依頼、
+UDC応募、BODIK登録、新原本取得・採用を行わない。利用者検証は`HUMAN_GATE_PENDING`を維持する。
+
+### 43.5 完了条件
+
+1. 公開4ページが同じ一般読者向け目的接続を各1件持つ。
+2. Why、誰が使うか、どんな相談か、市町選択後に何を見るか、サイトの限界が目的接続内で読める。
+3. 登録団体・登録車両とGTFS予定時刻・乗降場所の意味が、専門用語の詳細説明より先に読める。
+4. 検証状況の初心者向け要約が進捗数値と技術記録より先にある。
+5. 既存の4ページナビ、市町別導線、詳しい分析、Why、8段階メモ、技術証拠を維持する。
+6. PC 1280×720とスマートフォン390×844の4ページで目的接続が初期viewport内にあり、横overflow 0、
+   操作時runtime error 0となる。
+7. 専用5 / 5、既存サイト明瞭性7 / 7、全209 / 209、scope checker、`git diff --check`が成功する。
+8. 7原本、公開JSON・CSV・計算値、内部スコアカード、作品①境界が基準HEADから不変である。
+9. commit・main push後、scope lock、Pages、独立再現、release attestationが同一HEADでsuccess・GOとなり、
+   公開4 HTMLとJRバスJSONがcommit bytesと一致する。
+10. 外部連絡、利用者テスト依頼、応募・BODIK、新原本取得・採用、natural-japanese、作品②入力が各0である。
+11. 次段階を変更なしの`WORK1-GENERAL-READER-PURPOSE-CLARITY-CORRECTION-1-AUDIT-1`だけに定義し、開始しない。
+
+### 43.6 停止条件
+
+- 明瞭化のために原本、公開値、計算結果、内部スコアを変更する必要が生じる
+- 既存の専門情報、技術証拠、Why、市町別導線を削除する必要が生じる
+- 明瞭化だけで利用者検証、実務利用、交通改善を達成扱いする必要が生じる
+- natural-japanese、作品②、外部連絡、利用者テスト、応募・登録、新原本採用が必要になる
+
+---
+
 ## 40. WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1
 
 ### 40.1 入力監査と段階ゴール
@@ -3218,6 +3291,13 @@ Pages用内部診断3資産は不在を維持し、公開HTMLへ内部点数・�
 - 操作アクセシビリティ監査GOを補強証拠として内部診断へ反映するが、外部受入ではないため点数を据え置く。
 - 完了済み監査を改善候補から除外し、利用者検証より先に行うサイト明瞭性監査・改善を
   未加点の自走候補として追加する。
+
+### 10.44 rev.5.29 → rev.5.30
+
+- 変更なし監査で、Why自体は先頭に表示されている一方、登録団体・登録車両・GTFS予定値が
+  誰のどの相談へつながるかを「事実・根拠・不足情報」という専門家向け表現へ圧縮していた問題をP1とした。
+- 公開4ページの冒頭へ、利用者、相談目的、見る情報、サイトだけでは決めない限界を同じ平易な順序で置く。
+- 既存の専門情報、検証証拠、Why、市町別導線は削除せず、一般向け説明を先行させる。
 
 ---
 
