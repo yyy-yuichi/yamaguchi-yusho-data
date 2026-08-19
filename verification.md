@@ -2584,6 +2584,27 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 | 正本 | `evidence/20260819_work1_general_reader_purpose_clarity_correction_local_acceptance.json` |
 | 判定 | `LOCAL_GO`。次はcommit・同一HEADの4 workflow・公開bytes・PC/スマホ受入 |
 
+### 公開受入
+
+| 検証 | 結果 |
+|---|---|
+| subject | `60a46c6a78338d9c44f1fa3998134a26e19248a1`、origin/main一致 |
+| scope lock / Pages | `32210321762` / `32210321262`、同一SHA・success |
+| independent reproduction | run `32210321707`、artifact `9350531481`、digest `sha256:ef9d6ea3c2af7a14816db555f61951c351c3590a93c54abecbb918b0689a82d1` |
+| Ubuntu再現 | GO、固定原本7 / 7、再作成・完全byte一致17 / 17、欠損復旧、209 / 209、errors 0 |
+| release attestation | run `32210368975`、artifact `9350555815`、digest `sha256:1da1dd6856e5b2007a79bccef628d67c28a59bda678e5cfa2a808d0751e878a1` |
+| release内容 | GO、209 / 209、原本7 / 7、保護3 / 3、公開attestation資産5 / 5、errors 0 |
+| 直接公開読戻し | 4 HTML＋JRバスJSONはHTTP 200、commit bytes 5 / 5一致。内部診断3 URLは404 |
+| PC 1280×720 | 目的接続4 / 4、初期viewport内4 / 4、利用者・相談説明4 / 4、横overflow 0 |
+| smartphone 390×844 | 目的接続4 / 4、初期viewport内4 / 4、利用者・相談説明4 / 4、防府市メモ、横overflow 0 |
+| 既存導線 | トップ任意分析・応募説明任意分析・status技術記録は初期閉。初心者要約は進捗数値より前 |
+| 人間ゲート | 公開受入は外部利用者検証ではない。利用者検証は`HUMAN_GATE_PENDING` |
+| 正本 | `evidence/20260819_work1_general_reader_purpose_clarity_correction_public_acceptance.json` |
+| 判定 | `GO`。次は変更なしの`WORK1-GENERAL-READER-PURPOSE-CLARITY-CORRECTION-1-AUDIT-1`だけ、未開始 |
+
+この受入記録を含む最終HEAD自身を4 workflowと公開bytesで再確認し、後続run IDは
+外部正本としてrepoへ再書込みしない。
+
 ## WORK1-SITE-CLARITY-BEFORE-USER-EVALUATION-CORRECTION-1 ローカル検証（2026-08-19）
 
 | 検証 | 結果 |

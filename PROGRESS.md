@@ -2621,6 +2621,23 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   `evidence/20260819_work1_general_reader_purpose_clarity_correction_local_acceptance.json`。判定は`LOCAL_GO`。
   次はcommit・main push後、同一HEADの4 workflow、公開bytes、PC・スマートフォン表示を受け入れる。
 
+### 公開受入GO
+
+- 実装commit `60a46c6a78338d9c44f1fa3998134a26e19248a1`のscope lock `32210321762`、
+  Pages `32210321262`、独立再現 `32210321707`、release attestation `32210368975`は同一SHAで全success。
+- 独立再現artifact `9350531481`はGO、原本7 / 7、17生成物再作成・完全byte一致17 / 17、欠損復旧、
+  209 / 209、errors 0。release artifact `9350555815`もGO、209 / 209、原本7 / 7、
+  保護3 / 3、公開attestation資産5 / 5、errors 0。
+- 公開4 HTMLとJRバスJSONはHTTP 200・commit bytes 5 / 5一致。内部診断3 URLは404。
+- 公開PC 1280×720・スマートフォン390×844の4ページで、目的接続4 / 4、初期viewport内4 / 4、
+  利用者・相談説明4 / 4、横overflow 0。任意分析・技術記録は初期閉、防府市メモは正常に表示した。
+- 公開正本は
+  `evidence/20260819_work1_general_reader_purpose_clarity_correction_public_acceptance.json`。判定は`GO`。
+- 利用者検証は`HUMAN_GATE_PENDING`。natural-japanese、作品②入力、外部連絡、利用者テスト依頼、
+  応募・BODIK、新原本採用は各0。
+- 次段階は変更なしの
+  `WORK1-GENERAL-READER-PURPOSE-CLARITY-CORRECTION-1-AUDIT-1`だけとし、開始しない。
+
 ## 2026-08-19 WORK1-AWARD-SCORECARD-RECALIBRATION-5 ローカル受入
 
 - 基準HEAD `4faebc430e70fd31245dc80cb5011dad218f9d31`の変更なし監査はGO、

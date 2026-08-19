@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-19 (rev.86) / 状態: WORK1-GENERAL-READER-PURPOSE-CLARITY-CORRECTION-1 LOCAL_GO / 次: 同一HEAD公開受入
+最終更新: 2026-08-19 (rev.87) / 状態: WORK1-GENERAL-READER-PURPOSE-CLARITY-CORRECTION-1 GO / 次: 変更なしread-only監査（未開始）
 
 ## 0. このファイルについて
 
@@ -1677,3 +1677,24 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   `evidence/20260819_work1_general_reader_purpose_clarity_correction_local_acceptance.json`。
   判定は`LOCAL_GO`。次は実装commitをmainへpushし、同一HEADの4 workflow、公開5資産bytes、
   PC・スマートフォン表示を受け入れる。
+
+### 改訂点（rev.87）
+
+- 実装commit `60a46c6a78338d9c44f1fa3998134a26e19248a1`のscope lock `32210321762`、
+  Pages `32210321262`、独立再現 `32210321707`、release attestation `32210368975`は
+  同一SHAで全success。
+- 独立再現artifact `9350531481`はGO、固定原本7 / 7、17生成物再作成・完全byte一致17 / 17、
+  欠損復旧success、209 / 209、errors 0。release artifact `9350555815`もGO、209 / 209、
+  原本7 / 7、保護3 / 3、公開attestation資産5 / 5、errors 0。
+- 公開4 HTMLとJRバスJSONはHTTP 200・commit bytes 5 / 5一致。内部診断3 URLは404を維持した。
+- 公開PC 1280×720・スマートフォン390×844の各4ページで、一般読者向け目的接続は4 / 4存在し、
+  初期viewport内4 / 4、利用者・相談説明4 / 4、横overflow 0。防府市メモも正常に読み込んだ。
+- 公開正本は
+  `evidence/20260819_work1_general_reader_purpose_clarity_correction_public_acceptance.json`。
+  `WORK1-GENERAL-READER-PURPOSE-CLARITY-CORRECTION-1`をGOとする。
+- このGOは公開内容・配備・再現の受入であり、外部利用者検証の完了ではない。利用者検証は
+  `HUMAN_GATE_PENDING`。natural-japanese、作品②入力、外部連絡、利用者テスト依頼、UDC応募、
+  BODIK登録、新原本取得・採用は各0。
+- 次段階は変更を伴わない
+  `WORK1-GENERAL-READER-PURPOSE-CLARITY-CORRECTION-1-AUDIT-1`だけとし、開始しない。
+  本記録commit自身の4 workflowと公開bytesを外部読戻しし、post-commit IDはrepoへ再書込みしない。
