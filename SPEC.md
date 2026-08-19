@@ -4324,3 +4324,130 @@ BODIK登録、push・Pages更新を行わない。作品②を探索・参照・
 - フィード全体値を市町値へ配賦する必要が生じる
 - 情報不足・測定不足から実サービス不足を断定する必要が生じる
 - 作成者の深い問題意識を推測または公開説明へ変換する必要が生じる
+
+## 46. WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-MEASUREMENT-SPEC-1
+
+### 46.1 開始承認と段階ゴール
+
+2026-08-19に作成者の開始承認を受けた。本段階は§45で確定した
+`ACCEPTED_SOURCE_UNMEASURED` 98行だけを対象に、受入済み7原本の表・列、測定単位、市町適用範囲、
+検証方法、欠損規則、非主張を内部測定仕様へ固定する。
+
+本段階は測定仕様の定義であり、値の抽出・集計・公開は行わない。受入原本が支える限定測定と、
+部分情報しか得られない項目、追加前提入力が必要な項目を分離し、空欄・表なし・0行を交通不存在や
+`service_gap`へ変換しない。
+
+### 46.2 入力・生成器・内部出力
+
+生成器は`src/build_supply_side_accepted_source_measurement_spec.py`、内部出力は
+`data/work1_supply_side_accepted_source_measurement_spec.json`とする。入力12ファイルのbytes・SHA-256を
+内部出力へ固定する。
+
+- `data/work1_supply_side_information_model.json`
+- `data/work1_supply_side_information_coverage_matrix.json`
+- `data/source_freshness_manifest.json`
+- `data/operators.csv`
+- `data/vehicles.csv`
+- 受入済み4登録簿PDF
+- 受入済み3 GTFS ZIP
+
+4登録簿は`source_pdf`・`source_page`で原本ページへ戻れる既存派生表の列を使う。登録記録の主キーは
+`(source_pdf, registration_no)`の複合キーとし、登録番号単独では結合しない。3 GTFSはZIPを展開せず、
+各memberをメモリ上で読み、実在する表・列・行数だけをsource profileへ固定する。
+
+内部出力は次を持つ。
+
+- 受入原本profile: 7件
+- 情報項目別measurement specification: 12件
+- 市町×項目application: 98件
+- 入力ハッシュ: 12件
+- readiness vocabulary: 3値
+
+applicationは市町コード、市町名、分類、項目、仕様ID、原本ID、表・列locator、測定出力単位、測定範囲、
+市町適用規則、準備度、未実行状態、検証規則、欠損規則、非主張の15フィールドを固定順で持つ。
+
+### 46.3 12項目の測定仕様
+
+| 項目 | 限定測定 | 主な表・列 | readiness |
+|---|---|---|---|
+| 登録区域・事務所 | 原文区域、事務所対、市町名リスト | `operators.csv`の区域・事務所・原本参照列 | `READY_FOR_BOUNDED_MEASUREMENT` |
+| 路線ID・名称・系統 | route・trip参照 | `routes.txt`、`trips.txt` | 同上 |
+| 乗降場所名・座標 | stop_id別名称・座標・のりば属性 | `stops.txt` | 同上 |
+| 経路形状 | shape_id別順序付き点列 | `shapes.txt`、`trips.txt` | 同上 |
+| 市町内フィード空間範囲 | 市町境界とのstop・shape交差 | GTFS座標列＋未受入の市町境界 | `ADDITIONAL_INPUT_REQUIRED` |
+| 運行日 | 日付別service_id、有効期間 | `calendar.txt`、`calendar_dates.txt`、`feed_info.txt`、`trips.txt` | `READY_FOR_BOUNDED_MEASUREMENT` |
+| 停留所別時刻 | 日付・trip・stop_sequence別予定発着 | `stop_times.txt`ほか参照表 | 同上 |
+| 時間帯頻度 | 日付・route・stop・1時間帯別予定発車 | `stop_times.txt`、`trips.txt`、運行日表 | 同上 |
+| 乗換・所要時間 | 同一trip内予定区間時間と明示transfer行 | `stop_times.txt`、任意`transfers.txt` | `PARTIAL_SOURCE_ONLY` |
+| 福祉利用対象区分 | 福祉登録記録のイ〜ト7フラグ | `operators.csv`の旅客範囲列 | `READY_FOR_BOUNDED_MEASUREMENT` |
+| 運賃・支払 | fare_id別静的運賃・適用規則・支払時点 | `fare_attributes.txt`、`fare_rules.txt` | `PARTIAL_SOURCE_ONLY` |
+| アクセシビリティ | 登録車種台数、JRバス中国の車いす列 | `vehicles.csv`、`trips.txt`、`stops.txt` | `PARTIAL_SOURCE_ONLY` |
+
+GTFSの`payment_method`は現金・IC・カード等の支払媒体へ読み替えない。`transfers.txt`は光市GTFSに存在するが
+0行で、岩国市・JRバス中国には表がない。これを乗換不能・乗換0件へ変換しない。登録車種とGTFS車いす列を
+加算・比率化せず、現在の配車可能性・設備状態・介助条件へ読み替えない。
+
+### 46.4 実行準備度
+
+98 applicationの準備度は次で固定する。
+
+- `READY_FOR_BOUNDED_MEASUREMENT`: 61
+- `PARTIAL_SOURCE_ONLY`: 30
+- `ADDITIONAL_INPUT_REQUIRED`: 7
+
+61行は既存7原本だけで非主張境界付きの限定測定を実装できる。30行は運賃・乗換/所要時間・
+アクセシビリティの部分情報だけを測定でき、項目全体を満たしたとは扱わない。7行は市町内空間範囲で、
+GTFS座標はあるが受入済み市町境界geometryがないため、0件・0%を作らず実装対象外とする。
+
+### 46.5 市町適用と非主張
+
+登録簿項目は`service_area_municipalities`で対応済みの登録行だけを対象にする。GTFS項目は
+`municipality_gtfs.json`の関係フィードを参照するが、すべて受入フィード全体の表・列locatorであり、
+市町境界内の行フィルターではない。光市GTFSを周南市へ、JRバス中国を山口市・萩市・防府市・美祢市へ
+関係づけても、フィード全体値を各市の供給量へ配賦しない。
+
+全98 applicationを`SPECIFIED_NOT_EXECUTED`とする。測定値フィールドを作らず、値未生成、公開未実施、
+実運行・現在利用可能性・利用実績・利便性・需要充足・`service_gap`を示さない境界を持たせる。
+
+### 46.6 変更範囲と禁止事項
+
+変更・追加できるのは次だけとする。
+
+- `src/build_supply_side_accepted_source_measurement_spec.py`
+- `data/work1_supply_side_accepted_source_measurement_spec.json`
+- `tests/test_supply_side_accepted_source_measurement_spec.py`
+- `SPEC.md`、`run_record.md`、`PROGRESS.md`、`verification.md`
+- `evidence/20260819_work1_supply_side_accepted_source_measurement_spec_local_acceptance.json`
+
+情報モデル、カバレッジ行列、公開4 HTML、`docs/data/`、入力CSV、7原本、既存公開値、内部スコアカード、
+作品①scope境界を変更しない。新原本探索・取得・採用、認証付き・非公開データ、外部連絡、利用者テスト、
+UDC応募、BODIK登録、push・Pages更新を行わない。作品①と無関係なデータ・道具を入力へ混在させない。
+
+### 46.7 完了条件
+
+1. カバレッジ行列の測定不足98行を重複・欠落なく98 applicationへ対応づける。
+2. 12項目・7原本について表・列locator、測定単位、市町適用、検証、欠損、非主張を読み戻せる。
+3. 4登録簿は複合キーと原本ページ参照、3 GTFSはZIP非展開の実ヘッダーで検証できる。
+4. 準備度が61 / 30 / 7となり、市町境界入力なしを0件・0%へ変換しない。
+5. 全98行が`SPECIFIED_NOT_EXECUTED`で、測定値を生成・公開しない。
+6. フィード全体値を市町へ配賦せず、JRバス中国の広域値を関係4市へ配賦しない。
+7. 欠損・表なし・0行・部分情報からサービス不存在や`service_gap`を判定しない。
+8. 同じ12入力から完全byte一致で内部仕様JSONを再生成できる。
+9. 専用12 / 12、全244 / 244、scope checker、`git diff --check`が成功する。
+10. 公開4 HTML、`docs/data/`、上流正本、7原本、既存公開値、内部スコアカードが開始HEADから不変である。
+11. 新原本、外部連絡、利用者テスト、応募・登録、push・Pages更新が各0である。
+
+### 46.8 次段階と停止条件
+
+次段階は`WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-BOUNDED-MEASUREMENT-1`だけとする。
+`READY_FOR_BOUNDED_MEASUREMENT` 61行について、仕様どおりの内部測定値を決定的に生成する段階で、
+開始承認まで`DEFINED_NOT_STARTED`とする。`PARTIAL_SOURCE_ONLY` 30行と
+`ADDITIONAL_INPUT_REQUIRED` 7行は値へ補完せず、新原本取得・公開表示・`service_gap`判定を含めない。
+
+次の場合は停止する。
+
+- 61行の限定測定に7原本外の入力が必要になる
+- 部分情報30行を項目全体の充足へ読み替える必要が生じる
+- 市町境界入力なしで空間範囲7行を数値化する必要が生じる
+- フィード全体値を市町値へ配賦する必要が生じる
+- 実サービス不足、需要充足、現在利用可能性を断定する必要が生じる

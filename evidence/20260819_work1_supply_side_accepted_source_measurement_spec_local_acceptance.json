@@ -1,0 +1,225 @@
+{
+  "schema_version": "WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-MEASUREMENT-SPEC-LOCAL-ACCEPTANCE-1",
+  "task_id": "WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-MEASUREMENT-SPEC-1",
+  "created_at": "2026-08-19T16:59:16+09:00",
+  "decision": "LOCAL_GO",
+  "start_approval": {
+    "approved_by": "creator",
+    "approved_on": "2026-08-19",
+    "approved_task_id": "WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-MEASUREMENT-SPEC-1"
+  },
+  "baseline": {
+    "branch": "main",
+    "head": "6548d2075bcebb291abdc8570c975c0e82f47053",
+    "head_subject": "Build supply-side coverage matrix",
+    "origin_main": "66b5aa7dd3b51dd5e32764a6d0f0c7d40fff0db1",
+    "baseline_worktree": "clean"
+  },
+  "goal_acceptance": {
+    "upstream_unmeasured_rows": 98,
+    "accepted_source_profiles": 7,
+    "measurement_item_specifications": 12,
+    "municipality_item_applications": 98,
+    "application_fields": 15,
+    "input_files": 12,
+    "execution_status": "SPECIFIED_NOT_EXECUTED",
+    "measurement_values_generated": 0,
+    "readiness_counts": {
+      "READY_FOR_BOUNDED_MEASUREMENT": 61,
+      "PARTIAL_SOURCE_ONLY": 30,
+      "ADDITIONAL_INPUT_REQUIRED": 7
+    },
+    "deep_motivation_boundary": "intentionally_not_recorded_or_inferred"
+  },
+  "source_schema_acceptance": {
+    "registry_pdf_profiles": 4,
+    "gtfs_zip_profiles": 3,
+    "accepted_source_bytes_sha_match": "7/7",
+    "registry_composite_key": "(source_pdf, registration_no)",
+    "registry_original_page_locator": "source_pdf + source_page",
+    "gtfs_inspection_mode": "zipfile_read_in_memory_without_extract",
+    "gtfs_archives_inspected": "3/3",
+    "gtfs_archives_extracted": 0,
+    "hikari_transfers_table": "present_with_zero_rows",
+    "iwakuni_transfers_table": "absent",
+    "jrbus_transfers_table": "absent"
+  },
+  "measurement_boundary_acceptance": {
+    "municipal_geometry_missing_rows": 7,
+    "municipal_geometry_missing_result": "additional_input_required_not_zero",
+    "partial_source_rows": 30,
+    "partial_source_treated_as_complete": 0,
+    "gtfs_municipality_row_filtering": 0,
+    "feed_wide_values_allocated_to_municipalities": 0,
+    "jrbus_wide_values_allocated_to_four_municipalities": 0,
+    "automatic_service_gap_decisions": 0,
+    "public_measurement_values": 0
+  },
+  "spec_artifact": {
+    "path": "data/work1_supply_side_accepted_source_measurement_spec.json",
+    "bytes": 365265,
+    "sha256": "39e56df283d39999b5f43e4c0b28190db7cc67644cdf137df5b9d7515b400e79",
+    "encoding": "UTF-8",
+    "line_ending": "LF",
+    "trailing_newline_count": 1,
+    "public_copy": false
+  },
+  "input_hashes": [
+    {
+      "path": "data/work1_supply_side_information_model.json",
+      "bytes": 31846,
+      "sha256": "95b49775f88e72c3179ee6c6a3397bf152ee69e6dc16603282a4a21e9153d674"
+    },
+    {
+      "path": "data/work1_supply_side_information_coverage_matrix.json",
+      "bytes": 648058,
+      "sha256": "5a8e3742818787470d7316c135d19b89e8a8c3c2c0172aff87f81efd9b2066ca"
+    },
+    {
+      "path": "data/source_freshness_manifest.json",
+      "bytes": 3290,
+      "sha256": "c142628be53be8b22d1308ef561146b53b6cc78052af7b1090ef0e262ce08611"
+    },
+    {
+      "path": "data/operators.csv",
+      "bytes": 72919,
+      "sha256": "8887da8a78b50840522ca190404c395ad682b2943d02363fe97ce3b6a989ab1f"
+    },
+    {
+      "path": "data/vehicles.csv",
+      "bytes": 11926,
+      "sha256": "519569d228850a903d8eab4a8ac3b80f3bdc9ee5ac2228bd8000cfa029eeaf7f"
+    },
+    {
+      "path": "raw/000230003.pdf",
+      "bytes": 19003,
+      "sha256": "d215cada64ce8d174ec22cb521379734da185b7616f29b27166dfccf701af1ab"
+    },
+    {
+      "path": "raw/000268896.pdf",
+      "bytes": 149313,
+      "sha256": "ece80864a99fc392dec0c279fe92f3609a43c11ce32178ced0cd60839c9b6177"
+    },
+    {
+      "path": "raw/000271730.pdf",
+      "bytes": 136476,
+      "sha256": "86b3e32f3d3017cba613d644102f262a0a0cb2761925718ce9eea12e71a9add1"
+    },
+    {
+      "path": "raw/000359215.pdf",
+      "bytes": 393922,
+      "sha256": "3107e8555aefe86527d482422977c050b4514cb06b0f077187cdec4f38a2c66b"
+    },
+    {
+      "path": "raw/gtfs/iwakuni_gtfsjp_20260401.zip",
+      "bytes": 719723,
+      "sha256": "d236a58ff4a0edb4812a8bed543d4897670441164a1019e88d5e35ded5052de2"
+    },
+    {
+      "path": "raw/gtfs/hikari_gtfs_20260401.zip",
+      "bytes": 86273,
+      "sha256": "f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7"
+    },
+    {
+      "path": "raw/gtfs/jrbus_chugoku_gtfs_20260813.zip",
+      "bytes": 1863715,
+      "sha256": "9162224158a8a748d0365e850f2c0575c845a98063b7a469912c0a15b9201620"
+    }
+  ],
+  "artifact_hashes": [
+    {
+      "path": "src/build_supply_side_accepted_source_measurement_spec.py",
+      "bytes": 44004,
+      "sha256": "e0bf016d71e283e5ca82dd72ce9cea0090bf32c434e2174bf045016f99beb35d"
+    },
+    {
+      "path": "data/work1_supply_side_accepted_source_measurement_spec.json",
+      "bytes": 365265,
+      "sha256": "39e56df283d39999b5f43e4c0b28190db7cc67644cdf137df5b9d7515b400e79"
+    },
+    {
+      "path": "tests/test_supply_side_accepted_source_measurement_spec.py",
+      "bytes": 13335,
+      "sha256": "7c8b08c8968c92e9a17dc0c98d83d05dd2da011783b08734ba479e6b618d659e"
+    },
+    {
+      "path": "SPEC.md",
+      "bytes": 313195,
+      "sha256": "4c8dd0f930beb2cc34088d1e1df947e43283b1579906261b143c05d68ccdbc9c"
+    },
+    {
+      "path": "run_record.md",
+      "bytes": 150790,
+      "sha256": "59f3ac549496b1f588baae356abda72645ef56970d25ef1e714dd6dff4a8b707"
+    },
+    {
+      "path": "PROGRESS.md",
+      "bytes": 245535,
+      "sha256": "5f28c989c921e0847af8f4b8b71448681409fd4c7c9b536ef0ce20df24655e2e"
+    },
+    {
+      "path": "verification.md",
+      "bytes": 205621,
+      "sha256": "131031f1ac01fadd109074f704f1c77cecc71d8ad64bc11157bffecaddf3c84d"
+    }
+  ],
+  "verification": {
+    "dedicated_tests": {
+      "command": "python -B -m unittest tests.test_supply_side_accepted_source_measurement_spec -v",
+      "detected": 12,
+      "passed": 12,
+      "failed": 0
+    },
+    "full_tests": {
+      "command": "python -B -m unittest discover -s tests -q",
+      "detected": 244,
+      "passed": 244,
+      "failed": 0
+    },
+    "regeneration_byte_identical": true,
+    "work_scope": "WORK1_SCOPE_ALLOWED",
+    "git_diff_check": "success",
+    "protected_diff_count": 0,
+    "accepted_source_bytes_sha_match": "7/7"
+  },
+  "unchanged_boundaries": [
+    "docs/index.html",
+    "docs/entry.html",
+    "docs/municipality-memo.html",
+    "docs/status.html",
+    "docs/data/",
+    "data/work1_supply_side_information_model.json",
+    "data/work1_supply_side_information_coverage_matrix.json",
+    "data/source_freshness_manifest.json",
+    "data/operators.csv and data/operators.json",
+    "data/vehicles.csv and data/vehicles.json",
+    "raw/ accepted 4 registry PDFs and 3 GTFS ZIPs",
+    "existing public JSON and CSV values",
+    "data/work1_award_scorecard.json",
+    "AGENTS.md",
+    "work_scope.json",
+    "src/check_work_scope.py"
+  ],
+  "not_executed": {
+    "new_original_search_download_or_adoption": 0,
+    "authenticated_or_nonpublic_data_access": 0,
+    "measurement_value_generation": 0,
+    "municipal_geometry_intersection": 0,
+    "external_contact": 0,
+    "user_test_request": 0,
+    "udc_entry_or_submission": 0,
+    "bodik_registration": 0,
+    "public_site_change": 0,
+    "deployment_or_push": 0,
+    "pages_update": 0,
+    "out_of_scope_data_or_tool_input": 0
+  },
+  "next_stage": {
+    "task_id": "WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-BOUNDED-MEASUREMENT-1",
+    "status": "DEFINED_NOT_STARTED",
+    "goal": "READY_FOR_BOUNDED_MEASUREMENT 61行について、仕様どおりの内部測定値を決定的に生成する。",
+    "boundary": "PARTIAL_SOURCE_ONLY 30行とADDITIONAL_INPUT_REQUIRED 7行を補完せず、新原本・公開表示・service_gap判定を行わない。",
+    "human_approval_required_to_start": true
+  },
+  "evidence_self_hash": "not_recorded_to_avoid_self_reference"
+}

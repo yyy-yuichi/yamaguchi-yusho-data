@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-19 (rev.89) / 状態: WORK1-SUPPLY-SIDE-INFORMATION-COVERAGE-MATRIX-1 LOCAL_GO / 次: WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-MEASUREMENT-SPEC-1（未開始）
+最終更新: 2026-08-19 (rev.90) / 状態: WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-MEASUREMENT-SPEC-1 LOCAL_GO / 次: WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-BOUNDED-MEASUREMENT-1（未開始）
 
 ## 0. このファイルについて
 
@@ -1741,3 +1741,24 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   `evidence/20260819_work1_supply_side_information_coverage_matrix_local_acceptance.json`。
 - 次段階は`WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-MEASUREMENT-SPEC-1`だけ。98測定不足行の
   表・列、単位、市町適用範囲、検証、非主張を固定する段階で、開始承認まで未開始とする。
+
+### 改訂点（rev.90）
+
+- 作成者の開始承認後、`WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-MEASUREMENT-SPEC-1`を実施した。
+- `src/build_supply_side_accepted_source_measurement_spec.py`を追加し、情報モデル、カバレッジ行列、
+  manifest、operators・vehicles、受入済み7原本の計12入力から内部測定仕様を決定的に生成する。
+- 出力は`data/work1_supply_side_accepted_source_measurement_spec.json`。7原本profile、12項目仕様、
+  98市町×項目applicationを持ち、全件`SPECIFIED_NOT_EXECUTED`で測定値を含まない。
+- 4登録簿は`(source_pdf, registration_no)`複合キーと原本ページ参照を固定。3 GTFSはZIP非展開で
+  実表・列・行数を検査し、表なしと0行をサービス不存在へ変換しない。
+- 実行準備度は限定測定可能61、部分情報のみ30、市町境界入力必要7。空間範囲7行は境界geometry未受入のため
+  0件・0%を作らず、運賃・乗換/所要時間・アクセシビリティ30行は項目全体の充足へ読み替えない。
+- GTFSはフィード全体参照のまま、市町内行へ絞ったとは扱わない。JRバス中国の広域値を関係4市へ配賦しない。
+- 専用12 / 12、全244 / 244、再生成byte一致、scope、`git diff --check`が成功。
+  公開4 HTML、`docs/data/`、上流正本、7原本、既存公開値、内部スコアカードは不変。
+- 新原本探索・取得・採用、認証付き・非公開アクセス、外部連絡、利用者テスト、UDC応募、BODIK登録、
+  push・Pages更新は各0。作品①と無関係なデータ・道具を入力に混在させていない。
+- ローカル正本は
+  `evidence/20260819_work1_supply_side_accepted_source_measurement_spec_local_acceptance.json`。
+- 次段階は`WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-BOUNDED-MEASUREMENT-1`だけ。限定測定可能61行を
+  仕様どおり内部測定する段階で、開始承認まで未開始とする。

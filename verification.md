@@ -1,5 +1,27 @@
 # verification.md — I-1（3PDF統合）検証結果
 
+## WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-MEASUREMENT-SPEC-1 ローカル検証（2026-08-19）
+
+| 検証 | 結果 |
+|---|---|
+| 上流行列 | `ACCEPTED_SOURCE_UNMEASURED` 98 / 98を重複・欠落なく対応 |
+| 仕様構造 | 受入原本profile 7、項目仕様12、市町×項目application 98、入力hash 12 |
+| 登録簿locator | operators・vehicles列、`(source_pdf, registration_no)`複合キー、source_page参照 |
+| GTFS locator | 3 / 3 ZIP非展開、実表・列・行数検査、必須列解決 |
+| 準備度 | 限定測定可能61、部分情報のみ30、市町境界入力必要7 |
+| 未実行 | 98 / 98 `SPECIFIED_NOT_EXECUTED`、測定値・公開値0 |
+| 欠損境界 | 表なし・0行・空欄・境界入力なしを不存在、0件、0%へ変換なし |
+| フィード境界 | 全GTFS locatorはフィード全体参照、市町内行へ割当なし、JRバス中国広域値の4市配賦なし |
+| gap境界 | 部分情報・測定不足から利用可能性・需要充足・`service_gap`判定なし |
+| 決定性 | 連続2回の生成結果、保存済み内部JSONが完全byte一致 |
+| 専用回帰 | 12 / 12 success |
+| 全回帰 | 244件検出、244 / 244 success、終了コード0 |
+| scope・差分 | `WORK1_SCOPE_ALLOWED`、`git diff --check` success |
+| 不変対象 | 公開4 HTML、`docs/data/`、上流正本、7原本、既存公開値、内部スコアカードは開始HEADから不変 |
+| 境界 | 新原本、認証付き・非公開アクセス、外部連絡、利用者テスト、応募・BODIK、push・Pages各0 |
+| 正本 | `evidence/20260819_work1_supply_side_accepted_source_measurement_spec_local_acceptance.json` |
+| 判定 | `LOCAL_GO`。次は`WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-BOUNDED-MEASUREMENT-1`だけ、未開始 |
+
 ## WORK1-SUPPLY-SIDE-INFORMATION-COVERAGE-MATRIX-1 ローカル検証（2026-08-19）
 
 | 検証 | 結果 |

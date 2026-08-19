@@ -1,5 +1,26 @@
 # PROGRESS
 
+## 2026-08-19 WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-MEASUREMENT-SPEC-1
+
+### 受入原本内測定仕様・ローカル受入
+
+- カバレッジ行列の`ACCEPTED_SOURCE_UNMEASURED` 98行を、12項目・7原本の内部測定仕様へ重複なく対応づけた。
+- 生成器は`src/build_supply_side_accepted_source_measurement_spec.py`、内部正本は
+  `data/work1_supply_side_accepted_source_measurement_spec.json`。12入力のbytes・SHA-256を固定した。
+- 4登録簿は既存operators・vehicles列と`(source_pdf, registration_no)`複合キー、原本ページ参照を使用。
+  3 GTFSはZIPを展開せず、実表・列・行数をsource profileへ固定した。
+- 実行準備度は`READY_FOR_BOUNDED_MEASUREMENT` 61、`PARTIAL_SOURCE_ONLY` 30、
+  `ADDITIONAL_INPUT_REQUIRED` 7。全98行は`SPECIFIED_NOT_EXECUTED`で、値を生成していない。
+- 市町境界geometryがない空間範囲7行を0件・0%へ変換せず、部分情報30行を項目全体の充足へ変換していない。
+- GTFSはフィード全体参照のまま保持し、JRバス中国広域値を関係4市へ配賦していない。
+- 専用12 / 12、全244 / 244、再生成byte一致、scope checker、`git diff --check`が成功。
+- 公開4 HTML、`docs/data/`、上流正本、7原本、既存公開値、内部スコアカードは不変。
+- 新原本、認証付き・非公開アクセス、外部連絡、利用者テスト、UDC応募、BODIK登録、push・Pages更新は各0。
+- ローカル正本は
+  `evidence/20260819_work1_supply_side_accepted_source_measurement_spec_local_acceptance.json`。
+- 次段階は`WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-BOUNDED-MEASUREMENT-1`一つだけ。
+  限定測定可能61行の内部測定段階で、開始承認まで未開始とする。
+
 ## 2026-08-19 WORK1-SUPPLY-SIDE-INFORMATION-COVERAGE-MATRIX-1
 
 ### 市町別カバレッジ行列・ローカル受入
