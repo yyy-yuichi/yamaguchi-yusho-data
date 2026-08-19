@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "stage": "WORK1-SITE-CLARITY-BEFORE-USER-EVALUATION-CORRECTION-1",
+  "checked_at": "2026-08-19",
+  "decision": "LOCAL_GO",
+  "subject": {
+    "work_id": "WORK1",
+    "branch": "main",
+    "baseline_commit": "952987fd6f06c5dd63351ea0c19fb024e5ece339"
+  },
+  "audit_input": {
+    "decision": "NO_GO",
+    "severity": {"P0": 0, "P1": 1, "P2": 2},
+    "findings": [
+      "検証状況ページが内部タスク名・artifact・SHA256等を初心者向け説明より優先していた",
+      "市町選択より先に県全体・比較・広域の詳しいGTFS表が並んでいた",
+      "全市町共通ではない比較工程が基本手順に混在していた"
+    ]
+  },
+  "implementation": {
+    "shared_navigation": [
+      "1. データを見る",
+      "2. 作品を知る",
+      "3. 協議前メモ",
+      "4. 検証を確かめる"
+    ],
+    "index": "市町選択を基本導線とし、県全体・比較・広域のGTFS分析を初期状態で閉じた任意detailsへ分離",
+    "entry": "市町選択、現在の範囲と不足、協議前メモの基本3段階と任意分析を分離",
+    "status": "現在使えるもの、確認していること、まだ分からないことを先に示し、技術記録を閉じたdetailsへ保持",
+    "memo": "既存の8段階メモを維持し、4ページ共通ナビへ同期"
+  },
+  "verification": {
+    "scope_guard": "WORK1_SCOPE_ALLOWED",
+    "dedicated_tests": {"passed": 7, "discovered": 7},
+    "related_tests": {"passed": 82, "discovered": 82},
+    "all_tests": {"passed": 204, "discovered": 204},
+    "git_diff_check": true,
+    "browser": {
+      "pc": {
+        "viewport": "1280x720",
+        "pages_checked": 4,
+        "horizontal_overflow": 0,
+        "index_municipality_control_document_y_before": 4783,
+        "index_municipality_control_document_y_after": 968,
+        "status_collapsed_document_height_before": 14996,
+        "status_collapsed_document_height_after": 1326,
+        "direct_analysis_hash_opens_details": true
+      },
+      "smartphone": {
+        "viewport": "390x844",
+        "pages_checked": 4,
+        "horizontal_overflow": 0,
+        "index_municipality_control_document_y": 1388,
+        "status_collapsed_document_height": 2277,
+        "technical_record_can_open": true,
+        "memo_selected_municipality": "防府市"
+      }
+    },
+    "public_asset_local_fingerprints": [
+      {"path": "docs/index.html", "bytes": 62731, "sha256": "201ac42861b4cce03bb82c39ee34638350d1e9da8331629366d20a2b6b42bd97"},
+      {"path": "docs/entry.html", "bytes": 21144, "sha256": "7d29e1df3c79ba2dd85c4cf8f12aa5b36e34fc4ceaed267ccfcf33f69639b365"},
+      {"path": "docs/status.html", "bytes": 65453, "sha256": "a3f7312fb510bcb645fba68ea7adebe5a57e9112212c181eadf0d5e66db0a75c"},
+      {"path": "docs/municipality-memo.html", "bytes": 43079, "sha256": "075f610b990d4c73f970cf14a4dc485b05e208db2e3e92567a77e569ef354435"},
+      {"path": "docs/data/jrbus_chugoku_supply_metrics.json", "bytes": 3537, "sha256": "eac7e55b0b548f2fe69cf8ce17a03d6d7f4516edf089da362ecbfcc371c6fc05"}
+    ]
+  },
+  "unchanged": {
+    "accepted_sources": 7,
+    "raw": true,
+    "data_directory": true,
+    "docs_data_directory": true,
+    "calculation_results": true,
+    "internal_scorecard": true,
+    "work_scope_boundary": true
+  },
+  "boundaries": {
+    "other_work_inputs": 0,
+    "participant_contacts": 0,
+    "user_test_requests": 0,
+    "udc_submissions": 0,
+    "bodik_registrations": 0,
+    "new_source_acquisitions": 0,
+    "new_source_adoptions": 0
+  },
+  "human_gate": {
+    "remote_user_evaluation": "HUMAN_GATE_PENDING",
+    "condition": "同一HEADの公開受入と作成者本人の別承認"
+  },
+  "next": "commit_main_push_and_same_head_public_acceptance"
+}

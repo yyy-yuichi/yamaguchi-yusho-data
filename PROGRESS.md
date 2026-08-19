@@ -2944,6 +2944,25 @@ ENTRY-PAGE-1をCodex受入済みとし、ロードマップ07「応募用の公�
   `evidence/20260813_work1_award_scorecard_recalibration_public_acceptance.json`。
 - この記録を含む最終HEAD自身を同じ3 workflowで再確認する。次段階はread-only監査だけ。
 
+## 2026-08-19 WORK1-SITE-CLARITY-BEFORE-USER-EVALUATION-CORRECTION-1 ローカル受入
+
+- 固定HEAD `952987fd6f06c5dd63351ea0c19fb024e5ece339`の変更なし監査は
+  P0 0 / P1 1 / P2 2、NO_GO。市町別導線は成立していたが、検証状況の内部記録優先、
+  市町選択より先に並ぶ詳しいGTFS表、全市町共通でない比較工程の混在を明瞭性不足とした。
+- 公開4ページへ同じ4役割ナビを追加。トップは市町別確認を基本導線とし、県全体・同週比較・
+  広域指標を閉じた任意分析へ分離した。深いリンクでは対象分析を自動で開く。
+- 応募説明は基本3段階と任意分析を分けた。検証状況は初心者向けの3要約を先に置き、内部タスク名、
+  SHA256、artifact等を閉じた技術記録へ保持した。
+- PC 1280×720・スマートフォン390×844の4ページで横overflow 0。市町選択、任意分析、技術記録、
+  防府市メモを確認した。トップの市町選択位置と検証状況の初期文書長を大幅に短縮した。
+- 専用7 / 7、関連82 / 82、全204 / 204、release attestation保護、scope、差分検査はsuccess。
+  原本、公開JSON・CSV、計算結果、内部スコアカード、作品②入力は0変更。
+- 外部連絡、利用者テスト依頼、応募・BODIK、新原本取得・採用は各0。利用者検証は
+  `HUMAN_GATE_PENDING`。ローカル正本は
+  `evidence/20260819_work1_site_clarity_before_user_evaluation_correction_local_acceptance.json`。
+- 判定は`LOCAL_GO`。次はcommit・main push、同一HEADのscope lock・Pages・独立再現・
+  release attestation、公開byte、PC・スマートフォンを受け入れる。
+
 ## 2026-08-13 WORK1-PRECONSULTATION-HANDOFF-1
 
 ### 仕様・実装・ローカル受入

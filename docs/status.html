@@ -822,6 +822,75 @@
     }
 
     .app-link:hover { background: var(--green); }
+
+    .route-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--gray-soft);
+    }
+
+    .route-nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 7px 12px;
+      border-radius: 9px;
+      color: var(--ink);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .route-nav a:hover,
+    .route-nav a[aria-current="page"] { background: var(--green-soft); }
+
+    .status-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .status-summary-card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--gray-soft);
+    }
+
+    .status-summary-card h3 { color: var(--green); }
+    .status-summary-card p:last-child { margin-bottom: 0; }
+
+    .technical-record {
+      margin-top: 22px;
+    }
+
+    .technical-record > summary {
+      cursor: pointer;
+      padding: 20px 24px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--paper);
+      color: var(--blue);
+      font-weight: 850;
+    }
+
+    .technical-record > summary span {
+      display: block;
+      margin-top: 4px;
+      color: var(--gray-text);
+      font-size: 0.86rem;
+      font-weight: 500;
+    }
+
+    @media (max-width: 720px) {
+      .status-summary-grid { grid-template-columns: 1fr; }
+      .route-nav a { flex: 1 1 calc(50% - 8px); }
+    }
   </style>
 </head>
 <body>
@@ -831,8 +900,12 @@
       <h1>山口県 市町別の<br>登録供給ビュー</h1>
       <p class="lead">福祉有償運送と交通空白地有償運送の公表登録簿を市町から確認し、公式GTFS/GTFS-JPの確認状況、比較指標、協議前に次に確認することまでを根拠付きで共有できる静的アプリです。</p>
       <p>目指すことは、自家用車に頼れない人も、地域で通学・通院・買物などの生活を続けられる交通になっているかを確かめたい、ということです。現在の作品は、行政・交通事業者・地域関係者が協議前に事実・根拠・不足情報をそろえる第一段階です。</p>
-      <a class="app-link" href="index.html?v=20260811#supply-comparison">GTFS供給比較を開く</a>
-      <a class="app-link" href="municipality-memo.html">協議前確認メモを作る</a>
+      <nav class="route-nav" aria-label="このサイトの4ページ">
+        <a href="index.html">1. データを見る</a>
+        <a href="entry.html">2. 作品を知る</a>
+        <a href="municipality-memo.html">3. 協議前メモ</a>
+        <a href="status.html" aria-current="page">4. 検証を確かめる</a>
+      </nav>
 
       <div class="metrics" aria-label="主要な進捗数値">
         <div class="metric complete">
@@ -858,11 +931,35 @@
       </div>
     </header>
 
+    <section id="reader-status" aria-labelledby="reader-status-title">
+      <p class="eyebrow">初めて確認する方へ</p>
+      <h2 id="reader-status-title">この作品は、いま何ができるのか</h2>
+      <p>このページは、公開中の作品で確認できる範囲と、まだ判断できないことを分けて示すためのページです。使い方を知りたい場合は「作品を知る」、市町の事実を確認したい場合は「データを見る」から始めてください。</p>
+      <div class="status-summary-grid">
+        <article class="status-summary-card">
+          <h3>現在使えるもの</h3>
+          <p>山口県19市町から選び、登録簿、公式GTFSの確認状況、日付、根拠、不足情報を確認できます。同じ市町の協議前メモも作れます。</p>
+        </article>
+        <article class="status-summary-card">
+          <h3>確認していること</h3>
+          <p>受入済み原本、公開データ、計算結果、PC・スマホ表示を自動テストと公開後の読戻しで検証しています。</p>
+        </article>
+        <article class="status-summary-card">
+          <h3>まだ分からないこと</h3>
+          <p>実際の運行、予約可能性、利用者数、便利さ、地域交通の充足度は、この公開データだけでは判断できません。</p>
+        </article>
+      </div>
+    </section>
+
+    <details class="technical-record">
+      <summary>開発・検証の詳しい記録を開く<span>内部タスク名、テスト履歴、SHA256、公開証拠などを確認する方向けです。</span></summary>
+
     <section aria-labelledby="progress-title">
       <div class="section-head">
         <div>
           <p class="eyebrow">作品の現在地</p>
-          <h2 id="progress-title">WORK1-WHY-TO-PRECONSULTATION-FLOW-CORRECTION-1 利用導線の修正</h2>
+          <h2 id="progress-title">公開サイトの説明と利用導線を継続改善</h2>
+          <p class="source-note">内部工程: WORK1-SITE-CLARITY-BEFORE-USER-EVALUATION-CORRECTION-1</p>
           <p>Whyから市町選択、確認できる事実、日付と範囲、分からないこと、行政・事業者への確認事項、協議前確認メモまでを一つの公開導線として接続しています。</p>
           <p>住民向けの交通判断や行政判断を直接行う段階ではありません。既存の公開データだけを使い、確認できることと不足情報を分離する修正です。</p>
           <p><a href="https://yyy-yuichi.github.io/yamaguchi-yusho-data/">GitHub Pagesで公開中</a>の市町別ビューと<a href="municipality-memo.html">協議前確認メモ</a>は、4状態ごとに次の確認を変えます。これは県内交通の完全収録や市町の優劣を示す評価ではありません。</p>
@@ -1474,6 +1571,7 @@
         <li>このリポジトリの派生データ: CC BY 4.0。国土交通省の原資料自体をこのライセンスへ変更するものではない</li>
       </ul>
     </section>
+    </details>
   </main>
 </body>
 </html>

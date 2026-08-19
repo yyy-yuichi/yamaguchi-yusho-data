@@ -2564,6 +2564,27 @@ GitHub Release/tagは外部公開される検証証拠であり、UDC概要フ�
 この受入記録を含む最終HEAD自身をscope lock、Pages、release attestationで再確認し、後続run IDは
 外部正本としてrepoへ再書込みしない。
 
+## WORK1-SITE-CLARITY-BEFORE-USER-EVALUATION-CORRECTION-1 ローカル検証（2026-08-19）
+
+| 検証 | 結果 |
+|---|---|
+| 基準HEAD・入力監査 | `952987fd6f06c5dd63351ea0c19fb024e5ece339`、P0 0 / P1 1 / P2 2、`NO_GO` |
+| P1解消 | 検証状況の初心者向け要約を技術記録より先に配置。内部タスク名・SHA256・artifact等は閉じた技術記録へ保持 |
+| P2解消1 | トップの県全体・同週比較・広域指標を、基本手順には必須でない閉じた任意分析へ分離 |
+| P2解消2 | 応募説明を市町選択・現在の範囲と不足・協議前メモの基本3段階と任意分析に分離 |
+| 4ページ関係 | 同一の4役割ナビと`aria-current="page"`を公開4 HTMLに追加 |
+| 直接リンク | `#supply-comparison`・`#jrbus-supply-metric`で任意分析を自動的に開く |
+| PC 1280×720 | 4ページ、横overflow 0。トップ市町選択Y約4,783→968、検証状況初期文書高約14,996→1,326 |
+| smartphone 390×844 | 4ページ、横overflow 0。市町選択Y 1,388、検証状況初期文書高2,277、技術記録開閉、防府市メモ成功 |
+| 専用・関連 | 7 / 7、82 / 82 success |
+| 全回帰 | 204 / 204 success |
+| release保護 | 更新したindex・entry固定SHA256でfail-closed契約success |
+| scope・差分 | `WORK1_SCOPE_ALLOWED`、`git diff --check` success |
+| 不変対象 | 7原本、`data/`、`docs/data/`、公開JSON・CSV、計算結果、内部スコアカード、scope境界 |
+| 人間ゲート | 外部連絡・利用者テスト依頼・応募・BODIK・新原本採用0、利用者検証は`HUMAN_GATE_PENDING` |
+| 正本 | `evidence/20260819_work1_site_clarity_before_user_evaluation_correction_local_acceptance.json` |
+| 判定 | `LOCAL_GO`。次はcommit・同一HEADの4 workflow・公開byte・PC/スマホ受入 |
+
 ## WORK1-AWARD-SCORECARD-RECALIBRATION-5 ローカル検証（2026-08-19）
 
 | 検証 | 結果 |

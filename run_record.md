@@ -1606,3 +1606,28 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   利用者検証はサイト明瞭性確認と作成者本人の開始承認まで`HUMAN_GATE_PENDING`を維持する。
 - 次段階は変更を伴わない`WORK1-AWARD-SCORECARD-RECALIBRATION-5-AUDIT-1`だけとし、開始しない。
   本記録commit自身の4 workflowは外部読戻しし、post-commit IDは自己参照を避けてrepoへ再書込みしない。
+
+### 改訂点（rev.84）
+
+- 基準HEAD `952987fd6f06c5dd63351ea0c19fb024e5ece339`の公開サイト明瞭性監査は、
+  P0 0 / P1 1 / P2 2、NO_GO。主要な市町別導線は成立したが、検証状況の内部記録優先をP1、
+  市町選択より先に並ぶ詳しいGTFS表と、全市町共通でない比較工程の混在をP2とした。
+- 公開4ページへ「データを見る／作品を知る／協議前メモ／検証を確かめる」の同一ナビを追加し、
+  現在ページを明示した。
+- トップの県全体・同週比較・広域指標を、基本手順には必須でない閉じた詳しい分析へ分離した。
+  既存の`#supply-comparison`と`#jrbus-supply-metric`への直接リンクでは自動的に開く。
+- 応募説明を、市町選択、現在の範囲と不足、協議前メモの基本3段階へ整理し、詳しいGTFS分析を
+  全市町共通ではない任意工程として分離した。
+- 検証状況は、現在使えるもの、確認していること、まだ分からないことを先に示し、内部タスク名、
+  テスト履歴、SHA256、artifact等を初期状態で閉じた技術記録へ保持した。技術証拠は削除していない。
+- PC 1280×720で市町選択は文書Y座標約4,783から968へ上がり、検証状況の初期文書高は
+  約14,996pxから1,326pxへ縮小した。スマートフォン390×844を含む4ページで横overflow 0、
+  詳しい分析の直接リンク、技術記録開閉、防府市メモを確認した。
+- 専用7 / 7、関連82 / 82、全204 / 204、release attestation固定ハッシュ保護、scope checker、
+  `git diff --check`はsuccess。7原本、`data/`、`docs/data/`、公開値、計算結果、内部スコアカードは不変。
+- 作品②入力、外部連絡、利用者テスト依頼、UDC応募、BODIK登録、新原本取得・採用は各0。
+  利用者検証は公開受入と作成者本人の別承認まで`HUMAN_GATE_PENDING`を維持する。
+- ローカル正本は
+  `evidence/20260819_work1_site_clarity_before_user_evaluation_correction_local_acceptance.json`。
+  判定は`LOCAL_GO`。次は実装commitをmainへpushし、同一HEADの4 workflow、公開4 HTMLと
+  JRバスJSONのcommit bytes、PC・スマートフォン表示を受け入れる。
