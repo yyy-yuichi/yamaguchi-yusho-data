@@ -1,5 +1,30 @@
 # verification.md — I-1（3PDF統合）検証結果
 
+## WORK1-SUPPLY-SIDE-INFORMATION-GAP-PRESENTATION-SPEC-1 ローカル検証（2026-08-20）
+
+| 検証 | 結果 |
+|---|---|
+| 入力 | 情報モデル、665行行列、限定測定JSON、外部定性意見証拠の4入力、bytes・SHA-256一致 |
+| 行契約 | 19市町×35項目=665、重複0、欠落0、必須22フィールド |
+| 表示状態 | 公開中128、限定測定済み61、部分情報30、測定前提入力必要7、情報不足344、需要比較必要95 |
+| 情報条件 | 確認済み189、測定不足37、情報不足344、需要比較必要95 |
+| 公開境界 | 公開中128と内部測定済み61を分離。内部測定値の公開実装0 |
+| 欠損境界 | 測定不足37・情報不足344・需要比較必要95の0件・0%・不存在化0 |
+| detail spec | 測定8項目、61行、全result ID解決。測定値の仕様JSON内複製0 |
+| GTFS境界 | 測定42行をフィード全体として保持、市町境界フィルター・市町内配賦0 |
+| JRバス境界 | 24測定行の県外を含む広域値を関係4市へ配賦0 |
+| 文言・証拠 | 見出し、summary順、6状態文言、範囲badge、証拠欄、登録0件、禁止文言を固定 |
+| gap境界 | 情報不足と交通不足を分離、実運行・利便性・需要充足・`service_gap`判定0 |
+| 外部定性意見 | 具体的1件を表示方向だけに使用、行状態・測定・利用者テスト・共同設計への変換0 |
+| 決定性 | 連続2回の生成結果、保存済み内部JSONが完全byte一致 |
+| 専用回帰 | 16 / 16 success |
+| 全回帰 | 275件検出、275 / 275 success、終了コード0 |
+| scope・差分 | `WORK1_SCOPE_ALLOWED`、`git diff --check` success |
+| 不変対象 | 公開4 HTML、`docs/data/`、上流正本、7原本、既存公開値、内部スコアカードは開始HEADから不変 |
+| 境界 | 新原本、需要入力、認証付き・非公開アクセス、追加外部連絡、利用者テスト依頼、応募・BODIK、push・Pages各0 |
+| 正本 | `evidence/20260820_work1_supply_side_information_gap_presentation_spec_local_acceptance.json` |
+| 判定 | `LOCAL_GO`。次は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-1`だけ、未開始 |
+
 ## WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-BOUNDED-MEASUREMENT-1 ローカル検証（2026-08-20）
 
 | 検証 | 結果 |

@@ -1,5 +1,30 @@
 # PROGRESS
 
+## 2026-08-20 WORK1-SUPPLY-SIDE-INFORMATION-GAP-PRESENTATION-SPEC-1
+
+### 情報不足表示仕様・ローカル受入
+
+- 作成者の開始承認後、公開変更前の内部表示仕様を定義した。
+- 生成器は`src/build_supply_side_information_gap_presentation_spec.py`、内部正本は
+  `data/work1_supply_side_information_gap_presentation_spec.json`。固定4入力のbytes・SHA-256を持つ。
+- 19市町×35項目=665行を、公開中128、限定測定済み61、原本内部分情報30、測定前提入力必要7、
+  情報不足344、需要比較必要95へ一意に分解した。
+- 情報条件は確認済み189、測定不足37、情報不足344、需要比較必要95。確認できる情報、次に確認する情報、
+  生活・需要との比較が必要な情報を分け、情報不足を交通サービス不足へ変換しない。
+- 表示見出し、summary順、6状態文言、証拠欄、文字badge、登録0件、欠損値、禁止文言を仕様化した。
+- 測定済み8項目のdetail specを固定し、61行は測定値を複製せずresult IDを参照する。
+- GTFS42測定行はフィード全体値、JRバス中国24行は県外を含む広域値のまま保持し、市町内値へ配賦しない。
+- 測定不足37、情報不足344、需要比較必要95に0件・0%・不存在を作らず、`service_gap`判定は0。
+- 外部定性意見1件は表示方向だけに使い、行状態、測定、利用者テスト、共同設計、利用者価値には使っていない。
+- 専用16 / 16、全275 / 275、再生成byte一致、scope checker、`git diff --check`が成功した。
+- 公開4 HTML、`docs/data/`、上流正本、7原本、既存公開値、内部スコアカードは不変だった。
+- 新原本、需要比較入力、認証付き・非公開アクセス、追加外部連絡、利用者テスト依頼、UDC応募、
+  BODIK登録、push・Pages更新は各0。
+- ローカル正本は
+  `evidence/20260820_work1_supply_side_information_gap_presentation_spec_local_acceptance.json`。
+- 次段階は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-1`一つだけ。ローカル限定の表示を
+  公開前に検証する段階で、開始承認まで未開始とする。
+
 ## 2026-08-20 WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-BOUNDED-MEASUREMENT-1
 
 ### 受入原本内限定測定・ローカル受入

@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-20 (rev.91) / 状態: WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-BOUNDED-MEASUREMENT-1 LOCAL_GO / 次: WORK1-SUPPLY-SIDE-INFORMATION-GAP-PRESENTATION-SPEC-1（未開始）
+最終更新: 2026-08-20 (rev.92) / 状態: WORK1-SUPPLY-SIDE-INFORMATION-GAP-PRESENTATION-SPEC-1 LOCAL_GO / 次: WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-1（未開始）
 
 ## 0. このファイルについて
 
@@ -1788,3 +1788,28 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   `evidence/20260820_work1_supply_side_accepted_source_bounded_measurement_local_acceptance.json`。
 - 次段階は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-PRESENTATION-SPEC-1`だけ。市町別に何が不足しているかを
   誤解なく伝える内部表示仕様を定義する段階で、開始承認まで未開始とする。
+
+### 改訂点（rev.92）
+
+- 作成者の開始承認後、`WORK1-SUPPLY-SIDE-INFORMATION-GAP-PRESENTATION-SPEC-1`を実施した。
+- `src/build_supply_side_information_gap_presentation_spec.py`を追加し、情報モデル、665行行列、限定測定JSON、
+  外部定性意見証拠の固定4入力から`data/work1_supply_side_information_gap_presentation_spec.json`を決定的に生成する。
+- 19市町×35項目=665行を、公開中128、限定測定済み61、原本内部分情報30、測定前提入力必要7、
+  情報不足344、需要比較必要95の6表示状態へ一意に分解した。情報条件は確認済み189、測定不足37、
+  情報不足344、需要比較必要95。
+- 表示見出しを「確認できる情報と、次に必要な確認」とし、次に確認する情報、確認できる情報、
+  生活・需要との比較が必要な情報を分ける。状態名は色だけで伝えず、証拠・日付・範囲・次の確認・非主張を持つ。
+- 測定済み8項目のdetail specを固定し、61行は測定値を複製せずresult IDを参照する。GTFS42行はフィード全体、
+  JRバス中国24行は県外を含む広域値のまま、市町内値へ変換・配賦しない。
+- 測定不足37、情報不足344、需要比較必要95を0件・0%・不存在へ変換せず、登録0件を交通不存在、
+  予定値を実運行・利便性、各gapを`service_gap`へ変換していない。
+- 外部定性意見1件は「何が不足しているか」を明確にする方向の根拠だけに使い、行状態、測定入力、
+  正式利用者テスト、共同設計、利用者価値の証明には変換していない。
+- 専用16 / 16、全275 / 275、再生成byte一致、scope、`git diff --check`が成功。
+  公開4 HTML、`docs/data/`、上流正本、7原本、既存公開値、内部スコアカードは不変。
+- 新原本、需要比較入力、認証付き・非公開アクセス、追加外部連絡、利用者テスト依頼、UDC応募、
+  BODIK登録、push・Pages更新は各0。
+- ローカル正本は
+  `evidence/20260820_work1_supply_side_information_gap_presentation_spec_local_acceptance.json`。
+- 次段階は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-1`だけ。本仕様からローカル限定の
+  市町別表示を生成して公開前に検証する段階で、開始承認まで未開始とする。

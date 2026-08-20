@@ -1,0 +1,236 @@
+{
+  "schema_version": "WORK1-SUPPLY-SIDE-INFORMATION-GAP-PRESENTATION-SPEC-LOCAL-ACCEPTANCE-1",
+  "task_id": "WORK1-SUPPLY-SIDE-INFORMATION-GAP-PRESENTATION-SPEC-1",
+  "created_at": "2026-08-20T17:49:23+09:00",
+  "decision": "LOCAL_GO",
+  "start_approval": {
+    "approved_by": "creator",
+    "approved_on": "2026-08-20",
+    "approval_text": "承認",
+    "interpreted_task_id": "WORK1-SUPPLY-SIDE-INFORMATION-GAP-PRESENTATION-SPEC-1",
+    "approval_basis": "直前の完了報告で本taskを唯一の次段階として提示した直後の承認"
+  },
+  "baseline": {
+    "branch": "main",
+    "head": "45cb85bb9e5623557920c9039cdc27d0dc72435d",
+    "head_subject": "Measure accepted-source supply information",
+    "origin_main": "66b5aa7dd3b51dd5e32764a6d0f0c7d40fff0db1",
+    "ahead_of_origin_main": 4,
+    "baseline_worktree": "clean"
+  },
+  "goal_acceptance": {
+    "municipality_count": 19,
+    "category_count": 8,
+    "item_count_per_municipality": 35,
+    "municipality_item_row_count": 665,
+    "unique_row_count": 665,
+    "presentation_state_count": 6,
+    "measured_detail_spec_count": 8,
+    "input_file_count": 4,
+    "spec_status": "DEFINED_INTERNAL_NOT_IMPLEMENTED_PUBLICLY",
+    "deep_motivation_boundary": "intentionally_not_recorded_or_inferred"
+  },
+  "presentation_state_acceptance": {
+    "PUBLICLY_VISIBLE_CURRENT": 128,
+    "MEASURED_BOUNDED_INTERNAL": 61,
+    "MEASUREMENT_GAP_PARTIAL_SOURCE": 30,
+    "MEASUREMENT_GAP_ADDITIONAL_INPUT_REQUIRED": 7,
+    "INFORMATION_GAP_ADDITIONAL_SOURCE_REQUIRED": 344,
+    "DEMAND_COMPARATOR_REQUIRED": 95
+  },
+  "information_condition_acceptance": {
+    "CONFIRMED_INFORMATION": 189,
+    "MEASUREMENT_GAP": 37,
+    "INFORMATION_GAP": 344,
+    "DEMAND_COMPARATOR_REQUIRED": 95,
+    "service_gap_decision_count": 0
+  },
+  "presentation_contract_acceptance": {
+    "required_heading": "確認できる情報と、次に必要な確認",
+    "default_summary_order": [
+      "次に確認する情報",
+      "確認できる情報",
+      "生活・需要との比較が必要な情報"
+    ],
+    "status_conveyed_by_color_only": false,
+    "text_scope_badges_required": true,
+    "evidence_drawer_fields": [
+      "accepted_source_ids",
+      "evidence_date",
+      "source_scope_note",
+      "scope_note",
+      "next_confirmation",
+      "claim_boundary"
+    ],
+    "registered_zero_label": "4登録簿上の該当記載0件",
+    "registered_zero_interpreted_as_transport_absence": 0,
+    "measurement_or_information_gap_numeric_placeholders": 0,
+    "public_visible_and_internal_measured_merged": 0
+  },
+  "measured_detail_acceptance": {
+    "measured_item_count": 8,
+    "measured_row_count": 61,
+    "measurement_result_references_resolved": "61/61",
+    "measurement_values_copied_into_presentation_spec": 0,
+    "gtfs_measured_row_count": 42,
+    "gtfs_municipality_geometry_filtering": 0,
+    "gtfs_feed_wide_values_allocated_to_municipalities": 0,
+    "jrbus_chugoku_measured_row_count": 24,
+    "jrbus_chugoku_wide_values_allocated_to_four_municipalities": 0,
+    "scheduled_values_interpreted_as_actual_operation": 0
+  },
+  "external_qualitative_feedback_acceptance": {
+    "evidence_path": "evidence/20260820_work1_udc_yamaguchi_coordinator_qualitative_feedback.json",
+    "bytes": 2926,
+    "sha256": "36b17a281e1c095ea47f4f13846ba542a86c280dbb585e6535033362e3b9a84b",
+    "concrete_external_feedback_count": 1,
+    "directional_improvement_suggestion_count": 1,
+    "used_for_direction": "何が不足しているかを明確にする表示方向",
+    "used_to_assign_row_states": false,
+    "measurement_input": false,
+    "formal_user_test_result": false,
+    "co_design_result": false,
+    "user_value_validation": false,
+    "service_gap_validation": false,
+    "independent_slack_readback": false,
+    "permalink_recorded": false,
+    "original_timestamp_recorded": false
+  },
+  "spec_artifact": {
+    "path": "data/work1_supply_side_information_gap_presentation_spec.json",
+    "bytes": 1443839,
+    "sha256": "4ea0e2beb3fe42b0986a7dcf825cca9e1a7c81c4db593cc5a9036f8aaaf37d55",
+    "encoding": "UTF-8",
+    "line_ending": "LF",
+    "trailing_newline_count": 1,
+    "public_copy": false
+  },
+  "input_hashes": [
+    {
+      "path": "data/work1_supply_side_information_model.json",
+      "bytes": 31846,
+      "sha256": "95b49775f88e72c3179ee6c6a3397bf152ee69e6dc16603282a4a21e9153d674"
+    },
+    {
+      "path": "data/work1_supply_side_information_coverage_matrix.json",
+      "bytes": 648058,
+      "sha256": "5a8e3742818787470d7316c135d19b89e8a8c3c2c0172aff87f81efd9b2066ca"
+    },
+    {
+      "path": "data/work1_supply_side_accepted_source_bounded_measurement.json",
+      "bytes": 42346593,
+      "sha256": "dbe89862878a74e992bdce111df226801a602103ef44ea6163f204e676dbfbcc"
+    },
+    {
+      "path": "evidence/20260820_work1_udc_yamaguchi_coordinator_qualitative_feedback.json",
+      "bytes": 2926,
+      "sha256": "36b17a281e1c095ea47f4f13846ba542a86c280dbb585e6535033362e3b9a84b"
+    }
+  ],
+  "artifact_hashes": [
+    {
+      "path": "src/build_supply_side_information_gap_presentation_spec.py",
+      "bytes": 33081,
+      "sha256": "3f4586a4c883f1cc3fdb6a13d6cdfcbc8a809b461d8f75fdb4d5a88617b1d4de"
+    },
+    {
+      "path": "data/work1_supply_side_information_gap_presentation_spec.json",
+      "bytes": 1443839,
+      "sha256": "4ea0e2beb3fe42b0986a7dcf825cca9e1a7c81c4db593cc5a9036f8aaaf37d55"
+    },
+    {
+      "path": "tests/test_supply_side_information_gap_presentation_spec.py",
+      "bytes": 14514,
+      "sha256": "50266a7ea723a7666d82f7a867fda4062adb0143f7c1f54f2653d9db1b2a4f4d"
+    },
+    {
+      "path": "SPEC.md",
+      "bytes": 330065,
+      "sha256": "bf0e506cb1bb43c2a4a61c2fa0bd435c2aa2b162a6bae9a6abb88cc71d9b387d"
+    },
+    {
+      "path": "run_record.md",
+      "bytes": 155779,
+      "sha256": "0e7905e45c9533019caedd2d1beae67075202563cd0d31fef1b235707422e248"
+    },
+    {
+      "path": "PROGRESS.md",
+      "bytes": 250082,
+      "sha256": "c69b2b30717e674817f3f754f02fe792be0ee5150e6132a4bf4a2e2f49a0928b"
+    },
+    {
+      "path": "verification.md",
+      "bytes": 209771,
+      "sha256": "57da55aeca6f1790dcf86e1325ed74245bdd5b14bd7c10a56f610ba7a39ba255"
+    }
+  ],
+  "verification": {
+    "dedicated_tests": {
+      "command": "python -B -m unittest tests.test_supply_side_information_gap_presentation_spec -v",
+      "detected": 16,
+      "passed": 16,
+      "failed": 0
+    },
+    "full_tests": {
+      "command": "python -B -m unittest discover -s tests -q",
+      "detected": 275,
+      "passed": 275,
+      "failed": 0
+    },
+    "regeneration_byte_identical": true,
+    "work_scope": "WORK1_SCOPE_ALLOWED",
+    "git_diff_check": "success",
+    "protected_diff_count": 0,
+    "expected_changed_path_count": 8,
+    "implementation_correction": {
+      "initial_dedicated_result": "15/16",
+      "cause": "JRバス中国の非配賦文言が関係市町と一般化されていた",
+      "correction": "関係4市へ配賦しないと明示",
+      "final_dedicated_result": "16/16"
+    }
+  },
+  "unchanged_boundaries": [
+    "docs/index.html",
+    "docs/entry.html",
+    "docs/municipality-memo.html",
+    "docs/status.html",
+    "docs/data/",
+    "data/work1_supply_side_information_model.json",
+    "data/work1_supply_side_information_coverage_matrix.json",
+    "data/work1_supply_side_accepted_source_measurement_spec.json",
+    "data/work1_supply_side_accepted_source_bounded_measurement.json",
+    "data/source_freshness_manifest.json",
+    "data/operators.csv and data/operators.json",
+    "data/vehicles.csv and data/vehicles.json",
+    "raw/ accepted 4 registry PDFs and 3 GTFS ZIPs",
+    "existing public JSON and CSV values",
+    "data/work1_award_scorecard.json",
+    "AGENTS.md",
+    "work_scope.json",
+    "src/check_work_scope.py"
+  ],
+  "not_executed": {
+    "public_presentation_implementation": 0,
+    "new_original_search_download_or_adoption": 0,
+    "demand_comparator_input_search_or_adoption": 0,
+    "authenticated_or_nonpublic_data_access": 0,
+    "partial_or_additional_application_completion": 0,
+    "municipal_geometry_intersection": 0,
+    "external_contact_by_ai": 0,
+    "user_test_request": 0,
+    "udc_entry_or_submission": 0,
+    "bodik_registration": 0,
+    "public_site_change": 0,
+    "deployment_or_push": 0,
+    "pages_update": 0,
+    "out_of_scope_data_or_tool_input": 0
+  },
+  "next_stage": {
+    "task_id": "WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-1",
+    "status": "DEFINED_NOT_STARTED",
+    "goal": "本仕様からローカル限定の市町別表示プロトタイプを生成し、表示文言・粒度・範囲badgeを検証する。",
+    "boundary": "公開4ページ・docs/data・新原本・需要入力・service_gap判定を変更せず、外部公開前に停止する。",
+    "human_approval_required_to_start": true
+  },
+  "evidence_self_hash": "not_recorded_to_avoid_self_reference"
+}
