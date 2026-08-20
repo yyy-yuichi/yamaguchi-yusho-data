@@ -1,0 +1,319 @@
+{
+  "schema_version": "WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-BOUNDED-MEASUREMENT-LOCAL-ACCEPTANCE-1",
+  "task_id": "WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-BOUNDED-MEASUREMENT-1",
+  "created_at": "2026-08-20T17:23:18+09:00",
+  "decision": "LOCAL_GO",
+  "start_approval": {
+    "approved_by": "creator",
+    "approved_on": "2026-08-20",
+    "approved_task_id": "WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-BOUNDED-MEASUREMENT-1",
+    "external_qualitative_feedback_recording_approved": true,
+    "feedback_boundary_approved": "現状証拠として記録し、測定入力または利用者検証結果にはしない"
+  },
+  "baseline": {
+    "branch": "main",
+    "head": "761357dd95d2ef94d5853c359ec7d0c18067555b",
+    "head_subject": "Define accepted-source measurement specifications",
+    "origin_main": "66b5aa7dd3b51dd5e32764a6d0f0c7d40fff0db1",
+    "baseline_worktree": "clean"
+  },
+  "goal_acceptance": {
+    "ready_applications_expected": 61,
+    "ready_applications_measured": 61,
+    "measured_item_count": 8,
+    "normalized_measurement_result_count": 37,
+    "excluded_partial_source_applications": 30,
+    "excluded_additional_input_required_applications": 7,
+    "input_file_count": 13,
+    "accepted_original_count": 7,
+    "execution_status": "MEASURED_ACCEPTED_SOURCE_BOUNDED",
+    "deep_motivation_boundary": "intentionally_not_recorded_or_inferred"
+  },
+  "measurement_application_counts": {
+    "registered_service_area": 15,
+    "welfare_transport_eligibility": 4,
+    "gtfs_route_trip_structure": 7,
+    "gtfs_stop_and_coordinates": 7,
+    "gtfs_shape_and_trip_reference": 7,
+    "gtfs_service_calendar": 7,
+    "gtfs_timetable_stop_calls": 7,
+    "gtfs_time_band_frequency": 7
+  },
+  "registry_measurement_acceptance": {
+    "normalized_measurement_result_count": 19,
+    "registered_service_area_results": 15,
+    "welfare_transport_eligibility_results": 4,
+    "composite_key": "(source_pdf, registration_no)",
+    "original_page_locator": "source_pdf + source_page",
+    "retained_fields": [
+      "raw_service_areas",
+      "normalized_municipalities",
+      "office_pairs",
+      "welfare_transport_flag_raw_values"
+    ],
+    "registered_zero_interpreted_as_transport_absence": 0
+  },
+  "gtfs_measurement_acceptance": {
+    "normalized_measurement_result_count": 18,
+    "measurement_unit": "accepted_feed_whole",
+    "municipality_row_filtering": 0,
+    "feed_wide_values_allocated_to_municipalities": 0,
+    "jrbus_wide_values_allocated_to_four_municipalities": 0,
+    "feeds": [
+      {
+        "source_id": "gtfs_iwakuni_20260401",
+        "route_count": 46,
+        "trip_count": 267,
+        "stop_count": 800,
+        "shape_count": 157,
+        "shape_point_count": 33890,
+        "calendar_date_row_count": 365,
+        "active_date_count": 315,
+        "stop_call_count": 7362,
+        "time_band_frequency_group_count": 6583
+      },
+      {
+        "source_id": "gtfs_hikari_20260401",
+        "route_count": 7,
+        "trip_count": 63,
+        "stop_count": 172,
+        "shape_count": 23,
+        "shape_point_count": 8119,
+        "calendar_date_row_count": 365,
+        "active_date_count": 365,
+        "stop_call_count": 1344,
+        "time_band_frequency_group_count": 1277
+      },
+      {
+        "source_id": "gtfs_jrbus_chugoku_20260813",
+        "route_count": 18,
+        "trip_count": 1113,
+        "stop_count": 891,
+        "shape_count": 100,
+        "shape_point_count": 39428,
+        "calendar_date_row_count": 185,
+        "active_date_count": 185,
+        "stop_call_count": 35515,
+        "time_band_frequency_group_count": 24343
+      }
+    ],
+    "retained_structures": [
+      "route_and_trip_records",
+      "stop_records_and_coordinates",
+      "ordered_shape_points_and_trip_references",
+      "calendar_and_calendar_dates_active_service_ids",
+      "normalized_stop_call_templates",
+      "time_band_frequency_templates"
+    ],
+    "date_normalization": "active_service_by_date joins date-level active service IDs to service_id templates without date-by-stop duplication"
+  },
+  "measurement_boundary_acceptance": {
+    "partial_source_applications_completed_by_inference": 0,
+    "additional_input_required_applications_completed_by_inference": 0,
+    "new_originals_used": 0,
+    "gtfs_access_status_interpreted_as_transport_presence_or_quality": 0,
+    "automatic_service_gap_decisions": 0,
+    "demand_comparator_used": 0,
+    "public_measurement_values": 0
+  },
+  "external_qualitative_feedback_acceptance": {
+    "evidence_path": "evidence/20260820_work1_udc_yamaguchi_coordinator_qualitative_feedback.json",
+    "bytes": 2926,
+    "sha256": "36b17a281e1c095ea47f4f13846ba542a86c280dbb585e6535033362e3b9a84b",
+    "record_count": 1,
+    "source_role": "UDC山口支部コーディネーター",
+    "source_character": "個人的に触った感想",
+    "capture_method": "creator_supplied_transcription",
+    "independent_slack_readback": false,
+    "permalink_recorded": false,
+    "timestamp_recorded": false,
+    "concrete_external_feedback_count": 1,
+    "directional_suggestion_count": 1,
+    "measurement_input": false,
+    "measurement_value": false,
+    "formal_user_test_result": false,
+    "co_design_result": false,
+    "confirmation_memo_workflow_validation": false,
+    "user_value_validation": false,
+    "service_gap_decision": false
+  },
+  "measurement_artifact": {
+    "path": "data/work1_supply_side_accepted_source_bounded_measurement.json",
+    "bytes": 42346593,
+    "sha256": "dbe89862878a74e992bdce111df226801a602103ef44ea6163f204e676dbfbcc",
+    "encoding": "UTF-8",
+    "line_ending": "LF",
+    "trailing_newline_count": 1,
+    "public_copy": false
+  },
+  "input_hashes": [
+    {
+      "path": "data/work1_supply_side_accepted_source_measurement_spec.json",
+      "bytes": 365265,
+      "sha256": "39e56df283d39999b5f43e4c0b28190db7cc67644cdf137df5b9d7515b400e79"
+    },
+    {
+      "path": "data/work1_supply_side_information_model.json",
+      "bytes": 31846,
+      "sha256": "95b49775f88e72c3179ee6c6a3397bf152ee69e6dc16603282a4a21e9153d674"
+    },
+    {
+      "path": "data/work1_supply_side_information_coverage_matrix.json",
+      "bytes": 648058,
+      "sha256": "5a8e3742818787470d7316c135d19b89e8a8c3c2c0172aff87f81efd9b2066ca"
+    },
+    {
+      "path": "data/source_freshness_manifest.json",
+      "bytes": 3290,
+      "sha256": "c142628be53be8b22d1308ef561146b53b6cc78052af7b1090ef0e262ce08611"
+    },
+    {
+      "path": "data/operators.csv",
+      "bytes": 72919,
+      "sha256": "8887da8a78b50840522ca190404c395ad682b2943d02363fe97ce3b6a989ab1f"
+    },
+    {
+      "path": "data/vehicles.csv",
+      "bytes": 11926,
+      "sha256": "519569d228850a903d8eab4a8ac3b80f3bdc9ee5ac2228bd8000cfa029eeaf7f"
+    },
+    {
+      "path": "raw/000230003.pdf",
+      "bytes": 19003,
+      "sha256": "d215cada64ce8d174ec22cb521379734da185b7616f29b27166dfccf701af1ab"
+    },
+    {
+      "path": "raw/000268896.pdf",
+      "bytes": 149313,
+      "sha256": "ece80864a99fc392dec0c279fe92f3609a43c11ce32178ced0cd60839c9b6177"
+    },
+    {
+      "path": "raw/000271730.pdf",
+      "bytes": 136476,
+      "sha256": "86b3e32f3d3017cba613d644102f262a0a0cb2761925718ce9eea12e71a9add1"
+    },
+    {
+      "path": "raw/000359215.pdf",
+      "bytes": 393922,
+      "sha256": "3107e8555aefe86527d482422977c050b4514cb06b0f077187cdec4f38a2c66b"
+    },
+    {
+      "path": "raw/gtfs/iwakuni_gtfsjp_20260401.zip",
+      "bytes": 719723,
+      "sha256": "d236a58ff4a0edb4812a8bed543d4897670441164a1019e88d5e35ded5052de2"
+    },
+    {
+      "path": "raw/gtfs/hikari_gtfs_20260401.zip",
+      "bytes": 86273,
+      "sha256": "f3403ebaf481805fff0e2316be3a986732f443a06a64eab5b579ea17191adde7"
+    },
+    {
+      "path": "raw/gtfs/jrbus_chugoku_gtfs_20260813.zip",
+      "bytes": 1863715,
+      "sha256": "9162224158a8a748d0365e850f2c0575c845a98063b7a469912c0a15b9201620"
+    }
+  ],
+  "artifact_hashes": [
+    {
+      "path": "src/build_supply_side_accepted_source_bounded_measurement.py",
+      "bytes": 50318,
+      "sha256": "69b4edfe1c41c357004a5b80616e6e9de123529982dd14a906afc0f134085783"
+    },
+    {
+      "path": "data/work1_supply_side_accepted_source_bounded_measurement.json",
+      "bytes": 42346593,
+      "sha256": "dbe89862878a74e992bdce111df226801a602103ef44ea6163f204e676dbfbcc"
+    },
+    {
+      "path": "tests/test_supply_side_accepted_source_bounded_measurement.py",
+      "bytes": 16987,
+      "sha256": "fd71abf0ece1b4c8d966dca0f2f64481f60d9b12e7064e002aa2657da70e0226"
+    },
+    {
+      "path": "evidence/20260820_work1_udc_yamaguchi_coordinator_qualitative_feedback.json",
+      "bytes": 2926,
+      "sha256": "36b17a281e1c095ea47f4f13846ba542a86c280dbb585e6535033362e3b9a84b"
+    },
+    {
+      "path": "SPEC.md",
+      "bytes": 320877,
+      "sha256": "04598bf52872b0521ed2957692b815442ebf35c91925066952a413e490f1a4dc"
+    },
+    {
+      "path": "run_record.md",
+      "bytes": 153337,
+      "sha256": "9b93795cae959d19448945d760ca0df4a780ca02d19f494a54d9a5ba46bf45b1"
+    },
+    {
+      "path": "PROGRESS.md",
+      "bytes": 247815,
+      "sha256": "0c3d93fbd1404e91ae240d53c3a78e91a125ec1d9f8c577990d1942b3cd4f581"
+    },
+    {
+      "path": "verification.md",
+      "bytes": 207554,
+      "sha256": "b59ac4276105d225b913d38c2b8fe7158c6d560a8f8bfd793cc53ee436a99843"
+    }
+  ],
+  "verification": {
+    "dedicated_tests": {
+      "command": "python -B -m unittest tests.test_supply_side_accepted_source_bounded_measurement -v",
+      "detected": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "full_tests": {
+      "command": "python -B -m unittest discover -s tests -q",
+      "detected": 259,
+      "passed": 259,
+      "failed": 0
+    },
+    "regeneration_byte_identical": true,
+    "work_scope": "WORK1_SCOPE_ALLOWED",
+    "git_diff_check": "success",
+    "protected_diff_count": 0,
+    "accepted_source_bytes_sha_match": "7/7",
+    "expected_changed_path_count": 9
+  },
+  "unchanged_boundaries": [
+    "docs/index.html",
+    "docs/entry.html",
+    "docs/municipality-memo.html",
+    "docs/status.html",
+    "docs/data/",
+    "data/work1_supply_side_information_model.json",
+    "data/work1_supply_side_information_coverage_matrix.json",
+    "data/work1_supply_side_accepted_source_measurement_spec.json",
+    "data/source_freshness_manifest.json",
+    "data/operators.csv and data/operators.json",
+    "data/vehicles.csv and data/vehicles.json",
+    "raw/ accepted 4 registry PDFs and 3 GTFS ZIPs",
+    "existing public JSON and CSV values",
+    "data/work1_award_scorecard.json",
+    "AGENTS.md",
+    "work_scope.json",
+    "src/check_work_scope.py"
+  ],
+  "not_executed": {
+    "new_original_search_download_or_adoption": 0,
+    "authenticated_or_nonpublic_data_access": 0,
+    "partial_or_additional_application_completion": 0,
+    "municipal_geometry_intersection": 0,
+    "external_contact_by_ai": 0,
+    "user_test_request": 0,
+    "udc_entry_or_submission": 0,
+    "bodik_registration": 0,
+    "public_site_change": 0,
+    "deployment_or_push": 0,
+    "pages_update": 0,
+    "out_of_scope_data_or_tool_input": 0
+  },
+  "next_stage": {
+    "task_id": "WORK1-SUPPLY-SIDE-INFORMATION-GAP-PRESENTATION-SPEC-1",
+    "status": "DEFINED_NOT_STARTED",
+    "goal": "測定済み情報、information_gap、measurement_gapを誤読なく内部表示する仕様を、公開変更前に確定する。",
+    "boundary": "公開4ページを変更せず、service_gapを判定せず、新原本または需要比較入力を追加しない。",
+    "human_approval_required_to_start": true
+  },
+  "evidence_self_hash": "not_recorded_to_avoid_self_reference"
+}

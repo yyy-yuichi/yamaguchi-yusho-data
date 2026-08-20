@@ -1,5 +1,30 @@
 # PROGRESS
 
+## 2026-08-20 WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-BOUNDED-MEASUREMENT-1
+
+### 受入原本内限定測定・ローカル受入
+
+- 作成者の開始承認後、`READY_FOR_BOUNDED_MEASUREMENT` 61 applicationだけを内部測定した。
+- 生成器は`src/build_supply_side_accepted_source_bounded_measurement.py`、内部正本は
+  `data/work1_supply_side_accepted_source_bounded_measurement.json`。測定仕様＋固定12入力の13 hashを持つ。
+- 測定対象は8項目、application 61、正規化result 37。登録簿は市町対応済み19 result、
+  3 GTFSはフィード単位の6項目×3=18 resultとして一度だけ保持した。
+- `PARTIAL_SOURCE_ONLY` 30と`ADDITIONAL_INPUT_REQUIRED` 7は除外し、値・0件・0%へ補完していない。
+- GTFSは日付別active service_idとservice_id別予定templateの正規形で保持し、全日付×全停留所の重複展開、
+  市町境界フィルター、市町内供給量への配賦を行っていない。JRバス中国広域値も4市へ配賦していない。
+- 登録区域・福祉対象、GTFS路線・stop・shape・運行予定・時刻・頻度から、実運行、現在利用可能性、
+  需要充足、サービス不存在、`service_gap`を判定していない。
+- UDC山口支部コーディネーターの個人的操作感想を具体的外部定性意見1件として別証拠へ固定した。
+  測定入力、正式利用者テスト、共同設計、関係者多様性、協議前メモの実務検証には変換していない。
+- 専用15 / 15、全259 / 259、再生成byte一致、scope checker、`git diff --check`が成功した。
+- 公開4 HTML、`docs/data/`、上流正本、7原本、既存公開値、内部スコアカードは不変だった。
+- 新原本、認証付き・非公開アクセス、追加外部連絡、利用者テスト依頼、UDC応募、BODIK登録、
+  push・Pages更新は各0。
+- ローカル正本は
+  `evidence/20260820_work1_supply_side_accepted_source_bounded_measurement_local_acceptance.json`。
+- 次段階は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-PRESENTATION-SPEC-1`一つだけ。市町別に何が不足しているかを
+  誤解なく伝える内部表示仕様の定義段階で、開始承認まで未開始とする。
+
 ## 2026-08-19 WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-MEASUREMENT-SPEC-1
 
 ### 受入原本内測定仕様・ローカル受入

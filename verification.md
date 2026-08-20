@@ -1,5 +1,28 @@
 # verification.md — I-1（3PDF統合）検証結果
 
+## WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-BOUNDED-MEASUREMENT-1 ローカル検証（2026-08-20）
+
+| 検証 | 結果 |
+|---|---|
+| 入力 | 測定仕様1＋同仕様の固定12入力＝13、bytes・SHA-256一致 |
+| 対象 | `READY_FOR_BOUNDED_MEASUREMENT` 61 / 61、8項目 |
+| 除外 | `PARTIAL_SOURCE_ONLY` 30、`ADDITIONAL_INPUT_REQUIRED` 7、測定値への補完0 |
+| 内部結果 | `MEASURED_BOUNDED` application 61、正規化result 37 |
+| 登録簿 | 市町対応済み区域15＋福祉対象4＝19 result、複合キー・source_page・原文・事務所対を保持 |
+| GTFS | 3フィード×6項目＝18 result、路線・stop・shape・calendar・stop call・時間帯予定を保持 |
+| 日付正規形 | 日付別active service_idとservice_id別予定templateを結合して日付粒度を再現 |
+| フィード境界 | 市町境界フィルター0、市町内供給量配賦0、JRバス中国広域値の4市配賦0 |
+| gap境界 | 実運行・現在利用可能性・需要充足・サービス不存在・`service_gap`判定0 |
+| 外部定性意見 | 具体的意見1件を別証拠化、測定入力・利用者テスト・共同設計への変換0 |
+| 決定性 | 連続2回の生成結果、保存済み内部JSONが完全byte一致 |
+| 専用回帰 | 15 / 15 success |
+| 全回帰 | 259件検出、259 / 259 success、終了コード0 |
+| scope・差分 | `WORK1_SCOPE_ALLOWED`、`git diff --check` success |
+| 不変対象 | 公開4 HTML、`docs/data/`、上流正本、7原本、既存公開値、内部スコアカードは開始HEADから不変 |
+| 境界 | 新原本、認証付き・非公開アクセス、追加外部連絡、利用者テスト依頼、応募・BODIK、push・Pages各0 |
+| 正本 | `evidence/20260820_work1_supply_side_accepted_source_bounded_measurement_local_acceptance.json` |
+| 判定 | `LOCAL_GO`。次は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-PRESENTATION-SPEC-1`だけ、未開始 |
+
 ## WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-MEASUREMENT-SPEC-1 ローカル検証（2026-08-19）
 
 | 検証 | 結果 |

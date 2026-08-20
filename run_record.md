@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-19 (rev.90) / 状態: WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-MEASUREMENT-SPEC-1 LOCAL_GO / 次: WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-BOUNDED-MEASUREMENT-1（未開始）
+最終更新: 2026-08-20 (rev.91) / 状態: WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-BOUNDED-MEASUREMENT-1 LOCAL_GO / 次: WORK1-SUPPLY-SIDE-INFORMATION-GAP-PRESENTATION-SPEC-1（未開始）
 
 ## 0. このファイルについて
 
@@ -1762,3 +1762,29 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   `evidence/20260819_work1_supply_side_accepted_source_measurement_spec_local_acceptance.json`。
 - 次段階は`WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-BOUNDED-MEASUREMENT-1`だけ。限定測定可能61行を
   仕様どおり内部測定する段階で、開始承認まで未開始とする。
+
+### 改訂点（rev.91）
+
+- 作成者の開始承認後、`WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-BOUNDED-MEASUREMENT-1`を実施した。
+- `src/build_supply_side_accepted_source_bounded_measurement.py`を追加し、測定仕様JSONと同仕様が固定した
+  12入力、計13入力から`data/work1_supply_side_accepted_source_bounded_measurement.json`を決定的に生成する。
+- 限定測定可能61 application・8項目だけを`MEASURED_BOUNDED`とし、正規化resultは37。
+  部分情報30と追加入力必要7は測定値へ含めず、0件・0%・不存在へ変換していない。
+- 4登録簿は市町対応済み区域15 result・福祉対象4 resultを、`(source_pdf, registration_no)`複合キー、
+  source_page、原文区域、市町名リスト、事務所対、福祉7フラグ原値付きで保持した。
+- 3 GTFSは各フィードの路線、stop、shape、calendar、stop call、時間帯予定を各1回、計18 resultとして保持。
+  日付別active service_idとservice_id別予定templateの正規形で、日付粒度を決定的に再現する。
+- GTFSの市町境界フィルター・市町内供給量配賦は各0。JRバス中国の県外を含む広域値を関係4市へ
+  配賦せず、関係市町は同じフィード全体result IDを参照する。
+- 登録値・予定値から実運行、現在利用可能性、需要充足、サービス不存在、`service_gap`を判定していない。
+- UDC山口支部コーディネーターの個人的操作感想を具体的外部定性意見1件として
+  `evidence/20260820_work1_udc_yamaguchi_coordinator_qualitative_feedback.json`へ記録した。測定入力、
+  正式利用者テスト、共同設計、関係者多様性、協議前メモの実務検証には変換していない。
+- 専用15 / 15、全259 / 259、再生成byte一致、scope、`git diff --check`が成功。
+  公開4 HTML、`docs/data/`、上流正本、7原本、既存公開値、内部スコアカードは不変。
+- 新原本探索・取得・採用、認証付き・非公開アクセス、追加外部連絡、利用者テスト依頼、UDC応募、
+  BODIK登録、push・Pages更新は各0。
+- ローカル正本は
+  `evidence/20260820_work1_supply_side_accepted_source_bounded_measurement_local_acceptance.json`。
+- 次段階は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-PRESENTATION-SPEC-1`だけ。市町別に何が不足しているかを
+  誤解なく伝える内部表示仕様を定義する段階で、開始承認まで未開始とする。

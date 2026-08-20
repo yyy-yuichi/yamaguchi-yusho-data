@@ -1,0 +1,45 @@
+{
+  "schema_version": "WORK1-EXTERNAL-QUALITATIVE-FEEDBACK-1",
+  "recorded_on": "2026-08-20",
+  "work_id": "WORK1",
+  "record_type": "EXTERNAL_QUALITATIVE_FEEDBACK",
+  "source": {
+    "channel": "UDC participant Slack channel",
+    "role": "UDC Yamaguchi branch coordinator",
+    "stance": "personal hands-on impression",
+    "capture_method": "creator_supplied_transcription_in_chat",
+    "message_permalink": null,
+    "original_message_timestamp": null,
+    "independent_slack_readback": false
+  },
+  "verbatim_feedback": "・作品①の確認メモのような事前整理が、地域交通の協議で必要とされているか\nについて、私が個人的に触ってみた感想でよろしければいくつか…(別途このチャンネルでご相談でも構いません:man-gesturing-ok:)\n作品①：地域交通\n山口県内のGTFSのデータだけでなく、自家用有償旅客運送もカバーできているのが素晴らしいです。\n地域交通を考える上で、山中間地域などバスなどでカバーできないことも大いに考えられるので、この視点はとても重要だなと感じています。\nこのアプリは「足りている情報」を検索できているので、逆に「何が足りていないのか？」がはっきり分かるようになると、良いかなと思いました。",
+  "observations": [
+    "GTFSと自家用有償旅客運送を併せて扱う視点が認識・評価された。",
+    "バスだけでは捉えきれない地域交通を扱う必要性が個人的感想として示された。",
+    "現在の公開物は確認できる情報を検索するものと受け取られた。",
+    "何が不足しているかを明確にする方向が改善意見として示された。"
+  ],
+  "evidence_classification": {
+    "concrete_external_feedback_count": 1,
+    "directional_improvement_suggestion_count": 1,
+    "formal_user_test": false,
+    "observed_task_completion": false,
+    "co_design_established": false,
+    "stakeholder_diversity_validated": false,
+    "pre_discussion_memo_workflow_validated": false,
+    "service_gap_validated": false
+  },
+  "measurement_separation": {
+    "used_as_bounded_measurement_input": false,
+    "used_to_create_or_modify_measurement_values": false,
+    "listed_in_bounded_measurement_input_hashes": false,
+    "reason": "本記録は方向性に関する外部定性意見であり、受入済み7原本の測定値を裏づける原本ではない。"
+  },
+  "claim_boundary": "個人の具体的感想1件として記録する。地域交通協議での実務利用、利用者価値、共同設計、関係者多様性、交通不足、需要充足を証明したとは扱わない。",
+  "authorized_actions": {
+    "record_as_current_evidence": true,
+    "external_reply_sent_by_ai": false,
+    "public_site_change": false,
+    "measurement_input_change": false
+  }
+}

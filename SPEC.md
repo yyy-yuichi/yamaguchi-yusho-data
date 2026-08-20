@@ -4451,3 +4451,120 @@ UDC応募、BODIK登録、push・Pages更新を行わない。作品①と無関
 - 市町境界入力なしで空間範囲7行を数値化する必要が生じる
 - フィード全体値を市町値へ配賦する必要が生じる
 - 実サービス不足、需要充足、現在利用可能性を断定する必要が生じる
+
+## 47. WORK1-SUPPLY-SIDE-ACCEPTED-SOURCE-BOUNDED-MEASUREMENT-1
+
+### 47.1 開始承認と段階ゴール
+
+2026-08-20に作成者の開始承認を受けた。本段階は§46の
+`READY_FOR_BOUNDED_MEASUREMENT` 61 applicationだけを対象に、受入済み7原本と受入済み派生列から
+限定測定値を決定的に生成する。`PARTIAL_SOURCE_ONLY` 30 applicationと
+`ADDITIONAL_INPUT_REQUIRED` 7 applicationは値へ補完しない。
+
+本段階の値は受入原本に記録された路線、乗降場所、形状、運行予定、登録区域、福祉対象フラグの
+限定測定である。実運行、現在利用可能性、利便性、需要充足、交通不存在、`service_gap`は測定しない。
+
+### 47.2 入力・生成器・内部出力
+
+生成器は`src/build_supply_side_accepted_source_bounded_measurement.py`、内部出力は
+`data/work1_supply_side_accepted_source_bounded_measurement.json`とする。入力は§46の内部測定仕様JSONと、
+同仕様が固定した12入力の計13ファイルで、bytes・SHA-256をすべて内部出力へ固定する。
+
+外部定性意見は
+`evidence/20260820_work1_udc_yamaguchi_coordinator_qualitative_feedback.json`へ別記録し、13入力へ含めず、
+測定値の生成・変更に使用しない。
+
+内部出力は次を持つ。
+
+- 測定対象情報項目: 8
+- `MEASURED_BOUNDED`市町×項目application: 61
+- 正規化measurement result: 37
+- 除外`PARTIAL_SOURCE_ONLY`: 30
+- 除外`ADDITIONAL_INPUT_REQUIRED`: 7
+- 入力ハッシュ: 13
+
+### 47.3 登録簿限定測定
+
+登録簿は15市町の区域・事務所applicationと4市町の福祉対象application、計19 resultを市町対応済み記録から
+生成する。`(source_pdf, registration_no)`複合キー、`source_page`、原文区域、市町名リスト、事務所名・所在地の
+対応を保持する。福祉対象はイ〜ト7列の原値`0`・`1`・未記載だけを保持する。
+
+登録区域は現在の実運行区域・予約受付区域を保証しない。福祉対象フラグは会員条件、予約条件、配車可能性、
+利用資格の完全な判定ではない。複数市町を含む登録記録は既存の市町トークン一致で参照するだけで、車両数・
+供給量を比例配賦しない。
+
+### 47.4 GTFS限定測定と正規形
+
+3 GTFSについて、次の6項目を各フィード1回、計18 resultとして測定する。
+
+| 項目 | 内部値 | 範囲 |
+|---|---|---|
+| 路線ID・名称・系統 | route記録、trip参照 | 受入フィード全体 |
+| 乗降場所名・座標 | stop記録、座標、のりば属性 | 同上 |
+| 経路形状 | shape_id別順序付き点列、trip参照 | 同上 |
+| 運行日 | feed期間、calendar規則、例外日、日付別active service_id | 同上 |
+| 停留所別時刻 | service_id付き予定stop call template | 同上 |
+| 時間帯頻度 | service_id・route・stop・1時間帯別予定発車template | 同上 |
+
+予定時刻と時間帯頻度は、全日付×全停留所へ重複展開しない。日付別`active_service_id`と、
+`service_id`別の予定stop call・時間帯templateを決定的に結合して日付粒度を再現する正規形とする。
+これはデータ量を抑えるための表現上の正規化であり、予定値の省略・推測ではない。
+
+GTFS resultは市町境界で行フィルターせず、関係市町applicationが同じフィード全体result IDを参照する。
+光市GTFSを周南市へ、JRバス中国を関係4市へ適用しても、市町内供給量へ配賦しない。特にJRバス中国は
+県外を含む広域値のまま保持する。
+
+### 47.5 外部定性意見の記録境界
+
+UDC山口支部コーディネーターから、個人的な操作感想として具体的な外部定性意見1件が作成者へ届いた。
+GTFSと自家用有償旅客運送を併せて扱う視点が評価され、「確認できる情報」に加えて「何が不足しているか」を
+明確にする方向が提案された。
+
+これは方向性に関する具体的意見1件として扱う。正式利用者テスト、観察付きタスク完了、共同設計、関係者
+多様性、協議前確認メモの実務利用、サービス不足の証明には変換しない。Slackの独立読戻し、permalink、
+原投稿時刻は未取得で、作成者が会話へ転記した本文を根拠とする。AIからの外部返信は行っていない。
+
+### 47.6 変更範囲と禁止事項
+
+変更・追加できるのは次だけとする。
+
+- `src/build_supply_side_accepted_source_bounded_measurement.py`
+- `data/work1_supply_side_accepted_source_bounded_measurement.json`
+- `tests/test_supply_side_accepted_source_bounded_measurement.py`
+- `evidence/20260820_work1_udc_yamaguchi_coordinator_qualitative_feedback.json`
+- `evidence/20260820_work1_supply_side_accepted_source_bounded_measurement_local_acceptance.json`
+- `SPEC.md`、`run_record.md`、`PROGRESS.md`、`verification.md`
+
+公開4 HTML、`docs/data/`、情報モデル、カバレッジ行列、測定仕様、入力CSV、7原本、既存公開値、
+内部スコアカード、作品①scope境界を変更しない。新原本探索・取得・採用、認証付き・非公開データ、
+追加外部連絡、利用者テスト依頼、UDC応募、BODIK登録、push・Pages更新を行わない。
+
+### 47.7 完了条件
+
+1. 61 ready applicationだけを重複・欠落なく`MEASURED_BOUNDED`へ対応づける。
+2. 部分情報30と追加入力必要7を測定値へ含めず、0・不存在へ変換しない。
+3. 登録簿19 resultが複合キー、原本ページ、市町トークン一致、原文区域、事務所対応を保持する。
+4. GTFS18 resultが路線、stop、shape、calendar、stop call、時間帯予定をフィード単位で保持する。
+5. GTFS全体resultを複数市町で共有し、市町境界フィルター・供給量配賦を行わない。
+6. JRバス中国の広域値を関係4市へ配賦しない。
+7. 予定値・登録値から実運行、利用可能性、需要充足、サービス不存在、`service_gap`を判定しない。
+8. 外部定性意見1件を別証拠へ固定し、測定入力・利用者テスト・共同設計へ変換しない。
+9. 同じ13入力から完全byte一致で内部測定JSONを再生成できる。
+10. 専用15 / 15、全259 / 259、scope checker、`git diff --check`を成功させる。
+11. 公開4 HTML、`docs/data/`、上流正本、7原本、既存公開値、内部スコアカードを開始HEADから不変にする。
+12. 新原本、追加外部連絡、利用者テスト依頼、応募・登録、push・Pages更新を各0とする。
+
+### 47.8 次段階と停止条件
+
+次段階は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-PRESENTATION-SPEC-1`だけとする。測定済み、測定不足、
+情報不足、需要比較必要を混同せず、市町別に「何が不足しているか」を伝える内部表示仕様を定義する段階で、
+開始承認まで`DEFINED_NOT_STARTED`とする。外部定性意見1件は方向性の根拠としてだけ参照し、この段階でも
+公開4ページをまだ変更しない。
+
+次の場合は停止する。
+
+- 部分情報30または追加入力必要7を完全な測定値へ読み替える必要が生じる
+- GTFS全体値を市町内値へ変換・配賦する必要が生じる
+- 新原本、市町境界、需要入力が必要になる
+- 外部意見1件を利用者検証済み・共同設計済みへ読み替える必要が生じる
+- 公開ページ変更、外部連絡、応募・登録、pushが必要になる
