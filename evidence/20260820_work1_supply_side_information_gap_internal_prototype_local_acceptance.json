@@ -1,0 +1,263 @@
+{
+  "schema_version": "WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-LOCAL-ACCEPTANCE-1",
+  "task_id": "WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-1",
+  "created_at": "2026-08-20T18:16:10+09:00",
+  "decision": "LOCAL_GO",
+  "start_approval": {
+    "approved_by": "creator",
+    "approved_on": "2026-08-20",
+    "approval_text": "承認。スマホからのリモートなので、完了後テキストでDAG",
+    "interpreted_task_id": "WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-1",
+    "text_dag_required_on_completion": true
+  },
+  "baseline": {
+    "branch": "main",
+    "head": "9c5ed833dcbb7472c6617a09ba83f06b4a4c8456",
+    "head_subject": "Define information-gap presentation specification",
+    "origin_main": "66b5aa7dd3b51dd5e32764a6d0f0c7d40fff0db1",
+    "ahead_of_origin_main": 5,
+    "baseline_worktree": "clean"
+  },
+  "goal_acceptance": {
+    "input_file_count": 1,
+    "municipality_count": 19,
+    "category_count": 8,
+    "item_count_per_municipality": 35,
+    "row_count": 665,
+    "unique_row_count": 665,
+    "presentation_state_count": 6,
+    "prototype_status": "LOCAL_ONLY_NOT_PUBLIC",
+    "single_self_contained_html": true,
+    "deep_motivation_boundary": "intentionally_not_recorded_or_inferred"
+  },
+  "presentation_state_acceptance": {
+    "PUBLICLY_VISIBLE_CURRENT": 128,
+    "MEASURED_BOUNDED_INTERNAL": 61,
+    "MEASUREMENT_GAP_PARTIAL_SOURCE": 30,
+    "MEASUREMENT_GAP_ADDITIONAL_INPUT_REQUIRED": 7,
+    "INFORMATION_GAP_ADDITIONAL_SOURCE_REQUIRED": 344,
+    "DEMAND_COMPARATOR_REQUIRED": 95,
+    "reclassified_row_count": 0
+  },
+  "screen_and_interaction_acceptance": {
+    "internal_only_banner": true,
+    "required_heading": "確認できる情報と、次に必要な確認",
+    "information_gap_and_service_gap_separated": true,
+    "registered_zero_qualified": true,
+    "municipality_select_option_count": 19,
+    "filter_count": 4,
+    "default_filter": "NEXT_CONFIRMATION",
+    "summary_count": 3,
+    "state_legend_count": 6,
+    "category_count": 8,
+    "evidence_required_field_count": 6,
+    "evidence_required_fields": [
+      "受入原本ID",
+      "証拠日",
+      "範囲",
+      "次の確認",
+      "表示ルール",
+      "非主張"
+    ],
+    "shimonoseki_initial": {
+      "next_confirmation_count": 22,
+      "confirmed_information_count": 8,
+      "demand_comparator_count": 5,
+      "visible_item_count": 22
+    },
+    "iwakuni_all_items": {
+      "visible_item_count": 35,
+      "category_count": 8,
+      "evidence_details_opened": 1,
+      "evidence_required_fields_read_back": "6/6"
+    }
+  },
+  "self_containment_acceptance": {
+    "external_url_count": 0,
+    "external_script_count": 0,
+    "external_stylesheet_count": 0,
+    "fetch_call_count": 0,
+    "xhr_call_count": 0,
+    "websocket_call_count": 0,
+    "eventsource_call_count": 0,
+    "network_dependency_count": 0,
+    "measurement_values_copied": 0,
+    "public_copy_count": 0
+  },
+  "browser_readback": {
+    "local_http": {
+      "host": "127.0.0.1",
+      "port": 18766,
+      "status_code": 200,
+      "server_stopped_after_verification": true,
+      "browser_tab_closed_after_verification": true,
+      "viewport_override_reset_after_verification": true,
+      "screenshot_artifacts_persisted": 0
+    },
+    "desktop": {
+      "viewport_width": 1280,
+      "viewport_height": 720,
+      "document_client_width": 1265,
+      "document_scroll_width": 1265,
+      "body_scroll_width": 1265,
+      "horizontal_overflow": false,
+      "summary_layout": "three_columns",
+      "filter_layout": "flex",
+      "municipality_option_count": 19,
+      "initial_results_status": "下関市：次に確認する情報 22項目"
+    },
+    "smartphone": {
+      "viewport_width": 390,
+      "viewport_height": 844,
+      "document_client_width": 375,
+      "document_scroll_width": 375,
+      "body_scroll_width": 375,
+      "horizontal_overflow": false,
+      "summary_layout": "one_column",
+      "filter_layout": "one_column",
+      "legend_layout": "one_column",
+      "evidence_layout": "one_column",
+      "select_within_viewport": true,
+      "evidence_within_viewport": true,
+      "minimum_filter_tap_height_px": 45.015625,
+      "results_status": "下関市：次に確認する情報 22項目"
+    },
+    "browser_warning_count": 0,
+    "browser_error_count": 0
+  },
+  "claim_boundary_acceptance": {
+    "registered_zero_interpreted_as_transport_absence": 0,
+    "gap_numeric_placeholder_count": 0,
+    "public_and_internal_measured_merged": 0,
+    "gtfs_measured_row_count": 42,
+    "gtfs_municipality_geometry_filtering": 0,
+    "gtfs_feed_wide_values_allocated_to_municipalities": 0,
+    "jrbus_chugoku_measured_row_count": 24,
+    "jrbus_chugoku_wide_values_allocated_to_four_municipalities": 0,
+    "scheduled_values_interpreted_as_actual_operation": 0,
+    "service_gap_decision_count": 0
+  },
+  "human_validation_boundary": {
+    "browser_readback_type": "AI_MECHANICAL_LAYOUT_AND_INTERACTION_READBACK",
+    "formal_user_test_result": false,
+    "creator_visual_acceptance": false,
+    "external_user_observed_task_completion": false,
+    "real_discussion_workflow_validation": false,
+    "co_design_result": false,
+    "user_value_validation": false,
+    "external_qualitative_feedback_reclassified": false
+  },
+  "input_hashes": [
+    {
+      "path": "data/work1_supply_side_information_gap_presentation_spec.json",
+      "bytes": 1443839,
+      "sha256": "4ea0e2beb3fe42b0986a7dcf825cca9e1a7c81c4db593cc5a9036f8aaaf37d55"
+    }
+  ],
+  "prototype_artifact": {
+    "path": "internal/work1_supply_side_information_gap_prototype.html",
+    "bytes": 1265346,
+    "sha256": "53c67833274e57539f11cc1284512a0c9b533cf71583ed631483819acec15936",
+    "encoding": "UTF-8",
+    "line_ending": "LF",
+    "trailing_newline_count": 1,
+    "public_copy": false
+  },
+  "artifact_hashes": [
+    {
+      "path": "src/build_supply_side_information_gap_internal_prototype.py",
+      "bytes": 27709,
+      "sha256": "915d085b2bdc9b02ef7819c38de5bb963196274d7325bb5f4c4abfc0e0efa3b6"
+    },
+    {
+      "path": "internal/work1_supply_side_information_gap_prototype.html",
+      "bytes": 1265346,
+      "sha256": "53c67833274e57539f11cc1284512a0c9b533cf71583ed631483819acec15936"
+    },
+    {
+      "path": "tests/test_supply_side_information_gap_internal_prototype.py",
+      "bytes": 12704,
+      "sha256": "78977b93aa70a4e1582d8e1bc840bc79476ce5c0b0ab20d288bbfb3832696d77"
+    },
+    {
+      "path": "SPEC.md",
+      "bytes": 337621,
+      "sha256": "b4b27e15a1b713bb51d8146339b5c74318337e56c2cc7ff5bd2024844a516be1"
+    },
+    {
+      "path": "run_record.md",
+      "bytes": 158143,
+      "sha256": "ebdea55268dc00f0c75e03ca62ef859cca91b07ec79ad798fc57db64d7282fca"
+    },
+    {
+      "path": "PROGRESS.md",
+      "bytes": 252361,
+      "sha256": "799d05b58de74885032a78f63f18c5f0eadaf92c74e44c521ba3a0b7c34f6f31"
+    },
+    {
+      "path": "verification.md",
+      "bytes": 212362,
+      "sha256": "d505b143180a8e20a33f2781ff939f76182fc72abd35f872627bff1d179c5b8e"
+    }
+  ],
+  "verification": {
+    "dedicated_tests": {
+      "command": "python -B -m unittest tests.test_supply_side_information_gap_internal_prototype -v",
+      "detected": 18,
+      "passed": 18,
+      "failed": 0
+    },
+    "full_tests": {
+      "command": "python -B -m unittest discover -s tests -q",
+      "detected": 293,
+      "passed": 293,
+      "failed": 0
+    },
+    "regeneration_byte_identical": true,
+    "work_scope": "WORK1_SCOPE_ALLOWED",
+    "git_diff_check": "success",
+    "protected_diff_count": 0,
+    "expected_changed_path_count": 8
+  },
+  "unchanged_boundaries": [
+    "docs/index.html",
+    "docs/entry.html",
+    "docs/municipality-memo.html",
+    "docs/status.html",
+    "docs/data/",
+    "data/work1_supply_side_information_gap_presentation_spec.json",
+    "data/work1_supply_side_information_model.json",
+    "data/work1_supply_side_information_coverage_matrix.json",
+    "data/work1_supply_side_accepted_source_measurement_spec.json",
+    "data/work1_supply_side_accepted_source_bounded_measurement.json",
+    "raw/ accepted 4 registry PDFs and 3 GTFS ZIPs",
+    "existing public JSON and CSV values",
+    "data/work1_award_scorecard.json",
+    "AGENTS.md",
+    "work_scope.json",
+    "src/check_work_scope.py"
+  ],
+  "not_executed": {
+    "public_presentation_implementation": 0,
+    "new_original_search_download_or_adoption": 0,
+    "demand_comparator_input_search_or_adoption": 0,
+    "authenticated_or_nonpublic_data_access": 0,
+    "municipal_geometry_intersection": 0,
+    "external_contact_by_ai": 0,
+    "user_test_request": 0,
+    "udc_entry_or_submission": 0,
+    "bodik_registration": 0,
+    "public_site_change": 0,
+    "deployment_or_push": 0,
+    "pages_update": 0,
+    "out_of_scope_data_or_tool_input": 0
+  },
+  "next_gate": {
+    "task_id": "WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-HUMAN-REVIEW-1",
+    "status": "HUMAN_GATE_PENDING",
+    "goal": "作成者がローカルプロトタイプの文言、情報密度、市町選択、4 filter、証拠展開を確認し、公開統合仕様へ進むかを判断する。",
+    "boundary": "正式利用者テストではなく、公開変更・外部共有・pushを自動開始しない。",
+    "human_review_required": true
+  },
+  "evidence_self_hash": "not_recorded_to_avoid_self_reference"
+}

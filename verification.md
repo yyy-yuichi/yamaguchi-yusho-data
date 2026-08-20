@@ -1,5 +1,35 @@
 # verification.md — I-1（3PDF統合）検証結果
 
+## WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-1 ローカル検証（2026-08-20）
+
+| 検証 | 結果 |
+|---|---|
+| 入力 | §48内部表示仕様JSON 1、bytes・SHA-256一致 |
+| 出力 | `internal/work1_supply_side_information_gap_prototype.html`、自己完結、公開copy 0 |
+| 行契約 | 19市町×35項目=665、6状態、8分類、19 summary、重複0・欠落0 |
+| 画面 | 内部banner、見出し、2境界注記、市町select、4 filter、3 summary、6状態legend、項目card、証拠details |
+| 初期表示 | 下関市、次に確認22、確認済み8、需要比較5、options 19 |
+| 操作 | 岩国市、全35項目=35、8分類、市町変更・filter・証拠展開success |
+| 証拠 | 受入原本ID、証拠日、範囲、次の確認、表示ルール、非主張の6欄readback |
+| PC | 1280×720、client/scroll 1265/1265、summary 3列、横overflow 0 |
+| smartphone | 390×844、client/scroll 375/375、summary/filter/legend/証拠1列、横overflow 0 |
+| smartphone操作 | 下関市次に確認22、select viewport内、filter最小高さ45.015625px、証拠viewport内 |
+| browser log | warning 0、error 0。server・tab終了、viewport override解除 |
+| network | 外部URL・外部script・外部CSS・fetch・XHR・WebSocket・EventSource各0 |
+| 値境界 | 限定測定値複製0、gap数値placeholder 0、公開/内部測定混同0 |
+| GTFS境界 | 42測定行をフィード全体のまま保持、市町境界filter・市町内配賦0 |
+| JRバス境界 | 24測定行の県外を含む広域値を関係4市へ配賦0 |
+| gap境界 | 情報不足と交通不足を分離、登録0件交通不存在化0、`service_gap`判定0 |
+| 人間境界 | browser読戻しを利用者テスト・実務利用・共同設計・利用者価値検証へ変換0 |
+| 決定性 | 連続2回の生成結果、保存済みHTMLが完全byte一致 |
+| 専用回帰 | 18 / 18 success |
+| 全回帰 | 293件検出、293 / 293 success、終了コード0 |
+| scope・差分 | `WORK1_SCOPE_ALLOWED`、`git diff --check` success |
+| 不変対象 | 公開4 HTML、`docs/data/`、上流正本、7原本、既存公開値、内部スコアカードは開始HEADから不変 |
+| 境界 | 新原本、需要入力、認証付き・非公開アクセス、外部連絡、利用者テスト依頼、応募・BODIK、push・Pages各0 |
+| 正本 | `evidence/20260820_work1_supply_side_information_gap_internal_prototype_local_acceptance.json` |
+| 判定 | `LOCAL_GO`。次は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-HUMAN-REVIEW-1`、`HUMAN_GATE_PENDING` |
+
 ## WORK1-SUPPLY-SIDE-INFORMATION-GAP-PRESENTATION-SPEC-1 ローカル検証（2026-08-20）
 
 | 検証 | 結果 |

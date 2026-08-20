@@ -1,5 +1,31 @@
 # PROGRESS
 
+## 2026-08-20 WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-1
+
+### ローカル内部プロトタイプ・機械受入
+
+- 作成者の開始承認後、§48内部表示仕様から自己完結HTMLを生成した。
+- 生成器は`src/build_supply_side_information_gap_internal_prototype.py`、ローカル成果物は
+  `internal/work1_supply_side_information_gap_prototype.html`。入力仕様のbytes・SHA-256を固定する。
+- 19市町×35項目=665行、6状態、8分類を保持し、市町select、4 filter、3 summary、6状態legend、
+  項目card、証拠detailsを実装した。初期filterは「次に確認する情報」。
+- 情報不足と交通不足の分離、4登録簿上0件の非不存在注記、公開中/内部測定済みの区別、
+  GTFSフィード全体・JRバス中国関係4市非配賦、予定値・gapの非主張を維持した。
+- HTMLはCSS・JavaScript・表示用データを内包し、外部URL、外部資産、network API依存、限定測定値の複製は各0。
+- PC 1280×720とsmartphone 390×844で横overflow 0。下関市初期22項目、19 options、summary 22/8/5、
+  岩国市全35項目・8分類、市町切替、filter、証拠6欄展開を読戻した。
+- smartphoneはsummary・filter・legend・証拠を1列化し、filter最小高さ45.015625px、証拠viewport内。
+  browser warning・errorは各0。検証後に一時server・tab・viewport overrideを終了した。
+- 専用18 / 18、全293 / 293、再生成byte一致、scope checker、`git diff --check`が成功した。
+- 公開4 HTML、`docs/data/`、上流正本、7原本、既存公開値、内部スコアカードは不変だった。
+- AI読戻しを利用者テスト、実務利用、共同設計、利用者価値の検証には変換していない。
+- 新原本、需要比較入力、認証付き・非公開アクセス、外部連絡、利用者テスト依頼、UDC応募、
+  BODIK登録、push・Pages更新は各0。
+- ローカル正本は
+  `evidence/20260820_work1_supply_side_information_gap_internal_prototype_local_acceptance.json`。
+- 次は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-HUMAN-REVIEW-1`だけ。作成者確認の
+  `HUMAN_GATE_PENDING`で、公開変更・外部共有は未開始。
+
 ## 2026-08-20 WORK1-SUPPLY-SIDE-INFORMATION-GAP-PRESENTATION-SPEC-1
 
 ### 情報不足表示仕様・ローカル受入

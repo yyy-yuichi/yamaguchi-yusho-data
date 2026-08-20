@@ -4707,3 +4707,118 @@ UDC山口支部コーディネーターの個人的操作感想1件に含まれ�
 - 部分情報30または測定前提入力必要7を測定済み・0・不存在へ読み替える必要が生じる
 - GTFS全体値またはJRバス中国広域値を市町へ配賦する必要が生じる
 - 新原本、需要比較入力、認証付き情報、外部連絡、利用者テスト、応募・登録、pushが必要になる
+
+## 49. WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-1
+
+### 49.1 開始承認と段階ゴール
+
+2026-08-20に作成者の開始承認を受けた。本段階は§48の内部表示仕様だけを直接入力に、19市町の
+「確認できる情報」と「次に必要な確認」を操作できるローカル限定プロトタイプとして生成し、PC幅と
+スマートフォン幅で文言、粒度、範囲badge、証拠展開、横overflowを検証する。
+
+本段階は表示構造の機械検証・AI読戻しであり、作成者または外部利用者による利用者テスト、実務利用、
+共同設計、利用者価値の検証ではない。公開4ページと`docs/data/`を変更せず、外部公開前に停止する。
+
+### 49.2 入力・生成器・ローカル出力
+
+直接入力は`data/work1_supply_side_information_gap_presentation_spec.json`一つとし、bytes・SHA-256を
+HTML内へ固定する。生成器は`src/build_supply_side_information_gap_internal_prototype.py`、出力は
+`internal/work1_supply_side_information_gap_prototype.html`とする。
+
+HTMLはCSS、JavaScript、665行の表示用最小データを単一ファイルへ埋め込む。外部URL、外部script、外部CSS、
+`fetch`、XHR、WebSocket、EventSourceを持たず、ネットワーク依存は0とする。限定測定値は複製せず、
+内部測定result ID、detail spec ID、出典・日付・範囲・非主張だけを参照する。
+
+### 49.3 画面・操作契約
+
+初期画面は次を持つ。
+
+1. 「作品①・ローカル内部プロトタイプ｜公開ページではありません」の内部限定banner
+2. 見出し「確認できる情報と、次に必要な確認」
+3. 情報不足と交通サービス不足を分ける注記
+4. 「4登録簿上の該当記載0件」を交通不存在にしない注記
+5. 19市町select
+6. 「次に確認する情報」「確認できる情報」「生活・需要との比較」「全35項目」の4 filter
+7. 次に確認、確認済み、需要比較の3 summary
+8. 選択市町の6状態legend
+9. 8分類ごとの項目cardと証拠details
+
+既定filterは`NEXT_CONFIRMATION`とし、`MEASUREMENT_GAP`と`INFORMATION_GAP`を先に示す。市町を変更しても
+35項目とsummaryの整合を保つ。証拠detailsは受入原本ID、証拠日、範囲、次の確認、表示ルール、非主張を持ち、
+限定測定済み行だけdetail spec IDとmeasurement result IDを追加する。
+
+### 49.4 レスポンシブ・アクセシビリティ契約
+
+通常幅では3 summaryを3列、filterを横並びにする。720px以下では主構造を1列、filterを2列、legendを1列、
+証拠定義リストを1列にする。390px以下ではfilterも1列にする。すべての主要gridは`minmax(0, 1fr)`を使い、
+長い項目名・原本ID・非主張は`overflow-wrap`する。
+
+状態は色だけで伝えず6つの短い状態名を表示する。selectにlabel、filter群にaccessible name、結果件数に
+`aria-live`、押下filterに`aria-pressed`を持たせる。keyboard focusを可視化し、filterの最小高さは42px以上とする。
+
+### 49.5 ローカルHTTP・ブラウザー読戻し
+
+`127.0.0.1:18766`の一時HTTP serverでHTMLを読戻し、検証後にserver、tab、viewport overrideを終了・解除した。
+
+| 検証 | 結果 |
+|---|---|
+| HTTP | 200、HTML 1ファイル読込成功 |
+| PC | 1280×720、client/scroll width 1265/1265、横overflow 0 |
+| PC初期値 | 下関市、19 options、次に確認22、確認済み8、需要比較5 |
+| PC構造 | summary 3列、filter flex、内部banner・境界注記を表示 |
+| 操作 | 岩国市へ変更、全35項目=35、8分類、証拠details 1件を展開 |
+| 証拠 | 受入原本ID、証拠日、範囲、次の確認、表示ルール、非主張の6欄を読戻し |
+| smartphone | 390×844、client/scroll width 375/375、横overflow 0 |
+| smartphone構造 | summary 1列、filter 1列、legend 1列、select viewport内 |
+| smartphone操作 | 下関市・次に確認22、filter最小高さ45.015625px |
+| smartphone証拠 | 1列、viewport内、横overflow 0 |
+| browser log | warning 0、error 0 |
+
+この読戻しはレイアウト・DOM・操作の機械受入であり、外部利用者の観察付き完了または価値検証へ変換しない。
+
+### 49.6 表示データと主張境界
+
+665行、19市町、35項目、6状態を§48から再分類せず保持する。公開中128と内部測定済み61を区別し、
+測定不足37、情報不足344、需要比較必要95に0件・0%・不存在を作らない。GTFS42測定行はフィード全体、
+JRバス中国24行は県外を含む広域値のままとし、市町境界フィルター・市町内配賦を行わない。
+
+外部定性意見1件は§48で確定した表示方向にだけ間接参照され、本HTMLで行状態・測定値・利用者検証へ
+再解釈しない。作成者の深い問題意識は記録・推測しない。
+
+### 49.7 変更範囲と禁止事項
+
+変更・追加できるのは次だけとする。
+
+- `src/build_supply_side_information_gap_internal_prototype.py`
+- `internal/work1_supply_side_information_gap_prototype.html`
+- `tests/test_supply_side_information_gap_internal_prototype.py`
+- `evidence/20260820_work1_supply_side_information_gap_internal_prototype_local_acceptance.json`
+- `SPEC.md`、`run_record.md`、`PROGRESS.md`、`verification.md`
+
+公開4 HTML、`docs/data/`、§48表示仕様と上流正本、7原本、既存公開値、内部スコアカード、作品①scope境界を
+変更しない。新原本・需要比較入力、認証付き・非公開データ、外部連絡、利用者テスト依頼、UDC応募、
+BODIK登録、push・Pages更新を行わない。
+
+### 49.8 完了条件
+
+1. 仕様JSON一つから単一HTMLを完全byte一致で再生成できる。
+2. HTMLが19市町×35項目=665行、6状態、8分類を保持する。
+3. 初期filterが「次に確認する情報」で、市町変更と4 filterが動作する。
+4. 証拠detailsが6必須欄と測定済み限定欄を表示する。
+5. 公開中128、内部測定済み61、gap476を誤分類・値補完しない。
+6. 登録0件、GTFS全体値、JRバス中国広域値、予定値、`service_gap`の境界を維持する。
+7. 外部ネットワーク依存を0とし、`internal/`外へHTML copyを作らない。
+8. PC 1280×720とsmartphone 390×844で横overflow 0、操作・証拠展開を読戻す。
+9. browser warning・errorを各0にする。
+10. 専用18 / 18、全293 / 293、scope checker、`git diff --check`を成功させる。
+11. 公開4 HTML、`docs/data/`、上流正本、7原本、既存公開値、内部スコアカードを開始HEADから不変にする。
+12. 新原本、需要入力、外部連絡、利用者テスト依頼、応募・登録、push・Pages更新を各0とする。
+
+### 49.9 次の人間確認ゲート
+
+次は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-HUMAN-REVIEW-1`だけとする。作成者がローカル
+プロトタイプの文言、情報密度、市町選択、4 filter、証拠展開を確認し、公開統合仕様へ進むかを判断する
+人間ゲートで、状態は`HUMAN_GATE_PENDING`とする。
+
+この人間確認を正式利用者テストまたは地域交通協議での実務検証とは扱わない。公開ページ変更、外部共有、
+外部レビュー依頼、pushは別承認が必要であり、本段階から自動開始しない。

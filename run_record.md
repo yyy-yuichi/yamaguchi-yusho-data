@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-20 (rev.92) / 状態: WORK1-SUPPLY-SIDE-INFORMATION-GAP-PRESENTATION-SPEC-1 LOCAL_GO / 次: WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-1（未開始）
+最終更新: 2026-08-20 (rev.93) / 状態: WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-1 LOCAL_GO / 次: WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-HUMAN-REVIEW-1（HUMAN_GATE_PENDING）
 
 ## 0. このファイルについて
 
@@ -1813,3 +1813,27 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   `evidence/20260820_work1_supply_side_information_gap_presentation_spec_local_acceptance.json`。
 - 次段階は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-1`だけ。本仕様からローカル限定の
   市町別表示を生成して公開前に検証する段階で、開始承認まで未開始とする。
+
+### 改訂点（rev.93）
+
+- 作成者の開始承認後、`WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-1`を実施した。
+- `src/build_supply_side_information_gap_internal_prototype.py`を追加し、§48表示仕様JSON一つから
+  `internal/work1_supply_side_information_gap_prototype.html`を決定的に生成する。
+- HTMLは19市町、35項目、市町別665行、6状態、8分類、19 summaryを保持する。初期filterは
+  「次に確認する情報」で、市町select、確認済み、需要比較、全35項目の4 filterを持つ。
+- 内部限定banner、情報不足と交通不足の分離、4登録簿上0件の非不存在注記、3 summary、6状態legend、
+  項目card、受入原本ID・日付・範囲・次の確認・表示ルール・非主張の証拠detailsを実装した。
+- CSS・JavaScript・表示用最小データを単一HTMLへ埋め込み、外部URL・外部資産・network API依存は0。
+  限定測定値の複製、市町境界filter、GTFS/JRバス値の市町配賦、`service_gap`判定は各0。
+- ローカルHTTPでPC 1280×720とsmartphone 390×844を読戻し、横overflow 0 / 0。
+  PCはsummary 3列、smartphoneはsummary・filter・legend・証拠を1列化し、filter最小高さ45.015625px。
+- 下関市初期22項目・19 options・summary 22/8/5、岩国市全35項目・8分類、市町変更・filter・証拠展開を確認。
+  browser warning・errorは各0。検証後にserver、tab、viewport overrideを終了・解除した。
+- 専用18 / 18、全293 / 293、再生成byte一致、scope、`git diff --check`が成功。
+  公開4 HTML、`docs/data/`、上流正本、7原本、既存公開値、内部スコアカードは不変。
+- 本読戻しを利用者テスト、実務利用、共同設計、利用者価値の検証へ変換していない。新原本、需要入力、
+  外部連絡、利用者テスト依頼、応募・BODIK、push・Pages更新は各0。
+- ローカル正本は
+  `evidence/20260820_work1_supply_side_information_gap_internal_prototype_local_acceptance.json`。
+- 次は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-HUMAN-REVIEW-1`だけ。作成者が文言・密度・
+  操作を確認する人間ゲートで、`HUMAN_GATE_PENDING`とする。公開変更・外部共有は自動開始しない。
