@@ -1,0 +1,226 @@
+{
+  "schema_version": "WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-LOCAL-ACCEPTANCE-1",
+  "task_id": "WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-1",
+  "created_at": "2026-08-21T10:01:00+09:00",
+  "decision": "LOCAL_GO",
+  "start_approval": {
+    "approved_by": "creator",
+    "approved_on": "2026-08-21",
+    "approval_text": "WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-1開始承認",
+    "public_page_mutation_authorized": true,
+    "push_or_pages_update_authorized": false
+  },
+  "baseline": {
+    "branch": "main",
+    "head": "a90dae01bcd4314cb31a569a23f82d36131e5ba7",
+    "head_subject": "Define public information-gap integration",
+    "origin_main": "66b5aa7dd3b51dd5e32764a6d0f0c7d40fff0db1",
+    "ahead_of_origin_main": 7,
+    "baseline_worktree": "clean"
+  },
+  "goal_acceptance": {
+    "input_file_count": 2,
+    "municipality_count": 19,
+    "category_count": 8,
+    "item_count_per_municipality": 35,
+    "municipality_item_row_count": 665,
+    "public_row_field_count": 18,
+    "public_state_count": 6,
+    "municipality_summary_count": 19,
+    "integration_target": "docs/municipality-memo.html",
+    "changed_public_html_count": 1,
+    "new_public_json_count": 1,
+    "new_fifth_public_page": false
+  },
+  "public_state_acceptance": {
+    "CURRENTLY_VISIBLE_INFORMATION": 128,
+    "ACCEPTED_SOURCE_MEASURED_BOUNDED": 61,
+    "MEASUREMENT_GAP_PARTIAL_SOURCE": 30,
+    "MEASUREMENT_GAP_ADDITIONAL_INPUT_REQUIRED": 7,
+    "INFORMATION_GAP_ADDITIONAL_SOURCE_REQUIRED": 344,
+    "DEMAND_COMPARATOR_REQUIRED": 95,
+    "state_total": 665,
+    "meaning_change_count": 0
+  },
+  "public_artifact": {
+    "path": "docs/data/work1_supply_side_information_gap.json",
+    "bytes": 1353729,
+    "sha256": "674a1484adf407961038bbbba0ce4fc5e02c4cec3a83aa8ab15c83704cbc3cf3",
+    "encoding": "UTF-8",
+    "line_ending": "LF",
+    "trailing_newline_count": 1,
+    "maximum_allowed_bytes": 1500000
+  },
+  "public_data_boundary_acceptance": {
+    "measurement_values_published": 0,
+    "measurement_result_ids_published": 0,
+    "detail_spec_ids_published": 0,
+    "measurement_status_fields_published": 0,
+    "upstream_status_fields_published": 0,
+    "local_or_internal_paths_published": 0,
+    "prohibited_token_occurrence_count": 0,
+    "gap_numeric_placeholder_count": 0,
+    "bare_prohibited_state_assertion_count": 0,
+    "explicitly_negated_state_assertion_row_count": 665
+  },
+  "screen_and_interaction_acceptance": {
+    "existing_municipality_selector_reused": true,
+    "municipality_select_option_count": 19,
+    "filter_count": 4,
+    "default_filter": "NEXT_CONFIRMATION",
+    "summary_count": 3,
+    "state_legend_count": 6,
+    "evidence_required_field_count": 6,
+    "existing_query_parameter_preserved": true,
+    "existing_share_url_behavior_preserved": true,
+    "existing_print_behavior_preserved": true,
+    "existing_sections_preserved_and_renumbered_to": "3-9",
+    "shimonoseki_initial": {
+      "next_confirmation_count": 22,
+      "confirmed_information_count": 8,
+      "demand_comparator_count": 5,
+      "visible_item_count": 22
+    },
+    "iwakuni_all_items": {
+      "visible_item_count": 35,
+      "category_count": 8,
+      "evidence_details_opened": 1,
+      "evidence_required_fields_read_back": "6/6",
+      "query_and_share_url_updated": true
+    }
+  },
+  "browser_readback": {
+    "local_http": {
+      "host": "127.0.0.1",
+      "port": 18767,
+      "status_code": 200,
+      "server_stopped_after_verification": true,
+      "browser_tab_closed_after_verification": true,
+      "viewport_override_reset_after_verification": true,
+      "screenshot_artifacts_persisted": 0
+    },
+    "desktop": {
+      "viewport_width": 1280,
+      "viewport_height": 720,
+      "document_client_width": 1265,
+      "document_scroll_width": 1265,
+      "horizontal_overflow": false,
+      "summary_layout": "three_columns",
+      "minimum_filter_tap_height_px": 45.1875
+    },
+    "smartphone": {
+      "viewport_width": 390,
+      "viewport_height": 844,
+      "document_client_width": 375,
+      "document_scroll_width": 375,
+      "horizontal_overflow": false,
+      "summary_layout": "one_column",
+      "filter_layout": "one_column",
+      "legend_layout": "one_column",
+      "evidence_layout": "one_column",
+      "minimum_filter_tap_height_px": 45.1875
+    },
+    "browser_warning_count": 0,
+    "browser_error_count": 0,
+    "visible_load_error_count": 0,
+    "confirmed_information_explicit_denial_read_back": true,
+    "information_gap_explicit_denial_read_back": true
+  },
+  "claim_boundary_acceptance": {
+    "information_gap_interpreted_as_service_gap": 0,
+    "registered_zero_interpreted_as_transport_absence": 0,
+    "gtfs_access_status_interpreted_as_transport_presence_or_quality": 0,
+    "gtfs_feed_wide_values_allocated_to_municipalities": 0,
+    "jrbus_chugoku_wide_values_allocated_to_four_municipalities": 0,
+    "scheduled_values_interpreted_as_actual_operation": 0,
+    "demand_comparator_required_interpreted_as_current_demand_value": 0,
+    "service_gap_decision_count": 0,
+    "disaster_prediction_feature_count": 0,
+    "evacuation_decision_feature_count": 0,
+    "vehicle_dispatch_feature_count": 0,
+    "real_time_ai_feature_count": 0
+  },
+  "dependency_contract_correction": {
+    "required_by_full_regression": true,
+    "accepted_spec_json_changed": false,
+    "historical_target_path": "docs/municipality-memo.html",
+    "historical_target_bytes": 44032,
+    "historical_target_sha256": "024f4ba8d3f8fc437621093690f25340fe0bda2aae8e07990973e2f379aea1a0",
+    "corrected_file_count": 6,
+    "old_heading_contract_updated_from": "2-8",
+    "new_heading_contract_updated_to": "2-9",
+    "public_product_behavior_changed_by_correction": false
+  },
+  "artifact_hashes": [
+    {
+      "path": "src/build_supply_side_information_gap_public_data.py",
+      "bytes": 12065,
+      "sha256": "8841fa8e08857535ec1a40b29dd9d5529a59a977ebea9c505635905079d8487b"
+    },
+    {
+      "path": "docs/data/work1_supply_side_information_gap.json",
+      "bytes": 1353729,
+      "sha256": "674a1484adf407961038bbbba0ce4fc5e02c4cec3a83aa8ab15c83704cbc3cf3"
+    },
+    {
+      "path": "docs/municipality-memo.html",
+      "bytes": 62927,
+      "sha256": "a6e8938ba19e94e5b561e6f5503ca5970fe94f9f2aeed4d5523efcf3b1264c09"
+    },
+    {
+      "path": "tests/test_supply_side_information_gap_public_integration.py",
+      "bytes": 13207,
+      "sha256": "e5003cd00997b8f2d4c89f85b5c22ef79db83497c31bb697ccbbb229a9b532af"
+    }
+  ],
+  "verification": {
+    "dedicated_tests": {
+      "command": "python -B -m unittest tests.test_supply_side_information_gap_public_integration -v",
+      "detected": 22,
+      "passed": 22,
+      "failed": 0
+    },
+    "related_tests": {
+      "detected": 62,
+      "passed": 62,
+      "failed": 0
+    },
+    "full_tests": {
+      "command": "python -B -m unittest discover -s tests -p test_*.py",
+      "detected": 331,
+      "passed": 331,
+      "failed": 0
+    },
+    "regeneration_byte_identical": true,
+    "work_scope": "WORK1_SCOPE_ALLOWED",
+    "git_diff_check": "success",
+    "protected_existing_public_page_diff_count": 0,
+    "protected_existing_public_json_diff_count": 0,
+    "expected_changed_path_count_after_acceptance": 15
+  },
+  "human_validation_boundary": {
+    "browser_readback_type": "AI_MECHANICAL_LAYOUT_AND_INTERACTION_READBACK",
+    "formal_user_test_result": false,
+    "real_discussion_workflow_validation": false,
+    "co_design_result": false,
+    "user_value_validation": false
+  },
+  "not_executed": {
+    "new_original_search_download_or_adoption": 0,
+    "demand_comparator_value_creation": 0,
+    "authenticated_or_nonpublic_data_access": 0,
+    "external_contact_by_ai": 0,
+    "user_test_request": 0,
+    "udc_entry_or_submission": 0,
+    "bodik_registration": 0,
+    "push": 0,
+    "pages_update": 0,
+    "out_of_scope_input": 0
+  },
+  "next_gate": {
+    "task_id": "WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-PUBLISH-1",
+    "status": "PUSH_AND_PAGES_APPROVAL_PENDING",
+    "push_and_pages_update_requires_separate_human_approval": true
+  },
+  "evidence_self_hash": "not_recorded_to_avoid_self_reference"
+}

@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-21 (rev.94) / 状態: WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-SPEC-1 LOCAL_GO / 次: WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-1（PUBLIC_PAGE_MUTATION_APPROVAL_PENDING）
+最終更新: 2026-08-21 (rev.95) / 状態: WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-1 LOCAL_GO / 次: WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-PUBLISH-1（PUSH_AND_PAGES_APPROVAL_PENDING）
 
 ## 0. このファイルについて
 
@@ -1859,3 +1859,25 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   `evidence/20260821_work1_supply_side_information_gap_public_integration_spec_local_acceptance.json`。
 - 次は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-1`だけ。公開ページ変更は§49.9で分離した
   人間承認ゲートのため、状態は`PUBLIC_PAGE_MUTATION_APPROVAL_PENDING`とし、自動開始しない。
+
+### 改訂点（rev.95）
+
+- 作成者の明示承認後、`WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-1`を実施した。
+- §48表示仕様と§50公開統合仕様から、19市町×35項目=665行、6状態、8分類の
+  `docs/data/work1_supply_side_information_gap.json`を決定的に生成した。
+- `docs/municipality-memo.html`の既存市町selectを共用し、第2節へ4 filter、3 summary、6状態legend、
+  項目card、根拠6欄を統合した。既存節は3〜9へ繰り下げ、既存表示・query・共有URL・印刷を維持した。
+- 内部ID・path・限定測定値を公開せず、情報不足と交通不足、登録0件、GTFSアクセス、全体値、広域値、
+  予定値、需要比較、`service_gap`の非主張を維持した。災害予測・避難判断・配車・リアルタイムAIは追加0。
+- ブラウザー読戻しで、上流の禁止文が非主張欄に裸の肯定文として見える箇所を検出した。公開生成時に
+  全665行を`「禁止する主張」とは主張しない。`へ正規化し、裸の禁止文0件を専用回帰へ追加した。
+- 前段仕様が実装対象HTMLの実装前hashを入力にしていた履歴契約を補正し、受入済み仕様JSONを変更せず
+  44,032 bytes・SHA-256を前段生成器へ固定した。第2節追加に合わせ旧見出し番号テスト4件を更新した。
+- PC 1280×720、smartphone 390×844で横overflow 0。下関市22/8/5、岩国市全35・8分類、根拠6欄、
+  共有URL更新を読戻し、browser warning・errorは各0。検証後にserver・tab・viewport overrideを終了した。
+- 専用22 / 22、関連62 / 62、全331 / 331、再生成byte一致、scope、`git diff --check`が成功。
+- index・entry・status、既存4公開JSON、上流正本、7原本、既存公開値、内部スコアカードは不変。
+  新原本、需要値、外部連絡、利用者テスト、応募・登録、push・Pages更新は各0。
+- 正本は`evidence/20260821_work1_supply_side_information_gap_public_integration_local_acceptance.json`。
+  次は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-PUBLISH-1`だけ。別承認まで
+  `PUSH_AND_PAGES_APPROVAL_PENDING`として停止する。

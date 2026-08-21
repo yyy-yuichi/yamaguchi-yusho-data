@@ -1,5 +1,36 @@
 # PROGRESS
 
+## 2026-08-21 WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-1
+
+### 市町別の情報不足表示・ローカル公開統合受入
+
+- 作成者の開始承認後、§50仕様どおり既存`docs/municipality-memo.html`一つへ統合した。
+- `src/build_supply_side_information_gap_public_data.py`から
+  `docs/data/work1_supply_side_information_gap.json`を決定的に生成した。1,353,729 bytes、
+  SHA-256 `674a1484adf407961038bbbba0ce4fc5e02c4cec3a83aa8ab15c83704cbc3cf3`。
+- 公開JSONは19市町×35項目=665行、6状態、8分類。内部measurement result ID、detail spec ID、
+  local/internal path、限定測定値は公開していない。
+- 既存市町selectを共用し、第2節へ4 filter、3 summary、6状態legend、項目card、根拠6欄を追加した。
+  既存節は3〜9へ繰り下げ、登録供給・GTFS・指標・不足・確認事項・引継ぎ・限界を維持した。
+- 情報不足と交通サービス不足を分離し、登録0件、GTFSアクセス状態、フィード全体値、JRバス中国広域値、
+  予定値、需要比較必要、`service_gap`の非主張を表示した。災害予測・避難判断・配車・AIは追加していない。
+- ブラウザー読戻しで、上流の禁止文が裸の肯定文に見える箇所を検出した。全665行を
+  `「禁止する主張」とは主張しない。`へ公開時に正規化し、裸の禁止文0件を回帰テストで固定した。
+- 前段仕様JSONの実装前HTML hashを履歴値として固定し、受入済み仕様JSONを不変にした。第2節追加に伴う
+  旧見出し番号テスト4件を更新した。この依存契約補正で公開内容・原本・値・状態は変更していない。
+- PC 1280×720とsmartphone 390×844で横overflow 0。下関市初期22/8/5、岩国市全35・8分類、
+  根拠6 / 6欄、query・共有URL更新を読戻した。smartphoneは主要構造1列、filter高45.1875px。
+  browser warning・error・画面上の読込errorは各0。検証後にserver・tab・viewport overrideを終了した。
+- 専用22 / 22、関連62 / 62、全331 / 331、再生成byte一致、scope checker、`git diff --check`が成功した。
+- index・entry・status、既存4公開JSON、上流正本、7原本、既存公開値、内部スコアカードは不変。
+- AI読戻しは利用者テスト、実務利用、共同設計、利用者価値の検証ではない。
+- 新原本、需要値、認証付き・非公開アクセス、外部連絡、利用者テスト依頼、UDC応募、BODIK登録、
+  push・Pages更新は各0。
+- ローカル正本は
+  `evidence/20260821_work1_supply_side_information_gap_public_integration_local_acceptance.json`。
+- 次は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-PUBLISH-1`だけ。
+  `PUSH_AND_PAGES_APPROVAL_PENDING`で、別承認まで開始しない。
+
 ## 2026-08-21 WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-SPEC-1
 
 ### 作成者レビュー完了・公開統合仕様のローカル受入

@@ -77,10 +77,10 @@ class GeneralReaderPurposeClarityContractTest(unittest.TestCase):
         index = self.pages["index.html"]
         memo = self.pages["municipality-memo.html"]
         self.assertIn("市町を選んで確認する", index)
-        self.assertIn("5. この公開情報だけでは分からないこと", memo)
-        self.assertIn("6. 行政・事業者へ確認すること", memo)
-        self.assertIn("7. この確認を次の行動へつなぐ", memo)
-        self.assertIn("8. 読み方・限界・根拠", memo)
+        self.assertIn("6. この公開情報だけでは分からないこと", memo)
+        self.assertIn("7. 行政・事業者へ確認すること", memo)
+        self.assertIn("8. この確認を次の行動へつなぐ", memo)
+        self.assertIn("9. 読み方・限界・根拠", memo)
 
 
 if __name__ == "__main__":

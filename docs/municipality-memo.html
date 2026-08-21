@@ -77,6 +77,54 @@
     .pill.public-download { background: var(--green-soft); color: var(--green-dark); }
     .pill.authentication, .pill.nonpublic { background: var(--amber-soft); color: var(--amber); }
     .pill.unavailable { background: #f1f2f3; color: #4b5563; }
+    .gap-intro { max-width: 72em; margin: 0; color: var(--muted); }
+    .gap-boundary { margin: 1rem 0 0; padding: .8rem 1rem; border-left: 5px solid var(--blue); border-radius: 8px; background: var(--blue-soft); font-weight: 800; }
+    .gap-zero-note { margin: .65rem 0 0; color: var(--muted); font-size: .92rem; }
+    .gap-filter-label { display: block; margin: 1.2rem 0 .45rem; color: var(--green-dark); font-weight: 850; }
+    .gap-filter-buttons { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .gap-filter-button { min-height: 42px; padding: .5rem .78rem; border: 1px solid #84928b; border-radius: 999px; background: #fff; color: var(--green-dark); }
+    .gap-filter-button[aria-pressed="true"] { border-color: var(--green-dark); background: var(--green-dark); color: #fff; }
+    .gap-summary-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; margin-top: 1rem; }
+    .gap-summary-card { min-width: 0; padding: .9rem; border: 1px solid var(--line); border-radius: 12px; background: #fbfcfb; }
+    .gap-summary-card.is-primary { border-color: #d8b158; background: #fff7df; }
+    .gap-summary-label { display: block; color: var(--muted); font-size: .88rem; font-weight: 750; }
+    .gap-summary-value { display: block; margin-top: .15rem; color: var(--ink); font-size: 1.8rem; font-weight: 850; line-height: 1.25; }
+    .gap-summary-suffix { margin-left: .16rem; font-size: .88rem; }
+    .gap-legend { margin-top: 1rem; padding: .8rem; border: 1px solid var(--line); border-radius: 12px; background: #f7faf8; }
+    .gap-legend h4 { margin: 0; }
+    .gap-legend-list { display: flex; flex-wrap: wrap; gap: .5rem; margin: .7rem 0 0; padding: 0; list-style: none; }
+    .gap-legend-item { display: inline-flex; min-width: 0; align-items: center; gap: .35rem; padding: .3rem .5rem; border: 1px solid var(--line); border-radius: 8px; background: #fff; font-size: .82rem; }
+    .gap-legend-count { color: var(--muted); font-weight: 800; }
+    .gap-status-badge { display: inline-flex; max-width: 100%; padding: .23rem .5rem; border: 1px solid transparent; border-radius: 7px; font-size: .78rem; font-weight: 850; line-height: 1.4; overflow-wrap: anywhere; }
+    .gap-status-badge[data-state="CURRENTLY_VISIBLE_INFORMATION"] { border-color: #b8d5eb; background: #e6f2fb; color: #164f78; }
+    .gap-status-badge[data-state="ACCEPTED_SOURCE_MEASURED_BOUNDED"] { border-color: #b5d8c8; background: #e4f3eb; color: #225c47; }
+    .gap-status-badge[data-state="MEASUREMENT_GAP_PARTIAL_SOURCE"] { border-color: #e2c873; background: #fff3c9; color: #715206; }
+    .gap-status-badge[data-state="MEASUREMENT_GAP_ADDITIONAL_INPUT_REQUIRED"] { border-color: #e1b28d; background: #ffe9d8; color: #82400f; }
+    .gap-status-badge[data-state="INFORMATION_GAP_ADDITIONAL_SOURCE_REQUIRED"] { border-color: #d2c0ac; background: #f3ebe1; color: #64472e; }
+    .gap-status-badge[data-state="DEMAND_COMPARATOR_REQUIRED"] { border-color: #cbbde8; background: #efeafa; color: #5f4988; }
+    .gap-results-heading { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; margin: 1.25rem 0 .65rem; }
+    .gap-results-heading h4, .gap-results-status { margin: 0; }
+    .gap-results-status { color: var(--muted); font-size: .9rem; text-align: right; }
+    .gap-category { margin-top: .8rem; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; }
+    .gap-category-heading { margin: 0; padding: .7rem .85rem; border-bottom: 1px solid var(--line); background: var(--green-soft); color: var(--green-dark); font-size: 1rem; }
+    .gap-category-count { margin-left: .4rem; color: var(--muted); font-size: .8rem; }
+    .gap-item-list { padding-inline: .9rem; }
+    .gap-item-card { padding: 1rem 0; border-bottom: 1px solid var(--line); }
+    .gap-item-card:last-child { border-bottom: 0; }
+    .gap-item-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .55rem; align-items: flex-start; }
+    .gap-item-title { min-width: 0; margin: 0; font-size: .98rem; overflow-wrap: anywhere; }
+    .gap-scope-note { margin: .6rem 0 0; padding: .45rem .6rem; border-radius: 8px; background: #f2f6f4; color: #304b40; font-size: .86rem; overflow-wrap: anywhere; }
+    .gap-item-explanation, .gap-next-confirmation { margin: .65rem 0 0; overflow-wrap: anywhere; }
+    .gap-next-confirmation { color: var(--green-dark); }
+    .gap-print-boundary { display: none; margin: .45rem 0 0; }
+    .gap-evidence { margin-top: .7rem; border: 1px solid var(--line); border-radius: 9px; background: #fbfcfb; }
+    .gap-evidence summary { padding: .6rem .7rem; color: var(--blue); cursor: pointer; font-weight: 800; }
+    .gap-evidence-body { padding: 0 .7rem .7rem; border-top: 1px solid var(--line); }
+    .gap-evidence-list { display: grid; grid-template-columns: minmax(8.5rem, .3fr) minmax(0, 1fr); margin: 0; }
+    .gap-evidence-list dt, .gap-evidence-list dd { margin: 0; padding: .55rem 0; border-bottom: 1px solid #e3e9e5; overflow-wrap: anywhere; }
+    .gap-evidence-list dt { padding-right: .7rem; color: var(--muted); font-weight: 800; }
+    .gap-evidence-list dt:last-of-type, .gap-evidence-list dd:last-of-type { border-bottom: 0; }
+    .gap-empty { margin: .8rem 0 0; padding: 1rem; border: 1px solid var(--line); border-radius: 10px; background: #f7faf8; color: var(--muted); text-align: center; }
     .table-wrap { overflow-x: auto; }
     table { width: 100%; border-collapse: collapse; }
     th, td { padding: .65rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
@@ -103,6 +151,14 @@
       .share-row { display: block; }
       .share-row button { margin-top: .55rem; width: 100%; }
       .memo-section { padding: 1rem; }
+      .gap-filter-buttons { display: grid; grid-template-columns: minmax(0, 1fr); }
+      .gap-filter-button { width: 100%; }
+      .gap-summary-grid, .gap-legend-list, .gap-evidence-list { grid-template-columns: minmax(0, 1fr); }
+      .gap-legend-list { display: grid; }
+      .gap-results-heading { display: block; }
+      .gap-results-status { margin-top: .3rem; text-align: left; }
+      .gap-evidence-list dt { padding-bottom: .1rem; border-bottom: 0; }
+      .gap-evidence-list dd { padding-top: .1rem; }
       th, td { padding: .5rem; font-size: .9rem; }
     }
     @media print {
@@ -114,6 +170,11 @@
       .memo-header { margin-top: 0; color: #000; background: #fff; border: 2px solid #000; break-after: avoid; }
       .memo-section, .summary-card, .metric, .data-card, .handoff-card { box-shadow: none; background: #fff; border-color: #777; }
       .memo-section { break-inside: avoid; }
+      #information-gap-section { break-inside: auto; }
+      .gap-filter-buttons, .gap-legend, .gap-results-heading, .gap-evidence { display: none !important; }
+      .gap-summary-card, .gap-category, .gap-item-card { box-shadow: none; background: #fff; border-color: #777; }
+      .gap-category, .gap-item-card { break-inside: avoid; }
+      .gap-print-boundary { display: block; }
       a { color: #000; text-decoration: underline; overflow-wrap: anywhere; }
       .handoff-card a::after { content: " (" attr(href) ")"; font-size: 8.5pt; font-weight: 400; }
     }
@@ -182,6 +243,7 @@
         <a href="data/municipality_gtfs.json">市町別GTFS確認JSON</a>
         <a href="data/gtfs_feeds.json">GTFSフィードJSON</a>
         <a href="data/gtfs_supply_metrics.json">GTFS指標JSON</a>
+        <a href="data/work1_supply_side_information_gap.json">情報確認状況JSON</a>
       </div>
     </section>
 
@@ -201,8 +263,51 @@
         <dl id="summary-grid" class="summary-grid"></dl>
       </section>
 
+      <section id="information-gap-section" class="memo-section" aria-labelledby="information-gap-title">
+        <h3 id="information-gap-title">2. 確認できる情報と、次に必要な確認</h3>
+        <p class="gap-intro">選択した市町について、供給側の35項目を、確認済み・測定不足・情報不足・生活や需要との比較が必要な情報に分けます。</p>
+        <p class="gap-boundary">情報の不足と交通サービスの不足は別です。この画面だけで交通が足りないとは判定しません。</p>
+        <p class="gap-zero-note">4登録簿上の該当記載0件は、交通手段や移動支援の不存在を意味しません。</p>
+
+        <span id="gap-filter-label" class="gap-filter-label">表示する情報</span>
+        <div class="gap-filter-buttons" role="group" aria-labelledby="gap-filter-label">
+          <button class="gap-filter-button" type="button" data-gap-filter="NEXT_CONFIRMATION" aria-pressed="true">次に確認する情報</button>
+          <button class="gap-filter-button" type="button" data-gap-filter="CONFIRMED_INFORMATION" aria-pressed="false">確認できる情報</button>
+          <button class="gap-filter-button" type="button" data-gap-filter="DEMAND_COMPARISON" aria-pressed="false">生活・需要との比較</button>
+          <button class="gap-filter-button" type="button" data-gap-filter="ALL_ITEMS" aria-pressed="false">全35項目</button>
+        </div>
+
+        <div class="gap-summary-grid" aria-label="選択市町の情報確認状況">
+          <article class="gap-summary-card is-primary">
+            <span class="gap-summary-label">次に確認する情報</span>
+            <strong class="gap-summary-value"><span id="gap-summary-next">0</span><span class="gap-summary-suffix">項目</span></strong>
+          </article>
+          <article class="gap-summary-card">
+            <span class="gap-summary-label">確認できる情報</span>
+            <strong class="gap-summary-value"><span id="gap-summary-confirmed">0</span><span class="gap-summary-suffix">項目</span></strong>
+          </article>
+          <article class="gap-summary-card">
+            <span class="gap-summary-label">生活・需要との比較が必要</span>
+            <strong class="gap-summary-value"><span id="gap-summary-demand">0</span><span class="gap-summary-suffix">項目</span></strong>
+          </article>
+        </div>
+
+        <div class="gap-legend" aria-labelledby="gap-legend-title">
+          <h4 id="gap-legend-title">6つの確認状態</h4>
+          <ul id="gap-legend-list" class="gap-legend-list"></ul>
+        </div>
+
+        <div class="gap-results-heading">
+          <h4 id="gap-results-title">項目別の確認状況</h4>
+          <p id="gap-results-status" aria-live="polite" class="gap-results-status"></p>
+        </div>
+        <div id="gap-category-container" aria-labelledby="gap-results-title"></div>
+        <p id="gap-empty" class="gap-empty" hidden>この表示条件に該当する項目はありません。</p>
+        <noscript><p class="notice">この一覧の操作にはJavaScriptが必要です。<a href="data/work1_supply_side_information_gap.json">公開JSONを直接確認できます。</a></p></noscript>
+      </section>
+
       <section class="memo-section" aria-labelledby="registry-title">
-        <h3 id="registry-title">2. 福祉有償運送・交通空白地有償運送の登録供給</h3>
+        <h3 id="registry-title">3. 福祉有償運送・交通空白地有償運送の登録供給</h3>
         <p id="registry-note" class="muted"></p>
         <dl id="registry-metrics" class="metric-grid"></dl>
         <div id="breakdown-block">
@@ -222,29 +327,29 @@
       </section>
 
       <section class="memo-section" aria-labelledby="gtfs-title">
-        <h3 id="gtfs-title">3. GTFSの公開確認状況</h3>
+        <h3 id="gtfs-title">4. GTFSの公開確認状況</h3>
         <p id="gtfs-summary"></p>
         <div id="feed-cards" class="card-grid"></div>
       </section>
 
       <section class="memo-section" aria-labelledby="metrics-title">
-        <h3 id="metrics-title">4. 測定済みのGTFS指標</h3>
+        <h3 id="metrics-title">5. 測定済みのGTFS指標</h3>
         <div id="measured-metrics"></div>
         <p id="metrics-empty" class="notice" hidden></p>
       </section>
 
       <section class="memo-section" aria-labelledby="unknowns-title">
-        <h3 id="unknowns-title">5. この公開情報だけでは分からないこと</h3>
+        <h3 id="unknowns-title">6. この公開情報だけでは分からないこと</h3>
         <ul id="unknowns" class="compact-list"></ul>
       </section>
 
       <section class="memo-section" aria-labelledby="checklist-title">
-        <h3 id="checklist-title">6. 行政・事業者へ確認すること</h3>
+        <h3 id="checklist-title">7. 行政・事業者へ確認すること</h3>
         <ol id="checklist" class="compact-list"></ol>
       </section>
 
       <section id="handoff-section" class="memo-section" aria-labelledby="handoff-title">
-        <h3 id="handoff-title">7. この確認を次の行動へつなぐ</h3>
+        <h3 id="handoff-title">8. この確認を次の行動へつなぐ</h3>
         <p id="handoff-summary" class="handoff-summary"></p>
         <div class="handoff-grid">
           <article class="handoff-card">
@@ -264,7 +369,7 @@
       </section>
 
       <section class="memo-section" aria-labelledby="limits-title">
-        <h3 id="limits-title">8. 読み方・限界・根拠</h3>
+        <h3 id="limits-title">9. 読み方・限界・根拠</h3>
         <ul id="limits" class="compact-list"></ul>
         <h4>このメモが参照した公開データ</h4>
         <ul id="source-links" class="source-list"></ul>
@@ -284,15 +389,17 @@
         supply: "data/municipal_supply.json",
         municipalityGtfs: "data/municipality_gtfs.json",
         feeds: "data/gtfs_feeds.json",
-        metrics: "data/gtfs_supply_metrics.json"
+        metrics: "data/gtfs_supply_metrics.json",
+        informationGap: "data/work1_supply_side_information_gap.json"
       };
       const sourceLabels = {
         supply: "市町別の登録供給（登録簿4PDFの集計）",
         municipalityGtfs: "市町別GTFS公開確認状況",
         feeds: "確認対象GTFSフィード",
-        metrics: "GTFS供給指標"
+        metrics: "GTFS供給指標",
+        informationGap: "市町別の情報確認状況（35項目）"
       };
-      const state = { supply: null, municipalityGtfs: [], feeds: [], metrics: [] };
+      const state = { supply: null, municipalityGtfs: [], feeds: [], metrics: [], informationGap: null };
       const availabilityDetails = {
         public_download_confirmed: {
           label: "公式原本を公開取得可能",
@@ -343,6 +450,15 @@
       const printButton = document.getElementById("print-button");
       const copyButton = document.getElementById("copy-button");
       const shareUrl = document.getElementById("share-url");
+      const gapCategoryContainer = document.getElementById("gap-category-container");
+      const gapResultsStatus = document.getElementById("gap-results-status");
+      const gapEmpty = document.getElementById("gap-empty");
+      const gapLegendList = document.getElementById("gap-legend-list");
+      const gapSummaryNext = document.getElementById("gap-summary-next");
+      const gapSummaryConfirmed = document.getElementById("gap-summary-confirmed");
+      const gapSummaryDemand = document.getElementById("gap-summary-demand");
+      const gapFilterButtons = Array.from(document.querySelectorAll("[data-gap-filter]"));
+      let gapActiveFilter = "NEXT_CONFIRMATION";
 
       function text(id, value) {
         document.getElementById(id).textContent = value == null ? "—" : String(value);
@@ -350,6 +466,127 @@
 
       function clear(node) {
         node.replaceChildren();
+      }
+
+      function makeGapElement(tag, className, value) {
+        const element = document.createElement(tag);
+        if (className) element.className = className;
+        if (value !== undefined && value !== null) element.textContent = String(value);
+        return element;
+      }
+
+      function gapDisplayValue(value, emptyText) {
+        if (Array.isArray(value)) return value.length ? value.join(" / ") : emptyText;
+        if (value === null || value === undefined || value === "") return emptyText;
+        return String(value);
+      }
+
+      function addGapEvidencePair(list, term, value, emptyText = "該当記録なし") {
+        list.append(makeGapElement("dt", "", term));
+        list.append(makeGapElement("dd", "", gapDisplayValue(value, emptyText)));
+      }
+
+      function gapRowMatchesFilter(row) {
+        if (gapActiveFilter === "ALL_ITEMS") return true;
+        if (gapActiveFilter === "NEXT_CONFIRMATION") {
+          return row.information_condition === "MEASUREMENT_GAP" || row.information_condition === "INFORMATION_GAP";
+        }
+        if (gapActiveFilter === "DEMAND_COMPARISON") return row.information_condition === "DEMAND_COMPARATOR_REQUIRED";
+        return row.information_condition === gapActiveFilter;
+      }
+
+      function gapFilterLabel() {
+        const button = gapFilterButtons.find(candidate => candidate.dataset.gapFilter === gapActiveFilter);
+        return button ? button.textContent : "表示中";
+      }
+
+      function createGapItemCard(row) {
+        const article = makeGapElement("article", "gap-item-card");
+        article.dataset.publicState = row.public_state;
+        article.dataset.itemId = row.item_id;
+
+        const heading = makeGapElement("div", "gap-item-heading");
+        heading.append(makeGapElement("h5", "gap-item-title", row.item_label));
+        const badge = makeGapElement("span", "gap-status-badge", row.status_label);
+        badge.dataset.state = row.public_state;
+        heading.append(badge);
+        article.append(heading);
+
+        const scope = makeGapElement("p", "gap-scope-note");
+        scope.append(makeGapElement("strong", "", "原本範囲: "));
+        scope.append(document.createTextNode(gapDisplayValue(row.source_scope_note, "範囲注記なし")));
+        article.append(scope);
+        article.append(makeGapElement("p", "gap-item-explanation", row.display_explanation));
+
+        const next = makeGapElement("p", "gap-next-confirmation");
+        next.append(makeGapElement("strong", "", "次の確認: "));
+        next.append(document.createTextNode(gapDisplayValue(row.next_confirmation, "追加確認なし")));
+        article.append(next);
+
+        const printBoundary = makeGapElement("p", "gap-print-boundary");
+        printBoundary.append(makeGapElement("strong", "", "この項目からは判断しないこと: "));
+        printBoundary.append(document.createTextNode(gapDisplayValue(row.claim_boundary, "非主張注記なし")));
+        article.append(printBoundary);
+
+        const details = makeGapElement("details", "gap-evidence");
+        details.append(makeGapElement("summary", "", "根拠・日付・範囲・次の確認を見る"));
+        const body = makeGapElement("div", "gap-evidence-body");
+        const list = makeGapElement("dl", "gap-evidence-list");
+        addGapEvidencePair(list, "受入原本ID", row.accepted_source_ids, "現在の受入原本なし");
+        addGapEvidencePair(list, "証拠日", row.evidence_date, "日付未設定");
+        addGapEvidencePair(list, "原本範囲", row.source_scope_note, "原本範囲注記なし");
+        addGapEvidencePair(list, "市町行の範囲", row.scope_note, "市町行の範囲注記なし");
+        addGapEvidencePair(list, "次の確認", row.next_confirmation, "追加確認なし");
+        addGapEvidencePair(list, "非主張", row.claim_boundary, "非主張注記なし");
+        body.append(list);
+        details.append(body);
+        article.append(details);
+        return article;
+      }
+
+      function updateGapLegend(summary) {
+        clear(gapLegendList);
+        for (const vocabulary of state.informationGap.state_vocabulary) {
+          const item = makeGapElement("li", "gap-legend-item");
+          const badge = makeGapElement("span", "gap-status-badge", vocabulary.status_label);
+          badge.dataset.state = vocabulary.public_state;
+          const count = summary.public_state_counts[vocabulary.public_state] || 0;
+          item.append(badge, makeGapElement("span", "gap-legend-count", `${count}項目`));
+          gapLegendList.append(item);
+        }
+      }
+
+      function renderInformationGap(municipalityName) {
+        const summary = state.informationGap.municipality_summaries.find(row => row.municipality === municipalityName);
+        const rows = state.informationGap.rows.filter(row => row.municipality === municipalityName);
+        if (!summary || rows.length !== 35) return;
+
+        gapSummaryNext.textContent = String(summary.next_confirmation_count);
+        gapSummaryConfirmed.textContent = String(summary.information_condition_counts.CONFIRMED_INFORMATION);
+        gapSummaryDemand.textContent = String(summary.demand_comparator_count);
+        updateGapLegend(summary);
+
+        const matching = rows.filter(gapRowMatchesFilter);
+        clear(gapCategoryContainer);
+        for (const category of state.informationGap.categories) {
+          const categoryRows = matching.filter(row => row.category_id === category.category_id);
+          if (!categoryRows.length) continue;
+          const section = makeGapElement("section", "gap-category");
+          section.dataset.categoryId = category.category_id;
+          const heading = makeGapElement("h4", "gap-category-heading", category.category_label);
+          heading.append(makeGapElement("span", "gap-category-count", `${categoryRows.length}項目`));
+          section.append(heading);
+          const list = makeGapElement("div", "gap-item-list");
+          for (const row of categoryRows) list.append(createGapItemCard(row));
+          section.append(list);
+          gapCategoryContainer.append(section);
+        }
+
+        gapEmpty.hidden = matching.length !== 0;
+        gapResultsStatus.textContent = `${summary.municipality}：${gapFilterLabel()} ${matching.length}項目`;
+        const section = document.getElementById("information-gap-section");
+        section.dataset.activeFilter = gapActiveFilter;
+        section.dataset.municipalityCode = summary.municipality_code;
       }
 
       function addListItem(list, value) {
@@ -701,6 +938,7 @@
         text("memo-title", `${item.municipality} 交通協議前確認メモ`);
         text("memo-subtitle", `生成日 ${new Intl.DateTimeFormat("ja-JP", { dateStyle: "long" }).format(new Date())} / 公開データから自動構成`);
         renderSummary(item, gtfsRow);
+        renderInformationGap(item.municipality);
         renderRegistry(item);
         renderGtfs(gtfsRow);
         renderMeasuredMetrics(item, gtfsRow);
@@ -730,15 +968,21 @@
       function validateData() {
         if (!state.supply || !Array.isArray(state.supply.municipalities) || !state.supply.municipalities.length) throw new Error("登録供給データの形式が不正です");
         if (!Array.isArray(state.municipalityGtfs)) throw new Error("市町別GTFSデータの形式が不正です");
+        if (!state.informationGap || state.informationGap.schema_version !== "WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-1-PUBLIC-DATA-1") throw new Error("情報確認状況データの形式が不正です");
+        if (!Array.isArray(state.informationGap.rows) || state.informationGap.rows.length !== 665) throw new Error("情報確認状況の行数が不正です");
+        if (!Array.isArray(state.informationGap.municipality_summaries) || state.informationGap.municipality_summaries.length !== 19) throw new Error("情報確認状況の市町summaryが不正です");
         const supplyNames = state.supply.municipalities.map(row => row.municipality);
         const gtfsNames = state.municipalityGtfs.map(row => row.municipality);
         if (supplyNames.length !== gtfsNames.length || supplyNames.some(name => !gtfsNames.includes(name))) throw new Error("市町一覧が一致しません");
+        const gapNames = state.informationGap.municipality_summaries.map(row => row.municipality);
+        if (supplyNames.length !== gapNames.length || supplyNames.some(name => !gapNames.includes(name))) throw new Error("情報確認状況の市町一覧が一致しません");
+        if (gapNames.some(name => state.informationGap.rows.filter(row => row.municipality === name).length !== 35)) throw new Error("市町別35項目が一致しません");
       }
 
       async function initialize() {
         try {
-          const [supply, municipalityGtfs, feeds, metrics] = await Promise.all(Object.values(sourceUrls).map(loadJson));
-          Object.assign(state, { supply, municipalityGtfs, feeds, metrics });
+          const [supply, municipalityGtfs, feeds, metrics, informationGap] = await Promise.all(Object.values(sourceUrls).map(loadJson));
+          Object.assign(state, { supply, municipalityGtfs, feeds, metrics, informationGap });
           validateData();
           clear(select);
           for (const item of state.supply.municipalities) {
@@ -765,6 +1009,22 @@
       }
 
       select.addEventListener("change", () => render(select.value));
+      for (const button of gapFilterButtons) {
+        button.addEventListener("click", () => {
+          gapActiveFilter = button.dataset.gapFilter;
+          for (const candidate of gapFilterButtons) {
+            candidate.setAttribute("aria-pressed", String(candidate === button));
+          }
+          renderInformationGap(select.value);
+        });
+      }
+      window.__WORK1_INFORMATION_GAP__ = {
+        taskId: "WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-1",
+        get activeFilter() { return gapActiveFilter; },
+        get selectedMunicipality() { return select.value; },
+        get visibleItemCount() { return gapCategoryContainer.querySelectorAll(".gap-item-card").length; },
+        get runtimeErrors() { return [...window.__taskMemoRuntimeErrors]; }
+      };
       printButton.addEventListener("click", () => window.print());
       copyButton.addEventListener("click", async () => {
         try {

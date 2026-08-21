@@ -25,6 +25,13 @@ INPUT_PATHS = (
     "docs/data/gtfs_supply_metrics.json",
 )
 
+IMPLEMENTATION_TARGET_PATH = "docs/municipality-memo.html"
+IMPLEMENTATION_TARGET_BASELINE = {
+    "path": IMPLEMENTATION_TARGET_PATH,
+    "bytes": 44032,
+    "sha256": "024f4ba8d3f8fc437621093690f25340fe0bda2aae8e07990973e2f379aea1a0",
+}
+
 PUBLIC_STATE_MAP = {
     "PUBLICLY_VISIBLE_CURRENT": "CURRENTLY_VISIBLE_INFORMATION",
     "MEASURED_BOUNDED_INTERNAL": "ACCEPTED_SOURCE_MEASURED_BOUNDED",
@@ -70,6 +77,11 @@ def load_json(relative_path: str):
 
 
 def file_record(relative_path: str) -> dict:
+    if relative_path == IMPLEMENTATION_TARGET_PATH:
+        # This accepted specification records the page before its authorized
+        # implementation. Keep that historical baseline stable after the page
+        # itself changes in the succeeding implementation stage.
+        return dict(IMPLEMENTATION_TARGET_BASELINE)
     payload = (ROOT / relative_path).read_bytes()
     return {
         "path": relative_path,

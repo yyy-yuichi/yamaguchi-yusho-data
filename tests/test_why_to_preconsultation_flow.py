@@ -44,8 +44,8 @@ class WhyToPreconsultationFlowTest(unittest.TestCase):
     def test_memo_separates_unknowns_from_questions(self):
         for identifier in ("unknowns-title", "unknowns", "checklist-title", "checklist"):
             self.assertIn(f'id="{identifier}"', self.memo)
-        self.assertIn("5. この公開情報だけでは分からないこと", self.memo)
-        self.assertIn("6. 行政・事業者へ確認すること", self.memo)
+        self.assertIn("6. この公開情報だけでは分からないこと", self.memo)
+        self.assertIn("7. 行政・事業者へ確認すること", self.memo)
         self.assertIn("function renderUnknowns(item, gtfsRow)", self.memo)
         self.assertIn("renderUnknowns(item, gtfsRow);", self.memo)
         self.assertLess(self.memo.index("renderUnknowns(item, gtfsRow);"), self.memo.index("renderChecklist(item, gtfsRow);"))
@@ -65,13 +65,14 @@ class WhyToPreconsultationFlowTest(unittest.TestCase):
     def test_memo_step_order_is_explicit(self):
         headings = (
             "1. いま確認できる範囲",
-            "2. 福祉有償運送・交通空白地有償運送の登録供給",
-            "3. GTFSの公開確認状況",
-            "4. 測定済みのGTFS指標",
-            "5. この公開情報だけでは分からないこと",
-            "6. 行政・事業者へ確認すること",
-            "7. この確認を次の行動へつなぐ",
-            "8. 読み方・限界・根拠",
+            "2. 確認できる情報と、次に必要な確認",
+            "3. 福祉有償運送・交通空白地有償運送の登録供給",
+            "4. GTFSの公開確認状況",
+            "5. 測定済みのGTFS指標",
+            "6. この公開情報だけでは分からないこと",
+            "7. 行政・事業者へ確認すること",
+            "8. この確認を次の行動へつなぐ",
+            "9. 読み方・限界・根拠",
         )
         positions = [self.memo.index(heading) for heading in headings]
         self.assertEqual(positions, sorted(positions))

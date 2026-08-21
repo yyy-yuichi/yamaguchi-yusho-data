@@ -1,5 +1,34 @@
 # verification.md — I-1（3PDF統合）検証結果
 
+## WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-1 ローカル検証（2026-08-21）
+
+| 検証 | 結果 |
+|---|---|
+| 開始承認 | 作成者がタスクIDを指定して公開統合開始を承認 |
+| 公開出力 | `docs/data/work1_supply_side_information_gap.json`、1,353,729 bytes、SHA-256 `674a1484adf407961038bbbba0ce4fc5e02c4cec3a83aa8ab15c83704cbc3cf3` |
+| 行契約 | 19市町×35項目=665、6状態、8分類、19 summary、必須18フィールド |
+| 状態 | 現在公開128、限定確認61、部分情報30、追加入力7、原本不足344、需要比較95 |
+| 公開除外 | measurement result ID、detail spec ID、measurement/upstream status、local/internal path、限定測定値各0 |
+| 統合先 | `docs/municipality-memo.html`一つ。既存市町select共用、4 filter、3 summary、6状態legend、根拠6欄 |
+| 既存維持 | 既存節を3〜9へ繰下げ。登録供給・GTFS・指標・不足・確認・引継ぎ・限界・query・共有URL・印刷を維持 |
+| gap境界 | 登録0件不存在化0、GTFS有無・質判定0、全体値市町配賦0、JRバス広域値配賦0、`service_gap`判定0 |
+| 非主張文 | 状態別6禁止文を全665行で明示否定へ変換。裸の禁止文0、`とは主張しない`付き665 |
+| 範囲境界 | 災害予測・避難判断・配車・リアルタイムAIの統合0 |
+| 前段補正 | 実装前HTML 44,032 bytes・SHA-256を履歴固定。受入済み仕様JSON変更0、旧見出し番号テスト4件を6〜9へ更新 |
+| PC | 1280×720、client/scroll 1265/1265、横overflow 0、summary 3列、19 options、初期22/8/5 |
+| 操作 | 岩国市、全35項目、8分類、根拠6 / 6欄、query・共有URL更新success |
+| smartphone | 390×844、client/scroll 375/375、横overflow 0、summary/filter/legend/根拠1列、filter高45.1875px |
+| browser log | warning 0、error 0、画面上の読込error 0。server・tab終了、viewport override解除 |
+| 人間境界 | AI機械読戻し。正式利用者テスト、実務利用、共同設計、利用者価値検証ではない |
+| 決定性 | 連続生成と保存済み公開JSONが完全byte一致 |
+| 専用回帰 | 22 / 22 success |
+| 関連回帰 | 前段・見出し・本段階62 / 62 success |
+| 全回帰 | 331件検出、331 / 331 success、終了コード0 |
+| scope・差分 | `WORK1_SCOPE_ALLOWED`、`git diff --check` success |
+| 不変対象 | index・entry・status、既存4公開JSON、上流正本、7原本、既存公開値、内部スコアカードは開始HEADから不変 |
+| 未実行 | 新原本、需要値、認証アクセス、外部連絡、利用者テスト依頼、応募・BODIK、push・Pages各0 |
+| 判定 | `LOCAL_GO`。次は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-PUBLISH-1`、`PUSH_AND_PAGES_APPROVAL_PENDING` |
+
 ## WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-SPEC-1 ローカル検証（2026-08-21）
 
 | 検証 | 結果 |

@@ -112,8 +112,8 @@ class SiteClarityContractTest(unittest.TestCase):
             with self.subTest(page=name):
                 self.assertIn(why, html)
         memo = self.pages["municipality-memo.html"]
-        self.assertIn("5. この公開情報だけでは分からないこと", memo)
-        self.assertIn("6. 行政・事業者へ確認すること", memo)
+        self.assertIn("6. この公開情報だけでは分からないこと", memo)
+        self.assertIn("7. 行政・事業者へ確認すること", memo)
 
 
 if __name__ == "__main__":

@@ -59,6 +59,17 @@ class SupplySideInformationGapPublicIntegrationSpecTest(unittest.TestCase):
         )
         self.assertEqual(len(self.dataset["input_files"]), 11)
         for item in self.dataset["input_files"]:
+            if item["path"] == integration.IMPLEMENTATION_TARGET_PATH:
+                self.assertEqual(item, integration.IMPLEMENTATION_TARGET_BASELINE)
+                current_html = ROOT.joinpath(*item["path"].split("/")).read_text(
+                    encoding="utf-8"
+                )
+                if hashlib.sha256(current_html.encode("utf-8")).hexdigest() != item["sha256"]:
+                    self.assertIn('id="information-gap-section"', current_html)
+                    self.assertTrue(
+                        (ROOT / "docs" / "data" / "work1_supply_side_information_gap.json").is_file()
+                    )
+                continue
             payload = ROOT.joinpath(*item["path"].split("/")).read_bytes()
             self.assertEqual(item["bytes"], len(payload), item["path"])
             self.assertEqual(item["sha256"], hashlib.sha256(payload).hexdigest(), item["path"])

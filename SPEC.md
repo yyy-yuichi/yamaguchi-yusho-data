@@ -4950,3 +4950,81 @@ UDC応募、BODIK登録、push・Pages更新を行わない。
 次は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-1`だけとする。§49.9で公開ページ変更を
 別承認としたため、状態は`PUBLIC_PAGE_MUTATION_APPROVAL_PENDING`。作成者が公開ページ変更を明示承認するまで
 開始しない。ローカル実装受入後のpush・Pages更新も、さらに別の人間承認ゲートとする。
+
+## 51. WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-1
+
+### 51.1 開始承認とローカル受入
+
+2026-08-21、作成者から本タスクIDを指定した開始承認を受けた。§50の公開統合仕様に従い、
+`docs/municipality-memo.html`一つへ「確認できる情報と、次に必要な確認」を統合した。
+ローカル受入は`LOCAL_GO`。push・Pages更新は行わず、別の人間承認ゲートに残す。
+
+### 51.2 公開データと表示実装
+
+`src/build_supply_side_information_gap_public_data.py`は§48表示仕様と§50公開統合仕様を入力に、
+`docs/data/work1_supply_side_information_gap.json`を決定的に生成する。公開JSONは1,353,729 bytes、
+SHA-256 `674a1484adf407961038bbbba0ce4fc5e02c4cec3a83aa8ab15c83704cbc3cf3`である。
+
+19市町×35項目=665行、8分類、6状態、19市町summaryを保持する。状態別行数は、現在の公開情報128、
+受入原本の限定範囲で確認61、原本内部分情報30、測定前提の追加入力必要7、確認できる原本不足344、
+生活・需要との比較必要95である。公開行は18フィールドだけを持ち、measurement result ID、detail spec ID、
+measurement status、upstream status、local/internal path、限定測定値を含めない。
+
+協議前メモは既存市町selectを共用し、4 filter、3 summary、6状態legend、8分類の項目card、
+受入原本ID・証拠日・原本範囲・市町行の範囲・次の確認・非主張の6欄を持つ。既存節は削除せず3〜9へ
+繰り下げ、既存の登録供給、GTFS確認、測定指標、不足、確認事項、引継ぎ、限界、query、共有URL、印刷を維持する。
+
+### 51.3 主張境界
+
+情報不足と交通サービス不足を明示的に分離する。4登録簿上の該当記載0件を交通手段・移動支援の不存在にせず、
+GTFSアクセス状態を交通の有無・質にせず、フィード全体値を市町内供給量にせず、JRバス中国の広域値を
+関係4市へ配賦しない。予定値を実運行へ、需要比較必要を現在の需要値へ、情報不足・測定不足を
+`service_gap`へ変換しない。災害予測、避難判断、配車、リアルタイムAIは追加していない。
+
+上流表示仕様の`prohibited_statement`は、公開非主張欄で裸の肯定文に見えないよう、全665行で
+`「禁止する主張」とは主張しない。`の形へ明示的に変換する。状態別6文の裸の出現は0件とする。
+ブラウザー読戻しでこの表示問題を検出して補正し、確認済み情報と情報不足の両方で否定形を再確認した。
+
+### 51.4 前段契約の履歴固定補正
+
+§50仕様JSONは実装前の`docs/municipality-memo.html`を固定入力にしていたため、承認済み実装後に前段生成器が
+現在ページを再hashすると、受入済み仕様JSONの決定性が失われることが全回帰で判明した。前段仕様JSON自体は
+変更せず、前段生成器へ実装前baseline 44,032 bytes・SHA-256
+`024f4ba8d3f8fc437621093690f25340fe0bda2aae8e07990973e2f379aea1a0`を履歴値として固定した。
+
+同時に、第2節追加を仕様どおり検証するため、旧見出し番号5〜8を固定していた4既存テストを6〜9へ更新した。
+補正対象は前段生成器・前段テストと見出し番号テスト4件の計6ファイルだけで、受入済み仕様JSON、公開内容、
+原本、派生値、行状態、限定測定値は変更していない。現在ページと新公開JSONは本段階の専用テストで検証する。
+
+### 51.5 ローカルブラウザー読戻し
+
+`127.0.0.1:18767`の一時HTTP serverで読戻し、検証後にserver、tab、viewport overrideを終了・解除した。
+
+| 検証 | 結果 |
+|---|---|
+| PC | 1280×720、client/scroll width 1265/1265、横overflow 0、summary 3列 |
+| 初期表示 | 下関市、19 options、次に確認22、確認済み8、需要比較5、表示22 |
+| 操作 | 岩国市へ変更、全35項目=35、8分類、query・共有URL更新 |
+| 証拠 | 受入原本ID、証拠日、原本範囲、市町行の範囲、次の確認、非主張の6 / 6欄を展開 |
+| smartphone | 390×844、client/scroll width 375/375、横overflow 0 |
+| smartphone構造 | summary・filter・legend・証拠を各1列、filter最小高さ45.1875px |
+| browser log | warning 0、error 0、画面上の読込error 0 |
+
+この読戻しはAIによる機械的なレイアウト・操作確認であり、正式利用者テスト、実務利用、共同設計、
+利用者価値の検証ではない。
+
+### 51.6 受入結果と不変対象
+
+専用22 / 22、前段・見出し・本段階の関連62 / 62、全331 / 331、公開JSON再生成byte一致、
+scope checker、`git diff --check`を成功させた。`docs/index.html`、`docs/entry.html`、`docs/status.html`、
+既存`docs/data/`4 JSON、上流正本、7原本、既存公開値、内部スコアカードは開始HEADから不変である。
+
+新原本、需要比較値、認証付き・非公開アクセス、外部連絡、利用者テスト依頼、災害機能、UDC応募、
+BODIK登録、push・Pages更新は各0。ローカル正本は
+`evidence/20260821_work1_supply_side_information_gap_public_integration_local_acceptance.json`とする。
+
+### 51.7 次の承認ゲート
+
+次は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-PUBLISH-1`だけとする。状態は
+`PUSH_AND_PAGES_APPROVAL_PENDING`。別の人間承認を受けるまで、main push、workflow・Pages更新、公開URLの
+受入を開始しない。新原本探索、外部連絡、利用者テスト、応募・登録、他の機能開発へ先回りしない。
