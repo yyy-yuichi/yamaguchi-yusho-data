@@ -1,0 +1,47 @@
+{
+  "schema_version": "WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-HUMAN-REVIEW-1",
+  "task_id": "WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-HUMAN-REVIEW-1",
+  "reviewed_on": "2026-08-21",
+  "reviewer": "creator",
+  "review_context": {
+    "prototype_path": "internal/work1_supply_side_information_gap_prototype.html",
+    "prototype_access": "LOCAL_PC",
+    "remote_session_used_for_review": false,
+    "creator_reported_pc_review_in_progress": "remoteは切れていたので、今PCから確認中です。"
+  },
+  "decision": {
+    "code": "GO_TO_PUBLIC_INTEGRATION_SPEC",
+    "creator_statement": "いいと思う。重要な示唆も参考にしながら本線を進めていこう。進めてOK",
+    "reported_blocking_issue_count": 0,
+    "reported_revision_request_count": 0,
+    "creator_visual_acceptance": true,
+    "public_integration_spec_authorized": true,
+    "public_page_mutation_authorized": false,
+    "push_or_pages_update_authorized": false
+  },
+  "scope_direction": {
+    "keep_current_work1_main_line": true,
+    "retain_information_gap_and_service_gap_separation": true,
+    "retain_supply_and_demand_comparison_as_a_future_comparator": true,
+    "adopt_disaster_evacuation_dispatch_system_as_current_scope": false,
+    "adopt_real_time_hazard_prediction_as_current_scope": false,
+    "adopt_ai_evacuation_start_decision_as_current_scope": false,
+    "direction_note": "外部提案のうち供給と需要、輸送能力、到達条件を比較する視点は将来の比較入力を考える参考にする。災害予測、避難判断、配車、リアルタイムAIは現在の作品①へ統合しない。"
+  },
+  "validation_boundary": {
+    "review_type": "CREATOR_LOCAL_VISUAL_REVIEW",
+    "formal_user_test": false,
+    "external_user_observed_task_completion": false,
+    "real_discussion_workflow_validation": false,
+    "co_design_result": false,
+    "user_value_validation": false,
+    "service_gap_validated": false,
+    "external_suggestion_used_as_measurement_input": false
+  },
+  "claim_boundary": "作成者がローカル内部プロトタイプをPCで確認し、報告された修正要求なしで公開統合仕様へ進むことを承認した事実だけを記録する。外部利用者による利用完了、地域交通協議での実務有用性、共同設計、利用者価値、交通サービス不足を証明したとは扱わない。",
+  "next_stage": {
+    "task_id": "WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-SPEC-1",
+    "status": "AUTHORIZED_TO_START",
+    "public_page_change_gate": "SEPARATE_APPROVAL_REQUIRED"
+  }
+}

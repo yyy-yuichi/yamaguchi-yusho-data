@@ -1,5 +1,28 @@
 # verification.md — I-1（3PDF統合）検証結果
 
+## WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-SPEC-1 ローカル検証（2026-08-21）
+
+| 検証 | 結果 |
+|---|---|
+| 作成者確認 | PCでローカル確認。「いいと思う」「本線を進めていこう」「進めてOK」。blocking 0、revision request 0 |
+| 人間境界 | creator local visual review。正式利用者テスト、実務利用、共同設計、利用者価値検証ではない |
+| 外部提案境界 | 供給×需要、輸送能力、到達条件は将来比較の参考。災害予測・避難判断・配車・リアルタイムAIは非統合 |
+| 入力 | §48表示仕様、§49ローカル受入、人間確認、公開4 HTML、協議前メモ既存4 JSONの11件、bytes・SHA-256一致 |
+| 仕様出力 | `data/work1_supply_side_information_gap_public_integration_spec.json`、決定的内部JSON |
+| 行契約 | 将来公開JSONは19市町×35項目=665行、6状態、8分類 |
+| 統合先 | `docs/municipality-memo.html`一つ、既存市町select共用、新規5ページ目0 |
+| 不変対象 | index・entry・status、既存登録供給・GTFS・指標・4ページ導線・共有URL・印刷を維持 |
+| 公開除外 | measurement result ID、detail spec ID、measurement status、upstream status、local/internal path、限定測定値 |
+| 証拠表示 | 出典ID、証拠日、原本範囲、市町行の範囲、次の確認、非主張を保持 |
+| gap境界 | 登録0件交通不存在化0、GTFSアクセス状態の有無・質判定0、全体値市町配賦0、`service_gap`判定0 |
+| 決定性 | 連続生成と保存済み仕様JSONが完全byte一致 |
+| 専用回帰 | 16 / 16 success |
+| 全回帰 | 309件検出、309 / 309 success、終了コード0 |
+| scope・差分 | `WORK1_SCOPE_ALLOWED`、`git diff --check` success |
+| 公開変更 | 公開4 HTML、`docs/data/`差分0。push・Pages更新0 |
+| 正本 | 作成者レビューJSON、公開統合仕様JSON、ローカル受入JSON |
+| 判定 | `LOCAL_GO`。次は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-1`、`PUBLIC_PAGE_MUTATION_APPROVAL_PENDING` |
+
 ## WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-1 ローカル検証（2026-08-20）
 
 | 検証 | 結果 |

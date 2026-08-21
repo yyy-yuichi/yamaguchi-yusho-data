@@ -4822,3 +4822,131 @@ BODIK登録、push・Pages更新を行わない。
 
 この人間確認を正式利用者テストまたは地域交通協議での実務検証とは扱わない。公開ページ変更、外部共有、
 外部レビュー依頼、pushは別承認が必要であり、本段階から自動開始しない。
+
+## 50. WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-SPEC-1
+
+### 50.1 作成者レビューゲートと段階ゴール
+
+2026-08-21、作成者はリモート接続ではなくPC上で§49ローカル内部プロトタイプを確認し、
+「いいと思う」「本線を進めていこう」「進めてOK」と判断した。報告されたblocking issueと
+revision requestは各0。`WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-HUMAN-REVIEW-1`を
+`CREATOR_LOCAL_VISUAL_REVIEW / GO_TO_PUBLIC_INTEGRATION_SPEC`として閉じる。
+
+この確認は正式利用者テスト、外部利用者の観察付き完了、地域交通協議での実務利用、共同設計、
+利用者価値、交通不足の検証ではない。§49.9どおり、公開ページ変更とpush・Pages更新は別承認に残す。
+
+本段階のゴールは、§48表示仕様、§49ローカル受入、作成者レビュー、現在の公開4 HTMLと協議前メモが
+読む4 JSONを固定入力として、公開統合先、公開用データ境界、既存動作の維持、受入条件を内部仕様化すること。
+
+### 50.2 入力・生成器・内部正本
+
+固定入力は次の11件とし、bytes・SHA-256を仕様JSONへ保持する。
+
+1. `data/work1_supply_side_information_gap_presentation_spec.json`
+2. `evidence/20260820_work1_supply_side_information_gap_internal_prototype_local_acceptance.json`
+3. `evidence/20260821_work1_supply_side_information_gap_internal_prototype_human_review.json`
+4. `docs/index.html`
+5. `docs/entry.html`
+6. `docs/municipality-memo.html`
+7. `docs/status.html`
+8. `docs/data/municipal_supply.json`
+9. `docs/data/municipality_gtfs.json`
+10. `docs/data/gtfs_feeds.json`
+11. `docs/data/gtfs_supply_metrics.json`
+
+生成器は`src/build_supply_side_information_gap_public_integration_spec.py`、内部正本は
+`data/work1_supply_side_information_gap_public_integration_spec.json`とする。同じ入力からUTF-8・LF・
+末尾改行1で完全byte一致再生成する。
+
+### 50.3 公開統合先と既存画面の維持
+
+統合先は既存4ページ中`docs/municipality-memo.html`一つだけとする。このページは19市町select、
+登録供給、GTFS確認状況、測定済み指標、不足、次の確認、引継ぎ、限界を同じ市町で構成しており、
+内部プロトタイプの「協議前に確認できる情報と不足をそろえる」用途と一致する。
+
+新しい5ページ目は作らない。既存の「1. いま確認できる範囲」の直後へ
+「2. 確認できる情報と、次に必要な確認」を置き、以後の見出し番号だけを繰り下げる。既存市町selectを
+共用し、選択変更時に既存メモと新sectionを同時更新する。
+
+`docs/index.html`、`docs/entry.html`、`docs/status.html`、4ページ導線、`municipality` query、共有URL、
+印刷、既存登録供給・GTFS・指標表示とその値は変更しない。
+
+### 50.4 公開用JSON契約
+
+将来の公開データは`docs/data/work1_supply_side_information_gap.json`一つとし、§48から決定的に生成する。
+19市町×35項目=665行、6状態、8分類、19市町summaryを保持する。公開状態名は内部状態と1対1に対応し、
+意味を変更しない。`MEASURED_BOUNDED_INTERNAL`だけは公開画面で内部限定と誤読させない
+`ACCEPTED_SOURCE_MEASURED_BOUNDED`へ表示用名称を置換し、元状態も追跡用に保持する。
+
+各公開行は市町コード・名称、分類ID・名称、項目ID・名称、元状態、公開状態、情報条件、状態表示、
+受入原本ID、証拠日、説明、原本範囲、市町行の範囲、表示規則、次の確認、非主張を持つ。
+
+次は公開しない。
+
+- `measurement_result_ids`
+- `detail_spec_id`
+- `measurement_status`
+- `upstream_status`
+- local/internal path
+- 限定測定値
+
+未測定・未入手・需要比較必要を0件、0%、不存在へ補完しない。公開JSONは1,500,000 bytes以下を
+受入上限とする。
+
+### 50.5 表示・操作・アクセシビリティ契約
+
+既定filterは「次に確認する情報」。順に「確認できる情報」「生活・需要との比較」「全35項目」を持つ。
+次に確認、確認済み、需要比較の3 summary、6状態legend、8分類、項目card、証拠detailsを表示する。
+証拠detailsは受入原本ID、証拠日、原本範囲、市町行の範囲、次の確認、非主張を持つ。
+
+情報不足と交通サービス不足を分ける注記、4登録簿上の該当記載0件を交通手段・移動支援の不存在に
+しない注記を必ず表示する。状態を色だけで伝えず、filterは`aria-pressed`、件数は`aria-live`、
+keyboard focusを可視化し、filter高42px以上とする。PC 1280×720とsmartphone 390×844で横overflow 0。
+JavaScript無効時は公開JSONへのリンクを示し、新section以外の既存確認メモを失わない。
+
+### 50.6 主張境界と外部提案の取扱い
+
+登録0件から交通不存在、GTFSアクセス状態から交通の有無・質、フィード全体値から市町内供給量、
+予定値から実運行、情報不足・測定不足から`service_gap`を判定しない。JRバス中国の県外を含む広域値を
+関係4市へ配賦しない。需要比較必要95行は需要値があることを意味せず、充足・不足を判定しない。
+
+外部から示された災害時避難輸送案は、移動を必要とする人との比較、定員・車種・運転手・時間を含む
+輸送能力、停留所や集合場所までの到達条件を将来の比較入力として考える参考に限定する。災害予測、
+避難開始判断、車両配車、リアルタイムAIを現在の作品①へ統合せず、測定入力、利用者テスト、共同設計、
+利用者価値の検証へ変換しない。
+
+### 50.7 将来実装の変更範囲と完了条件
+
+公開統合実装で変更・追加できるのは次だけとする。
+
+- `src/build_supply_side_information_gap_public_data.py`
+- `docs/data/work1_supply_side_information_gap.json`
+- `docs/municipality-memo.html`
+- `tests/test_supply_side_information_gap_public_integration.py`
+- `evidence/20260821_work1_supply_side_information_gap_public_integration_local_acceptance.json`
+- `SPEC.md`、`run_record.md`、`PROGRESS.md`、`verification.md`
+
+完了条件は次の10件。
+
+1. 公開JSONが19市町×35項目=665行、6状態、8分類を保持する。
+2. 同じ入力から公開JSONを完全byte一致で再生成できる。
+3. 協議前メモの既存市町selectと4 filterが同じ市町を表示する。
+4. 情報不足と交通不足、登録0件、GTFS全体値、JRバス中国広域値の境界を表示する。
+5. 内部測定ID、内部path、限定測定値を公開JSONへ出さない。
+6. 既存登録供給・GTFS・測定指標・共有URL・印刷を維持する。
+7. PC 1280×720とsmartphone 390×844で横overflow 0を読戻す。
+8. 専用・全体テスト、scope checker、`git diff --check`を成功させる。
+9. index・entry・status、既存`docs/data/`を開始HEADから不変にする。
+10. push・Pages更新を行わずローカル受入で停止する。
+
+新原本、需要比較値、認証付き・非公開データ、外部連絡、利用者テスト依頼、災害予測・避難判断・配車、
+UDC応募、BODIK登録、push・Pages更新を行わない。
+
+### 50.8 ローカル受入と次の承認ゲート
+
+専用16 / 16、全309 / 309、11入力hash一致、保存済み仕様JSONの完全byte一致、scope checker、
+`git diff --check`を成功させた。公開4 HTMLと`docs/data/`は本段階で不変。
+
+次は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-1`だけとする。§49.9で公開ページ変更を
+別承認としたため、状態は`PUBLIC_PAGE_MUTATION_APPROVAL_PENDING`。作成者が公開ページ変更を明示承認するまで
+開始しない。ローカル実装受入後のpush・Pages更新も、さらに別の人間承認ゲートとする。

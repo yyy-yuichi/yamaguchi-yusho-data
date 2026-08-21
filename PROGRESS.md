@@ -1,5 +1,33 @@
 # PROGRESS
 
+## 2026-08-21 WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-SPEC-1
+
+### 作成者レビュー完了・公開統合仕様のローカル受入
+
+- 作成者はPC上でローカル内部プロトタイプを確認し、「いいと思う」「本線を進めていこう」
+  「進めてOK」と判断した。報告されたblocking issue・revision requestは各0。
+- 人間確認は`CREATOR_LOCAL_VISUAL_REVIEW / GO_TO_PUBLIC_INTEGRATION_SPEC`として閉じた。
+  正式利用者テスト、実務利用、共同設計、利用者価値の検証には変換していない。
+- 外部の災害時避難輸送案からは、供給と需要、輸送能力、到達条件を将来比較する視点だけを参考にする。
+  災害予測、避難判断、配車、リアルタイムAIは作品①の現在範囲へ統合せず、測定入力・検証結果にしない。
+- 生成器は`src/build_supply_side_information_gap_public_integration_spec.py`、内部正本は
+  `data/work1_supply_side_information_gap_public_integration_spec.json`。固定11入力のbytes・SHA-256を持つ。
+- 統合先は既存`docs/municipality-memo.html`一つ。既存市町selectを共用し、「1. いま確認できる範囲」の
+  直後に35項目の確認状況を置く。新しい5ページ目は作らない。
+- 将来公開JSONは19市町×35項目=665行、6状態、8分類を保持し、内部measurement result ID、detail spec ID、
+  local/internal path、限定測定値を公開しない。
+- index・entry・status、既存登録供給・GTFS・測定指標、4ページ導線、共有URL、印刷を維持する。
+- 登録0件、GTFSアクセス状態、フィード全体値、JRバス中国広域値、予定値、情報不足・測定不足から
+  交通不存在・市町内供給・実運行・需要充足・`service_gap`を判定しない。
+- 専用16 / 16、全309 / 309、再生成byte一致、scope checker、`git diff --check`が成功した。
+- 本段階では公開4 HTML、`docs/data/`、上流正本、7原本、既存公開値、内部スコアカードは不変。
+- 新原本、需要比較値、認証付き・非公開アクセス、外部連絡、利用者テスト依頼、UDC応募、BODIK登録、
+  push・Pages更新は各0。
+- ローカル正本は
+  `evidence/20260821_work1_supply_side_information_gap_public_integration_spec_local_acceptance.json`。
+- 次は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-1`だけ。公開ページ変更の
+  `PUBLIC_PAGE_MUTATION_APPROVAL_PENDING`で、開始承認まで未開始とする。
+
 ## 2026-08-20 WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-1
 
 ### ローカル内部プロトタイプ・機械受入

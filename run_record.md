@@ -1,6 +1,6 @@
 # UDC2026 run record
 
-最終更新: 2026-08-20 (rev.93) / 状態: WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-1 LOCAL_GO / 次: WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-HUMAN-REVIEW-1（HUMAN_GATE_PENDING）
+最終更新: 2026-08-21 (rev.94) / 状態: WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-SPEC-1 LOCAL_GO / 次: WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-1（PUBLIC_PAGE_MUTATION_APPROVAL_PENDING）
 
 ## 0. このファイルについて
 
@@ -1837,3 +1837,25 @@ SPEC.md §9のU2・U3・U7は引き続き未確認である。
   `evidence/20260820_work1_supply_side_information_gap_internal_prototype_local_acceptance.json`。
 - 次は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-HUMAN-REVIEW-1`だけ。作成者が文言・密度・
   操作を確認する人間ゲートで、`HUMAN_GATE_PENDING`とする。公開変更・外部共有は自動開始しない。
+
+### 改訂点（rev.94）
+
+- 作成者はリモート接続ではなくPC上でローカル内部プロトタイプを確認し、「いいと思う」「本線を
+  進めていこう」「進めてOK」と判断した。報告されたblocking issueとrevision requestは各0。
+- `WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-HUMAN-REVIEW-1`を
+  `CREATOR_LOCAL_VISUAL_REVIEW / GO_TO_PUBLIC_INTEGRATION_SPEC`で閉じた。正式利用者テスト、実務利用、
+  共同設計、利用者価値の検証には変換しない。
+- 外部から示された災害時避難輸送案は、供給と需要、輸送能力、到達条件を将来比較する参考に限定した。
+  災害予測、避難判断、配車、リアルタイムAIは現在の作品①へ統合せず、測定入力・検証結果にしない。
+- `src/build_supply_side_information_gap_public_integration_spec.py`から
+  `data/work1_supply_side_information_gap_public_integration_spec.json`を決定的に生成した。
+- 統合先は既存4ページ中`docs/municipality-memo.html`一つだけとし、既存の市町selectを共用する。
+  新しい5ページ目は作らず、index・entry・status、既存登録供給・GTFS・指標・共有URL・印刷を維持する。
+- 将来の公開JSONは19市町×35項目=665行、6状態、8分類を持つ。内部measurement result ID、detail spec ID、
+  internal/local path、限定測定値は公開せず、出典ID、日付、範囲、次の確認、非主張を表示する。
+- 専用16 / 16、全309 / 309、再生成byte一致、11入力hash一致を確認した。公開4 HTMLと`docs/data/`は
+  本段階で差分0。新原本、需要値、外部連絡、利用者テスト依頼、応募・登録、push・Pages更新は各0。
+- 正本は`evidence/20260821_work1_supply_side_information_gap_internal_prototype_human_review.json`と
+  `evidence/20260821_work1_supply_side_information_gap_public_integration_spec_local_acceptance.json`。
+- 次は`WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-1`だけ。公開ページ変更は§49.9で分離した
+  人間承認ゲートのため、状態は`PUBLIC_PAGE_MUTATION_APPROVAL_PENDING`とし、自動開始しない。

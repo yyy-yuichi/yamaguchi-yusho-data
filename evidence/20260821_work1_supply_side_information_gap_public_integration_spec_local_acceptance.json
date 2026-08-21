@@ -1,0 +1,188 @@
+{
+  "schema_version": "WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-SPEC-LOCAL-ACCEPTANCE-1",
+  "task_id": "WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-SPEC-1",
+  "created_at": "2026-08-21T09:04:00+09:00",
+  "decision": "LOCAL_GO",
+  "baseline": {
+    "branch": "main",
+    "head": "c0367b0cf40983fa72e0f95544c7425edd4f70cd",
+    "head_subject": "Build local information-gap prototype",
+    "origin_main": "66b5aa7dd3b51dd5e32764a6d0f0c7d40fff0db1",
+    "ahead_of_origin_main": 6,
+    "baseline_worktree": "clean"
+  },
+  "human_review_acceptance": {
+    "review_task_id": "WORK1-SUPPLY-SIDE-INFORMATION-GAP-INTERNAL-PROTOTYPE-HUMAN-REVIEW-1",
+    "reviewed_on": "2026-08-21",
+    "review_type": "CREATOR_LOCAL_VISUAL_REVIEW",
+    "prototype_access": "LOCAL_PC",
+    "decision": "GO_TO_PUBLIC_INTEGRATION_SPEC",
+    "reported_blocking_issue_count": 0,
+    "reported_revision_request_count": 0,
+    "creator_visual_acceptance": true,
+    "formal_user_test": false,
+    "external_user_observed_task_completion": false,
+    "real_discussion_workflow_validation": false,
+    "co_design_result": false,
+    "user_value_validation": false
+  },
+  "goal_acceptance": {
+    "input_file_count": 11,
+    "input_hash_match_count": 11,
+    "municipality_count": 19,
+    "category_count": 8,
+    "item_count_per_municipality": 35,
+    "municipality_item_row_count": 665,
+    "source_state_count": 6,
+    "public_state_count": 6,
+    "integration_target": "docs/municipality-memo.html",
+    "public_page_change_count_in_this_stage": 0,
+    "new_fifth_public_page": false,
+    "spec_status": "DEFINED_NOT_IMPLEMENTED_PUBLICLY"
+  },
+  "presentation_state_acceptance": {
+    "PUBLICLY_VISIBLE_CURRENT": 128,
+    "MEASURED_BOUNDED_INTERNAL": 61,
+    "MEASUREMENT_GAP_PARTIAL_SOURCE": 30,
+    "MEASUREMENT_GAP_ADDITIONAL_INPUT_REQUIRED": 7,
+    "INFORMATION_GAP_ADDITIONAL_SOURCE_REQUIRED": 344,
+    "DEMAND_COMPARATOR_REQUIRED": 95,
+    "state_total": 665,
+    "meaning_change_count": 0
+  },
+  "information_condition_acceptance": {
+    "CONFIRMED_INFORMATION": 189,
+    "MEASUREMENT_GAP": 37,
+    "INFORMATION_GAP": 344,
+    "DEMAND_COMPARATOR_REQUIRED": 95,
+    "service_gap_state_count": 0
+  },
+  "public_data_boundary_acceptance": {
+    "future_output_path": "docs/data/work1_supply_side_information_gap.json",
+    "future_public_row_count": 665,
+    "required_public_row_field_count": 18,
+    "measurement_values_copied": 0,
+    "measurement_result_ids_published": 0,
+    "detail_spec_ids_published": 0,
+    "local_or_internal_paths_published": 0,
+    "gap_numeric_placeholder_count": 0,
+    "registered_zero_interpreted_as_transport_absence": 0,
+    "gtfs_access_status_interpreted_as_transport_presence_or_quality": 0,
+    "feed_wide_values_allocated_to_municipalities": 0,
+    "jrbus_chugoku_wide_values_allocated_to_four_municipalities": 0,
+    "scheduled_values_interpreted_as_actual_operation": 0,
+    "service_gap_decision_count": 0
+  },
+  "compatibility_acceptance": {
+    "existing_public_page_count": 4,
+    "future_changed_public_page_count": 1,
+    "existing_municipality_selector_reused": true,
+    "existing_query_parameter_preserved": true,
+    "existing_share_url_behavior_preserved": true,
+    "existing_print_behavior_preserved": true,
+    "existing_registered_supply_rendering_preserved": true,
+    "existing_gtfs_rendering_preserved": true,
+    "existing_metric_rendering_preserved": true,
+    "index_entry_status_unchanged_by_future_implementation": true
+  },
+  "scope_direction_acceptance": {
+    "work1_main_line_preserved": true,
+    "supply_and_demand_comparison_retained_as_future_reference": true,
+    "transport_capacity_and_access_conditions_retained_as_future_reference": true,
+    "disaster_prediction_integrated_now": false,
+    "evacuation_start_decision_integrated_now": false,
+    "vehicle_dispatch_integrated_now": false,
+    "real_time_ai_integrated_now": false,
+    "external_suggestion_used_as_measurement_or_user_validation": false
+  },
+  "spec_artifact": {
+    "path": "data/work1_supply_side_information_gap_public_integration_spec.json",
+    "bytes": 12228,
+    "sha256": "e0753874f9d819de4a191eca070df2e7459bcb5c288afc6e0966199dd9e73b3e",
+    "encoding": "UTF-8",
+    "line_ending": "LF",
+    "trailing_newline_count": 1
+  },
+  "artifact_hashes": [
+    {
+      "path": "evidence/20260821_work1_supply_side_information_gap_internal_prototype_human_review.json",
+      "bytes": 2621,
+      "sha256": "c3297d408f3ef4a192ba0a342144d5ca0e43c5be85cec1cb0261dfefc0b77983"
+    },
+    {
+      "path": "src/build_supply_side_information_gap_public_integration_spec.py",
+      "bytes": 14012,
+      "sha256": "98876991d04f0e1895b3cb50ef420d3360581331f4d2113bb68ba2f257814e62"
+    },
+    {
+      "path": "data/work1_supply_side_information_gap_public_integration_spec.json",
+      "bytes": 12228,
+      "sha256": "e0753874f9d819de4a191eca070df2e7459bcb5c288afc6e0966199dd9e73b3e"
+    },
+    {
+      "path": "tests/test_supply_side_information_gap_public_integration_spec.py",
+      "bytes": 11046,
+      "sha256": "19af7438d137a1dc45d9659105b7e6eee164320ed6549ffd7ffdeca778938e8a"
+    },
+    {
+      "path": "SPEC.md",
+      "bytes": 345750,
+      "sha256": "0a0c82ac206013a1b74daa7fd76d16838b62f771dfda063e00caa59381bc9b82"
+    },
+    {
+      "path": "run_record.md",
+      "bytes": 160389,
+      "sha256": "81ec47b32ebdbd11b105e2afee37e3f2535b1c7f728f1b9376bbf7c6004e0f12"
+    },
+    {
+      "path": "PROGRESS.md",
+      "bytes": 254954,
+      "sha256": "3d5465afb270fb8b7375befb4d58b19535c8d85d4c3c493b9dde706939a3f951"
+    },
+    {
+      "path": "verification.md",
+      "bytes": 214457,
+      "sha256": "de1824d8e7b0bc7190aaf43d364bebe5ed10c420769a443a21297f7cadd688c9"
+    }
+  ],
+  "verification": {
+    "dedicated_tests": {
+      "command": "python -B -m unittest tests.test_supply_side_information_gap_public_integration_spec -v",
+      "detected": 16,
+      "passed": 16,
+      "failed": 0
+    },
+    "full_tests": {
+      "command": "python -B -m unittest discover -s tests -q",
+      "detected": 309,
+      "passed": 309,
+      "failed": 0
+    },
+    "regeneration_byte_identical": true,
+    "input_hash_match": "11/11",
+    "spec_coverage_tokens": 1371,
+    "spec_coverage_unexplained_missing": 0,
+    "work_scope": "WORK1_SCOPE_ALLOWED",
+    "git_diff_check": "success",
+    "protected_public_html_diff_count": 0,
+    "docs_data_diff_count": 0,
+    "expected_changed_path_count_after_acceptance": 9
+  },
+  "action_boundaries": {
+    "new_source_search_or_adoption_count": 0,
+    "demand_comparator_value_creation_count": 0,
+    "authenticated_or_nonpublic_access_count": 0,
+    "external_contact_count": 0,
+    "user_test_request_count": 0,
+    "udc_submission_count": 0,
+    "bodik_registration_count": 0,
+    "push_count": 0,
+    "pages_update_count": 0
+  },
+  "next_stage": {
+    "task_id": "WORK1-SUPPLY-SIDE-INFORMATION-GAP-PUBLIC-INTEGRATION-1",
+    "status": "PUBLIC_PAGE_MUTATION_APPROVAL_PENDING",
+    "public_page_mutation_requires_creator_approval": true,
+    "push_and_pages_update_requires_later_separate_approval": true
+  }
+}
