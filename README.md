@@ -17,7 +17,8 @@ UDC2026（アーバンデータチャレンジ2026）応募作品①のデータ
 面で示し、岩国駅・市役所・今津の3停留所を切り替えるローカル試作まで実装済みである。保存済みの
 岩国市公式施設304件を試験用に重ね、時間内の施設を地図と一覧で確認できる。
 
-- 住民向け本線: [`internal/work1_resident_walk_access_prototype.html`](internal/work1_resident_walk_access_prototype.html)
+- 公開住民向け画面: <https://yyy-yuichi.github.io/yamaguchi-yusho-data/resident-walk-access.html>
+- 住民向け画面の生成物: [`internal/work1_resident_walk_access_prototype.html`](internal/work1_resident_walk_access_prototype.html)
 - 現在確認できること: 3停留所の選択、5分・10分・15分の面、施設件数と一覧、施設点との双方向連動
 - 内部技術画面: [`internal/work1_facility_access_method_comparison.html`](internal/work1_facility_access_method_comparison.html)
 - 画面の区分: 内部技術画面は計算方法を比べる作成者用の試験で、住民向け本線には混ぜない
