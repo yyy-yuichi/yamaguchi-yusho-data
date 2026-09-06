@@ -1,6 +1,8 @@
 # Source code area rules
 
-このフォルダを変更する担当は、ルートの`AGENTS.md`と`internal/project_control/START_HERE.md`が指定する現在有効な正本を先に読みます。
+このフォルダを変更する担当は、ルートの`AGENTS.md`を先に読みます。
+`internal/project_control/START_HERE.md`が存在する環境では、その案内に従って現在有効な正本も読みます。
+上位の指示が必須とする文書が見つからない場合は、必要な指示が不足していることを報告します。
 
 - 承認済みの一作業だけを最小差分で実装する。
 - 入力、変換、出力、検証条件をコードから追跡できるようにする。
